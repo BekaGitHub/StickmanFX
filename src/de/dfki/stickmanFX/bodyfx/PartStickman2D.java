@@ -39,28 +39,10 @@ import javafx.util.Duration;
 public abstract class PartStickman2D extends Part2D
 {
 
-    public int mDefaultTranslation = 0;
-    public double mTranslation = mDefaultTranslation;
-    public double mToTranslation = mDefaultTranslation;
-    public double mTranslationStep = 0.0f;
-
-    public double mRotation = mDefaultRotation;
-    public double mToDegree = mDefaultRotation;
-    public double mRotationStep = 0.0f;
-
-    List<Path> mGraphicPaths = Collections.synchronizedList(new ArrayList());
-
-    public float mColoropacity = 1.0f;
-    
-    // used by RestButton.
-    public Color mColorRest = Color.rgb(0, 0, 0);
-    public float mColoropacityRest = 1.0f;
-
-    protected Color mColorRecorder = mColor;
-
     public BasicStroke mStroke = new BasicStroke(3.0f, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND);
 
     public void init() {
+        mColorRecorder = mColor;
         super.init();
     }
 

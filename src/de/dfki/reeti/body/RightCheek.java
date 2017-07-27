@@ -49,6 +49,12 @@ public class RightCheek extends PartReeti
         mLed.setTranslateZ(-133.6);
     }
 
+    @Override
+    public void calculate(int step)
+    {
+
+    }
+
     public Circle getLed()
     {
         return mLed;

@@ -26,4 +26,10 @@ public class Neck extends PartReeti
     {
         return new Point(mEnd.x, mEnd.y + 10);
     }
+
+    @Override
+    public void calculate(int step)
+    {
+
+    }
 }

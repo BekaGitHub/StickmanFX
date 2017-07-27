@@ -19,7 +19,6 @@ import java.awt.*;
  */
 public abstract class PartStickman3D extends Part3D
 {
-    public Color mColorRecorder;
     public double mXRotatationRecorder;
     public double mYRotatationRecorder;
     public double mZRotatationRecorder;
@@ -184,9 +183,6 @@ public abstract class PartStickman3D extends Part3D
         bodyPartFX.getChildren().clear();
     }
 
-    public synchronized void calculate(int step)
-    {
-    }
 
     public void update()
     {

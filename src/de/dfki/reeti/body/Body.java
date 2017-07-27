@@ -48,6 +48,12 @@ public class Body extends PartReeti
         this.getChildren().addAll(mBodyGroup);
     }
 
+    @Override
+    public void calculate(int step)
+    {
+
+    }
+
     public Point getUpperBodyPosition()
     {
         return new Point(mStart.x, mStart.y + 135);

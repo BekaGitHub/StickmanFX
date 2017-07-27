@@ -178,10 +178,6 @@ public abstract class PartReeti extends Part3D
         bodyPartFX.getChildren().clear();
     }
 
-    public synchronized void calculate(int step)
-    {
-    }
-
     protected PhongMaterial getMaterial()
     {
         if (material == null)

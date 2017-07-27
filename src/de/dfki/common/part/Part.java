@@ -19,6 +19,7 @@ public abstract class Part extends Pane
     public int mLength = 0;
     public int mShapeAnimationStep = 0;
     public Color mColor = Color.rgb(0, 0, 0);
+    public Color mColorRecorder;
 
     public void init()
     {

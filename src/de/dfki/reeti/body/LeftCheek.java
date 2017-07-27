@@ -48,6 +48,12 @@ public class LeftCheek extends PartReeti
         mLed.setTranslateZ(-133.6);
     }
 
+    @Override
+    public void calculate(int step)
+    {
+
+    }
+
     public int getSize()
     {
         return SIZE;
