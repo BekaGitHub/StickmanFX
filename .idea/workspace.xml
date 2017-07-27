@@ -6,18 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c55e3a5f-3a78-4a9a-88c5-64b8042546d9" name="Default" comment="SmileStart, TiltDownStart, TiltLeftStart, TiltRightStart">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/artifacts/Stickman_jar/Stickman.jar" afterPath="$PROJECT_DIR$/classes/artifacts/Stickman_jar/Stickman.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/common/part/Part.java" afterPath="$PROJECT_DIR$/src/de/dfki/common/part/Part.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/common/part/Part2D.java" afterPath="$PROJECT_DIR$/src/de/dfki/common/part/Part2D.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/reeti/body/Body.java" afterPath="$PROJECT_DIR$/src/de/dfki/reeti/body/Body.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/reeti/body/LeftCheek.java" afterPath="$PROJECT_DIR$/src/de/dfki/reeti/body/LeftCheek.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/reeti/body/Neck.java" afterPath="$PROJECT_DIR$/src/de/dfki/reeti/body/Neck.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/reeti/body/PartReeti.java" afterPath="$PROJECT_DIR$/src/de/dfki/reeti/body/PartReeti.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/reeti/body/RightCheek.java" afterPath="$PROJECT_DIR$/src/de/dfki/reeti/body/RightCheek.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/stickman3D/body/PartStickman3D.java" afterPath="$PROJECT_DIR$/src/de/dfki/stickman3D/body/PartStickman3D.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/PartStickman2D.java" afterPath="$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/PartStickman2D.java" />
-    </list>
+    <list default="true" id="c55e3a5f-3a78-4a9a-88c5-64b8042546d9" name="Default" comment="SmileStart, TiltDownStart, TiltLeftStart, TiltRightStart" />
     <ignored path="Stickman.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/bin/" />
@@ -50,17 +39,19 @@
       <file leaf-file-name="PartReeti.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/de/dfki/reeti/body/PartReeti.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4239">
-              <caret line="180" column="0" lean-forward="false" selection-start-line="180" selection-start-column="0" selection-end-line="180" selection-end-column="0" />
+            <state relative-caret-position="510">
+              <caret line="28" column="45" lean-forward="true" selection-start-line="28" selection-start-column="45" selection-end-line="28" selection-end-column="45" />
               <folding>
                 <element signature="e#645#646#0" expanded="true" />
                 <element signature="e#673#674#0" expanded="true" />
+                <element signature="e#726#727#0" expanded="true" />
+                <element signature="e#809#810#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PartStickman3D.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="PartStickman3D.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/de/dfki/stickman3D/body/PartStickman3D.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-10">
@@ -104,8 +95,8 @@
       <file leaf-file-name="Part.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/de/dfki/common/part/Part.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="448">
-              <caret line="21" column="32" lean-forward="false" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="32" />
+            <state relative-caret-position="317">
+              <caret line="21" column="16" lean-forward="false" selection-start-line="21" selection-start-column="11" selection-end-line="21" selection-end-column="16" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -113,11 +104,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Part2D.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Part2D.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/de/dfki/common/part/Part2D.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="24" column="42" lean-forward="false" selection-start-line="24" selection-start-column="42" selection-end-line="24" selection-end-column="42" />
+            <state relative-caret-position="570">
+              <caret line="26" column="49" lean-forward="false" selection-start-line="26" selection-start-column="38" selection-end-line="26" selection-end-column="49" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -1107,7 +1098,7 @@
       <workItem from="1499342736746" duration="4651000" />
       <workItem from="1500566969042" duration="4002000" />
       <workItem from="1501162289697" duration="4941000" />
-      <workItem from="1501177568882" duration="10200000" />
+      <workItem from="1501177568882" duration="10794000" />
     </task>
     <task id="LOCAL-00040" summary="Relaxed">
       <created>1491770082856</created>
@@ -1456,7 +1447,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="321375000" />
+    <option name="totallyTimeSpent" value="321969000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1468,7 +1459,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-17" y="-2" width="1938" height="1060" extended-state="1" />
+    <frame x="-17" y="-2" width="1938" height="1060" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32887402" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -2218,59 +2210,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/de/dfki/common/part/Part.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="21" column="32" lean-forward="false" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/PartStickman2D.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/de/dfki/reeti/body/PartReeti.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4239">
-          <caret line="180" column="0" lean-forward="false" selection-start-line="180" selection-start-column="0" selection-end-line="180" selection-end-column="0" />
-          <folding>
-            <element signature="e#645#646#0" expanded="true" />
-            <element signature="e#673#674#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/de/dfki/reeti/body/Body.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="191">
           <caret line="22" column="7" lean-forward="false" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="7" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/de/dfki/stickman3D/body/PartStickman3D.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-10">
-          <caret line="21" column="32" lean-forward="false" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="32" />
-          <folding>
-            <element signature="e#947#948#0" expanded="true" />
-            <element signature="e#1027#1028#0" expanded="true" />
-            <element signature="e#1080#1081#0" expanded="true" />
-            <element signature="e#1160#1161#0" expanded="true" />
-            <element signature="e#1213#1214#0" expanded="true" />
-            <element signature="e#1293#1294#0" expanded="true" />
-            <element signature="e#2658#2659#0" expanded="true" />
-            <element signature="e#2735#2736#0" expanded="true" />
-            <element signature="e#2785#2786#0" expanded="true" />
-            <element signature="e#2862#2863#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2298,12 +2242,62 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/PartStickman2D.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/de/dfki/common/part/Part2D.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="24" column="42" lean-forward="false" selection-start-line="24" selection-start-column="42" selection-end-line="24" selection-end-column="42" />
+        <state relative-caret-position="570">
+          <caret line="26" column="49" lean-forward="false" selection-start-line="26" selection-start-column="38" selection-end-line="26" selection-end-column="49" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/dfki/common/part/Part.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="317">
+          <caret line="21" column="16" lean-forward="false" selection-start-line="21" selection-start-column="11" selection-end-line="21" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/dfki/reeti/body/PartReeti.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="28" column="45" lean-forward="true" selection-start-line="28" selection-start-column="45" selection-end-line="28" selection-end-column="45" />
+          <folding>
+            <element signature="e#645#646#0" expanded="true" />
+            <element signature="e#673#674#0" expanded="true" />
+            <element signature="e#726#727#0" expanded="true" />
+            <element signature="e#809#810#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/dfki/stickman3D/body/PartStickman3D.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-10">
+          <caret line="21" column="32" lean-forward="false" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="32" />
+          <folding>
+            <element signature="e#947#948#0" expanded="true" />
+            <element signature="e#1027#1028#0" expanded="true" />
+            <element signature="e#1080#1081#0" expanded="true" />
+            <element signature="e#1160#1161#0" expanded="true" />
+            <element signature="e#1213#1214#0" expanded="true" />
+            <element signature="e#1293#1294#0" expanded="true" />
+            <element signature="e#2658#2659#0" expanded="true" />
+            <element signature="e#2735#2736#0" expanded="true" />
+            <element signature="e#2785#2786#0" expanded="true" />
+            <element signature="e#2862#2863#0" expanded="true" />
           </folding>
         </state>
       </provider>
