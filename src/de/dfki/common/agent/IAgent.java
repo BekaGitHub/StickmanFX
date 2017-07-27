@@ -22,6 +22,10 @@ public interface IAgent
 
     Gender.TYPE getType();
 
+    String getName();
+
+    void setName(String name);
+
     Animation doAnimation(String name, int duration, boolean block);
     
     Animation doAnimation(String name, int frequent, int actionDuration, boolean block);

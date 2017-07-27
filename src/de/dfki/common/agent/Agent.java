@@ -21,4 +21,16 @@ public abstract class Agent extends Pane implements IAgent
     public static Dimension mSize = new Dimension(mDefaultSize);
     public Semaphore mAnimationLaunchControl = new Semaphore(1);
     public final List<AnimationListener> mAnimationListeners = new CopyOnWriteArrayList<AnimationListener>();
+
+    @Override
+    public String getName()
+    {
+        return this.mName;
+    }
+
+    @Override
+    public void setName(String name)
+    {
+        this.mName = name;
+    }
 }

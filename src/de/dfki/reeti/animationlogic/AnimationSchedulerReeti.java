@@ -1,6 +1,7 @@
 package de.dfki.reeti.animationlogic;
 
 import de.dfki.common.agent.IAgent;
+import de.dfki.common.animationlogic.AnimationScheduler;
 import de.dfki.reeti.Reeti;
 
 import java.util.concurrent.LinkedBlockingQueue;
@@ -13,16 +14,12 @@ import java.util.logging.Logger;
  * @author Beka Aptsiauri
  *
  */
-public class AnimationSchedulerReeti extends Thread {
-
-    IAgent mReeti;
-    boolean mRunning = true;
+public class AnimationSchedulerReeti extends AnimationScheduler
+{
     public LinkedBlockingQueue<AnimationReeti> mAnimationQueue = new LinkedBlockingQueue<>();
-    public Semaphore mTheBlockOfHell = new Semaphore(1);
 
     public AnimationSchedulerReeti(Reeti s) {
-        setName(s.mName + "'s AnimationScheduler");
-        mReeti = s;
+        super(s);
     }
 
     public void introduce(AnimationReeti a) {
@@ -47,7 +44,7 @@ public class AnimationSchedulerReeti extends Thread {
 
         // throw in a last animation that unblocks the scheduler letting him end
         try {
-            mAnimationQueue.put(new AnimationReeti(mReeti, 1, false) {
+            mAnimationQueue.put(new AnimationReeti(mAgent, 1, false) {
             });
         } catch (InterruptedException ex) {
             Logger.getLogger(AnimationSchedulerReeti.class.getName()).log(Level.SEVERE, null, ex);

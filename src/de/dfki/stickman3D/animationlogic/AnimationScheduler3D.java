@@ -1,28 +1,23 @@
 package de.dfki.stickman3D.animationlogic;
 
 import de.dfki.common.agent.IAgent;
+import de.dfki.common.animationlogic.AnimationScheduler;
 import de.dfki.stickman3D.Stickman3D;
 
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.Semaphore;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
  * @author Beka Aptsiauri
  *
  */
-public class AnimationScheduler3D extends Thread {
-
-    IAgent mStickmanFX;
-    boolean mRunning = true;
+public class AnimationScheduler3D extends AnimationScheduler
+{
     public LinkedBlockingQueue<Animation3D> mAnimationQueue = new LinkedBlockingQueue<>();
-    public Semaphore mTheBlockOfHell = new Semaphore(1);
 
     public AnimationScheduler3D(Stickman3D s) {
-        setName(s.mName + "'s AnimationScheduler");
-        mStickmanFX = s;
+        super(s);
     }
 
     public void introduce(Animation3D a) {
@@ -47,7 +42,7 @@ public class AnimationScheduler3D extends Thread {
 
         // throw in a last animation that unblocks the scheduler letting him end
         try {
-            mAnimationQueue.put(new Animation3D(mStickmanFX, 1, false) {
+            mAnimationQueue.put(new Animation3D(mAgent, 1, false) {
             });
         } catch (InterruptedException ex) {
             ex.printStackTrace();
