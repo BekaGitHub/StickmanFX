@@ -77,7 +77,7 @@ public class StarsFX extends PartStickman2D
 
     // Start.x left leg side
     @Override
-    public void createShape() {
+    public void calculate(int step) {
 
         mStart = mBodyFX.getLeftLegStartPostion();
         mEnd = new Point(mStart.x, mStart.y + mLength);

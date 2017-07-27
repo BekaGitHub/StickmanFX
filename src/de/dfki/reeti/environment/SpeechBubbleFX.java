@@ -50,7 +50,7 @@ public class SpeechBubbleFX extends PartReeti
     }
 
     @Override
-    public void createShape() {
+    public void calculate(int step) {
         clearChildren(this);
 
         message = new Label();

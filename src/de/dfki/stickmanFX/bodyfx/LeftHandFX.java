@@ -43,7 +43,7 @@ public class LeftHandFX extends PartStickman2D
     }
 
     @Override
-    public void createShape() {
+    public void calculate(int step) {
         mStart = mLeftForeArmFX.getHandStartPosition();
         mEnd = new Point(mStart.x, mStart.y + mLength);
 
@@ -85,11 +85,6 @@ public class LeftHandFX extends PartStickman2D
         this.getChildren().add(mHand);
         addToDrawObjects(mHand);
         this.update();
-    }
-
-    @Override
-    public void calculate(int step) {
-        createShape();
 
         Affine af = new Affine();
         // flip hand when rotation is more than 60 degrees

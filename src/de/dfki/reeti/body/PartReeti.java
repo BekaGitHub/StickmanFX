@@ -163,11 +163,6 @@ public abstract class PartReeti extends Part3D
         // place code for setting shape
     }
 
-    public void createShape()
-    {
-        // create the shape
-    }
-
     public synchronized void calculateShape(int step)
     {
         mShapeAnimationStep = step;
@@ -187,7 +182,6 @@ public abstract class PartReeti extends Part3D
 
     public synchronized void calculate(int step)
     {
-        createShape();
     }
 
     protected PhongMaterial getMaterial()

@@ -51,7 +51,7 @@ public class NoseFX extends PartStickman2D
     }
 
     @Override
-    public void createShape() {
+    public void calculate(int step) {
         mStart = mHeadFX.getNosePostion();
         mEnd = new Point(mStart.x, mStart.y + mLength);
 

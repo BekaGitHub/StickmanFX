@@ -57,7 +57,7 @@ public class RightEyeFX extends PartStickman2D
     }
 
     @Override
-    public void createShape() {
+    public void calculate(int step) {
         mStart = mHead.getRightEyePostion();
         mEnd = new Point(mStart.x + mLength, mStart.y);
 

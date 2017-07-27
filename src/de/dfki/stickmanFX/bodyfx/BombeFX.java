@@ -53,7 +53,7 @@ public class BombeFX extends PartStickman2D
     }
 
     @Override
-    public void createShape() {
+    public void calculate(int step) {
         mStart = mHeadFX.getBombeStartPosition();
         mEnd = mHeadFX.getBombeEndPosition();
 

@@ -49,7 +49,7 @@ public class ThinkFX extends PartStickman2D
     }
 
     @Override
-    public void createShape() {
+    public void calculate(int step) {
         mStart = mHeadFX.getThinkhBubbleStartPosition();
 
         double movement;

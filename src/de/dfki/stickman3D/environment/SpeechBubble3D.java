@@ -44,7 +44,7 @@ public class SpeechBubble3D extends PartStickman3D
     }
 
     @Override
-    public void createShape()
+    public void calculate(int step)
     {
 
         clearChildren(this);

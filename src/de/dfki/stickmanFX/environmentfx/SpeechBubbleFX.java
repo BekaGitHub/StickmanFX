@@ -47,7 +47,7 @@ public class SpeechBubbleFX extends PartStickman2D
     }
 
     @Override
-    public void createShape() {
+    public void calculate(int step) {
         mStart = mHeadFX.getSpeechBubbleStartPosition();
 
         clearChildren(this);

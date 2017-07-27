@@ -7,442 +7,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c55e3a5f-3a78-4a9a-88c5-64b8042546d9" name="Default" comment="SmileStart, TiltDownStart, TiltLeftStart, TiltRightStart">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/de/dfki/common/part/Part.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/de/dfki/common/part/Part2D.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/de/dfki/common/part/Part3D.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/de/dfki/reeti/body/Parts$SHAPE.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/de/dfki/reeti/body/Parts.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/body/BodyPartFX$SHAPE.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/body/BodyPartFX.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/bodyfx/BodyPartFX$SHAPE.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/bodyfx/BodyPartFX.class" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/de/dfki/reeti/body/Parts.java" afterPath="$PROJECT_DIR$/src/de/dfki/reeti/body/PartReeti.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/de/dfki/stickman3D/body/BodyPartFX.java" afterPath="$PROJECT_DIR$/src/de/dfki/stickman3D/body/PartStickman3D.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/BodyPartFX.java" afterPath="$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/PartStickman2D.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/reeti/animation/environment/Speaking.class" afterPath="$PROJECT_DIR$/bin/de/dfki/reeti/animation/environment/Speaking.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/reeti/animation/environment/event/Speaking.class" afterPath="$PROJECT_DIR$/bin/de/dfki/reeti/animation/environment/event/Speaking.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/reeti/animation/face/BlinkLeftEyelid.class" afterPath="$PROJECT_DIR$/bin/de/dfki/reeti/animation/face/BlinkLeftEyelid.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/reeti/animation/face/BlinkRightEyelid.class" afterPath="$PROJECT_DIR$/bin/de/dfki/reeti/animation/face/BlinkRightEyelid.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/reeti/animation/face/DownLip.class" afterPath="$PROJECT_DIR$/bin/de/dfki/reeti/animation/face/DownLip.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/reeti/animation/face/LeftEarMovement.class" afterPath="$PROJECT_DIR$/bin/de/dfki/reeti/animation/face/LeftEarMovement.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/reeti/animation/face/LeftEye_X.class" afterPath="$PROJECT_DIR$/bin/de/dfki/reeti/animation/face/LeftEye_X.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/reeti/animation/face/LeftEye_Y.class" afterPath="$PROJECT_DIR$/bin/de/dfki/reeti/animation/face/LeftEye_Y.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/reeti/animation/face/LeftLC.class" afterPath="$PROJECT_DIR$/bin/de/dfki/reeti/animation/face/LeftLC.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/reeti/animation/face/Mouth_Default.class" afterPath="$PROJECT_DIR$/bin/de/dfki/reeti/animation/face/Mouth_Default.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/reeti/animation/face/Mouth_FIVE.class" afterPath="$PROJECT_DIR$/bin/de/dfki/reeti/animation/face/Mouth_FIVE.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/reeti/animation/face/Mouth_FOUR.class" afterPath="$PROJECT_DIR$/bin/de/dfki/reeti/animation/face/Mouth_FOUR.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/reeti/animation/face/Mouth_NINE.class" afterPath="$PROJECT_DIR$/bin/de/dfki/reeti/animation/face/Mouth_NINE.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/reeti/animation/face/Mouth_O.class" afterPath="$PROJECT_DIR$/bin/de/dfki/reeti/animation/face/Mouth_O.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/reeti/animation/face/Mouth_ONE.class" afterPath="$PROJECT_DIR$/bin/de/dfki/reeti/animation/face/Mouth_ONE.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/reeti/animation/face/Mouth_SEVEN.class" afterPath="$PROJECT_DIR$/bin/de/dfki/reeti/animation/face/Mouth_SEVEN.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/reeti/animation/face/Mouth_SIX.class" afterPath="$PROJECT_DIR$/bin/de/dfki/reeti/animation/face/Mouth_SIX.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/reeti/animation/face/Mouth_THREE.class" afterPath="$PROJECT_DIR$/bin/de/dfki/reeti/animation/face/Mouth_THREE.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/reeti/animation/face/Mouth_TWO.class" afterPath="$PROJECT_DIR$/bin/de/dfki/reeti/animation/face/Mouth_TWO.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/reeti/animation/face/NeckPan.class" afterPath="$PROJECT_DIR$/bin/de/dfki/reeti/animation/face/NeckPan.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/reeti/animation/face/NeckRotation.class" afterPath="$PROJECT_DIR$/bin/de/dfki/reeti/animation/face/NeckRotation.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/reeti/animation/face/NeckTilt.class" afterPath="$PROJECT_DIR$/bin/de/dfki/reeti/animation/face/NeckTilt.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/reeti/animation/face/RightEarMovement.class" afterPath="$PROJECT_DIR$/bin/de/dfki/reeti/animation/face/RightEarMovement.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/reeti/animation/face/RightEye_X.class" afterPath="$PROJECT_DIR$/bin/de/dfki/reeti/animation/face/RightEye_X.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/reeti/animation/face/RightEye_Y.class" afterPath="$PROJECT_DIR$/bin/de/dfki/reeti/animation/face/RightEye_Y.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/reeti/animation/face/RightLC.class" afterPath="$PROJECT_DIR$/bin/de/dfki/reeti/animation/face/RightLC.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/reeti/animation/face/UpperLip.class" afterPath="$PROJECT_DIR$/bin/de/dfki/reeti/animation/face/UpperLip.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/reeti/animation/head/Blink.class" afterPath="$PROJECT_DIR$/bin/de/dfki/reeti/animation/head/Blink.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/reeti/animation/head/HeadShake.class" afterPath="$PROJECT_DIR$/bin/de/dfki/reeti/animation/head/HeadShake.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/reeti/animation/head/HeadTilt.class" afterPath="$PROJECT_DIR$/bin/de/dfki/reeti/animation/head/HeadTilt.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/reeti/animation/head/LookDown.class" afterPath="$PROJECT_DIR$/bin/de/dfki/reeti/animation/head/LookDown.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/reeti/animation/head/Muster.class" afterPath="$PROJECT_DIR$/bin/de/dfki/reeti/animation/head/Muster.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/reeti/animation/head/Nod.class" afterPath="$PROJECT_DIR$/bin/de/dfki/reeti/animation/head/Nod.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/reeti/animation/head/Nod2.class" afterPath="$PROJECT_DIR$/bin/de/dfki/reeti/animation/head/Nod2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/reeti/animation/head/TiltLeftBack.class" afterPath="$PROJECT_DIR$/bin/de/dfki/reeti/animation/head/TiltLeftBack.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/reeti/animation/head/TiltLeftEnd.class" afterPath="$PROJECT_DIR$/bin/de/dfki/reeti/animation/head/TiltLeftEnd.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/reeti/animation/head/TiltRightEnd.class" afterPath="$PROJECT_DIR$/bin/de/dfki/reeti/animation/head/TiltRightEnd.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/reeti/animationlogic/AnimationContentReeti.class" afterPath="$PROJECT_DIR$/bin/de/dfki/reeti/animationlogic/AnimationContentReeti.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/reeti/animationlogic/AnimatorReeti.class" afterPath="$PROJECT_DIR$/bin/de/dfki/reeti/animationlogic/AnimatorReeti.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/reeti/body/Body.class" afterPath="$PROJECT_DIR$/bin/de/dfki/reeti/body/Body.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/reeti/body/Head.class" afterPath="$PROJECT_DIR$/bin/de/dfki/reeti/body/Head.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/reeti/body/LeftCheek.class" afterPath="$PROJECT_DIR$/bin/de/dfki/reeti/body/LeftCheek.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/reeti/body/LeftEar.class" afterPath="$PROJECT_DIR$/bin/de/dfki/reeti/body/LeftEar.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/reeti/body/LeftEye.class" afterPath="$PROJECT_DIR$/bin/de/dfki/reeti/body/LeftEye.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/reeti/body/LeftEyelid.class" afterPath="$PROJECT_DIR$/bin/de/dfki/reeti/body/LeftEyelid.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/reeti/body/Mouth.class" afterPath="$PROJECT_DIR$/bin/de/dfki/reeti/body/Mouth.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/reeti/body/MouthDownLip.class" afterPath="$PROJECT_DIR$/bin/de/dfki/reeti/body/MouthDownLip.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/reeti/body/MouthLeftCorner.class" afterPath="$PROJECT_DIR$/bin/de/dfki/reeti/body/MouthLeftCorner.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/reeti/body/MouthRightCorner.class" afterPath="$PROJECT_DIR$/bin/de/dfki/reeti/body/MouthRightCorner.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/reeti/body/MouthUpperLip.class" afterPath="$PROJECT_DIR$/bin/de/dfki/reeti/body/MouthUpperLip.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/reeti/body/Neck.class" afterPath="$PROJECT_DIR$/bin/de/dfki/reeti/body/Neck.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/reeti/body/RightCheek.class" afterPath="$PROJECT_DIR$/bin/de/dfki/reeti/body/RightCheek.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/reeti/body/RightEar.class" afterPath="$PROJECT_DIR$/bin/de/dfki/reeti/body/RightEar.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/reeti/body/RightEye.class" afterPath="$PROJECT_DIR$/bin/de/dfki/reeti/body/RightEye.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/reeti/body/RightEyelid.class" afterPath="$PROJECT_DIR$/bin/de/dfki/reeti/body/RightEyelid.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/reeti/environment/SpeechBubbleFX.class" afterPath="$PROJECT_DIR$/bin/de/dfki/reeti/environment/SpeechBubbleFX.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/environment/ComeBackFromSmall.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/environment/ComeBackFromSmall.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/environment/ComeUp.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/environment/ComeUp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/environment/DisappearToSmall.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/environment/DisappearToSmall.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/environment/FadeIn.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/environment/FadeIn.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/environment/FadeOut.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/environment/FadeOut.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/environment/GoDown.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/environment/GoDown.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/environment/Speaking.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/environment/Speaking.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/environment/event/Speaking.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/environment/event/Speaking.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/face/Angry.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/face/Angry.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/face/Angry2.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/face/Angry2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/face/Angry3.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/face/Angry3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/face/AngryEnd.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/face/AngryEnd.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/face/AngrySmallMouth.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/face/AngrySmallMouth.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/face/AngrySmallMouthEnd.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/face/AngrySmallMouthEnd.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/face/AngrySmallMouthStart.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/face/AngrySmallMouthStart.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/face/AngryStart.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/face/AngryStart.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/face/Arrogant.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/face/Arrogant.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/face/Contempt.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/face/Contempt.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/face/ContemptEnd.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/face/ContemptEnd.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/face/ContemptStart.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/face/ContemptStart.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/face/Disgusted.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/face/Disgusted.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/face/DisgustedEnd.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/face/DisgustedEnd.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/face/DisgustedStart.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/face/DisgustedStart.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/face/Embarrassed.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/face/Embarrassed.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/face/EmbarrassedEnd.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/face/EmbarrassedEnd.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/face/EmbarrassedStart.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/face/EmbarrassedStart.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/face/Excited.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/face/Excited.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/face/ExcitedEnd.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/face/ExcitedEnd.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/face/ExcitedStart.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/face/ExcitedStart.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/face/Fear.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/face/Fear.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/face/FearEnd.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/face/FearEnd.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/face/FearStart.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/face/FearStart.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/face/Happy.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/face/Happy.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/face/HappyEnd.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/face/HappyEnd.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/face/HappyStart.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/face/HappyStart.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/face/Mouth_Default.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/face/Mouth_Default.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/face/Mouth_FIVE.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/face/Mouth_FIVE.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/face/Mouth_FOUR.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/face/Mouth_FOUR.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/face/Mouth_NINE.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/face/Mouth_NINE.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/face/Mouth_O.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/face/Mouth_O.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/face/Mouth_ONE.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/face/Mouth_ONE.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/face/Mouth_SEVEN.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/face/Mouth_SEVEN.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/face/Mouth_SIX.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/face/Mouth_SIX.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/face/Mouth_THREE.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/face/Mouth_THREE.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/face/Mouth_TWO.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/face/Mouth_TWO.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/face/Sad.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/face/Sad.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/face/SadEnd.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/face/SadEnd.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/face/SadStart.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/face/SadStart.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/face/Smile.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/face/Smile.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/face/SmileEnd.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/face/SmileEnd.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/face/SmileStart.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/face/SmileStart.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/face/Surprised.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/face/Surprised.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/face/SurprisedEnd.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/face/SurprisedEnd.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/face/SurprisedStart.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/face/SurprisedStart.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/gesture/AbstractConversationHands.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/gesture/AbstractConversationHands.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/gesture/Clap.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/gesture/Clap.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/gesture/CoverMouth.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/gesture/CoverMouth.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/gesture/HeadConversation.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/gesture/HeadConversation.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/gesture/Itching.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/gesture/Itching.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/gesture/NoNoNo.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/gesture/NoNoNo.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/gesture/OneTwoThree.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/gesture/OneTwoThree.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/gesture/SynchronizedConversationHandsStart.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/gesture/SynchronizedConversationHandsStart.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/gesture/TouchHead.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/gesture/TouchHead.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/gesture/UnsynchronizedConversationHandsStart.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/gesture/UnsynchronizedConversationHandsStart.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/gesture/WaveLeft.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/gesture/WaveLeft.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/gesture/WaveRight.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/gesture/WaveRight.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/head/Blink.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/head/Blink.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/head/HeadDown.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/head/HeadDown.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/head/HeadDown1.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/head/HeadDown1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/head/HeadDown1End.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/head/HeadDown1End.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/head/HeadDown1Start.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/head/HeadDown1Start.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/head/HeadLeft.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/head/HeadLeft.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/head/HeadRight.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/head/HeadRight.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/head/HeadShake.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/head/HeadShake.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/head/HeadTilt.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/head/HeadTilt.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/head/LookDown.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/head/LookDown.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/head/LookLeft.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/head/LookLeft.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/head/LookRight.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/head/LookRight.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/head/LookUp.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/head/LookUp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/head/Muster.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/head/Muster.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/head/Nod.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/head/Nod.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/head/Nod2.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/head/Nod2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/head/TiltLeft.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/head/TiltLeft.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/head/TiltLeftBack.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/head/TiltLeftBack.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/head/TiltLeftEnd.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/head/TiltLeftEnd.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/head/TiltLeftStart.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/head/TiltLeftStart.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/head/TiltRightEnd.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/head/TiltRightEnd.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/head/TiltRightStart.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/head/TiltRightStart.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/posture/Dancing.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/posture/Dancing.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/posture/TurnLeft.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/posture/TurnLeft.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/posture/TurnLeftEnd.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/posture/TurnLeftEnd.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/posture/TurnLeftStart.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/posture/TurnLeftStart.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/posture/TurnRight.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/posture/TurnRight.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/posture/TurnRightEnd.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/posture/TurnRightEnd.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/posture/TurnRightStart.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animation/posture/TurnRightStart.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animationlogic/AnimationContent3D.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animationlogic/AnimationContent3D.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animationlogic/Animator3D.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/animationlogic/Animator3D.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/body/DownBody3D.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/body/DownBody3D.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/body/FaceWrinkle3D.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/body/FaceWrinkle3D.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/body/FemaleHair3D.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/body/FemaleHair3D.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/body/Head3D.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/body/Head3D.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/body/LeftEar3D.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/body/LeftEar3D.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/body/LeftEye3D.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/body/LeftEye3D.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/body/LeftEyebrow3D.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/body/LeftEyebrow3D.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/body/LeftFinger1.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/body/LeftFinger1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/body/LeftFinger2.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/body/LeftFinger2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/body/LeftFinger3.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/body/LeftFinger3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/body/LeftFinger4.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/body/LeftFinger4.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/body/LeftFoot3D.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/body/LeftFoot3D.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/body/LeftForeArm3D.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/body/LeftForeArm3D.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/body/LeftForeLeg3D.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/body/LeftForeLeg3D.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/body/LeftUpperArm3D.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/body/LeftUpperArm3D.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/body/LeftUpperLeg3D.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/body/LeftUpperLeg3D.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/body/LeftWrist3D.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/body/LeftWrist3D.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/body/MaleHair3D.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/body/MaleHair3D.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/body/Mouth3D.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/body/Mouth3D.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/body/Neck3D.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/body/Neck3D.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/body/Nose3D.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/body/Nose3D.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/body/RightEar3D.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/body/RightEar3D.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/body/RightEye3D$1.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/body/RightEye3D$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/body/RightEye3D$SHAPE.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/body/RightEye3D$SHAPE.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/body/RightEye3D.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/body/RightEye3D.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/body/RightEyebrow3D.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/body/RightEyebrow3D.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/body/RightFinger1.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/body/RightFinger1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/body/RightFinger2.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/body/RightFinger2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/body/RightFinger3.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/body/RightFinger3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/body/RightFinger4.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/body/RightFinger4.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/body/RightFoot3D.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/body/RightFoot3D.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/body/RightForeArm3D.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/body/RightForeArm3D.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/body/RightForeLeg3D.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/body/RightForeLeg3D.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/body/RightUpperArm3D.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/body/RightUpperArm3D.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/body/RightUpperLeg3D.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/body/RightUpperLeg3D.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/body/RightWrist3D.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/body/RightWrist3D.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/body/Stars3D.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/body/Stars3D.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/body/UpperBody3D$1.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/body/UpperBody3D$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/body/UpperBody3D$SHAPE.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/body/UpperBody3D$SHAPE.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/body/UpperBody3D.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/body/UpperBody3D.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/body/UpperBodyAndHead3D.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/body/UpperBodyAndHead3D.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/dynamic/classes/Helper.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/dynamic/classes/Helper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/dynamic/classes/test0.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/dynamic/classes/test0.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/environment/SpeechBubble3D$1.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/environment/SpeechBubble3D$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/environment/SpeechBubble3D$SHAPE.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/environment/SpeechBubble3D$SHAPE.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickman3D/environment/SpeechBubble3D.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickman3D/environment/SpeechBubble3D.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/environmentfx/BombeExplosion.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/environmentfx/BombeExplosion.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/environmentfx/ComeBackFromSmall.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/environmentfx/ComeBackFromSmall.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/environmentfx/ComeUp.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/environmentfx/ComeUp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/environmentfx/DisappearToSmall.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/environmentfx/DisappearToSmall.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/environmentfx/FadeIn.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/environmentfx/FadeIn.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/environmentfx/FadeOut.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/environmentfx/FadeOut.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/environmentfx/GoDown.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/environmentfx/GoDown.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/environmentfx/Speaking.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/environmentfx/Speaking.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/environmentfx/event/Speaking.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/environmentfx/event/Speaking.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/facefx/Angry.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/facefx/Angry.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/facefx/Angry2.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/facefx/Angry2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/facefx/AngryEnd.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/facefx/AngryEnd.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/facefx/AngrySmallMouth.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/facefx/AngrySmallMouth.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/facefx/AngrySmallMouthEnd.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/facefx/AngrySmallMouthEnd.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/facefx/AngrySmallMouthStart.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/facefx/AngrySmallMouthStart.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/facefx/AngryStart.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/facefx/AngryStart.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/facefx/Contempt.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/facefx/Contempt.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/facefx/ContemptEnd.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/facefx/ContemptEnd.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/facefx/ContemptStart.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/facefx/ContemptStart.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/facefx/Disgusted.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/facefx/Disgusted.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/facefx/DisgustedEnd.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/facefx/DisgustedEnd.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/facefx/DisgustedStart.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/facefx/DisgustedStart.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/facefx/Embarrassed.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/facefx/Embarrassed.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/facefx/EmbarrassedEnd.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/facefx/EmbarrassedEnd.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/facefx/EmbarrassedStart.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/facefx/EmbarrassedStart.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/facefx/Excited.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/facefx/Excited.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/facefx/ExcitedEnd.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/facefx/ExcitedEnd.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/facefx/ExcitedStart.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/facefx/ExcitedStart.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/facefx/Fear.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/facefx/Fear.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/facefx/FearEnd.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/facefx/FearEnd.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/facefx/FearStart.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/facefx/FearStart.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/facefx/Happy.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/facefx/Happy.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/facefx/HappyEnd.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/facefx/HappyEnd.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/facefx/HappyStart.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/facefx/HappyStart.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/facefx/Loved.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/facefx/Loved.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/facefx/Loved1.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/facefx/Loved1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/facefx/LovedEnd.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/facefx/LovedEnd.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/facefx/LovedStart.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/facefx/LovedStart.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/facefx/Mouth_Default.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/facefx/Mouth_Default.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/facefx/Mouth_FIVE.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/facefx/Mouth_FIVE.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/facefx/Mouth_FOUR.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/facefx/Mouth_FOUR.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/facefx/Mouth_NINE.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/facefx/Mouth_NINE.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/facefx/Mouth_O.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/facefx/Mouth_O.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/facefx/Mouth_ONE.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/facefx/Mouth_ONE.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/facefx/Mouth_SEVEN.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/facefx/Mouth_SEVEN.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/facefx/Mouth_SIX.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/facefx/Mouth_SIX.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/facefx/Mouth_THREE.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/facefx/Mouth_THREE.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/facefx/Mouth_TWO.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/facefx/Mouth_TWO.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/facefx/Sad.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/facefx/Sad.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/facefx/SadEnd.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/facefx/SadEnd.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/facefx/SadStart.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/facefx/SadStart.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/facefx/Smile.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/facefx/Smile.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/facefx/SmileEnd.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/facefx/SmileEnd.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/facefx/SmileStart.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/facefx/SmileStart.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/facefx/Surprised.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/facefx/Surprised.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/facefx/SurprisedEnd.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/facefx/SurprisedEnd.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/facefx/SurprisedStart.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/facefx/SurprisedStart.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/facefx/ThinkOfLove.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/facefx/ThinkOfLove.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/gesturefx/CoverMouth.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/gesturefx/CoverMouth.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/gesturefx/TouchHead.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/gesturefx/TouchHead.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/gesturefx/WaveLeft.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/gesturefx/WaveLeft.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/gesturefx/WaveRight.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/gesturefx/WaveRight.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/headfx/Blink.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/headfx/Blink.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/headfx/HeadShake.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/headfx/HeadShake.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/headfx/HeadTilt.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/headfx/HeadTilt.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/headfx/LookLeft.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/headfx/LookLeft.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/headfx/LookRight.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/headfx/LookRight.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/headfx/Muster.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/headfx/Muster.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/headfx/Nod.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/headfx/Nod.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/headfx/Nod2.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/headfx/Nod2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/headfx/TiltLeft.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/headfx/TiltLeft.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/headfx/TiltLeftBack.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animation/headfx/TiltLeftBack.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animationlogic/AnimationContentFX.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animationlogic/AnimationContentFX.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animationlogic/AnimatorFX.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/animationlogic/AnimatorFX.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/bodyfx/BombeFX$1.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/bodyfx/BombeFX$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/bodyfx/BombeFX$SHAPE.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/bodyfx/BombeFX$SHAPE.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/bodyfx/BombeFX.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/bodyfx/BombeFX.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/bodyfx/FaceWrinkleFX$1.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/bodyfx/FaceWrinkleFX$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/bodyfx/FaceWrinkleFX$SHAPE.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/bodyfx/FaceWrinkleFX$SHAPE.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/bodyfx/FaceWrinkleFX.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/bodyfx/FaceWrinkleFX.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/bodyfx/FemaleHairFX.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/bodyfx/FemaleHairFX.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/bodyfx/HeadFX.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/bodyfx/HeadFX.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/bodyfx/LeftEyeFX$1.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/bodyfx/LeftEyeFX$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/bodyfx/LeftEyeFX$SHAPE.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/bodyfx/LeftEyeFX$SHAPE.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/bodyfx/LeftEyeFX.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/bodyfx/LeftEyeFX.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/bodyfx/LeftEyebrowFX$1.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/bodyfx/LeftEyebrowFX$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/bodyfx/LeftEyebrowFX$SHAPE.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/bodyfx/LeftEyebrowFX$SHAPE.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/bodyfx/LeftEyebrowFX.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/bodyfx/LeftEyebrowFX.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/bodyfx/LeftFootFX.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/bodyfx/LeftFootFX.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/bodyfx/LeftForeArmFX.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/bodyfx/LeftForeArmFX.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/bodyfx/LeftForeLegFX.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/bodyfx/LeftForeLegFX.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/bodyfx/LeftHandFX.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/bodyfx/LeftHandFX.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/bodyfx/LeftLegFX.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/bodyfx/LeftLegFX.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/bodyfx/LeftShoulderFX.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/bodyfx/LeftShoulderFX.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/bodyfx/LeftUpperArmFX.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/bodyfx/LeftUpperArmFX.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/bodyfx/LeftUpperLegFX.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/bodyfx/LeftUpperLegFX.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/bodyfx/MaleHairFX.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/bodyfx/MaleHairFX.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/bodyfx/MouthFX$1.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/bodyfx/MouthFX$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/bodyfx/MouthFX$SHAPE.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/bodyfx/MouthFX$SHAPE.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/bodyfx/MouthFX.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/bodyfx/MouthFX.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/bodyfx/NeckFX.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/bodyfx/NeckFX.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/bodyfx/NoseFX$1.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/bodyfx/NoseFX$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/bodyfx/NoseFX$SHAPE.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/bodyfx/NoseFX$SHAPE.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/bodyfx/NoseFX.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/bodyfx/NoseFX.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/bodyfx/RightEyeFX$1.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/bodyfx/RightEyeFX$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/bodyfx/RightEyeFX$SHAPE.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/bodyfx/RightEyeFX$SHAPE.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/bodyfx/RightEyeFX.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/bodyfx/RightEyeFX.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/bodyfx/RightEyebrowFX$1.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/bodyfx/RightEyebrowFX$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/bodyfx/RightEyebrowFX$SHAPE.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/bodyfx/RightEyebrowFX$SHAPE.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/bodyfx/RightEyebrowFX.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/bodyfx/RightEyebrowFX.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/bodyfx/RightFootFX.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/bodyfx/RightFootFX.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/bodyfx/RightForeArmFX.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/bodyfx/RightForeArmFX.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/bodyfx/RightForeLegFX.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/bodyfx/RightForeLegFX.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/bodyfx/RightHandFX.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/bodyfx/RightHandFX.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/bodyfx/RightLegFX.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/bodyfx/RightLegFX.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/bodyfx/RightShoulderFX.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/bodyfx/RightShoulderFX.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/bodyfx/RightUpperArmFX.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/bodyfx/RightUpperArmFX.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/bodyfx/RightUpperLegFX.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/bodyfx/RightUpperLegFX.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/bodyfx/StarsFX$1.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/bodyfx/StarsFX$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/bodyfx/StarsFX$SHAPE.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/bodyfx/StarsFX$SHAPE.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/bodyfx/StarsFX.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/bodyfx/StarsFX.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/bodyfx/ThinkFX$1.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/bodyfx/ThinkFX$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/bodyfx/ThinkFX$SHAPE.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/bodyfx/ThinkFX$SHAPE.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/bodyfx/ThinkFX.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/bodyfx/ThinkFX.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/environmentfx/SpeechBubbleFX$1.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/environmentfx/SpeechBubbleFX$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/environmentfx/SpeechBubbleFX$SHAPE.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/environmentfx/SpeechBubbleFX$SHAPE.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/environmentfx/SpeechBubbleFX.class" afterPath="$PROJECT_DIR$/bin/de/dfki/stickmanFX/environmentfx/SpeechBubbleFX.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/de/dfki/test/testStickmanFX.class" afterPath="$PROJECT_DIR$/bin/de/dfki/test/testStickmanFX.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/artifacts/Stickman_jar/Stickman.jar" afterPath="$PROJECT_DIR$/classes/artifacts/Stickman_jar/Stickman.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/reeti/animationlogic/AnimationContentReeti.java" afterPath="$PROJECT_DIR$/src/de/dfki/reeti/animationlogic/AnimationContentReeti.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/reeti/animationlogic/AnimatorReeti.java" afterPath="$PROJECT_DIR$/src/de/dfki/reeti/animationlogic/AnimatorReeti.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/reeti/body/Body.java" afterPath="$PROJECT_DIR$/src/de/dfki/reeti/body/Body.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/reeti/body/Head.java" afterPath="$PROJECT_DIR$/src/de/dfki/reeti/body/Head.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/reeti/body/LeftCheek.java" afterPath="$PROJECT_DIR$/src/de/dfki/reeti/body/LeftCheek.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/reeti/body/LeftEar.java" afterPath="$PROJECT_DIR$/src/de/dfki/reeti/body/LeftEar.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/reeti/body/LeftEye.java" afterPath="$PROJECT_DIR$/src/de/dfki/reeti/body/LeftEye.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/reeti/body/LeftEyelid.java" afterPath="$PROJECT_DIR$/src/de/dfki/reeti/body/LeftEyelid.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/reeti/body/Mouth.java" afterPath="$PROJECT_DIR$/src/de/dfki/reeti/body/Mouth.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/reeti/body/MouthDownLip.java" afterPath="$PROJECT_DIR$/src/de/dfki/reeti/body/MouthDownLip.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/reeti/body/MouthLeftCorner.java" afterPath="$PROJECT_DIR$/src/de/dfki/reeti/body/MouthLeftCorner.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/reeti/body/MouthRightCorner.java" afterPath="$PROJECT_DIR$/src/de/dfki/reeti/body/MouthRightCorner.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/reeti/body/MouthUpperLip.java" afterPath="$PROJECT_DIR$/src/de/dfki/reeti/body/MouthUpperLip.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/reeti/body/Neck.java" afterPath="$PROJECT_DIR$/src/de/dfki/reeti/body/Neck.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/reeti/body/RightCheek.java" afterPath="$PROJECT_DIR$/src/de/dfki/reeti/body/RightCheek.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/reeti/body/RightEar.java" afterPath="$PROJECT_DIR$/src/de/dfki/reeti/body/RightEar.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/reeti/body/RightEye.java" afterPath="$PROJECT_DIR$/src/de/dfki/reeti/body/RightEye.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/reeti/body/RightEyelid.java" afterPath="$PROJECT_DIR$/src/de/dfki/reeti/body/RightEyelid.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/reeti/body/PartReeti.java" afterPath="$PROJECT_DIR$/src/de/dfki/reeti/body/PartReeti.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/reeti/environment/SpeechBubbleFX.java" afterPath="$PROJECT_DIR$/src/de/dfki/reeti/environment/SpeechBubbleFX.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/stickman3D/animationlogic/AnimationContent3D.java" afterPath="$PROJECT_DIR$/src/de/dfki/stickman3D/animationlogic/AnimationContent3D.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/stickman3D/animationlogic/Animator3D.java" afterPath="$PROJECT_DIR$/src/de/dfki/stickman3D/animationlogic/Animator3D.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/stickman3D/body/DownBody3D.java" afterPath="$PROJECT_DIR$/src/de/dfki/stickman3D/body/DownBody3D.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/stickman3D/body/FaceWrinkle3D.java" afterPath="$PROJECT_DIR$/src/de/dfki/stickman3D/body/FaceWrinkle3D.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/stickman3D/body/FemaleHair3D.java" afterPath="$PROJECT_DIR$/src/de/dfki/stickman3D/body/FemaleHair3D.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/stickman3D/body/Head3D.java" afterPath="$PROJECT_DIR$/src/de/dfki/stickman3D/body/Head3D.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/stickman3D/body/LeftEar3D.java" afterPath="$PROJECT_DIR$/src/de/dfki/stickman3D/body/LeftEar3D.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/stickman3D/body/LeftEye3D.java" afterPath="$PROJECT_DIR$/src/de/dfki/stickman3D/body/LeftEye3D.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/stickman3D/body/LeftEyebrow3D.java" afterPath="$PROJECT_DIR$/src/de/dfki/stickman3D/body/LeftEyebrow3D.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/stickman3D/body/LeftFinger1.java" afterPath="$PROJECT_DIR$/src/de/dfki/stickman3D/body/LeftFinger1.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/stickman3D/body/LeftFinger2.java" afterPath="$PROJECT_DIR$/src/de/dfki/stickman3D/body/LeftFinger2.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/stickman3D/body/LeftFinger3.java" afterPath="$PROJECT_DIR$/src/de/dfki/stickman3D/body/LeftFinger3.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/stickman3D/body/LeftFinger4.java" afterPath="$PROJECT_DIR$/src/de/dfki/stickman3D/body/LeftFinger4.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/stickman3D/body/LeftFoot3D.java" afterPath="$PROJECT_DIR$/src/de/dfki/stickman3D/body/LeftFoot3D.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/stickman3D/body/LeftForeArm3D.java" afterPath="$PROJECT_DIR$/src/de/dfki/stickman3D/body/LeftForeArm3D.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/stickman3D/body/LeftForeLeg3D.java" afterPath="$PROJECT_DIR$/src/de/dfki/stickman3D/body/LeftForeLeg3D.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/stickman3D/body/LeftUpperArm3D.java" afterPath="$PROJECT_DIR$/src/de/dfki/stickman3D/body/LeftUpperArm3D.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/stickman3D/body/LeftUpperLeg3D.java" afterPath="$PROJECT_DIR$/src/de/dfki/stickman3D/body/LeftUpperLeg3D.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/stickman3D/body/LeftWrist3D.java" afterPath="$PROJECT_DIR$/src/de/dfki/stickman3D/body/LeftWrist3D.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/stickman3D/body/MaleHair3D.java" afterPath="$PROJECT_DIR$/src/de/dfki/stickman3D/body/MaleHair3D.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/stickman3D/body/Mouth3D.java" afterPath="$PROJECT_DIR$/src/de/dfki/stickman3D/body/Mouth3D.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/stickman3D/body/Neck3D.java" afterPath="$PROJECT_DIR$/src/de/dfki/stickman3D/body/Neck3D.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/stickman3D/body/Nose3D.java" afterPath="$PROJECT_DIR$/src/de/dfki/stickman3D/body/Nose3D.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/stickman3D/body/RightEar3D.java" afterPath="$PROJECT_DIR$/src/de/dfki/stickman3D/body/RightEar3D.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/stickman3D/body/RightEye3D.java" afterPath="$PROJECT_DIR$/src/de/dfki/stickman3D/body/RightEye3D.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/stickman3D/body/RightEyebrow3D.java" afterPath="$PROJECT_DIR$/src/de/dfki/stickman3D/body/RightEyebrow3D.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/stickman3D/body/RightFinger1.java" afterPath="$PROJECT_DIR$/src/de/dfki/stickman3D/body/RightFinger1.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/stickman3D/body/RightFinger2.java" afterPath="$PROJECT_DIR$/src/de/dfki/stickman3D/body/RightFinger2.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/stickman3D/body/RightFinger3.java" afterPath="$PROJECT_DIR$/src/de/dfki/stickman3D/body/RightFinger3.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/stickman3D/body/RightFinger4.java" afterPath="$PROJECT_DIR$/src/de/dfki/stickman3D/body/RightFinger4.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/stickman3D/body/RightFoot3D.java" afterPath="$PROJECT_DIR$/src/de/dfki/stickman3D/body/RightFoot3D.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/stickman3D/body/RightForeArm3D.java" afterPath="$PROJECT_DIR$/src/de/dfki/stickman3D/body/RightForeArm3D.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/stickman3D/body/RightForeLeg3D.java" afterPath="$PROJECT_DIR$/src/de/dfki/stickman3D/body/RightForeLeg3D.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/stickman3D/body/RightUpperArm3D.java" afterPath="$PROJECT_DIR$/src/de/dfki/stickman3D/body/RightUpperArm3D.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/stickman3D/body/RightUpperLeg3D.java" afterPath="$PROJECT_DIR$/src/de/dfki/stickman3D/body/RightUpperLeg3D.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/stickman3D/body/RightWrist3D.java" afterPath="$PROJECT_DIR$/src/de/dfki/stickman3D/body/RightWrist3D.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/stickman3D/body/Stars3D.java" afterPath="$PROJECT_DIR$/src/de/dfki/stickman3D/body/Stars3D.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/stickman3D/body/UpperBody3D.java" afterPath="$PROJECT_DIR$/src/de/dfki/stickman3D/body/UpperBody3D.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/stickman3D/body/UpperBodyAndHead3D.java" afterPath="$PROJECT_DIR$/src/de/dfki/stickman3D/body/UpperBodyAndHead3D.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/stickman3D/dynamic/classes/Helper.java" afterPath="$PROJECT_DIR$/src/de/dfki/stickman3D/dynamic/classes/Helper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/stickman3D/body/PartStickman3D.java" afterPath="$PROJECT_DIR$/src/de/dfki/stickman3D/body/PartStickman3D.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/stickman3D/environment/SpeechBubble3D.java" afterPath="$PROJECT_DIR$/src/de/dfki/stickman3D/environment/SpeechBubble3D.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/stickmanFX/StickmanFX.java" afterPath="$PROJECT_DIR$/src/de/dfki/stickmanFX/StickmanFX.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/stickmanFX/animationlogic/AnimationContentFX.java" afterPath="$PROJECT_DIR$/src/de/dfki/stickmanFX/animationlogic/AnimationContentFX.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/stickmanFX/animationlogic/AnimatorFX.java" afterPath="$PROJECT_DIR$/src/de/dfki/stickmanFX/animationlogic/AnimatorFX.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/BombeFX.java" afterPath="$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/BombeFX.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/FaceWrinkleFX.java" afterPath="$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/FaceWrinkleFX.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/FemaleHairFX.java" afterPath="$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/FemaleHairFX.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/HeadFX.java" afterPath="$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/HeadFX.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/LeftEyeFX.java" afterPath="$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/LeftEyeFX.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/LeftEyebrowFX.java" afterPath="$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/LeftEyebrowFX.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/LeftFootFX.java" afterPath="$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/LeftFootFX.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/LeftForeArmFX.java" afterPath="$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/LeftForeArmFX.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/LeftForeLegFX.java" afterPath="$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/LeftForeLegFX.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/LeftHandFX.java" afterPath="$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/LeftHandFX.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/LeftLegFX.java" afterPath="$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/LeftLegFX.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/LeftShoulderFX.java" afterPath="$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/LeftShoulderFX.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/LeftUpperArmFX.java" afterPath="$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/LeftUpperArmFX.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/LeftUpperLegFX.java" afterPath="$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/LeftUpperLegFX.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/MaleHairFX.java" afterPath="$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/MaleHairFX.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/MouthFX.java" afterPath="$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/MouthFX.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/NeckFX.java" afterPath="$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/NeckFX.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/NoseFX.java" afterPath="$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/NoseFX.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/PartStickman2D.java" afterPath="$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/PartStickman2D.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/RightEyeFX.java" afterPath="$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/RightEyeFX.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/RightEyebrowFX.java" afterPath="$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/RightEyebrowFX.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/RightFootFX.java" afterPath="$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/RightFootFX.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/RightForeArmFX.java" afterPath="$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/RightForeArmFX.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/RightForeLegFX.java" afterPath="$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/RightForeLegFX.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/RightHandFX.java" afterPath="$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/RightHandFX.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/RightLegFX.java" afterPath="$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/RightLegFX.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/RightShoulderFX.java" afterPath="$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/RightShoulderFX.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/RightUpperArmFX.java" afterPath="$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/RightUpperArmFX.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/RightUpperLegFX.java" afterPath="$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/RightUpperLegFX.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/StarsFX.java" afterPath="$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/StarsFX.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/ThinkFX.java" afterPath="$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/ThinkFX.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/stickmanFX/environmentfx/SpeechBubbleFX.java" afterPath="$PROJECT_DIR$/src/de/dfki/stickmanFX/environmentfx/SpeechBubbleFX.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/dfki/test/testStickmanFX.java" afterPath="$PROJECT_DIR$/src/de/dfki/test/testStickmanFX.java" />
     </list>
     <ignored path="Stickman.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -476,21 +62,8 @@
       <file leaf-file-name="PartReeti.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/de/dfki/reeti/body/PartReeti.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="217">
-              <caret line="165" column="16" lean-forward="false" selection-start-line="165" selection-start-column="16" selection-end-line="165" selection-end-column="16" />
-              <folding>
-                <element signature="e#4717#4718#0" expanded="true" />
-                <element signature="e#4746#4747#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SpeechBubbleFX.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/de/dfki/reeti/environment/SpeechBubbleFX.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="217">
-              <caret line="52" column="16" lean-forward="false" selection-start-line="52" selection-start-column="16" selection-end-line="52" selection-end-column="16" />
+            <state relative-caret-position="157">
+              <caret line="184" column="5" lean-forward="false" selection-start-line="184" selection-start-column="5" selection-end-line="184" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -499,8 +72,8 @@
       <file leaf-file-name="PartStickman3D.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/de/dfki/stickman3D/body/PartStickman3D.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="172" column="19" lean-forward="false" selection-start-line="172" selection-start-column="19" selection-end-line="172" selection-end-column="19" />
+            <state relative-caret-position="480">
+              <caret line="190" column="5" lean-forward="false" selection-start-line="190" selection-start-column="5" selection-end-line="190" selection-end-column="5" />
               <folding>
                 <element signature="e#1062#1063#0" expanded="true" />
                 <element signature="e#1142#1143#0" expanded="true" />
@@ -512,19 +85,7 @@
                 <element signature="e#2850#2851#0" expanded="true" />
                 <element signature="e#2900#2901#0" expanded="true" />
                 <element signature="e#2977#2978#0" expanded="true" />
-                <element signature="e#4954#4955#0" expanded="true" />
-                <element signature="e#4983#4984#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SpeechBubble3D.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/de/dfki/stickman3D/environment/SpeechBubble3D.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="46" column="27" lean-forward="false" selection-start-line="46" selection-start-column="16" selection-end-line="46" selection-end-column="27" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -532,21 +93,29 @@
       <file leaf-file-name="PartStickman2D.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/PartStickman2D.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="217">
-              <caret line="145" column="29" lean-forward="false" selection-start-line="145" selection-start-column="29" selection-end-line="145" selection-end-column="29" />
+            <state relative-caret-position="189">
+              <caret line="142" column="0" lean-forward="false" selection-start-line="142" selection-start-column="0" selection-end-line="142" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LeftEyeFX.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/LeftEyeFX.java">
+      <file leaf-file-name="RightHandFX.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/RightHandFX.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="321">
-              <caret line="57" column="16" lean-forward="false" selection-start-line="57" selection-start-column="16" selection-end-line="57" selection-end-column="16" />
-              <folding>
-                <marker date="1501185037128" expanded="true" signature="15316:15399" ph="{...}" />
-              </folding>
+            <state relative-caret-position="156">
+              <caret line="109" column="0" lean-forward="false" selection-start-line="109" selection-start-column="0" selection-end-line="109" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RightLegFX.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/RightLegFX.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="311">
+              <caret line="35" column="35" lean-forward="false" selection-start-line="35" selection-start-column="35" selection-end-line="35" selection-end-column="35" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -596,7 +165,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>leftEar</find>
       <find>r</find>
       <find>rec</find>
       <find>rec0</find>
@@ -626,6 +194,7 @@
       <find>stickamnsOnStage</find>
       <find>neckRota</find>
       <find>step</find>
+      <find>public void calculate(int step)</find>
     </findStrings>
     <replaceStrings>
       <replace>protected</replace>
@@ -658,21 +227,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/de/dfki/stickmanSwing/stage/StickmansOnStageSwing.java" />
-        <option value="$PROJECT_DIR$/src/de/dfki/stickman3D/client/ClientConnectionHandlerFX.java" />
-        <option value="$PROJECT_DIR$/src/de/dfki/stickmanSwing/stage/StickmanStageSwing.java" />
-        <option value="$PROJECT_DIR$/src/de/dfki/stickmanSwing/client/XMLCommandParserSwing.java" />
-        <option value="$PROJECT_DIR$/src/de/dfki/stickmanSwing/StickmanSwing.java" />
-        <option value="$PROJECT_DIR$/src/de/dfki/stickmanSwing/animationlogic/util/Interpolator.java" />
-        <option value="$PROJECT_DIR$/src/de/dfki/stickmanSwing/client/ClientConnectionHandler.java" />
-        <option value="$PROJECT_DIR$/src/de/dfki/reeti/client/ClientConnectionHandlerFX.java" />
-        <option value="$PROJECT_DIR$/src/de/dfki/stickmanFX/client/ClientConnectionHandlerFX.java" />
-        <option value="$PROJECT_DIR$/src/de/dfki/stickmanSwing/decorators/StageRoomNetworkSwingDecorator.java" />
-        <option value="$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/RightEyeFX.java" />
-        <option value="$PROJECT_DIR$/src/de/dfki/stickmanFX/animationlogic/AnimationLoaderFX.java" />
-        <option value="$PROJECT_DIR$/src/de/dfki/stickman3D/stage/StickmansOnStage3D.java" />
-        <option value="$PROJECT_DIR$/src/de/dfki/common/agent/Stickman.java" />
-        <option value="$PROJECT_DIR$/src/de/dfki/common/enums/Gender.java" />
         <option value="$PROJECT_DIR$/src/de/dfki/common/enums/Orientation.java" />
         <option value="$PROJECT_DIR$/src/de/dfki/stickman3D/body/UpperBody3D.java" />
         <option value="$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/BodyFX.java" />
@@ -702,13 +256,28 @@
         <option value="$PROJECT_DIR$/src/de/dfki/stickman3D/body/PartStickman3DD.java" />
         <option value="$PROJECT_DIR$/src/de/dfki/common/part/Part.java" />
         <option value="$PROJECT_DIR$/src/de/dfki/common/part/Part2D.java" />
-        <option value="$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/PartStickman2D.java" />
         <option value="$PROJECT_DIR$/src/de/dfki/common/part/Part3D.java" />
         <option value="$PROJECT_DIR$/src/de/dfki/reeti/body/PartReeti.java" />
         <option value="$PROJECT_DIR$/src/de/dfki/reeti/environment/SpeechBubbleFX.java" />
-        <option value="$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/LeftEyeFX.java" />
         <option value="$PROJECT_DIR$/src/de/dfki/stickman3D/body/PartStickman3D.java" />
         <option value="$PROJECT_DIR$/src/de/dfki/stickman3D/environment/SpeechBubble3D.java" />
+        <option value="$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/PartStickman2D.java" />
+        <option value="$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/StarsFX.java" />
+        <option value="$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/FaceWrinkleFX.java" />
+        <option value="$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/MouthFX.java" />
+        <option value="$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/LeftEyebrowFX.java" />
+        <option value="$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/RightEyebrowFX.java" />
+        <option value="$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/LeftLegFX.java" />
+        <option value="$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/NoseFX.java" />
+        <option value="$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/NeckFX.java" />
+        <option value="$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/ThinkFX.java" />
+        <option value="$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/BombeFX.java" />
+        <option value="$PROJECT_DIR$/src/de/dfki/stickmanFX/environmentfx/SpeechBubbleFX.java" />
+        <option value="$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/LeftEyeFX.java" />
+        <option value="$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/RightEyeFX.java" />
+        <option value="$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/LeftHandFX.java" />
+        <option value="$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/RightHandFX.java" />
+        <option value="$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/RightLegFX.java" />
       </list>
     </option>
   </component>
@@ -1565,7 +1134,7 @@
       <workItem from="1499342736746" duration="4651000" />
       <workItem from="1500566969042" duration="4002000" />
       <workItem from="1501162289697" duration="4941000" />
-      <workItem from="1501177568882" duration="7132000" />
+      <workItem from="1501177568882" duration="7691000" />
     </task>
     <task id="LOCAL-00040" summary="Relaxed">
       <created>1491770082856</created>
@@ -1914,7 +1483,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="318307000" />
+    <option name="totallyTimeSpent" value="318866000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1926,8 +1495,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-17" y="-2" width="1938" height="1060" extended-state="0" />
-    <editor active="true" />
+    <frame x="-17" y="-2" width="1938" height="1060" extended-state="1" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32887402" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1938,15 +1506,15 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28874025" sideWeight="0.5021482" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28874025" sideWeight="0.49785176" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28874025" sideWeight="0.49785176" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3277592" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32887402" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20139635" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20139635" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19397993" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19397993" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19479166" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1991,13 +1559,13 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" x="96" y="96" width="1728" height="834" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28874025" sideWeight="0.49785176" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28874025" sideWeight="0.49785176" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3277592" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32921588" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32887402" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20139635" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run with VisualVM" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19397993" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19397993" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Debug with VisualVM" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
@@ -2164,59 +1732,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/de/dfki/stickmanSwing/animationlogic/AnimationContentSwing.java" />
-    <entry file="file://$PROJECT_DIR$/src/de/dfki/stickmanSwing/animationlogic/AnimationSwing.java" />
-    <entry file="file://$PROJECT_DIR$/src/de/dfki/stickmanSwing/animationlogic/AnimationScheduler.java" />
-    <entry file="file://$PROJECT_DIR$/src/de/dfki/stickmanSwing/animationlogic/AnimationLoaderSwing.java" />
-    <entry file="file://$PROJECT_DIR$/src/de/dfki/stickmanSwing/client/XMLCommandParserSwing.java" />
-    <entry file="file://$PROJECT_DIR$/src/de/dfki/stickmanSwing/StickmanSwing.java" />
-    <entry file="file://$PROJECT_DIR$/src/de/dfki/stickmanSwing/animationlogic/util/Interpolator.java" />
-    <entry file="file://$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/RightEyeFX.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9150">
-          <caret line="315" column="0" lean-forward="false" selection-start-line="315" selection-start-column="0" selection-end-line="315" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <marker date="1501185037182" expanded="true" signature="15458:15541" ph="{...}" />
-            <marker date="1501185037182" expanded="true" signature="15669:15891" ph="{...}" />
-            <marker date="1501185037182" expanded="true" signature="15671:15822" ph="//..." />
-            <marker date="1501185037182" expanded="true" signature="15968:16254" ph="{...}" />
-            <marker date="1501185037182" expanded="true" signature="15970:16121" ph="//..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/de/dfki/stickmanSwing/stage/StickmanStageSwing.java" />
-    <entry file="file://$PROJECT_DIR$/src/de/dfki/stickmanSwing/client/ClientConnectionHandler.java" />
-    <entry file="file://$PROJECT_DIR$/src/de/dfki/reeti/client/ClientConnectionHandlerFX.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3180">
-          <caret line="116" column="13" lean-forward="false" selection-start-line="116" selection-start-column="13" selection-end-line="116" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/de/dfki/stickmanFX/client/ClientConnectionHandlerFX.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3180">
-          <caret line="118" column="13" lean-forward="false" selection-start-line="118" selection-start-column="13" selection-end-line="118" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/de/dfki/stickmanSwing/decorators/StageRoomNetworkSwingDecorator.java" />
-    <entry file="file://$PROJECT_DIR$/src/de/dfki/stickmanFX/animationlogic/AnimationLoaderFX.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="419">
-          <caret line="125" column="9" lean-forward="false" selection-start-line="125" selection-start-column="9" selection-end-line="125" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/de/dfki/stickman3D/stage/StickmansOnStage3D.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/de/dfki/common/enums/Orientation.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -2622,25 +2137,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/de/dfki/reeti/body/PartReeti.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="165" column="16" lean-forward="false" selection-start-line="165" selection-start-column="16" selection-end-line="165" selection-end-column="16" />
-          <folding>
-            <element signature="e#4717#4718#0" expanded="true" />
-            <element signature="e#4746#4747#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/de/dfki/reeti/environment/SpeechBubbleFX.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="52" column="16" lean-forward="false" selection-start-line="52" selection-start-column="16" selection-end-line="52" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/LeftUpperArmFX.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1554">
@@ -2649,28 +2145,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/PartStickman2D.java">
+    <entry file="file://$PROJECT_DIR$/src/de/dfki/reeti/environment/SpeechBubbleFX.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="145" column="29" lean-forward="false" selection-start-line="145" selection-start-column="29" selection-end-line="145" selection-end-column="29" />
+        <state relative-caret-position="191">
+          <caret line="51" column="13" lean-forward="true" selection-start-line="51" selection-start-column="13" selection-end-line="51" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/LeftEyeFX.java">
+    <entry file="file://$PROJECT_DIR$/src/de/dfki/reeti/body/PartReeti.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="57" column="16" lean-forward="false" selection-start-line="57" selection-start-column="16" selection-end-line="57" selection-end-column="16" />
-          <folding>
-            <marker date="1501185037128" expanded="true" signature="15316:15399" ph="{...}" />
-          </folding>
+        <state relative-caret-position="157">
+          <caret line="184" column="5" lean-forward="false" selection-start-line="184" selection-start-column="5" selection-end-line="184" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/de/dfki/stickman3D/body/PartStickman3D.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="172" column="19" lean-forward="false" selection-start-line="172" selection-start-column="19" selection-end-line="172" selection-end-column="19" />
+        <state relative-caret-position="480">
+          <caret line="190" column="5" lean-forward="false" selection-start-line="190" selection-start-column="5" selection-end-line="190" selection-end-column="5" />
           <folding>
             <element signature="e#1062#1063#0" expanded="true" />
             <element signature="e#1142#1143#0" expanded="true" />
@@ -2682,16 +2176,154 @@
             <element signature="e#2850#2851#0" expanded="true" />
             <element signature="e#2900#2901#0" expanded="true" />
             <element signature="e#2977#2978#0" expanded="true" />
-            <element signature="e#4954#4955#0" expanded="true" />
-            <element signature="e#4983#4984#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/de/dfki/stickman3D/environment/SpeechBubble3D.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="46" column="27" lean-forward="false" selection-start-line="46" selection-start-column="16" selection-end-line="46" selection-end-column="27" />
+        <state relative-caret-position="221">
+          <caret line="46" column="35" lean-forward="false" selection-start-line="46" selection-start-column="35" selection-end-line="46" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/StarsFX.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="79" column="35" lean-forward="false" selection-start-line="79" selection-start-column="35" selection-end-line="79" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/FaceWrinkleFX.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="131">
+          <caret line="50" column="35" lean-forward="false" selection-start-line="50" selection-start-column="35" selection-end-line="50" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/MouthFX.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="52" column="35" lean-forward="false" selection-start-line="52" selection-start-column="4" selection-end-line="52" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/LeftEyebrowFX.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="56" column="35" lean-forward="false" selection-start-line="56" selection-start-column="35" selection-end-line="56" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/RightEyebrowFX.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="50" column="35" lean-forward="false" selection-start-line="50" selection-start-column="35" selection-end-line="50" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/LeftLegFX.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="33" column="35" lean-forward="false" selection-start-line="33" selection-start-column="35" selection-end-line="33" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/NoseFX.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="53" column="35" lean-forward="false" selection-start-line="53" selection-start-column="35" selection-end-line="53" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/NeckFX.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="42" column="35" lean-forward="false" selection-start-line="42" selection-start-column="35" selection-end-line="42" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/ThinkFX.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="51" column="35" lean-forward="false" selection-start-line="51" selection-start-column="35" selection-end-line="51" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/BombeFX.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="55" column="35" lean-forward="false" selection-start-line="55" selection-start-column="35" selection-end-line="55" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/dfki/stickmanFX/environmentfx/SpeechBubbleFX.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="49" column="35" lean-forward="false" selection-start-line="49" selection-start-column="35" selection-end-line="49" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/LeftEyeFX.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="57" column="35" lean-forward="false" selection-start-line="57" selection-start-column="35" selection-end-line="57" selection-end-column="35" />
+          <folding>
+            <marker date="1501187697028" expanded="true" signature="15322:15405" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/RightEyeFX.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="59" column="35" lean-forward="false" selection-start-line="59" selection-start-column="35" selection-end-line="59" selection-end-column="35" />
+          <folding>
+            <marker date="1501187697042" expanded="true" signature="15464:15547" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/LeftHandFX.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="101" column="0" lean-forward="true" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/PartStickman2D.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="142" column="0" lean-forward="false" selection-start-line="142" selection-start-column="0" selection-end-line="142" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/RightHandFX.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="109" column="0" lean-forward="false" selection-start-line="109" selection-start-column="0" selection-end-line="109" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/dfki/stickmanFX/bodyfx/RightLegFX.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="311">
+          <caret line="35" column="35" lean-forward="false" selection-start-line="35" selection-start-column="35" selection-end-line="35" selection-end-column="35" />
           <folding />
         </state>
       </provider>

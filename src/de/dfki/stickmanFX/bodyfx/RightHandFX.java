@@ -44,7 +44,7 @@ public class RightHandFX extends PartStickman2D
     }
 
     @Override
-    public void createShape() {
+    public void calculate(int step) {
         mStart = mRightForeArmFX.getHandStartPosition();
         mEnd = new Point(mStart.x, mStart.y + mLength);
 
@@ -87,11 +87,6 @@ public class RightHandFX extends PartStickman2D
         addToDrawObjects(mHand);
         this.toFront();
         update();
-    }
-
-    @Override
-    public void calculate(int step) {
-        createShape();
 
         Affine af = new Affine();
         // AffineTransform t = new AffineTransform();

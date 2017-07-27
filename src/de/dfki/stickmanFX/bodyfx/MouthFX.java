@@ -50,7 +50,7 @@ public class MouthFX extends PartStickman2D
     }
 
     @Override
-    public void createShape() {
+    public void calculate(int step) {
         mStart = mHeadFX.getMouthPostion();
         mEnd = new Point(mStart.x + mLength / 2, mStart.y);
 

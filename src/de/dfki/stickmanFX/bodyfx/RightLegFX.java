@@ -33,7 +33,7 @@ public class RightLegFX extends PartStickman2D
     }
 
     @Override
-    public void createShape() {
+    public void calculate(int step) {
         mStart = mBodyFX.getRightLegStartPostion();
         mEnd = new Point(mStart.x, mStart.y + mLength);
 

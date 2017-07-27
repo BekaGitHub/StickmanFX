@@ -48,7 +48,7 @@ public class RightEyebrowFX extends PartStickman2D
     }
 
     @Override
-    public void createShape() {
+    public void calculate(int step) {
         mStart = mHeadFX.getRightEyebrowPostion();
         mEnd = new Point(mStart.x - mLength, mStart.y);
 

@@ -117,10 +117,6 @@ public abstract class PartStickman2D extends Part2D
         // place code for setting shape
     }
 
-    public void createShape() {
-        // create the shape
-    }
-
     public synchronized void calculateShape(int step) {
         mShapeAnimationStep = step;
 
@@ -144,7 +140,6 @@ public abstract class PartStickman2D extends Part2D
     }
 
     public synchronized void calculate(int step) {
-        createShape();
 
         Affine af = new Affine();
         af.appendTranslation(0, mTranslation);
