@@ -61,10 +61,7 @@ public abstract class PartStickman2D extends Part2D
     public BasicStroke mStroke = new BasicStroke(3.0f, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND);
 
     public void init() {
-        this.setPrefHeight(mSize.height);
-        this.setPrefWidth(mSize.width);
-
-        calculate(0);
+        super.init();
     }
 
     public void setTranslation(int length) {

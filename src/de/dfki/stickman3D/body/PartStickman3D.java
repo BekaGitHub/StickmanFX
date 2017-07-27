@@ -26,13 +26,11 @@ public abstract class PartStickman3D extends Part3D
 
     public void init()
     {
-        this.setPrefHeight(mSize.height);
-        this.setPrefWidth(mSize.width);
         mColorRecorder = mColor;
         mXRotatationRecorder = mXRotation;
         mYRotatationRecorder = mYRotation;
         mZRotatationRecorder = mZRotation;
-        calculate(0);
+        super.init();
     }
 
     public void set_X_Translation(int length)

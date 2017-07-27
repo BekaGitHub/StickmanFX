@@ -23,9 +23,7 @@ public abstract class PartReeti extends Part3D
 
     public void init()
     {
-        this.setPrefHeight(mSize.height);
-        this.setPrefWidth(mSize.width);
-        calculate(0);
+        super.init();
     }
 
     public void set_X_Translation(int length)

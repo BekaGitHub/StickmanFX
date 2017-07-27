@@ -19,4 +19,13 @@ public abstract class Part extends Pane
     public int mLength = 0;
     public int mShapeAnimationStep = 0;
     public Color mColor = Color.rgb(0, 0, 0);
+
+    public void init()
+    {
+        this.setPrefHeight(mSize.height);
+        this.setPrefWidth(mSize.width);
+        calculate(0);
+    }
+
+    public abstract void calculate(int step);
 }
