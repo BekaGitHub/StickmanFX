@@ -5,9 +5,10 @@
  */
 package de.dfki.stickmanFX.bodyfx;
 
+import de.dfki.common.part.Part;
+import de.dfki.common.part.Part2D;
 import de.dfki.stickmanFX.animationlogic.AnimatorFX;
 import java.awt.BasicStroke;
-import java.awt.Dimension;
 import java.awt.Point;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -19,7 +20,6 @@ import javafx.animation.PathTransition;
 import javafx.animation.Timeline;
 import javafx.application.Platform;
 import javafx.scene.Node;
-import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Ellipse;
 import javafx.scene.shape.MoveTo;
@@ -36,34 +36,20 @@ import javafx.util.Duration;
  * @author Beka Aptsiauri
  *
  */
-public abstract class BodyPartFX extends Pane {
-
-    public enum SHAPE {
-        DEFAULT
-    };
-
-    // variables for size and drawing
-    public Dimension mSize = new Dimension(10, 10);
-    public Point mStart = new Point(0, 0), mEnd = new Point(0, 0);
-    public int mLength = 0;
-
-    public double mAnimationStep = 0;
-    public int mShapeAnimationStep = 0;
+public abstract class PartStickman2D extends Part2D
+{
 
     public int mDefaultTranslation = 0;
     public double mTranslation = mDefaultTranslation;
     public double mToTranslation = mDefaultTranslation;
     public double mTranslationStep = 0.0f;
 
-    public int mDefaultRotation = 0;
-    public Point mDefaultRotationPoint = new Point(0, 0);
     public double mRotation = mDefaultRotation;
     public double mToDegree = mDefaultRotation;
     public double mRotationStep = 0.0f;
 
     List<Path> mGraphicPaths = Collections.synchronizedList(new ArrayList());
 
-    public Color mColor = Color.rgb(0, 0, 0);
     public float mColoropacity = 1.0f;
     
     // used by RestButton.
@@ -149,7 +135,7 @@ public abstract class BodyPartFX extends Pane {
         mGraphicPaths = new ArrayList<>();
     }
 
-    public void clearChildren(BodyPartFX bodyPartFX) {
+    public void clearChildren(PartStickman2D bodyPartFX) {
         bodyPartFX.getChildren().clear();
     }
 

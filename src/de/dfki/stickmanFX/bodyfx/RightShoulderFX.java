@@ -18,7 +18,8 @@ import javafx.scene.transform.Affine;
  * @author Patrick Gebhard
  *
  */
-public class RightShoulderFX extends BodyPartFX {
+public class RightShoulderFX extends PartStickman2D
+{
 
     BodyFX mBodyFX;
 

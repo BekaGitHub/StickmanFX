@@ -11,7 +11,7 @@ import javafx.scene.shape.QuadCurveTo;
 /**
  * @author Beka Aptsiauri
  */
-public class MouthRightCorner extends Parts
+public class MouthRightCorner extends PartReeti
 {
 
     public enum SHAPE

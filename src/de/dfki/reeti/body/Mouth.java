@@ -15,7 +15,7 @@ import javafx.scene.shape.StrokeLineJoin;
 /**
  * @author Beka Aptsiauri
  */
-public class Mouth extends Parts
+public class Mouth extends PartReeti
 {
 
     public enum SHAPE

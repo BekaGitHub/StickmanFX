@@ -581,7 +581,7 @@ public class StickmanFX extends Agent
             mRightEyeFX.update();
             mMouthFX.update();
             mNeckFX.update();
-            // BodyFX is not Parts Classe
+            // BodyFX is not PartReeti Classe
             mBodyFX.calculate();
             mLeftShoulderFX.update();
             mLeftUpperArmFX.update();
@@ -639,7 +639,7 @@ public class StickmanFX extends Agent
             mRightEyeFX.rotatePerlinNoise(mWobble, x, y);
             mMouthFX.rotatePerlinNoise(mWobble, x, y);
             mNeckFX.rotatePerlinNoise(mWobble, x, y);
-            // BodyFX is not Parts Classe
+            // BodyFX is not PartReeti Classe
             mBodyFX.rotatePerlinNoise(mWobble, x, y);
             mLeftShoulderFX.rotatePerlinNoise(mWobble, x, y);
             mLeftUpperArmFX.rotatePerlinNoise(mWobble, x, y);

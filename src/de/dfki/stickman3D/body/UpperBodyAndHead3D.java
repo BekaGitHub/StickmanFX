@@ -11,7 +11,8 @@ import javafx.scene.transform.Translate;
  * @author Beka Aptsiauri
  *
  */
-public class UpperBodyAndHead3D extends BodyPartFX {
+public class UpperBodyAndHead3D extends PartStickman3D
+{
 
 	private Group mUpperBodyAndHead;
 

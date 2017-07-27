@@ -16,7 +16,7 @@ import java.net.URL;
  * @author Beka Aptsiauri
  *
  */
-public class Head extends Parts
+public class Head extends PartReeti
 {
     private Group mHeadGroup;
 

@@ -6,7 +6,7 @@
 package de.dfki.stickman3D.dynamic.classes;
 
 import de.dfki.stickman3D.StickmanStageController;
-import de.dfki.stickman3D.body.BodyPartFX;
+import de.dfki.stickman3D.body.PartStickman3D;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -89,7 +89,7 @@ public class Helper {
     
     
     
-    public static void resetBodyPartRotation(BodyPartFX bodyPartFX) {
+    public static void resetBodyPartRotation(PartStickman3D bodyPartFX) {
         bodyPartFX.mXRotation = 0;
         bodyPartFX.mYRotation = 0;
         bodyPartFX.mZRotation = 0;
@@ -520,7 +520,7 @@ public class Helper {
         reset(controller.currentStickman.mUpperBodyAndHead);
     }
     
-    private static void reset(BodyPartFX bodyPartFX)
+    private static void reset(PartStickman3D bodyPartFX)
     {
         bodyPartFX.mXRotation = bodyPartFX.mXRotatationRecorder;
         bodyPartFX.mYRotation = bodyPartFX.mYRotatationRecorder;

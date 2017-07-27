@@ -3,7 +3,7 @@ package de.dfki.reeti.animationlogic;
 import de.dfki.action.sequence.Entry;
 import de.dfki.action.sequence.WordTimeMarkSequence;
 import de.dfki.reeti.Reeti;
-import de.dfki.reeti.body.Parts;
+import de.dfki.reeti.body.PartReeti;
 import de.dfki.stickmanSwing.util.TimingInfo;
 
 import java.util.ArrayList;
@@ -119,7 +119,7 @@ public class AnimatorReeti {
             if (mCurrentStep == sMAX_ANIM_STEPS) {
                 // renderEventAnimatione animation components
                 mAnimationComponents.stream().forEach((comp) -> {
-                    Parts bodyPart = comp.mBodyPart;
+                    PartReeti bodyPart = comp.mBodyPart;
                     String action = comp.mAction;
                     sCurrentAction = action;
                     int param = comp.mParam;
@@ -153,7 +153,7 @@ public class AnimatorReeti {
 
             if (mCurrentStep > 1) {
                 for (AnimationContentReeti acr : mAnimationComponents) {
-                    Parts bodypart = acr.mBodyPart;
+                    PartReeti bodypart = acr.mBodyPart;
                     String action = acr.mAction;
 
                     if (action.equalsIgnoreCase("rotate")) {
@@ -195,7 +195,7 @@ public class AnimatorReeti {
             if (mCurrentStep == 1) {
                 for (AnimationContentReeti acr : mAnimationComponents) {
                     String action = acr.mAction;
-                    Parts bodypart = acr.mBodyPart;
+                    PartReeti bodypart = acr.mBodyPart;
 
                     if (action.equalsIgnoreCase("rotate")) {
                         bodypart.reset_X_Rotation();
@@ -236,7 +236,7 @@ public class AnimatorReeti {
             if (mCurrentStep == step) {
                 // renderEventAnimatione animation components
                 mAnimationComponents.stream().forEach((comp) -> {
-                    Parts bodypart = comp.mBodyPart;
+                    PartReeti bodypart = comp.mBodyPart;
                     String action = comp.mAction;
                     sCurrentAction = action;
                     int param = comp.mParam;
@@ -270,7 +270,7 @@ public class AnimatorReeti {
 
             if (mCurrentStep > 1) {
                 for (AnimationContentReeti acr : mAnimationComponents) {
-                    Parts bodypart = acr.mBodyPart;
+                    PartReeti bodypart = acr.mBodyPart;
                     String action = acr.mAction;
 
                     if (action.equalsIgnoreCase("rotate")) {
@@ -312,7 +312,7 @@ public class AnimatorReeti {
             if (mCurrentStep == 1) {
                 for (AnimationContentReeti acr : mAnimationComponents) {
                     String action = acr.mAction;
-                    Parts bodypart = acr.mBodyPart;
+                    PartReeti bodypart = acr.mBodyPart;
 
                     if (action.equalsIgnoreCase("rotate")) {
                         bodypart.resetRotation();

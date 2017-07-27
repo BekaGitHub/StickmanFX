@@ -1,17 +1,15 @@
 package de.dfki.stickman3D.environment;
 
-import de.dfki.stickman3D.body.BodyPartFX;
+import de.dfki.stickman3D.body.PartStickman3D;
 import de.dfki.stickman3D.body.Head3D;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 
-import java.awt.geom.GeneralPath;
-
 /**
  * @author Beka
  */
-public class SpeechBubble3D extends BodyPartFX
+public class SpeechBubble3D extends PartStickman3D
 {
 
     public enum SHAPE

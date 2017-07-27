@@ -15,7 +15,8 @@ import javafx.scene.shape.QuadCurveTo;
  * @modified Beka
  *
  */
-public class StarsFX extends BodyPartFX {
+public class StarsFX extends PartStickman2D
+{
 
     public static enum SHAPE {
 

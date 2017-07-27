@@ -4,7 +4,7 @@ import de.dfki.action.sequence.Entry;
 import de.dfki.action.sequence.WordTimeMarkSequence;
 import de.dfki.stickmanSwing.util.TimingInfo;
 import de.dfki.stickmanFX.StickmanFX;
-import de.dfki.stickmanFX.bodyfx.BodyPartFX;
+import de.dfki.stickmanFX.bodyfx.PartStickman2D;
 import de.dfki.util.observers.AnimationObserver;
 
 import java.awt.image.BufferedImage;
@@ -111,7 +111,7 @@ public class AnimatorFX {
                 // renderEventAnimatione animation components
                 mAnimationComponents.stream().forEach((comp)
                         -> {
-                    BodyPartFX bodypartFX = comp.mBodyPartFX;
+                    PartStickman2D bodypartFX = comp.mBodyPartFX;
                     String action = comp.mAction;
                     int param = comp.mParam;
                     String paramString = comp.mParamString;
@@ -132,7 +132,7 @@ public class AnimatorFX {
 
             if (mCurrentStep > 1) {
                 for (AnimationContentFX ba : mAnimationComponents) {
-                    BodyPartFX bodypartFX = ba.mBodyPartFX;
+                    PartStickman2D bodypartFX = ba.mBodyPartFX;
                     String action = ba.mAction;
 
                     if (action.equalsIgnoreCase("rotate")) {
@@ -164,7 +164,7 @@ public class AnimatorFX {
             if (mCurrentStep == 1) {
                 for (AnimationContentFX ba : mAnimationComponents) {
                     String action = ba.mAction;
-                    BodyPartFX bodypartFX = ba.mBodyPartFX;
+                    PartStickman2D bodypartFX = ba.mBodyPartFX;
 
                     if (action.equalsIgnoreCase("rotate")) {
                         bodypartFX.resetRotation();

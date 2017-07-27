@@ -20,7 +20,8 @@ import javafx.scene.transform.Affine;
  * @author Beka
  *
  */
-public class RightHandFX extends BodyPartFX {
+public class RightHandFX extends PartStickman2D
+{
 
     RightForeArmFX mRightForeArmFX;
     Path mHand;

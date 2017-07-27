@@ -17,7 +17,8 @@ import javafx.scene.transform.Affine;
  * @author Beka Aptsiauri
  *
  */
-public class MaleHairFX extends BodyPartFX {
+public class MaleHairFX extends PartStickman2D
+{
 
     public Dimension mSize = new Dimension(120, 100);
     public StickmanFX mStickmanFX;

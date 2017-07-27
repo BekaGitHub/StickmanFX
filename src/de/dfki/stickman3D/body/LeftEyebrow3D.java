@@ -15,7 +15,7 @@ import java.awt.*;
 /**
  * @author Beka Aptsiauri
  */
-public class LeftEyebrow3D extends BodyPartFX
+public class LeftEyebrow3D extends PartStickman3D
 {
 
     public enum SHAPE

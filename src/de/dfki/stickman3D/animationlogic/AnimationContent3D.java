@@ -6,7 +6,7 @@
 package de.dfki.stickman3D.animationlogic;
 
 import de.dfki.action.sequence.WordTimeMarkSequence;
-import de.dfki.stickman3D.body.BodyPartFX;
+import de.dfki.stickman3D.body.PartStickman3D;
 
 /**
  *
@@ -15,27 +15,27 @@ import de.dfki.stickman3D.body.BodyPartFX;
  */
 public class AnimationContent3D {
 
-    public BodyPartFX mBodyPartFX;
+    public PartStickman3D mBodyPartFX;
     public String mAction;
     public int mParam;
     public String mParamString;
     public WordTimeMarkSequence mWTS;
 
-    public AnimationContent3D(BodyPartFX bp, String a, int p) {
+    public AnimationContent3D(PartStickman3D bp, String a, int p) {
         mBodyPartFX = bp;
         mAction = a;
         mParam = p;
         mParamString = "";
     }
 
-    public AnimationContent3D(BodyPartFX bp, String a, String p) {
+    public AnimationContent3D(PartStickman3D bp, String a, String p) {
         mBodyPartFX = bp;
         mAction = a;
         mParam = 0;
         mParamString = p;
     }
 
-    public AnimationContent3D(BodyPartFX bp, String a, String p, WordTimeMarkSequence wts) {
+    public AnimationContent3D(PartStickman3D bp, String a, String p, WordTimeMarkSequence wts) {
         mBodyPartFX = bp;
         mAction = a;
         mParam = 0;

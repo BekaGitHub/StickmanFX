@@ -14,7 +14,8 @@ import javafx.scene.shape.QuadCurveTo;
  * @author Beka Aptsiauri
  *
  */
-public class RightEyebrowFX extends BodyPartFX {
+public class RightEyebrowFX extends PartStickman2D
+{
 
     public static enum SHAPE {
         DEFAULT, ANGRY, ANGRYEND, DISGUSTED, DISGUSTEDEND, SURPRISED, SURPRISEDEND, EXCITED, EXCITEDEND, EMBARRASSED, EMBARRASSEDEND

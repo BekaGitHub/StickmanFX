@@ -20,7 +20,8 @@ import javafx.scene.transform.Affine;
  * @author Beka
  *
  */
-public class LeftFootFX extends BodyPartFX {
+public class LeftFootFX extends PartStickman2D
+{
 
     LeftForeLegFX mLeftForeLegFX;
 

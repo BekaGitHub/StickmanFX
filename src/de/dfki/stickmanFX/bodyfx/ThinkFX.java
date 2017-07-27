@@ -13,7 +13,8 @@ import javafx.scene.shape.Circle;
  *
  * @author Beka movement = Animator3D.sMAX_ANIM_STEPS - mShapeAnimationStep;
  */
-public class ThinkFX extends BodyPartFX {
+public class ThinkFX extends PartStickman2D
+{
 
     public static enum SHAPE {
 

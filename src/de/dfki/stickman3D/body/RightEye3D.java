@@ -10,7 +10,8 @@ import javafx.scene.shape.*;
  * @author Beka Aptsiauri
  *
  */
-public class RightEye3D extends BodyPartFX {
+public class RightEye3D extends PartStickman3D
+{
 
     double xMovement;
     double yMovement1;

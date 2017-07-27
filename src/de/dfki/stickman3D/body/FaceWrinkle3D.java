@@ -10,7 +10,7 @@ import java.awt.*;
 /**
  * @author Beka
  */
-public class FaceWrinkle3D extends BodyPartFX
+public class FaceWrinkle3D extends PartStickman3D
 {
 
     public enum SHAPE

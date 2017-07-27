@@ -1,6 +1,6 @@
 package de.dfki.reeti.environment;
 
-import de.dfki.reeti.body.Parts;
+import de.dfki.reeti.body.PartReeti;
 import de.dfki.reeti.body.Head;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -17,7 +17,7 @@ import java.awt.geom.GeneralPath;
  * @author Beka
  *
  */
-public class SpeechBubbleFX extends Parts
+public class SpeechBubbleFX extends PartReeti
 {
 
     public static enum SHAPE {

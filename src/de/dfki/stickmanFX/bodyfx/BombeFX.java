@@ -17,7 +17,8 @@ import javafx.util.Duration;
  *
  * @author Beka movement = Animator3D.sMAX_ANIM_STEPS - mShapeAnimationStep;
  */
-public class BombeFX extends BodyPartFX {
+public class BombeFX extends PartStickman2D
+{
 
     public static enum SHAPE {
 

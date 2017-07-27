@@ -11,7 +11,7 @@ import java.net.URL;
 /**
  * Autor Beka
  */
-public class Stars3D extends BodyPartFX
+public class Stars3D extends PartStickman3D
 {
 
     public enum SHAPE

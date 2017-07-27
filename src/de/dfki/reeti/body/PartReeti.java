@@ -3,102 +3,44 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package de.dfki.stickman3D.body;
+package de.dfki.reeti.body;
 
-import de.dfki.stickman3D.animationlogic.Animator3D;
-import javafx.animation.FadeTransition;
-import javafx.animation.Interpolator;
-import javafx.animation.PathTransition;
-import javafx.animation.Timeline;
+import de.dfki.common.part.Part;
+import de.dfki.common.part.Part3D;
+import de.dfki.reeti.animationlogic.AnimatorReeti;
 import javafx.application.Platform;
-import javafx.scene.Node;
-import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
-import javafx.scene.shape.*;
-import javafx.scene.shape.Shape;
-import javafx.scene.transform.Affine;
-import javafx.util.Duration;
-
+import javafx.scene.paint.PhongMaterial;
 import java.awt.*;
+import java.net.URL;
 
 /**
  * @author Beka Aptsiauri
  */
-public abstract class BodyPartFX extends Pane
+public abstract class PartReeti extends Part3D
 {
-
-    public enum SHAPE
-    {
-        DEFAULT
-    }
-
-    // variables for size and drawing
-    Dimension mSize = new Dimension(10, 10);
-    int mLength = 0;
-    public Point mStart = new Point(0, 0), mEnd = new Point(0, 0);
-
-    int mShapeAnimationStep = 0;
-    int mDefaultTranslation = 0;
-
-    double mXTranslation = mDefaultTranslation;
-    double mYTranslation = mDefaultTranslation;
-    double mZTranslation = mDefaultTranslation;
-    double mXToTranslation = mDefaultTranslation;
-    double mYToTranslation = mDefaultTranslation;
-    double mZToTranslation = mDefaultTranslation;
-
-    double mXTranslationStep = 0.0f;
-    double mYTranslationStep = 0.0f;
-    double mZTranslationStep = 0.0f;
-
-    int mDefaultRotation = 0;
-    Point mDefaultRotationPoint = new Point(0, 0);
-
-    public double mXRotation = mDefaultRotation;
-    public double mYRotation = mDefaultRotation;
-    public double mZRotation = mDefaultRotation;
-    public double mToDegreeX = mDefaultRotation;
-    public double mToDegreeY = mDefaultRotation;
-    public double mToDegreeZ = mDefaultRotation;
-    public double mXRotationStep = 0.0f;
-    public double mYRotationStep = 0.0f;
-    public double mZRotationStep = 0.0f;
-
-    public Color mColor = Color.rgb(0, 0, 0);
-    public Color mColorRecorder;
-    public double mXRotatationRecorder;
-    public double mYRotatationRecorder;
-    public double mZRotatationRecorder;
-
-    public BasicStroke mStroke = new BasicStroke(3.0f, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND);
+    private static PhongMaterial material = null;
 
     public void init()
     {
         this.setPrefHeight(mSize.height);
         this.setPrefWidth(mSize.width);
-        mColorRecorder = mColor;
-        mXRotatationRecorder = mXRotation;
-        mYRotatationRecorder = mYRotation;
-        mZRotatationRecorder = mZRotation;
         calculate(0);
     }
 
     public void set_X_Translation(int length)
     {
-        mXToTranslation = mXTranslation + length;
-        mXTranslationStep = (double) length / Animator3D.sMAX_ANIM_STEPS;
+        mXTranslationStep = (double) length / AnimatorReeti.sMAX_ANIM_STEPS;
     }
 
     public void set_Y_Translation(int length)
     {
-        mYToTranslation = mYTranslation + length;
-        mYTranslationStep = (double) length / Animator3D.sMAX_ANIM_STEPS;
+        mYTranslationStep = (double) length / AnimatorReeti.sMAX_ANIM_STEPS;
     }
 
     public void set_Z_Translation(int length)
     {
-        mZToTranslation = mZTranslation + length;
-        mZTranslationStep = (double) length / Animator3D.sMAX_ANIM_STEPS;
+        mZTranslationStep = (double) length / AnimatorReeti.sMAX_ANIM_STEPS;
     }
 
     public synchronized void calculate_X_Translation(int step)
@@ -140,33 +82,29 @@ public abstract class BodyPartFX extends Pane
         mZRotation = mDefaultRotation;
 
         mToDegreeX = mDefaultRotation;
-        mToDegreeY = mDefaultRotation;
-        mToDegreeZ = mDefaultRotation;
         mXRotationStep = 0.0f;
     }
 
     public void set_X_Rotation(int degree)
     {
         mToDegreeX = mXRotation + degree;
-        mXRotationStep = (double) degree / Animator3D.sMAX_ANIM_STEPS;
+        mXRotationStep = (double) degree / AnimatorReeti.sMAX_ANIM_STEPS;
     }
 
     public void set_Y_Rotation(int degree)
     {
-        mToDegreeY = mYRotation + degree;
-        mYRotationStep = (double) degree / Animator3D.sMAX_ANIM_STEPS;
+        mYRotationStep = (double) degree / AnimatorReeti.sMAX_ANIM_STEPS;
     }
 
     public void set_Z_Rotation(int degree)
     {
-        mToDegreeZ = mZRotation + degree;
-        mZRotationStep = (double) degree / Animator3D.sMAX_ANIM_STEPS;
+        mZRotationStep = (double) degree / AnimatorReeti.sMAX_ANIM_STEPS;
     }
 
     public void setTilt(int degree)
     {
         mToDegreeX = mXRotation + degree;
-        mXRotationStep = (double) degree / Animator3D.sMAX_ANIM_STEPS;
+        mXRotationStep = (double) degree / AnimatorReeti.sMAX_ANIM_STEPS;
     }
 
     public synchronized void calculate_X_Rotation(int step)
@@ -233,6 +171,7 @@ public abstract class BodyPartFX extends Pane
     public synchronized void calculateShape(int step)
     {
         mShapeAnimationStep = step;
+
         Platform.runLater(() -> calculate(step));
     }
 
@@ -241,7 +180,7 @@ public abstract class BodyPartFX extends Pane
         mShapeAnimationStep = 0;
     }
 
-    public void clearChildren(BodyPartFX bodyPartFX)
+    public void clearChildren(PartReeti bodyPartFX)
     {
         bodyPartFX.getChildren().clear();
     }
@@ -251,22 +190,19 @@ public abstract class BodyPartFX extends Pane
         createShape();
     }
 
-    public void update()
+    protected PhongMaterial getMaterial()
     {
-        recordColor();
+        if (material == null)
+        {
+            URL imageUrl = getClass().getClassLoader().getResource("Images/difuseMap2.png");
+            javafx.scene.image.Image image = new javafx.scene.image.Image(imageUrl.toExternalForm());
+            material = new PhongMaterial();
+            material.setDiffuseColor(mColor);
+            material.setDiffuseMap(image);
+            material.setSelfIlluminationMap(image);
+        }
+        return material;
     }
 
-    protected void recordColor()
-    {
 
-    }
-
-    public void rotatePerlinNoise(double mWobble, int x, int y)
-    {
-        Affine af = new Affine();
-        // Out put perlin noise
-        af.appendRotation(Math.toRadians(mWobble), x, y);
-        this.getTransforms().clear();
-        this.getTransforms().add(af);
-    }
 }

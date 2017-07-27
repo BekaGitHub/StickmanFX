@@ -21,7 +21,8 @@ import javafx.scene.transform.Affine;
  * @author Beka
  *
  */
-public class RightForeLegFX extends BodyPartFX {
+public class RightForeLegFX extends PartStickman2D
+{
 
     RightUpperLegFX mUpperLegFX;
     int mLegLength = 90;

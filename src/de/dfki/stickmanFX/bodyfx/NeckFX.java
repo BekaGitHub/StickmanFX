@@ -18,7 +18,8 @@ import javafx.scene.shape.Path;
  * @author Patrick Gebhard
  *
  */
-public class NeckFX extends BodyPartFX {
+public class NeckFX extends PartStickman2D
+{
 
     HeadFX mHeadFX;
     Path mPath;

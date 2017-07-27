@@ -21,7 +21,8 @@ import javafx.scene.transform.Affine;
  * @author Beka
  *
  */
-public class RightForeArmFX extends BodyPartFX {
+public class RightForeArmFX extends PartStickman2D
+{
 
     RightUpperArmFX mUpperArmFX;
     int mArmLength = 80;

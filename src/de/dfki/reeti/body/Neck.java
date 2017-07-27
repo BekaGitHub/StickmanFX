@@ -12,7 +12,7 @@ import java.awt.*;
 /**
  * @author Beka
  */
-public class Neck extends Parts
+public class Neck extends PartReeti
 {
     private MeshView neckMeshView;
 

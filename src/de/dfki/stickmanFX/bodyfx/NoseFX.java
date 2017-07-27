@@ -17,7 +17,8 @@ import java.awt.*;
  * @author Beka Aptsiauri
  *
  */
-public class NoseFX extends BodyPartFX {
+public class NoseFX extends PartStickman2D
+{
 
     public static enum SHAPE {
         DEFAULT, ANGRY, ANGRYEND, DISGUSTED, DISGUSTEDEND, SURPRISED, SURPRISEDEND, EXCITED, EXCITEDEND, EMBARRASSED, EMBARRASSEDEND

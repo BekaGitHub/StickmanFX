@@ -14,7 +14,8 @@ import javafx.scene.shape.Path;
  * @author Beka
  *
  */
-public class FaceWrinkleFX extends BodyPartFX {
+public class FaceWrinkleFX extends PartStickman2D
+{
 
     public static enum SHAPE {
 

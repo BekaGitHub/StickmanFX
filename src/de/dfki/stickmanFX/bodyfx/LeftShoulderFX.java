@@ -22,7 +22,8 @@ import javafx.scene.transform.Affine;
  * @author Beka
  *
  */
-public class LeftShoulderFX extends BodyPartFX {
+public class LeftShoulderFX extends PartStickman2D
+{
 
     BodyFX mBodyFX;
 

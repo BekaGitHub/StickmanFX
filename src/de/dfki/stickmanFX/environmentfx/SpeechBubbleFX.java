@@ -1,6 +1,6 @@
 package de.dfki.stickmanFX.environmentfx;
 
-import de.dfki.stickmanFX.bodyfx.BodyPartFX;
+import de.dfki.stickmanFX.bodyfx.PartStickman2D;
 import de.dfki.stickmanFX.bodyfx.HeadFX;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
@@ -13,7 +13,8 @@ import java.awt.geom.GeneralPath;
  * @author Beka
  *
  */
-public class SpeechBubbleFX extends BodyPartFX {
+public class SpeechBubbleFX extends PartStickman2D
+{
 
     public static enum SHAPE {
 

@@ -10,7 +10,7 @@ import javafx.scene.shape.QuadCurveTo;
 /**
  * @author Beka Aptsiauri
  */
-public class MouthUpperLip extends Parts
+public class MouthUpperLip extends PartReeti
 {
 
     public enum SHAPE

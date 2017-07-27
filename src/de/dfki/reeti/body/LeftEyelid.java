@@ -18,7 +18,7 @@ import javafx.scene.transform.Rotate;
  * @author Beka Aptsiauri
  *
  */
-public class LeftEyelid extends Parts
+public class LeftEyelid extends PartReeti
 {
 
     private MeshView mLeftEyeMesh;

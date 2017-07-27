@@ -18,7 +18,8 @@ import javafx.scene.shape.QuadCurveTo;
  * @author Beka
  *
  */
-public class RightLegFX extends BodyPartFX {
+public class RightLegFX extends PartStickman2D
+{
 
     BodyFX mBodyFX;
 

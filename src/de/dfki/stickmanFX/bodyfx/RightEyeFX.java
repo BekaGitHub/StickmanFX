@@ -16,7 +16,8 @@ import javafx.scene.shape.QuadCurveTo;
  * @author Beka Aptsiauri
  *
  */
-public class RightEyeFX extends BodyPartFX {
+public class RightEyeFX extends PartStickman2D
+{
 
     double xMovement;
     double yMovement1;

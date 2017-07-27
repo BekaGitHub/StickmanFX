@@ -3,7 +3,6 @@ package de.dfki.stickman3D.body;
 import com.interactivemesh.jfx.importer.col.ColModelImporter;
 import de.dfki.common.enums.Gender;
 import de.dfki.common.enums.Orientation;
-import de.dfki.stickman3D.Stickman3D;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.PhongMaterial;
 import javafx.scene.shape.MeshView;
@@ -24,7 +23,7 @@ import javafx.scene.transform.Translate;
 /**
  * @author Beka Aptsiauri
  */
-public class UpperBody3D extends BodyPartFX
+public class UpperBody3D extends PartStickman3D
 {
 
     public enum SHAPE
