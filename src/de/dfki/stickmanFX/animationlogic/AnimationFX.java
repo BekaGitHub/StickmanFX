@@ -6,6 +6,7 @@
 package de.dfki.stickmanFX.animationlogic;
 
 import de.dfki.action.sequence.WordTimeMarkSequence;
+import de.dfki.common.agent.IAgent;
 import de.dfki.common.interfaces.Animation;
 import de.dfki.stickmanFX.StickmanFX;
 import de.dfki.util.ios.IOSIndentWriter;
@@ -52,9 +53,9 @@ public class AnimationFX extends Thread implements XMLParseable, XMLWriteable, A
         mAnimType = null;
     }
 
-    public AnimationFX(StickmanFX sm, int duration, boolean block) {
+    public AnimationFX(IAgent sm, int duration, boolean block) {
         mName = getClass().getSimpleName();
-        mStickmanFX = sm;
+        mStickmanFX = (StickmanFX) sm;
         mStickmanName = mStickmanFX.mName;
         setName(mStickmanName + "'s AnimationSwing " + mName);
         mID = mStickmanFX.getID(); // default ID;

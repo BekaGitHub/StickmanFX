@@ -1,5 +1,6 @@
 package de.dfki.stickmanFX.animationlogic;
 
+import de.dfki.common.agent.IAgent;
 import de.dfki.stickmanFX.StickmanFX;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.Semaphore;
@@ -13,7 +14,7 @@ import java.util.logging.Logger;
  */
 public class AnimationSchedulerFX extends Thread {
 
-    StickmanFX mStickmanFX;
+    IAgent mStickmanFX;
     boolean mRunning = true;
     public LinkedBlockingQueue<AnimationFX> mAnimationQueue = new LinkedBlockingQueue<>();
     public Semaphore mTheBlockOfHell = new Semaphore(1);
@@ -27,7 +28,7 @@ public class AnimationSchedulerFX extends Thread {
         try {
             mAnimationQueue.put(a);
         } catch (InterruptedException ex) {
-            mStickmanFX.mLogger.severe(ex.getMessage());
+            ex.printStackTrace();
         }
     }
 
@@ -71,7 +72,7 @@ public class AnimationSchedulerFX extends Thread {
                     removeAnimation(animationFX);
                 }
             } catch (InterruptedException ex) {
-                mStickmanFX.mLogger.severe(ex.getMessage());
+                ex.printStackTrace();
             }
         }
     }

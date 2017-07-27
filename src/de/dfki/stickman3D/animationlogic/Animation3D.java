@@ -6,6 +6,7 @@
 package de.dfki.stickman3D.animationlogic;
 
 import de.dfki.action.sequence.WordTimeMarkSequence;
+import de.dfki.common.agent.IAgent;
 import de.dfki.common.interfaces.Animation;
 import de.dfki.stickman3D.Stickman3D;
 import de.dfki.util.ios.IOSIndentWriter;
@@ -55,9 +56,9 @@ public class Animation3D extends Thread implements XMLParseable, XMLWriteable, A
     public Animation3D() {
     }
 
-    public Animation3D(Stickman3D sm, int duration, boolean block) {
+    public Animation3D(IAgent sm, int duration, boolean block) {
         mName = getClass().getSimpleName();
-        mStickmanFX = sm;
+        mStickmanFX = (Stickman3D) sm;
         mStickmanName = mStickmanFX.mName;
         setName(mStickmanName + "'s AnimationSwing " + mName);
         mID = mStickmanFX.getID(); // default ID;
@@ -65,9 +66,9 @@ public class Animation3D extends Thread implements XMLParseable, XMLWriteable, A
         mDuration = duration;
     }
 
-    public Animation3D(Stickman3D sm, int frequent, int actionDuration, boolean block) {
+    public Animation3D(IAgent sm, int frequent, int actionDuration, boolean block) {
         mName = getClass().getSimpleName();
-        mStickmanFX = sm;
+        mStickmanFX = (Stickman3D) sm;
         mStickmanName = mStickmanFX.mName;
         setName(mStickmanName + "'s AnimationSwing " + mName);
         mID = mStickmanFX.getID(); // default ID;
@@ -76,9 +77,9 @@ public class Animation3D extends Thread implements XMLParseable, XMLWriteable, A
         this.actionDuration = actionDuration;
     }
 
-    public Animation3D(Stickman3D sm, int frequent, int actionDuration, boolean block,HashMap<String, String> extraParams) {
+    public Animation3D(IAgent sm, int frequent, int actionDuration, boolean block,HashMap<String, String> extraParams) {
         mName = getClass().getSimpleName();
-        mStickmanFX = sm;
+        mStickmanFX = (Stickman3D) sm;
         mStickmanName = mStickmanFX.mName;
         setName(mStickmanName + "'s AnimationSwing " + mName);
         mID = mStickmanFX.getID(); // default ID;

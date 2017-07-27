@@ -6,6 +6,7 @@
 package de.dfki.reeti.animationlogic;
 
 import de.dfki.action.sequence.WordTimeMarkSequence;
+import de.dfki.common.agent.IAgent;
 import de.dfki.common.interfaces.Animation;
 import de.dfki.reeti.Reeti;
 import de.dfki.util.ios.IOSIndentWriter;
@@ -55,9 +56,9 @@ public class AnimationReeti extends Thread implements XMLParseable, XMLWriteable
     public AnimationReeti() {
     }
 
-    public AnimationReeti(Reeti reeti, int duration, boolean block) {
+    public AnimationReeti(IAgent reeti, int duration, boolean block) {
         mName = getClass().getSimpleName();
-        mReeti = reeti;
+        mReeti = (Reeti) reeti;
         mReetiName = mReeti.mName;
         setName(mReetiName + "'s AnimationSwing " + mName);
         mID = mReeti.getID(); // default ID;
@@ -65,9 +66,9 @@ public class AnimationReeti extends Thread implements XMLParseable, XMLWriteable
         mDuration = duration;
     }
 
-    public AnimationReeti(Reeti reeti, int duration, int pos, boolean block) {
+    public AnimationReeti(IAgent reeti, int duration, int pos, boolean block) {
         mName = getClass().getSimpleName();
-        mReeti = reeti;
+        mReeti = (Reeti) reeti;
         mReetiName = mReeti.mName;
         setName(mReetiName + "'s AnimationSwing " + mName);
         mID = mReeti.getID(); // default ID;
@@ -76,9 +77,9 @@ public class AnimationReeti extends Thread implements XMLParseable, XMLWriteable
         this.actionDuration = actionDuration;
     }
 
-    public AnimationReeti(Reeti reeti, int frequent, int actionDuration, boolean block, HashMap<String, String> extraParams) {
+    public AnimationReeti(IAgent reeti, int frequent, int actionDuration, boolean block, HashMap<String, String> extraParams) {
         mName = getClass().getSimpleName();
-        mReeti = reeti;
+        mReeti = (Reeti) reeti;
         mReetiName = mReeti.mName;
         setName(mReetiName + "'s AnimationSwing " + mName);
         mID = mReeti.getID(); // default ID;

@@ -1,5 +1,6 @@
 package de.dfki.reeti.animationlogic;
 
+import de.dfki.common.agent.IAgent;
 import de.dfki.reeti.Reeti;
 
 import java.util.concurrent.LinkedBlockingQueue;
@@ -14,7 +15,7 @@ import java.util.logging.Logger;
  */
 public class AnimationSchedulerReeti extends Thread {
 
-    Reeti mReeti;
+    IAgent mReeti;
     boolean mRunning = true;
     public LinkedBlockingQueue<AnimationReeti> mAnimationQueue = new LinkedBlockingQueue<>();
     public Semaphore mTheBlockOfHell = new Semaphore(1);
@@ -28,7 +29,7 @@ public class AnimationSchedulerReeti extends Thread {
         try {
             mAnimationQueue.put(a);
         } catch (InterruptedException ex) {
-            mReeti.mLogger.severe(ex.getMessage());
+            ex.printStackTrace();
         }
     }
 
@@ -72,7 +73,7 @@ public class AnimationSchedulerReeti extends Thread {
                     removeAnimation(animation);
                 }
             } catch (InterruptedException ex) {
-                mReeti.mLogger.severe(ex.getMessage());
+                ex.printStackTrace();
             }
         }
     }
