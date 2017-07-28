@@ -5,10 +5,7 @@
  */
 package de.dfki.stickman3D.body;
 
-import de.dfki.common.animationlogic.Animator;
 import de.dfki.common.part.Part3D;
-import de.dfki.stickman3D.animationlogic.Animator3D;
-import javafx.application.Platform;
 import javafx.scene.transform.Affine;
 
 /**
@@ -27,11 +24,6 @@ public abstract class PartStickman3D extends Part3D
         mYRotatationRecorder = mYRotation;
         mZRotatationRecorder = mZRotation;
         super.init();
-    }
-
-    @Override
-    public void resetRotation()
-    {
     }
 
     public void update()

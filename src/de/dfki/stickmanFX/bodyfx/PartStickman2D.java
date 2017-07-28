@@ -5,15 +5,13 @@
  */
 package de.dfki.stickmanFX.bodyfx;
 
-import de.dfki.common.animationlogic.Animator;
 import de.dfki.common.part.Part2D;
-import java.util.ArrayList;
+
 
 import javafx.animation.FadeTransition;
 import javafx.animation.Interpolator;
 import javafx.animation.PathTransition;
 import javafx.animation.Timeline;
-import javafx.application.Platform;
 import javafx.scene.Node;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Ellipse;
@@ -27,89 +25,37 @@ import javafx.scene.transform.Affine;
 import javafx.util.Duration;
 
 /**
- *
  * @author Beka Aptsiauri
- *
  */
 public abstract class PartStickman2D extends Part2D
 {
 
-    public void init() {
+    public void init()
+    {
         mColorRecorder = mColor;
         super.init();
     }
 
-    public void setTranslation(int length) {
-        mToTranslation = mTranslation + length;
-        mTranslationStep = (double) length / Animator.sMAX_ANIM_STEPS;
-    }
-
-    public synchronized void calculateTranslation(int step) {
-        mTranslation += mTranslationStep;
-        mTranslation = (double) Math.round(mTranslation * 1000d) / 1000d; // the poor man's round method
-
-        Platform.runLater(() -> calculate(step));
-    }
-
-    public void resetTranslation() {
-        mTranslationStep = 0.0d;
-    }
-
-    public void setDefaulRotation(int degree) {
-        mDefaultRotation = degree;
-        mRotation = mDefaultRotation;
-        mToDegree = mDefaultRotation;
-        mRotationStep = 0.0f;
-    }
-
-    public void setRotation(int degree) {
-        mToDegree = mRotation + degree;
-        mRotationStep = (double) degree / Animator.sMAX_ANIM_STEPS;
-    }
-
-    public void setTilt(int degree) {
-        mToDegree = mRotation + degree;
-        mRotationStep = (double) degree / Animator.sMAX_ANIM_STEPS;
-    }
-
-    public synchronized void calculateRotation(int step) {
-        mRotation += mRotationStep;
-        mRotation = (double) Math.round(mRotation * 1000d) / 1000d; // the poor man's round method
-        Platform.runLater(() -> calculate(step));
-
-    }
-
     @Override
-    public void resetRotation()
+    public synchronized void calculate(int step)
     {
-        mTranslationStep = 0.0d;
-    }
-
-
-    public void clearDrawObjects() {
-        mGraphicPaths = new ArrayList<>();
-    }
-
-
-    public void addToDrawObjects(Path gp) {
-        mGraphicPaths.add(gp);
-    }
-
-    public synchronized void calculate(int step) {
-
         Affine af = new Affine();
         af.appendTranslation(0, mTranslation);
         af.appendRotation(mRotation, mDefaultRotationPoint.x, mDefaultRotationPoint.y);
 
-        for (Path gp : mGraphicPaths) {
+        for (Path gp : mGraphicPaths)
+        {
             gp.getTransforms().clear();
             gp.getTransforms().add(af);
         }
     }
 
-    public void update() {
+    @Override
+    public void update()
+    {
         recordColor();
-        for (Path gp : mGraphicPaths) {
+        for (Path gp : mGraphicPaths)
+        {
             gp.setStroke(mColor);
             gp.setStrokeLineCap(StrokeLineCap.ROUND);
             gp.setStrokeLineJoin(StrokeLineJoin.ROUND);
@@ -117,16 +63,18 @@ public abstract class PartStickman2D extends Part2D
         }
     }
 
-    protected void recordColor() {
-
+    protected void recordColor()
+    {
     }
 
-    public void showHearts(HeadFX mHeadFX, double xMovement, double yMovement1, double yMovement2) {
+    public void showHearts(HeadFX mHeadFX, double xMovement, double yMovement1, double yMovement2)
+    {
         int numHearts = 7;
 
         Ellipse path = new Ellipse(mHeadFX.mHalfWidth + 4, mHeadFX.mHalfHeight - 50, 60, 20);
 
-        for (int i = 0; i < numHearts; i++) {
+        for (int i = 0; i < numHearts; i++)
+        {
             Path heart = new Path();
             heart.getElements().add(new MoveTo(mStart.x - 10, mStart.y));
             heart.getElements().add(new QuadCurveTo(mStart.x - 10 - xMovement - 5, mEnd.y - yMovement2, mStart.x - 10, mEnd.y + yMovement1 + 15));
@@ -151,7 +99,8 @@ public abstract class PartStickman2D extends Part2D
 
     }
 
-    private PathTransition createPathTransition(Shape shape, Node node) {
+    private PathTransition createPathTransition(Shape shape, Node node)
+    {
         final PathTransition transition = new PathTransition(Duration.seconds(10), shape, node);
 
         transition.setAutoReverse(false);
@@ -161,7 +110,8 @@ public abstract class PartStickman2D extends Part2D
         return transition;
     }
 
-    public void rotatePerlinNoise(double mWobble, int x, int y) {
+    public void rotatePerlinNoise(double mWobble, int x, int y)
+    {
         Affine af = new Affine();
         //Out put perlin noise
         af.appendRotation(Math.toRadians(mWobble), x, y);

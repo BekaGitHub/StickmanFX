@@ -5,10 +5,7 @@
  */
 package de.dfki.reeti.body;
 
-import de.dfki.common.animationlogic.Animator;
 import de.dfki.common.part.Part3D;
-import de.dfki.reeti.animationlogic.AnimatorReeti;
-import javafx.application.Platform;
 import javafx.scene.paint.PhongMaterial;
 import java.net.URL;
 

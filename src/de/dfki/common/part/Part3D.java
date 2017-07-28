@@ -52,7 +52,6 @@ public abstract class Part3D extends Part
     {
         mYTranslation += mYTranslationStep;
         mYTranslation = Math.round(mYTranslation * 1000d) / 1000d;
-
         Platform.runLater(() -> calculate(step));
     }
 
@@ -60,10 +59,10 @@ public abstract class Part3D extends Part
     {
         mZTranslation += mZTranslationStep;
         mZTranslation = Math.round(mZTranslation * 1000d) / 1000d;
-
         Platform.runLater(() -> calculate(step));
     }
 
+    @Override
     public void resetTranslation()
     {
         mXTranslationStep = 0.0d;
@@ -73,7 +72,7 @@ public abstract class Part3D extends Part
 
     public void setDefaulRotation(int degree)
     {
-        mDefaultRotation = degree;
+        super.setDefaulRotation(degree);
         mXRotation = mDefaultRotation;
         mYRotation = mDefaultRotation;
         mZRotation = mDefaultRotation;
@@ -98,6 +97,7 @@ public abstract class Part3D extends Part
         mZRotationStep = (double) degree / Animator.sMAX_ANIM_STEPS;
     }
 
+    @Override
     public void setTilt(int degree)
     {
         mToDegreeX = mXRotation + degree;
@@ -144,5 +144,10 @@ public abstract class Part3D extends Part
         mZRotation += mZRotationStep;
         Platform.runLater(() -> calculate(1));
         mZRotationStep = 0;
+    }
+
+    @Override
+    public void resetRotation()
+    {
     }
 }

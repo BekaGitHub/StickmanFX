@@ -1,5 +1,7 @@
 package de.dfki.common.part;
 
+import de.dfki.common.animationlogic.Animator;
+import javafx.application.Platform;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Path;
 
@@ -28,6 +30,69 @@ public abstract class Part2D extends Part
     public List<Path> mGraphicPaths = Collections.synchronizedList(new ArrayList());
     public BasicStroke mStroke = new BasicStroke(3.0f, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND);
 
+    public abstract void update();
 
+    public void setTranslation(int length)
+    {
+        mToTranslation = mTranslation + length;
+        mTranslationStep = (double) length / Animator.sMAX_ANIM_STEPS;
+    }
+
+    public synchronized void calculateTranslation(int step)
+    {
+        mTranslation += mTranslationStep;
+        mTranslation = (double) Math.round(mTranslation * 1000d) / 1000d; // the poor man's round method
+        Platform.runLater(() -> calculate(step));
+    }
+
+    @Override
+    public void resetTranslation()
+    {
+        mTranslationStep = 0.0d;
+    }
+
+    public void setDefaulRotation(int degree)
+    {
+        super.setDefaulRotation(degree);
+        mRotation = mDefaultRotation;
+        mToDegree = mDefaultRotation;
+        mRotationStep = 0.0f;
+    }
+
+    public void setRotation(int degree)
+    {
+        mToDegree = mRotation + degree;
+        mRotationStep = (double) degree / Animator.sMAX_ANIM_STEPS;
+    }
+
+    @Override
+    public void setTilt(int degree)
+    {
+        mToDegree = mRotation + degree;
+        mRotationStep = (double) degree / Animator.sMAX_ANIM_STEPS;
+    }
+
+    public synchronized void calculateRotation(int step)
+    {
+        mRotation += mRotationStep;
+        mRotation = (double) Math.round(mRotation * 1000d) / 1000d; // the poor man's round method
+        Platform.runLater(() -> calculate(step));
+    }
+
+    @Override
+    public void resetRotation()
+    {
+        mTranslationStep = 0.0d;
+    }
+
+    public void clearDrawObjects()
+    {
+        mGraphicPaths = new ArrayList<>();
+    }
+
+    public void addToDrawObjects(Path gp)
+    {
+        mGraphicPaths.add(gp);
+    }
 
 }

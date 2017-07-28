@@ -32,6 +32,8 @@ public abstract class Part extends Pane
     public abstract void calculate(int step);
     public abstract void resetRotation();
     public abstract void setShape(String s);
+    public abstract void resetTranslation();
+    public abstract void setTilt(int degree);
 
     public synchronized void calculateShape(int step)
     {
@@ -42,5 +44,10 @@ public abstract class Part extends Pane
     public void resetShape()
     {
         mShapeAnimationStep = 0;
+    }
+
+    public void setDefaulRotation(int degree)
+    {
+        mDefaultRotation = degree;
     }
 }
