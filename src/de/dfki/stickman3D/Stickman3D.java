@@ -103,11 +103,8 @@ public class Stickman3D extends Agent3D
 
     public Stickman3D(String name, Gender.TYPE gender, float scale, Dimension size)
     {
-        mSize = size;
-        mScale = scale;
+        super(name, gender, scale, size);
         isFullScreen = true;
-        mName = name;
-        mType = gender;
 
         mHead = new Head3D(this);
         if (gender == Gender.TYPE.MALE)
@@ -157,11 +154,8 @@ public class Stickman3D extends Agent3D
 
     public Stickman3D(String name, Gender.TYPE gender, float scale, double height)
     {
-        mScale = scale;
+        super(name, gender, scale, height);
         isFullScreen = false;
-        this.stageHeight = height;
-        mName = name;
-        mType = gender;
 
         mHead = new Head3D(this);
         if (gender == Gender.TYPE.MALE)
@@ -211,8 +205,7 @@ public class Stickman3D extends Agent3D
 
     public Stickman3D(String name, Gender.TYPE gender)
     {
-        mName = name;
-        mType = gender;
+        super(name, gender);
 
         isFullScreen = true;
         mHead = new Head3D(this);

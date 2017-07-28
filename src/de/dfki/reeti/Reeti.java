@@ -104,11 +104,8 @@ public class Reeti extends Agent3D
 
     public Reeti(String name, Gender.TYPE gender, float scale, Dimension size)
     {
-        mSize = size;
-        mScale = scale;
+        super(name, gender, scale, size);
         isFullScreen = true;
-        mName = name;
-        mType = gender;
 
         mHead = new Head(this);
         mLeftEyelid = new LeftEyelid(mHead);
@@ -136,11 +133,8 @@ public class Reeti extends Agent3D
 
     public Reeti(String name, Gender.TYPE gender, float scale, double height)
     {
-        mScale = scale;
+        super(name, gender, scale, height);
         isFullScreen = false;
-        this.stageHeight = height;
-        mName = name;
-        mType = gender;
 
         mHead = new Head(this);
         mLeftEyelid = new LeftEyelid(mHead);
@@ -168,8 +162,7 @@ public class Reeti extends Agent3D
 
     public Reeti(String name, Gender.TYPE gender)
     {
-        mName = name;
-        mType = gender;
+        super(name, gender);
 
         isFullScreen = true;
         mHead = new Head(this);

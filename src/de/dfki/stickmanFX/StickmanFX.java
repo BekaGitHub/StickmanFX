@@ -135,19 +135,14 @@ public class StickmanFX extends Agent2D
     public BombeFX mBombeFX;
     public SpeechBubbleStickman2D mSpeechBubbleFX;
     public NoseFX mNose;
-    private boolean faceOnly = false;
     // logging
     public final Logger mLogger = Logger.getAnonymousLogger();
 
 
     public StickmanFX(String name, Gender.TYPE gender, float scale, Dimension size)
     {
-        mSize = size;
-        mScale = scale;
+        super(name, gender, scale, size);
         mScaleOriginal = scale;
-
-        mName = name;
-        mType = gender;
 
         initBodyParts();
 
@@ -159,11 +154,8 @@ public class StickmanFX extends Agent2D
 
     public StickmanFX(String name, Gender.TYPE gender, float scale)
     {
-        mScale = scale;
+        super(name, gender, scale);
         mScaleOriginal = scale;
-
-        mName = name;
-        mType = gender;
 
         initBodyParts();
 
@@ -175,12 +167,8 @@ public class StickmanFX extends Agent2D
 
     public StickmanFX(String name, Gender.TYPE gender, float scale, boolean faceOnly)
     {
-        mScale = scale;
+        super(name, gender, scale, faceOnly);
         mScaleOriginal = scale;
-
-        mName = name;
-        mType = gender;
-        this.faceOnly = faceOnly;
 
         initBodyParts();
 
@@ -198,14 +186,30 @@ public class StickmanFX extends Agent2D
 
     public StickmanFX(String name, Gender.TYPE gender)
     {
-        mName = name;
-        mType = gender;
+        super(name, gender);
 
         initBodyParts();
 
         mSpeechBubbleFX = new SpeechBubbleStickman2D(mHeadFX);
         init();
         this.addAllParts();
+        update();
+    }
+
+    public StickmanFX(String name, Gender.TYPE gender, float scale, Dimension size, boolean faceOnly)
+    {
+        super(name, gender, scale, size, faceOnly);
+        mScaleOriginal = scale;
+        initBodyParts();
+        mSpeechBubbleFX = new SpeechBubbleStickman2D(mHeadFX);
+        init();
+        if (faceOnly)
+        {
+            this.addOnlyHeadParts();
+        } else
+        {
+            this.addAllParts();
+        }
         update();
     }
 
@@ -243,26 +247,6 @@ public class StickmanFX extends Agent2D
         mThinkFX = new ThinkFX(mHeadFX);
         mBombeFX = new BombeFX(mHeadFX);
         mNose = new NoseFX(mHeadFX);
-    }
-
-    public StickmanFX(String name, Gender.TYPE gender, float scale, Dimension size, boolean faceOnly)
-    {
-        mSize = size;
-        mScale = scale;
-        mScaleOriginal = scale;
-        mName = name;
-        mType = gender;
-        initBodyParts();
-        mSpeechBubbleFX = new SpeechBubbleStickman2D(mHeadFX);
-        init();
-        if (faceOnly)
-        {
-            this.addOnlyHeadParts();
-        } else
-        {
-            this.addAllParts();
-        }
-        update();
     }
 
     private void init()
