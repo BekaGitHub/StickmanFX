@@ -1,6 +1,6 @@
 package de.dfki.reeti;
 
-import de.dfki.common.agent.Agent;
+import de.dfki.common.agent.Agent3D;
 import de.dfki.common.enums.Led;
 import de.dfki.reeti.animationlogic.AnimationLoaderReeti;
 import de.dfki.reeti.animationlogic.AnimationSchedulerReeti;
@@ -35,9 +35,6 @@ import java.awt.Toolkit;
 import javafx.scene.effect.InnerShadow;
 import javafx.scene.transform.Affine;
 
-import java.util.List;
-import java.util.concurrent.CopyOnWriteArrayList;
-import java.util.concurrent.Semaphore;
 import java.util.logging.ConsoleHandler;
 import java.util.logging.Formatter;
 import java.util.logging.LogRecord;
@@ -57,11 +54,8 @@ import javafx.scene.paint.Stop;
  *         (www.sarah-johnson.com) in the Valentine music video from Kina Grannis shot
  *         by Ross Ching in 2012
  */
-public class Reeti extends Agent
+public class Reeti extends Agent3D
 {
-    public double stageHeight;
-    public boolean isFullScreen = false;
-    public static String mbackground = null;
     public Blinking mBlinking;
 
     // amimation stuff
@@ -86,11 +80,8 @@ public class Reeti extends Agent
     public Body mBody;
     // environment
     public SpeechBubbleFX mSpeechBubble;
-    private StageRoom stageController;
     // logging
     public final Logger mLogger = Logger.getAnonymousLogger();
-    // id
-    private long mID = 0;
 
     //Movement
     private double mUpperLipOldPos = 0;
@@ -277,15 +268,15 @@ public class Reeti extends Agent
     }
 
     @Override
-    public StageRoom getStageController()
+    public StageRoom getStageRoom()
     {
-        return stageController;
+        return stageRoom;
     }
 
     @Override
-    public void setStageController(StageRoom s)
+    public void setStageRoom(StageRoom s)
     {
-        stageController = s;
+        stageRoom = s;
     }
 
     @Override

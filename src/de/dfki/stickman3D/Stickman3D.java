@@ -1,6 +1,6 @@
 package de.dfki.stickman3D;
 
-import de.dfki.common.agent.Agent;
+import de.dfki.common.agent.Agent3D;
 import de.dfki.common.enums.Orientation;
 import de.dfki.stickman3D.body.*;
 import de.dfki.stickman3D.body.Head3D;
@@ -24,9 +24,6 @@ import javafx.scene.text.Text;
 import javafx.scene.transform.Affine;
 
 import java.awt.*;
-import java.util.List;
-import java.util.concurrent.CopyOnWriteArrayList;
-import java.util.concurrent.Semaphore;
 import java.util.logging.ConsoleHandler;
 import java.util.logging.Formatter;
 import java.util.logging.LogRecord;
@@ -39,33 +36,27 @@ import java.util.logging.Logger;
  *         (www.sarah-johnson.com) in the Valentine music video from Kina Grannis shot
  *         by Ross Ching in 2012
  */
-public class Stickman3D extends Agent
+public class Stickman3D extends Agent3D
 {
     public Orientation mOrientation = Orientation.FRONT;
-    private Text nameText = new Text();
-    private double stageHeight;
-    public boolean isFullScreen = false;
+    private Text agentNameText = new Text();
     public static String sbackground = null;
 
     //steuert leaveSpeed von GoDown und ComeUp 
     public double leaveSpeed = 0;
-    // leaving
     public boolean starShowControler = false;
-    // appear at the same time or not
     public boolean fadeControler = false;
-    // character to fade out or fade in.
-    // true: Fade out
-    public boolean setCharacterInvisible = false; // Added by Robbie, to control
-    // the character to fade
-    // out.
+    // Added by Robbie, to control the character to fade out.
     // True: visible False:invisible
+    public boolean setCharacterInvisible = false;
     public double mWobble = 0;
-    public Boolean mIdleRun = false; // the shared variable to decide the while
+    // the shared variable to decide the while
     // loop in IdleBehavior break or not
+    public Boolean mIdleRun = false;
     public IdleBehavior mIdleBehavior;
     public Breathing mBreathing;
     public Blinking mBlinking;
-    // amimation stuff
+
     public AnimationScheduler3D mAnimationSchedulerFX;
 
     // body parts
@@ -106,13 +97,9 @@ public class Stickman3D extends Agent
     public RightForeLeg3D mRightForeLeg;
     public RightFoot3D mRightFoot;
     public UpperBodyAndHead3D mUpperBodyAndHead;
-    // environment
     public SpeechBubble3D mSpeechBubble;
-    private StageRoom stageController;
-    // logging
+
     public final Logger mLogger = Logger.getAnonymousLogger();
-    // id
-    private long mID = 0;
 
     public Stickman3D(String name, Gender.TYPE gender, float scale, Dimension size)
     {
@@ -285,23 +272,23 @@ public class Stickman3D extends Agent
         is.setOffsetX(4.0f);
         is.setOffsetY(4.0f);
 
-        nameText.setEffect(is);
-        nameText.setX(20);
-        nameText.setY(100);
-        nameText.setText(mName);
-        nameText.setFill(Color.YELLOW);
-        nameText.setFont(Font.font(null, FontWeight.BOLD, 30));
+        agentNameText.setEffect(is);
+        agentNameText.setX(20);
+        agentNameText.setY(100);
+        agentNameText.setText(mName);
+        agentNameText.setFill(Color.YELLOW);
+        agentNameText.setFont(Font.font(null, FontWeight.BOLD, 30));
 
         if (this.mType == Gender.TYPE.MALE)
         {
-            nameText.setTranslateX(-80);
-            nameText.setTranslateY(350);
+            agentNameText.setTranslateX(-80);
+            agentNameText.setTranslateY(350);
         } else
         {
-            nameText.setTranslateX(-90);
-            nameText.setTranslateY(350);
+            agentNameText.setTranslateX(-90);
+            agentNameText.setTranslateY(350);
         }
-        nameText.setTranslateZ(-120);
+        agentNameText.setTranslateZ(-120);
 
         ConsoleHandler ch = new ConsoleHandler();
         ch.setFormatter(new StickmanLogFormatter());
@@ -364,15 +351,15 @@ public class Stickman3D extends Agent
     }
 
     @Override
-    public StageRoom getStageController()
+    public StageRoom getStageRoom()
     {
-        return stageController;
+        return stageRoom;
     }
 
     @Override
-    public void setStageController(StageRoom s)
+    public void setStageRoom(StageRoom s)
     {
-        stageController = s;
+        stageRoom = s;
     }
 
     @Override
@@ -511,7 +498,7 @@ public class Stickman3D extends Agent
     {
 
         this.getChildren().addAll(
-                mDownBody, mStars, mSpeechBubble, nameText, mUpperBodyAndHead);
+                mDownBody, mStars, mSpeechBubble, agentNameText, mUpperBodyAndHead);
 
     }
 

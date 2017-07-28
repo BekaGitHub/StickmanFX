@@ -1,6 +1,7 @@
 package de.dfki.common.agent;
 
 import de.dfki.common.enums.Gender;
+import de.dfki.common.interfaces.StageRoom;
 import de.dfki.stickmanSwing.animationlogic.listener.AnimationListener;
 import javafx.scene.layout.Pane;
 
@@ -21,6 +22,9 @@ public abstract class Agent extends Pane implements IAgent
     public static Dimension mSize = new Dimension(mDefaultSize);
     public Semaphore mAnimationLaunchControl = new Semaphore(1);
     public final List<AnimationListener> mAnimationListeners = new CopyOnWriteArrayList<AnimationListener>();
+
+    public StageRoom stageRoom;
+    public long mID = 0;
 
     @Override
     public String getName()

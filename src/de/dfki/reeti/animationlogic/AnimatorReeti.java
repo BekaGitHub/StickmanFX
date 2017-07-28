@@ -107,7 +107,7 @@ public class AnimatorReeti extends Animator{
                     // 1) API Call
                     // 2) send to Player
 
-                    mReeti.getStageController().sendTimeMarkInformation(e.mContent);
+                    mReeti.getStageRoom().sendTimeMarkInformation(e.mContent);
                 }
             }
         }

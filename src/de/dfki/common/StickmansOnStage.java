@@ -103,7 +103,7 @@ public abstract class StickmansOnStage {
 
     protected void putFullStickmanOnStage(String name, IAgent stickman) {
         sStickmansOnStage.put(name.toLowerCase(), stickman);
-        stickman.setStageController(stageRoom);
+        stickman.setStageRoom(stageRoom);
     }
 
     public Set<String> getStickmanNames() {

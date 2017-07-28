@@ -197,10 +197,10 @@ public class AnimationReeti extends Thread implements XMLParseable, XMLWriteable
         // send event that AnimationReeti is ended
 
         // API or TCP-Interface
-        if (!mReeti.getStageController().ismNetwork()) {
+        if (!mReeti.getStageRoom().ismNetwork()) {
             mReeti.notifyListeners(getmID());
         } else {
-            mReeti.getStageController().sendAnimationUpdate("end", getmID());
+            mReeti.getStageRoom().sendAnimationUpdate("end", getmID());
         }
     }
 

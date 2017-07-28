@@ -109,7 +109,7 @@ public class Animator3D extends Animator{
                     // 1) API Call
                     // 2) send to Player
 
-                    mStickmanFX.getStageController().sendTimeMarkInformation(e.mContent);
+                    mStickmanFX.getStageRoom().sendTimeMarkInformation(e.mContent);
                 }
             }
         }

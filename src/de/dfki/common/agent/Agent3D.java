@@ -5,4 +5,6 @@ package de.dfki.common.agent;
  */
 public abstract class Agent3D extends Agent
 {
+    public boolean isFullScreen = false;
+    public double stageHeight;
 }

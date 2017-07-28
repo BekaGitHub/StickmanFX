@@ -10,9 +10,9 @@ import de.dfki.common.interfaces.StageRoom;
  */
 public interface IAgent
 {
-    StageRoom getStageController();
+    StageRoom getStageRoom();
 
-    void setStageController(StageRoom s);
+    void setStageRoom(StageRoom s);
 
     void setShowName(boolean show);
 

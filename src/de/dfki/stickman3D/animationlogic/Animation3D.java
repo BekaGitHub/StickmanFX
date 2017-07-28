@@ -197,10 +197,10 @@ public class Animation3D extends Thread implements XMLParseable, XMLWriteable, A
         // send event that Animation3D is ended
 
         // API or TCP-Interface
-        if (!mStickmanFX.getStageController().ismNetwork()) {
+        if (!mStickmanFX.getStageRoom().ismNetwork()) {
             mStickmanFX.notifyListeners(getmID());
         } else {
-            mStickmanFX.getStageController().sendAnimationUpdate("end", getmID());
+            mStickmanFX.getStageRoom().sendAnimationUpdate("end", getmID());
         }
     }
 

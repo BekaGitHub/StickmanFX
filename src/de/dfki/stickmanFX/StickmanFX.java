@@ -1,8 +1,8 @@
 package de.dfki.stickmanFX;
 
 import de.dfki.action.sequence.WordTimeMarkSequence;
+import de.dfki.common.agent.Agent2D;
 import de.dfki.common.enums.Gender;
-import de.dfki.common.agent.Agent;
 import de.dfki.common.enums.Orientation;
 import de.dfki.common.interfaces.Animation;
 import de.dfki.common.interfaces.StageRoom;
@@ -11,13 +11,9 @@ import de.dfki.stickmanSwing.animationlogic.listener.AnimationListener;
 
 import java.awt.Dimension;
 import java.awt.Font;
-import java.awt.FontMetrics;
 import java.awt.font.TextAttribute;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-import java.util.concurrent.CopyOnWriteArrayList;
-import java.util.concurrent.Semaphore;
 import java.util.logging.ConsoleHandler;
 import java.util.logging.Formatter;
 import java.util.logging.LogRecord;
@@ -73,22 +69,21 @@ import javafx.scene.transform.Affine;
  *         (www.sarah-johnson.com) in the Valentine music video from Kina Grannis shot
  *         by Ross Ching in 2012
  */
-public class StickmanFX extends Agent
+public class StickmanFX extends Agent2D
 {
-    public final static Color sFOREGROUND = Color.rgb(188, 188, 188, (128 * 100 / 255) / 100f);
+    public final static Color sFOREGROUND =
+            Color.rgb(188, 188, 188, (128 * 100 / 255) / 100f);
 
     //Used to change the backgroundRecord(pic) of the stickmanSwing
-    public final static ObservableList<String> backgroundList = FXCollections.observableArrayList("office",
-            "grassland");
+    public final static ObservableList<String> backgroundList =
+            FXCollections.observableArrayList("office", "grassland");
+
     // record the backgroundRecord(pic or color) of the stickmanSwing
     public String backgroundRecord = null;
     public Orientation mOrientation = Orientation.FRONT;
     // Record mScale in DisappearToSmall and ComeBackFromSmall
     public float mScaleOriginal = mScale;
-    public boolean mShowName = true;
-    public float mGeneralXTranslation = 0;
-    public float mGeneralYTranslation = 0;
-    private Label nameLabel;
+
 
     //control the speed of leaving
     public double hoffset = 0;
@@ -107,16 +102,13 @@ public class StickmanFX extends Agent
     public IdleBehavior mIdleBehavior;
     // Perlin noise
     public SimplexNoise simplexNoise;
-    // amimation stuff
 
     public AnimationSchedulerFX mAnimationSchedulerFX;
-    // body parts
-    public HeadFX mHeadFX;
 
+    public HeadFX mHeadFX;
     public MaleHairFX mMaleHairFX;
     public FemaleHairFX mFemaleHairFX;
     public LeftEyebrowFX mLeftEyebrowFX;
-    // added by Robbie FaceWrinkle
     public FaceWrinkleFX mFaceWrinkleFX;
     public LeftEyeFX mLeftEyeFX;
     public RightEyebrowFX mRightEyebrowFX;
@@ -132,28 +124,21 @@ public class StickmanFX extends Agent
     public RightUpperArmFX mRightUpperArmFX;
     public RightForeArmFX mRightForeArmFX;
     public RightHandFX mRightHandFX;
-    // public LeftLegFX mLeftLegFX;
     public LeftUpperLegFX mLeftUpperLegFX;
     public LeftForeLegFX mLeftForeLegFX;
     public LeftFootFX mLeftFootFX;
-    // added by Robbie Create Say bye or hi
     public StarsFX mStarsFX;
-    // public RightLegFX mRightLegFX;
     public RightUpperLegFX mRightUpperLegFX;
     public RightForeLegFX mRightForeLegFX;
     public RightFootFX mRightFootFX;
     public ThinkFX mThinkFX;
     public BombeFX mBombeFX;
-    // environment
     public SpeechBubbleFX mSpeechBubbleFX;
-    private StageRoom stageController;
     public NoseFX mNose;
     private boolean faceOnly = false;
     // logging
     public final Logger mLogger = Logger.getAnonymousLogger();
 
-    // id
-    private long mID = 0;
 
     public StickmanFX(String name, Gender.TYPE gender, float scale, Dimension size)
     {
@@ -282,7 +267,7 @@ public class StickmanFX extends Agent
 
     private void init()
     {
-        nameLabel = new Label();
+        agentNameLabel = new Label();
         this.setPrefHeight(mSize.height);
         this.setPrefWidth(mSize.width);
         this.setMinHeight(mSize.height);
@@ -312,15 +297,15 @@ public class StickmanFX extends Agent
     }
 
     @Override
-    public StageRoom getStageController()
+    public StageRoom getStageRoom()
     {
-        return stageController;
+        return stageRoom;
     }
 
     @Override
-    public void setStageController(StageRoom s)
+    public void setStageRoom(StageRoom s)
     {
-        stageController = s;
+        stageRoom = s;
     }
 
     @Override
@@ -474,6 +459,8 @@ public class StickmanFX extends Agent
 
     public void update()
     {
+        float mGeneralXTranslation;
+        float mGeneralYTranslation;
         Color currColor = sFOREGROUND;
         int width = new Float(mSize.width).intValue();
         int height = new Float(mSize.height).intValue();
@@ -500,12 +487,12 @@ public class StickmanFX extends Agent
 
         if (mShowName)
         {
-            nameLabel.setTranslateY(mRightForeLegFX.getLegStartPosition().getY() * 21 / 20);
-            nameLabel.setText(mName);
+            agentNameLabel.setTranslateY(mRightForeLegFX.getLegStartPosition().getY() * 21 / 20);
+            agentNameLabel.setText(mName);
         } else
         {
-            nameLabel.setTranslateY(mRightForeLegFX.getLegStartPosition().getY() * 21 / 20);
-            nameLabel.setText("");
+            agentNameLabel.setTranslateY(mRightForeLegFX.getLegStartPosition().getY() * 21 / 20);
+            agentNameLabel.setText("");
         }
 
         updateAll();
@@ -541,7 +528,7 @@ public class StickmanFX extends Agent
                 mBodyFX, mLeftShoulderFX, mLeftUpperArmFX, mLeftForeArmFX, mLeftHandFX, mRightShoulderFX,
                 mRightUpperArmFX, mRightForeArmFX, mRightHandFX, /* mLeftLegFX, */ mLeftUpperLegFX, mLeftForeLegFX,
                 mLeftFootFX, /* mRightLegFX, */ mRightUpperLegFX, mRightForeLegFX, mRightFootFX, mFaceWrinkleFX,
-                mStarsFX, mSpeechBubbleFX, mThinkFX, mBombeFX, nameLabel);
+                mStarsFX, mSpeechBubbleFX, mThinkFX, mBombeFX, agentNameLabel);
         if (this.mType == Gender.TYPE.MALE)
         {
             this.getChildren().add(mMaleHairFX);
