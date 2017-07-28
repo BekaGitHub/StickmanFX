@@ -59,15 +59,15 @@ public class BombeFX extends PartStickman2D
 
         double movement;
 
-        //clearChildren(this);
+        //this.getChildren().clear();;
         switch (mShape) {
             case DEFAULT:
-                clearChildren(this);
+                this.getChildren().clear();;
                 break;
 
             case BOMBETRANSITION:
                 if (AnimatorFX.sMAX_ANIM_STEPS - mShapeAnimationStep == 0) {
-                    clearChildren(this);
+                    this.getChildren().clear();;
                     url = getClass().getClassLoader().getResource("bombe.gif");
                     image = new Image(url.toString());
                     imageView = new ImageView(image);
@@ -85,7 +85,7 @@ public class BombeFX extends PartStickman2D
                 break;
             case BOMBEEXPLOSION:
                 if (AnimatorFX.sMAX_ANIM_STEPS - mShapeAnimationStep == 0) {
-                    clearChildren(this);
+                    this.getChildren().clear();;
                     url = getClass().getClassLoader().getResource("explosion.gif");
                     image = new Image(url.toString());
                     imageView = new ImageView(image);

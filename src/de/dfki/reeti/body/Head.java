@@ -90,6 +90,12 @@ public class Head extends PartReeti
         mHeadGroup.getTransforms().addAll(rz, ry, rx);
     }
 
+    @Override
+    public void setShape(String s)
+    {
+
+    }
+
     public Group getHeadGroup()
     {
         return mHeadGroup;

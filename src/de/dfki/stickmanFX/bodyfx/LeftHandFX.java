@@ -48,7 +48,7 @@ public class LeftHandFX extends PartStickman2D
         mEnd = new Point(mStart.x, mStart.y + mLength);
 
         clearDrawObjects();
-        clearChildren(this);
+        this.getChildren().clear();;
         mHand = new Path();
 //        if (mLeftForeArm.mUpperArmFX.mLeftShoulderFX.mBodyFX.mNeck.mHead.mStickman.setCharacterInvisible == false) {
 //        	mColorRecorder = mColor;
@@ -98,6 +98,12 @@ public class LeftHandFX extends PartStickman2D
             g.getTransforms().clear();
             g.getTransforms().add(af);
         }
+    }
+
+    @Override
+    public void setShape(String s)
+    {
+
     }
 
     protected void recordColor() {

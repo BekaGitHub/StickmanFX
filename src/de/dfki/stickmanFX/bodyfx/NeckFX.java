@@ -45,7 +45,7 @@ public class NeckFX extends PartStickman2D
         mEnd = new Point(mStart.x, mStart.y + mLength);
 
         clearDrawObjects();
-        clearChildren(this);
+        this.getChildren().clear();;
         mPath = new Path();
 //		if(mHead.mStickman.setCharacterInvisible == false)
 //			mColorRecorder = mColor;
@@ -75,6 +75,12 @@ public class NeckFX extends PartStickman2D
         this.getChildren().add(mPath);
         addToDrawObjects(mPath);
         this.update();
+    }
+
+    @Override
+    public void setShape(String s)
+    {
+
     }
 
     protected void recordColor() {

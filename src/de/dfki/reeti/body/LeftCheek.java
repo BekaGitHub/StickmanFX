@@ -54,6 +54,12 @@ public class LeftCheek extends PartReeti
 
     }
 
+    @Override
+    public void setShape(String s)
+    {
+
+    }
+
     public int getSize()
     {
         return SIZE;

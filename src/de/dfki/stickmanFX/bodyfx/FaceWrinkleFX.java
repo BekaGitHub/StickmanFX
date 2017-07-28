@@ -55,7 +55,7 @@ public class FaceWrinkleFX extends PartStickman2D
         double movement;
 
         clearDrawObjects();
-        clearChildren(this);
+        this.getChildren().clear();
 
         mPath = new Path();
 

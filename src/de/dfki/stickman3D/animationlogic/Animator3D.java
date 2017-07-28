@@ -2,6 +2,7 @@ package de.dfki.stickman3D.animationlogic;
 
 import de.dfki.action.sequence.Entry;
 import de.dfki.action.sequence.WordTimeMarkSequence;
+import de.dfki.common.animationlogic.Animator;
 import de.dfki.stickman3D.Stickman3D;
 import de.dfki.stickmanSwing.util.TimingInfo;
 import de.dfki.stickman3D.body.PartStickman3D;
@@ -14,9 +15,8 @@ import java.util.concurrent.Semaphore;
  * @author Beka Aptsiauri
  *
  */
-public class Animator3D {
+public class Animator3D extends Animator{
 
-    public static int sMAX_ANIM_STEPS = 20;
     public int mCurrentStep = sMAX_ANIM_STEPS;
     private final Stickman3D mStickmanFX;
     private final Animation3D mAnimationFX;

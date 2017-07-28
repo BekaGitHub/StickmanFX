@@ -2,6 +2,7 @@ package de.dfki.stickmanFX.animationlogic;
 
 import de.dfki.action.sequence.Entry;
 import de.dfki.action.sequence.WordTimeMarkSequence;
+import de.dfki.common.animationlogic.Animator;
 import de.dfki.stickmanSwing.util.TimingInfo;
 import de.dfki.stickmanFX.StickmanFX;
 import de.dfki.stickmanFX.bodyfx.PartStickman2D;
@@ -18,9 +19,8 @@ import static java.lang.Thread.sleep;
  * @author Beka Aptsiauri
  *
  */
-public class AnimatorFX {
+public class AnimatorFX extends Animator{
 
-    public static int sMAX_ANIM_STEPS = 20;
     public int mCurrentStep = sMAX_ANIM_STEPS;
     private final StickmanFX mStickmanFX;
     private final AnimationFX mAnimationFX;

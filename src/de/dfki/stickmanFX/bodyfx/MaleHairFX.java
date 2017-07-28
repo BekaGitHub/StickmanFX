@@ -44,7 +44,7 @@ public class MaleHairFX extends PartStickman2D
 
     public void calculate(int step) {
         Affine af = new Affine();
-        clearChildren(this);
+        this.getChildren().clear();;
 
         // male hair
         mMaleHair = new Path();
@@ -69,6 +69,12 @@ public class MaleHairFX extends PartStickman2D
         this.getChildren().add(mMaleHair);
 
         update();
+
+    }
+
+    @Override
+    public void setShape(String s)
+    {
 
     }
 

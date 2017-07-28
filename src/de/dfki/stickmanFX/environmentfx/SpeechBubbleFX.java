@@ -50,7 +50,7 @@ public class SpeechBubbleFX extends PartStickman2D
     public void calculate(int step) {
         mStart = mHeadFX.getSpeechBubbleStartPosition();
 
-        clearChildren(this);
+        this.getChildren().clear();;
 
         bubblePane = new GridPane();
         message = new Label();

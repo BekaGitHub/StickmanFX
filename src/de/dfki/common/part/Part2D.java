@@ -3,6 +3,7 @@ package de.dfki.common.part;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Path;
 
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -25,6 +26,7 @@ public abstract class Part2D extends Part
     public float mColoropacityRest = 1.0f;
 
     public List<Path> mGraphicPaths = Collections.synchronizedList(new ArrayList());
+    public BasicStroke mStroke = new BasicStroke(3.0f, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND);
 
 
 

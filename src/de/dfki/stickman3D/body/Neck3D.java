@@ -76,7 +76,7 @@ public class Neck3D extends PartStickman3D
         mStart = mHead.getNeckStartPosition();
         mEnd = new Point(mStart.x, mStart.y + mLength);
 
-        clearChildren(this);
+        this.getChildren().clear();
 
         neckMeshView.setTranslateX(mStart.x);
         neckMeshView.setTranslateY(mStart.y + 5);

@@ -32,4 +32,10 @@ public class Neck extends PartReeti
     {
 
     }
+
+    @Override
+    public void setShape(String s)
+    {
+
+    }
 }

@@ -62,7 +62,7 @@ public class RightForeLegFX extends PartStickman2D
 
     @Override
     public void calculate(int step) {
-        clearChildren(this);
+        this.getChildren().clear();;
 
         mLeg = new Path();
 
@@ -80,6 +80,12 @@ public class RightForeLegFX extends PartStickman2D
 
         this.getChildren().add(mLeg);
         this.update();
+    }
+
+    @Override
+    public void setShape(String s)
+    {
+
     }
 
     @Override

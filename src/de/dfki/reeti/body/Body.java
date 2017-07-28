@@ -54,6 +54,12 @@ public class Body extends PartReeti
 
     }
 
+    @Override
+    public void setShape(String s)
+    {
+
+    }
+
     public Point getUpperBodyPosition()
     {
         return new Point(mStart.x, mStart.y + 135);

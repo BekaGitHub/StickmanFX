@@ -49,7 +49,7 @@ public class StarsFX extends PartStickman2D
     }
 
     private void creatStar(int radius, Point center, Path path) {
-        clearChildren(this);
+        this.getChildren().clear();
         int r = radius;
         double ch = 72 * Math.PI / 180;
         int x0 = center.x;
@@ -83,7 +83,7 @@ public class StarsFX extends PartStickman2D
         mEnd = new Point(mStart.x, mStart.y + mLength);
 
         clearDrawObjects();
-        clearChildren(this);
+        this.getChildren().clear();
         Path path = new Path();
 
         switch (mShape) {

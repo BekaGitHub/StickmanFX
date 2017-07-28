@@ -35,4 +35,10 @@ public class UpperBodyAndHead3D extends PartStickman3D
 		mUpperBodyAndHead.getTransforms().clear();
 		mUpperBodyAndHead.getTransforms().addAll(rx, ry, rz, translation);
 	}
+
+	@Override
+	public void setShape(String s)
+	{
+
+	}
 }

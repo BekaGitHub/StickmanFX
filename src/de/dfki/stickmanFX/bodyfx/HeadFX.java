@@ -98,7 +98,7 @@ public class HeadFX extends PartStickman2D
 
     public void calculate(int step) {
         Affine af = new Affine();
-        clearChildren(this);
+        this.getChildren().clear();;
 
         mHead = new Path();
         // head
@@ -156,6 +156,12 @@ public class HeadFX extends PartStickman2D
         this.getChildren().addAll(mHead, mLeftEar, mRightEar);
 
         update();
+
+    }
+
+    @Override
+    public void setShape(String s)
+    {
 
     }
 

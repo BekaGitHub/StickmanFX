@@ -60,4 +60,10 @@ public class RightEar extends PartReeti
         mRightEarMesh.getTransforms().clear();
         mRightEarMesh.getTransforms().addAll(rz, ry, rx);
     }
+
+    @Override
+    public void setShape(String s)
+    {
+
+    }
 }

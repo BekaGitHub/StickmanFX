@@ -60,4 +60,10 @@ public class LeftEyelid extends PartReeti
         mLeftEyeMesh.getTransforms().addAll(rz, ry, rx);
 
     }
+
+    @Override
+    public void setShape(String s)
+    {
+
+    }
 }

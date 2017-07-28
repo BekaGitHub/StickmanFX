@@ -72,7 +72,7 @@ public class LeftShoulderFX extends PartStickman2D
     public void calculate(int step) {
         mStart = mBodyFX.getLeftArmStartPostion();
         mEnd = new Point(mStart.x, mStart.y + mShoulderLength);
-        clearChildren(this);
+        this.getChildren().clear();;
 
         mShoulder.getElements().add(new MoveTo(mStart.x, mStart.y + 2));
         mShoulder.getElements().add(new QuadCurveTo(mStart.x, (mStart.y + mEnd.y) / 2, mEnd.x, mEnd.y));
@@ -89,6 +89,12 @@ public class LeftShoulderFX extends PartStickman2D
         if (mBodyFX.mNeckFX.mHeadFX.mStickmanFX.mLeftShoulderFX != null) {
             mBodyFX.calculate();
         }
+    }
+
+    @Override
+    public void setShape(String s)
+    {
+
     }
 
     @Override

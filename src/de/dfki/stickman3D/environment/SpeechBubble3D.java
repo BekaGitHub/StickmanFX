@@ -47,7 +47,7 @@ public class SpeechBubble3D extends PartStickman3D
     public void calculate(int step)
     {
 
-        clearChildren(this);
+        this.getChildren().clear();
 
         bubblePane = new GridPane();
         message = new Label();

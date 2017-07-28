@@ -55,6 +55,12 @@ public class RightCheek extends PartReeti
 
     }
 
+    @Override
+    public void setShape(String s)
+    {
+
+    }
+
     public Circle getLed()
     {
         return mLed;

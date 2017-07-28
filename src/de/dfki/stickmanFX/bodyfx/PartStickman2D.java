@@ -5,14 +5,9 @@
  */
 package de.dfki.stickmanFX.bodyfx;
 
-import de.dfki.common.part.Part;
+import de.dfki.common.animationlogic.Animator;
 import de.dfki.common.part.Part2D;
-import de.dfki.stickmanFX.animationlogic.AnimatorFX;
-import java.awt.BasicStroke;
-import java.awt.Point;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 
 import javafx.animation.FadeTransition;
 import javafx.animation.Interpolator;
@@ -39,8 +34,6 @@ import javafx.util.Duration;
 public abstract class PartStickman2D extends Part2D
 {
 
-    public BasicStroke mStroke = new BasicStroke(3.0f, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND);
-
     public void init() {
         mColorRecorder = mColor;
         super.init();
@@ -48,7 +41,7 @@ public abstract class PartStickman2D extends Part2D
 
     public void setTranslation(int length) {
         mToTranslation = mTranslation + length;
-        mTranslationStep = (double) length / AnimatorFX.sMAX_ANIM_STEPS;
+        mTranslationStep = (double) length / Animator.sMAX_ANIM_STEPS;
     }
 
     public synchronized void calculateTranslation(int step) {
@@ -71,12 +64,12 @@ public abstract class PartStickman2D extends Part2D
 
     public void setRotation(int degree) {
         mToDegree = mRotation + degree;
-        mRotationStep = (double) degree / AnimatorFX.sMAX_ANIM_STEPS;
+        mRotationStep = (double) degree / Animator.sMAX_ANIM_STEPS;
     }
 
     public void setTilt(int degree) {
         mToDegree = mRotation + degree;
-        mRotationStep = (double) degree / AnimatorFX.sMAX_ANIM_STEPS;
+        mRotationStep = (double) degree / Animator.sMAX_ANIM_STEPS;
     }
 
     public synchronized void calculateRotation(int step) {
@@ -86,33 +79,17 @@ public abstract class PartStickman2D extends Part2D
 
     }
 
-    public void resetRotation() {
-
+    @Override
+    public void resetRotation()
+    {
         mTranslationStep = 0.0d;
-
     }
 
-    public void setShape(String s) {
-        // place code for setting shape
-    }
-
-    public synchronized void calculateShape(int step) {
-        mShapeAnimationStep = step;
-
-        Platform.runLater(() -> calculate(step));
-    }
-
-    public void resetShape() {
-        mShapeAnimationStep = 0;
-    }
 
     public void clearDrawObjects() {
         mGraphicPaths = new ArrayList<>();
     }
 
-    public void clearChildren(PartStickman2D bodyPartFX) {
-        bodyPartFX.getChildren().clear();
-    }
 
     public void addToDrawObjects(Path gp) {
         mGraphicPaths.add(gp);

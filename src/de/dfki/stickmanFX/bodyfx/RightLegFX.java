@@ -38,7 +38,7 @@ public class RightLegFX extends PartStickman2D
         mEnd = new Point(mStart.x, mStart.y + mLength);
 
         clearDrawObjects();
-        clearChildren(this);
+        this.getChildren().clear();;
 //        if (mBodyFX.mNeck.mHead.mStickman.setCharacterInvisible == false)
 //        	mColorRecorder = mColor;
         if (mBodyFX.mNeckFX.mHeadFX.mStickmanFX.setCharacterInvisible == true) {
@@ -71,6 +71,12 @@ public class RightLegFX extends PartStickman2D
         this.getChildren().add(gp);
         addToDrawObjects(gp);
         this.update();
+    }
+
+    @Override
+    public void setShape(String s)
+    {
+
     }
 
     protected void recordColor() {

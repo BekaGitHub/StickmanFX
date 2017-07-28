@@ -52,4 +52,10 @@ public class LeftEye extends PartReeti
         mLeftEarMesh.getTransforms().clear();
         mLeftEarMesh.getTransforms().addAll(rz, ry, rx);
     }
+
+    @Override
+    public void setShape(String s)
+    {
+
+    }
 }

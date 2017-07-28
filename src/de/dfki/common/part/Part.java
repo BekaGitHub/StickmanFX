@@ -1,5 +1,6 @@
 package de.dfki.common.part;
 
+import javafx.application.Platform;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.*;
 
@@ -29,4 +30,17 @@ public abstract class Part extends Pane
     }
 
     public abstract void calculate(int step);
+    public abstract void resetRotation();
+    public abstract void setShape(String s);
+
+    public synchronized void calculateShape(int step)
+    {
+        mShapeAnimationStep = step;
+        Platform.runLater(() -> calculate(step));
+    }
+
+    public void resetShape()
+    {
+        mShapeAnimationStep = 0;
+    }
 }

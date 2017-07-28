@@ -64,7 +64,7 @@ public class RightUpperArmFX extends PartStickman2D
 
     @Override
     public void calculate(int step) {
-        clearChildren(this);
+        this.getChildren().clear();;
 
         mArm = new Path();
         mStart = mRightShoulderFX.getRightShoulderEndPosition();
@@ -82,6 +82,12 @@ public class RightUpperArmFX extends PartStickman2D
         // mArm.transform(t);
         this.getChildren().add(mArm);
         this.update();
+    }
+
+    @Override
+    public void setShape(String s)
+    {
+
     }
 
     @Override

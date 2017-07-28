@@ -51,7 +51,7 @@ public class SpeechBubbleFX extends PartReeti
 
     @Override
     public void calculate(int step) {
-        clearChildren(this);
+        this.getChildren().clear();
 
         message = new Label();
         Path face;

@@ -49,7 +49,7 @@ public class RightHandFX extends PartStickman2D
         mEnd = new Point(mStart.x, mStart.y + mLength);
 
         clearDrawObjects();
-        clearChildren(this);
+        this.getChildren().clear();;
         mHand = new Path();
 
 //		if (mRightForeArm.mUpperArmFX.mRightShoulderFX.mBodyFX.mNeck.mHead.mStickman.setCharacterInvisible == false)
@@ -105,6 +105,12 @@ public class RightHandFX extends PartStickman2D
             g.getTransforms().add(af);
             // g.transform(t);
         }
+    }
+
+    @Override
+    public void setShape(String s)
+    {
+
     }
 
     protected void recordColor() {

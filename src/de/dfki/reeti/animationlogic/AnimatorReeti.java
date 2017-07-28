@@ -2,6 +2,7 @@ package de.dfki.reeti.animationlogic;
 
 import de.dfki.action.sequence.Entry;
 import de.dfki.action.sequence.WordTimeMarkSequence;
+import de.dfki.common.animationlogic.Animator;
 import de.dfki.reeti.Reeti;
 import de.dfki.reeti.body.PartReeti;
 import de.dfki.stickmanSwing.util.TimingInfo;
@@ -14,9 +15,8 @@ import java.util.concurrent.Semaphore;
  * @author Beka Aptsiauri
  *
  */
-public class AnimatorReeti {
+public class AnimatorReeti extends Animator{
 
-    public static int sMAX_ANIM_STEPS = 20;
     public int mCurrentStep = sMAX_ANIM_STEPS;
     private final Reeti mReeti;
     private final AnimationReeti mAnimation;

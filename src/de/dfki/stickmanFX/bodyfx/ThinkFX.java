@@ -54,7 +54,7 @@ public class ThinkFX extends PartStickman2D
 
         double movement;
 
-        clearChildren(this);
+        this.getChildren().clear();;
 
         Circle small_1 = new Circle(mStart.x - 50, mStart.y - 20, 3);
         Circle small_2 = new Circle(mStart.x - 60, mStart.y - 30, 5);
@@ -65,7 +65,7 @@ public class ThinkFX extends PartStickman2D
 
         switch (mShape) {
             case DEFAULT:
-                clearChildren(this);
+                this.getChildren().clear();;
                 break;
 
             case THINKOFLOVE:
