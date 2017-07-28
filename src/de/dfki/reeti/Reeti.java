@@ -61,10 +61,7 @@ public class Reeti extends Agent
 {
     public double stageHeight;
     public boolean isFullScreen = false;
-
     public static String mbackground = null;
-
-
     public Blinking mBlinking;
 
     // amimation stuff

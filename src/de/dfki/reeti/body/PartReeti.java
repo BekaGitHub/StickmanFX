@@ -16,6 +16,7 @@ public abstract class PartReeti extends Part3D
 {
     private static PhongMaterial material = null;
 
+    @Override
     public void init()
     {
         super.init();
@@ -40,5 +41,10 @@ public abstract class PartReeti extends Part3D
         return material;
     }
 
+    @Override
+    public void rotatePerlinNoise(double mWobble, int x, int y)
+    {
+
+    }
 
 }

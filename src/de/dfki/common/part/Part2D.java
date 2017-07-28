@@ -51,6 +51,7 @@ public abstract class Part2D extends Part
         mTranslationStep = 0.0d;
     }
 
+    @Override
     public void setDefaulRotation(int degree)
     {
         super.setDefaulRotation(degree);

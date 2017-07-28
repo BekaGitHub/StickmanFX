@@ -34,6 +34,7 @@ public abstract class Part extends Pane
     public abstract void setShape(String s);
     public abstract void resetTranslation();
     public abstract void setTilt(int degree);
+    public abstract void rotatePerlinNoise(double mWobble, int x, int y);
 
     public synchronized void calculateShape(int step)
     {

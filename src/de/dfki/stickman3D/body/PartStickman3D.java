@@ -17,6 +17,7 @@ public abstract class PartStickman3D extends Part3D
     public double mYRotatationRecorder;
     public double mZRotatationRecorder;
 
+    @Override
     public void init()
     {
         mColorRecorder = mColor;
@@ -36,6 +37,7 @@ public abstract class PartStickman3D extends Part3D
 
     }
 
+    @Override
     public void rotatePerlinNoise(double mWobble, int x, int y)
     {
         Affine af = new Affine();

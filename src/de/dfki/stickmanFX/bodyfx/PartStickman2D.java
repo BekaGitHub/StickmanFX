@@ -30,6 +30,7 @@ import javafx.util.Duration;
 public abstract class PartStickman2D extends Part2D
 {
 
+    @Override
     public void init()
     {
         mColorRecorder = mColor;
@@ -110,6 +111,7 @@ public abstract class PartStickman2D extends Part2D
         return transition;
     }
 
+    @Override
     public void rotatePerlinNoise(double mWobble, int x, int y)
     {
         Affine af = new Affine();
