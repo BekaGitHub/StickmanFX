@@ -14,7 +14,7 @@ import de.dfki.stickman3D.animationlogic.*;
 import de.dfki.stickmanSwing.animationlogic.listener.AnimationListener;
 import de.dfki.stickman3D.animationlogic.Animation3D;
 import de.dfki.stickman3D.animationlogic.EventAnimation3D;
-import de.dfki.stickman3D.environment.SpeechBubble3D;
+import de.dfki.stickman3D.environment.SpeechBubbleStickman3D;
 import javafx.scene.effect.InnerShadow;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
@@ -97,7 +97,7 @@ public class Stickman3D extends Agent3D
     public RightForeLeg3D mRightForeLeg;
     public RightFoot3D mRightFoot;
     public UpperBodyAndHead3D mUpperBodyAndHead;
-    public SpeechBubble3D mSpeechBubble;
+    public SpeechBubbleStickman3D mSpeechBubble;
 
     public final Logger mLogger = Logger.getAnonymousLogger();
 
@@ -149,7 +149,7 @@ public class Stickman3D extends Agent3D
         mRightFoot = new RightFoot3D(mRightForeLeg);
         mUpperBodyAndHead = new UpperBodyAndHead3D(mHead, mUpperBody, mNeck);
 
-        mSpeechBubble = new SpeechBubble3D(mHead);
+        mSpeechBubble = new SpeechBubbleStickman3D(mHead);
         init();
         this.addAllParts();
         update();
@@ -203,7 +203,7 @@ public class Stickman3D extends Agent3D
         mRightFoot = new RightFoot3D(mRightForeLeg);
         mUpperBodyAndHead = new UpperBodyAndHead3D(mHead, mUpperBody, mNeck);
 
-        mSpeechBubble = new SpeechBubble3D(mHead);
+        mSpeechBubble = new SpeechBubbleStickman3D(mHead);
         init();
         this.addAllParts();
         update();
@@ -255,7 +255,7 @@ public class Stickman3D extends Agent3D
         mRightFoot = new RightFoot3D(mRightForeLeg);
         mUpperBodyAndHead = new UpperBodyAndHead3D(mHead, mUpperBody, mNeck);
 
-        mSpeechBubble = new SpeechBubble3D(mHead);
+        mSpeechBubble = new SpeechBubbleStickman3D(mHead);
         init();
         this.addAllParts();
         update();

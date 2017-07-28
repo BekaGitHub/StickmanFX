@@ -53,7 +53,7 @@ import de.dfki.stickmanFX.bodyfx.RightUpperArmFX;
 import de.dfki.stickmanFX.bodyfx.RightUpperLegFX;
 import de.dfki.stickmanFX.bodyfx.StarsFX;
 import de.dfki.stickmanFX.bodyfx.ThinkFX;
-import de.dfki.stickmanFX.environmentfx.SpeechBubbleFX;
+import de.dfki.stickmanFX.environmentfx.SpeechBubbleStickman2D;
 import de.dfki.util.observers.AnimationObserver;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -133,7 +133,7 @@ public class StickmanFX extends Agent2D
     public RightFootFX mRightFootFX;
     public ThinkFX mThinkFX;
     public BombeFX mBombeFX;
-    public SpeechBubbleFX mSpeechBubbleFX;
+    public SpeechBubbleStickman2D mSpeechBubbleFX;
     public NoseFX mNose;
     private boolean faceOnly = false;
     // logging
@@ -151,7 +151,7 @@ public class StickmanFX extends Agent2D
 
         initBodyParts();
 
-        mSpeechBubbleFX = new SpeechBubbleFX(mHeadFX);
+        mSpeechBubbleFX = new SpeechBubbleStickman2D(mHeadFX);
         init();
         this.addAllParts();
         update();
@@ -167,7 +167,7 @@ public class StickmanFX extends Agent2D
 
         initBodyParts();
 
-        mSpeechBubbleFX = new SpeechBubbleFX(mHeadFX);
+        mSpeechBubbleFX = new SpeechBubbleStickman2D(mHeadFX);
         init();
         this.addAllParts();
         update();
@@ -184,7 +184,7 @@ public class StickmanFX extends Agent2D
 
         initBodyParts();
 
-        mSpeechBubbleFX = new SpeechBubbleFX(mHeadFX);
+        mSpeechBubbleFX = new SpeechBubbleStickman2D(mHeadFX);
         init();
         if (faceOnly)
         {
@@ -203,7 +203,7 @@ public class StickmanFX extends Agent2D
 
         initBodyParts();
 
-        mSpeechBubbleFX = new SpeechBubbleFX(mHeadFX);
+        mSpeechBubbleFX = new SpeechBubbleStickman2D(mHeadFX);
         init();
         this.addAllParts();
         update();
@@ -253,7 +253,7 @@ public class StickmanFX extends Agent2D
         mName = name;
         mType = gender;
         initBodyParts();
-        mSpeechBubbleFX = new SpeechBubbleFX(mHeadFX);
+        mSpeechBubbleFX = new SpeechBubbleStickman2D(mHeadFX);
         init();
         if (faceOnly)
         {

@@ -9,7 +9,7 @@ import de.dfki.stickman3D.Stickman3D;
 import de.dfki.stickman3D.StickmanStageController;
 import de.dfki.stickman3D.animationlogic.AnimationContent3D;
 import de.dfki.stickman3D.animationlogic.Animation3D;
-import de.dfki.stickman3D.environment.SpeechBubble3D;
+import de.dfki.stickman3D.environment.SpeechBubbleStickman3D;
 
 import java.util.ArrayList;
 
@@ -31,14 +31,14 @@ public class Speaking extends Animation3D {
     @Override
     public void playAnimation() {
         if (mParameter instanceof String) {
-            mStickmanFX.mSpeechBubble.mText = (String) mParameter;
+            mStickmanFX.mSpeechBubble.mSpeechBubbleText = (String) mParameter;
         }
 
         mAnimationPartFX = new ArrayList<>();
-        mAnimationPartFX.add(new AnimationContent3D(mStickmanFX.mSpeechBubble, "shape", SpeechBubble3D.SHAPE.SPEAK.name()));
+        mAnimationPartFX.add(new AnimationContent3D(mStickmanFX.mSpeechBubble, "shape", SpeechBubbleStickman3D.SHAPE.SPEAK.name()));
         playAnimationPart(mDuration);
 
-        mAnimationPartFX.add(new AnimationContent3D(mStickmanFX.mSpeechBubble, "shape", SpeechBubble3D.SHAPE.DEFAULT.name()));
+        mAnimationPartFX.add(new AnimationContent3D(mStickmanFX.mSpeechBubble, "shape", SpeechBubbleStickman3D.SHAPE.DEFAULT.name()));
         playAnimationPart(20);
 
         if (StickmanStageController.currentRadioButton != null) {

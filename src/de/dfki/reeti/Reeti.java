@@ -28,7 +28,7 @@ import de.dfki.reeti.body.MouthRightCorner;
 import de.dfki.reeti.body.MouthUpperLip;
 import de.dfki.reeti.body.RightCheek;
 import de.dfki.reeti.body.RightEar;
-import de.dfki.reeti.environment.SpeechBubbleFX;
+import de.dfki.reeti.environment.SpeechBubbleReeti;
 
 import java.awt.Dimension;
 import java.awt.Toolkit;
@@ -78,9 +78,8 @@ public class Reeti extends Agent3D
     public Part3D mMouthUpperLip;
     public Part3D mMouthDownLip;
     public Part3D mNeck;
-    public Body mBody;
-    // environment
-    public SpeechBubbleFX mSpeechBubble;
+    public Part3D mBody;
+    public Part3D mSpeechBubble;
     // logging
     public final Logger mLogger = Logger.getAnonymousLogger();
 
@@ -128,7 +127,7 @@ public class Reeti extends Agent3D
         mNeck = new Neck(mHead);
         mBody = new Body(mNeck);
 
-        mSpeechBubble = new SpeechBubbleFX(mHead);
+        mSpeechBubble = new SpeechBubbleReeti(mHead);
         init();
         this.addAllParts();
         update();
@@ -160,7 +159,7 @@ public class Reeti extends Agent3D
         mNeck = new Neck(mHead);
         mBody = new Body(mNeck);
 
-        mSpeechBubble = new SpeechBubbleFX(mHead);
+        mSpeechBubble = new SpeechBubbleReeti(mHead);
         init();
         this.addAllParts();
         update();
@@ -190,7 +189,7 @@ public class Reeti extends Agent3D
         mNeck = new Neck(mHead);
         mBody = new Body(mNeck);
 
-        mSpeechBubble = new SpeechBubbleFX(mHead);
+        mSpeechBubble = new SpeechBubbleReeti(mHead);
         init();
         this.addAllParts();
         update();

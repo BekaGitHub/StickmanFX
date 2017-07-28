@@ -9,7 +9,7 @@ import de.dfki.action.sequence.WordTimeMarkSequence;
 import de.dfki.reeti.Reeti;
 import de.dfki.reeti.animationlogic.AnimationContentReeti;
 import de.dfki.reeti.animationlogic.EventAnimationReeti;
-import de.dfki.reeti.environment.SpeechBubbleFX;
+import de.dfki.reeti.environment.SpeechBubbleReeti;
 
 import java.util.ArrayList;
 
@@ -35,11 +35,11 @@ public class Speaking extends EventAnimationReeti {
         }
 
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContentReeti(mReeti.mSpeechBubble, "shape", SpeechBubbleFX.SHAPE.SPEAK.name(), mWTS));
+        mAnimationPart.add(new AnimationContentReeti(mReeti.mSpeechBubble, "shape", SpeechBubbleReeti.SHAPE.SPEAK.name(), mWTS));
 
         playEventAnimationPart();
 
-        mAnimationPart.add(new AnimationContentReeti(mReeti.mSpeechBubble, "shape", SpeechBubbleFX.SHAPE.DEFAULT.name()));
+        mAnimationPart.add(new AnimationContentReeti(mReeti.mSpeechBubble, "shape", SpeechBubbleReeti.SHAPE.DEFAULT.name()));
         playAnimationPart(20);
 
     }

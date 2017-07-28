@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import de.dfki.stickmanFX.StickmanFX;
 import de.dfki.stickmanFX.animationlogic.AnimationContentFX;
 import de.dfki.stickmanFX.animationlogic.AnimationFX;
-import de.dfki.stickmanFX.environmentfx.SpeechBubbleFX;
+import de.dfki.stickmanFX.environmentfx.SpeechBubbleStickman2D;
 
 /**
  *
@@ -26,14 +26,14 @@ public class Speaking extends AnimationFX {
     @Override
     public void playAnimation() {
         if (mParameter instanceof String) {
-            mStickmanFX.mSpeechBubbleFX.mText = (String) mParameter;
+            mStickmanFX.mSpeechBubbleFX.mSpeechBubbleText = (String) mParameter;
         }
 
         mAnimationPartFX = new ArrayList<>();
-        mAnimationPartFX.add(new AnimationContentFX(mStickmanFX.mSpeechBubbleFX, "shape", SpeechBubbleFX.SHAPE.SPEAK.name()));
+        mAnimationPartFX.add(new AnimationContentFX(mStickmanFX.mSpeechBubbleFX, "shape", SpeechBubbleStickman2D.SHAPE.SPEAK.name()));
         playAnimationPart(mDuration);
 
-        mAnimationPartFX.add(new AnimationContentFX(mStickmanFX.mSpeechBubbleFX, "shape", SpeechBubbleFX.SHAPE.DEFAULT.name()));
+        mAnimationPartFX.add(new AnimationContentFX(mStickmanFX.mSpeechBubbleFX, "shape", SpeechBubbleStickman2D.SHAPE.DEFAULT.name()));
         playAnimationPart(20);
 
     }

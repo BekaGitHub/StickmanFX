@@ -9,7 +9,7 @@ import de.dfki.reeti.Reeti;
 import de.dfki.reeti.ReetiStageController;
 import de.dfki.reeti.animationlogic.AnimationContentReeti;
 import de.dfki.reeti.animationlogic.AnimationReeti;
-import de.dfki.reeti.environment.SpeechBubbleFX;
+import de.dfki.reeti.environment.SpeechBubbleReeti;
 
 import java.util.ArrayList;
 
@@ -31,15 +31,15 @@ public class Speaking extends AnimationReeti {
     @Override
     public void playAnimation() {
         if (mParameter instanceof String) {
-            mReeti.mSpeechBubble.mText = (String) mParameter;
-//            mReeti.mSpeechBubble.mText = "dadasdsad ";
+            mReeti.mSpeechBubble.mSpeechBubbleText = (String) mParameter;
+//            mReeti.mSpeechBubble.mSpeechBubbleText = "dadasdsad ";
         }
 
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContentReeti(mReeti.mSpeechBubble, "shape", SpeechBubbleFX.SHAPE.SPEAK.name()));
+        mAnimationPart.add(new AnimationContentReeti(mReeti.mSpeechBubble, "shape", SpeechBubbleReeti.SHAPE.SPEAK.name()));
         playAnimationPart(mDuration);
 
-        mAnimationPart.add(new AnimationContentReeti(mReeti.mSpeechBubble, "shape", SpeechBubbleFX.SHAPE.DEFAULT.name()));
+        mAnimationPart.add(new AnimationContentReeti(mReeti.mSpeechBubble, "shape", SpeechBubbleReeti.SHAPE.DEFAULT.name()));
         playAnimationPart(20);
 
         if (ReetiStageController.currentRadioButton != null) {

@@ -9,10 +9,7 @@ import de.dfki.reeti.Reeti;
 import de.dfki.reeti.ReetiStageController;
 import java.awt.Point;
 
-import de.dfki.reeti.body.MouthDownLip;
-import de.dfki.reeti.body.MouthLeftCorner;
-import de.dfki.reeti.body.MouthRightCorner;
-import de.dfki.reeti.body.MouthUpperLip;
+import de.dfki.reeti.body.*;
 import javafx.beans.value.ObservableValue;
 import javafx.scene.control.Slider;
 import javafx.scene.transform.Rotate;
@@ -211,19 +208,20 @@ public class SliderHelper {
 
             double newValue = new_val.doubleValue();
             double oldValue = old_val.doubleValue();
+            Body mBody = (Body) controller.currentReeti.mBody;
             if (achse.equalsIgnoreCase("X")) {
                 double xRotateFactor = newValue - oldValue;
-                Point pivot = controller.currentReeti.mBody.getUpperBodyPosition();
+                Point pivot = mBody.getUpperBodyPosition();
                 Rotate rx = new Rotate(xRotateFactor, pivot.x, pivot.y, 1505, Rotate.X_AXIS);
                 controller.getStage3D().getCamera().getTransforms().addAll(rx);
             } else if (achse.equalsIgnoreCase("Y")) {
                 double yRotateFactor = newValue - oldValue;
-                Point pivot = controller.currentReeti.mBody.getUpperBodyPosition();
+                Point pivot = mBody.getUpperBodyPosition();
                 Rotate ry = new Rotate(yRotateFactor, pivot.x, pivot.y, 1505, Rotate.Y_AXIS);
                 controller.getStage3D().getCamera().getTransforms().addAll(ry);
             } else {
                 double zRotateFactor = newValue - oldValue;
-                Point pivot = controller.currentReeti.mBody.getUpperBodyPosition();
+                Point pivot = mBody.getUpperBodyPosition();
                 Rotate rz = new Rotate(zRotateFactor, pivot.x, pivot.y, 1505, Rotate.Z_AXIS);
                 controller.getStage3D().getCamera().getTransforms().addAll(rz);
             }
