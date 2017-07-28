@@ -1,5 +1,6 @@
 package de.dfki.reeti.body;
 
+import de.dfki.common.part.Part3D;
 import de.dfki.reeti.animationlogic.AnimatorReeti;
 import javafx.scene.paint.Color;
 
@@ -46,12 +47,12 @@ public class Mouth extends PartReeti
 
     public Mouth.SHAPE mShape = Mouth.SHAPE.DEFAULT;
 
-    public Mouth(Head head)
+    public Mouth(Part3D head)
     {
         mSize = new Dimension(mLength * 2, 5);
         mColor = Color.DARKGREY;
         mLips = new Path();
-        mStart = head.getMouthPostion();
+        mStart = ((Head)head).getMouthPostion();
 
         rightCorner = new Point2D.Double(-9, 35);
         leftCorner = new Point2D.Double(rightCorner.getX() + mouthLength, rightCorner.getY());
@@ -59,7 +60,7 @@ public class Mouth extends PartReeti
         downPoint = new Point2D.Double(upperPoint.getX(), upperPoint.getY());
 
         init();
-        head.getHeadGroup().getChildren().addAll(mLips);
+        ((Head)head).getHeadGroup().getChildren().addAll(mLips);
     }
 
     @Override

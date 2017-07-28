@@ -1,5 +1,6 @@
 package de.dfki.reeti.body;
 
+import de.dfki.common.part.Part3D;
 import de.dfki.reeti.animationlogic.AnimatorReeti;
 
 import java.awt.geom.Point2D;
@@ -26,10 +27,10 @@ public class MouthLeftCorner extends PartReeti
 
     public MouthLeftCorner.SHAPE mShape = MouthLeftCorner.SHAPE.DEFAULT;
 
-    public MouthLeftCorner(Mouth mouth)
+    public MouthLeftCorner(Part3D mouth)
     {
-        mLips = mouth.getLips();
-        leftCorner = mouth.getLeftCorner();
+        mLips = ((Mouth)mouth).getLips();
+        leftCorner = ((Mouth)mouth).getLeftCorner();
     }
 
     @Override

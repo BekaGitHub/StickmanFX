@@ -5,6 +5,7 @@
  */
 package de.dfki.reeti.body;
 
+import de.dfki.common.part.Part3D;
 import javafx.scene.Group;
 import javafx.scene.shape.Circle;
 import javafx.scene.transform.Rotate;
@@ -20,11 +21,11 @@ public class RightCheek extends PartReeti
 
     private static final int SIZE = 70;
 
-    public RightCheek(Head head)
+    public RightCheek(Part3D head)
     {
         mLed = new Circle(SIZE);
         mLedGroup = new Group();
-        mStart = head.getLeftEyebrowPostion();
+        mStart = ((Head)head).getLeftEyebrowPostion();
 
         mYRotation = 25;
         mXRotation = -10;
@@ -37,7 +38,7 @@ public class RightCheek extends PartReeti
         mLedGroup.setVisible(false);
         init();
 
-        head.getHeadGroup().getChildren().add(mLedGroup);
+        ((Head)head).getHeadGroup().getChildren().add(mLedGroup);
     }
 
     @Override

@@ -2,6 +2,7 @@ package de.dfki.reeti;
 
 import de.dfki.common.agent.Agent3D;
 import de.dfki.common.enums.Led;
+import de.dfki.common.part.Part3D;
 import de.dfki.reeti.animationlogic.AnimationLoaderReeti;
 import de.dfki.reeti.animationlogic.AnimationSchedulerReeti;
 import de.dfki.reeti.body.LeftEye;
@@ -62,21 +63,21 @@ public class Reeti extends Agent3D
     public AnimationSchedulerReeti mAnimationSchedulerReeti;
 
     // body parts
-    public Head mHead;
-    public LeftEyelid mLeftEyelid;
-    public LeftEye mLeftEye;
-    public RightEye mRightEye;
-    public LeftEar mLeftEar;
-    public RightEar mRightEar;
-    public RightEyelid mRightEyelid;
-    public LeftCheek mLeftCheek;
-    public RightCheek mRightCheek;
-    public Mouth mMouth;
-    public MouthLeftCorner mMouthLeftCorner;
-    public MouthRightCorner mMouthRightCorner;
-    public MouthUpperLip mMouthUpperLip;
-    public MouthDownLip mMouthDownLip;
-    public Neck mNeck;
+    public Part3D mHead;
+    public Part3D mLeftEyelid;
+    public Part3D mLeftEye;
+    public Part3D mRightEye;
+    public Part3D mLeftEar;
+    public Part3D mRightEar;
+    public Part3D mRightEyelid;
+    public Part3D mLeftCheek;
+    public Part3D mRightCheek;
+    public Part3D mMouth;
+    public Part3D mMouthLeftCorner;
+    public Part3D mMouthRightCorner;
+    public Part3D mMouthUpperLip;
+    public Part3D mMouthDownLip;
+    public Part3D mNeck;
     public Body mBody;
     // environment
     public SpeechBubbleFX mSpeechBubble;
@@ -487,7 +488,7 @@ public class Reeti extends Agent3D
                       String cheek)
     {
 
-        int size = mLeftCheek.getSize();
+        int size = ((LeftCheek)mLeftCheek).getSize();
 
         InnerShadow ledOnShadow = new InnerShadow(BlurType.TWO_PASS_BOX, color3, 0.05 * size, intensityForColor1, 0, 0);
         ledOnShadow.setInput(new DropShadow(BlurType.TWO_PASS_BOX, color2, 0.05 * size, intensityForColor2, 0, 0));
@@ -501,22 +502,22 @@ public class Reeti extends Agent3D
 
         if (cheek.equalsIgnoreCase("L"))
         {
-            mLeftCheek.getLed().setEffect(ledOnShadow);
-            mLeftCheek.getLed().setFill(highlightGradient);
-            mLeftCheek.getLedGroup().setVisible(true);
+            ((LeftCheek)mLeftCheek).getLed().setEffect(ledOnShadow);
+            ((LeftCheek)mLeftCheek).getLed().setFill(highlightGradient);
+            ((LeftCheek)mLeftCheek).getLedGroup().setVisible(true);
         } else if (cheek.equalsIgnoreCase("R"))
         {
-            mRightCheek.getLed().setEffect(ledOnShadow);
-            mRightCheek.getLed().setFill(highlightGradient);
-            mRightCheek.getLedGroup().setVisible(true);
+            ((RightCheek)mRightCheek).getLed().setEffect(ledOnShadow);
+            ((RightCheek)mRightCheek).getLed().setFill(highlightGradient);
+            ((RightCheek)mRightCheek).getLedGroup().setVisible(true);
         } else if (cheek.equalsIgnoreCase("B"))
         {
-            mLeftCheek.getLed().setEffect(ledOnShadow);
-            mLeftCheek.getLed().setFill(highlightGradient);
-            mRightCheek.getLed().setEffect(ledOnShadow);
-            mRightCheek.getLed().setFill(highlightGradient);
-            mLeftCheek.getLedGroup().setVisible(true);
-            mRightCheek.getLedGroup().setVisible(true);
+            ((LeftCheek)mLeftCheek).getLed().setEffect(ledOnShadow);
+            ((LeftCheek)mLeftCheek).getLed().setFill(highlightGradient);
+            ((RightCheek)mRightCheek).getLed().setEffect(ledOnShadow);
+            ((RightCheek)mRightCheek).getLed().setFill(highlightGradient);
+            ((LeftCheek)mLeftCheek).getLedGroup().setVisible(true);
+            ((RightCheek)mRightCheek).getLedGroup().setVisible(true);
         }
     }
 
@@ -524,14 +525,14 @@ public class Reeti extends Agent3D
     {
         if (cheek.equalsIgnoreCase("R"))
         {
-            mRightCheek.getLedGroup().setVisible(false);
+            ((RightCheek)mRightCheek).getLedGroup().setVisible(false);
         } else if (cheek.equalsIgnoreCase("L"))
         {
-            mLeftCheek.getLedGroup().setVisible(false);
+            ((LeftCheek)mLeftCheek).getLedGroup().setVisible(false);
         } else if (cheek.equalsIgnoreCase("B"))
         {
-            mRightCheek.getLedGroup().setVisible(false);
-            mLeftCheek.getLedGroup().setVisible(false);
+            ((RightCheek)mRightCheek).getLedGroup().setVisible(false);
+            ((LeftCheek)mLeftCheek).getLedGroup().setVisible(false);
         }
     }
 
@@ -548,7 +549,7 @@ public class Reeti extends Agent3D
         }
         pos = (pos * 16) / 100;
         double distance = mRightCornerOldPos - pos;
-        this.mMouthRightCorner.setRightCornerRegulator(distance);
+        ((MouthRightCorner)mMouthRightCorner).setRightCornerRegulator(distance);
         mRightCornerOldPos = pos;
         AnimationReeti a = AnimationLoaderReeti.getInstance().loadAnimation(this, "RightLC", (int) dur, pos, false);
         try
@@ -575,7 +576,7 @@ public class Reeti extends Agent3D
         }
         pos = (pos * 16) / 100;
         double distance = mLeftCornerOldPos - pos;
-        this.mMouthLeftCorner.setLeftCornerRegulator(distance);
+        ((MouthLeftCorner)mMouthLeftCorner).setLeftCornerRegulator(distance);
         mLeftCornerOldPos = pos;
         AnimationReeti a = AnimationLoaderReeti.getInstance().loadAnimation(this, "LeftLC", (int) dur, pos, false);
         try
@@ -604,7 +605,7 @@ public class Reeti extends Agent3D
         pos = (pos * 25) / 100;
 
         double distance = mUpperLipOldPos - pos;
-        this.mMouthUpperLip.setUpperLipRegulator(distance);
+        ((MouthUpperLip)mMouthUpperLip).setUpperLipRegulator(distance);
         mUpperLipOldPos = pos;
 
         AnimationReeti a = AnimationLoaderReeti.getInstance().loadAnimation(this, "UpperLip", (int) dur, pos, false);
@@ -634,7 +635,7 @@ public class Reeti extends Agent3D
         pos = (pos * 20) / 100;
 
         double distance = pos - mDownLipOldPos;
-        this.mMouthDownLip.setDownLipRegulator(-distance);
+        ((MouthDownLip)mMouthDownLip).setDownLipRegulator(-distance);
         mDownLipOldPos = pos;
 
         AnimationReeti a = AnimationLoaderReeti.getInstance().loadAnimation(this, "DownLip", (int) dur, pos, false);

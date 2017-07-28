@@ -1,5 +1,6 @@
 package de.dfki.reeti.environment;
 
+import de.dfki.common.part.Part3D;
 import de.dfki.reeti.body.PartReeti;
 import de.dfki.reeti.body.Head;
 import javafx.geometry.Insets;
@@ -34,8 +35,8 @@ public class SpeechBubbleFX extends PartReeti
 
     GeneralPath mBubble;
 
-    public SpeechBubbleFX(Head head) {
-        mHeadFX = head;
+    public SpeechBubbleFX(Part3D head) {
+        mHeadFX = (Head) head;
     }
 
     @Override

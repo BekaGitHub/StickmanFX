@@ -9,6 +9,7 @@ import java.net.URL;
 
 import com.interactivemesh.jfx.importer.col.ColModelImporter;
 
+import de.dfki.common.part.Part3D;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.MeshView;
 import javafx.scene.transform.Rotate;
@@ -23,7 +24,7 @@ public class RightEar extends PartReeti
 
     private int regulator;
 
-    public RightEar(Head head)
+    public RightEar(Part3D head)
     {
         mColor = Color.WHITE;
 
@@ -34,11 +35,11 @@ public class RightEar extends PartReeti
         mRightEarMesh = (MeshView) importer.getImport()[0];
         mRightEarMesh.setMaterial(getMaterial());
 
-        mStart = head.getLeftEyebrowPostion();
+        mStart = ((Head)head).getLeftEyebrowPostion();
 
         init();
 
-        head.getHeadGroup().getChildren().add(mRightEarMesh);
+        ((Head)head).getHeadGroup().getChildren().add(mRightEarMesh);
     }
 
     @Override

@@ -11,6 +11,8 @@ import de.dfki.reeti.animationlogic.AnimationContentReeti;
 import de.dfki.reeti.animationlogic.AnimationReeti;
 
 import java.util.ArrayList;
+
+import de.dfki.reeti.body.Mouth;
 import javafx.scene.paint.Color;
 
 /**
@@ -34,9 +36,10 @@ public class Muster extends AnimationReeti {
         Color c2 = Color.rgb(255, 0, 255);
         Color c3 = Color.rgb(0, 0, 255);
         mReeti.ledON(c1, c2, c3, 0.7f, 0.9f, 0.4f, "B");
-        
-        mReeti.mMouth.setUpRegulator(-20);
-        mReeti.mMouth.setDownRegulator(-10);
+
+        Mouth mMouth = (Mouth) mReeti.mMouth;
+        mMouth.setUpRegulator(-20);
+        mMouth.setDownRegulator(-10);
 //        mReeti.mMouth.setLeftCornerRegulator(-20);
         
         mAnimationPart = new ArrayList<>();

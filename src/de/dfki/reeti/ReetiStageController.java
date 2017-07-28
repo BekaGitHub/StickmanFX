@@ -2,6 +2,8 @@ package de.dfki.reeti;
 
 import de.dfki.common.StickmansOnStage;
 import de.dfki.common.commonFX3D.ViewController;
+import de.dfki.reeti.body.LeftCheek;
+import de.dfki.reeti.body.RightCheek;
 import de.dfki.reeti.controllerhelper.ColorHelper;
 import de.dfki.reeti.controllerhelper.SliderHelper;
 import de.dfki.reeti.stage.ReetiStage;
@@ -90,8 +92,10 @@ public class ReetiStageController extends AReetiStageController implements ViewC
 
         ledOff.setOnAction((event) ->
         {
-            currentReeti.mLeftCheek.getLedGroup().setVisible(false);
-            currentReeti.mRightCheek.getLedGroup().setVisible(false);
+            LeftCheek mLeftCheek = (LeftCheek) currentReeti.mLeftCheek;
+            RightCheek mRightCheek = (RightCheek) currentReeti.mRightCheek;
+            mLeftCheek.getLedGroup().setVisible(false);
+            mRightCheek.getLedGroup().setVisible(false);
         });
     }
 

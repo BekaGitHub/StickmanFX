@@ -7,6 +7,7 @@ package de.dfki.reeti.body;
 
 import java.net.URL;
 import com.interactivemesh.jfx.importer.col.ColModelImporter;
+import de.dfki.common.part.Part3D;
 import javafx.scene.Group;
 import javafx.scene.transform.Rotate;
 
@@ -17,10 +18,10 @@ public class LeftEye extends PartReeti
 {
     private Group mLeftEarMesh;
 
-    public LeftEye(Head head)
+    public LeftEye(Part3D head)
     {
         mXRotation = 5;
-        mStart = head.getLeftEyebrowPostion();
+        mStart = ((Head)head).getLeftEyebrowPostion();
 
         URL url = getClass().getClassLoader().getResource("BodyParts/Reeti/ReetiEye.dae");
         ColModelImporter importer = new ColModelImporter();
@@ -29,7 +30,7 @@ public class LeftEye extends PartReeti
 
         init();
 
-        head.getHeadGroup().getChildren().add(mLeftEarMesh);
+        ((Head)head).getHeadGroup().getChildren().add(mLeftEarMesh);
     }
 
     @Override
@@ -44,7 +45,6 @@ public class LeftEye extends PartReeti
     @Override
     public void calculate(int step)
     {
-
         Rotate rx = new Rotate(mXRotation, Rotate.X_AXIS);
         Rotate ry = new Rotate(mYRotation, Rotate.Y_AXIS);
         Rotate rz = new Rotate(mZRotation, Rotate.Z_AXIS);

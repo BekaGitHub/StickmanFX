@@ -9,6 +9,7 @@ import java.net.URL;
 
 import com.interactivemesh.jfx.importer.col.ColModelImporter;
 
+import de.dfki.common.part.Part3D;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.MeshView;
 import javafx.scene.transform.Rotate;
@@ -22,8 +23,8 @@ public class RightEyelid extends PartReeti
 {
     private MeshView mLeftEyeMesh;
 
-    public RightEyelid(Head head) {
-        mStart = head.getLeftEyebrowPostion();
+    public RightEyelid(Part3D head) {
+        mStart = ((Head)head).getLeftEyebrowPostion();
         mZRotation = -30;
         mYRotation = 15;
         mColor = Color.WHITE;
@@ -37,7 +38,7 @@ public class RightEyelid extends PartReeti
 
         init();
 
-        head.getHeadGroup().getChildren().add(mLeftEyeMesh);
+        ((Head)head).getHeadGroup().getChildren().add(mLeftEyeMesh);
     }
 
     @Override

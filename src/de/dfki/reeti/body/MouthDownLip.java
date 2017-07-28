@@ -1,5 +1,6 @@
 package de.dfki.reeti.body;
 
+import de.dfki.common.part.Part3D;
 import de.dfki.reeti.animationlogic.AnimatorReeti;
 
 import java.awt.geom.Point2D;
@@ -26,10 +27,10 @@ public class MouthDownLip extends PartReeti
 
     public MouthDownLip.SHAPE mShape = MouthDownLip.SHAPE.DEFAULT;
 
-    public MouthDownLip(Mouth mouth)
+    public MouthDownLip(Part3D mouth)
     {
-        mLips = mouth.getLips();
-        downPoint = mouth.getDownPoint();
+        mLips = ((Mouth)mouth).getLips();
+        downPoint = ((Mouth)mouth).getDownPoint();
     }
 
     @Override

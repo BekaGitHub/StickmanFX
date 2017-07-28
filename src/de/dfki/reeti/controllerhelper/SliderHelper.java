@@ -8,6 +8,11 @@ package de.dfki.reeti.controllerhelper;
 import de.dfki.reeti.Reeti;
 import de.dfki.reeti.ReetiStageController;
 import java.awt.Point;
+
+import de.dfki.reeti.body.MouthDownLip;
+import de.dfki.reeti.body.MouthLeftCorner;
+import de.dfki.reeti.body.MouthRightCorner;
+import de.dfki.reeti.body.MouthUpperLip;
 import javafx.beans.value.ObservableValue;
 import javafx.scene.control.Slider;
 import javafx.scene.transform.Rotate;
@@ -142,7 +147,8 @@ public class SliderHelper {
             double newValue = Math.abs(new_val.doubleValue());
             controller.currentReeti.mMouthLeftCorner.setShape("LEFTCORNERACTION");
             double SliderValue = (newValue + 170) * 16 / 100;
-            controller.currentReeti.mMouthLeftCorner.setLeftCornerRegulator(SliderValue);
+            MouthLeftCorner mMouthLeftCorner = (MouthLeftCorner) controller.currentReeti.mMouthLeftCorner;
+            mMouthLeftCorner.setLeftCornerRegulator(SliderValue);
             int fieldValue = (int)Math.abs(newValue - 100);
             controller.leftLCRotationField.setText(Integer.toString(fieldValue));
             controller.currentReeti.mMouthLeftCorner.calculate(0);
@@ -157,7 +163,8 @@ public class SliderHelper {
             double newValue = Math.abs(new_val.doubleValue());
             controller.currentReeti.mMouthRightCorner.setShape("RIGHTCORNERACTION");
             double SliderValue = (newValue + 170) * 16 / 100;
-            controller.currentReeti.mMouthRightCorner.setRightCornerRegulator(SliderValue);
+            MouthRightCorner mMouthRightCorner = (MouthRightCorner) controller.currentReeti.mMouthRightCorner;
+            mMouthRightCorner.setRightCornerRegulator(SliderValue);
             int fieldValue = (int)Math.abs(newValue - 100);
             controller.rightLCRotationField.setText(Integer.toString(fieldValue));
             controller.currentReeti.mMouthRightCorner.calculate(0);
@@ -172,7 +179,8 @@ public class SliderHelper {
             double newValue = Math.abs(new_val.doubleValue());
             controller.currentReeti.mMouthUpperLip.setShape("UPPERLIPACTION");
             double SliderValue = (newValue + 107) * 16 / 100;
-            controller.currentReeti.mMouthUpperLip.setUpperLipRegulator(SliderValue);
+            MouthUpperLip mMouthUpperLip = (MouthUpperLip) controller.currentReeti.mMouthUpperLip;
+            mMouthUpperLip.setUpperLipRegulator(SliderValue);
             int fieldValue = (int)Math.abs(newValue - 100);
             controller.topLipRotationField.setText(Integer.toString(fieldValue));
             controller.currentReeti.mMouthUpperLip.calculate(0);
@@ -187,7 +195,8 @@ public class SliderHelper {
             double newValue = Math.abs(new_val.doubleValue());
             controller.currentReeti.mMouthDownLip.setShape("DOWNLIPACTION");
             double SliderValue = (newValue + 217) * 16 / 100;
-            controller.currentReeti.mMouthDownLip.setDownLipRegulator(SliderValue);
+            MouthDownLip mMouthDownLip = (MouthDownLip) controller.currentReeti.mMouthDownLip;
+            mMouthDownLip.setDownLipRegulator(SliderValue);
             int fieldValue = (int) (newValue);
             controller.bottomLipRotationField.setText(Integer.toString(fieldValue));
             controller.currentReeti.mMouthDownLip.calculate(0);
