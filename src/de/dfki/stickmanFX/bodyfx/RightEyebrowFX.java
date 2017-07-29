@@ -1,5 +1,6 @@
 package de.dfki.stickmanFX.bodyfx;
 
+import de.dfki.common.part.Part2D;
 import de.dfki.stickmanFX.animationlogic.AnimatorFX;
 import java.awt.Dimension;
 import java.awt.Point;
@@ -25,8 +26,8 @@ public class RightEyebrowFX extends PartStickman2D
     Path mPath;
     public RightEyebrowFX.SHAPE mShape = RightEyebrowFX.SHAPE.DEFAULT;
 
-    public RightEyebrowFX(HeadFX head) {
-        mHeadFX = head;
+    public RightEyebrowFX(Part2D head) {
+        mHeadFX = (HeadFX) head;
         mLength = 16;
         mSize = new Dimension(mLength, 5);
         mDefaultRotationPoint = mHeadFX.mDefaultRotationPoint;

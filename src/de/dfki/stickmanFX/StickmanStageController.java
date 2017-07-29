@@ -9,6 +9,7 @@ import java.util.stream.Collectors;
 import de.dfki.common.enums.Gender;
 import de.dfki.common.StickmansOnStage;
 import de.dfki.common.commonFX3D.ViewController;
+import de.dfki.stickmanFX.bodyfx.BodyFX;
 import de.dfki.stickmanFX.stage.StickmanStageFX;
 import de.dfki.stickmanFX.stage.StageRoomFX;
 import de.dfki.stickmanFX.stage.StickmansOnStageFX;

@@ -5,6 +5,7 @@
  */
 package de.dfki.stickmanFX.bodyfx;
 
+import de.dfki.common.part.Part2D;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.MoveTo;
 import javafx.scene.shape.Path;
@@ -28,8 +29,8 @@ public class NoseFX extends PartStickman2D
     Path mPath;
     public NoseFX.SHAPE mShape = NoseFX.SHAPE.DEFAULT;
 
-    public NoseFX(HeadFX head) {
-        mHeadFX = head;
+    public NoseFX(Part2D head) {
+        mHeadFX = (HeadFX) head;
         mLength = 16;
         mSize = new Dimension(mLength, mLength);
         mDefaultRotationPoint = mHeadFX.mDefaultRotationPoint;

@@ -4,6 +4,7 @@ import java.awt.Point;
 
 
 import de.dfki.common.enums.Gender;
+import de.dfki.common.part.Part2D;
 import de.dfki.stickmanFX.animationlogic.AnimatorFX;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.LineTo;
@@ -31,8 +32,8 @@ public class LeftEyeFX extends PartStickman2D
     Path mPath;
     public LeftEyeFX.SHAPE mShape = LeftEyeFX.SHAPE.DEFAULT;
 
-    public LeftEyeFX(HeadFX head) {
-        mHeadFX = head;
+    public LeftEyeFX(Part2D head) {
+        mHeadFX = (HeadFX) head;
         mLength = 5;
         mDefaultRotationPoint = mHeadFX.mDefaultRotationPoint;
         mColor = Color.rgb(mHeadFX.mStickmanFX.mType == Gender.TYPE.FEMALE ? 22 : 0,

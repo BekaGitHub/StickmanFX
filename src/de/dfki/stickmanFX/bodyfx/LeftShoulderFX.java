@@ -9,6 +9,7 @@ import java.awt.Dimension;
 import java.awt.Point;
 
 import de.dfki.common.enums.Gender;
+import de.dfki.common.part.Part2D;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.MoveTo;
 import javafx.scene.shape.Path;
@@ -35,8 +36,8 @@ public class LeftShoulderFX extends PartStickman2D
 
     Path mShoulder;
 
-    public LeftShoulderFX(BodyFX body) {
-        mBodyFX = body;
+    public LeftShoulderFX(Part2D body) {
+        mBodyFX = (BodyFX) body;
         if (mBodyFX.mNeckFX.mHeadFX.mStickmanFX.mType == Gender.TYPE.MALE) {
             mShoulderLength = 25;
         } else {
@@ -87,7 +88,7 @@ public class LeftShoulderFX extends PartStickman2D
 
         //calculate and update bodyfx (left shoulder area)
         if (mBodyFX.mNeckFX.mHeadFX.mStickmanFX.mLeftShoulderFX != null) {
-            mBodyFX.calculate();
+            mBodyFX.calculate(0);
         }
     }
 

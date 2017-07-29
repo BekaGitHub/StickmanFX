@@ -8,6 +8,7 @@ package de.dfki.stickmanFX.bodyfx;
 import java.awt.Dimension;
 import java.awt.Point;
 
+import de.dfki.common.part.Part2D;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.LineTo;
 import javafx.scene.shape.MoveTo;
@@ -24,8 +25,8 @@ public class NeckFX extends PartStickman2D
     HeadFX mHeadFX;
     Path mPath;
 
-    public NeckFX(HeadFX head) {
-        mHeadFX = head;
+    public NeckFX(Part2D head) {
+        mHeadFX = (HeadFX) head;
         mLength = 8;
         mSize = new Dimension(4, mLength);
         mColor = Color.rgb(80, 80, 80);

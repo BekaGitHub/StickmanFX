@@ -7,6 +7,7 @@ package de.dfki.stickmanFX.bodyfx;
 
 import java.awt.Point;
 
+import de.dfki.common.part.Part2D;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.MoveTo;
 import javafx.scene.shape.Path;
@@ -30,8 +31,8 @@ public class LeftFootFX extends PartStickman2D
 
     Path mLeg;
 
-    public LeftFootFX(LeftForeLegFX leftForeLeg) {
-        mLeftForeLegFX = leftForeLeg;
+    public LeftFootFX(Part2D leftForeLeg) {
+        mLeftForeLegFX = (LeftForeLegFX) leftForeLeg;
         mLength = 10;
         mColor = Color.rgb(80, 80, 80);
         setDefaulRotation(0);

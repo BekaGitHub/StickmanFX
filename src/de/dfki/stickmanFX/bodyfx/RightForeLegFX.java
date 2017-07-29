@@ -8,6 +8,7 @@ package de.dfki.stickmanFX.bodyfx;
 import java.awt.Dimension;
 import java.awt.Point;
 
+import de.dfki.common.part.Part2D;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.MoveTo;
 import javafx.scene.shape.Path;
@@ -33,8 +34,8 @@ public class RightForeLegFX extends PartStickman2D
 
     Path mLeg;
 
-    public RightForeLegFX(RightUpperLegFX rightUpperLegFX) {
-        mUpperLegFX = rightUpperLegFX;
+    public RightForeLegFX(Part2D rightUpperLegFX) {
+        mUpperLegFX = (RightUpperLegFX) rightUpperLegFX;
 
         mDefaultRotation = -2;
         mRotation = mDefaultRotation;

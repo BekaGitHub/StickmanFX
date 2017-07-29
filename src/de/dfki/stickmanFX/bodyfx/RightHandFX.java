@@ -9,6 +9,7 @@ import java.awt.BasicStroke;
 import java.awt.Dimension;
 import java.awt.Point;
 
+import de.dfki.common.part.Part2D;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.LineTo;
 import javafx.scene.shape.MoveTo;
@@ -27,8 +28,8 @@ public class RightHandFX extends PartStickman2D
     Path mHand;
     Affine af;
 
-    public RightHandFX(RightForeArmFX rfa) {
-        mRightForeArmFX = rfa;
+    public RightHandFX(Part2D rfa) {
+        mRightForeArmFX = (RightForeArmFX) rfa;
         mLength = 10;
         mSize = new Dimension(mLength, mLength);
 

@@ -4,6 +4,7 @@ import java.awt.Dimension;
 import java.awt.Point;
 
 import de.dfki.common.enums.Gender;
+import de.dfki.common.part.Part2D;
 import de.dfki.stickmanFX.animationlogic.AnimatorFX;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.LineTo;
@@ -31,8 +32,8 @@ public class RightEyeFX extends PartStickman2D
     Path mPath;
     public RightEyeFX.SHAPE mShape = RightEyeFX.SHAPE.DEFAULT;
 
-    public RightEyeFX(HeadFX head) {
-        mHead = head;
+    public RightEyeFX(Part2D head) {
+        mHead = (HeadFX) head;
         mLength = 5;
         mSize = new Dimension(5, mLength);
         mDefaultRotationPoint = mHead.mDefaultRotationPoint;

@@ -3,6 +3,8 @@ package de.dfki.stickmanFX.bodyfx;
 import java.awt.BasicStroke;
 import java.awt.Dimension;
 import java.awt.Point;
+
+import de.dfki.common.part.Part2D;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.LineTo;
 import javafx.scene.shape.MoveTo;
@@ -26,9 +28,9 @@ public class StarsFX extends PartStickman2D
     BodyFX mBodyFX;
     public StarsFX.SHAPE mShape = StarsFX.SHAPE.DEFAULT;
 
-    public StarsFX(BodyFX body) {
+    public StarsFX(Part2D body) {
 
-        mBodyFX = body;
+        mBodyFX = (BodyFX) body;
         mLength = 150;
         mSize = new Dimension(120, mLength);
         mColor = Color.rgb(255, 0, 0, (255 * 100 / 255) / 100f);
@@ -152,18 +154,16 @@ public class StarsFX extends PartStickman2D
                     mColor = Color.rgb(240, 212, 0, (starColorChange * 100 / 255) / 100f);
 
                     // STAR 1
-//					mStart = mBodyFX.getLeftLegStartPostion();
                     mStart = mBodyFX.mNeckFX.mHeadFX.getLeftEyePostion();
                     path.setFill(mColor);
                     creatStar(30, mStart, path);
 
                     // STAR 2 right side
-//					mStart = mBodyFX.mNeck.mHead.mStickman.mLeftForeLegFX.getLegStartPosition();
-                    mStart = mBodyFX.mNeckFX.mHeadFX.mStickmanFX.mRightUpperArmFX.getRightUpperArmEndPosition();
+                    RightUpperArmFX rightUpperArmFX = (RightUpperArmFX) mBodyFX.mNeckFX.mHeadFX.mStickmanFX.mRightUpperArmFX;
+                    mStart = rightUpperArmFX.getRightUpperArmEndPosition();
                     creatStar(15, mStart, path);
 
                     // STAR 3 left side
-//					mStart = mBodyFX.mNeck.mHead.mStickman.mRightUpperLegFX.getRightUpperLegEndPosition();
                     mStart = mBodyFX.mNeckFX.getBodyStartPosition();
                     creatStar(15, mStart, path);
                 }
@@ -185,7 +185,8 @@ public class StarsFX extends PartStickman2D
                     creatStar(15, mStart, path);
                     mStart = mBodyFX.mNeckFX.mHeadFX.getRightEyebrowPostion();
                     creatStar(15, mStart, path);
-                    mStart = mBodyFX.mNeckFX.mHeadFX.mStickmanFX.mRightUpperArmFX.getRightUpperArmEndPosition();
+                    RightUpperArmFX rightUpperArmFX = (RightUpperArmFX) mBodyFX.mNeckFX.mHeadFX.mStickmanFX.mRightUpperArmFX;
+                    mStart = rightUpperArmFX.getRightUpperArmEndPosition();
                     creatStar(15, mStart, path);
                 }
                 break;
@@ -206,7 +207,8 @@ public class StarsFX extends PartStickman2D
                     creatStar(15, mStart, path);
                     mStart = mBodyFX.mNeckFX.mHeadFX.getRightEyebrowPostion();
                     creatStar(15, mStart, path);
-                    mStart = mBodyFX.mNeckFX.mHeadFX.mStickmanFX.mRightUpperArmFX.getRightUpperArmEndPosition();
+                    RightUpperArmFX rightUpperArmFX = (RightUpperArmFX) mBodyFX.mNeckFX.mHeadFX.mStickmanFX.mRightUpperArmFX;
+                    mStart = rightUpperArmFX.getRightUpperArmEndPosition();
                     creatStar(15, mStart, path);
                 }
                 break;

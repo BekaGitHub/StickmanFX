@@ -23,9 +23,15 @@ public abstract class Part2D extends Part
     public double mToDegree = mDefaultRotation;
     public double mRotationStep = 0.0f;
     public float mColoropacity = 1.0f;
+    //The color is changed in paintComponent
+    public Color mFemaleColor;
+    public Color mMaleColor;
+
+    public float mColoropacityRest = 1.0f;
+    public Color mFemaleColorRest;
+    public Color mMaleColorRest;
 
     public Color mColorRest = Color.rgb(0, 0, 0);
-    public float mColoropacityRest = 1.0f;
 
     public List<Path> mGraphicPaths = Collections.synchronizedList(new ArrayList());
     public BasicStroke mStroke = new BasicStroke(3.0f, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND);

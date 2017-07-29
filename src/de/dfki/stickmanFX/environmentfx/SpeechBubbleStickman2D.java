@@ -1,5 +1,6 @@
 package de.dfki.stickmanFX.environmentfx;
 
+import de.dfki.common.part.Part2D;
 import de.dfki.stickmanFX.bodyfx.PartStickman2D;
 import de.dfki.stickmanFX.bodyfx.HeadFX;
 import javafx.scene.control.Label;
@@ -29,8 +30,8 @@ public class SpeechBubbleStickman2D extends PartStickman2D
 
     GeneralPath mBubble;
 
-    public SpeechBubbleStickman2D(HeadFX head) {
-        mHeadFX = head;
+    public SpeechBubbleStickman2D(Part2D head) {
+        mHeadFX = (HeadFX) head;
         mColor = Color.rgb(255, 255, 255, (192 * 100 / 255) / 100f);
     }
 

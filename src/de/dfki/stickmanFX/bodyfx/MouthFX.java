@@ -1,6 +1,7 @@
 package de.dfki.stickmanFX.bodyfx;
 
 import de.dfki.common.enums.Gender;
+import de.dfki.common.part.Part2D;
 import de.dfki.stickmanFX.animationlogic.AnimatorFX;
 import java.awt.Dimension;
 import java.awt.Point;
@@ -27,8 +28,8 @@ public class MouthFX extends PartStickman2D
     Path mPath;
     public MouthFX.SHAPE mShape = MouthFX.SHAPE.DEFAULT;
 
-    public MouthFX(HeadFX head) {
-        mHeadFX = head;
+    public MouthFX(Part2D head) {
+        mHeadFX = (HeadFX) head;
         mLength = 20;
         mSize = new Dimension(mLength * 2, 5);
         mDefaultRotationPoint = mHeadFX.mDefaultRotationPoint;

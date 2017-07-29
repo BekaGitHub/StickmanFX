@@ -80,18 +80,6 @@ public class HeadFX extends PartStickman2D
         return new Point(mHalfWidth + 20, mHalfHeight + 30);
     }
 
-    public Point getThinkhBubbleStartPosition() {
-        return new Point(mHalfWidth, mHalfHeight);
-    }
-
-    public Point getBombeStartPosition() {
-        return new Point(mHalfWidth + 100, mHalfHeight - 50);
-    }
-
-    public Point getBombeEndPosition() {
-        return new Point(mHalfWidth + 100, mStickmanFX.mRightForeLegFX.getLegStartPosition().y - 50);
-    }
-
     public Point getNeckStartPosition() {
         return new Point(mSize.width / 2 + mXCenterOffset, mSize.height + mYCenterOffset);
     }

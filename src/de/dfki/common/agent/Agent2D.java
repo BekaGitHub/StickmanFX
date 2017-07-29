@@ -1,6 +1,7 @@
 package de.dfki.common.agent;
 
 import de.dfki.common.enums.Gender;
+import de.dfki.common.part.Part2D;
 import javafx.scene.control.Label;
 
 import java.awt.*;
@@ -13,6 +14,14 @@ public abstract class Agent2D extends Agent
     public Label agentNameLabel;
     public boolean mShowName = true;
     public boolean faceOnly = false;
+
+    public Part2D mHeadFX = null;
+    public Part2D mLeftEyeFX = null;
+    public Part2D mRightEyeFX = null;
+    public Part2D mMouthFX = null;
+    public Part2D mNeckFX = null;
+    public Part2D mBodyFX = null;
+    public Part2D mSpeechBubbleFX = null;
 
     public Agent2D(String name, Gender.TYPE gender)
     {

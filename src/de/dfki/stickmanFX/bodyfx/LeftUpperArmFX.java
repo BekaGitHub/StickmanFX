@@ -8,6 +8,7 @@ package de.dfki.stickmanFX.bodyfx;
 import java.awt.Dimension;
 import java.awt.Point;
 
+import de.dfki.common.part.Part2D;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.MoveTo;
 import javafx.scene.shape.Path;
@@ -34,8 +35,8 @@ public class LeftUpperArmFX extends PartStickman2D
 
     Path mArm;
 
-    public LeftUpperArmFX(LeftShoulderFX shoulder) {
-        mLeftShoulderFX = shoulder;
+    public LeftUpperArmFX(Part2D shoulder) {
+        mLeftShoulderFX = (LeftShoulderFX) shoulder;
         mColor = Color.rgb(80, 80, 80);
         mDefaultRotation = -23;
         mRotation = mDefaultRotation;

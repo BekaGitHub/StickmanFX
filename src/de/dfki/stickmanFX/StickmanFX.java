@@ -6,18 +6,14 @@ import de.dfki.common.enums.Gender;
 import de.dfki.common.enums.Orientation;
 import de.dfki.common.interfaces.Animation;
 import de.dfki.common.interfaces.StageRoom;
+import de.dfki.common.part.Part2D;
 import de.dfki.stickmanFX.bodyfx.*;
 import de.dfki.stickmanSwing.animationlogic.listener.AnimationListener;
 
-import java.awt.Dimension;
-import java.awt.Font;
+import java.awt.*;
 import java.awt.font.TextAttribute;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.logging.ConsoleHandler;
-import java.util.logging.Formatter;
-import java.util.logging.LogRecord;
-import java.util.logging.Logger;
 
 import de.dfki.stickmanFX.animation.environmentfx.IdleBehavior;
 import de.dfki.stickmanFX.animation.environmentfx.SimplexNoise;
@@ -26,7 +22,6 @@ import de.dfki.stickmanFX.animationlogic.AnimationLoaderFX;
 import de.dfki.stickmanFX.animationlogic.AnimationSchedulerFX;
 import de.dfki.stickmanFX.animationlogic.EventAnimationFX;
 import de.dfki.stickmanFX.bodyfx.BodyFX;
-import de.dfki.stickmanFX.bodyfx.BombeFX;
 import de.dfki.stickmanFX.bodyfx.FaceWrinkleFX;
 import de.dfki.stickmanFX.bodyfx.FemaleHairFX;
 import de.dfki.stickmanFX.bodyfx.HeadFX;
@@ -52,7 +47,6 @@ import de.dfki.stickmanFX.bodyfx.RightShoulderFX;
 import de.dfki.stickmanFX.bodyfx.RightUpperArmFX;
 import de.dfki.stickmanFX.bodyfx.RightUpperLegFX;
 import de.dfki.stickmanFX.bodyfx.StarsFX;
-import de.dfki.stickmanFX.bodyfx.ThinkFX;
 import de.dfki.stickmanFX.environmentfx.SpeechBubbleStickman2D;
 import de.dfki.util.observers.AnimationObserver;
 import javafx.collections.FXCollections;
@@ -71,9 +65,6 @@ import javafx.scene.transform.Affine;
  */
 public class StickmanFX extends Agent2D
 {
-    public final static Color sFOREGROUND =
-            Color.rgb(188, 188, 188, (128 * 100 / 255) / 100f);
-
     //Used to change the backgroundRecord(pic) of the stickmanSwing
     public final static ObservableList<String> backgroundList =
             FXCollections.observableArrayList("office", "grassland");
@@ -99,53 +90,41 @@ public class StickmanFX extends Agent2D
     public double mWobble = 0;
     // the shared variable to decide the while loop in IdleBehavior break or not
     public Boolean mIdleRun = false;
-    public IdleBehavior mIdleBehavior;
+    public IdleBehavior mIdleBehavior = null;
     // Perlin noise
-    public SimplexNoise simplexNoise;
+    public SimplexNoise simplexNoise= null;
 
     public AnimationSchedulerFX mAnimationSchedulerFX;
 
-    public HeadFX mHeadFX;
-    public MaleHairFX mMaleHairFX;
-    public FemaleHairFX mFemaleHairFX;
-    public LeftEyebrowFX mLeftEyebrowFX;
-    public FaceWrinkleFX mFaceWrinkleFX;
-    public LeftEyeFX mLeftEyeFX;
-    public RightEyebrowFX mRightEyebrowFX;
-    public RightEyeFX mRightEyeFX;
-    public MouthFX mMouthFX;
-    public NeckFX mNeckFX;
-    public BodyFX mBodyFX;
-    public LeftShoulderFX mLeftShoulderFX;
-    public LeftUpperArmFX mLeftUpperArmFX;
-    public LeftForeArmFX mLeftForeArmFX;
-    public LeftHandFX mLeftHandFX;
-    public RightShoulderFX mRightShoulderFX;
-    public RightUpperArmFX mRightUpperArmFX;
-    public RightForeArmFX mRightForeArmFX;
-    public RightHandFX mRightHandFX;
-    public LeftUpperLegFX mLeftUpperLegFX;
-    public LeftForeLegFX mLeftForeLegFX;
-    public LeftFootFX mLeftFootFX;
-    public StarsFX mStarsFX;
-    public RightUpperLegFX mRightUpperLegFX;
-    public RightForeLegFX mRightForeLegFX;
-    public RightFootFX mRightFootFX;
-    public ThinkFX mThinkFX;
-    public BombeFX mBombeFX;
-    public SpeechBubbleStickman2D mSpeechBubbleFX;
-    public NoseFX mNose;
+    public Part2D mMaleHairFX = null;
+    public Part2D mFemaleHairFX = null;
+    public Part2D mLeftEyebrowFX = null;
+    public Part2D mFaceWrinkleFX = null;
+    public Part2D mRightEyebrowFX = null;
+    public Part2D mLeftShoulderFX = null;
+    public Part2D mLeftUpperArmFX = null;
+    public Part2D mLeftForeArmFX = null;
+    public Part2D mLeftHandFX = null;
+    public Part2D mRightShoulderFX = null;
+    public Part2D mRightUpperArmFX = null;
+    public Part2D mRightForeArmFX = null;
+    public Part2D mRightHandFX = null;
+    public Part2D mLeftUpperLegFX = null;
+    public Part2D mLeftForeLegFX = null;
+    public Part2D mLeftFootFX = null;
+    public Part2D mStarsFX = null;
+    public Part2D mRightUpperLegFX = null;
+    public Part2D mRightForeLegFX = null;
+    public Part2D mRightFootFX = null;
+    public Part2D mNose = null;
 
     public StickmanFX(String name, Gender.TYPE gender, float scale, Dimension size)
     {
         super(name, gender, scale, size);
         mScaleOriginal = scale;
 
-        initBodyParts();
-
-        mSpeechBubbleFX = new SpeechBubbleStickman2D(mHeadFX);
         init();
-        this.addAllParts();
+        addAllParts();
         update();
     }
 
@@ -154,11 +133,8 @@ public class StickmanFX extends Agent2D
         super(name, gender, scale);
         mScaleOriginal = scale;
 
-        initBodyParts();
-
-        mSpeechBubbleFX = new SpeechBubbleStickman2D(mHeadFX);
         init();
-        this.addAllParts();
+        addAllParts();
         update();
     }
 
@@ -167,16 +143,14 @@ public class StickmanFX extends Agent2D
         super(name, gender, scale, faceOnly);
         mScaleOriginal = scale;
 
-        initBodyParts();
-
-        mSpeechBubbleFX = new SpeechBubbleStickman2D(mHeadFX);
         init();
+
         if (faceOnly)
         {
-            this.addOnlyHeadParts();
+            addOnlyHeadParts();
         } else
         {
-            this.addAllParts();
+            addAllParts();
         }
         update();
     }
@@ -185,11 +159,8 @@ public class StickmanFX extends Agent2D
     {
         super(name, gender);
 
-        initBodyParts();
-
-        mSpeechBubbleFX = new SpeechBubbleStickman2D(mHeadFX);
         init();
-        this.addAllParts();
+        addAllParts();
         update();
     }
 
@@ -197,15 +168,14 @@ public class StickmanFX extends Agent2D
     {
         super(name, gender, scale, size, faceOnly);
         mScaleOriginal = scale;
-        initBodyParts();
-        mSpeechBubbleFX = new SpeechBubbleStickman2D(mHeadFX);
+
         init();
         if (faceOnly)
         {
-            this.addOnlyHeadParts();
+            addOnlyHeadParts();
         } else
         {
-            this.addAllParts();
+            addAllParts();
         }
         update();
     }
@@ -231,23 +201,20 @@ public class StickmanFX extends Agent2D
         mRightUpperArmFX = new RightUpperArmFX(mRightShoulderFX);
         mRightForeArmFX = new RightForeArmFX(mRightUpperArmFX);
         mRightHandFX = new RightHandFX(mRightForeArmFX);
-        // mLeftLegFX = new LeftLegFX(mBodyFX);
         mLeftUpperLegFX = new LeftUpperLegFX(mBodyFX);
         mLeftForeLegFX = new LeftForeLegFX(mLeftUpperLegFX);
         mLeftFootFX = new LeftFootFX(mLeftForeLegFX);
-        // added by Robbie
         mStarsFX = new StarsFX(mBodyFX);
-        // mRightLegFX = new RightLegFX(mBodyFX);
         mRightUpperLegFX = new RightUpperLegFX(mBodyFX);
         mRightForeLegFX = new RightForeLegFX(mRightUpperLegFX);
         mRightFootFX = new RightFootFX(mRightForeLegFX);
-        mThinkFX = new ThinkFX(mHeadFX);
-        mBombeFX = new BombeFX(mHeadFX);
         mNose = new NoseFX(mHeadFX);
+        mSpeechBubbleFX = new SpeechBubbleStickman2D(mHeadFX);
     }
 
     public void init()
     {
+        initBodyParts();
         super.init();
         agentNameLabel = new Label();
 
@@ -431,15 +398,11 @@ public class StickmanFX extends Agent2D
     {
         float mGeneralXTranslation;
         float mGeneralYTranslation;
-        Color currColor = sFOREGROUND;
-        int width = new Float(mSize.width).intValue();
-        int height = new Float(mSize.height).intValue();
 
         // draw everthing in the middle and scaled
         Affine af = new Affine();
         mGeneralXTranslation = mSize.width / 2 - mHeadFX.mSize.width * mScale;
         mGeneralYTranslation = (float) (mSize.height / 5);
-        // mGeneralYTranslation = (float) (mSize.height - 550 * mScale);
         if (this.faceOnly)
         {
             mGeneralYTranslation = -250;
@@ -452,16 +415,19 @@ public class StickmanFX extends Agent2D
         this.getTransforms().add(af);
 
         // Out put perlin noise
-        implimentPerlinNoise(mWobble, (mBodyFX.getRightLegStartPostion().x + mBodyFX.getLeftLegStartPostion().x) / 2,
-                mBodyFX.getRightLegStartPostion().y + mLeftUpperLegFX.mLength + mLeftForeLegFX.mLength);
+        Point rightLegStartPostion = ((BodyFX)mBodyFX).getRightLegStartPostion();
+        Point leftLegStartPostion = ((BodyFX)mBodyFX).getLeftLegStartPostion();
+        implimentPerlinNoise(mWobble, (rightLegStartPostion.x + leftLegStartPostion.x) / 2,
+                rightLegStartPostion.y + mLeftUpperLegFX.mLength + mLeftForeLegFX.mLength);
 
+        RightForeLegFX rightForeLegFX = (RightForeLegFX) mRightForeLegFX;
         if (mShowName)
         {
-            agentNameLabel.setTranslateY(mRightForeLegFX.getLegStartPosition().getY() * 21 / 20);
+            agentNameLabel.setTranslateY(rightForeLegFX.getLegStartPosition().getY() * 21 / 20);
             agentNameLabel.setText(mName);
         } else
         {
-            agentNameLabel.setTranslateY(mRightForeLegFX.getLegStartPosition().getY() * 21 / 20);
+            agentNameLabel.setTranslateY(rightForeLegFX.getLegStartPosition().getY() * 21 / 20);
             agentNameLabel.setText("");
         }
 
@@ -487,7 +453,7 @@ public class StickmanFX extends Agent2D
                 mBodyFX, mLeftShoulderFX, mLeftUpperArmFX, mLeftForeArmFX, mLeftHandFX, mRightShoulderFX,
                 mRightUpperArmFX, mRightForeArmFX, mRightHandFX, /* mLeftLegFX, */ mLeftUpperLegFX, mLeftForeLegFX,
                 mLeftFootFX, /* mRightLegFX, */ mRightUpperLegFX, mRightForeLegFX, mRightFootFX, mFaceWrinkleFX,
-                mStarsFX, mSpeechBubbleFX, mThinkFX, mBombeFX, agentNameLabel);
+                mStarsFX, mSpeechBubbleFX, agentNameLabel);
         if (this.mType == Gender.TYPE.MALE)
         {
             this.getChildren().add(mMaleHairFX);
@@ -528,7 +494,7 @@ public class StickmanFX extends Agent2D
             mMouthFX.update();
             mNeckFX.update();
             // BodyFX is not PartReeti Classe
-            mBodyFX.calculate();
+            mBodyFX.calculate(0);
             mLeftShoulderFX.update();
             mLeftUpperArmFX.update();
             mLeftForeArmFX.update();

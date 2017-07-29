@@ -3,6 +3,7 @@ package de.dfki.stickmanFX.bodyfx;
 import java.awt.Dimension;
 import java.awt.Point;
 
+import de.dfki.common.part.Part2D;
 import de.dfki.stickmanFX.animationlogic.AnimatorFX;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.LineTo;
@@ -26,8 +27,8 @@ public class FaceWrinkleFX extends PartStickman2D
     Path mPath;
     public FaceWrinkleFX.SHAPE mShape = FaceWrinkleFX.SHAPE.DEFAULT;
 
-    public FaceWrinkleFX(HeadFX head) {
-        mHeadFX = head;
+    public FaceWrinkleFX(Part2D head) {
+        mHeadFX = (HeadFX) head;
         mLength = 16;
         mSize = new Dimension(mLength, 5);
         mDefaultRotationPoint = mHeadFX.mDefaultRotationPoint;

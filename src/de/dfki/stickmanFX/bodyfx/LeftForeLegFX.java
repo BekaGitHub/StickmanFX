@@ -10,6 +10,7 @@ import de.dfki.common.enums.Gender;
 import java.awt.Dimension;
 import java.awt.Point;
 
+import de.dfki.common.part.Part2D;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.MoveTo;
 import javafx.scene.shape.Path;
@@ -35,8 +36,8 @@ public class LeftForeLegFX extends PartStickman2D
 
     Path mLeg;
 
-    public LeftForeLegFX(LeftUpperLegFX leftUpperLegFX) {
-        mUpperLegFX = leftUpperLegFX;
+    public LeftForeLegFX(Part2D leftUpperLegFX) {
+        mUpperLegFX = (LeftUpperLegFX) leftUpperLegFX;
         if (mUpperLegFX.mBodyFX.mNeckFX.mHeadFX.mStickmanFX.mType == Gender.TYPE.MALE) {
             mLegLength = 90;
         } else {

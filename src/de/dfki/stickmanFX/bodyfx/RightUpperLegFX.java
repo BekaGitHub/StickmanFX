@@ -8,6 +8,7 @@ package de.dfki.stickmanFX.bodyfx;
 import java.awt.Dimension;
 import java.awt.Point;
 
+import de.dfki.common.part.Part2D;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.MoveTo;
 import javafx.scene.shape.Path;
@@ -31,8 +32,8 @@ public class RightUpperLegFX extends PartStickman2D
 
     Path mLeg;
 
-    public RightUpperLegFX(BodyFX body) {
-        mBodyFX = body;
+    public RightUpperLegFX(Part2D body) {
+        mBodyFX = (BodyFX) body;
         mLength = 60;
         mSize = new Dimension(10, mLength);
         mColor = Color.rgb(80, 80, 80);
