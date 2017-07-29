@@ -15,6 +15,11 @@ public abstract class Agent3D extends Agent
     public double stageHeight;
 
     public Part3D mHead;
+    public Part3D mLeftEye;
+    public Part3D mRightEye;
+    public Part3D mMouth;
+    public Part3D mNeck;
+    public Part3D mSpeechBubble;
 
     public Agent3D(String name, Gender.TYPE gender)
     {

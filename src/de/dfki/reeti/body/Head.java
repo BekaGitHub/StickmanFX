@@ -1,6 +1,7 @@
 package de.dfki.reeti.body;
 
 import com.interactivemesh.jfx.importer.stl.StlMeshImporter;
+import de.dfki.common.agent.Agent3D;
 import de.dfki.reeti.Reeti;
 import javafx.scene.Group;
 import javafx.scene.paint.Color;
@@ -24,7 +25,7 @@ public class Head extends PartReeti
     private int mHalfWidth;
     private static final int EARWITDH = 10;
 
-    public Head(Reeti reeti) {
+    public Head(Agent3D reeti) {
         mSize = new Dimension(120, 100);
         mHalfHeight = mSize.height / 2;
         mHalfWidth = mSize.width / 2;

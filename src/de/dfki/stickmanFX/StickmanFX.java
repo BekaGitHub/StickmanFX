@@ -135,9 +135,6 @@ public class StickmanFX extends Agent2D
     public BombeFX mBombeFX;
     public SpeechBubbleStickman2D mSpeechBubbleFX;
     public NoseFX mNose;
-    // logging
-    public final Logger mLogger = Logger.getAnonymousLogger();
-
 
     public StickmanFX(String name, Gender.TYPE gender, float scale, Dimension size)
     {
@@ -249,28 +246,17 @@ public class StickmanFX extends Agent2D
         mNose = new NoseFX(mHeadFX);
     }
 
-    private void init()
+    public void init()
     {
+        super.init();
         agentNameLabel = new Label();
-        this.setPrefHeight(mSize.height);
-        this.setPrefWidth(mSize.width);
-        this.setMinHeight(mSize.height);
-        this.setMinWidth(mSize.width);
-        // this.setStyle("-fx-border-color: black");
 
         // font stuff
         Map<TextAttribute, Object> map = new HashMap<>();
         map.put(TextAttribute.KERNING, TextAttribute.KERNING_ON);
         map.put(TextAttribute.FAMILY, Font.SANS_SERIF);
-        // map.put(TextAttribute.POSTURE, TextAttribute.POSTURE_OBLIQUE);
         map.put(TextAttribute.WEIGHT, TextAttribute.WEIGHT_DEMIBOLD);
         map.put(TextAttribute.SIZE, 14);
-
-        ConsoleHandler ch = new ConsoleHandler();
-        ch.setFormatter(new StickmanLogFormatter());
-
-        mLogger.addHandler(ch);
-        mLogger.setUseParentHandlers(false);
 
         mAnimationSchedulerFX = new AnimationSchedulerFX(this);
         mAnimationSchedulerFX.start();
@@ -480,17 +466,6 @@ public class StickmanFX extends Agent2D
         }
 
         updateAll();
-    }
-
-    private static class StickmanLogFormatter extends Formatter
-    {
-
-        @Override
-        public String format(LogRecord record)
-        {
-            return ((new StringBuffer()).append(record.getLevel()).append(": ").append(record.getMessage())
-                    .append("\n")).toString();
-        }
     }
 
     private void addOnlyHeadParts()

@@ -61,93 +61,44 @@ public class Stickman3D extends Agent3D
     public AnimationScheduler3D mAnimationSchedulerFX;
 
     // body parts
-    public Part3D mNose;
-    public Part3D mHair;
-    public Part3D mLeftEyebrow;
-    public Part3D mLeftEye;
-    public Part3D mLeftEar;
-    public Part3D mRightEar;
-    public Part3D mRightEyebrow;
-    public Part3D mRightEye;
-    public Part3D mMouth;
-    public Part3D mNeck;
-    public Part3D mFaceWrinkle;
-    public Part3D mUpperBody;
-    public Part3D mDownBody;
-    public Part3D mLeftUpperArm;
-    public Part3D mLeftForeArm;
-    public Part3D mLeftWrist;
-    public Part3D mLeftFinger1;
-    public Part3D mLeftFinger2;
-    public Part3D mLeftFinger3;
-    public Part3D mLeftFinger4;
-    public Part3D mRightUpperArm;
-    public Part3D mRightForeArm;
-    public Part3D mRightWrist;
-    public Part3D mRightFinger1;
-    public Part3D mRightFinger2;
-    public Part3D mRightFinger3;
-    public Part3D mRightFinger4;
-    public Part3D mLeftUpperLeg;
-    public Part3D mLeftForeLeg;
-    public Part3D mLeftFoot;
-    public Part3D mStars;
-    public Part3D mRightUpperLeg;
-    public Part3D mRightForeLeg;
-    public Part3D mRightFoot;
-    public Part3D mUpperBodyAndHead;
-    public Part3D mSpeechBubble;
-
-    public final Logger mLogger = Logger.getAnonymousLogger();
+    public Part3D mNose = null;
+    public Part3D mHair = null;
+    public Part3D mLeftEyebrow = null;
+    public Part3D mLeftEar = null;
+    public Part3D mRightEar = null;
+    public Part3D mRightEyebrow = null;
+    public Part3D mFaceWrinkle = null;
+    public Part3D mUpperBody = null;
+    public Part3D mDownBody = null;
+    public Part3D mLeftUpperArm = null;
+    public Part3D mLeftForeArm = null;
+    public Part3D mLeftWrist = null;
+    public Part3D mLeftFinger1 = null;
+    public Part3D mLeftFinger2 = null;
+    public Part3D mLeftFinger3 = null;
+    public Part3D mLeftFinger4 = null;
+    public Part3D mRightUpperArm = null;
+    public Part3D mRightForeArm = null;
+    public Part3D mRightWrist = null;
+    public Part3D mRightFinger1 = null;
+    public Part3D mRightFinger2 = null;
+    public Part3D mRightFinger3 = null;
+    public Part3D mRightFinger4 = null;
+    public Part3D mLeftUpperLeg = null;
+    public Part3D mLeftForeLeg = null;
+    public Part3D mLeftFoot = null;
+    public Part3D mStars = null;
+    public Part3D mRightUpperLeg = null;
+    public Part3D mRightForeLeg = null;
+    public Part3D mRightFoot = null;
+    public Part3D mUpperBodyAndHead = null;
 
     public Stickman3D(String name, Gender.TYPE gender, float scale, Dimension size)
     {
         super(name, gender, scale, size);
         isFullScreen = true;
 
-        mHead = new Head3D(this);
-        if (gender == Gender.TYPE.MALE)
-            mHair = new MaleHair3D(this);
-        else
-            mHair = new FemaleHair3D(this);
-        mLeftEyebrow = new LeftEyebrow3D(mHead);
-        mLeftEye = new LeftEye3D(mHead);
-        mLeftEar = new LeftEar3D(mHead);
-        mRightEar = new RightEar3D(mHead);
-        mRightEyebrow = new RightEyebrow3D(mHead);
-        mRightEye = new RightEye3D(mHead);
-        mNose = new Nose3D(mHead);
-        mMouth = new Mouth3D(mHead);
-        mFaceWrinkle = new FaceWrinkle3D(mHead);
-        mNeck = new Neck3D(mHead);
-        mUpperBody = new UpperBody3D(mNeck);
-        mDownBody = new DownBody3D(mUpperBody);
-        mLeftUpperArm = new LeftUpperArm3D(mUpperBody);
-        mLeftForeArm = new LeftForeArm3D(mLeftUpperArm);
-        mLeftWrist = new LeftWrist3D(mLeftForeArm);
-        mLeftFinger1 = new LeftFinger1(mLeftWrist);
-        mLeftFinger2 = new LeftFinger2(mLeftWrist);
-        mLeftFinger3 = new LeftFinger3(mLeftWrist);
-        mLeftFinger4 = new LeftFinger4(mLeftWrist);
-        mRightUpperArm = new RightUpperArm3D(mUpperBody);
-        mRightForeArm = new RightForeArm3D(mRightUpperArm);
-        mRightWrist = new RightWrist3D(mRightForeArm);
-        mRightFinger1 = new RightFinger1(mRightWrist);
-        mRightFinger2 = new RightFinger2(mRightWrist);
-        mRightFinger3 = new RightFinger3(mRightWrist);
-        mRightFinger4 = new RightFinger4(mRightWrist);
-        mLeftUpperLeg = new LeftUpperLeg3D(mDownBody);
-        mLeftForeLeg = new LeftForeLeg3D(mLeftUpperLeg);
-        mLeftFoot = new LeftFoot3D(mLeftForeLeg);
-        mStars = new Stars3D(mUpperBody);
-        mRightUpperLeg = new RightUpperLeg3D(mDownBody);
-        mRightForeLeg = new RightForeLeg3D(mRightUpperLeg);
-        mRightFoot = new RightFoot3D(mRightForeLeg);
-        mUpperBodyAndHead = new UpperBodyAndHead3D(mHead, mUpperBody, mNeck);
-
-        mSpeechBubble = new SpeechBubbleStickman3D(mHead);
         init();
-        this.addAllParts();
         update();
     }
 
@@ -156,59 +107,25 @@ public class Stickman3D extends Agent3D
         super(name, gender, scale, height);
         isFullScreen = false;
 
-        mHead = new Head3D(this);
-        if (gender == Gender.TYPE.MALE)
-            mHair = new MaleHair3D(this);
-        else
-            mHair = new FemaleHair3D(this);
-        mLeftEyebrow = new LeftEyebrow3D(mHead);
-        mLeftEye = new LeftEye3D(mHead);
-        mLeftEar = new LeftEar3D(mHead);
-        mRightEar = new RightEar3D(mHead);
-        mRightEyebrow = new RightEyebrow3D(mHead);
-        mRightEye = new RightEye3D(mHead);
-        mNose = new Nose3D(mHead);
-        mMouth = new Mouth3D(mHead);
-        mFaceWrinkle = new FaceWrinkle3D(mHead);
-        mNeck = new Neck3D(mHead);
-        mUpperBody = new UpperBody3D(mNeck);
-        mDownBody = new DownBody3D(mUpperBody);
-        mLeftUpperArm = new LeftUpperArm3D(mUpperBody);
-        mLeftForeArm = new LeftForeArm3D(mLeftUpperArm);
-        mLeftWrist = new LeftWrist3D(mLeftForeArm);
-        mLeftFinger1 = new LeftFinger1(mLeftWrist);
-        mLeftFinger2 = new LeftFinger2(mLeftWrist);
-        mLeftFinger3 = new LeftFinger3(mLeftWrist);
-        mLeftFinger4 = new LeftFinger4(mLeftWrist);
-        mRightUpperArm = new RightUpperArm3D(mUpperBody);
-        mRightForeArm = new RightForeArm3D(mRightUpperArm);
-        mRightWrist = new RightWrist3D(mRightForeArm);
-        mRightFinger1 = new RightFinger1(mRightWrist);
-        mRightFinger2 = new RightFinger2(mRightWrist);
-        mRightFinger3 = new RightFinger3(mRightWrist);
-        mRightFinger4 = new RightFinger4(mRightWrist);
-        mLeftUpperLeg = new LeftUpperLeg3D(mDownBody);
-        mLeftForeLeg = new LeftForeLeg3D(mLeftUpperLeg);
-        mLeftFoot = new LeftFoot3D(mLeftForeLeg);
-        mStars = new Stars3D(mUpperBody);
-        mRightUpperLeg = new RightUpperLeg3D(mDownBody);
-        mRightForeLeg = new RightForeLeg3D(mRightUpperLeg);
-        mRightFoot = new RightFoot3D(mRightForeLeg);
-        mUpperBodyAndHead = new UpperBodyAndHead3D(mHead, mUpperBody, mNeck);
-
-        mSpeechBubble = new SpeechBubbleStickman3D(mHead);
         init();
-        this.addAllParts();
         update();
     }
 
     public Stickman3D(String name, Gender.TYPE gender)
     {
         super(name, gender);
-
         isFullScreen = true;
+
+        init();
+        update();
+    }
+
+    @Override
+    public void init()
+    {
+        super.init();
         mHead = new Head3D(this);
-        if (gender == Gender.TYPE.MALE)
+        if (mType == Gender.TYPE.MALE)
             mHair = new MaleHair3D(this);
         else
             mHair = new FemaleHair3D(this);
@@ -246,19 +163,7 @@ public class Stickman3D extends Agent3D
         mRightForeLeg = new RightForeLeg3D(mRightUpperLeg);
         mRightFoot = new RightFoot3D(mRightForeLeg);
         mUpperBodyAndHead = new UpperBodyAndHead3D(mHead, mUpperBody, mNeck);
-
         mSpeechBubble = new SpeechBubbleStickman3D(mHead);
-        init();
-        this.addAllParts();
-        update();
-    }
-
-    private void init()
-    {
-        this.setPrefHeight(mSize.height);
-        this.setPrefWidth(mSize.width);
-        this.setMinHeight(mSize.height);
-        this.setMinWidth(mSize.width);
 
         InnerShadow is = new InnerShadow();
         is.setOffsetX(4.0f);
@@ -282,14 +187,10 @@ public class Stickman3D extends Agent3D
         }
         agentNameText.setTranslateZ(-120);
 
-        ConsoleHandler ch = new ConsoleHandler();
-        ch.setFormatter(new StickmanLogFormatter());
-
-        mLogger.addHandler(ch);
-        mLogger.setUseParentHandlers(false);
-
         mAnimationSchedulerFX = new AnimationScheduler3D(this);
         mAnimationSchedulerFX.start();
+
+        this.addAllParts();
     }
 
     public void addListener(AnimationListener al)
@@ -473,17 +374,6 @@ public class Stickman3D extends Agent3D
     public void setScale(float scale)
     {
         mScale = scale;
-    }
-
-    private static class StickmanLogFormatter extends Formatter
-    {
-
-        @Override
-        public String format(LogRecord record)
-        {
-            return ((new StringBuffer()).append(record.getLevel()).append(": ").append(record.getMessage())
-                    .append("\n")).toString();
-        }
     }
 
     private void addAllParts()

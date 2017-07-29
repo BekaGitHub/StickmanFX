@@ -62,25 +62,17 @@ public class Reeti extends Agent3D
     // amimation stuff
     public AnimationSchedulerReeti mAnimationSchedulerReeti;
 
-    // body parts
     public Part3D mLeftEyelid;
-    public Part3D mLeftEye;
-    public Part3D mRightEye;
+    public Part3D mRightEyelid;
     public Part3D mLeftEar;
     public Part3D mRightEar;
-    public Part3D mRightEyelid;
     public Part3D mLeftCheek;
     public Part3D mRightCheek;
-    public Part3D mMouth;
     public Part3D mMouthLeftCorner;
     public Part3D mMouthRightCorner;
     public Part3D mMouthUpperLip;
     public Part3D mMouthDownLip;
-    public Part3D mNeck;
     public Part3D mBody;
-    public Part3D mSpeechBubble;
-    // logging
-    public final Logger mLogger = Logger.getAnonymousLogger();
 
     //Movement
     private double mUpperLipOldPos = 0;
@@ -106,28 +98,8 @@ public class Reeti extends Agent3D
         super(name, gender, scale, size);
         isFullScreen = true;
 
-        mHead = new Head(this);
-        mLeftEyelid = new LeftEyelid(mHead);
-        mLeftEye = new LeftEye(mHead);
-        mRightEye = new RightEye(mHead);
-        mLeftEar = new LeftEar(mHead);
-        mRightEar = new RightEar(mHead);
-        mRightEyelid = new RightEyelid(mHead);
-        mLeftCheek = new LeftCheek(mHead);
-        mRightCheek = new RightCheek(mHead);
-        mMouth = new Mouth(mHead);
-        mMouthLeftCorner = new MouthLeftCorner(mMouth);
-        mMouthRightCorner = new MouthRightCorner(mMouth);
-        mMouthUpperLip = new MouthUpperLip(mMouth);
-        mMouthDownLip = new MouthDownLip(mMouth);
-        mNeck = new Neck(mHead);
-        mBody = new Body(mNeck);
-
-        mSpeechBubble = new SpeechBubbleReeti(mHead);
         init();
-        this.addAllParts();
         update();
-        sReeti = this;
     }
 
     public Reeti(String name, Gender.TYPE gender, float scale, double height)
@@ -135,35 +107,23 @@ public class Reeti extends Agent3D
         super(name, gender, scale, height);
         isFullScreen = false;
 
-        mHead = new Head(this);
-        mLeftEyelid = new LeftEyelid(mHead);
-        mLeftEye = new LeftEye(mHead);
-        mRightEye = new RightEye(mHead);
-        mLeftEar = new LeftEar(mHead);
-        mRightEar = new RightEar(mHead);
-        mRightEyelid = new RightEyelid(mHead);
-        mLeftCheek = new LeftCheek(mHead);
-        mRightCheek = new RightCheek(mHead);
-        mMouth = new Mouth(mHead);
-        mMouthLeftCorner = new MouthLeftCorner(mMouth);
-        mMouthRightCorner = new MouthRightCorner(mMouth);
-        mMouthUpperLip = new MouthUpperLip(mMouth);
-        mMouthDownLip = new MouthDownLip(mMouth);
-        mNeck = new Neck(mHead);
-        mBody = new Body(mNeck);
-
-        mSpeechBubble = new SpeechBubbleReeti(mHead);
         init();
-        this.addAllParts();
         update();
-        sReeti = this;
     }
 
     public Reeti(String name, Gender.TYPE gender)
     {
         super(name, gender);
-
         isFullScreen = true;
+
+        init();
+        update();
+    }
+
+    @Override
+    public void init()
+    {
+        super.init();
         mHead = new Head(this);
         mLeftEyelid = new LeftEyelid(mHead);
         mLeftEye = new LeftEye(mHead);
@@ -180,33 +140,13 @@ public class Reeti extends Agent3D
         mMouthDownLip = new MouthDownLip(mMouth);
         mNeck = new Neck(mHead);
         mBody = new Body(mNeck);
-
         mSpeechBubble = new SpeechBubbleReeti(mHead);
-        init();
-        this.addAllParts();
-        update();
         sReeti = this;
-    }
-
-    private void init()
-    {
-        this.setPrefHeight(mSize.height);
-        this.setPrefWidth(mSize.width);
-        this.setMinHeight(mSize.height);
-        this.setMinWidth(mSize.width);
-
-        InnerShadow is = new InnerShadow();
-        is.setOffsetX(4.0f);
-        is.setOffsetY(4.0f);
-
-        ConsoleHandler ch = new ConsoleHandler();
-        ch.setFormatter(new StickmanLogFormatter());
-
-        mLogger.addHandler(ch);
-        mLogger.setUseParentHandlers(false);
 
         mAnimationSchedulerReeti = new AnimationSchedulerReeti(this);
         mAnimationSchedulerReeti.start();
+
+        this.addAllParts();
     }
 
     public void addListener(AnimationListener al)
@@ -384,17 +324,6 @@ public class Reeti extends Agent3D
     public void setScale(float scale)
     {
         mScale = scale;
-    }
-
-    private static class StickmanLogFormatter extends Formatter
-    {
-
-        @Override
-        public String format(LogRecord record)
-        {
-            return ((new StringBuffer()).append(record.getLevel()).append(": ").append(record.getMessage())
-                    .append("\n")).toString();
-        }
     }
 
     private void addAllParts()
