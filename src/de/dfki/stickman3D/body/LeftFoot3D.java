@@ -7,6 +7,7 @@ package de.dfki.stickman3D.body;
 
 import com.interactivemesh.jfx.importer.col.ColModelImporter;
 import de.dfki.common.enums.Gender;
+import de.dfki.common.part.Part3D;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.PhongMaterial;
 import javafx.scene.shape.MeshView;
@@ -31,9 +32,9 @@ public class LeftFoot3D extends PartStickman3D
     private MeshView mLeftFootMeshView;
     private PhongMaterial material;
 
-    public LeftFoot3D(LeftForeLeg3D leftForeLeg)
+    public LeftFoot3D(Part3D leftForeLeg)
     {
-        mLeftForeLeg = leftForeLeg;
+        mLeftForeLeg = (LeftForeLeg3D) leftForeLeg;
         mLength = 20;
         if (mLeftForeLeg.getUpperLeg().getDownBody().getUpperBody().getNeck().getHead().getStickman().mType == Gender.TYPE.MALE)
             mColor = Color.rgb(80, 80, 80, 1);
@@ -125,7 +126,8 @@ public class LeftFoot3D extends PartStickman3D
         mLeftFootMeshView.setMaterial(material);
     }
 
-    public MeshView getLeftFootMeshView()
+    @Override
+    public MeshView getMeshView()
     {
         return mLeftFootMeshView;
     }

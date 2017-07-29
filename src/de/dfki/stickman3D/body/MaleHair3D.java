@@ -122,7 +122,8 @@ public class MaleHair3D extends PartStickman3D
         maleHairMeshView.setMaterial(material);
     }
 
-    public MeshView getMaleHairMeshView()
+    @Override
+    public MeshView getMeshView()
     {
         return maleHairMeshView;
     }

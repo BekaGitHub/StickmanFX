@@ -3,6 +3,7 @@ package de.dfki.stickman3D.body;
 import com.interactivemesh.jfx.importer.col.ColModelImporter;
 import de.dfki.common.enums.Gender;
 import de.dfki.common.enums.Orientation;
+import de.dfki.common.part.Part3D;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.PhongMaterial;
 import javafx.scene.shape.MeshView;
@@ -44,9 +45,9 @@ public class UpperBody3D extends PartStickman3D
     private MeshView mBodyMeshView;
     private PhongMaterial material;
 
-    public UpperBody3D(Neck3D neck)
+    public UpperBody3D(Part3D neck)
     {
-        mNeck = neck;
+        mNeck = (Neck3D) neck;
         mSize = new Dimension(120, 300);
         mStart = mNeck.getBodyStartPosition();
         mHalfSizeX = mSize.width / 2;
@@ -210,7 +211,8 @@ public class UpperBody3D extends PartStickman3D
         return mNeck;
     }
 
-    public MeshView getBodyMeshView()
+    @Override
+    public MeshView getMeshView()
     {
         return mBodyMeshView;
     }

@@ -8,6 +8,7 @@ package de.dfki.stickman3D.body;
 
 import com.interactivemesh.jfx.importer.col.ColModelImporter;
 import de.dfki.common.enums.Gender;
+import de.dfki.common.part.Part3D;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.PhongMaterial;
 import javafx.scene.shape.MeshView;
@@ -41,9 +42,9 @@ public class DownBody3D extends PartStickman3D
     private MeshView mBodyMeshView;
     private PhongMaterial material;
 
-    public DownBody3D(UpperBody3D upperBody)
+    public DownBody3D(Part3D upperBody)
     {
-        mUpperBody = upperBody;
+        mUpperBody = (UpperBody3D) upperBody;
         mSize = new Dimension(120, 300);
         mHalfSizeX = mSize.width / 2;
         mStart = mUpperBody.getDownBodyPosition();
@@ -157,7 +158,8 @@ public class DownBody3D extends PartStickman3D
         return mUpperBody;
     }
 
-    public MeshView getBodyMeshView()
+    @Override
+    public MeshView getMeshView()
     {
         return mBodyMeshView;
     }

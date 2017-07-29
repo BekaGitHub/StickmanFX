@@ -47,4 +47,9 @@ public abstract class PartReeti extends Part3D
 
     }
 
+    @Override
+    public void update()
+    {
+
+    }
 }

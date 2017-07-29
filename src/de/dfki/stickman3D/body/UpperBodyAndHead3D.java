@@ -2,6 +2,7 @@ package de.dfki.stickman3D.body;
 
 import java.awt.Dimension;
 
+import de.dfki.common.part.Part3D;
 import javafx.scene.Group;
 import javafx.scene.transform.Rotate;
 import javafx.scene.transform.Translate;
@@ -17,7 +18,7 @@ public class UpperBodyAndHead3D extends PartStickman3D
 	private Group mUpperBodyAndHead;
 
 
-	public UpperBodyAndHead3D(Head3D head, UpperBody3D upperBody, Neck3D neck) {
+	public UpperBodyAndHead3D(Part3D head, Part3D upperBody, Part3D neck) {
 		mSize = new Dimension(120, 300);
 		mUpperBodyAndHead = new Group();
 		mUpperBodyAndHead.getChildren().addAll(head, upperBody, neck);

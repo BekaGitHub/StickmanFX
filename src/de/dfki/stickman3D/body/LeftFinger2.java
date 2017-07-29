@@ -6,6 +6,7 @@
 package de.dfki.stickman3D.body;
 
 import com.interactivemesh.jfx.importer.col.ColModelImporter;
+import de.dfki.common.part.Part3D;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.PhongMaterial;
 import javafx.scene.shape.MeshView;
@@ -31,7 +32,7 @@ public class LeftFinger2 extends PartStickman3D
     private MeshView mLeftFinger2;
     private PhongMaterial material;
 
-    public LeftFinger2(LeftWrist3D leftWrist)
+    public LeftFinger2(Part3D leftWrist)
     {
         mSize = new Dimension(ARMLENGTH, ARMLENGTH);
         mColor = Color.rgb(242, 227, 217, 1);
@@ -48,7 +49,7 @@ public class LeftFinger2 extends PartStickman3D
         material.setDiffuseColor(mColor);
         mLeftFinger2.setMaterial(material);
 
-        leftWrist.getLeftWristGroup().getChildren().add(mLeftFinger2);
+        ((LeftWrist3D)leftWrist).getLeftWristGroup().getChildren().add(mLeftFinger2);
 
         init();
     }
@@ -118,7 +119,7 @@ public class LeftFinger2 extends PartStickman3D
         mLeftFinger2.setMaterial(material);
     }
 
-    public MeshView getLeftFinger2()
+    public MeshView getMeshView()
     {
         return mLeftFinger2;
     }

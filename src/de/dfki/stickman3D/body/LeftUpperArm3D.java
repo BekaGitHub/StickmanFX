@@ -7,6 +7,7 @@ package de.dfki.stickman3D.body;
 
 import com.interactivemesh.jfx.importer.col.ColModelImporter;
 import de.dfki.common.enums.Gender;
+import de.dfki.common.part.Part3D;
 import javafx.scene.Group;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.PhongMaterial;
@@ -37,9 +38,9 @@ public class LeftUpperArm3D extends PartStickman3D
 
     private Group leftUpperArmGroup;
 
-    public LeftUpperArm3D(UpperBody3D bodyFX)
+    public LeftUpperArm3D(Part3D bodyFX)
     {
-        mUpperBody = bodyFX;
+        mUpperBody = (UpperBody3D) bodyFX;
         mSize = new Dimension(ARMLENGTH, ARMLENGTH);
         mColor = Color.rgb(242, 227, 217, 1);
 

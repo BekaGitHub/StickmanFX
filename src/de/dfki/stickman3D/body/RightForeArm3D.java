@@ -7,6 +7,7 @@ package de.dfki.stickman3D.body;
 
 import com.interactivemesh.jfx.importer.col.ColModelImporter;
 import de.dfki.common.enums.Gender;
+import de.dfki.common.part.Part3D;
 import javafx.scene.Group;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.PhongMaterial;
@@ -37,9 +38,9 @@ public class RightForeArm3D extends PartStickman3D
     private PhongMaterial material;
     private Group rightForeArmGroup;
 
-    public RightForeArm3D(RightUpperArm3D arm)
+    public RightForeArm3D(Part3D arm)
     {
-        mUpperArm = arm;
+        mUpperArm = (RightUpperArm3D) arm;
         mSize = new Dimension(ARMLENGTH, ARMLENGTH);
         mColor = Color.rgb(242, 227, 217, 1);
         mXRotation = -15;
@@ -141,7 +142,7 @@ public class RightForeArm3D extends PartStickman3D
         return mUpperArm;
     }
 
-    public MeshView getRightForeArmMesh()
+    public MeshView getMeshView()
     {
         return mRightForeArmMesh;
     }

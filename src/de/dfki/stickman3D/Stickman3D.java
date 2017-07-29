@@ -2,6 +2,7 @@ package de.dfki.stickman3D;
 
 import de.dfki.common.agent.Agent3D;
 import de.dfki.common.enums.Orientation;
+import de.dfki.common.part.Part3D;
 import de.dfki.stickman3D.body.*;
 import de.dfki.stickman3D.body.Head3D;
 import de.dfki.action.sequence.WordTimeMarkSequence;
@@ -60,44 +61,44 @@ public class Stickman3D extends Agent3D
     public AnimationScheduler3D mAnimationSchedulerFX;
 
     // body parts
-    public Head3D mHead;
-    public Nose3D mNose;
-    public MaleHair3D mMaleHair;
-    public FemaleHair3D mFemaleHair;
-    public LeftEyebrow3D mLeftEyebrow;
-    public LeftEye3D mLeftEye;
-    public LeftEar3D mLeftEar;
-    public RightEar3D mRightEar;
-    public RightEyebrow3D mRightEyebrow;
-    public RightEye3D mRightEye;
-    public Mouth3D mMouth;
-    public Neck3D mNeck;
-    public FaceWrinkle3D mFaceWrinkle; // added by Robbie FaceWrinkle
-    public UpperBody3D mUpperBody;
-    public DownBody3D mDownBody;
-    public LeftUpperArm3D mLeftUpperArm;
-    public LeftForeArm3D mLeftForeArm;
-    public LeftWrist3D mLeftWrist;
-    public LeftFinger1 mLeftFinger1;
-    public LeftFinger2 mLeftFinger2;
-    public LeftFinger3 mLeftFinger3;
-    public LeftFinger4 mLeftFinger4;
-    public RightUpperArm3D mRightUpperArm;
-    public RightForeArm3D mRightForeArm;
-    public RightWrist3D mRightWrist;
-    public RightFinger1 mRightFinger1;
-    public RightFinger2 mRightFinger2;
-    public RightFinger3 mRightFinger3;
-    public RightFinger4 mRightFinger4;
-    public LeftUpperLeg3D mLeftUpperLeg;
-    public LeftForeLeg3D mLeftForeLeg;
-    public LeftFoot3D mLeftFoot;
-    public Stars3D mStars;
-    public RightUpperLeg3D mRightUpperLeg;
-    public RightForeLeg3D mRightForeLeg;
-    public RightFoot3D mRightFoot;
-    public UpperBodyAndHead3D mUpperBodyAndHead;
-    public SpeechBubbleStickman3D mSpeechBubble;
+    public Part3D mHead;
+    public Part3D mNose;
+    public Part3D mMaleHair;
+    public Part3D mFemaleHair;
+    public Part3D mLeftEyebrow;
+    public Part3D mLeftEye;
+    public Part3D mLeftEar;
+    public Part3D mRightEar;
+    public Part3D mRightEyebrow;
+    public Part3D mRightEye;
+    public Part3D mMouth;
+    public Part3D mNeck;
+    public Part3D mFaceWrinkle;
+    public Part3D mUpperBody;
+    public Part3D mDownBody;
+    public Part3D mLeftUpperArm;
+    public Part3D mLeftForeArm;
+    public Part3D mLeftWrist;
+    public Part3D mLeftFinger1;
+    public Part3D mLeftFinger2;
+    public Part3D mLeftFinger3;
+    public Part3D mLeftFinger4;
+    public Part3D mRightUpperArm;
+    public Part3D mRightForeArm;
+    public Part3D mRightWrist;
+    public Part3D mRightFinger1;
+    public Part3D mRightFinger2;
+    public Part3D mRightFinger3;
+    public Part3D mRightFinger4;
+    public Part3D mLeftUpperLeg;
+    public Part3D mLeftForeLeg;
+    public Part3D mLeftFoot;
+    public Part3D mStars;
+    public Part3D mRightUpperLeg;
+    public Part3D mRightForeLeg;
+    public Part3D mRightFoot;
+    public Part3D mUpperBodyAndHead;
+    public Part3D mSpeechBubble;
 
     public final Logger mLogger = Logger.getAnonymousLogger();
 
@@ -445,13 +446,13 @@ public class Stickman3D extends Agent3D
         float mGeneralXTranslation;
         float mGeneralYTranslation;
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
-        double StickmanHeight = this.mHead.getHeadMeshView().getBoundsInParent().getHeight()
-                + this.mNeck.getNeckMeshView().getBoundsInParent().getHeight()
-                + this.mUpperBody.getBodyMeshView().getBoundsInParent().getHeight()
-                + this.mDownBody.getBodyMeshView().getBoundsInParent().getHeight()
-                + this.mLeftUpperLeg.getLeftUpperLegMesh().getBoundsInParent().getHeight()
-                + this.mLeftForeLeg.getLeftForeLegMesh().getBoundsInParent().getHeight()
-                + this.mLeftFoot.getLeftFootMeshView().getBoundsInParent().getHeight();
+        double StickmanHeight = this.mHead.getMeshView().getBoundsInParent().getHeight()
+                + this.mNeck.getMeshView().getBoundsInParent().getHeight()
+                + this.mUpperBody.getMeshView().getBoundsInParent().getHeight()
+                + this.mDownBody.getMeshView().getBoundsInParent().getHeight()
+                + this.mLeftUpperLeg.getMeshView().getBoundsInParent().getHeight()
+                + this.mLeftForeLeg.getMeshView().getBoundsInParent().getHeight()
+                + this.mLeftFoot.getMeshView().getBoundsInParent().getHeight();
 
         Affine af = new Affine();
         int shiftFactor = (int) (StickmanHeight - (StickmanHeight * mScale));

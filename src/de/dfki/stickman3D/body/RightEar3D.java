@@ -10,6 +10,7 @@ import java.net.URL;
 
 import com.interactivemesh.jfx.importer.col.ColModelImporter;
 
+import de.dfki.common.part.Part3D;
 import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.PhongMaterial;
@@ -34,9 +35,9 @@ public class RightEar3D extends PartStickman3D
 
     public RightEar3D.SHAPE mShape = RightEar3D.SHAPE.DEFAULT;
 
-    public RightEar3D(Head3D head)
+    public RightEar3D(Part3D head)
     {
-        mHead = head;
+        mHead = (Head3D) head;
         mSize = new Dimension(mLength, mLength);
         mColor = Color.rgb(242, 227, 217, initOpacity);
 

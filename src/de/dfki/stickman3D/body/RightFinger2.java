@@ -6,6 +6,7 @@
 package de.dfki.stickman3D.body;
 
 import com.interactivemesh.jfx.importer.col.ColModelImporter;
+import de.dfki.common.part.Part3D;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.PhongMaterial;
 import javafx.scene.shape.MeshView;
@@ -34,9 +35,9 @@ public class RightFinger2 extends PartStickman3D
     private MeshView mRightFinger2;
     private PhongMaterial material;
 
-    public RightFinger2(RightWrist3D rightWrist)
+    public RightFinger2(Part3D rightWrist)
     {
-        mRightWrist = rightWrist;
+        mRightWrist = (RightWrist3D) rightWrist;
         mSize = new Dimension(ARMLENGTH, ARMLENGTH);
         mColor = Color.rgb(242, 227, 217, 1);
         mDefaultRotation = -20;
@@ -122,7 +123,8 @@ public class RightFinger2 extends PartStickman3D
         mRightFinger2.setMaterial(material);
     }
 
-    public MeshView getRightFinger2()
+    @Override
+    public MeshView getMeshView()
     {
         return mRightFinger2;
     }

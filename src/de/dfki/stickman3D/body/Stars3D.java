@@ -1,6 +1,7 @@
 package de.dfki.stickman3D.body;
 
 import com.interactivemesh.jfx.importer.col.ColModelImporter;
+import de.dfki.common.part.Part3D;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.PhongMaterial;
 import javafx.scene.shape.MeshView;
@@ -27,11 +28,11 @@ public class Stars3D extends PartStickman3D
 
     public Stars3D.SHAPE mShape = Stars3D.SHAPE.DEFAULT;
 
-    public Stars3D(UpperBody3D body)
+    public Stars3D(Part3D body)
     {
         mLength = 150;
         mSize = new Dimension(120, mLength);
-        mStart = body.getLeftLegStartPostion();
+        mStart = ((UpperBody3D)body).getLeftLegStartPostion();
         mColor = Color.rgb(255, 255, 0, 0.0);
 
         ColModelImporter imorter = new ColModelImporter();

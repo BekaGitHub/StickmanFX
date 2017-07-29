@@ -1,6 +1,7 @@
 package de.dfki.stickman3D.body;
 
 import de.dfki.common.enums.Gender;
+import de.dfki.common.part.Part3D;
 import de.dfki.stickman3D.mimic.util.*;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Polygon;
@@ -23,9 +24,9 @@ public class RightEyebrow3D extends PartStickman3D
 
     public RightEyebrow3D.SHAPE mShape = RightEyebrow3D.SHAPE.DEFAULT;
 
-    public RightEyebrow3D(Head3D head)
+    public RightEyebrow3D(Part3D head)
     {
-        mHead = head;
+        mHead = (Head3D) head;
         mSize = new Dimension(mLength, 5);
 
         if (mHead.getStickman().mType == Gender.TYPE.MALE)

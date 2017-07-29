@@ -5,6 +5,7 @@
  */
 package de.dfki.stickman3D.controllerhelper;
 
+import de.dfki.stickman3D.body.UpperBody3D;
 import de.dfki.stickman3D.dynamic.classes.Helper;
 import de.dfki.stickman3D.StickmanStageController;
 import java.awt.Point;
@@ -471,19 +472,20 @@ public class SliderHelper {
 
             double newValue = new_val.doubleValue();
             double oldValue = old_val.doubleValue();
+            UpperBody3D upperBody3D = (UpperBody3D) controller.currentStickman.mUpperBody;
             if (achse.equalsIgnoreCase("X")) {
                 double xRotateFactor = newValue - oldValue;
-                Point pivot = controller.currentStickman.mUpperBody.getUpperBodyPosition();
+                Point pivot = upperBody3D.getUpperBodyPosition();
                 Rotate rx = new Rotate(xRotateFactor, pivot.x, pivot.y, 1505, Rotate.X_AXIS);
                 controller.getStage3D().getCamera().getTransforms().addAll(rx);
             } else if (achse.equalsIgnoreCase("Y")) {
                 double yRotateFactor = newValue - oldValue;
-                Point pivot = controller.currentStickman.mUpperBody.getUpperBodyPosition();
+                Point pivot = upperBody3D.getUpperBodyPosition();
                 Rotate ry = new Rotate(yRotateFactor, pivot.x, pivot.y, 1505, Rotate.Y_AXIS);
                 controller.getStage3D().getCamera().getTransforms().addAll(ry);
             } else {
                 double zRotateFactor = newValue - oldValue;
-                Point pivot = controller.currentStickman.mUpperBody.getUpperBodyPosition();
+                Point pivot = upperBody3D.getUpperBodyPosition();
                 Rotate rz = new Rotate(zRotateFactor, pivot.x, pivot.y, 1505, Rotate.Z_AXIS);
                 controller.getStage3D().getCamera().getTransforms().addAll(rz);
             }

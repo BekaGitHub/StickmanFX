@@ -1,5 +1,6 @@
 package de.dfki.stickman3D.environment;
 
+import de.dfki.common.part.Part3D;
 import de.dfki.stickman3D.body.PartStickman3D;
 import de.dfki.stickman3D.body.Head3D;
 import javafx.scene.control.Label;
@@ -23,9 +24,9 @@ public class SpeechBubbleStickman3D extends PartStickman3D
     private GridPane bubblePane;
     private Label message;
 
-    public SpeechBubbleStickman3D(Head3D head)
+    public SpeechBubbleStickman3D(Part3D head)
     {
-        mStart = head.getSpeechBubbleStartPosition();
+        mStart = ((Head3D)head).getSpeechBubbleStartPosition();
         mColor = Color.rgb(255, 255, 255, (192 * 100 / 255) / 100f);
     }
 

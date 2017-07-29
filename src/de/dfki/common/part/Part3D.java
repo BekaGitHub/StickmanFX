@@ -3,6 +3,7 @@ package de.dfki.common.part;
 import de.dfki.common.animationlogic.Animator;
 import de.dfki.stickman3D.animationlogic.Animator3D;
 import javafx.application.Platform;
+import javafx.scene.shape.MeshView;
 
 /**
  * Created by EmpaT on 27.07.2017.
@@ -150,4 +151,11 @@ public abstract class Part3D extends Part
     public void resetRotation()
     {
     }
+
+    public MeshView getMeshView()
+    {
+        return null;
+    }
+
+    public abstract void update();
 }

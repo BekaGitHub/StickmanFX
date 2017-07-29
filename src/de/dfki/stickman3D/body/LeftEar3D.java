@@ -10,6 +10,7 @@ import java.net.URL;
 
 import com.interactivemesh.jfx.importer.col.ColModelImporter;
 
+import de.dfki.common.part.Part3D;
 import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.PhongMaterial;
@@ -36,9 +37,9 @@ public class LeftEar3D extends PartStickman3D
 
     public LeftEar3D.SHAPE mShape = LeftEar3D.SHAPE.DEFAULT;
 
-    public LeftEar3D(Head3D head)
+    public LeftEar3D(Part3D head)
     {
-        mHead = head;
+        mHead = (Head3D) head;
         mSize = new Dimension(mLength, mLength);
         initOpacity = 1.0;
 

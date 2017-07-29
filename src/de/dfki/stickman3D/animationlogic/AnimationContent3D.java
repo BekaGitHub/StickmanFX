@@ -6,6 +6,7 @@
 package de.dfki.stickman3D.animationlogic;
 
 import de.dfki.action.sequence.WordTimeMarkSequence;
+import de.dfki.common.part.Part;
 import de.dfki.stickman3D.body.PartStickman3D;
 
 /**
@@ -21,22 +22,22 @@ public class AnimationContent3D {
     public String mParamString;
     public WordTimeMarkSequence mWTS;
 
-    public AnimationContent3D(PartStickman3D bp, String a, int p) {
-        mBodyPartFX = bp;
+    public AnimationContent3D(Part bp, String a, int p) {
+        mBodyPartFX = (PartStickman3D) bp;
         mAction = a;
         mParam = p;
         mParamString = "";
     }
 
-    public AnimationContent3D(PartStickman3D bp, String a, String p) {
-        mBodyPartFX = bp;
+    public AnimationContent3D(Part bp, String a, String p) {
+        mBodyPartFX = (PartStickman3D) bp;
         mAction = a;
         mParam = 0;
         mParamString = p;
     }
 
-    public AnimationContent3D(PartStickman3D bp, String a, String p, WordTimeMarkSequence wts) {
-        mBodyPartFX = bp;
+    public AnimationContent3D(Part bp, String a, String p, WordTimeMarkSequence wts) {
+        mBodyPartFX = (PartStickman3D) bp;
         mAction = a;
         mParam = 0;
         mParamString = p;

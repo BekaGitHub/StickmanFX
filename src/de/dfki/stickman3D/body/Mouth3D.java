@@ -1,5 +1,6 @@
 package de.dfki.stickman3D.body;
 
+import de.dfki.common.part.Part3D;
 import de.dfki.stickman3D.mimic.util.*;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Polygon;
@@ -28,9 +29,9 @@ public class Mouth3D extends PartStickman3D
 
     public Mouth3D.SHAPE mShape = Mouth3D.SHAPE.DEFAULT;
 
-    public Mouth3D(Head3D head)
+    public Mouth3D(Part3D head)
     {
-        mHead = head;
+        mHead = (Head3D) head;
         mSize = new Dimension(mLength * 2, 5);
         mColor = Color.rgb(230, 174, 161, 1.0);
 

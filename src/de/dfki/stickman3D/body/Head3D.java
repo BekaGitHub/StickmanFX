@@ -178,7 +178,8 @@ public class Head3D extends PartStickman3D
         return mStickman;
     }
 
-    public MeshView getHeadMeshView()
+    @Override
+    public MeshView getMeshView()
     {
         return mHeadMeshView;
     }

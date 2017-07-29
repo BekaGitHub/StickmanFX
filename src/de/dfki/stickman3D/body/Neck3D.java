@@ -6,6 +6,7 @@
 package de.dfki.stickman3D.body;
 
 import com.interactivemesh.jfx.importer.col.ColModelImporter;
+import de.dfki.common.part.Part3D;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.PhongMaterial;
 import javafx.scene.shape.MeshView;
@@ -33,9 +34,9 @@ public class Neck3D extends PartStickman3D
 
     public Neck3D.SHAPE mShape = Neck3D.SHAPE.DEFAULT;
 
-    public Neck3D(Head3D head)
+    public Neck3D(Part3D head)
     {
-        mHead = head;
+        mHead = (Head3D) head;
         mLength = 8;
         mSize = new Dimension(4, mLength);
         mColor = Color.rgb(242, 227, 217, 1);
@@ -145,7 +146,8 @@ public class Neck3D extends PartStickman3D
         return mHead;
     }
 
-    public MeshView getNeckMeshView()
+    @Override
+    public MeshView getMeshView()
     {
         return neckMeshView;
     }

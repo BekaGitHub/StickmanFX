@@ -6,6 +6,7 @@
 package de.dfki.stickman3D.body;
 
 import com.interactivemesh.jfx.importer.col.ColModelImporter;
+import de.dfki.common.part.Part3D;
 import javafx.scene.Group;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.PhongMaterial;
@@ -35,9 +36,9 @@ public class LeftForeArm3D extends PartStickman3D
     private PhongMaterial material;
     private Group leftForeArmGroup;
 
-    public LeftForeArm3D(LeftUpperArm3D arm)
+    public LeftForeArm3D(Part3D arm)
     {
-        mLeftUpperArm = arm;
+        mLeftUpperArm = (LeftUpperArm3D) arm;
         mSize = new Dimension(ARMLENGTH, ARMLENGTH);
         mColor = Color.rgb(242, 227, 217, 1);
 
@@ -133,7 +134,7 @@ public class LeftForeArm3D extends PartStickman3D
         return mLeftUpperArm;
     }
 
-    public MeshView getLeftForeArmMesh()
+    public MeshView getMeshView()
     {
         return mLeftForeArmMesh;
     }

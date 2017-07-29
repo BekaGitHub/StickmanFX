@@ -6,6 +6,7 @@
 package de.dfki.stickman3D.body;
 
 import com.interactivemesh.jfx.importer.col.ColModelImporter;
+import de.dfki.common.part.Part3D;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.PhongMaterial;
 import javafx.scene.shape.MeshView;
@@ -30,9 +31,9 @@ public class Nose3D extends PartStickman3D
 
     public Nose3D.SHAPE mShape = Nose3D.SHAPE.DEFAULT;
 
-    public Nose3D(Head3D head)
+    public Nose3D(Part3D head)
     {
-        mHead = head;
+        mHead = (Head3D) head;
         mSize = new Dimension(mLength, mLength);
         mColor = Color.rgb(242, 227, 217, 1);
 
@@ -125,7 +126,8 @@ public class Nose3D extends PartStickman3D
         }
     }
 
-    public MeshView getNose()
+    @Override
+    public MeshView getMeshView()
     {
         return mNose;
     }

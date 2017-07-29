@@ -6,6 +6,7 @@
 package de.dfki.stickman3D.body;
 
 import de.dfki.common.enums.Gender;
+import de.dfki.common.part.Part3D;
 import de.dfki.stickman3D.mimic.util.*;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Polygon;
@@ -29,9 +30,9 @@ public class LeftEyebrow3D extends PartStickman3D
 
     public LeftEyebrow3D.SHAPE mShape = LeftEyebrow3D.SHAPE.DEFAULT;
 
-    public LeftEyebrow3D(Head3D head)
+    public LeftEyebrow3D(Part3D head)
     {
-        mHead = head;
+        mHead = (Head3D) head;
         mSize = new Dimension(mLength, mLength);
 
         if (mHead.getStickman().mType == Gender.TYPE.MALE)

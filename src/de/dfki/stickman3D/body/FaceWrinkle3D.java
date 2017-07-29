@@ -1,5 +1,6 @@
 package de.dfki.stickman3D.body;
 
+import de.dfki.common.part.Part3D;
 import de.dfki.stickman3D.animationlogic.Animator3D;
 import de.dfki.stickman3D.mimic.util.FaceWrinkleANGRY;
 import javafx.scene.paint.Color;
@@ -23,9 +24,9 @@ public class FaceWrinkle3D extends PartStickman3D
 
     public FaceWrinkle3D.SHAPE mShape = FaceWrinkle3D.SHAPE.DEFAULT;
 
-    public FaceWrinkle3D(Head3D head)
+    public FaceWrinkle3D(Part3D head)
     {
-        mStart = head.getRightEyebrowPostion();
+        mStart = ((Head3D)head).getRightEyebrowPostion();
         mColor = Color.rgb(80, 80, 80, 0);
         mSize = new Dimension(mLength, 5);
         mDefaultRotationPoint = head.mDefaultRotationPoint;

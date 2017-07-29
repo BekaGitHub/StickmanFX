@@ -1,6 +1,7 @@
 package de.dfki.stickman3D.body;
 
 import de.dfki.common.enums.Gender;
+import de.dfki.common.part.Part3D;
 import javafx.scene.Group;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.*;
@@ -35,9 +36,9 @@ public class LeftEye3D extends PartStickman3D
 
     public LeftEye3D.SHAPE mShape = LeftEye3D.SHAPE.DEFAULT;
 
-    public LeftEye3D(Head3D head)
+    public LeftEye3D(Part3D head)
     {
-        mHead = head;
+        mHead = (Head3D) head;
 
         if (mHead.getStickman().mType == Gender.TYPE.MALE)
             mColor = Color.rgb(0, 0, 0, 1);

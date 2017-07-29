@@ -1,6 +1,7 @@
 package de.dfki.stickman3D.body;
 
 import de.dfki.common.enums.Gender;
+import de.dfki.common.part.Part3D;
 import javafx.scene.Group;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.*;
@@ -41,8 +42,8 @@ public class RightEye3D extends PartStickman3D
 
     public RightEye3D.SHAPE mShape = RightEye3D.SHAPE.DEFAULT;
 
-    public RightEye3D(Head3D head) {
-        mHeadFX = head;
+    public RightEye3D(Part3D head) {
+        mHeadFX = (Head3D) head;
 
         if (mHeadFX.getStickman().mType == Gender.TYPE.MALE) {
             mColor = Color.rgb(0, 0, 0, 1);

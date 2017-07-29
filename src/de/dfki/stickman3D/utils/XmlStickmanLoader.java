@@ -3,6 +3,7 @@ package de.dfki.stickman3D.utils;
 import de.dfki.common.enums.Gender;
 import de.dfki.common.StickmansOnStage;
 
+import de.dfki.stickman3D.body.Head3D;
 import de.dfki.stickman3D.xmlsettings.StickmanData3D;
 import de.dfki.stickman3D.stage.StickmanStage3D;
 import de.dfki.stickman3D.stage.StickmansOnStage3D;
