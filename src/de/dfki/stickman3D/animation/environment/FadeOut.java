@@ -50,7 +50,7 @@ public class FadeOut extends Animation3D {
         mAnimationPartFX.add(new AnimationContent3D(mStickmanFX.mRightEye, "shape", "FADEOUT"));
         mAnimationPartFX.add(new AnimationContent3D(mStickmanFX.mHead, "shape", "FADEOUT"));
         if(mStickmanFX.mType == Gender.TYPE.MALE)
-            mAnimationPartFX.add(new AnimationContent3D(mStickmanFX.mMaleHair, "shape", "FADEOUT"));
+            mAnimationPartFX.add(new AnimationContent3D(mStickmanFX.mHair, "shape", "FADEOUT"));
         mAnimationPartFX.add(new AnimationContent3D(mStickmanFX.mNeck, "shape", "FADEOUT"));
         mAnimationPartFX.add(new AnimationContent3D(mStickmanFX.mUpperBody, "shape", "FADEOUT"));
         mAnimationPartFX.add(new AnimationContent3D(mStickmanFX.mDownBody, "shape", "FADEOUT"));
@@ -72,7 +72,7 @@ public class FadeOut extends Animation3D {
         mAnimationPartFX.add(new AnimationContent3D(mStickmanFX.mRightFinger3, "shape", "FADEOUT"));
         mAnimationPartFX.add(new AnimationContent3D(mStickmanFX.mRightFinger4, "shape", "FADEOUT"));
         if(mStickmanFX.mType == Gender.TYPE.FEMALE)
-            mAnimationPartFX.add(new AnimationContent3D(mStickmanFX.mFemaleHair, "shape", "FADEOUT"));
+            mAnimationPartFX.add(new AnimationContent3D(mStickmanFX.mHair, "shape", "FADEOUT"));
         mAnimationPartFX.add(new AnimationContent3D(mStickmanFX.mLeftUpperLeg, "shape", "FADEOUT"));
         mAnimationPartFX.add(new AnimationContent3D(mStickmanFX.mLeftForeLeg, "shape", "FADEOUT"));
         mAnimationPartFX.add(new AnimationContent3D(mStickmanFX.mLeftFoot, "shape", "FADEOUT"));

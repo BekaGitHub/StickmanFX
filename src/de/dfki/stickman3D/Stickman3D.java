@@ -61,10 +61,8 @@ public class Stickman3D extends Agent3D
     public AnimationScheduler3D mAnimationSchedulerFX;
 
     // body parts
-    public Part3D mHead;
     public Part3D mNose;
-    public Part3D mMaleHair;
-    public Part3D mFemaleHair;
+    public Part3D mHair;
     public Part3D mLeftEyebrow;
     public Part3D mLeftEye;
     public Part3D mLeftEar;
@@ -109,9 +107,9 @@ public class Stickman3D extends Agent3D
 
         mHead = new Head3D(this);
         if (gender == Gender.TYPE.MALE)
-            mMaleHair = new MaleHair3D(this);
+            mHair = new MaleHair3D(this);
         else
-            mFemaleHair = new FemaleHair3D(this);
+            mHair = new FemaleHair3D(this);
         mLeftEyebrow = new LeftEyebrow3D(mHead);
         mLeftEye = new LeftEye3D(mHead);
         mLeftEar = new LeftEar3D(mHead);
@@ -160,9 +158,9 @@ public class Stickman3D extends Agent3D
 
         mHead = new Head3D(this);
         if (gender == Gender.TYPE.MALE)
-            mMaleHair = new MaleHair3D(this);
+            mHair = new MaleHair3D(this);
         else
-            mFemaleHair = new FemaleHair3D(this);
+            mHair = new FemaleHair3D(this);
         mLeftEyebrow = new LeftEyebrow3D(mHead);
         mLeftEye = new LeftEye3D(mHead);
         mLeftEar = new LeftEar3D(mHead);
@@ -211,9 +209,9 @@ public class Stickman3D extends Agent3D
         isFullScreen = true;
         mHead = new Head3D(this);
         if (gender == Gender.TYPE.MALE)
-            mMaleHair = new MaleHair3D(this);
+            mHair = new MaleHair3D(this);
         else
-            mFemaleHair = new FemaleHair3D(this);
+            mHair = new FemaleHair3D(this);
         mLeftEyebrow = new LeftEyebrow3D(mHead);
         mLeftEye = new LeftEye3D(mHead);
         mLeftEar = new LeftEar3D(mHead);

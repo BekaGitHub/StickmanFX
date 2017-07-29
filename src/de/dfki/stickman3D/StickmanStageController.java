@@ -192,9 +192,9 @@ public class StickmanStageController extends AStickmanStageController implements
 			bodyColor = toHexCode(mStick.mUpperBody.mColor);
 
 			if (mStick.mType == Gender.TYPE.MALE) {
-			    hairColor = toHexCode(mStick.mMaleHair.mColor);
+			    hairColor = toHexCode(mStick.mHair.mColor);
 			} else {
-			    hairColor = toHexCode(mStick.mFemaleHair.mColor);
+			    hairColor = toHexCode(mStick.mHair.mColor);
 			}
 
 			headColor = toHexCode(mStick.mHead.mColor);
@@ -686,11 +686,11 @@ public class StickmanStageController extends AStickmanStageController implements
 	bodyOpacitySlider.setValue(mStick.mUpperBody.mColor.getOpacity());
 
 	if (mStick.mType == Gender.TYPE.MALE) {
-	    hairColorPicker.setValue(colorWithoutOpacity(mStick.mMaleHair.mColor));
-	    hairOpacitySlider.setValue(mStick.mMaleHair.mColor.getOpacity());
+	    hairColorPicker.setValue(colorWithoutOpacity(mStick.mHair.mColor));
+	    hairOpacitySlider.setValue(mStick.mHair.mColor.getOpacity());
 	} else {
-	    hairColorPicker.setValue(colorWithoutOpacity(mStick.mFemaleHair.mColor));
-	    hairOpacitySlider.setValue(mStick.mFemaleHair.mColor.getOpacity());
+	    hairColorPicker.setValue(colorWithoutOpacity(mStick.mHair.mColor));
+	    hairOpacitySlider.setValue(mStick.mHair.mColor.getOpacity());
 	}
 
 	headColorPicker.setValue(colorWithoutOpacity(mStick.mHead.mColor));

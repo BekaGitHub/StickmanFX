@@ -3,7 +3,6 @@ package de.dfki.stickman3D.utils;
 import de.dfki.common.enums.Gender;
 import de.dfki.common.StickmansOnStage;
 
-import de.dfki.stickman3D.body.Head3D;
 import de.dfki.stickman3D.xmlsettings.StickmanData3D;
 import de.dfki.stickman3D.stage.StickmanStage3D;
 import de.dfki.stickman3D.stage.StickmansOnStage3D;
@@ -66,11 +65,11 @@ public class XmlStickmanLoader {
                     if ((haircolor != null)) {
                         Runnable hairColor = () -> {
                             if (((Stickman3D) sStickmansOnStage.getStickman(name)).mType == Gender.TYPE.MALE) {
-                                ((Stickman3D) sStickmansOnStage.getStickman(name)).mMaleHair.mColor = Color.web(haircolor,dhaircolorOpacity);
-                                ((Stickman3D) sStickmansOnStage.getStickman(name)).mMaleHair.update();
+                                ((Stickman3D) sStickmansOnStage.getStickman(name)).mHair.mColor = Color.web(haircolor,dhaircolorOpacity);
+                                ((Stickman3D) sStickmansOnStage.getStickman(name)).mHair.update();
                             } else {
-                                ((Stickman3D) sStickmansOnStage.getStickman(name)).mFemaleHair.mColor = Color.web(haircolor,dhaircolorOpacity);
-                                ((Stickman3D) sStickmansOnStage.getStickman(name)).mFemaleHair.update();
+                                ((Stickman3D) sStickmansOnStage.getStickman(name)).mHair.mColor = Color.web(haircolor,dhaircolorOpacity);
+                                ((Stickman3D) sStickmansOnStage.getStickman(name)).mHair.update();
                             }
                         };
                         StickmanStage3D.getInstance().runLater(hairColor);

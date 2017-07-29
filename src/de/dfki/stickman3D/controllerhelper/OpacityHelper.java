@@ -35,29 +35,29 @@ public class OpacityHelper {
             public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
                 if (newValue.doubleValue() <= 0.1) {
                     if (controller.currentStickman.mType == Gender.TYPE.FEMALE) {
-                        controller.currentStickman.mFemaleHair.getMeshView().setVisible(false);
+                        controller.currentStickman.mHair.getMeshView().setVisible(false);
                     } else {
-                        controller.currentStickman.mMaleHair.getMeshView().setVisible(false);
+                        controller.currentStickman.mHair.getMeshView().setVisible(false);
                     }
                 } else {
                     if (controller.currentStickman.mType == Gender.TYPE.FEMALE) {
-                        controller.currentStickman.mFemaleHair.getMeshView().setVisible(true);
+                        controller.currentStickman.mHair.getMeshView().setVisible(true);
                     } else {
-                        controller.currentStickman.mMaleHair.getMeshView().setVisible(true);
+                        controller.currentStickman.mHair.getMeshView().setVisible(true);
                     }
                 }
 
                 Color col = null;
                 if (controller.currentStickman.mType == Gender.TYPE.FEMALE) {
-                    col = controller.currentStickman.mFemaleHair.mColor;
+                    col = controller.currentStickman.mHair.mColor;
                     col = new Color(col.getRed(), col.getGreen(), col.getBlue(), newValue.doubleValue());
-                    controller.currentStickman.mFemaleHair.mColor = col;
-                    controller.currentStickman.mFemaleHair.update();
+                    controller.currentStickman.mHair.mColor = col;
+                    controller.currentStickman.mHair.update();
                 } else {
-                    col = controller.currentStickman.mMaleHair.mColor;
+                    col = controller.currentStickman.mHair.mColor;
                     col = new Color(col.getRed(), col.getGreen(), col.getBlue(), newValue.doubleValue());
-                    controller.currentStickman.mMaleHair.mColor = col;
-                    controller.currentStickman.mMaleHair.update();
+                    controller.currentStickman.mHair.mColor = col;
+                    controller.currentStickman.mHair.update();
                 }
 
             }

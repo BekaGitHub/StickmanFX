@@ -18,11 +18,11 @@ public class ColorHelper {
     public static void hairColorChanger(StickmanStageController controller) {
         if (controller.currentStickman != null) {
             if (controller.currentStickman.mType == Gender.TYPE.MALE) {
-                controller.currentStickman.mMaleHair.mColor = controller.hairColorPicker.getValue();
-                controller.currentStickman.mMaleHair.update();
+                controller.currentStickman.mHair.mColor = controller.hairColorPicker.getValue();
+                controller.currentStickman.mHair.update();
             } else {
-                controller.currentStickman.mFemaleHair.mColor = controller.hairColorPicker.getValue();
-                controller.currentStickman.mFemaleHair.update();
+                controller.currentStickman.mHair.mColor = controller.hairColorPicker.getValue();
+                controller.currentStickman.mHair.update();
             }
             controller.hairOpacitySlider.setValue(1);
         }
@@ -153,27 +153,27 @@ public class ColorHelper {
         if (sSC.currentStickman != null) {
             if (ev.getSource().equals(sSC.hairColorBrighter)) {
                 if (sSC.currentStickman.mType == Gender.TYPE.MALE) {
-                    sSC.currentStickman.mMaleHair.mColor = sSC.currentStickman.mMaleHair.mColor.brighter();
-                    sSC.currentStickman.mMaleHair.update();
+                    sSC.currentStickman.mHair.mColor = sSC.currentStickman.mHair.mColor.brighter();
+                    sSC.currentStickman.mHair.update();
                 } else {
-                    sSC.currentStickman.mFemaleHair.mColor = sSC.currentStickman.mFemaleHair.mColor.brighter();
-                    sSC.currentStickman.mFemaleHair.update();
+                    sSC.currentStickman.mHair.mColor = sSC.currentStickman.mHair.mColor.brighter();
+                    sSC.currentStickman.mHair.update();
                 }
             } else if (ev.getSource().equals(sSC.hairColorDarker)) {
                 if (sSC.currentStickman.mType == Gender.TYPE.MALE) {
-                    sSC.currentStickman.mMaleHair.mColor = sSC.currentStickman.mMaleHair.mColor.darker();
-                    sSC.currentStickman.mMaleHair.update();
+                    sSC.currentStickman.mHair.mColor = sSC.currentStickman.mHair.mColor.darker();
+                    sSC.currentStickman.mHair.update();
                 } else {
-                    sSC.currentStickman.mFemaleHair.mColor = sSC.currentStickman.mFemaleHair.mColor.darker();
-                    sSC.currentStickman.mFemaleHair.update();
+                    sSC.currentStickman.mHair.mColor = sSC.currentStickman.mHair.mColor.darker();
+                    sSC.currentStickman.mHair.update();
                 }
             } else if (ev.getSource().equals(sSC.hairColorReset)) {
                 if (sSC.currentStickman.mType == Gender.TYPE.MALE) {
-                    sSC.currentStickman.mMaleHair.mColor = sSC.currentStickman.mMaleHair.mColorRecorder;
-                    sSC.currentStickman.mMaleHair.update();
+                    sSC.currentStickman.mHair.mColor = sSC.currentStickman.mHair.mColorRecorder;
+                    sSC.currentStickman.mHair.update();
                 } else {
-                    sSC.currentStickman.mFemaleHair.mColor = sSC.currentStickman.mFemaleHair.mColorRecorder;
-                    sSC.currentStickman.mFemaleHair.update();
+                    sSC.currentStickman.mHair.mColor = sSC.currentStickman.mHair.mColorRecorder;
+                    sSC.currentStickman.mHair.update();
                 }
                 sSC.hairOpacitySlider.setValue(1);
             }
@@ -438,11 +438,11 @@ public class ColorHelper {
         currentStickman.mHead.update();
         
         if (currentStickman.mType == Gender.TYPE.MALE) {
-            currentStickman.mMaleHair.mColor = currentStickman.mMaleHair.mColorRecorder;
-            currentStickman.mMaleHair.update();
+            currentStickman.mHair.mColor = currentStickman.mHair.mColorRecorder;
+            currentStickman.mHair.update();
         } else {
-            currentStickman.mFemaleHair.mColor = currentStickman.mFemaleHair.mColorRecorder;
-            currentStickman.mFemaleHair.update();
+            currentStickman.mHair.mColor = currentStickman.mHair.mColorRecorder;
+            currentStickman.mHair.update();
                 }
         currentStickman.mUpperBody.mColor = currentStickman.mUpperBody.mColorRecorder;
         currentStickman.mUpperBody.update();

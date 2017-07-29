@@ -2,6 +2,7 @@ package de.dfki.common.agent;
 
 
 import de.dfki.common.enums.Gender;
+import de.dfki.common.part.Part3D;
 
 import java.awt.*;
 
@@ -12,6 +13,8 @@ public abstract class Agent3D extends Agent
 {
     public boolean isFullScreen = false;
     public double stageHeight;
+
+    public Part3D mHead;
 
     public Agent3D(String name, Gender.TYPE gender)
     {

@@ -63,7 +63,6 @@ public class Reeti extends Agent3D
     public AnimationSchedulerReeti mAnimationSchedulerReeti;
 
     // body parts
-    public Part3D mHead;
     public Part3D mLeftEyelid;
     public Part3D mLeftEye;
     public Part3D mRightEye;
