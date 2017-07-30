@@ -6,7 +6,7 @@
 package de.dfki.stickmanFX.animation.headfx;
 
 import de.dfki.common.enums.Gender;
-import de.dfki.stickmanFX.animationlogic.AnimationContentFX;
+import de.dfki.common.animationlogic.AnimationContent;
 import de.dfki.stickmanFX.StickmanFX;
 import de.dfki.stickmanFX.animationlogic.AnimationFX;
 
@@ -29,36 +29,36 @@ public class Nod extends AnimationFX {
 
         // head down
         mAnimationPartFX = new ArrayList<>();
-        mAnimationPartFX.add(new AnimationContentFX(mStickmanFX.mRightEyebrowFX, "translate", translationUnit));
-        mAnimationPartFX.add(new AnimationContentFX(mStickmanFX.mRightEyeFX, "translate", translationUnit));
-        mAnimationPartFX.add(new AnimationContentFX(mStickmanFX.mLeftEyebrowFX, "translate", translationUnit));
-        mAnimationPartFX.add(new AnimationContentFX(mStickmanFX.mLeftEyeFX, "translate", translationUnit));
-        mAnimationPartFX.add(new AnimationContentFX(mStickmanFX.mHeadFX, "translate", translationUnit));
+        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mRightEyebrowFX, "translate", translationUnit));
+        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mRightEyeFX, "translate", translationUnit));
+        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mLeftEyebrowFX, "translate", translationUnit));
+        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mLeftEyeFX, "translate", translationUnit));
+        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mHeadFX, "translate", translationUnit));
 
         if (mStickmanFX.mType == Gender.TYPE.MALE) {
-            mAnimationPartFX.add(new AnimationContentFX(mStickmanFX.mMaleHairFX, "translate", translationUnit));
+            mAnimationPartFX.add(new AnimationContent(mStickmanFX.mMaleHairFX, "translate", translationUnit));
         } else {
-            mAnimationPartFX.add(new AnimationContentFX(mStickmanFX.mFemaleHairFX, "translate", translationUnit));
+            mAnimationPartFX.add(new AnimationContent(mStickmanFX.mFemaleHairFX, "translate", translationUnit));
         }
 
-        mAnimationPartFX.add(new AnimationContentFX(mStickmanFX.mMouthFX, "translate", translationUnit));
+        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mMouthFX, "translate", translationUnit));
         playAnimationPart(200);
 
         // head up
         mAnimationPartFX = new ArrayList<>();
-        mAnimationPartFX.add(new AnimationContentFX(mStickmanFX.mRightEyebrowFX, "translate", -translationUnit));
-        mAnimationPartFX.add(new AnimationContentFX(mStickmanFX.mRightEyeFX, "translate", -translationUnit));
-        mAnimationPartFX.add(new AnimationContentFX(mStickmanFX.mLeftEyebrowFX, "translate", -translationUnit));
-        mAnimationPartFX.add(new AnimationContentFX(mStickmanFX.mLeftEyeFX, "translate", -translationUnit));
-        mAnimationPartFX.add(new AnimationContentFX(mStickmanFX.mHeadFX, "translate", -translationUnit));
+        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mRightEyebrowFX, "translate", -translationUnit));
+        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mRightEyeFX, "translate", -translationUnit));
+        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mLeftEyebrowFX, "translate", -translationUnit));
+        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mLeftEyeFX, "translate", -translationUnit));
+        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mHeadFX, "translate", -translationUnit));
 
         if (mStickmanFX.mType == Gender.TYPE.MALE) {
-            mAnimationPartFX.add(new AnimationContentFX(mStickmanFX.mMaleHairFX, "translate", -translationUnit));
+            mAnimationPartFX.add(new AnimationContent(mStickmanFX.mMaleHairFX, "translate", -translationUnit));
         } else {
-            mAnimationPartFX.add(new AnimationContentFX(mStickmanFX.mFemaleHairFX, "translate", -translationUnit));
+            mAnimationPartFX.add(new AnimationContent(mStickmanFX.mFemaleHairFX, "translate", -translationUnit));
         }
 
-        mAnimationPartFX.add(new AnimationContentFX(mStickmanFX.mMouthFX, "translate", -translationUnit));
+        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mMouthFX, "translate", -translationUnit));
 
         playAnimationPart(200);
     }

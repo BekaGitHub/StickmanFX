@@ -8,7 +8,7 @@ package de.dfki.stickmanFX.animation.environmentfx;
 import java.util.ArrayList;
 
 import de.dfki.stickmanFX.StickmanFX;
-import de.dfki.stickmanFX.animationlogic.AnimationContentFX;
+import de.dfki.common.animationlogic.AnimationContent;
 import de.dfki.stickmanFX.animationlogic.AnimationFX;
 import de.dfki.stickmanFX.environmentfx.SpeechBubbleStickman2D;
 
@@ -30,10 +30,10 @@ public class Speaking extends AnimationFX {
         }
 
         mAnimationPartFX = new ArrayList<>();
-        mAnimationPartFX.add(new AnimationContentFX(mStickmanFX.mSpeechBubbleFX, "shape", SpeechBubbleStickman2D.SHAPE.SPEAK.name()));
+        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mSpeechBubbleFX, "shape", SpeechBubbleStickman2D.SHAPE.SPEAK.name()));
         playAnimationPart(mDuration);
 
-        mAnimationPartFX.add(new AnimationContentFX(mStickmanFX.mSpeechBubbleFX, "shape", SpeechBubbleStickman2D.SHAPE.DEFAULT.name()));
+        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mSpeechBubbleFX, "shape", SpeechBubbleStickman2D.SHAPE.DEFAULT.name()));
         playAnimationPart(20);
 
     }

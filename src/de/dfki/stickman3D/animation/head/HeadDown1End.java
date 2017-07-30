@@ -7,9 +7,9 @@ package de.dfki.stickman3D.animation.head;
 
 import java.util.ArrayList;
 
+import de.dfki.common.animationlogic.AnimationContent;
 import de.dfki.stickman3D.Stickman3D;
 import de.dfki.stickman3D.StickmanStageController;
-import de.dfki.stickman3D.animationlogic.AnimationContent3D;
 import de.dfki.stickman3D.animationlogic.Animation3D;
 
 /**
@@ -27,9 +27,9 @@ public class HeadDown1End extends Animation3D {
     public void playAnimation() {
         // blink up
         mAnimationPartFX = new ArrayList<>();
-        mAnimationPartFX.add(new AnimationContent3D(mStickmanFX.mHead, "rotate", -15));
-        mAnimationPartFX.add(new AnimationContent3D(mStickmanFX.mLeftEye, "shape", "LOOKDOWNEND"));
-        mAnimationPartFX.add(new AnimationContent3D(mStickmanFX.mRightEye, "shape", "LOOKDOWNEND"));
+        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mHead, "rotate", -15));
+        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mLeftEye, "shape", "LOOKDOWNEND"));
+        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mRightEye, "shape", "LOOKDOWNEND"));
         playAnimationPart(mDuration);
 
         Animation3D.isHeadTiltInAction = false;

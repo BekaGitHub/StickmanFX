@@ -8,7 +8,7 @@ package de.dfki.stickmanFX.animation.environmentfx;
 import java.util.ArrayList;
 
 import de.dfki.stickmanFX.StickmanFX;
-import de.dfki.stickmanFX.animationlogic.AnimationContentFX;
+import de.dfki.common.animationlogic.AnimationContent;
 import de.dfki.stickmanFX.animationlogic.AnimationFX;
 import javafx.application.Platform;
 
@@ -40,12 +40,12 @@ public class ComeBackFromSmall extends AnimationFX {
         // show stars
 //		mStickman.mScale = mStickman.mScaleOriginal;
         mAnimationPartFX = new ArrayList<>();
-        mAnimationPartFX.add(new AnimationContentFX(mStickmanFX.mStarsFX, "shape", "STARSDISAPPEAR"));
+        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mStarsFX, "shape", "STARSDISAPPEAR"));
         playAnimationPart(1000);
 
         // disappeared words or stars
         mAnimationPartFX = new ArrayList<>();
-        mAnimationPartFX.add(new AnimationContentFX(mStickmanFX.mStarsFX, "shape", "DEFAULT"));
+        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mStarsFX, "shape", "DEFAULT"));
         playAnimationPart(2);
 
         mStickmanFX.starShowControler = false;
@@ -55,9 +55,9 @@ public class ComeBackFromSmall extends AnimationFX {
 
         // bring upper arm and fore arm in position
         mAnimationPartFX = new ArrayList<>();
-        mAnimationPartFX.add(new AnimationContentFX(mStickmanFX.mLeftUpperArmFX, "rotate", rotationUnit * 2));
-        mAnimationPartFX.add(new AnimationContentFX(mStickmanFX.mLeftForeArmFX, "rotate", rotationUnit * 32));
-        mAnimationPartFX.add(new AnimationContentFX(mStickmanFX.mLeftHandFX, "rotate", rotationUnit * 32));
+        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mLeftUpperArmFX, "rotate", rotationUnit * 2));
+        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mLeftForeArmFX, "rotate", rotationUnit * 32));
+        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mLeftHandFX, "rotate", rotationUnit * 32));
         playAnimationPart(20);
         pauseAnimation(20);
 
@@ -65,8 +65,8 @@ public class ComeBackFromSmall extends AnimationFX {
             // wave right
             for (int j = 0; j < 9; j++) {
                 mAnimationPartFX = new ArrayList<>();
-                mAnimationPartFX.add(new AnimationContentFX(mStickmanFX.mLeftForeArmFX, "rotate", -rotationUnit));
-                mAnimationPartFX.add(new AnimationContentFX(mStickmanFX.mLeftHandFX, "rotate", -rotationUnit));
+                mAnimationPartFX.add(new AnimationContent(mStickmanFX.mLeftForeArmFX, "rotate", -rotationUnit));
+                mAnimationPartFX.add(new AnimationContent(mStickmanFX.mLeftHandFX, "rotate", -rotationUnit));
 
                 mScaleRecord = mScaleRecord * 1.05f;
                 if (mScaleRecord < mStickmanFX.mScaleOriginal) {
@@ -82,8 +82,8 @@ public class ComeBackFromSmall extends AnimationFX {
             // wave left
             for (int j = 0; j < 9; j++) {
                 mAnimationPartFX = new ArrayList<>();
-                mAnimationPartFX.add(new AnimationContentFX(mStickmanFX.mLeftForeArmFX, "rotate", rotationUnit));
-                mAnimationPartFX.add(new AnimationContentFX(mStickmanFX.mLeftHandFX, "rotate", rotationUnit));
+                mAnimationPartFX.add(new AnimationContent(mStickmanFX.mLeftForeArmFX, "rotate", rotationUnit));
+                mAnimationPartFX.add(new AnimationContent(mStickmanFX.mLeftHandFX, "rotate", rotationUnit));
 
                 mScaleRecord = mScaleRecord * 1.05f;
                 if (mScaleRecord < mStickmanFX.mScaleOriginal) {
@@ -100,9 +100,9 @@ public class ComeBackFromSmall extends AnimationFX {
 
         // go back in the default position
         mAnimationPartFX = new ArrayList<>();
-        mAnimationPartFX.add(new AnimationContentFX(mStickmanFX.mLeftUpperArmFX, "rotate", -rotationUnit * 2));
-        mAnimationPartFX.add(new AnimationContentFX(mStickmanFX.mLeftForeArmFX, "rotate", -rotationUnit * 32));
-        mAnimationPartFX.add(new AnimationContentFX(mStickmanFX.mLeftHandFX, "rotate", -rotationUnit * 32));
+        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mLeftUpperArmFX, "rotate", -rotationUnit * 2));
+        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mLeftForeArmFX, "rotate", -rotationUnit * 32));
+        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mLeftHandFX, "rotate", -rotationUnit * 32));
         playAnimationPart(20);
     }
 }

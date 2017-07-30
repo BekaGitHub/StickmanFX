@@ -5,9 +5,9 @@
  */
 package de.dfki.stickman3D.animation.face;
 
+import de.dfki.common.animationlogic.AnimationContent;
 import de.dfki.stickman3D.Stickman3D;
 import de.dfki.stickman3D.StickmanStageController;
-import de.dfki.stickman3D.animationlogic.AnimationContent3D;
 import de.dfki.stickman3D.animationlogic.Animation3D;
 
 import java.util.ArrayList;
@@ -32,24 +32,24 @@ public class Embarrassed extends Animation3D {
 
         // embarrassed
         mAnimationPartFX = new ArrayList<>();
-        mAnimationPartFX.add(new AnimationContent3D(mStickmanFX.mMouth, "shape", "EMBARRASSED"));
-        mAnimationPartFX.add(new AnimationContent3D(mStickmanFX.mLeftEye, "shape", "EMBARRASSED"));
-        mAnimationPartFX.add(new AnimationContent3D(mStickmanFX.mLeftEyebrow, "shape", "EMBARRASSED"));
-        mAnimationPartFX.add(new AnimationContent3D(mStickmanFX.mFaceWrinkle, "shape", "EMBARRASSED"));   ///Add by Robbie
-        mAnimationPartFX.add(new AnimationContent3D(mStickmanFX.mRightEye, "shape", "EMBARRASSED"));
-        mAnimationPartFX.add(new AnimationContent3D(mStickmanFX.mRightEyebrow, "shape", "EMBARRASSED"));
+        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mMouth, "shape", "EMBARRASSED"));
+        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mLeftEye, "shape", "EMBARRASSED"));
+        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mLeftEyebrow, "shape", "EMBARRASSED"));
+        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mFaceWrinkle, "shape", "EMBARRASSED"));   ///Add by Robbie
+        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mRightEye, "shape", "EMBARRASSED"));
+        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mRightEyebrow, "shape", "EMBARRASSED"));
         playAnimationPart(mDuration);
 
         pauseAnimation(1200);
 
         // no embarrassed
         mAnimationPartFX = new ArrayList<>();
-        mAnimationPartFX.add(new AnimationContent3D(mStickmanFX.mMouth, "shape", "EMBARRASSEDEND"));
-        mAnimationPartFX.add(new AnimationContent3D(mStickmanFX.mLeftEye, "shape", "EMBARRASSEDEND"));
-        mAnimationPartFX.add(new AnimationContent3D(mStickmanFX.mLeftEyebrow, "shape", "EMBARRASSEDEND"));
-        mAnimationPartFX.add(new AnimationContent3D(mStickmanFX.mFaceWrinkle, "shape", "EMBARRASSEDEND"));   ///Add by Robbie
-        mAnimationPartFX.add(new AnimationContent3D(mStickmanFX.mRightEye, "shape", "EMBARRASSEDEND"));
-        mAnimationPartFX.add(new AnimationContent3D(mStickmanFX.mRightEyebrow, "shape", "EMBARRASSEDEND"));
+        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mMouth, "shape", "EMBARRASSEDEND"));
+        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mLeftEye, "shape", "EMBARRASSEDEND"));
+        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mLeftEyebrow, "shape", "EMBARRASSEDEND"));
+        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mFaceWrinkle, "shape", "EMBARRASSEDEND"));   ///Add by Robbie
+        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mRightEye, "shape", "EMBARRASSEDEND"));
+        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mRightEyebrow, "shape", "EMBARRASSEDEND"));
         playAnimationPart(mDuration);
 
         if (StickmanStageController.currentRadioButton != null) {

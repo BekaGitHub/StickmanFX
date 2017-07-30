@@ -5,8 +5,8 @@
  */
 package de.dfki.stickman3D.animation.face;
 
+import de.dfki.common.animationlogic.AnimationContent;
 import de.dfki.stickman3D.Stickman3D;
-import de.dfki.stickman3D.animationlogic.AnimationContent3D;
 import de.dfki.stickman3D.animationlogic.Animation3D;
 
 import java.util.ArrayList;
@@ -27,11 +27,11 @@ public class SurprisedEnd extends Animation3D {
 
         // no surprised
         mAnimationPartFX = new ArrayList<>();
-        mAnimationPartFX.add(new AnimationContent3D(mStickmanFX.mMouth, "shape", "SURPRISEDEND"));
-        mAnimationPartFX.add(new AnimationContent3D(mStickmanFX.mLeftEye, "shape", "SURPRISEDEND"));
-        mAnimationPartFX.add(new AnimationContent3D(mStickmanFX.mLeftEyebrow, "shape", "SURPRISEDEND"));
-        mAnimationPartFX.add(new AnimationContent3D(mStickmanFX.mRightEye, "shape", "SURPRISEDEND"));
-        mAnimationPartFX.add(new AnimationContent3D(mStickmanFX.mRightEyebrow, "shape", "SURPRISEDEND"));
+        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mMouth, "shape", "SURPRISEDEND"));
+        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mLeftEye, "shape", "SURPRISEDEND"));
+        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mLeftEyebrow, "shape", "SURPRISEDEND"));
+        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mRightEye, "shape", "SURPRISEDEND"));
+        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mRightEyebrow, "shape", "SURPRISEDEND"));
         playAnimationPart(mDuration);
 
         Animation3D.isSurprisedInAction = false;

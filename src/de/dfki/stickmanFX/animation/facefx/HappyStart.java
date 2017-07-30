@@ -1,7 +1,7 @@
 package de.dfki.stickmanFX.animation.facefx;
 
 import de.dfki.stickmanFX.StickmanFX;
-import de.dfki.stickmanFX.animationlogic.AnimationContentFX;
+import de.dfki.common.animationlogic.AnimationContent;
 import de.dfki.stickmanFX.animationlogic.AnimationFX;
 import java.util.ArrayList;
 
@@ -24,9 +24,9 @@ public class HappyStart extends AnimationFX {
     public void playAnimation() {
         // happy start
         mAnimationPartFX = new ArrayList<>();
-        mAnimationPartFX.add(new AnimationContentFX(mStickmanFX.mMouthFX, "shape", "HAPPY"));
-        mAnimationPartFX.add(new AnimationContentFX(mStickmanFX.mLeftEyeFX, "shape", "HAPPY"));
-        mAnimationPartFX.add(new AnimationContentFX(mStickmanFX.mRightEyeFX, "shape", "HAPPY"));
+        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mMouthFX, "shape", "HAPPY"));
+        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mLeftEyeFX, "shape", "HAPPY"));
+        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mRightEyeFX, "shape", "HAPPY"));
         playAnimationPart(mDuration);
 
         pauseAnimation(10);

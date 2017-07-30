@@ -7,6 +7,7 @@ package de.dfki.stickmanFX.animationlogic;
 
 import de.dfki.action.sequence.WordTimeMarkSequence;
 import de.dfki.common.agent.IAgent;
+import de.dfki.common.animationlogic.AnimationContent;
 import de.dfki.common.interfaces.Animation;
 import de.dfki.stickmanFX.StickmanFX;
 import de.dfki.util.ios.IOSIndentWriter;
@@ -28,7 +29,7 @@ import org.w3c.dom.Element;
 public class AnimationFX extends Thread implements XMLParseable, XMLWriteable, Animation {
 
     public String mName = "";
-    public ArrayList<AnimationContentFX> mAnimationPartFX = new ArrayList<>();
+    public ArrayList<AnimationContent> mAnimationPartFX = new ArrayList<>();
     public Semaphore mAnimationPartStart = new Semaphore(0);
     public Semaphore mAnimationStart = new Semaphore(1);
     public AnimatorFX mAnimatorFX;

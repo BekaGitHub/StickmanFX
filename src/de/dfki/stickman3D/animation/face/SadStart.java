@@ -5,8 +5,8 @@
  */
 package de.dfki.stickman3D.animation.face;
 
+import de.dfki.common.animationlogic.AnimationContent;
 import de.dfki.stickman3D.Stickman3D;
-import de.dfki.stickman3D.animationlogic.AnimationContent3D;
 import de.dfki.stickman3D.animationlogic.Animation3D;
 
 import java.util.ArrayList;
@@ -26,9 +26,9 @@ public class SadStart extends Animation3D {
     public void playAnimation() {
         // sad
         mAnimationPartFX = new ArrayList<>();
-        mAnimationPartFX.add(new AnimationContent3D(mStickmanFX.mMouth, "shape", "SAD"));
-        mAnimationPartFX.add(new AnimationContent3D(mStickmanFX.mLeftEyebrow, "shape", "DISGUSTED"));  // add by Robbie
-        mAnimationPartFX.add(new AnimationContent3D(mStickmanFX.mRightEyebrow, "shape", "DISGUSTED")); // add by Robbie
+        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mMouth, "shape", "SAD"));
+        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mLeftEyebrow, "shape", "DISGUSTED"));  // add by Robbie
+        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mRightEyebrow, "shape", "DISGUSTED")); // add by Robbie
         playAnimationPart(mDuration);
 
         pauseAnimation(10);

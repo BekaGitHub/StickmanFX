@@ -5,9 +5,9 @@
  */
 package de.dfki.stickman3D.animation.face;
 
+import de.dfki.common.animationlogic.AnimationContent;
 import de.dfki.stickman3D.Stickman3D;
 import de.dfki.stickman3D.animationlogic.Animation3D;
-import de.dfki.stickman3D.animationlogic.AnimationContent3D;
 
 import java.util.ArrayList;
 
@@ -27,12 +27,12 @@ public class EmbarrassedEnd extends Animation3D {
 
         // no embarrassed
         mAnimationPartFX = new ArrayList<>();
-        mAnimationPartFX.add(new AnimationContent3D(mStickmanFX.mMouth, "shape", "EMBARRASSEDEND"));
-        mAnimationPartFX.add(new AnimationContent3D(mStickmanFX.mLeftEye, "shape", "EMBARRASSEDEND"));
-        mAnimationPartFX.add(new AnimationContent3D(mStickmanFX.mLeftEyebrow, "shape", "EMBARRASSEDEND"));
-//        mAnimationPart.add(new AnimationContent3D(mStickman.mFaceWrinkle, "shape", "EMBARRASSEDEND"));   ///Add by Robbie
-        mAnimationPartFX.add(new AnimationContent3D(mStickmanFX.mRightEye, "shape", "EMBARRASSEDEND"));
-        mAnimationPartFX.add(new AnimationContent3D(mStickmanFX.mRightEyebrow, "shape", "EMBARRASSEDEND"));
+        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mMouth, "shape", "EMBARRASSEDEND"));
+        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mLeftEye, "shape", "EMBARRASSEDEND"));
+        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mLeftEyebrow, "shape", "EMBARRASSEDEND"));
+//        mAnimationPart.add(new AnimationContent(mStickman.mFaceWrinkle, "shape", "EMBARRASSEDEND"));   ///Add by Robbie
+        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mRightEye, "shape", "EMBARRASSEDEND"));
+        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mRightEyebrow, "shape", "EMBARRASSEDEND"));
         playAnimationPart(mDuration);
 
         pauseAnimation(10);

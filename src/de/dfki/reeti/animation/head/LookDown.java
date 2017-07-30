@@ -1,8 +1,8 @@
 package de.dfki.reeti.animation.head;
 
+import de.dfki.common.animationlogic.AnimationContent;
 import de.dfki.reeti.Reeti;
 import de.dfki.reeti.ReetiStageController;
-import de.dfki.reeti.animationlogic.AnimationContentReeti;
 import de.dfki.reeti.animationlogic.AnimationReeti;
 
 import java.util.ArrayList;
@@ -26,17 +26,17 @@ public class LookDown extends AnimationReeti {
     public void playAnimation() {
 
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContentReeti(mReeti.mLeftEye, "rotate", 20));
-        mAnimationPart.add(new AnimationContentReeti(mReeti.mRightEye, "rotate", 20));
-//        mAnimationPart.add(new AnimationContentReeti(mReeti.mRightEyeFX, "shape", "LOOKDOWN"));
+        mAnimationPart.add(new AnimationContent(mReeti.mLeftEye, "rotate", 20));
+        mAnimationPart.add(new AnimationContent(mReeti.mRightEye, "rotate", 20));
+//        mAnimationPart.add(new AnimationContent(mReeti.mRightEyeFX, "shape", "LOOKDOWN"));
         playAnimationPart(100);
 
         pauseAnimation(100);
 
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContentReeti(mReeti.mLeftEye, "rotate", -20));
-        mAnimationPart.add(new AnimationContentReeti(mReeti.mRightEye, "rotate", -20));
-//        mAnimationPart.add(new AnimationContentReeti(mReeti.mRightEyeFX, "shape", "LOOKDOWNEND"));
+        mAnimationPart.add(new AnimationContent(mReeti.mLeftEye, "rotate", -20));
+        mAnimationPart.add(new AnimationContent(mReeti.mRightEye, "rotate", -20));
+//        mAnimationPart.add(new AnimationContent(mReeti.mRightEyeFX, "shape", "LOOKDOWNEND"));
         playAnimationPart(100);
 
         if (ReetiStageController.currentRadioButton != null) {

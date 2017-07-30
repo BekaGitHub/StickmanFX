@@ -6,7 +6,7 @@ package de.dfki.stickmanFX.animation.facefx;
  * and open the template in the editor.
  */
 import de.dfki.stickmanFX.StickmanFX;
-import de.dfki.stickmanFX.animationlogic.AnimationContentFX;
+import de.dfki.common.animationlogic.AnimationContent;
 import de.dfki.stickmanFX.animationlogic.AnimationFX;
 import java.util.ArrayList;
 
@@ -28,7 +28,7 @@ public class Mouth_FIVE extends AnimationFX {
     public void playAnimation() {
         // smile
         mAnimationPartFX = new ArrayList<>();
-        mAnimationPartFX.add(new AnimationContentFX(mStickmanFX.mMouthFX, "shape", "FIVE"));
+        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mMouthFX, "shape", "FIVE"));
         playAnimationPart(20);
     }
 }

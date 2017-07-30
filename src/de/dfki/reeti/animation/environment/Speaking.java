@@ -5,9 +5,9 @@
  */
 package de.dfki.reeti.animation.environment;
 
+import de.dfki.common.animationlogic.AnimationContent;
 import de.dfki.reeti.Reeti;
 import de.dfki.reeti.ReetiStageController;
-import de.dfki.reeti.animationlogic.AnimationContentReeti;
 import de.dfki.reeti.animationlogic.AnimationReeti;
 import de.dfki.reeti.environment.SpeechBubbleReeti;
 
@@ -36,10 +36,10 @@ public class Speaking extends AnimationReeti {
         }
 
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContentReeti(mReeti.mSpeechBubble, "shape", SpeechBubbleReeti.SHAPE.SPEAK.name()));
+        mAnimationPart.add(new AnimationContent(mReeti.mSpeechBubble, "shape", SpeechBubbleReeti.SHAPE.SPEAK.name()));
         playAnimationPart(mDuration);
 
-        mAnimationPart.add(new AnimationContentReeti(mReeti.mSpeechBubble, "shape", SpeechBubbleReeti.SHAPE.DEFAULT.name()));
+        mAnimationPart.add(new AnimationContent(mReeti.mSpeechBubble, "shape", SpeechBubbleReeti.SHAPE.DEFAULT.name()));
         playAnimationPart(20);
 
         if (ReetiStageController.currentRadioButton != null) {

@@ -1,9 +1,9 @@
 package de.dfki.stickman3D.animation.face;
 
+import de.dfki.common.animationlogic.AnimationContent;
 import de.dfki.stickman3D.Stickman3D;
 import de.dfki.stickman3D.StickmanStageController;
 import de.dfki.stickman3D.animationlogic.Animation3D;
-import de.dfki.stickman3D.animationlogic.AnimationContent3D;
 
 import java.util.ArrayList;
 
@@ -26,22 +26,22 @@ public class Happy extends Animation3D {
     public void playAnimation() {
         // happy
         mAnimationPartFX = new ArrayList<>();
-        mAnimationPartFX.add(new AnimationContent3D(mStickmanFX.mMouth, "shape", "HAPPY"));
-        mAnimationPartFX.add(new AnimationContent3D(mStickmanFX.mLeftEye, "shape", "HAPPY"));
-        mAnimationPartFX.add(new AnimationContent3D(mStickmanFX.mRightEye, "shape", "HAPPY"));
-        mAnimationPartFX.add(new AnimationContent3D(mStickmanFX.mRightEyebrow, "shape", "HAPPY"));
-        mAnimationPartFX.add(new AnimationContent3D(mStickmanFX.mLeftEyebrow, "shape", "HAPPY"));
+        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mMouth, "shape", "HAPPY"));
+        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mLeftEye, "shape", "HAPPY"));
+        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mRightEye, "shape", "HAPPY"));
+        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mRightEyebrow, "shape", "HAPPY"));
+        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mLeftEyebrow, "shape", "HAPPY"));
         playAnimationPart(mDuration);
 
         pauseAnimation(1200);
 
         // no happy
         mAnimationPartFX = new ArrayList<>();
-        mAnimationPartFX.add(new AnimationContent3D(mStickmanFX.mMouth, "shape", "HAPPYEND"));
-        mAnimationPartFX.add(new AnimationContent3D(mStickmanFX.mLeftEye, "shape", "HAPPYEND"));
-        mAnimationPartFX.add(new AnimationContent3D(mStickmanFX.mRightEye, "shape", "HAPPYEND"));
-        mAnimationPartFX.add(new AnimationContent3D(mStickmanFX.mRightEyebrow, "shape", "HAPPYEND"));
-        mAnimationPartFX.add(new AnimationContent3D(mStickmanFX.mLeftEyebrow, "shape", "HAPPYEND"));
+        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mMouth, "shape", "HAPPYEND"));
+        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mLeftEye, "shape", "HAPPYEND"));
+        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mRightEye, "shape", "HAPPYEND"));
+        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mRightEyebrow, "shape", "HAPPYEND"));
+        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mLeftEyebrow, "shape", "HAPPYEND"));
         playAnimationPart(mDuration);
 
         if (StickmanStageController.currentRadioButton != null) {

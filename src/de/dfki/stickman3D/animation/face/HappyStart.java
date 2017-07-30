@@ -1,7 +1,7 @@
 package de.dfki.stickman3D.animation.face;
 
+import de.dfki.common.animationlogic.AnimationContent;
 import de.dfki.stickman3D.Stickman3D;
-import de.dfki.stickman3D.animationlogic.AnimationContent3D;
 import de.dfki.stickman3D.animationlogic.Animation3D;
 
 import java.util.ArrayList;
@@ -21,9 +21,9 @@ public class HappyStart extends Animation3D {
     public void playAnimation() {
         // happy start
         mAnimationPartFX = new ArrayList<>();
-        mAnimationPartFX.add(new AnimationContent3D(mStickmanFX.mMouth, "shape", "HAPPY"));
-        mAnimationPartFX.add(new AnimationContent3D(mStickmanFX.mLeftEye, "shape", "HAPPY"));
-        mAnimationPartFX.add(new AnimationContent3D(mStickmanFX.mRightEye, "shape", "HAPPY"));
+        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mMouth, "shape", "HAPPY"));
+        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mLeftEye, "shape", "HAPPY"));
+        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mRightEye, "shape", "HAPPY"));
         playAnimationPart(mDuration);
 
         pauseAnimation(10);

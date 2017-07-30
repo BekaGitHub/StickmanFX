@@ -7,7 +7,7 @@ package de.dfki.stickmanFX.animation.environmentfx.event;
 
 import de.dfki.action.sequence.WordTimeMarkSequence;
 import de.dfki.stickmanFX.StickmanFX;
-import de.dfki.stickmanFX.animationlogic.AnimationContentFX;
+import de.dfki.common.animationlogic.AnimationContent;
 import de.dfki.stickmanFX.animationlogic.EventAnimationFX;
 import de.dfki.stickmanFX.environmentfx.SpeechBubbleStickman2D;
 
@@ -35,11 +35,11 @@ public class Speaking extends EventAnimationFX {
         }
 
         mAnimationPartFX = new ArrayList<>();
-        mAnimationPartFX.add(new AnimationContentFX(mStickmanFX.mSpeechBubbleFX, "shape", SpeechBubbleStickman2D.SHAPE.SPEAK.name(), mWTS));
+        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mSpeechBubbleFX, "shape", SpeechBubbleStickman2D.SHAPE.SPEAK.name(), mWTS));
 
         playEventAnimationPart();
 
-        mAnimationPartFX.add(new AnimationContentFX(mStickmanFX.mSpeechBubbleFX, "shape", SpeechBubbleStickman2D.SHAPE.DEFAULT.name()));
+        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mSpeechBubbleFX, "shape", SpeechBubbleStickman2D.SHAPE.DEFAULT.name()));
         playAnimationPart(20);
 
     }

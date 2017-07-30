@@ -5,9 +5,9 @@
  */
 package de.dfki.reeti.animation.head;
 
+import de.dfki.common.animationlogic.AnimationContent;
 import de.dfki.reeti.Reeti;
 import de.dfki.reeti.ReetiStageController;
-import de.dfki.reeti.animationlogic.AnimationContentReeti;
 import de.dfki.reeti.animationlogic.AnimationReeti;
 
 import java.util.ArrayList;
@@ -43,18 +43,18 @@ public class Muster extends AnimationReeti {
 //        mReeti.mMouth.setLeftCornerRegulator(-20);
         
         mAnimationPart = new ArrayList<>();
-//        mAnimationPart.add(new AnimationContentReeti(mReeti.mLeftEar, "rotate", 60));
-//        mAnimationPart.add(new AnimationContentReeti(mReeti.mRightEar, "yrotate", 60));
-        mAnimationPart.add(new AnimationContentReeti(mReeti.mMouth, "shape", "MOUTHACTION"));
-//        mAnimationPart.add(new AnimationContentReeti(mReeti.mRightEar, "yrotate", 60));
+//        mAnimationPart.add(new AnimationContent(mReeti.mLeftEar, "rotate", 60));
+//        mAnimationPart.add(new AnimationContent(mReeti.mRightEar, "yrotate", 60));
+        mAnimationPart.add(new AnimationContent(mReeti.mMouth, "shape", "MOUTHACTION"));
+//        mAnimationPart.add(new AnimationContent(mReeti.mRightEar, "yrotate", 60));
         playAnimationPart(mDuration);
 
         pauseAnimation(2000);
         mReeti.ledOFF("B");
         mAnimationPart = new ArrayList<>();
-//        mAnimationPart.add(new AnimationContentReeti(mReeti.mLeftEar, "rotate", -60));
-//        mAnimationPart.add(new AnimationContentReeti(mReeti.mRightEar, "yrotate", -60));
-        mAnimationPart.add(new AnimationContentReeti(mReeti.mMouth, "shape", "MOUTHACTIONEND"));
+//        mAnimationPart.add(new AnimationContent(mReeti.mLeftEar, "rotate", -60));
+//        mAnimationPart.add(new AnimationContent(mReeti.mRightEar, "yrotate", -60));
+        mAnimationPart.add(new AnimationContent(mReeti.mMouth, "shape", "MOUTHACTIONEND"));
         playAnimationPart(mDuration);
 
         if (ReetiStageController.currentRadioButton != null) {

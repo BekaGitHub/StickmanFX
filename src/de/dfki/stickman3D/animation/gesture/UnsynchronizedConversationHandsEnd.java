@@ -6,8 +6,6 @@
 package de.dfki.stickman3D.animation.gesture;
 
 import de.dfki.stickman3D.Stickman3D;
-import de.dfki.stickman3D.animationlogic.Animation3D;
-import de.dfki.stickman3D.animationlogic.AnimationContent3D;
 
 import java.util.ArrayList;
 

@@ -5,10 +5,10 @@
  */
 package de.dfki.stickman3D.animation.posture;
 
+import de.dfki.common.animationlogic.AnimationContent;
 import de.dfki.common.enums.Gender;
 import de.dfki.stickman3D.Stickman3D;
 import de.dfki.stickman3D.animationlogic.Animation3D;
-import de.dfki.stickman3D.animationlogic.AnimationContent3D;
 
 import java.util.ArrayList;
 
@@ -31,15 +31,15 @@ public class TurnLeftEnd extends Animation3D {
     public void playAnimation() {
         if (mStickmanFX.mType == Gender.TYPE.MALE) {
             mAnimationPartFX = new ArrayList<>();
-            mAnimationPartFX.add(new AnimationContent3D(mStickmanFX.mLeftWrist, "yrotate", 40));
-            mAnimationPartFX.add(new AnimationContent3D(mStickmanFX.mUpperBody, "yrotate", 60));
-            mAnimationPartFX.add(new AnimationContent3D(mStickmanFX.mHead, "yrotate", 40));
+            mAnimationPartFX.add(new AnimationContent(mStickmanFX.mLeftWrist, "yrotate", 40));
+            mAnimationPartFX.add(new AnimationContent(mStickmanFX.mUpperBody, "yrotate", 60));
+            mAnimationPartFX.add(new AnimationContent(mStickmanFX.mHead, "yrotate", 40));
             playAnimationPart(500);
         } else {
             mAnimationPartFX = new ArrayList<>();
-            mAnimationPartFX.add(new AnimationContent3D(mStickmanFX.mLeftWrist, "yrotate", 70));
-            mAnimationPartFX.add(new AnimationContent3D(mStickmanFX.mUpperBody, "yrotate", 60));
-            mAnimationPartFX.add(new AnimationContent3D(mStickmanFX.mHead, "yrotate", 40));
+            mAnimationPartFX.add(new AnimationContent(mStickmanFX.mLeftWrist, "yrotate", 70));
+            mAnimationPartFX.add(new AnimationContent(mStickmanFX.mUpperBody, "yrotate", 60));
+            mAnimationPartFX.add(new AnimationContent(mStickmanFX.mHead, "yrotate", 40));
             playAnimationPart(500);
         }
     }

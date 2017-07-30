@@ -5,9 +5,9 @@
  */
 package de.dfki.stickman3D.animation.face;
 
+import de.dfki.common.animationlogic.AnimationContent;
 import de.dfki.stickman3D.Stickman3D;
 import de.dfki.stickman3D.animationlogic.Animation3D;
-import de.dfki.stickman3D.animationlogic.AnimationContent3D;
 
 import java.util.ArrayList;
 
@@ -26,9 +26,9 @@ public class SadEnd extends Animation3D {
     public void playAnimation() {
         // no sad
         mAnimationPartFX = new ArrayList<>();
-        mAnimationPartFX.add(new AnimationContent3D(mStickmanFX.mMouth, "shape", "SADEND"));
-        mAnimationPartFX.add(new AnimationContent3D(mStickmanFX.mLeftEyebrow, "shape", "DISGUSTEDEND"));  // add by Robbie
-        mAnimationPartFX.add(new AnimationContent3D(mStickmanFX.mRightEyebrow, "shape", "DISGUSTEDEND")); // add by Robbie
+        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mMouth, "shape", "SADEND"));
+        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mLeftEyebrow, "shape", "DISGUSTEDEND"));  // add by Robbie
+        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mRightEyebrow, "shape", "DISGUSTEDEND")); // add by Robbie
         playAnimationPart(mDuration);
 
         pauseAnimation(10);

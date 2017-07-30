@@ -1,7 +1,7 @@
 package de.dfki.stickman3D.animation.face;
 
+import de.dfki.common.animationlogic.AnimationContent;
 import de.dfki.stickman3D.Stickman3D;
-import de.dfki.stickman3D.animationlogic.AnimationContent3D;
 import de.dfki.stickman3D.animationlogic.Animation3D;
 
 import java.util.ArrayList;
@@ -25,7 +25,7 @@ public class SmileEnd extends Animation3D {
     public void playAnimation() {
         // smile end
         mAnimationPartFX = new ArrayList<>();
-        mAnimationPartFX.add(new AnimationContent3D(mStickmanFX.mMouth, "shape", "SMILEEND"));
+        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mMouth, "shape", "SMILEEND"));
         playAnimationPart(mDuration);
         Animation3D.isSmileInAction = false;
         pauseAnimation(10);

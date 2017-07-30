@@ -2,10 +2,11 @@ package de.dfki.stickmanFX.animationlogic;
 
 import de.dfki.action.sequence.Entry;
 import de.dfki.action.sequence.WordTimeMarkSequence;
+import de.dfki.common.animationlogic.AnimationContent;
 import de.dfki.common.animationlogic.Animator;
+import de.dfki.common.part.Part;
 import de.dfki.stickmanSwing.util.TimingInfo;
 import de.dfki.stickmanFX.StickmanFX;
-import de.dfki.stickmanFX.bodyfx.PartStickman2D;
 import de.dfki.util.observers.AnimationObserver;
 
 import java.awt.image.BufferedImage;
@@ -24,7 +25,7 @@ public class AnimatorFX extends Animator{
     public int mCurrentStep = sMAX_ANIM_STEPS;
     private final StickmanFX mStickmanFX;
     private final AnimationFX mAnimationFX;
-    private ArrayList<AnimationContentFX> mAnimationComponents = new ArrayList<AnimationContentFX>();
+    private ArrayList<AnimationContent> mAnimationComponents = new ArrayList<AnimationContent>();
     private String mDescription = "";
     public WordTimeMarkSequence mWTS;
     private int mRenderPauseDuration = 0;
@@ -32,7 +33,7 @@ public class AnimatorFX extends Animator{
     private static LinkedList<AnimationObserver> observers = new LinkedList<>();
 
     //private long mPreparationTime = 0;
-    public AnimatorFX(StickmanFX sm, AnimationFX a, ArrayList<AnimationContentFX> animComps) {
+    public AnimatorFX(StickmanFX sm, AnimationFX a, ArrayList<AnimationContent> animComps) {
         mStickmanFX = sm;
         mAnimationFX = a;
         mAnimationComponents = animComps;
@@ -42,7 +43,7 @@ public class AnimatorFX extends Animator{
         render();
     }
 
-    public AnimatorFX(StickmanFX sm, AnimationFX a, ArrayList<AnimationContentFX> animComps, int duration) {
+    public AnimatorFX(StickmanFX sm, AnimationFX a, ArrayList<AnimationContent> animComps, int duration) {
         mStickmanFX = sm;
         mAnimationFX = a;
         mAnimationComponents = animComps;
@@ -53,7 +54,7 @@ public class AnimatorFX extends Animator{
         render();
     }
 
-    public AnimatorFX(StickmanFX sm, AnimationFX a, ArrayList<AnimationContentFX> animComps, WordTimeMarkSequence wts) {
+    public AnimatorFX(StickmanFX sm, AnimationFX a, ArrayList<AnimationContent> animComps, WordTimeMarkSequence wts) {
         mStickmanFX = sm;
         mAnimationFX = a;
         mAnimationComponents = animComps;
@@ -111,7 +112,7 @@ public class AnimatorFX extends Animator{
                 // renderEventAnimatione animation components
                 mAnimationComponents.stream().forEach((comp)
                         -> {
-                    PartStickman2D bodypartFX = comp.mBodyPartFX;
+                    Part bodypartFX = comp.mBodyPartFX;
                     String action = comp.mAction;
                     int param = comp.mParam;
                     String paramString = comp.mParamString;
@@ -131,8 +132,8 @@ public class AnimatorFX extends Animator{
             }
 
             if (mCurrentStep > 1) {
-                for (AnimationContentFX ba : mAnimationComponents) {
-                    PartStickman2D bodypartFX = ba.mBodyPartFX;
+                for (AnimationContent ba : mAnimationComponents) {
+                    Part bodypartFX = ba.mBodyPartFX;
                     String action = ba.mAction;
 
                     if (action.equalsIgnoreCase("rotate")) {
@@ -162,9 +163,9 @@ public class AnimatorFX extends Animator{
             }
 
             if (mCurrentStep == 1) {
-                for (AnimationContentFX ba : mAnimationComponents) {
+                for (AnimationContent ba : mAnimationComponents) {
                     String action = ba.mAction;
-                    PartStickman2D bodypartFX = ba.mBodyPartFX;
+                    Part bodypartFX = ba.mBodyPartFX;
 
                     if (action.equalsIgnoreCase("rotate")) {
                         bodypartFX.resetRotation();

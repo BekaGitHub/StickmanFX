@@ -74,6 +74,7 @@ public abstract class Part3D extends Part
         mZTranslationStep = 0.0d;
     }
 
+    @Override
     public void setDefaulRotation(int degree)
     {
         super.setDefaulRotation(degree);
@@ -153,7 +154,6 @@ public abstract class Part3D extends Part
                 break;
         }
     }
-
 
     public MeshView getMeshView()
     {

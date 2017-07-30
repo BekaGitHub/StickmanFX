@@ -2,8 +2,10 @@ package de.dfki.reeti.animationlogic;
 
 import de.dfki.action.sequence.Entry;
 import de.dfki.action.sequence.WordTimeMarkSequence;
+import de.dfki.common.animationlogic.AnimationContent;
 import de.dfki.common.animationlogic.Animator;
 import de.dfki.common.enums.Axis;
+import de.dfki.common.part.Part;
 import de.dfki.reeti.Reeti;
 import de.dfki.reeti.body.PartReeti;
 import de.dfki.stickmanSwing.util.TimingInfo;
@@ -21,7 +23,7 @@ public class AnimatorReeti extends Animator{
     public int mCurrentStep = sMAX_ANIM_STEPS;
     private final Reeti mReeti;
     private final AnimationReeti mAnimation;
-    private ArrayList<AnimationContentReeti> mAnimationComponents = new ArrayList<AnimationContentReeti>();
+    private ArrayList<AnimationContent> mAnimationComponents = new ArrayList<>();
     private String mDescription = "";
     public WordTimeMarkSequence mWTS;
     private int mRenderPauseDuration = 0;
@@ -30,7 +32,7 @@ public class AnimatorReeti extends Animator{
     public static String sCurrentAction;
 
     //private long mPreparationTime = 0;
-    public AnimatorReeti(Reeti reeti, AnimationReeti a, ArrayList<AnimationContentReeti> animComps) {
+    public AnimatorReeti(Reeti reeti, AnimationReeti a, ArrayList<AnimationContent> animComps) {
         mReeti = reeti;
         mAnimation = a;
         mAnimationComponents = animComps;
@@ -40,7 +42,7 @@ public class AnimatorReeti extends Animator{
         render();
     }
 
-    public AnimatorReeti(Reeti reeti, AnimationReeti a, ArrayList<AnimationContentReeti> animComps, int duration) {
+    public AnimatorReeti(Reeti reeti, AnimationReeti a, ArrayList<AnimationContent> animComps, int duration) {
         mReeti = reeti;
         mAnimation = a;
         mAnimationComponents = animComps;
@@ -51,7 +53,7 @@ public class AnimatorReeti extends Animator{
         render();
     }
 
-    public AnimatorReeti(Reeti reeti, AnimationReeti a, ArrayList<AnimationContentReeti> animComps, int duration, int step) {
+    public AnimatorReeti(Reeti reeti, AnimationReeti a, ArrayList<AnimationContent> animComps, int duration, int step) {
         mReeti = reeti;
         mAnimation = a;
         mAnimationComponents = animComps;
@@ -62,7 +64,7 @@ public class AnimatorReeti extends Animator{
         render(step);
     }
 
-    public AnimatorReeti(Reeti reeti, AnimationReeti a, ArrayList<AnimationContentReeti> animComps, WordTimeMarkSequence wts) {
+    public AnimatorReeti(Reeti reeti, AnimationReeti a, ArrayList<AnimationContent> animComps, WordTimeMarkSequence wts) {
         mReeti = reeti;
         mAnimation = a;
         mAnimationComponents = animComps;
@@ -120,7 +122,7 @@ public class AnimatorReeti extends Animator{
             if (mCurrentStep == sMAX_ANIM_STEPS) {
                 // renderEventAnimatione animation components
                 mAnimationComponents.stream().forEach((comp) -> {
-                    PartReeti bodyPart = comp.mBodyPart;
+                    Part bodyPart = comp.mBodyPartFX;
                     String action = comp.mAction;
                     sCurrentAction = action;
                     int param = comp.mParam;
@@ -153,8 +155,8 @@ public class AnimatorReeti extends Animator{
             }
 
             if (mCurrentStep > 1) {
-                for (AnimationContentReeti acr : mAnimationComponents) {
-                    PartReeti bodypart = acr.mBodyPart;
+                for (AnimationContent acr : mAnimationComponents) {
+                    Part bodypart = acr.mBodyPartFX;
                     String action = acr.mAction;
 
                     if (action.equalsIgnoreCase("rotate")) {
@@ -194,9 +196,9 @@ public class AnimatorReeti extends Animator{
             }
 
             if (mCurrentStep == 1) {
-                for (AnimationContentReeti acr : mAnimationComponents) {
+                for (AnimationContent acr : mAnimationComponents) {
                     String action = acr.mAction;
-                    PartReeti bodypart = acr.mBodyPart;
+                    Part bodypart = acr.mBodyPartFX;
 
                     if (action.equalsIgnoreCase("rotate")) {
                         bodypart.resetRotation(Axis.X);
@@ -237,7 +239,7 @@ public class AnimatorReeti extends Animator{
             if (mCurrentStep == step) {
                 // renderEventAnimatione animation components
                 mAnimationComponents.stream().forEach((comp) -> {
-                    PartReeti bodypart = comp.mBodyPart;
+                    Part bodypart = comp.mBodyPartFX;
                     String action = comp.mAction;
                     sCurrentAction = action;
                     int param = comp.mParam;
@@ -270,8 +272,8 @@ public class AnimatorReeti extends Animator{
             }
 
             if (mCurrentStep > 1) {
-                for (AnimationContentReeti acr : mAnimationComponents) {
-                    PartReeti bodypart = acr.mBodyPart;
+                for (AnimationContent acr : mAnimationComponents) {
+                    Part bodypart = acr.mBodyPartFX;
                     String action = acr.mAction;
 
                     if (action.equalsIgnoreCase("rotate")) {
@@ -311,9 +313,9 @@ public class AnimatorReeti extends Animator{
             }
 
             if (mCurrentStep == 1) {
-                for (AnimationContentReeti acr : mAnimationComponents) {
+                for (AnimationContent acr : mAnimationComponents) {
                     String action = acr.mAction;
-                    PartReeti bodypart = acr.mBodyPart;
+                    Part bodypart = acr.mBodyPartFX;
 
                     if (action.equalsIgnoreCase("rotate")) {
                         bodypart.resetRotation();

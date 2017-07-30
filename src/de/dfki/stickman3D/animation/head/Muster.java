@@ -5,8 +5,8 @@
  */
 package de.dfki.stickman3D.animation.head;
 
+import de.dfki.common.animationlogic.AnimationContent;
 import de.dfki.stickman3D.Stickman3D;
-import de.dfki.stickman3D.animationlogic.AnimationContent3D;
 import de.dfki.stickman3D.animationlogic.Animation3D;
 
 import java.util.ArrayList;
@@ -29,13 +29,13 @@ public class Muster extends Animation3D {
     @Override
     public void playAnimation() {
         mAnimationPartFX = new ArrayList<>(); 
-        mAnimationPartFX.add(new AnimationContent3D(mStickmanFX.mMouth,"shape","O"));
+        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mMouth,"shape","O"));
         playAnimationPart(mDuration);
         
         pauseAnimation(1000);
         
         mAnimationPartFX = new ArrayList<>(); 
-        mAnimationPartFX.add(new AnimationContent3D(mStickmanFX.mMouth,"shape","DEFAULT"));
+        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mMouth,"shape","DEFAULT"));
         playAnimationPart(mDuration);
     }
 }

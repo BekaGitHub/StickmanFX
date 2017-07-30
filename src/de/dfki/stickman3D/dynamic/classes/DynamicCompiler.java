@@ -93,7 +93,7 @@ public class DynamicCompiler {
         startClass.append("import java.util.ArrayList;\n");
         startClass.append("import de.dfki.stickman3D.Stickman3D;\n");
         startClass.append("import de.dfki.stickman3D.StickmanStageController;\n");
-        startClass.append("import de.dfki.stickman3D.animationlogic.AnimationContent3D;\n");
+        startClass.append("import de.dfki.stickman3D.animationlogic.AnimationContent;\n");
         startClass.append("import de.dfki.stickman3D.animationlogic.Animation3D;");
         startClass.append("public class ").append(className).append(" extends Animation3D{ \n");
         startClass.append("public ").append(className).append("(){ \n");

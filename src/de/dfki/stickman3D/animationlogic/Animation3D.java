@@ -7,6 +7,7 @@ package de.dfki.stickman3D.animationlogic;
 
 import de.dfki.action.sequence.WordTimeMarkSequence;
 import de.dfki.common.agent.IAgent;
+import de.dfki.common.animationlogic.AnimationContent;
 import de.dfki.common.interfaces.Animation;
 import de.dfki.stickman3D.Stickman3D;
 import de.dfki.util.ios.IOSIndentWriter;
@@ -29,7 +30,7 @@ import java.util.concurrent.Semaphore;
 public class Animation3D extends Thread implements XMLParseable, XMLWriteable, Animation {
 
     public String mName = "";
-    public ArrayList<AnimationContent3D> mAnimationPartFX = new ArrayList<>();
+    public ArrayList<AnimationContent> mAnimationPartFX = new ArrayList<>();
     public Semaphore mAnimationPartStart = new Semaphore(0);
     public Semaphore mAnimationStart = new Semaphore(1);
     public Animator3D mAnimatorFX;

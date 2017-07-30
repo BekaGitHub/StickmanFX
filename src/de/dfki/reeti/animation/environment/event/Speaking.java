@@ -6,8 +6,8 @@
 package de.dfki.reeti.animation.environment.event;
 
 import de.dfki.action.sequence.WordTimeMarkSequence;
+import de.dfki.common.animationlogic.AnimationContent;
 import de.dfki.reeti.Reeti;
-import de.dfki.reeti.animationlogic.AnimationContentReeti;
 import de.dfki.reeti.animationlogic.EventAnimationReeti;
 import de.dfki.reeti.environment.SpeechBubbleReeti;
 
@@ -35,11 +35,11 @@ public class Speaking extends EventAnimationReeti {
         }
 
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContentReeti(mReeti.mSpeechBubble, "shape", SpeechBubbleReeti.SHAPE.SPEAK.name(), mWTS));
+        mAnimationPart.add(new AnimationContent(mReeti.mSpeechBubble, "shape", SpeechBubbleReeti.SHAPE.SPEAK.name(), mWTS));
 
         playEventAnimationPart();
 
-        mAnimationPart.add(new AnimationContentReeti(mReeti.mSpeechBubble, "shape", SpeechBubbleReeti.SHAPE.DEFAULT.name()));
+        mAnimationPart.add(new AnimationContent(mReeti.mSpeechBubble, "shape", SpeechBubbleReeti.SHAPE.DEFAULT.name()));
         playAnimationPart(20);
 
     }

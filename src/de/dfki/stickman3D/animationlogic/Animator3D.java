@@ -2,8 +2,10 @@ package de.dfki.stickman3D.animationlogic;
 
 import de.dfki.action.sequence.Entry;
 import de.dfki.action.sequence.WordTimeMarkSequence;
+import de.dfki.common.animationlogic.AnimationContent;
 import de.dfki.common.animationlogic.Animator;
 import de.dfki.common.enums.Axis;
+import de.dfki.common.part.Part;
 import de.dfki.stickman3D.Stickman3D;
 import de.dfki.stickmanSwing.util.TimingInfo;
 import de.dfki.stickman3D.body.PartStickman3D;
@@ -23,7 +25,7 @@ public class Animator3D extends Animator{
     public int mCurrentStep = sMAX_ANIM_STEPS;
     private final Stickman3D mStickmanFX;
     private final Animation3D mAnimationFX;
-    private ArrayList<AnimationContent3D> mAnimationComponents = new ArrayList<AnimationContent3D>();
+    private ArrayList<AnimationContent> mAnimationComponents = new ArrayList<AnimationContent>();
     private String mDescription = "";
     public WordTimeMarkSequence mWTS;
     private int mRenderPauseDuration = 0;
@@ -32,7 +34,7 @@ public class Animator3D extends Animator{
     public static String sCurrentAction;
 
     //private long mPreparationTime = 0;
-    public Animator3D(Stickman3D sm, Animation3D a, ArrayList<AnimationContent3D> animComps) {
+    public Animator3D(Stickman3D sm, Animation3D a, ArrayList<AnimationContent> animComps) {
         mStickmanFX = sm;
         mAnimationFX = a;
         mAnimationComponents = animComps;
@@ -42,7 +44,7 @@ public class Animator3D extends Animator{
         render();
     }
 
-    public Animator3D(Stickman3D sm, Animation3D a, ArrayList<AnimationContent3D> animComps, int duration) {
+    public Animator3D(Stickman3D sm, Animation3D a, ArrayList<AnimationContent> animComps, int duration) {
         mStickmanFX = sm;
         mAnimationFX = a;
         mAnimationComponents = animComps;
@@ -55,7 +57,7 @@ public class Animator3D extends Animator{
         render();
     }
 
-    public Animator3D(Stickman3D sm, Animation3D a, ArrayList<AnimationContent3D> animComps, int duration, int step) {
+    public Animator3D(Stickman3D sm, Animation3D a, ArrayList<AnimationContent> animComps, int duration, int step) {
         mStickmanFX = sm;
         mAnimationFX = a;
         mAnimationComponents = animComps;
@@ -66,7 +68,7 @@ public class Animator3D extends Animator{
         render(step);
     }
 
-    public Animator3D(Stickman3D sm, Animation3D a, ArrayList<AnimationContent3D> animComps, WordTimeMarkSequence wts) {
+    public Animator3D(Stickman3D sm, Animation3D a, ArrayList<AnimationContent> animComps, WordTimeMarkSequence wts) {
         mStickmanFX = sm;
         mAnimationFX = a;
         mAnimationComponents = animComps;
@@ -124,7 +126,7 @@ public class Animator3D extends Animator{
             if (mCurrentStep == sMAX_ANIM_STEPS) {
                 // renderEventAnimatione animation components
                 mAnimationComponents.stream().forEach((comp) -> {
-                    PartStickman3D bodypartFX = comp.mBodyPartFX;
+                    Part bodypartFX = comp.mBodyPartFX;
                     String action = comp.mAction;
                     sCurrentAction = action;
                     int param = comp.mParam;
@@ -157,8 +159,8 @@ public class Animator3D extends Animator{
             }
 
             if (mCurrentStep > 1) {
-                for (AnimationContent3D ba : mAnimationComponents) {
-                    PartStickman3D bodypartFX = ba.mBodyPartFX;
+                for (AnimationContent ba : mAnimationComponents) {
+                    Part bodypartFX = ba.mBodyPartFX;
                     String action = ba.mAction;
 
                     if (action.equalsIgnoreCase("rotate")) {
@@ -198,9 +200,9 @@ public class Animator3D extends Animator{
             }
 
             if (mCurrentStep == 1) {
-                for (AnimationContent3D ba : mAnimationComponents) {
+                for (AnimationContent ba : mAnimationComponents) {
                     String action = ba.mAction;
-                    PartStickman3D bodypartFX = ba.mBodyPartFX;
+                    Part bodypartFX = ba.mBodyPartFX;
 
                     if (action.equalsIgnoreCase("rotate")) {
                         bodypartFX.resetRotation(Axis.X);
@@ -241,7 +243,7 @@ public class Animator3D extends Animator{
             if (mCurrentStep == step) {
                 // renderEventAnimatione animation components
                 mAnimationComponents.stream().forEach((comp) -> {
-                    PartStickman3D bodypartFX = comp.mBodyPartFX;
+                    Part bodypartFX = comp.mBodyPartFX;
                     String action = comp.mAction;
                     sCurrentAction = action;
                     int param = comp.mParam;
@@ -274,8 +276,8 @@ public class Animator3D extends Animator{
             }
 
             if (mCurrentStep > 1) {
-                for (AnimationContent3D ba : mAnimationComponents) {
-                    PartStickman3D bodypartFX = ba.mBodyPartFX;
+                for (AnimationContent ba : mAnimationComponents) {
+                    Part bodypartFX = ba.mBodyPartFX;
                     String action = ba.mAction;
 
                     if (action.equalsIgnoreCase("rotate")) {
@@ -315,9 +317,9 @@ public class Animator3D extends Animator{
             }
 
             if (mCurrentStep == 1) {
-                for (AnimationContent3D ba : mAnimationComponents) {
+                for (AnimationContent ba : mAnimationComponents) {
                     String action = ba.mAction;
-                    PartStickman3D bodypartFX = ba.mBodyPartFX;
+                    Part bodypartFX = ba.mBodyPartFX;
 
                     if (action.equalsIgnoreCase("rotate")) {
                         bodypartFX.resetRotation();

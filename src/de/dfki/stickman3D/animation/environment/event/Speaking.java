@@ -6,8 +6,8 @@
 package de.dfki.stickman3D.animation.environment.event;
 
 import de.dfki.action.sequence.WordTimeMarkSequence;
+import de.dfki.common.animationlogic.AnimationContent;
 import de.dfki.stickman3D.Stickman3D;
-import de.dfki.stickman3D.animationlogic.AnimationContent3D;
 import de.dfki.stickman3D.animationlogic.EventAnimation3D;
 import de.dfki.stickman3D.environment.SpeechBubbleStickman3D;
 
@@ -35,11 +35,11 @@ public class Speaking extends EventAnimation3D {
         }
 
         mAnimationPartFX = new ArrayList<>();
-        mAnimationPartFX.add(new AnimationContent3D(mStickmanFX.mSpeechBubble, "shape", SpeechBubbleStickman3D.SHAPE.SPEAK.name(), mWTS));
+        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mSpeechBubble, "shape", SpeechBubbleStickman3D.SHAPE.SPEAK.name(), mWTS));
 
         playEventAnimationPart();
 
-        mAnimationPartFX.add(new AnimationContent3D(mStickmanFX.mSpeechBubble, "shape", SpeechBubbleStickman3D.SHAPE.DEFAULT.name()));
+        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mSpeechBubble, "shape", SpeechBubbleStickman3D.SHAPE.DEFAULT.name()));
         playAnimationPart(20);
 
     }

@@ -5,9 +5,9 @@
  */
 package de.dfki.stickman3D.animation.environment;
 
+import de.dfki.common.animationlogic.AnimationContent;
 import de.dfki.stickman3D.Stickman3D;
 import de.dfki.stickman3D.StickmanStageController;
-import de.dfki.stickman3D.animationlogic.AnimationContent3D;
 import de.dfki.stickman3D.animationlogic.Animation3D;
 import javafx.application.Platform;
 
@@ -38,26 +38,26 @@ public class DisappearToSmall extends Animation3D {
 
         // bring upper arm and fore arm in position
         mAnimationPartFX = new ArrayList<>();
-        mAnimationPartFX.add(new AnimationContent3D(mStickmanFX.mLeftUpperArm, "rotate", -rotationUnit ));
-        mAnimationPartFX.add(new AnimationContent3D(mStickmanFX.mLeftForeArm, "rotate", -rotationUnit * 30));
+        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mLeftUpperArm, "rotate", -rotationUnit ));
+        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mLeftForeArm, "rotate", -rotationUnit * 30));
         playAnimationPart(200);
         pauseAnimation(100);
 
         // wave right
         mAnimationPartFX = new ArrayList<>();
-        mAnimationPartFX.add(new AnimationContent3D(mStickmanFX.mLeftForeArm, "zrotate", -rotationUnit * 8));
+        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mLeftForeArm, "zrotate", -rotationUnit * 8));
         playAnimationPart(180);
 
         // wave left
         mAnimationPartFX = new ArrayList<>();
-        mAnimationPartFX.add(new AnimationContent3D(mStickmanFX.mLeftForeArm, "zrotate", rotationUnit * 8));
+        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mLeftForeArm, "zrotate", rotationUnit * 8));
         playAnimationPart(180);
 
         for (int i = 0; i < 1; i++) {
             // wave right
             for (int j = 0; j < 9; j++) {
                 mAnimationPartFX = new ArrayList<>();
-                mAnimationPartFX.add(new AnimationContent3D(mStickmanFX.mLeftForeArm, "zrotate", -rotationUnit));
+                mAnimationPartFX.add(new AnimationContent(mStickmanFX.mLeftForeArm, "zrotate", -rotationUnit));
 
                 mStickmanFX.mScale = mStickmanFX.mScale * 0.95f;
                 playAnimationPart(20);
@@ -67,7 +67,7 @@ public class DisappearToSmall extends Animation3D {
             // wave left
             for (int j = 0; j < 9; j++) {
                 mAnimationPartFX = new ArrayList<>();
-                mAnimationPartFX.add(new AnimationContent3D(mStickmanFX.mLeftForeArm, "zrotate", rotationUnit));
+                mAnimationPartFX.add(new AnimationContent(mStickmanFX.mLeftForeArm, "zrotate", rotationUnit));
 
                 mStickmanFX.mScale = mStickmanFX.mScale * 0.95f;
                 playAnimationPart(20);
@@ -77,8 +77,8 @@ public class DisappearToSmall extends Animation3D {
 
         // go back in the default position
         mAnimationPartFX = new ArrayList<>();
-        mAnimationPartFX.add(new AnimationContent3D(mStickmanFX.mLeftUpperArm, "rotate", rotationUnit ));
-        mAnimationPartFX.add(new AnimationContent3D(mStickmanFX.mLeftForeArm, "rotate", rotationUnit * 30));
+        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mLeftUpperArm, "rotate", rotationUnit ));
+        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mLeftForeArm, "rotate", rotationUnit * 30));
         playAnimationPart(20);
 
         // show stars

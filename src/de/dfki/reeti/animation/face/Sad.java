@@ -8,10 +8,6 @@ package de.dfki.reeti.animation.face;
 import de.dfki.reeti.Reeti;
 import de.dfki.reeti.ReetiStageController;
 import de.dfki.reeti.animationlogic.AnimationReeti;
-import de.dfki.reeti.animationlogic.AnimationContentReeti;
-
-import java.util.ArrayList;
-import javafx.scene.paint.Color;
 
 /**
  *
