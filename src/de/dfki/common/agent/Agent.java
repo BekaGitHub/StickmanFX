@@ -3,7 +3,6 @@ package de.dfki.common.agent;
 import de.dfki.common.LogFormatter;
 import de.dfki.common.enums.Gender;
 import de.dfki.common.interfaces.StageRoom;
-import de.dfki.reeti.Reeti;
 import de.dfki.stickmanSwing.animationlogic.listener.AnimationListener;
 import javafx.scene.layout.Pane;
 

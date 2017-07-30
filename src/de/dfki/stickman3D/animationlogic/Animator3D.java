@@ -3,12 +3,15 @@ package de.dfki.stickman3D.animationlogic;
 import de.dfki.action.sequence.Entry;
 import de.dfki.action.sequence.WordTimeMarkSequence;
 import de.dfki.common.animationlogic.Animator;
+import de.dfki.common.enums.Axis;
 import de.dfki.stickman3D.Stickman3D;
 import de.dfki.stickmanSwing.util.TimingInfo;
 import de.dfki.stickman3D.body.PartStickman3D;
 
 import java.util.ArrayList;
 import java.util.concurrent.Semaphore;
+
+import static de.dfki.common.enums.Axis.X;
 
 /**
  *
@@ -127,25 +130,25 @@ public class Animator3D extends Animator{
                     int param = comp.mParam;
                     String paramString = comp.mParamString;
                     if (action.equalsIgnoreCase("rotate")) {
-                        bodypartFX.set_X_Rotation(param);
+                        bodypartFX.setRotation(param, Axis.X);
                     }
                     if (action.equalsIgnoreCase("yRotate")) {
-                        bodypartFX.set_Y_Rotation(param);
+                        bodypartFX.setRotation(param, Axis.Y);
                     }
                     if (action.equalsIgnoreCase("zRotate")) {
-                        bodypartFX.set_Z_Rotation(param);
+                        bodypartFX.setRotation(param, Axis.Z);
                     }
                     if (action.equalsIgnoreCase("tilt")) {
                         bodypartFX.setTilt(param);
                     }
                     if (action.equalsIgnoreCase("translate")) {
-                        bodypartFX.set_X_Translation(param);
+                        bodypartFX.setTranslation(param, X);
                     }
                     if (action.equalsIgnoreCase("ytranslate")) {
-                        bodypartFX.set_Y_Translation(param);
+                        bodypartFX.setTranslation(param, Axis.Y);
                     }
                     if (action.equalsIgnoreCase("ztranslate")) {
-                        bodypartFX.set_Z_Translation(param);
+                        bodypartFX.setTranslation(param, Axis.Z);
                     }
                     if (action.equalsIgnoreCase("shape")) {
                         bodypartFX.setShape(paramString);
@@ -159,26 +162,26 @@ public class Animator3D extends Animator{
                     String action = ba.mAction;
 
                     if (action.equalsIgnoreCase("rotate")) {
-                        bodypartFX.calculate_X_Rotation(mCurrentStep);
+                        bodypartFX.calculateRotation(mCurrentStep, Axis.X);
                     }
                     if (action.equalsIgnoreCase("yrotate")) {
-                        bodypartFX.calculate_Y_Rotation(mCurrentStep);
+                        bodypartFX.calculateRotation(mCurrentStep, Axis.Y);
                     }
                     if (action.equalsIgnoreCase("zrotate")) {
-                        bodypartFX.calculate_Z_Rotation(mCurrentStep);
+                        bodypartFX.calculateRotation(mCurrentStep, Axis.Z);
                     }
                     if (action.equalsIgnoreCase("tilt")) {
-                        bodypartFX.calculate_X_Rotation(mCurrentStep);
+                        bodypartFX.calculateRotation(mCurrentStep, Axis.X);
                     }
 
                     if (action.equalsIgnoreCase("translate")) {
-                        bodypartFX.calculate_X_Translation(mCurrentStep);
+                        bodypartFX.calculateTranslation(mCurrentStep, Axis.X);
                     }
                     if (action.equalsIgnoreCase("ytranslate")) {
-                        bodypartFX.calculate_Y_Translation(mCurrentStep);
+                        bodypartFX.calculateTranslation(mCurrentStep, Axis.Y);
                     }
                     if (action.equalsIgnoreCase("ztranslate")) {
-                        bodypartFX.calculate_Z_Translation(mCurrentStep);
+                        bodypartFX.calculateTranslation(mCurrentStep, Axis.Z);
                     }
                     if (action.equalsIgnoreCase("shape")) {
                         bodypartFX.calculateShape(mCurrentStep);
@@ -200,13 +203,13 @@ public class Animator3D extends Animator{
                     PartStickman3D bodypartFX = ba.mBodyPartFX;
 
                     if (action.equalsIgnoreCase("rotate")) {
-                        bodypartFX.reset_X_Rotation();
+                        bodypartFX.resetRotation(Axis.X);
                     }
                     if (action.equalsIgnoreCase("yrotate")) {
-                        bodypartFX.reset_Y_Rotation();
+                        bodypartFX.resetRotation(Axis.Y);
                     }
                     if (action.equalsIgnoreCase("zrotate")) {
-                        bodypartFX.reset_Z_Rotation();
+                        bodypartFX.resetRotation(Axis.Z);
                     }
                     if (action.equalsIgnoreCase("tilt")) {
                         bodypartFX.resetRotation();
@@ -244,25 +247,25 @@ public class Animator3D extends Animator{
                     int param = comp.mParam;
                     String paramString = comp.mParamString;
                     if (action.equalsIgnoreCase("rotate")) {
-                        bodypartFX.set_X_Rotation(param);
+                        bodypartFX.setRotation(param, Axis.X);
                     }
                     if (action.equalsIgnoreCase("yRotate")) {
-                        bodypartFX.set_Y_Rotation(param);
+                        bodypartFX.setRotation(param, Axis.Y);
                     }
                     if (action.equalsIgnoreCase("zRotate")) {
-                        bodypartFX.set_Z_Rotation(param);
+                        bodypartFX.setRotation(param, Axis.Z);
                     }
                     if (action.equalsIgnoreCase("tilt")) {
                         bodypartFX.setTilt(param);
                     }
                     if (action.equalsIgnoreCase("translate")) {
-                        bodypartFX.set_X_Translation(param);
+                        bodypartFX.setTranslation(param, X);
                     }
                     if (action.equalsIgnoreCase("ytranslate")) {
-                        bodypartFX.set_Y_Translation(param);
+                        bodypartFX.setTranslation(param, Axis.Y);
                     }
                     if (action.equalsIgnoreCase("ztranslate")) {
-                        bodypartFX.set_Z_Translation(param);
+                        bodypartFX.setTranslation(param, Axis.Z);
                     }
                     if (action.equalsIgnoreCase("shape")) {
                         bodypartFX.setShape(paramString);
@@ -276,26 +279,26 @@ public class Animator3D extends Animator{
                     String action = ba.mAction;
 
                     if (action.equalsIgnoreCase("rotate")) {
-                        bodypartFX.calculate_X_Rotation(mCurrentStep);
+                        bodypartFX.calculateRotation(mCurrentStep, Axis.X);
                     }
                     if (action.equalsIgnoreCase("yrotate")) {
-                        bodypartFX.calculate_Y_Rotation(mCurrentStep);
+                        bodypartFX.calculateRotation(mCurrentStep, Axis.Y);
                     }
                     if (action.equalsIgnoreCase("zrotate")) {
-                        bodypartFX.calculate_Z_Rotation(mCurrentStep);
+                        bodypartFX.calculateRotation(mCurrentStep, Axis.Z);
                     }
                     if (action.equalsIgnoreCase("tilt")) {
-                        bodypartFX.calculate_X_Rotation(mCurrentStep);
+                        bodypartFX.calculateRotation(mCurrentStep, Axis.X);
                     }
 
                     if (action.equalsIgnoreCase("translate")) {
-                        bodypartFX.calculate_X_Translation(mCurrentStep);
+                        bodypartFX.calculateTranslation(mCurrentStep, Axis.X);
                     }
                     if (action.equalsIgnoreCase("ytranslate")) {
-                        bodypartFX.calculate_Y_Translation(mCurrentStep);
+                        bodypartFX.calculateTranslation(mCurrentStep, Axis.Y);
                     }
                     if (action.equalsIgnoreCase("ztranslate")) {
-                        bodypartFX.calculate_Z_Translation(mCurrentStep);
+                        bodypartFX.calculateTranslation(mCurrentStep, Axis.Z);
                     }
                     if (action.equalsIgnoreCase("shape")) {
                         bodypartFX.calculateShape(mCurrentStep);

@@ -1,5 +1,6 @@
 package de.dfki.common.part;
 
+import de.dfki.common.enums.Axis;
 import javafx.application.Platform;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.*;
@@ -31,11 +32,16 @@ public abstract class Part extends Pane
     }
 
     public abstract void calculate(int step);
-    public abstract void resetRotation();
-    public abstract void setShape(String s);
     public abstract void resetTranslation();
     public abstract void setTilt(int degree);
     public abstract void rotatePerlinNoise(double mWobble, int x, int y);
+    public abstract void setShape(String s);
+
+    public abstract void setTranslation(int length, Axis...axis);
+    public abstract void calculateTranslation(int step, Axis...axis);
+    public abstract void setRotation(int degree, Axis...axis);
+    public abstract void calculateRotation(int step, Axis...axis);
+    public abstract void resetRotation(Axis...axis);
 
 
     public synchronized void calculateShape(int step)

@@ -82,9 +82,10 @@ public class ReetiStageController extends AReetiStageController implements ViewC
 
         ExitButton.setOnAction((ActionEvent event) ->
         {
-            Stage stage = (Stage) ExitButton.getScene().getWindow();
-            stage.close();
-            System.exit(0);
+            currentReeti.neckRotat(20, 100);
+//            Stage stage = (Stage) ExitButton.getScene().getWindow();
+//            stage.close();
+//            System.exit(0);
 //            CommandReceiver cr = new CommandReceiver(currentReeti, this);
 //            cr.start();
 

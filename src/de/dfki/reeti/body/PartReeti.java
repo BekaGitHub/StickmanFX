@@ -22,11 +22,6 @@ public abstract class PartReeti extends Part3D
         super.init();
     }
 
-    @Override
-    public void resetRotation()
-    {
-    }
-
     protected PhongMaterial getMaterial()
     {
         if (material == null)

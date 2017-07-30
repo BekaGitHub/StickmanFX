@@ -1,6 +1,7 @@
 package de.dfki.common.part;
 
 import de.dfki.common.animationlogic.Animator;
+import de.dfki.common.enums.Axis;
 import de.dfki.stickman3D.animationlogic.Animator3D;
 import javafx.application.Platform;
 import javafx.scene.shape.MeshView;
@@ -27,39 +28,41 @@ public abstract class Part3D extends Part
     public double mYRotationStep = 0.0f;
     public double mZRotationStep = 0.0f;
 
-    public void set_X_Translation(int length)
+    @Override
+    public void setTranslation(int length, Axis...axis)
     {
-        mXTranslationStep = (double) length / Animator3D.sMAX_ANIM_STEPS;
+        switch (axis[0])
+        {
+            case X:
+                mXTranslationStep = (double) length / Animator.sMAX_ANIM_STEPS;
+                break;
+            case Y:
+                mYTranslationStep = (double) length / Animator.sMAX_ANIM_STEPS;
+                break;
+            case Z:
+                mZTranslationStep = (double) length / Animator.sMAX_ANIM_STEPS;
+                break;
+        }
     }
 
-    public void set_Y_Translation(int length)
+    @Override
+    public synchronized void calculateTranslation(int step, Axis...axis)
     {
-        mYTranslationStep = (double) length / Animator.sMAX_ANIM_STEPS;
-    }
-
-    public void set_Z_Translation(int length)
-    {
-        mZTranslationStep = (double) length / Animator.sMAX_ANIM_STEPS;
-    }
-
-    public synchronized void calculate_X_Translation(int step)
-    {
-        mXTranslation += mXTranslationStep;
-        mXTranslation = Math.round(mXTranslation * 1000d) / 1000d;
-        Platform.runLater(() -> calculate(step));
-    }
-
-    public synchronized void calculate_Y_Translation(int step)
-    {
-        mYTranslation += mYTranslationStep;
-        mYTranslation = Math.round(mYTranslation * 1000d) / 1000d;
-        Platform.runLater(() -> calculate(step));
-    }
-
-    public synchronized void calculate_Z_Translation(int step)
-    {
-        mZTranslation += mZTranslationStep;
-        mZTranslation = Math.round(mZTranslation * 1000d) / 1000d;
+        switch (axis[0])
+        {
+            case X:
+                mXTranslation += mXTranslationStep;
+                mXTranslation = Math.round(mXTranslation * 1000d) / 1000d;
+                break;
+            case Y:
+                mYTranslation += mYTranslationStep;
+                mYTranslation = Math.round(mYTranslation * 1000d) / 1000d;
+                break;
+            case Z:
+                mZTranslation += mZTranslationStep;
+                mZTranslation = Math.round(mZTranslation * 1000d) / 1000d;
+                break;
+        }
         Platform.runLater(() -> calculate(step));
     }
 
@@ -82,20 +85,22 @@ public abstract class Part3D extends Part
         mXRotationStep = 0.0f;
     }
 
-    public void set_X_Rotation(int degree)
+    @Override
+    public void setRotation(int degree, Axis...axis)
     {
-        mToDegreeX = mXRotation + degree;
-        mXRotationStep = (double) degree / Animator.sMAX_ANIM_STEPS;
-    }
-
-    public void set_Y_Rotation(int degree)
-    {
-        mYRotationStep = (double) degree / Animator.sMAX_ANIM_STEPS;
-    }
-
-    public void set_Z_Rotation(int degree)
-    {
-        mZRotationStep = (double) degree / Animator.sMAX_ANIM_STEPS;
+        switch (axis[0])
+        {
+            case X:
+                mToDegreeX = mXRotation + degree;
+                mXRotationStep = (double) degree / Animator.sMAX_ANIM_STEPS;
+                break;
+            case Y:
+                mYRotationStep = (double) degree / Animator.sMAX_ANIM_STEPS;
+                break;
+            case Z:
+                mZRotationStep = (double) degree / Animator.sMAX_ANIM_STEPS;
+                break;
+        }
     }
 
     @Override
@@ -105,52 +110,50 @@ public abstract class Part3D extends Part
         mXRotationStep = (double) degree / Animator.sMAX_ANIM_STEPS;
     }
 
-    public synchronized void calculate_X_Rotation(int step)
+    @Override
+    public synchronized void calculateRotation(int step, Axis...axis)
     {
-        mXRotation += mXRotationStep;
-        mXRotation = (double) Math.round(mXRotation * 1000d) / 1000d;
+        switch (axis[0])
+        {
+            case X:
+                mXRotation += mXRotationStep;
+                mXRotation = (double) Math.round(mXRotation * 1000d) / 1000d;
+                break;
+            case Y:
+                mYRotation += mYRotationStep;
+                mYRotation = (double) Math.round(mYRotation * 1000d) / 1000d;
+                break;
+            case Z:
+                mZRotation += mZRotationStep;
+                mZRotation = (double) Math.round(mZRotation * 1000d) / 1000d;
+                break;
+        }
         Platform.runLater(() -> calculate(step));
-    }
-
-    public synchronized void calculate_Y_Rotation(int step)
-    {
-        mYRotation += mYRotationStep;
-        mYRotation = (double) Math.round(mYRotation * 1000d) / 1000d;
-        Platform.runLater(() -> calculate(step));
-    }
-
-    public synchronized void calculate_Z_Rotation(int step)
-    {
-        mZRotation += mZRotationStep;
-        mZRotation = (double) Math.round(mZRotation * 1000d) / 1000d;
-        Platform.runLater(() -> calculate(step));
-    }
-
-    public void reset_X_Rotation()
-    {
-        mXRotation += mXRotationStep;
-        Platform.runLater(() -> calculate(1));
-        mXRotationStep = 0;
-    }
-
-    public void reset_Y_Rotation()
-    {
-        mYRotation += mYRotationStep;
-        Platform.runLater(() -> calculate(1));
-        mYRotationStep = 0;
-    }
-
-    public void reset_Z_Rotation()
-    {
-        mZRotation += mZRotationStep;
-        Platform.runLater(() -> calculate(1));
-        mZRotationStep = 0;
     }
 
     @Override
-    public void resetRotation()
+    public void resetRotation(Axis...axis)
     {
+        switch (axis[0])
+        {
+            case X:
+                mXRotation += mXRotationStep;
+                Platform.runLater(() -> calculate(1));
+                mXRotationStep = 0;
+                break;
+            case Y:
+                mYRotation += mYRotationStep;
+                Platform.runLater(() -> calculate(1));
+                mYRotationStep = 0;
+                break;
+            case Z:
+                mZRotation += mZRotationStep;
+                Platform.runLater(() -> calculate(1));
+                mZRotationStep = 0;
+                break;
+        }
     }
+
 
     public MeshView getMeshView()
     {

@@ -3,6 +3,7 @@ package de.dfki.reeti.animationlogic;
 import de.dfki.action.sequence.Entry;
 import de.dfki.action.sequence.WordTimeMarkSequence;
 import de.dfki.common.animationlogic.Animator;
+import de.dfki.common.enums.Axis;
 import de.dfki.reeti.Reeti;
 import de.dfki.reeti.body.PartReeti;
 import de.dfki.stickmanSwing.util.TimingInfo;
@@ -125,25 +126,25 @@ public class AnimatorReeti extends Animator{
                     int param = comp.mParam;
                     String paramString = comp.mParamString;
                     if (action.equalsIgnoreCase("rotate")) {
-                        bodyPart.set_X_Rotation(param);
+                        bodyPart.setRotation(param, Axis.X);
                     }
                     if (action.equalsIgnoreCase("yRotate")) {
-                        bodyPart.set_Y_Rotation(param);
+                        bodyPart.setRotation(param, Axis.Y);
                     }
                     if (action.equalsIgnoreCase("zRotate")) {
-                        bodyPart.set_Z_Rotation(param);
+                        bodyPart.setRotation(param, Axis.Z);
                     }
                     if (action.equalsIgnoreCase("tilt")) {
                         bodyPart.setTilt(param);
                     }
                     if (action.equalsIgnoreCase("translate")) {
-                        bodyPart.set_X_Translation(param);
+                        bodyPart.setTranslation(param, Axis.X);
                     }
                     if (action.equalsIgnoreCase("ytranslate")) {
-                        bodyPart.set_Y_Translation(param);
+                        bodyPart.setTranslation(param, Axis.Y);
                     }
                     if (action.equalsIgnoreCase("ztranslate")) {
-                        bodyPart.set_Z_Translation(param);
+                        bodyPart.setTranslation(param, Axis.Z);
                     }
                     if (action.equalsIgnoreCase("shape")) {
                         bodyPart.setShape(paramString);
@@ -157,26 +158,26 @@ public class AnimatorReeti extends Animator{
                     String action = acr.mAction;
 
                     if (action.equalsIgnoreCase("rotate")) {
-                        bodypart.calculate_X_Rotation(mCurrentStep);
+                        bodypart.calculateRotation(mCurrentStep, Axis.X);
                     }
                     if (action.equalsIgnoreCase("yrotate")) {
-                        bodypart.calculate_Y_Rotation(mCurrentStep);
+                        bodypart.calculateRotation(mCurrentStep, Axis.Y);
                     }
                     if (action.equalsIgnoreCase("zrotate")) {
-                        bodypart.calculate_Z_Rotation(mCurrentStep);
+                        bodypart.calculateRotation(mCurrentStep, Axis.Z);
                     }
                     if (action.equalsIgnoreCase("tilt")) {
-                        bodypart.calculate_X_Rotation(mCurrentStep);
+                        bodypart.calculateRotation(mCurrentStep, Axis.X);
                     }
 
                     if (action.equalsIgnoreCase("translate")) {
-                        bodypart.calculate_X_Translation(mCurrentStep);
+                        bodypart.calculateTranslation(mCurrentStep, Axis.X);
                     }
                     if (action.equalsIgnoreCase("ytranslate")) {
-                        bodypart.calculate_Y_Translation(mCurrentStep);
+                        bodypart.calculateTranslation(mCurrentStep, Axis.Y);
                     }
                     if (action.equalsIgnoreCase("ztranslate")) {
-                        bodypart.calculate_Z_Translation(mCurrentStep);
+                        bodypart.calculateTranslation(mCurrentStep, Axis.Z);
                     }
                     if (action.equalsIgnoreCase("shape")) {
                         bodypart.calculateShape(mCurrentStep);
@@ -198,13 +199,13 @@ public class AnimatorReeti extends Animator{
                     PartReeti bodypart = acr.mBodyPart;
 
                     if (action.equalsIgnoreCase("rotate")) {
-                        bodypart.reset_X_Rotation();
+                        bodypart.resetRotation(Axis.X);
                     }
                     if (action.equalsIgnoreCase("yrotate")) {
-                        bodypart.reset_Y_Rotation();
+                        bodypart.resetRotation(Axis.Y);
                     }
                     if (action.equalsIgnoreCase("zrotate")) {
-                        bodypart.reset_Z_Rotation();
+                        bodypart.resetRotation(Axis.Z);
                     }
                     if (action.equalsIgnoreCase("tilt")) {
                         bodypart.resetRotation();
@@ -242,25 +243,25 @@ public class AnimatorReeti extends Animator{
                     int param = comp.mParam;
                     String paramString = comp.mParamString;
                     if (action.equalsIgnoreCase("rotate")) {
-                        bodypart.set_X_Rotation(param);
+                        bodypart.setRotation(param, Axis.X);
                     }
                     if (action.equalsIgnoreCase("yRotate")) {
-                        bodypart.set_Y_Rotation(param);
+                        bodypart.setRotation(param, Axis.Y);
                     }
                     if (action.equalsIgnoreCase("zRotate")) {
-                        bodypart.set_Z_Rotation(param);
+                        bodypart.setRotation(param, Axis.Z);
                     }
                     if (action.equalsIgnoreCase("tilt")) {
                         bodypart.setTilt(param);
                     }
                     if (action.equalsIgnoreCase("translate")) {
-                        bodypart.set_X_Translation(param);
+                        bodypart.setTranslation(param, Axis.X);
                     }
                     if (action.equalsIgnoreCase("ytranslate")) {
-                        bodypart.set_Y_Translation(param);
+                        bodypart.setTranslation(param, Axis.Y);
                     }
                     if (action.equalsIgnoreCase("ztranslate")) {
-                        bodypart.set_Z_Translation(param);
+                        bodypart.setTranslation(param, Axis.Z);
                     }
                     if (action.equalsIgnoreCase("shape")) {
                         bodypart.setShape(paramString);
@@ -274,26 +275,26 @@ public class AnimatorReeti extends Animator{
                     String action = acr.mAction;
 
                     if (action.equalsIgnoreCase("rotate")) {
-                        bodypart.calculate_X_Rotation(mCurrentStep);
+                        bodypart.calculateRotation(mCurrentStep, Axis.X);
                     }
                     if (action.equalsIgnoreCase("yrotate")) {
-                        bodypart.calculate_Y_Rotation(mCurrentStep);
+                        bodypart.calculateRotation(mCurrentStep, Axis.Y);
                     }
                     if (action.equalsIgnoreCase("zrotate")) {
-                        bodypart.calculate_Z_Rotation(mCurrentStep);
+                        bodypart.calculateRotation(mCurrentStep, Axis.Z);
                     }
                     if (action.equalsIgnoreCase("tilt")) {
-                        bodypart.calculate_X_Rotation(mCurrentStep);
+                        bodypart.calculateRotation(mCurrentStep, Axis.X);
                     }
 
                     if (action.equalsIgnoreCase("translate")) {
-                        bodypart.calculate_X_Translation(mCurrentStep);
+                        bodypart.calculateTranslation(mCurrentStep, Axis.X);
                     }
                     if (action.equalsIgnoreCase("ytranslate")) {
-                        bodypart.calculate_Y_Translation(mCurrentStep);
+                        bodypart.calculateTranslation(mCurrentStep, Axis.Y);
                     }
                     if (action.equalsIgnoreCase("ztranslate")) {
-                        bodypart.calculate_Z_Translation(mCurrentStep);
+                        bodypart.calculateTranslation(mCurrentStep, Axis.Z);
                     }
                     if (action.equalsIgnoreCase("shape")) {
                         bodypart.calculateShape(mCurrentStep);

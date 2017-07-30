@@ -1,6 +1,7 @@
 package de.dfki.common.part;
 
 import de.dfki.common.animationlogic.Animator;
+import de.dfki.common.enums.Axis;
 import javafx.application.Platform;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Path;
@@ -38,13 +39,15 @@ public abstract class Part2D extends Part
 
     public abstract void update();
 
-    public void setTranslation(int length)
+    @Override
+    public void setTranslation(int length, Axis...axis)
     {
         mToTranslation = mTranslation + length;
         mTranslationStep = (double) length / Animator.sMAX_ANIM_STEPS;
     }
 
-    public synchronized void calculateTranslation(int step)
+    @Override
+    public synchronized void calculateTranslation(int step, Axis...axis)
     {
         mTranslation += mTranslationStep;
         mTranslation = (double) Math.round(mTranslation * 1000d) / 1000d; // the poor man's round method
@@ -66,7 +69,8 @@ public abstract class Part2D extends Part
         mRotationStep = 0.0f;
     }
 
-    public void setRotation(int degree)
+    @Override
+    public void setRotation(int degree, Axis...axis)
     {
         mToDegree = mRotation + degree;
         mRotationStep = (double) degree / Animator.sMAX_ANIM_STEPS;
@@ -79,7 +83,8 @@ public abstract class Part2D extends Part
         mRotationStep = (double) degree / Animator.sMAX_ANIM_STEPS;
     }
 
-    public synchronized void calculateRotation(int step)
+    @Override
+    public synchronized void calculateRotation(int step, Axis...axis)
     {
         mRotation += mRotationStep;
         mRotation = (double) Math.round(mRotation * 1000d) / 1000d; // the poor man's round method
@@ -87,7 +92,7 @@ public abstract class Part2D extends Part
     }
 
     @Override
-    public void resetRotation()
+    public void resetRotation(Axis...axis)
     {
         mTranslationStep = 0.0d;
     }
