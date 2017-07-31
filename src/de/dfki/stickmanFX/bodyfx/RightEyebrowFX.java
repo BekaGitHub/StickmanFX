@@ -1,7 +1,7 @@
 package de.dfki.stickmanFX.bodyfx;
 
 import de.dfki.common.part.Part2D;
-import de.dfki.stickmanFX.animationlogic.AnimatorFX;
+import de.dfki.stickmanFX.animationlogic.AnimatorStickman2D;
 import java.awt.Dimension;
 import java.awt.Point;
 
@@ -89,7 +89,7 @@ public class RightEyebrowFX extends PartStickman2D
                 break;
 
             case ANGRY:
-                movement = AnimatorFX.sMAX_ANIM_STEPS - mShapeAnimationStep;
+                movement = AnimatorStickman2D.sMAX_ANIM_STEPS - mShapeAnimationStep;
 
                 mPath.getElements().add(new MoveTo(mStart.x + movement / 4, mStart.y + movement / 4));
                 mPath.getElements().add(new QuadCurveTo((mStart.x + movement / 4 + mEnd.x + movement / 3) / 2, mStart.y + movement / 4 - 3, mEnd.x + movement / 4, mEnd.y));
@@ -109,7 +109,7 @@ public class RightEyebrowFX extends PartStickman2D
                 break;
 
             case DISGUSTED:
-                movement = AnimatorFX.sMAX_ANIM_STEPS - mShapeAnimationStep;
+                movement = AnimatorStickman2D.sMAX_ANIM_STEPS - mShapeAnimationStep;
                 mPath.getElements().add(new MoveTo(mStart.x, mStart.y - movement / 4));
                 mPath.getElements().add(new QuadCurveTo((mStart.x + mEnd.x) / 2, mStart.y - 3 + movement / 7, mEnd.x + movement / 10, mEnd.y));
                 break;
@@ -126,7 +126,7 @@ public class RightEyebrowFX extends PartStickman2D
                 break;
 
             case SURPRISED:
-                movement = AnimatorFX.sMAX_ANIM_STEPS - mShapeAnimationStep;
+                movement = AnimatorStickman2D.sMAX_ANIM_STEPS - mShapeAnimationStep;
                 mPath.getElements().add(new MoveTo(mStart.x, mStart.y - movement / 7));
                 mPath.getElements().add(new QuadCurveTo((mStart.x + mEnd.x) / 2, mStart.y - 3 - movement / 7, mEnd.x, mEnd.y - movement / 7));
                 break;
@@ -143,7 +143,7 @@ public class RightEyebrowFX extends PartStickman2D
                 break;
 
             case EXCITED:
-                movement = AnimatorFX.sMAX_ANIM_STEPS - mShapeAnimationStep;
+                movement = AnimatorStickman2D.sMAX_ANIM_STEPS - mShapeAnimationStep;
                 mPath.getElements().add(new MoveTo(mStart.x, mStart.y - movement / 4));
                 mPath.getElements().add(new QuadCurveTo((mStart.x + mEnd.x) / 2, mStart.y - 3 - movement / 5, mEnd.x, mEnd.y - movement / 4));
                 break;
@@ -160,7 +160,7 @@ public class RightEyebrowFX extends PartStickman2D
                 break;
 
             case EMBARRASSED:
-                movement = AnimatorFX.sMAX_ANIM_STEPS - mShapeAnimationStep;
+                movement = AnimatorStickman2D.sMAX_ANIM_STEPS - mShapeAnimationStep;
                 mPath.getElements().add(new MoveTo(mStart.x + movement / 2, mStart.y + movement / 3));
                 mPath.getElements().add(new QuadCurveTo((mStart.x + movement / 2 + mEnd.x + movement / 2) / 2, mStart.y - 3 + movement / 10 * 7, mEnd.x + movement / 2, mEnd.y + movement / 2));
                 break;

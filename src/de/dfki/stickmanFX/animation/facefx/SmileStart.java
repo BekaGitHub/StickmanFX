@@ -2,7 +2,7 @@ package de.dfki.stickmanFX.animation.facefx;
 
 import de.dfki.stickmanFX.StickmanFX;
 import de.dfki.common.animationlogic.AnimationContent;
-import de.dfki.stickmanFX.animationlogic.AnimationFX;
+import de.dfki.stickmanFX.animationlogic.AnimationStickman2D;
 import java.util.ArrayList;
 
 /**
@@ -10,7 +10,8 @@ import java.util.ArrayList;
  * @author Beka
  *
  */
-public class SmileStart extends AnimationFX {
+public class SmileStart extends AnimationStickman2D
+{
 
     public SmileStart() {
         super();
@@ -23,8 +24,8 @@ public class SmileStart extends AnimationFX {
     @Override
     public void playAnimation() {
         // smile start
-        mAnimationPartFX = new ArrayList<>();
-        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mMouthFX, "shape", "SMILE"));
+        mAnimationPart = new ArrayList<>();
+        mAnimationPart.add(new AnimationContent(mStickmanFX.mMouthFX, "shape", "SMILE"));
         playAnimationPart(mDuration);
         pauseAnimation(10);
 

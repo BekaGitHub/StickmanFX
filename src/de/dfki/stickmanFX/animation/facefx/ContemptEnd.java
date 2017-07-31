@@ -7,7 +7,7 @@ package de.dfki.stickmanFX.animation.facefx;
 
 import de.dfki.stickmanFX.StickmanFX;
 import de.dfki.common.animationlogic.AnimationContent;
-import de.dfki.stickmanFX.animationlogic.AnimationFX;
+import de.dfki.stickmanFX.animationlogic.AnimationStickman2D;
 import java.util.ArrayList;
 
 /**
@@ -15,7 +15,8 @@ import java.util.ArrayList;
  * @author Beka Aptsiauri
  *
  */
-public class ContemptEnd extends AnimationFX {
+public class ContemptEnd extends AnimationStickman2D
+{
 
     public ContemptEnd() {
         super();
@@ -28,10 +29,10 @@ public class ContemptEnd extends AnimationFX {
     @Override
     public void playAnimation() {
         // Contempt end
-        mAnimationPartFX = new ArrayList<>();
-        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mMouthFX, "shape", "CONTEMPTEND"));
-        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mLeftEyeFX, "shape", "CONTEMPTEND"));
-        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mRightEyeFX, "shape", "CONTEMPTEND"));
+        mAnimationPart = new ArrayList<>();
+        mAnimationPart.add(new AnimationContent(mStickmanFX.mMouthFX, "shape", "CONTEMPTEND"));
+        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftEyeFX, "shape", "CONTEMPTEND"));
+        mAnimationPart.add(new AnimationContent(mStickmanFX.mRightEyeFX, "shape", "CONTEMPTEND"));
         playAnimationPart(mDuration);
 
         pauseAnimation(10);

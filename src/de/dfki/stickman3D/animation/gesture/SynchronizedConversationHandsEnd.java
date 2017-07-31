@@ -29,7 +29,7 @@ public class SynchronizedConversationHandsEnd extends AbstractConversationHands 
 
     @Override
     public void playAnimation() {
-        mAnimationPartFX = new ArrayList<>();
+        mAnimationPart = new ArrayList<>();
         moveConversationHands();
         playAnimationPart(200);
     }

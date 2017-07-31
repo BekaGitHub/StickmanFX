@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 import de.dfki.stickmanFX.StickmanFX;
 import de.dfki.common.animationlogic.AnimationContent;
-import de.dfki.stickmanFX.animationlogic.AnimationFX;
+import de.dfki.stickmanFX.animationlogic.AnimationStickman2D;
 import de.dfki.stickmanFX.environmentfx.SpeechBubbleStickman2D;
 
 /**
@@ -17,7 +17,8 @@ import de.dfki.stickmanFX.environmentfx.SpeechBubbleStickman2D;
  * @author Patrick Gebhard
  *
  */
-public class Speaking extends AnimationFX {
+public class Speaking extends AnimationStickman2D
+{
 
     public Speaking(StickmanFX sm, int duration, boolean block) {
         super(sm, duration, block);
@@ -29,11 +30,11 @@ public class Speaking extends AnimationFX {
             mStickmanFX.mSpeechBubbleFX.mSpeechBubbleText = (String) mParameter;
         }
 
-        mAnimationPartFX = new ArrayList<>();
-        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mSpeechBubbleFX, "shape", SpeechBubbleStickman2D.SHAPE.SPEAK.name()));
+        mAnimationPart = new ArrayList<>();
+        mAnimationPart.add(new AnimationContent(mStickmanFX.mSpeechBubbleFX, "shape", SpeechBubbleStickman2D.SHAPE.SPEAK.name()));
         playAnimationPart(mDuration);
 
-        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mSpeechBubbleFX, "shape", SpeechBubbleStickman2D.SHAPE.DEFAULT.name()));
+        mAnimationPart.add(new AnimationContent(mStickmanFX.mSpeechBubbleFX, "shape", SpeechBubbleStickman2D.SHAPE.DEFAULT.name()));
         playAnimationPart(20);
 
     }

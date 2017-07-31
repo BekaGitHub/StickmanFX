@@ -1,7 +1,7 @@
 package de.dfki.stickmanFX.animation.environmentfx;
 
 import de.dfki.stickmanFX.StickmanFX;
-import de.dfki.stickmanFX.animationlogic.AnimationFX;
+import de.dfki.stickmanFX.animationlogic.AnimationStickman2D;
 import javafx.application.Platform;
 import javafx.geometry.Pos;
 import javafx.scene.layout.HBox;
@@ -11,7 +11,8 @@ import javafx.scene.layout.HBox;
  * @author Robbie
  *
  */
-public class ZoomIO extends AnimationFX {
+public class ZoomIO extends AnimationStickman2D
+{
 
     public ZoomIO(StickmanFX sm, int duration, boolean block) {
         super(sm, duration, block);

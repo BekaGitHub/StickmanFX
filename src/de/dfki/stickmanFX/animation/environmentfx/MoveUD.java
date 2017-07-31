@@ -6,7 +6,7 @@
 package de.dfki.stickmanFX.animation.environmentfx;
 
 import de.dfki.stickmanFX.StickmanFX;
-import de.dfki.stickmanFX.animationlogic.AnimationFX;
+import de.dfki.stickmanFX.animationlogic.AnimationStickman2D;
 import javafx.application.Platform;
 
 /**
@@ -15,7 +15,8 @@ import javafx.application.Platform;
  * stickmanSwing
  *
  */
-public class MoveUD extends AnimationFX {
+public class MoveUD extends AnimationStickman2D
+{
 
     private StickmanFX mStickmanFX;
     private double vdistance = 0;

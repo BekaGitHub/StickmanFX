@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import de.dfki.common.animationlogic.AnimationContent;
 import de.dfki.stickman3D.Stickman3D;
 import de.dfki.stickman3D.StickmanStageController;
-import de.dfki.stickman3D.animationlogic.Animation3D;
+import de.dfki.stickman3D.animationlogic.AnimationStickman3D;
 
 /**
  * An angry facial movement is created in this class. The face moves from the
@@ -18,7 +18,8 @@ import de.dfki.stickman3D.animationlogic.Animation3D;
  *
  * @author Beka Aptsiauri
  */
-public class NoNoNo extends Animation3D {
+public class NoNoNo extends AnimationStickman3D
+{
 
 	/**
 	 *
@@ -45,57 +46,57 @@ public class NoNoNo extends Animation3D {
 	 */
 	@Override
 	public void playAnimation() {
-		mAnimationPartFX = new ArrayList<>();
-		mAnimationPartFX.add(new AnimationContent(mStickmanFX.mRightForeArm, "rotate", -100));
-		mAnimationPartFX.add(new AnimationContent(mStickmanFX.mRightWrist, "rotate", -60));
-		mAnimationPartFX.add(new AnimationContent(mStickmanFX.mRightWrist, "yrotate", -50));
-		mAnimationPartFX.add(new AnimationContent(mStickmanFX.mRightFinger4, "rotate", 135));
-		mAnimationPartFX.add(new AnimationContent(mStickmanFX.mRightFinger3, "rotate", 135));
-		mAnimationPartFX.add(new AnimationContent(mStickmanFX.mRightFinger1, "zrotate", 40));
-		mAnimationPartFX.add(new AnimationContent(mStickmanFX.mRightFinger1, "rotate", 35));
+		mAnimationPart = new ArrayList<>();
+		mAnimationPart.add(new AnimationContent(mStickmanFX.mRightForeArm, "rotate", -100));
+		mAnimationPart.add(new AnimationContent(mStickmanFX.mRightWrist, "rotate", -60));
+		mAnimationPart.add(new AnimationContent(mStickmanFX.mRightWrist, "yrotate", -50));
+		mAnimationPart.add(new AnimationContent(mStickmanFX.mRightFinger4, "rotate", 135));
+		mAnimationPart.add(new AnimationContent(mStickmanFX.mRightFinger3, "rotate", 135));
+		mAnimationPart.add(new AnimationContent(mStickmanFX.mRightFinger1, "zrotate", 40));
+		mAnimationPart.add(new AnimationContent(mStickmanFX.mRightFinger1, "rotate", 35));
 
-		mAnimationPartFX.add(new AnimationContent(mStickmanFX.mLeftEyebrow, "shape", "ANGRY"));
-		mAnimationPartFX.add(new AnimationContent(mStickmanFX.mRightEyebrow, "shape", "ANGRY"));
+		mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftEyebrow, "shape", "ANGRY"));
+		mAnimationPart.add(new AnimationContent(mStickmanFX.mRightEyebrow, "shape", "ANGRY"));
 		playAnimationPart(500);
 
 		pauseAnimation(200);
 
 		for (int i = 0; i < 6; i++) {
 			if (i == 0) {
-				mAnimationPartFX = new ArrayList<>();
-				mAnimationPartFX.add(new AnimationContent(mStickmanFX.mRightWrist, "zrotate", -30));
-				mAnimationPartFX.add(new AnimationContent(mStickmanFX.mHead, "yrotate", 10));
+				mAnimationPart = new ArrayList<>();
+				mAnimationPart.add(new AnimationContent(mStickmanFX.mRightWrist, "zrotate", -30));
+				mAnimationPart.add(new AnimationContent(mStickmanFX.mHead, "yrotate", 10));
 				playAnimationPart(500);
 			} else if (i == 5) {
-				mAnimationPartFX = new ArrayList<>();
-				mAnimationPartFX.add(new AnimationContent(mStickmanFX.mRightWrist, "zrotate", 30));
-				mAnimationPartFX.add(new AnimationContent(mStickmanFX.mHead, "yrotate", -10));
+				mAnimationPart = new ArrayList<>();
+				mAnimationPart.add(new AnimationContent(mStickmanFX.mRightWrist, "zrotate", 30));
+				mAnimationPart.add(new AnimationContent(mStickmanFX.mHead, "yrotate", -10));
 				playAnimationPart(500);
 			} else if (i % 2 == 1) {
-				mAnimationPartFX = new ArrayList<>();
-				mAnimationPartFX.add(new AnimationContent(mStickmanFX.mRightWrist, "zrotate", 60));
-				mAnimationPartFX.add(new AnimationContent(mStickmanFX.mHead, "yrotate", -20));
+				mAnimationPart = new ArrayList<>();
+				mAnimationPart.add(new AnimationContent(mStickmanFX.mRightWrist, "zrotate", 60));
+				mAnimationPart.add(new AnimationContent(mStickmanFX.mHead, "yrotate", -20));
 				playAnimationPart(500);
 			} else {
-				mAnimationPartFX = new ArrayList<>();
-				mAnimationPartFX.add(new AnimationContent(mStickmanFX.mRightWrist, "zrotate", -60));
-				mAnimationPartFX.add(new AnimationContent(mStickmanFX.mHead, "yrotate", 20));
+				mAnimationPart = new ArrayList<>();
+				mAnimationPart.add(new AnimationContent(mStickmanFX.mRightWrist, "zrotate", -60));
+				mAnimationPart.add(new AnimationContent(mStickmanFX.mHead, "yrotate", 20));
 				playAnimationPart(500);
 			}
 
 		}
 
-		mAnimationPartFX = new ArrayList<>();
-		mAnimationPartFX.add(new AnimationContent(mStickmanFX.mRightForeArm, "rotate", 100));
-		mAnimationPartFX.add(new AnimationContent(mStickmanFX.mRightWrist, "rotate", 60));
-		mAnimationPartFX.add(new AnimationContent(mStickmanFX.mRightWrist, "yrotate", 50));
-		mAnimationPartFX.add(new AnimationContent(mStickmanFX.mRightFinger4, "rotate", -135));
-		mAnimationPartFX.add(new AnimationContent(mStickmanFX.mRightFinger3, "rotate", -135));
-		mAnimationPartFX.add(new AnimationContent(mStickmanFX.mRightFinger1, "zrotate", -40));
-		mAnimationPartFX.add(new AnimationContent(mStickmanFX.mRightFinger1, "rotate", -35));
+		mAnimationPart = new ArrayList<>();
+		mAnimationPart.add(new AnimationContent(mStickmanFX.mRightForeArm, "rotate", 100));
+		mAnimationPart.add(new AnimationContent(mStickmanFX.mRightWrist, "rotate", 60));
+		mAnimationPart.add(new AnimationContent(mStickmanFX.mRightWrist, "yrotate", 50));
+		mAnimationPart.add(new AnimationContent(mStickmanFX.mRightFinger4, "rotate", -135));
+		mAnimationPart.add(new AnimationContent(mStickmanFX.mRightFinger3, "rotate", -135));
+		mAnimationPart.add(new AnimationContent(mStickmanFX.mRightFinger1, "zrotate", -40));
+		mAnimationPart.add(new AnimationContent(mStickmanFX.mRightFinger1, "rotate", -35));
 
-		mAnimationPartFX.add(new AnimationContent(mStickmanFX.mLeftEyebrow, "shape", "ANGRYEND"));
-		mAnimationPartFX.add(new AnimationContent(mStickmanFX.mRightEyebrow, "shape", "ANGRYEND"));
+		mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftEyebrow, "shape", "ANGRYEND"));
+		mAnimationPart.add(new AnimationContent(mStickmanFX.mRightEyebrow, "shape", "ANGRYEND"));
 		playAnimationPart(500);
 
                 if(StickmanStageController.currentRadioButton != null)

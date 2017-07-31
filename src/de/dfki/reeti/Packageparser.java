@@ -1,7 +1,7 @@
 package de.dfki.reeti;
 
+import de.dfki.common.animationlogic.Animation;
 import de.dfki.reeti.animationlogic.AnimationReeti;
-import de.dfki.reeti.animationlogic.AnimationReeti.ANIMTYPE;
 
 import java.io.File;
 import java.io.FileFilter;
@@ -67,7 +67,7 @@ public class Packageparser {
                             class1 = (AnimationReeti) object;
                         }
 
-                        if (class1 != null && class1.mAnimType == ANIMTYPE.ON) {
+                        if (class1 != null && class1.mAnimType == Animation.ANIMTYPE.ON) {
                             classNameList.add(className);
                         }
                     } catch (Exception e) {

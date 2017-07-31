@@ -1,7 +1,7 @@
 package de.dfki.stickman3D.body;
 
 import de.dfki.common.part.Part3D;
-import de.dfki.stickman3D.animationlogic.Animator3D;
+import de.dfki.stickman3D.animationlogic.AnimatorStickman3D;
 import de.dfki.stickman3D.mimic.util.FaceWrinkleANGRY;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Polygon;
@@ -79,7 +79,7 @@ public class FaceWrinkle3D extends PartStickman3D
                 currentLeftPolygon = FaceWrinkleANGRY.getLeftANGRY(currentLeftPolygon, step);
                 currentRightPolygon = FaceWrinkleANGRY.getRightANGRY(currentRightPolygon, step);
 
-                colorOpacity = Animator3D.sMAX_ANIM_STEPS - mShapeAnimationStep;
+                colorOpacity = AnimatorStickman3D.sMAX_ANIM_STEPS - mShapeAnimationStep;
                 mColor = Color.rgb(80, 80, 80, colorOpacity / 19);
                 currentLeftPolygon.setFill(mColor);
                 currentRightPolygon.setFill(mColor);
@@ -87,7 +87,7 @@ public class FaceWrinkle3D extends PartStickman3D
                 break;
 
             case ANGRYEND:
-                colorOpacity = Animator3D.sMAX_ANIM_STEPS - mShapeAnimationStep;
+                colorOpacity = AnimatorStickman3D.sMAX_ANIM_STEPS - mShapeAnimationStep;
 
                 mColor = Color.rgb(80, 80, 80, 1 - colorOpacity / 19);
                 currentLeftPolygon.setFill(mColor);

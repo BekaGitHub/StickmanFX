@@ -1,11 +1,9 @@
 package de.dfki.stickman3D.animationlogic;
 
-import de.dfki.common.agent.IAgent;
 import de.dfki.common.animationlogic.AnimationScheduler;
 import de.dfki.stickman3D.Stickman3D;
 
 import java.util.concurrent.LinkedBlockingQueue;
-import java.util.concurrent.Semaphore;
 
 /**
  *
@@ -14,13 +12,13 @@ import java.util.concurrent.Semaphore;
  */
 public class AnimationScheduler3D extends AnimationScheduler
 {
-    public LinkedBlockingQueue<Animation3D> mAnimationQueue = new LinkedBlockingQueue<>();
+    public LinkedBlockingQueue<AnimationStickman3D> mAnimationQueue = new LinkedBlockingQueue<>();
 
     public AnimationScheduler3D(Stickman3D s) {
         super(s);
     }
 
-    public void introduce(Animation3D a) {
+    public void introduce(AnimationStickman3D a) {
         try {
             mAnimationQueue.put(a);
         } catch (InterruptedException ex) {
@@ -28,12 +26,12 @@ public class AnimationScheduler3D extends AnimationScheduler
         }
     }
 
-    public void proceed(Animation3D a) {
+    public void proceed(AnimationStickman3D a) {
         removeAnimation(a);
         mTheBlockOfHell.release();
     }
 
-    public void removeAnimation(Animation3D a) {
+    public void removeAnimation(AnimationStickman3D a) {
         mAnimationQueue.remove(a);
     }
 
@@ -42,7 +40,7 @@ public class AnimationScheduler3D extends AnimationScheduler
 
         // throw in a last animation that unblocks the scheduler letting him end
         try {
-            mAnimationQueue.put(new Animation3D(mAgent, 1, false) {
+            mAnimationQueue.put(new AnimationStickman3D(mAgent, 1, false) {
             });
         } catch (InterruptedException ex) {
             ex.printStackTrace();
@@ -57,7 +55,7 @@ public class AnimationScheduler3D extends AnimationScheduler
                 mTheBlockOfHell.acquire(1);
 
                 // get the next animation in the animation queue
-                Animation3D animationFX = mAnimationQueue.take();
+                AnimationStickman3D animationFX = mAnimationQueue.take();
 
                 // tell the animation to render itself
                 animationFX.mAnimationStart.release();

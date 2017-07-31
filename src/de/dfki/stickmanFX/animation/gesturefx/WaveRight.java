@@ -9,14 +9,15 @@ import java.util.ArrayList;
 
 import de.dfki.stickmanFX.StickmanFX;
 import de.dfki.common.animationlogic.AnimationContent;
-import de.dfki.stickmanFX.animationlogic.AnimationFX;
+import de.dfki.stickmanFX.animationlogic.AnimationStickman2D;
 
 /**
  *
  * @author Beka
  *
  */
-public class WaveRight extends AnimationFX {
+public class WaveRight extends AnimationStickman2D
+{
 
     public WaveRight() {
         mAnimType = ANIMTYPE.Gesture;
@@ -34,33 +35,33 @@ public class WaveRight extends AnimationFX {
         float timeFactor = (mDuration > 0) ? mDuration / 50 : 1;
 
         // bring upper arm and fore arm in position
-        mAnimationPartFX = new ArrayList<>();
-        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mRightUpperArmFX, "rotate", -rotationUnit));
-        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mRightForeArmFX, "rotate", -rotationUnit * 16));
-        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mRightHandFX, "rotate", -rotationUnit * 16));
+        mAnimationPart = new ArrayList<>();
+        mAnimationPart.add(new AnimationContent(mStickmanFX.mRightUpperArmFX, "rotate", -rotationUnit));
+        mAnimationPart.add(new AnimationContent(mStickmanFX.mRightForeArmFX, "rotate", -rotationUnit * 16));
+        mAnimationPart.add(new AnimationContent(mStickmanFX.mRightHandFX, "rotate", -rotationUnit * 16));
         playAnimationPart(200);
 
         pauseAnimation(200);
 
         // wave right
-        mAnimationPartFX = new ArrayList<>();
-        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mRightForeArmFX, "rotate", rotationUnit * 4));
-        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mRightHandFX, "rotate", rotationUnit * 4));
+        mAnimationPart = new ArrayList<>();
+        mAnimationPart.add(new AnimationContent(mStickmanFX.mRightForeArmFX, "rotate", rotationUnit * 4));
+        mAnimationPart.add(new AnimationContent(mStickmanFX.mRightHandFX, "rotate", rotationUnit * 4));
         playAnimationPart(100);
 
         // wave left
-        mAnimationPartFX = new ArrayList<>();
-        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mRightForeArmFX, "rotate", -rotationUnit * 4));
-        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mRightHandFX, "rotate", -rotationUnit * 4));
+        mAnimationPart = new ArrayList<>();
+        mAnimationPart.add(new AnimationContent(mStickmanFX.mRightForeArmFX, "rotate", -rotationUnit * 4));
+        mAnimationPart.add(new AnimationContent(mStickmanFX.mRightHandFX, "rotate", -rotationUnit * 4));
         playAnimationPart(100);
 
         pauseAnimation(200);
 
         // go back in the default position
-        mAnimationPartFX = new ArrayList<>();
-        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mRightUpperArmFX, "rotate", rotationUnit));
-        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mRightForeArmFX, "rotate", rotationUnit * 16));
-        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mRightHandFX, "rotate", rotationUnit * 16));
+        mAnimationPart = new ArrayList<>();
+        mAnimationPart.add(new AnimationContent(mStickmanFX.mRightUpperArmFX, "rotate", rotationUnit));
+        mAnimationPart.add(new AnimationContent(mStickmanFX.mRightForeArmFX, "rotate", rotationUnit * 16));
+        mAnimationPart.add(new AnimationContent(mStickmanFX.mRightHandFX, "rotate", rotationUnit * 16));
         playAnimationPart(200);
     }
 }

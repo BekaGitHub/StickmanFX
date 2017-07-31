@@ -2,7 +2,7 @@ package de.dfki.stickmanFX.animation.facefx;
 
 import de.dfki.stickmanFX.StickmanFX;
 import de.dfki.common.animationlogic.AnimationContent;
-import de.dfki.stickmanFX.animationlogic.AnimationFX;
+import de.dfki.stickmanFX.animationlogic.AnimationStickman2D;
 import java.util.ArrayList;
 
 /**
@@ -10,7 +10,8 @@ import java.util.ArrayList;
  * @author Beka
  *
  */
-public class ExcitedEnd extends AnimationFX {
+public class ExcitedEnd extends AnimationStickman2D
+{
 
     public ExcitedEnd() {
         super();
@@ -23,12 +24,12 @@ public class ExcitedEnd extends AnimationFX {
     @Override
     public void playAnimation() {
         // no excited
-        mAnimationPartFX = new ArrayList<>();
-        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mMouthFX, "shape", "EXCITEDEND"));
-        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mLeftEyeFX, "shape", "EXCITEDEND"));
-        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mRightEyeFX, "shape", "EXCITEDEND"));
-        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mLeftEyebrowFX, "shape", "EXCITEDEND"));
-        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mRightEyebrowFX, "shape", "EXCITEDEND"));
+        mAnimationPart = new ArrayList<>();
+        mAnimationPart.add(new AnimationContent(mStickmanFX.mMouthFX, "shape", "EXCITEDEND"));
+        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftEyeFX, "shape", "EXCITEDEND"));
+        mAnimationPart.add(new AnimationContent(mStickmanFX.mRightEyeFX, "shape", "EXCITEDEND"));
+        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftEyebrowFX, "shape", "EXCITEDEND"));
+        mAnimationPart.add(new AnimationContent(mStickmanFX.mRightEyebrowFX, "shape", "EXCITEDEND"));
         playAnimationPart(mDuration);
 
         pauseAnimation(10);

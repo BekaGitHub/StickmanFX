@@ -7,7 +7,7 @@ package de.dfki.stickman3D.animation.face;
 
 import de.dfki.common.animationlogic.AnimationContent;
 import de.dfki.stickman3D.Stickman3D;
-import de.dfki.stickman3D.animationlogic.Animation3D;
+import de.dfki.stickman3D.animationlogic.AnimationStickman3D;
 
 import java.util.ArrayList;
 
@@ -16,7 +16,8 @@ import java.util.ArrayList;
  * @author Beka Aptsiauri
  *
  */
-public class DisgustedEnd extends Animation3D {
+public class DisgustedEnd extends AnimationStickman3D
+{
 
     public DisgustedEnd(Stickman3D sm, int duration, boolean block) {
         super(sm, duration, block);
@@ -25,12 +26,12 @@ public class DisgustedEnd extends Animation3D {
     @Override
     public void playAnimation() {
         // no disgusted
-        mAnimationPartFX = new ArrayList<>();
-        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mMouth, "shape", "DISGUSTEDEND"));
-        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mLeftEye, "shape", "DISGUSTEDEND"));
-        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mLeftEyebrow, "shape", "DISGUSTEDEND"));
-        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mRightEye, "shape", "DISGUSTEDEND"));
-        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mRightEyebrow, "shape", "DISGUSTEDEND"));
+        mAnimationPart = new ArrayList<>();
+        mAnimationPart.add(new AnimationContent(mStickmanFX.mMouth, "shape", "DISGUSTEDEND"));
+        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftEye, "shape", "DISGUSTEDEND"));
+        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftEyebrow, "shape", "DISGUSTEDEND"));
+        mAnimationPart.add(new AnimationContent(mStickmanFX.mRightEye, "shape", "DISGUSTEDEND"));
+        mAnimationPart.add(new AnimationContent(mStickmanFX.mRightEyebrow, "shape", "DISGUSTEDEND"));
         playAnimationPart(20);
 
         pauseAnimation(10);

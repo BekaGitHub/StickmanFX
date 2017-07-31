@@ -2,14 +2,15 @@ package de.dfki.stickman3D.animation.gesture;
 
 import de.dfki.common.animationlogic.AnimationContent;
 import de.dfki.stickman3D.Stickman3D;
-import de.dfki.stickman3D.animationlogic.Animation3D;
+import de.dfki.stickman3D.animationlogic.AnimationStickman3D;
 
 import java.util.HashMap;
 
 /**
  * Created by alvaro on 1/20/17.
  */
-public abstract class AbstractConversationHands extends Animation3D {
+public abstract class AbstractConversationHands extends AnimationStickman3D
+{
     public static final int MAXIMUM = 10;
     protected   boolean movementFinished = false;
 
@@ -62,8 +63,8 @@ public abstract class AbstractConversationHands extends Animation3D {
     }
 
     protected void moveArms(AnimationContent zrotate, AnimationContent zrotate2) {
-        mAnimationPartFX.add(zrotate);
-        mAnimationPartFX.add(zrotate2);
+        mAnimationPart.add(zrotate);
+        mAnimationPart.add(zrotate2);
     }
 
 

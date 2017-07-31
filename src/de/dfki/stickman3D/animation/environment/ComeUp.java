@@ -8,7 +8,7 @@ package de.dfki.stickman3D.animation.environment;
 import de.dfki.common.animationlogic.AnimationContent;
 import de.dfki.stickman3D.Stickman3D;
 import de.dfki.stickman3D.StickmanStageController;
-import de.dfki.stickman3D.animationlogic.Animation3D;
+import de.dfki.stickman3D.animationlogic.AnimationStickman3D;
 import javafx.application.Platform;
 
 import java.util.ArrayList;
@@ -18,7 +18,8 @@ import java.util.ArrayList;
  * @author Beka
  *
  */
-public class ComeUp extends Animation3D {
+public class ComeUp extends AnimationStickman3D
+{
 
     public ComeUp() {
         mAnimType = ANIMTYPE.ON;
@@ -40,32 +41,32 @@ public class ComeUp extends Animation3D {
         mStickmanFX.leaveSpeed = 480;
 
         // bring upper arm and fore arm in position
-        mAnimationPartFX = new ArrayList<>();
-        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mLeftUpperArm, "rotate", -rotationUnit ));
-        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mLeftForeArm, "rotate", -rotationUnit * 30));
+        mAnimationPart = new ArrayList<>();
+        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftUpperArm, "rotate", -rotationUnit ));
+        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftForeArm, "rotate", -rotationUnit * 30));
         playAnimationPart(100);
 
         for (int i = 0; i < 8; i++) {
             // wave right
             for (int j = 0; j < 10; j++) {
-                mAnimationPartFX = new ArrayList<>();
-                mAnimationPartFX.add(new AnimationContent(mStickmanFX.mLeftForeArm, "zrotate", -rotationUnit));
+                mAnimationPart = new ArrayList<>();
+                mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftForeArm, "zrotate", -rotationUnit));
                 playComeSpeed(speed);
                 playAnimationPart(20);
             }
             // wave left
             for (int j = 0; j < 10; j++) {
-                mAnimationPartFX = new ArrayList<>();
-                mAnimationPartFX.add(new AnimationContent(mStickmanFX.mLeftForeArm, "zrotate", rotationUnit));
+                mAnimationPart = new ArrayList<>();
+                mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftForeArm, "zrotate", rotationUnit));
                 playComeSpeed(speed);
                 playAnimationPart(20);
             }
         }
 
         // go back in the default position
-        mAnimationPartFX = new ArrayList<>();
-        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mLeftUpperArm, "rotate", rotationUnit ));
-        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mLeftForeArm, "rotate", rotationUnit * 30));
+        mAnimationPart = new ArrayList<>();
+        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftUpperArm, "rotate", rotationUnit ));
+        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftForeArm, "rotate", rotationUnit * 30));
         playAnimationPart(200);
 
         if (StickmanStageController.currentRadioButton != null) {

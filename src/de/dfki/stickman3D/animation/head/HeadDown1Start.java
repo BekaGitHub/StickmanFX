@@ -10,14 +10,15 @@ import java.util.ArrayList;
 import de.dfki.common.animationlogic.AnimationContent;
 import de.dfki.stickman3D.Stickman3D;
 import de.dfki.stickman3D.StickmanStageController;
-import de.dfki.stickman3D.animationlogic.Animation3D;
+import de.dfki.stickman3D.animationlogic.AnimationStickman3D;
 
 /**
  *
  * @author Beka Aptsiauri
  *
  */
-public class HeadDown1Start extends Animation3D {
+public class HeadDown1Start extends AnimationStickman3D
+{
 
     public HeadDown1Start(Stickman3D sm, int duration, boolean block) {
         super(sm, duration, block);
@@ -25,11 +26,11 @@ public class HeadDown1Start extends Animation3D {
 
     @Override
     public void playAnimation() {
-        Animation3D.isHeadTiltInAction = true;
-        mAnimationPartFX = new ArrayList<>();
-        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mHead, "rotate", 15));
-        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mLeftEye, "shape", "LOOKDOWN"));
-        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mRightEye, "shape", "LOOKDOWN"));
+        AnimationStickman3D.isHeadTiltInAction = true;
+        mAnimationPart = new ArrayList<>();
+        mAnimationPart.add(new AnimationContent(mStickmanFX.mHead, "rotate", 15));
+        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftEye, "shape", "LOOKDOWN"));
+        mAnimationPart.add(new AnimationContent(mStickmanFX.mRightEye, "shape", "LOOKDOWN"));
         playAnimationPart(mDuration);
 
         pauseAnimation(10);

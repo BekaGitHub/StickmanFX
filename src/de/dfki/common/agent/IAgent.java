@@ -2,7 +2,7 @@ package de.dfki.common.agent;
 
 import de.dfki.action.sequence.WordTimeMarkSequence;
 import de.dfki.common.enums.Gender;
-import de.dfki.common.interfaces.Animation;
+import de.dfki.common.interfaces.IAnimation;
 import de.dfki.common.interfaces.StageRoom;
 
 /**
@@ -26,13 +26,13 @@ public interface IAgent
 
     void setName(String name);
 
-    Animation doAnimation(String name, int duration, boolean block);
+    IAnimation doAnimation(String name, int duration, boolean block);
     
-    Animation doAnimation(String name, int frequent, int actionDuration, boolean block);
+    IAnimation doAnimation(String name, int frequent, int actionDuration, boolean block);
 
-    Animation doAnimation(String name, Object param, boolean block);
+    IAnimation doAnimation(String name, Object param, boolean block);
 
-    Animation doAnimation(String name, int duration, Object param, boolean block);
+    IAnimation doAnimation(String name, int duration, Object param, boolean block);
 
-    Animation doEventFeedbackAnimation(String name, int duration, WordTimeMarkSequence wts, boolean block);
+    IAnimation doEventFeedbackAnimation(String name, int duration, WordTimeMarkSequence wts, boolean block);
 }

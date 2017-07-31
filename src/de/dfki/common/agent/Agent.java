@@ -3,6 +3,7 @@ package de.dfki.common.agent;
 import de.dfki.common.LogFormatter;
 import de.dfki.common.enums.Gender;
 import de.dfki.common.interfaces.StageRoom;
+import de.dfki.common.part.Part;
 import de.dfki.stickmanSwing.animationlogic.listener.AnimationListener;
 import javafx.scene.layout.Pane;
 
@@ -56,4 +57,12 @@ public abstract class Agent extends Pane implements IAgent
         mLogger.addHandler(ch);
         mLogger.setUseParentHandlers(false);
     }
+
+    public String getID()
+    {
+        return (new StringBuffer()).append(mName).append(" AnimationSwing ").append(mID++).toString();
+    }
+
+    public abstract Part getSpeechBubble();
+    public abstract void setSpeechBubble(Part speechBubble);
 }

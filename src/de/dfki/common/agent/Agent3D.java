@@ -2,6 +2,7 @@ package de.dfki.common.agent;
 
 
 import de.dfki.common.enums.Gender;
+import de.dfki.common.part.Part;
 import de.dfki.common.part.Part3D;
 
 import java.awt.*;
@@ -39,6 +40,17 @@ public abstract class Agent3D extends Agent
         this(name, gender);
         mScale = scale;
         stageHeight = height;
+    }
+
+    @Override
+    public Part getSpeechBubble()
+    {
+        return this.mSpeechBubble;
+    }
+
+    public void setSpeechBubble(Part speechBubble)
+    {
+        this.mSpeechBubble = (Part3D) speechBubble;
     }
 
 }

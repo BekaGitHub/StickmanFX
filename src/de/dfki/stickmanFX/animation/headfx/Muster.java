@@ -7,7 +7,7 @@ package de.dfki.stickmanFX.animation.headfx;
 
 import de.dfki.stickmanFX.StickmanFX;
 import de.dfki.common.animationlogic.AnimationContent;
-import de.dfki.stickmanFX.animationlogic.AnimationFX;
+import de.dfki.stickmanFX.animationlogic.AnimationStickman2D;
 import java.util.ArrayList;
 
 /**
@@ -15,7 +15,8 @@ import java.util.ArrayList;
  * @author Beka Aptsiauri
  *
  */
-public class Muster extends AnimationFX {
+public class Muster extends AnimationStickman2D
+{
 
     public Muster(StickmanFX sm, int duration, boolean block) {
         super(sm, duration, block);
@@ -25,12 +26,12 @@ public class Muster extends AnimationFX {
     public void playAnimation() {
         int rotationUnit = 10;
         for (int i = 0; i < 8; i++) {
-            mAnimationPartFX = new ArrayList<>();
-            mAnimationPartFX.add(new AnimationContent(mStickmanFX.mLeftUpperLegFX, "rotate", 40));
+            mAnimationPart = new ArrayList<>();
+            mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftUpperLegFX, "rotate", 40));
             playAnimationPart(200);
 
-            mAnimationPartFX = new ArrayList<>();
-            mAnimationPartFX.add(new AnimationContent(mStickmanFX.mLeftUpperLegFX, "rotate", -40));
+            mAnimationPart = new ArrayList<>();
+            mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftUpperLegFX, "rotate", -40));
             playAnimationPart(100);
         }
 

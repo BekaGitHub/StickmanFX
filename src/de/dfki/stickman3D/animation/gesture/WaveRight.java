@@ -7,7 +7,7 @@ package de.dfki.stickman3D.animation.gesture;
 
 import de.dfki.common.animationlogic.AnimationContent;
 import de.dfki.stickman3D.Stickman3D;
-import de.dfki.stickman3D.animationlogic.Animation3D;
+import de.dfki.stickman3D.animationlogic.AnimationStickman3D;
 
 import java.util.ArrayList;
 
@@ -16,7 +16,8 @@ import java.util.ArrayList;
  * @author Beka
  *
  */
-public class WaveRight extends Animation3D {
+public class WaveRight extends AnimationStickman3D
+{
 
     public WaveRight() {
         mAnimType = ANIMTYPE.ON;
@@ -28,36 +29,36 @@ public class WaveRight extends Animation3D {
 
     @Override
     public void playAnimation() {
-        mAnimationPartFX = new ArrayList<>();
-        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mRightUpperArm, "rotate", -35));
-        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mRightForeArm, "rotate", -120));
+        mAnimationPart = new ArrayList<>();
+        mAnimationPart.add(new AnimationContent(mStickmanFX.mRightUpperArm, "rotate", -35));
+        mAnimationPart.add(new AnimationContent(mStickmanFX.mRightForeArm, "rotate", -120));
         playAnimationPart(200);
 
         for (int i = 0; i < 6; i++) {
             if (i == 0) {
-                mAnimationPartFX = new ArrayList<>();
-                mAnimationPartFX.add(new AnimationContent(mStickmanFX.mRightForeArm, "zrotate", -10));
+                mAnimationPart = new ArrayList<>();
+                mAnimationPart.add(new AnimationContent(mStickmanFX.mRightForeArm, "zrotate", -10));
                 playAnimationPart(200);
             } else if (i == 5) {
-                mAnimationPartFX = new ArrayList<>();
-                mAnimationPartFX.add(new AnimationContent(mStickmanFX.mRightForeArm, "zrotate", 10));
+                mAnimationPart = new ArrayList<>();
+                mAnimationPart.add(new AnimationContent(mStickmanFX.mRightForeArm, "zrotate", 10));
                 playAnimationPart(200);
             } else if (i % 2 == 1) {
-                mAnimationPartFX = new ArrayList<>();
-                mAnimationPartFX.add(new AnimationContent(mStickmanFX.mRightForeArm, "zrotate", 20));
+                mAnimationPart = new ArrayList<>();
+                mAnimationPart.add(new AnimationContent(mStickmanFX.mRightForeArm, "zrotate", 20));
                 playAnimationPart(200);
             } else {
-                mAnimationPartFX = new ArrayList<>();
-                mAnimationPartFX.add(new AnimationContent(mStickmanFX.mRightForeArm, "zrotate", -20));
+                mAnimationPart = new ArrayList<>();
+                mAnimationPart.add(new AnimationContent(mStickmanFX.mRightForeArm, "zrotate", -20));
                 playAnimationPart(200);
             }
         }
 
         pauseAnimation(1000);
 
-        mAnimationPartFX = new ArrayList<>();
-        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mRightUpperArm, "rotate", 35));
-        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mRightForeArm, "rotate", 120));
+        mAnimationPart = new ArrayList<>();
+        mAnimationPart.add(new AnimationContent(mStickmanFX.mRightUpperArm, "rotate", 35));
+        mAnimationPart.add(new AnimationContent(mStickmanFX.mRightForeArm, "rotate", 120));
         playAnimationPart(200);
 
     }

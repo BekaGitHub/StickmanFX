@@ -8,7 +8,7 @@ package de.dfki.stickman3D.animation.environment;
 import de.dfki.common.animationlogic.AnimationContent;
 import de.dfki.stickman3D.Stickman3D;
 import de.dfki.stickman3D.StickmanStageController;
-import de.dfki.stickman3D.animationlogic.Animation3D;
+import de.dfki.stickman3D.animationlogic.AnimationStickman3D;
 import javafx.application.Platform;
 
 import java.util.ArrayList;
@@ -18,7 +18,8 @@ import java.util.ArrayList;
  * @author Beka
  *
  */
-public class ComeBackFromSmall extends Animation3D {
+public class ComeBackFromSmall extends AnimationStickman3D
+{
 
     public ComeBackFromSmall() {
         mAnimType = ANIMTYPE.ON;
@@ -41,9 +42,9 @@ public class ComeBackFromSmall extends Animation3D {
         }
 
         // bring upper arm and fore arm in position
-        mAnimationPartFX = new ArrayList<>();
-        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mLeftUpperArm, "rotate", -rotationUnit ));
-        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mLeftForeArm, "rotate", -rotationUnit * 30));
+        mAnimationPart = new ArrayList<>();
+        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftUpperArm, "rotate", -rotationUnit ));
+        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftForeArm, "rotate", -rotationUnit * 30));
         playAnimationPart(20);
 
         pauseAnimation(20);
@@ -51,8 +52,8 @@ public class ComeBackFromSmall extends Animation3D {
         for (int i = 0; i < 2; i++) {
             // wave right
             for (int j = 0; j < 9; j++) {
-                mAnimationPartFX = new ArrayList<>();
-                mAnimationPartFX.add(new AnimationContent(mStickmanFX.mLeftForeArm, "zrotate", -rotationUnit));
+                mAnimationPart = new ArrayList<>();
+                mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftForeArm, "zrotate", -rotationUnit));
 
                 mStickmanFX.mScale = mStickmanFX.mScale * 1.05f;
                 if (mStickmanFX.mScale >= recordOriginScale) {
@@ -65,8 +66,8 @@ public class ComeBackFromSmall extends Animation3D {
 
             // wave left
             for (int j = 0; j < 9; j++) {
-                mAnimationPartFX = new ArrayList<>();
-                mAnimationPartFX.add(new AnimationContent(mStickmanFX.mLeftForeArm, "zrotate", rotationUnit));
+                mAnimationPart = new ArrayList<>();
+                mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftForeArm, "zrotate", rotationUnit));
 
                 mStickmanFX.mScale = mStickmanFX.mScale * 1.05f;
                 if (mStickmanFX.mScale >= recordOriginScale) {
@@ -79,9 +80,9 @@ public class ComeBackFromSmall extends Animation3D {
         }
 
         // go back in the default position
-        mAnimationPartFX = new ArrayList<>();
-        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mLeftUpperArm, "rotate", rotationUnit));
-        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mLeftForeArm, "rotate", rotationUnit * 30));
+        mAnimationPart = new ArrayList<>();
+        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftUpperArm, "rotate", rotationUnit));
+        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftForeArm, "rotate", rotationUnit * 30));
         playAnimationPart(20);
 
         if (StickmanStageController.currentRadioButton != null) {

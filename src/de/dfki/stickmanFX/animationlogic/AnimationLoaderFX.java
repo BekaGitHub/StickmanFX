@@ -74,8 +74,8 @@ public class AnimationLoaderFX {
         return classPath;
     }
 
-    public AnimationFX loadAnimation(IAgent sm, String name, int duration, boolean block) {
-        AnimationFX a = null;
+    public AnimationStickman2D loadAnimation(IAgent sm, String name, int duration, boolean block) {
+        AnimationStickman2D a = null;
 
         String cp = getAnimationClasspath(sm.getType(), name);
         try {
@@ -88,7 +88,7 @@ public class AnimationLoaderFX {
                     if (params[0].getSimpleName().equalsIgnoreCase("stickmanFX")
                             && params[1].getSimpleName().equalsIgnoreCase("int")
                             && params[2].getSimpleName().equalsIgnoreCase("boolean")) {
-                        a = (AnimationFX) c.getDeclaredConstructor(params).newInstance(sm, duration, block);
+                        a = (AnimationStickman2D) c.getDeclaredConstructor(params).newInstance(sm, duration, block);
                     }
                 }
 

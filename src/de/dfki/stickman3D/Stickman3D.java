@@ -13,7 +13,7 @@ import de.dfki.stickman3D.animation.environment.Breathing;
 import de.dfki.stickman3D.animation.environment.IdleBehavior;
 import de.dfki.stickman3D.animationlogic.*;
 import de.dfki.stickmanSwing.animationlogic.listener.AnimationListener;
-import de.dfki.stickman3D.animationlogic.Animation3D;
+import de.dfki.stickman3D.animationlogic.AnimationStickman3D;
 import de.dfki.stickman3D.animationlogic.EventAnimation3D;
 import de.dfki.stickman3D.environment.SpeechBubbleStickman3D;
 import javafx.scene.effect.InnerShadow;
@@ -25,10 +25,6 @@ import javafx.scene.text.Text;
 import javafx.scene.transform.Affine;
 
 import java.awt.*;
-import java.util.logging.ConsoleHandler;
-import java.util.logging.Formatter;
-import java.util.logging.LogRecord;
-import java.util.logging.Logger;
 
 /**
  * @author Beka Aptsiauri
@@ -220,12 +216,7 @@ public class Stickman3D extends Agent3D
         }
     }
 
-    public String getID()
-    {
-        return (new StringBuffer()).append(mName).append(" AnimationSwing ").append(mID++).toString();
-    }
-
-    public Animation3D doEventFeedbackAnimation(String name, int duration, WordTimeMarkSequence wts, boolean block)
+    public AnimationStickman3D doEventFeedbackAnimation(String name, int duration, WordTimeMarkSequence wts, boolean block)
     {
         EventAnimation3D a = AnimationLoader3D.getInstance().loadEventAnimation(this, name, duration, block);
 
@@ -279,14 +270,14 @@ public class Stickman3D extends Agent3D
         return null;
     }
 
-    public Animation3D doAnimation(String name, int duration, boolean block)
+    public AnimationStickman3D doAnimation(String name, int duration, boolean block)
     {
         return doAnimation(name, duration, "", block);
     }
 
-    public Animation3D doAnimation(String name, int frequent, int actionDuration, boolean block)
+    public AnimationStickman3D doAnimation(String name, int frequent, int actionDuration, boolean block)
     {
-        Animation3D a = AnimationLoader3D.getInstance().loadAnimation(this, name, frequent, actionDuration, block);
+        AnimationStickman3D a = AnimationLoader3D.getInstance().loadAnimation(this, name, frequent, actionDuration, block);
 
         try
         {
@@ -300,19 +291,19 @@ public class Stickman3D extends Agent3D
         return a;
     }
 
-    public Animation3D doAnimation(String name, Object param, boolean block)
+    public AnimationStickman3D doAnimation(String name, Object param, boolean block)
     {
         return doAnimation(name, -1, param, block);
     }
 
-    public Animation3D doAnimation(String name, boolean block)
+    public AnimationStickman3D doAnimation(String name, boolean block)
     {
         return doAnimation(name, -1, "", block);
     }
 
-    public Animation3D doAnimation(String name, int duration, Object param, boolean block)
+    public AnimationStickman3D doAnimation(String name, int duration, Object param, boolean block)
     {
-        Animation3D a = AnimationLoader3D.getInstance().loadAnimation(this, name, duration, block);
+        AnimationStickman3D a = AnimationLoader3D.getInstance().loadAnimation(this, name, duration, block);
 
         a.setParameter(param); // this is for now only used by the Speech Bubble
 
@@ -328,7 +319,7 @@ public class Stickman3D extends Agent3D
         return a;
     }
 
-    public void playAnimation(Animation3D a)
+    public void playAnimation(AnimationStickman3D a)
     {
         try
         {

@@ -7,7 +7,7 @@ package de.dfki.stickman3D.animation.head;
 
 import de.dfki.common.animationlogic.AnimationContent;
 import de.dfki.stickman3D.Stickman3D;
-import de.dfki.stickman3D.animationlogic.Animation3D;
+import de.dfki.stickman3D.animationlogic.AnimationStickman3D;
 
 import java.util.ArrayList;
 
@@ -16,7 +16,8 @@ import java.util.ArrayList;
  * @author Beka
  *
  */
-public class TiltRightEnd extends Animation3D {
+public class TiltRightEnd extends AnimationStickman3D
+{
 
     public TiltRightEnd(Stickman3D sm, int duration, boolean block) {
         super(sm, duration, block);
@@ -25,10 +26,10 @@ public class TiltRightEnd extends Animation3D {
     @Override
     public void playAnimation() {
 
-        mAnimationPartFX = new ArrayList<>();
-        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mHead, "zrotate", 10));
+        mAnimationPart = new ArrayList<>();
+        mAnimationPart.add(new AnimationContent(mStickmanFX.mHead, "zrotate", 10));
         playAnimationPart(200);
-        Animation3D.isHeadTiltInAction = false;
+        AnimationStickman3D.isHeadTiltInAction = false;
 
     }
 }

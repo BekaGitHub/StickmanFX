@@ -6,7 +6,7 @@
 package de.dfki.stickmanFX.animation.environmentfx;
 
 import de.dfki.stickmanFX.StickmanFX;
-import de.dfki.stickmanFX.animationlogic.AnimationFX;
+import de.dfki.stickmanFX.animationlogic.AnimationStickman2D;
 import javafx.application.Platform;
 
 /**
@@ -14,7 +14,8 @@ import javafx.application.Platform;
  * @author Robbie
  *
  */
-public class MoveLR extends AnimationFX {
+public class MoveLR extends AnimationStickman2D
+{
 
     private StickmanFX mStickmanFX;
     private double hdistance = 0;

@@ -2,7 +2,6 @@ package de.dfki.common.part;
 
 import de.dfki.common.animationlogic.Animator;
 import de.dfki.common.enums.Axis;
-import de.dfki.stickman3D.animationlogic.Animator3D;
 import javafx.application.Platform;
 import javafx.scene.shape.MeshView;
 

@@ -2,7 +2,7 @@ package de.dfki.stickman3D.animation.environment;
 
 import de.dfki.stickman3D.Stickman3D;
 import de.dfki.stickman3D.StickmanStageController;
-import de.dfki.stickman3D.animationlogic.Animation3D;
+import de.dfki.stickman3D.animationlogic.AnimationStickman3D;
 
 /**
  *
@@ -15,7 +15,8 @@ import de.dfki.stickman3D.animationlogic.Animation3D;
  * To change this template file, choose Tools | Templates and open the template
  * in the editor.
  */
-public class StartBlinking extends Animation3D {
+public class StartBlinking extends AnimationStickman3D
+{
 
     public StartBlinking() {
         mAnimType = ANIMTYPE.ON;

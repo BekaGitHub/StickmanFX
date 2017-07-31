@@ -4,7 +4,7 @@ import java.awt.Dimension;
 import java.awt.Point;
 
 import de.dfki.common.part.Part2D;
-import de.dfki.stickmanFX.animationlogic.AnimatorFX;
+import de.dfki.stickmanFX.animationlogic.AnimatorStickman2D;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.LineTo;
 import javafx.scene.shape.MoveTo;
@@ -65,7 +65,7 @@ public class FaceWrinkleFX extends PartStickman2D
                 break;
 
             case ANGRY:
-                movement = AnimatorFX.sMAX_ANIM_STEPS - mShapeAnimationStep;
+                movement = AnimatorStickman2D.sMAX_ANIM_STEPS - mShapeAnimationStep;
 
                 // Add wrinkle for angry face:
                 int angryColorChange = (int) (movement / 4 * 16);
@@ -105,7 +105,7 @@ public class FaceWrinkleFX extends PartStickman2D
                 break;
 
             case EMBARRASSED:
-                movement = AnimatorFX.sMAX_ANIM_STEPS - mShapeAnimationStep;
+                movement = AnimatorStickman2D.sMAX_ANIM_STEPS - mShapeAnimationStep;
 
                 // Add wrinkles for embarrassed face:
                 int embarrassedColorChange = (int) (movement / 4 * 16);

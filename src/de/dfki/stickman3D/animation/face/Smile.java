@@ -3,7 +3,7 @@ package de.dfki.stickman3D.animation.face;
 import de.dfki.common.animationlogic.AnimationContent;
 import de.dfki.stickman3D.Stickman3D;
 import de.dfki.stickman3D.StickmanStageController;
-import de.dfki.stickman3D.animationlogic.Animation3D;
+import de.dfki.stickman3D.animationlogic.AnimationStickman3D;
 
 import java.util.ArrayList;
 
@@ -12,7 +12,8 @@ import java.util.ArrayList;
  * @author Beka
  *
  */
-public class Smile extends Animation3D {
+public class Smile extends AnimationStickman3D
+{
 
     public Smile() {
         mAnimType = ANIMTYPE.ON;
@@ -25,14 +26,14 @@ public class Smile extends Animation3D {
     @Override
     public void playAnimation() {
         // smile
-        mAnimationPartFX = new ArrayList<>();
-        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mMouth, "shape", "SMILE"));
+        mAnimationPart = new ArrayList<>();
+        mAnimationPart.add(new AnimationContent(mStickmanFX.mMouth, "shape", "SMILE"));
         playAnimationPart(mDuration);
         pauseAnimation(1200);
 
         // no smile
-        mAnimationPartFX = new ArrayList<>();
-        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mMouth, "shape", "SMILEEND"));
+        mAnimationPart = new ArrayList<>();
+        mAnimationPart.add(new AnimationContent(mStickmanFX.mMouth, "shape", "SMILEEND"));
         playAnimationPart(mDuration);
 
         if (StickmanStageController.currentRadioButton != null) {

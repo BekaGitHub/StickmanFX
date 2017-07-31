@@ -4,7 +4,7 @@ import de.dfki.action.sequence.WordTimeMarkSequence;
 import de.dfki.common.agent.Agent2D;
 import de.dfki.common.enums.Gender;
 import de.dfki.common.enums.Orientation;
-import de.dfki.common.interfaces.Animation;
+import de.dfki.common.interfaces.IAnimation;
 import de.dfki.common.interfaces.StageRoom;
 import de.dfki.common.part.Part2D;
 import de.dfki.stickmanFX.bodyfx.*;
@@ -17,7 +17,7 @@ import java.util.Map;
 
 import de.dfki.stickmanFX.animation.environmentfx.IdleBehavior;
 import de.dfki.stickmanFX.animation.environmentfx.SimplexNoise;
-import de.dfki.stickmanFX.animationlogic.AnimationFX;
+import de.dfki.stickmanFX.animationlogic.AnimationStickman2D;
 import de.dfki.stickmanFX.animationlogic.AnimationLoaderFX;
 import de.dfki.stickmanFX.animationlogic.AnimationSchedulerFX;
 import de.dfki.stickmanFX.animationlogic.EventAnimationFX;
@@ -53,7 +53,6 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
-import javafx.scene.paint.Color;
 import javafx.scene.transform.Affine;
 
 /**
@@ -296,11 +295,6 @@ public class StickmanFX extends Agent2D
         }
     }
 
-    public String getID()
-    {
-        return (new StringBuffer()).append(mName).append(" AnimationSwing ").append(mID++).toString();
-    }
-
     // Sets the orientation of the character, allowed values are: LEFT, RIGHT,
     // FRONT
     public void setOrientation(String orientation)
@@ -317,7 +311,7 @@ public class StickmanFX extends Agent2D
         }
     }
 
-    public AnimationFX doEventFeedbackAnimation(String name, int duration, WordTimeMarkSequence wts, boolean block)
+    public AnimationStickman2D doEventFeedbackAnimation(String name, int duration, WordTimeMarkSequence wts, boolean block)
     {
         EventAnimationFX a = AnimationLoaderFX.getInstance().loadEventAnimation(this, name, duration, block);
 
@@ -334,35 +328,35 @@ public class StickmanFX extends Agent2D
         return a;
     }
 
-    public AnimationFX doAnimationAsImage(String name, int duration, boolean block, AnimationObserver obs)
+    public AnimationStickman2D doAnimationAsImage(String name, int duration, boolean block, AnimationObserver obs)
     {
         return doAnimation(name, duration, obs, block);
     }
 
-    public AnimationFX doAnimation(String name, int duration, boolean block)
+    public AnimationStickman2D doAnimation(String name, int duration, boolean block)
     {
         return doAnimation(name, duration, "", block);
     }
 
     @Override
-    public Animation doAnimation(String name, int frequent, int actionDuration, boolean block)
+    public IAnimation doAnimation(String name, int frequent, int actionDuration, boolean block)
     {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    public AnimationFX doAnimation(String name, Object param, boolean block)
+    public AnimationStickman2D doAnimation(String name, Object param, boolean block)
     {
         return doAnimation(name, -1, param, block);
     }
 
-    public AnimationFX doAnimation(String name, boolean block)
+    public AnimationStickman2D doAnimation(String name, boolean block)
     {
         return doAnimation(name, -1, "", block);
     }
 
-    public AnimationFX doAnimation(String name, int duration, Object param, boolean block)
+    public AnimationStickman2D doAnimation(String name, int duration, Object param, boolean block)
     {
-        AnimationFX a = AnimationLoaderFX.getInstance().loadAnimation(this, name, duration, block);
+        AnimationStickman2D a = AnimationLoaderFX.getInstance().loadAnimation(this, name, duration, block);
 
         // this is for now only used by the Speech Bubble
         a.setParameter(param);
@@ -379,7 +373,7 @@ public class StickmanFX extends Agent2D
         return a;
     }
 
-    public void playAnimation(AnimationFX a)
+    public void playAnimation(AnimationStickman2D a)
     {
         try
         {

@@ -1,11 +1,12 @@
 package de.dfki.stickman3D.kinect;
 
 import de.dfki.stickman3D.Stickman3D;
-import de.dfki.stickman3D.animationlogic.Animation3D;
+import de.dfki.stickman3D.animationlogic.AnimationStickman3D;
 import edu.ufl.digitalworlds.j4k.J4KSDK;
 import edu.ufl.digitalworlds.j4k.Skeleton;
 
-public class Kinect extends Animation3D {
+public class Kinect extends AnimationStickman3D
+{
 
     Stickman3D currentStickman;
 

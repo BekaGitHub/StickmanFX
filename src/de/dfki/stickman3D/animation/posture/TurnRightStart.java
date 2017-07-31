@@ -8,7 +8,7 @@ package de.dfki.stickman3D.animation.posture;
 import de.dfki.common.animationlogic.AnimationContent;
 import de.dfki.common.enums.Gender;
 import de.dfki.stickman3D.Stickman3D;
-import de.dfki.stickman3D.animationlogic.Animation3D;
+import de.dfki.stickman3D.animationlogic.AnimationStickman3D;
 
 import java.util.ArrayList;
 
@@ -18,7 +18,8 @@ import java.util.ArrayList;
  *
  * @author Beka Aptsiauri
  */
-public class TurnRightStart extends Animation3D {
+public class TurnRightStart extends AnimationStickman3D
+{
 
     public TurnRightStart(Stickman3D sm, int duration, boolean block) {
         super(sm, duration, block);
@@ -29,21 +30,21 @@ public class TurnRightStart extends Animation3D {
      */
     @Override
     public void playAnimation() {
-        mAnimationPartFX = new ArrayList<>();
-        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mHead, "yrotate", 20));
+        mAnimationPart = new ArrayList<>();
+        mAnimationPart.add(new AnimationContent(mStickmanFX.mHead, "yrotate", 20));
         playAnimationPart(100);
 
         if (mStickmanFX.mType == Gender.TYPE.MALE) {
-            mAnimationPartFX = new ArrayList<>();
-            mAnimationPartFX.add(new AnimationContent(mStickmanFX.mRightWrist, "yrotate", 40));
-            mAnimationPartFX.add(new AnimationContent(mStickmanFX.mUpperBody, "yrotate", 60));
-            mAnimationPartFX.add(new AnimationContent(mStickmanFX.mHead, "yrotate", 20));
+            mAnimationPart = new ArrayList<>();
+            mAnimationPart.add(new AnimationContent(mStickmanFX.mRightWrist, "yrotate", 40));
+            mAnimationPart.add(new AnimationContent(mStickmanFX.mUpperBody, "yrotate", 60));
+            mAnimationPart.add(new AnimationContent(mStickmanFX.mHead, "yrotate", 20));
             playAnimationPart(500);
         } else {
-            mAnimationPartFX = new ArrayList<>();
-            mAnimationPartFX.add(new AnimationContent(mStickmanFX.mRightWrist, "yrotate", 70));
-            mAnimationPartFX.add(new AnimationContent(mStickmanFX.mUpperBody, "yrotate", 60));
-            mAnimationPartFX.add(new AnimationContent(mStickmanFX.mHead, "yrotate", 20));
+            mAnimationPart = new ArrayList<>();
+            mAnimationPart.add(new AnimationContent(mStickmanFX.mRightWrist, "yrotate", 70));
+            mAnimationPart.add(new AnimationContent(mStickmanFX.mUpperBody, "yrotate", 60));
+            mAnimationPart.add(new AnimationContent(mStickmanFX.mHead, "yrotate", 20));
             playAnimationPart(500);
         }
 

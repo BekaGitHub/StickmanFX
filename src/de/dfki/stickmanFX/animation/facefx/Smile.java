@@ -2,7 +2,7 @@ package de.dfki.stickmanFX.animation.facefx;
 
 import de.dfki.stickmanFX.StickmanFX;
 import de.dfki.common.animationlogic.AnimationContent;
-import de.dfki.stickmanFX.animationlogic.AnimationFX;
+import de.dfki.stickmanFX.animationlogic.AnimationStickman2D;
 import java.util.ArrayList;
 
 /**
@@ -10,7 +10,8 @@ import java.util.ArrayList;
  * @author Beka
  *
  */
-public class Smile extends AnimationFX {
+public class Smile extends AnimationStickman2D
+{
 
     public Smile() {
         mAnimType = ANIMTYPE.EmotionExpression;
@@ -23,14 +24,14 @@ public class Smile extends AnimationFX {
     @Override
     public void playAnimation() {
         // smile
-        mAnimationPartFX = new ArrayList<>();
-        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mMouthFX, "shape", "SMILE"));
+        mAnimationPart = new ArrayList<>();
+        mAnimationPart.add(new AnimationContent(mStickmanFX.mMouthFX, "shape", "SMILE"));
         playAnimationPart(mDuration);
         pauseAnimation(1200);
 
         // no smile
-        mAnimationPartFX = new ArrayList<>();
-        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mMouthFX, "shape", "SMILEEND"));
+        mAnimationPart = new ArrayList<>();
+        mAnimationPart.add(new AnimationContent(mStickmanFX.mMouthFX, "shape", "SMILEEND"));
         playAnimationPart(20);
     }
 }

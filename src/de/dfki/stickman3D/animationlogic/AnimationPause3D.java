@@ -12,10 +12,10 @@ import java.util.concurrent.Semaphore;
 public class AnimationPause3D {
 
     private final Stickman3D mStickmanFX;
-    private final Animation3D mAnimationFX;
+    private final AnimationStickman3D mAnimationFX;
     public Semaphore mPauseEnd = new Semaphore(0);
 
-    public AnimationPause3D(Stickman3D sm, Animation3D a, int duration) {
+    public AnimationPause3D(Stickman3D sm, AnimationStickman3D a, int duration) {
         mStickmanFX = sm;
         mAnimationFX = a;
 

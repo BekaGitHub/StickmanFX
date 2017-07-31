@@ -7,7 +7,7 @@ package de.dfki.stickman3D.animation.face;
 
 import de.dfki.common.animationlogic.AnimationContent;
 import de.dfki.stickman3D.Stickman3D;
-import de.dfki.stickman3D.animationlogic.Animation3D;
+import de.dfki.stickman3D.animationlogic.AnimationStickman3D;
 
 import java.util.ArrayList;
 
@@ -16,7 +16,8 @@ import java.util.ArrayList;
  * @author Beka Aptsiauri
  *
  */
-public class ContemptEnd extends Animation3D {
+public class ContemptEnd extends AnimationStickman3D
+{
 
     public ContemptEnd(Stickman3D sm, int duration, boolean block) {
         super(sm, duration, block);
@@ -25,10 +26,10 @@ public class ContemptEnd extends Animation3D {
     @Override
     public void playAnimation() {
         // Contempt end
-        mAnimationPartFX = new ArrayList<>();
-        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mMouth, "shape", "CONTEMPTEND"));
-        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mLeftEye, "shape", "CONTEMPTEND"));
-        mAnimationPartFX.add(new AnimationContent(mStickmanFX.mRightEye, "shape", "CONTEMPTEND"));
+        mAnimationPart = new ArrayList<>();
+        mAnimationPart.add(new AnimationContent(mStickmanFX.mMouth, "shape", "CONTEMPTEND"));
+        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftEye, "shape", "CONTEMPTEND"));
+        mAnimationPart.add(new AnimationContent(mStickmanFX.mRightEye, "shape", "CONTEMPTEND"));
         playAnimationPart(mDuration);
 
         pauseAnimation(10);

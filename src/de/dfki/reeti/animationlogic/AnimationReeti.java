@@ -7,8 +7,7 @@ package de.dfki.reeti.animationlogic;
 
 import de.dfki.action.sequence.WordTimeMarkSequence;
 import de.dfki.common.agent.IAgent;
-import de.dfki.common.animationlogic.AnimationContent;
-import de.dfki.common.interfaces.Animation;
+import de.dfki.common.animationlogic.Animation;
 import de.dfki.reeti.Reeti;
 import de.dfki.util.ios.IOSIndentWriter;
 import de.dfki.util.xml.*;
@@ -16,10 +15,8 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.concurrent.Semaphore;
 
 /**
  *
@@ -27,41 +24,27 @@ import java.util.concurrent.Semaphore;
  * @modified Beka Aptsiauri
  *
  */
-public class AnimationReeti extends Thread implements XMLParseable, XMLWriteable, Animation {
-
-    public String mName = "";
-    public ArrayList<AnimationContent> mAnimationPart = new ArrayList<>();
-    public Semaphore mAnimationPartStart = new Semaphore(0);
-    public Semaphore mAnimationStart = new Semaphore(1);
+public class AnimationReeti extends Animation
+{
     public AnimatorReeti mAnimatorReeti;
     public AnimationPauseReeti mAnimationPauseReeti;
     public Reeti mReeti;
-    public String mReetiName;
-    public boolean mBlocking = false;
-    public int mDuration = -1;
-    public int actionDuration = -1;
-    public String mID;
-    public Object mParameter = "";
-    protected HashMap<String, String> extraParams = new HashMap<>();
-
-    public enum ANIMTYPE {
-        ON, OFF
-    }
-    public ANIMTYPE mAnimType = null;
 
     public static boolean isSmileInAction = false;
     public static boolean isHeadTiltInAction = false;
     public static boolean isSurprisedInAction = false;
     public static boolean isAngryInAction = false;
 
-    public AnimationReeti() {
+    public AnimationReeti()
+    {
+        super();
     }
 
     public AnimationReeti(IAgent reeti, int duration, boolean block) {
         mName = getClass().getSimpleName();
         mReeti = (Reeti) reeti;
-        mReetiName = mReeti.mName;
-        setName(mReetiName + "'s AnimationSwing " + mName);
+        mAgentName = mReeti.mName;
+        setName(mAgentName + "'s AnimationSwing " + mName);
         mID = mReeti.getID(); // default ID;
         mBlocking = block;
         mDuration = duration;
@@ -70,8 +53,8 @@ public class AnimationReeti extends Thread implements XMLParseable, XMLWriteable
     public AnimationReeti(IAgent reeti, int duration, int pos, boolean block) {
         mName = getClass().getSimpleName();
         mReeti = (Reeti) reeti;
-        mReetiName = mReeti.mName;
-        setName(mReetiName + "'s AnimationSwing " + mName);
+        mAgentName = mReeti.mName;
+        setName(mAgentName + "'s AnimationSwing " + mName);
         mID = mReeti.getID(); // default ID;
         mBlocking = block;
         mDuration = duration;
@@ -81,8 +64,8 @@ public class AnimationReeti extends Thread implements XMLParseable, XMLWriteable
     public AnimationReeti(IAgent reeti, int frequent, int actionDuration, boolean block, HashMap<String, String> extraParams) {
         mName = getClass().getSimpleName();
         mReeti = (Reeti) reeti;
-        mReetiName = mReeti.mName;
-        setName(mReetiName + "'s AnimationSwing " + mName);
+        mAgentName = mReeti.mName;
+        setName(mAgentName + "'s AnimationSwing " + mName);
         mID = mReeti.getID(); // default ID;
         mBlocking = block;
         mDuration = frequent;
@@ -95,7 +78,7 @@ public class AnimationReeti extends Thread implements XMLParseable, XMLWriteable
     }
 
     @Override
-    public String getmID() {
+    public String getID() {
         return mID;
     }
 
@@ -112,8 +95,8 @@ public class AnimationReeti extends Thread implements XMLParseable, XMLWriteable
     }
 
     public void setReetiName(String stickmanName) {
-        mReetiName = stickmanName;
-        setName(mReetiName + "'s AnimationSwing " + mName);
+        mAgentName = stickmanName;
+        setName(mAgentName + "'s AnimationSwing " + mName);
     }
 
     public void setAnimationName(String animationName) {
@@ -167,17 +150,6 @@ public class AnimationReeti extends Thread implements XMLParseable, XMLWriteable
 
     }
 
-    public void playAnimationPart(int duration, int step) {
-        mAnimatorReeti = new AnimatorReeti(mReeti, this, mAnimationPart, duration, step);
-
-        try {
-            mAnimationPartStart.acquire();
-        } catch (InterruptedException ex) {
-            mReeti.mLogger.severe(ex.getMessage());
-        }
-
-    }
-
     public void pauseAnimation(int duration) {
         mAnimationPauseReeti = new AnimationPauseReeti(mReeti, this, duration);
 
@@ -199,15 +171,15 @@ public class AnimationReeti extends Thread implements XMLParseable, XMLWriteable
 
         // API or TCP-Interface
         if (!mReeti.getStageRoom().ismNetwork()) {
-            mReeti.notifyListeners(getmID());
+            mReeti.notifyListeners(getID());
         } else {
-            mReeti.getStageRoom().sendAnimationUpdate("end", getmID());
+            mReeti.getStageRoom().sendAnimationUpdate("end", getID());
         }
     }
 
     @Override
     public void writeXML(IOSIndentWriter out) throws XMLWriteError {
-        out.println("<StickmanAnimation stickmanname = \"" + mReetiName + "\" name=\"" + mName + "\" id=\"" + mID + "\" duration=\"" + mDuration + "\" blocking=\"" + mBlocking + "\">").push();
+        out.println("<StickmanAnimation stickmanname = \"" + mAgentName + "\" name=\"" + mName + "\" id=\"" + mID + "\" duration=\"" + mDuration + "\" blocking=\"" + mBlocking + "\">").push();
         if (mParameter != null) {
             if (mParameter instanceof WordTimeMarkSequence) {
                 ((WordTimeMarkSequence) mParameter).writeXML(out);
@@ -233,7 +205,7 @@ public class AnimationReeti extends Thread implements XMLParseable, XMLWriteable
 
     @Override
     public void parseXML(final Element element) throws XMLParseError {
-        mReetiName = element.getAttribute("stickmanname");
+        mAgentName = element.getAttribute("stickmanname");
         mName = element.getAttribute("name");
         mID = element.getAttribute("id");
         mDuration = Integer.parseInt(element.getAttribute("duration"));

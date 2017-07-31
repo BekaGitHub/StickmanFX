@@ -1,10 +1,8 @@
 package de.dfki.stickmanFX.animationlogic;
 
-import de.dfki.common.agent.IAgent;
 import de.dfki.common.animationlogic.AnimationScheduler;
 import de.dfki.stickmanFX.StickmanFX;
 import java.util.concurrent.LinkedBlockingQueue;
-import java.util.concurrent.Semaphore;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -15,13 +13,13 @@ import java.util.logging.Logger;
  */
 public class AnimationSchedulerFX extends AnimationScheduler
 {
-    public LinkedBlockingQueue<AnimationFX> mAnimationQueue = new LinkedBlockingQueue<>();
+    public LinkedBlockingQueue<AnimationStickman2D> mAnimationQueue = new LinkedBlockingQueue<>();
 
     public AnimationSchedulerFX(StickmanFX s) {
         super(s);
     }
 
-    public void introduce(AnimationFX a) {
+    public void introduce(AnimationStickman2D a) {
         try {
             mAnimationQueue.put(a);
         } catch (InterruptedException ex) {
@@ -29,12 +27,12 @@ public class AnimationSchedulerFX extends AnimationScheduler
         }
     }
 
-    public void proceed(AnimationFX a) {
+    public void proceed(AnimationStickman2D a) {
         removeAnimation(a);
         mTheBlockOfHell.release();
     }
 
-    public void removeAnimation(AnimationFX a) {
+    public void removeAnimation(AnimationStickman2D a) {
         mAnimationQueue.remove(a);
     }
 
@@ -43,7 +41,7 @@ public class AnimationSchedulerFX extends AnimationScheduler
 
         // throw in a last animation that unblocks the scheduler letting him end
         try {
-            mAnimationQueue.put(new AnimationFX(mAgent, 1, false) {
+            mAnimationQueue.put(new AnimationStickman2D(mAgent, 1, false) {
             });
         } catch (InterruptedException ex) {
             Logger.getLogger(AnimationSchedulerFX.class.getName()).log(Level.SEVERE, null, ex);
@@ -58,7 +56,7 @@ public class AnimationSchedulerFX extends AnimationScheduler
                 mTheBlockOfHell.acquire(1);
 
                 // get the next animation in the animation queue
-                AnimationFX animationFX = mAnimationQueue.take();
+                AnimationStickman2D animationFX = mAnimationQueue.take();
 
                 // tell the animation to render itself
                 animationFX.mAnimationStart.release();

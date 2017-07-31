@@ -176,11 +176,6 @@ public class Reeti extends Agent3D
         }
     }
 
-    public String getID()
-    {
-        return (new StringBuffer()).append(mName).append(" AnimationSwing ").append(mID++).toString();
-    }
-
     public AnimationReeti doEventFeedbackAnimation(String name, int duration, WordTimeMarkSequence wts, boolean block)
     {
         EventAnimationReeti a = AnimationLoaderReeti.getInstance().loadEventAnimation(this, name, duration, block);

@@ -47,7 +47,7 @@ public class EventAnimationReeti extends AnimationReeti {
 
     @Override
     public void writeXML(IOSIndentWriter out) throws XMLWriteError {
-        out.println("<StickmanEventAnimation stickmanname = \"" + mReetiName + "\" name=\"" + mName + "\" id=\"" + mID + "\" duration=\"" + mDuration + "\" blocking=\"" + mBlocking + "\">").push();
+        out.println("<StickmanEventAnimation stickmanname = \"" + mAgentName + "\" name=\"" + mName + "\" id=\"" + mID + "\" duration=\"" + mDuration + "\" blocking=\"" + mBlocking + "\">").push();
         if (mParameter != null) {
             if (mParameter instanceof WordTimeMarkSequence) {
                 ((WordTimeMarkSequence) mParameter).writeXML(out);
@@ -62,7 +62,7 @@ public class EventAnimationReeti extends AnimationReeti {
 
     @Override
     public void parseXML(final Element element) throws XMLParseError {
-        mReetiName = element.getAttribute("stickmanname");
+        mAgentName = element.getAttribute("stickmanname");
         mName = element.getAttribute("name");
         mID = element.getAttribute("id");
         mDuration = Integer.parseInt(element.getAttribute("duration"));

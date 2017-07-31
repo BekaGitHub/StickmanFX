@@ -1,14 +1,12 @@
 package de.dfki.stickman3D;
 
-import de.dfki.stickman3D.animation.face.Excited;
-import de.dfki.stickman3D.animationlogic.Animation3D;
-import de.dfki.stickman3D.animationlogic.Animation3D.ANIMTYPE;
+import de.dfki.common.animationlogic.Animation;
+import de.dfki.stickman3D.animationlogic.AnimationStickman3D;
 
 import java.io.File;
 import java.io.FileFilter;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
-import java.net.URISyntaxException;
 import java.net.URL;
 import java.net.URLDecoder;
 import java.util.ArrayList;
@@ -101,13 +99,13 @@ public class Packageparser
 
             Object object = myClass.newInstance();
 
-            Animation3D class1 = null;
-            if (object instanceof Animation3D)
+            AnimationStickman3D class1 = null;
+            if (object instanceof AnimationStickman3D)
             {
-                class1 = (Animation3D) object;
+                class1 = (AnimationStickman3D) object;
             }
 
-            if (class1 != null && class1.mAnimType == ANIMTYPE.ON)
+            if (class1 != null && class1.mAnimType == Animation.ANIMTYPE.ON)
             {
                 classNameList.add(className);
             }
@@ -147,13 +145,13 @@ public class Packageparser
 
                         Object object = myClass.newInstance();
 
-                        Animation3D class1 = null;
-                        if (object instanceof Animation3D)
+                        AnimationStickman3D class1 = null;
+                        if (object instanceof AnimationStickman3D)
                         {
-                            class1 = (Animation3D) object;
+                            class1 = (AnimationStickman3D) object;
                         }
 
-                        if (class1 != null && class1.mAnimType == ANIMTYPE.ON)
+                        if (class1 != null && class1.mAnimType == Animation.ANIMTYPE.ON)
                         {
                             classNameList.add(className);
                         }

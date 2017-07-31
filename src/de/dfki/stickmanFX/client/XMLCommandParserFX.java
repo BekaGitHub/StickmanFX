@@ -2,7 +2,7 @@ package de.dfki.stickmanFX.client;
 
 import de.dfki.common.XMLCommandParser;
 import de.dfki.common.StickmansOnStage;
-import de.dfki.stickmanFX.animationlogic.AnimationFX;
+import de.dfki.stickmanFX.animationlogic.AnimationStickman2D;
 import de.dfki.stickmanFX.animationlogic.AnimationLoaderFX;
 import de.dfki.stickmanFX.animationlogic.EventAnimationFX;
 import de.dfki.util.xml.XMLUtilities;
@@ -22,13 +22,13 @@ public class XMLCommandParserFX extends XMLCommandParser {
     @Override
     public void parseStickmanXMLCmd(String cmd) {
         // TODO cut the crap with the two animation types ...
-        AnimationFX a = (cmd.contains("StickmanEventAnimation")) ? new EventAnimationFX() : new AnimationFX();
+        AnimationStickman2D a = (cmd.contains("StickmanEventAnimation")) ? new EventAnimationFX() : new AnimationStickman2D();
 
         boolean r = XMLUtilities.parseFromXMLStream(a, new ByteArrayInputStream(cmd.getBytes(Charset.forName("UTF-8"))));
 
-        String stickmanname = a.mStickmanName;
+        String stickmanname = a.mAgentName;
         String animationname = a.mName;
-        String id = a.getmID();
+        String id = a.getID();
         int duration = a.mDuration;
         boolean blocking = a.mBlocking;
         Object parameter = a.mParameter;

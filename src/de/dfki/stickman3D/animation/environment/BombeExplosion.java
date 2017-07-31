@@ -9,7 +9,7 @@ package de.dfki.stickman3D.animation.environment;///*
 //
 //import de.dfki.stickman3D.Stickman3D;
 //import de.dfki.stickman3D.animationlogic.AnimationContent;
-//import de.dfki.stickman3D.animationlogic.Animation3D;
+//import de.dfki.stickman3D.animationlogic.AnimationStickman3D;
 //import javafx.application.Platform;
 //import javafx.scene.paint.Color;
 //
@@ -18,7 +18,7 @@ package de.dfki.stickman3D.animation.environment;///*
 // * @author Beka
 // *
 // */
-//public class BombeExplosion extends Animation3D
+//public class BombeExplosion extends AnimationStickman3D
 //{
 //
 //	public BombeExplosion(Stickman3D sm, int duration, boolean block)
@@ -33,61 +33,61 @@ package de.dfki.stickman3D.animation.environment;///*
 //		int translationUnit = 8;
 //		int rotationUnit = 10;
 //            
-//		mAnimationPartFX = new ArrayList<>();
-//        mAnimationPartFX.add(new AnimationContent(mStickman.mBombeFX, "shape", "BOMBETRANSITION"));
+//		mAnimationPart = new ArrayList<>();
+//        mAnimationPart.add(new AnimationContent(mStickman.mBombeFX, "shape", "BOMBETRANSITION"));
 //        playAnimationPart(mDuration);
 //        
 //     // headTilt
-//        mAnimationPartFX = new ArrayList<>();
-//        mAnimationPartFX.add(new AnimationContent(mStickman.mRightEye, "tilt", translationUnit));
-//        mAnimationPartFX.add(new AnimationContent(mStickman.mRightEyebrow, "tilt", translationUnit));
-//        mAnimationPartFX.add(new AnimationContent(mStickman.mLeftEyeFX, "tilt", translationUnit));
-//        mAnimationPartFX.add(new AnimationContent(mStickman.mLeftEyebrowFX, "tilt", translationUnit));
-//        mAnimationPartFX.add(new AnimationContent(mStickman.mHeadFX, "tilt", translationUnit));
+//        mAnimationPart = new ArrayList<>();
+//        mAnimationPart.add(new AnimationContent(mStickman.mRightEye, "tilt", translationUnit));
+//        mAnimationPart.add(new AnimationContent(mStickman.mRightEyebrow, "tilt", translationUnit));
+//        mAnimationPart.add(new AnimationContent(mStickman.mLeftEyeFX, "tilt", translationUnit));
+//        mAnimationPart.add(new AnimationContent(mStickman.mLeftEyebrowFX, "tilt", translationUnit));
+//        mAnimationPart.add(new AnimationContent(mStickman.mHeadFX, "tilt", translationUnit));
 //        
 //        if(mStickman.mType == Gender.TYPE.MALE)
-//        	mAnimationPartFX.add(new AnimationContent(mStickman.mMaleHairFX, "tilt", translationUnit));
+//        	mAnimationPart.add(new AnimationContent(mStickman.mMaleHairFX, "tilt", translationUnit));
 //        else
-//        	mAnimationPartFX.add(new AnimationContent(mStickman.mFemaleHairFX, "tilt", translationUnit));
+//        	mAnimationPart.add(new AnimationContent(mStickman.mFemaleHairFX, "tilt", translationUnit));
 //        
-//        mAnimationPartFX.add(new AnimationContent(mStickman.mMouth, "tilt", translationUnit));
-//        mAnimationPartFX.add(new AnimationContent(mStickman.mFaceWrinkleFX, "tilt", translationUnit));
+//        mAnimationPart.add(new AnimationContent(mStickman.mMouth, "tilt", translationUnit));
+//        mAnimationPart.add(new AnimationContent(mStickman.mFaceWrinkleFX, "tilt", translationUnit));
 //        
 //     // embarrassed
-//        mAnimationPartFX.add(new AnimationContent(mStickman.mMouth, "shape", "EMBARRASSED"));
-//        mAnimationPartFX.add(new AnimationContent(mStickman.mLeftEyeFX, "shape", "EMBARRASSED"));
-//        mAnimationPartFX.add(new AnimationContent(mStickman.mLeftEyebrowFX, "shape", "EMBARRASSED"));
-//        mAnimationPartFX.add(new AnimationContent(mStickman.mFaceWrinkleFX, "shape", "EMBARRASSED"));   ///Add by Robbie
-//        mAnimationPartFX.add(new AnimationContent(mStickman.mRightEye, "shape", "EMBARRASSED"));
-//        mAnimationPartFX.add(new AnimationContent(mStickman.mRightEyebrow, "shape", "EMBARRASSED"));
+//        mAnimationPart.add(new AnimationContent(mStickman.mMouth, "shape", "EMBARRASSED"));
+//        mAnimationPart.add(new AnimationContent(mStickman.mLeftEyeFX, "shape", "EMBARRASSED"));
+//        mAnimationPart.add(new AnimationContent(mStickman.mLeftEyebrowFX, "shape", "EMBARRASSED"));
+//        mAnimationPart.add(new AnimationContent(mStickman.mFaceWrinkleFX, "shape", "EMBARRASSED"));   ///Add by Robbie
+//        mAnimationPart.add(new AnimationContent(mStickman.mRightEye, "shape", "EMBARRASSED"));
+//        mAnimationPart.add(new AnimationContent(mStickman.mRightEyebrow, "shape", "EMBARRASSED"));
 //        playAnimationPart(mDuration);
 //        
 //        pauseAnimation(2000);
 //        
 //        //end HeadTilt
-//        mAnimationPartFX = new ArrayList<>();
-//        mAnimationPartFX.add(new AnimationContent(mStickman.mRightEye, "tilt", -translationUnit));
-//        mAnimationPartFX.add(new AnimationContent(mStickman.mRightEyebrow, "tilt", -translationUnit));
-//        mAnimationPartFX.add(new AnimationContent(mStickman.mLeftEyeFX, "tilt", -translationUnit));
-//        mAnimationPartFX.add(new AnimationContent(mStickman.mLeftEyebrowFX, "tilt", -translationUnit));
-//        mAnimationPartFX.add(new AnimationContent(mStickman.mHeadFX, "tilt", -translationUnit));
+//        mAnimationPart = new ArrayList<>();
+//        mAnimationPart.add(new AnimationContent(mStickman.mRightEye, "tilt", -translationUnit));
+//        mAnimationPart.add(new AnimationContent(mStickman.mRightEyebrow, "tilt", -translationUnit));
+//        mAnimationPart.add(new AnimationContent(mStickman.mLeftEyeFX, "tilt", -translationUnit));
+//        mAnimationPart.add(new AnimationContent(mStickman.mLeftEyebrowFX, "tilt", -translationUnit));
+//        mAnimationPart.add(new AnimationContent(mStickman.mHeadFX, "tilt", -translationUnit));
 //        
 //        if(mStickman.mType == Gender.TYPE.MALE)
-//        	mAnimationPartFX.add(new AnimationContent(mStickman.mMaleHairFX, "tilt", -translationUnit));
+//        	mAnimationPart.add(new AnimationContent(mStickman.mMaleHairFX, "tilt", -translationUnit));
 //        else
-//        	mAnimationPartFX.add(new AnimationContent(mStickman.mFemaleHairFX, "tilt", -translationUnit));
+//        	mAnimationPart.add(new AnimationContent(mStickman.mFemaleHairFX, "tilt", -translationUnit));
 //        
-//        mAnimationPartFX.add(new AnimationContent(mStickman.mMouth, "tilt", -translationUnit));
-//        mAnimationPartFX.add(new AnimationContent(mStickman.mFaceWrinkleFX, "tilt", -translationUnit));
+//        mAnimationPart.add(new AnimationContent(mStickman.mMouth, "tilt", -translationUnit));
+//        mAnimationPart.add(new AnimationContent(mStickman.mFaceWrinkleFX, "tilt", -translationUnit));
 //        
 //        //change embarrassed with angry
-//        mAnimationPartFX.add(new AnimationContent(mStickman.mLeftEyeFX, "shape", "SURPRISED"));
-//        mAnimationPartFX.add(new AnimationContent(mStickman.mLeftEyebrowFX, "shape", "SURPRISED"));
-//        mAnimationPartFX.add(new AnimationContent(mStickman.mRightEye, "shape", "SURPRISED"));
-//        mAnimationPartFX.add(new AnimationContent(mStickman.mRightEyebrow, "shape", "SURPRISED"));
-//        mAnimationPartFX.add(new AnimationContent(mStickman.mMouth, "shape", "SURPRISED"));
-//        mAnimationPartFX.add(new AnimationContent(mStickman.mFaceWrinkleFX, "shape", "EMBARRASSEDEND"));
-//        mAnimationPartFX.add(new AnimationContent(mStickman.mFaceWrinkleFX, "shape", "SURPRISED"));
+//        mAnimationPart.add(new AnimationContent(mStickman.mLeftEyeFX, "shape", "SURPRISED"));
+//        mAnimationPart.add(new AnimationContent(mStickman.mLeftEyebrowFX, "shape", "SURPRISED"));
+//        mAnimationPart.add(new AnimationContent(mStickman.mRightEye, "shape", "SURPRISED"));
+//        mAnimationPart.add(new AnimationContent(mStickman.mRightEyebrow, "shape", "SURPRISED"));
+//        mAnimationPart.add(new AnimationContent(mStickman.mMouth, "shape", "SURPRISED"));
+//        mAnimationPart.add(new AnimationContent(mStickman.mFaceWrinkleFX, "shape", "EMBARRASSEDEND"));
+//        mAnimationPart.add(new AnimationContent(mStickman.mFaceWrinkleFX, "shape", "SURPRISED"));
 //        playAnimationPart(mDuration);
 //        
 //        pauseAnimation(1000);
@@ -95,18 +95,18 @@ package de.dfki.stickman3D.animation.environment;///*
 //        //Blink
 //        for(int i = 0; i<3; i++)
 //        {
-//        	mAnimationPartFX = new ArrayList<>();
-//        	mAnimationPartFX.add(new AnimationContent(mStickman.mLeftEyebrowFX, "shape", "SURPRISED"));
-//        	mAnimationPartFX.add(new AnimationContent(mStickman.mRightEyebrow, "shape", "SURPRISED"));
-//        	mAnimationPartFX.add(new AnimationContent(mStickman.mLeftEyeFX, "shape", "BLINK"));
-//        	mAnimationPartFX.add(new AnimationContent(mStickman.mRightEye, "shape", "BLINK"));
+//        	mAnimationPart = new ArrayList<>();
+//        	mAnimationPart.add(new AnimationContent(mStickman.mLeftEyebrowFX, "shape", "SURPRISED"));
+//        	mAnimationPart.add(new AnimationContent(mStickman.mRightEyebrow, "shape", "SURPRISED"));
+//        	mAnimationPart.add(new AnimationContent(mStickman.mLeftEyeFX, "shape", "BLINK"));
+//        	mAnimationPart.add(new AnimationContent(mStickman.mRightEye, "shape", "BLINK"));
 //        	playAnimationPart(100);
 //        	
 //        	pauseAnimation(300);
 //        	
-//        	mAnimationPartFX = new ArrayList<>();
-//        	mAnimationPartFX.add(new AnimationContent(mStickman.mLeftEyeFX, "shape", "SURPRISED"));
-//        	mAnimationPartFX.add(new AnimationContent(mStickman.mRightEye, "shape", "SURPRISED"));
+//        	mAnimationPart = new ArrayList<>();
+//        	mAnimationPart.add(new AnimationContent(mStickman.mLeftEyeFX, "shape", "SURPRISED"));
+//        	mAnimationPart.add(new AnimationContent(mStickman.mRightEye, "shape", "SURPRISED"));
 //        	playAnimationPart(100);
 //        	
 //        }
@@ -114,54 +114,54 @@ package de.dfki.stickman3D.animation.environment;///*
 //        pauseAnimation(1500);
 //        
 //     // headTilt
-//        mAnimationPartFX = new ArrayList<>();
-//        mAnimationPartFX.add(new AnimationContent(mStickman.mRightEye, "tilt", translationUnit));
-//        mAnimationPartFX.add(new AnimationContent(mStickman.mRightEyebrow, "tilt", translationUnit));
-//        mAnimationPartFX.add(new AnimationContent(mStickman.mLeftEyeFX, "tilt", translationUnit));
-//        mAnimationPartFX.add(new AnimationContent(mStickman.mLeftEyebrowFX, "tilt", translationUnit));
-//        mAnimationPartFX.add(new AnimationContent(mStickman.mHeadFX, "tilt", translationUnit));
+//        mAnimationPart = new ArrayList<>();
+//        mAnimationPart.add(new AnimationContent(mStickman.mRightEye, "tilt", translationUnit));
+//        mAnimationPart.add(new AnimationContent(mStickman.mRightEyebrow, "tilt", translationUnit));
+//        mAnimationPart.add(new AnimationContent(mStickman.mLeftEyeFX, "tilt", translationUnit));
+//        mAnimationPart.add(new AnimationContent(mStickman.mLeftEyebrowFX, "tilt", translationUnit));
+//        mAnimationPart.add(new AnimationContent(mStickman.mHeadFX, "tilt", translationUnit));
 //        
 //        if(mStickman.mType == Gender.TYPE.MALE)
-//        	mAnimationPartFX.add(new AnimationContent(mStickman.mMaleHairFX, "tilt", translationUnit));
+//        	mAnimationPart.add(new AnimationContent(mStickman.mMaleHairFX, "tilt", translationUnit));
 //        else
-//        	mAnimationPartFX.add(new AnimationContent(mStickman.mFemaleHairFX, "tilt", translationUnit));
+//        	mAnimationPart.add(new AnimationContent(mStickman.mFemaleHairFX, "tilt", translationUnit));
 //        
-//        mAnimationPartFX.add(new AnimationContent(mStickman.mMouth, "tilt", translationUnit));
-//        mAnimationPartFX.add(new AnimationContent(mStickman.mFaceWrinkleFX, "tilt", translationUnit));
+//        mAnimationPart.add(new AnimationContent(mStickman.mMouth, "tilt", translationUnit));
+//        mAnimationPart.add(new AnimationContent(mStickman.mFaceWrinkleFX, "tilt", translationUnit));
 //     // embarrassed
-//        mAnimationPartFX.add(new AnimationContent(mStickman.mMouth, "shape", "EMBARRASSED"));
-//        mAnimationPartFX.add(new AnimationContent(mStickman.mLeftEyeFX, "shape", "EMBARRASSED"));
-//        mAnimationPartFX.add(new AnimationContent(mStickman.mLeftEyebrowFX, "shape", "EMBARRASSED"));
-//        mAnimationPartFX.add(new AnimationContent(mStickman.mFaceWrinkleFX, "shape", "EMBARRASSED"));   ///Add by Robbie
-//        mAnimationPartFX.add(new AnimationContent(mStickman.mRightEye, "shape", "EMBARRASSED"));
-//        mAnimationPartFX.add(new AnimationContent(mStickman.mRightEyebrow, "shape", "EMBARRASSED"));
+//        mAnimationPart.add(new AnimationContent(mStickman.mMouth, "shape", "EMBARRASSED"));
+//        mAnimationPart.add(new AnimationContent(mStickman.mLeftEyeFX, "shape", "EMBARRASSED"));
+//        mAnimationPart.add(new AnimationContent(mStickman.mLeftEyebrowFX, "shape", "EMBARRASSED"));
+//        mAnimationPart.add(new AnimationContent(mStickman.mFaceWrinkleFX, "shape", "EMBARRASSED"));   ///Add by Robbie
+//        mAnimationPart.add(new AnimationContent(mStickman.mRightEye, "shape", "EMBARRASSED"));
+//        mAnimationPart.add(new AnimationContent(mStickman.mRightEyebrow, "shape", "EMBARRASSED"));
 //        playAnimationPart(mDuration);
 //        
 //        //playAnimationPart(mDuration);
 //        
-//        mAnimationPartFX = new ArrayList<>();
-//        mAnimationPartFX.add(new AnimationContent(mStickman.mLeftUpperLegFX, "rotate", -rotationUnit * 5));
-//        mAnimationPartFX.add(new AnimationContent(mStickman.mLeftForeLegFX, "rotate", rotationUnit*2));
-//        mAnimationPartFX.add(new AnimationContent(mStickman.mLeftFootFX, "rotate", rotationUnit*3));
+//        mAnimationPart = new ArrayList<>();
+//        mAnimationPart.add(new AnimationContent(mStickman.mLeftUpperLegFX, "rotate", -rotationUnit * 5));
+//        mAnimationPart.add(new AnimationContent(mStickman.mLeftForeLegFX, "rotate", rotationUnit*2));
+//        mAnimationPart.add(new AnimationContent(mStickman.mLeftFootFX, "rotate", rotationUnit*3));
 //        playAnimationPart(mDuration);
 //        
 //        for(int i = 0; i<3; i++)
 //        {
-//        	mAnimationPartFX = new ArrayList<>();
-//        	mAnimationPartFX.add(new AnimationContent(mStickman.mLeftForeLegFX, "rotate", -rotationUnit));
-//        	mAnimationPartFX.add(new AnimationContent(mStickman.mLeftFootFX, "rotate", -rotationUnit*3));
+//        	mAnimationPart = new ArrayList<>();
+//        	mAnimationPart.add(new AnimationContent(mStickman.mLeftForeLegFX, "rotate", -rotationUnit));
+//        	mAnimationPart.add(new AnimationContent(mStickman.mLeftFootFX, "rotate", -rotationUnit*3));
 //        	playAnimationPart(200);
 //        	
 //        	pauseAnimation(150);
 //        	
-//        	mAnimationPartFX = new ArrayList<>();
-//        	mAnimationPartFX.add(new AnimationContent(mStickman.mLeftForeLegFX, "rotate", rotationUnit));
-//        	mAnimationPartFX.add(new AnimationContent(mStickman.mLeftFootFX, "rotate", rotationUnit*3));
+//        	mAnimationPart = new ArrayList<>();
+//        	mAnimationPart.add(new AnimationContent(mStickman.mLeftForeLegFX, "rotate", rotationUnit));
+//        	mAnimationPart.add(new AnimationContent(mStickman.mLeftFootFX, "rotate", rotationUnit*3));
 //        	playAnimationPart(200);
 //        }
 //        
-//        mAnimationPartFX = new ArrayList<>();
-//        mAnimationPartFX.add(new AnimationContent(mStickman.mBombeFX, "shape", "BOMBEEXPLOSION"));
+//        mAnimationPart = new ArrayList<>();
+//        mAnimationPart.add(new AnimationContent(mStickman.mBombeFX, "shape", "BOMBEEXPLOSION"));
 //        playAnimationPart(mDuration);
 //        
 //        //mStickman.mBodyFX.currentColor = Color.BLACK;
@@ -170,8 +170,8 @@ package de.dfki.stickman3D.animation.environment;///*
 //        
 //        
 //        
-//        mAnimationPartFX = new ArrayList<>();
-//        mAnimationPartFX.add(new AnimationContent(mStickman.mBombeFX, "shape", "DEFAULT"));
+//        mAnimationPart = new ArrayList<>();
+//        mAnimationPart.add(new AnimationContent(mStickman.mBombeFX, "shape", "DEFAULT"));
 //        playAnimationPart(20);
 //        
 //		mStickman.mLeftHandFX.setVisible(false);
@@ -190,33 +190,33 @@ package de.dfki.stickman3D.animation.environment;///*
 //		mStickman.mMouth.setVisible(false);
 //		mStickman.mFaceWrinkleFX.setVisible(false);
 //		
-//        mAnimationPartFX = new ArrayList<>();
+//        mAnimationPart = new ArrayList<>();
 //        mStickman.mHeadFX.translateRight = true;
-//        mAnimationPartFX.add(new AnimationContent(mStickman.mHeadFX, "Translate", -2000));
+//        mAnimationPart.add(new AnimationContent(mStickman.mHeadFX, "Translate", -2000));
 //        if(mStickman.mType == Gender.TYPE.FEMALE)
-//        	mAnimationPartFX.add(new AnimationContent(mStickman.mFemaleHairFX, "Translate", -2000));
+//        	mAnimationPart.add(new AnimationContent(mStickman.mFemaleHairFX, "Translate", -2000));
 //        else
-//        	mAnimationPartFX.add(new AnimationContent(mStickman.mMaleHairFX, "Translate", -2000));
+//        	mAnimationPart.add(new AnimationContent(mStickman.mMaleHairFX, "Translate", -2000));
 //        mStickman.mBodyFX.setVisible(false);
 //        playAnimationPart(mDuration);
 //        
-//        mAnimationPartFX = new ArrayList<>();
-//        mAnimationPartFX.add(new AnimationContent(mStickman.mRightForeLegFX, "rotate", 90));
-//        mAnimationPartFX.add(new AnimationContent(mStickman.mRightForeLegFX, "translate", 100));
-//        mAnimationPartFX.add(new AnimationContent(mStickman.mLeftForeLegFX, "rotate", 70));
-//        mAnimationPartFX.add(new AnimationContent(mStickman.mLeftForeLegFX, "translate", 120));
+//        mAnimationPart = new ArrayList<>();
+//        mAnimationPart.add(new AnimationContent(mStickman.mRightForeLegFX, "rotate", 90));
+//        mAnimationPart.add(new AnimationContent(mStickman.mRightForeLegFX, "translate", 100));
+//        mAnimationPart.add(new AnimationContent(mStickman.mLeftForeLegFX, "rotate", 70));
+//        mAnimationPart.add(new AnimationContent(mStickman.mLeftForeLegFX, "translate", 120));
 //        playAnimationPart(100);
 //        
-//        mAnimationPartFX = new ArrayList<>();
-//        mAnimationPartFX.add(new AnimationContent(mStickman.mRightUpperLegFX, "rotate", 90));
-//        mAnimationPartFX.add(new AnimationContent(mStickman.mRightUpperLegFX, "translate", 155));
-//        mAnimationPartFX.add(new AnimationContent(mStickman.mLeftUpperLegFX, "rotate", 120));
-//        mAnimationPartFX.add(new AnimationContent(mStickman.mLeftUpperLegFX, "translate", 160));
+//        mAnimationPart = new ArrayList<>();
+//        mAnimationPart.add(new AnimationContent(mStickman.mRightUpperLegFX, "rotate", 90));
+//        mAnimationPart.add(new AnimationContent(mStickman.mRightUpperLegFX, "translate", 155));
+//        mAnimationPart.add(new AnimationContent(mStickman.mLeftUpperLegFX, "rotate", 120));
+//        mAnimationPart.add(new AnimationContent(mStickman.mLeftUpperLegFX, "translate", 160));
 //        playAnimationPart(100);
 //        
-//        mAnimationPartFX = new ArrayList<>();
-//        mAnimationPartFX.add(new AnimationContent(mStickman.mLeftEyeFX, "rotate", 90));
-//        mAnimationPartFX.add(new AnimationContent(mStickman.mRightEye, "rotate", 170));
+//        mAnimationPart = new ArrayList<>();
+//        mAnimationPart.add(new AnimationContent(mStickman.mLeftEyeFX, "rotate", 90));
+//        mAnimationPart.add(new AnimationContent(mStickman.mRightEye, "rotate", 170));
 //        playAnimationPart(100);
 //        
 //        mStickman.mLeftEyeFX.setVisible(false);

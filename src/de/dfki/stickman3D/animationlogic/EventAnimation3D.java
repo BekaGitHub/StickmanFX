@@ -20,7 +20,8 @@ import java.util.List;
  * @author Beka Aptsiauri
  *
  */
-public class EventAnimation3D extends Animation3D {
+public class EventAnimation3D extends AnimationStickman3D
+{
 
     public List<Long> mTimepoints;
     public WordTimeMarkSequence mWTS;
@@ -36,7 +37,7 @@ public class EventAnimation3D extends Animation3D {
     }
 
     public void playEventAnimationPart() {
-        mAnimatorFX = new Animator3D(mStickmanFX, this, mAnimationPartFX, mWTS);
+        mAnimatorFX = new AnimatorStickman3D(mStickmanFX, this, mAnimationPart, mWTS);
 
         try {
             mAnimationPartStart.acquire();
@@ -47,7 +48,7 @@ public class EventAnimation3D extends Animation3D {
 
     @Override
     public void writeXML(IOSIndentWriter out) throws XMLWriteError {
-        out.println("<StickmanEventAnimation stickmanname = \"" + mStickmanName + "\" name=\"" + mName + "\" id=\"" + mID + "\" duration=\"" + mDuration + "\" blocking=\"" + mBlocking + "\">").push();
+        out.println("<StickmanEventAnimation stickmanname = \"" + mAgentName + "\" name=\"" + mName + "\" id=\"" + mID + "\" duration=\"" + mDuration + "\" blocking=\"" + mBlocking + "\">").push();
         if (mParameter != null) {
             if (mParameter instanceof WordTimeMarkSequence) {
                 ((WordTimeMarkSequence) mParameter).writeXML(out);
@@ -62,7 +63,7 @@ public class EventAnimation3D extends Animation3D {
 
     @Override
     public void parseXML(final Element element) throws XMLParseError {
-        mStickmanName = element.getAttribute("stickmanname");
+        mAgentName = element.getAttribute("stickmanname");
         mName = element.getAttribute("name");
         mID = element.getAttribute("id");
         mDuration = Integer.parseInt(element.getAttribute("duration"));

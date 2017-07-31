@@ -1,7 +1,7 @@
 package de.dfki.stickmanFX.animation.environmentfx;
 
 import de.dfki.stickmanFX.StickmanFX;
-import de.dfki.stickmanFX.animationlogic.AnimationFX;
+import de.dfki.stickmanFX.animationlogic.AnimationStickman2D;
 import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
 
@@ -11,7 +11,8 @@ import javafx.scene.paint.Color;
  *
  * Set background for Stickman3D
  */
-public class SetBackground extends AnimationFX {
+public class SetBackground extends AnimationStickman2D
+{
 
     public SetBackground(StickmanFX sm, int duration, boolean block) {
         super(sm, duration, block);

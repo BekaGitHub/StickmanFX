@@ -12,8 +12,8 @@ import java.util.Enumeration;
 import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
 
-import de.dfki.stickmanFX.animationlogic.AnimationFX;
-import de.dfki.stickmanFX.animationlogic.AnimationFX.ANIMTYPE;
+import de.dfki.common.animationlogic.Animation;
+import de.dfki.stickmanFX.animationlogic.AnimationStickman2D;
 
 public class StickmanFillCombo {
 
@@ -72,12 +72,12 @@ public class StickmanFillCombo {
 
                         Object object = myClass.newInstance();
 
-                        AnimationFX class1 = null;
-                        if (object instanceof AnimationFX) {
-                            class1 = (AnimationFX) object;
+                        AnimationStickman2D class1 = null;
+                        if (object instanceof AnimationStickman2D) {
+                            class1 = (AnimationStickman2D) object;
                         }
 
-                        if (class1 != null && class1.mAnimType == ANIMTYPE.EmotionExpression) {
+                        if (class1 != null && class1.mAnimType == Animation.ANIMTYPE.EmotionExpression) {
                             mComboList.add(className);
                         }
                     } catch (Exception e) {
@@ -125,11 +125,11 @@ public class StickmanFillCombo {
                 Class<?> myClass = loaderjar.loadClass(entryName.substring(0, entryName.length() - 6));
                 Object object = myClass.newInstance();
 
-                AnimationFX class1 = null;
-                if (object instanceof AnimationFX) {
-                    class1 = (AnimationFX) object;
+                AnimationStickman2D class1 = null;
+                if (object instanceof AnimationStickman2D) {
+                    class1 = (AnimationStickman2D) object;
                 }
-                if (class1 != null && class1.mAnimType == ANIMTYPE.EmotionExpression) {
+                if (class1 != null && class1.mAnimType == Animation.ANIMTYPE.EmotionExpression) {
                     String className = entryName.substring(0, entryName.length() - 6);
                     className = className.substring(className.lastIndexOf('.') + 1, className.length());
                     mComboList.add(className);

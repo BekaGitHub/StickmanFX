@@ -1,7 +1,7 @@
 package de.dfki.stickmanFX.animation.environmentfx;
 
 import de.dfki.stickmanFX.StickmanFX;
-import de.dfki.stickmanFX.animationlogic.AnimationFX;
+import de.dfki.stickmanFX.animationlogic.AnimationStickman2D;
 
 /**
  *
@@ -14,7 +14,8 @@ import de.dfki.stickmanFX.animationlogic.AnimationFX;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-public class StartIdle extends AnimationFX {
+public class StartIdle extends AnimationStickman2D
+{
 
     public StartIdle(StickmanFX sm, int duration, boolean block) {
         super(sm, duration, block);

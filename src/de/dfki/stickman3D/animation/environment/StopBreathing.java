@@ -2,14 +2,15 @@ package de.dfki.stickman3D.animation.environment;
 
 import de.dfki.stickman3D.Stickman3D;
 import de.dfki.stickman3D.StickmanStageController;
-import de.dfki.stickman3D.animationlogic.Animation3D;
+import de.dfki.stickman3D.animationlogic.AnimationStickman3D;
 
 /**
  *
  * @author Robbie
  *
  */
-public class StopBreathing extends Animation3D {
+public class StopBreathing extends AnimationStickman3D
+{
 
     public StopBreathing() {
         mAnimType = ANIMTYPE.ON;

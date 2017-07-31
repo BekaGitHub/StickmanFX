@@ -1,6 +1,7 @@
 package de.dfki.common.agent;
 
 import de.dfki.common.enums.Gender;
+import de.dfki.common.part.Part;
 import de.dfki.common.part.Part2D;
 import javafx.scene.control.Label;
 
@@ -51,5 +52,14 @@ public abstract class Agent2D extends Agent
     {
         this(name, gender, scale, size);
         this.faceOnly = faceOnly;
+    }
+
+    public Part getSpeechBubble()
+    {
+        return mSpeechBubbleFX;
+    }
+    public void setSpeechBubble(Part speechBubble)
+    {
+        this.mSpeechBubbleFX = (Part2D) speechBubble;
     }
 }

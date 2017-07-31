@@ -7,8 +7,7 @@ package de.dfki.stickman3D.animationlogic;
 
 import de.dfki.action.sequence.WordTimeMarkSequence;
 import de.dfki.common.agent.IAgent;
-import de.dfki.common.animationlogic.AnimationContent;
-import de.dfki.common.interfaces.Animation;
+import de.dfki.common.animationlogic.Animation;
 import de.dfki.stickman3D.Stickman3D;
 import de.dfki.util.ios.IOSIndentWriter;
 import de.dfki.util.xml.*;
@@ -16,10 +15,8 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.concurrent.Semaphore;
 
 /**
  *
@@ -27,62 +24,48 @@ import java.util.concurrent.Semaphore;
  * @modified Beka Aptsiauri
  *
  */
-public class Animation3D extends Thread implements XMLParseable, XMLWriteable, Animation {
-
-    public String mName = "";
-    public ArrayList<AnimationContent> mAnimationPartFX = new ArrayList<>();
-    public Semaphore mAnimationPartStart = new Semaphore(0);
-    public Semaphore mAnimationStart = new Semaphore(1);
-    public Animator3D mAnimatorFX;
+public class AnimationStickman3D extends Animation
+{
+    public AnimatorStickman3D mAnimatorFX;
     public AnimationPause3D mAnimationPauseFX;
     public Stickman3D mStickmanFX;
-    public String mStickmanName;
-    public boolean mBlocking = false;
-    public int mDuration = -1;
-    public int actionDuration = -1;
-    public String mID;
-    public Object mParameter = "";
-    protected HashMap<String, String> extraParams = new HashMap<>();
-
-    public enum ANIMTYPE {
-        ON, OFF
-    }
-    public ANIMTYPE mAnimType = null;
 
     public static boolean isSmileInAction = false;
     public static boolean isHeadTiltInAction = false;
     public static boolean isSurprisedInAction = false;
     public static boolean isAngryInAction = false;
 
-    public Animation3D() {
+    public AnimationStickman3D()
+    {
+        super();
     }
 
-    public Animation3D(IAgent sm, int duration, boolean block) {
+    public AnimationStickman3D(IAgent sm, int duration, boolean block) {
         mName = getClass().getSimpleName();
         mStickmanFX = (Stickman3D) sm;
-        mStickmanName = mStickmanFX.mName;
-        setName(mStickmanName + "'s AnimationSwing " + mName);
+        mAgentName = mStickmanFX.mName;
+        setName(mAgentName + "'s AnimationSwing " + mName);
         mID = mStickmanFX.getID(); // default ID;
         mBlocking = block;
         mDuration = duration;
     }
 
-    public Animation3D(IAgent sm, int frequent, int actionDuration, boolean block) {
+    public AnimationStickman3D(IAgent sm, int frequent, int actionDuration, boolean block) {
         mName = getClass().getSimpleName();
         mStickmanFX = (Stickman3D) sm;
-        mStickmanName = mStickmanFX.mName;
-        setName(mStickmanName + "'s AnimationSwing " + mName);
+        mAgentName = mStickmanFX.mName;
+        setName(mAgentName + "'s AnimationSwing " + mName);
         mID = mStickmanFX.getID(); // default ID;
         mBlocking = block;
         mDuration = frequent;
         this.actionDuration = actionDuration;
     }
 
-    public Animation3D(IAgent sm, int frequent, int actionDuration, boolean block,HashMap<String, String> extraParams) {
+    public AnimationStickman3D(IAgent sm, int frequent, int actionDuration, boolean block, HashMap<String, String> extraParams) {
         mName = getClass().getSimpleName();
         mStickmanFX = (Stickman3D) sm;
-        mStickmanName = mStickmanFX.mName;
-        setName(mStickmanName + "'s AnimationSwing " + mName);
+        mAgentName = mStickmanFX.mName;
+        setName(mAgentName + "'s AnimationSwing " + mName);
         mID = mStickmanFX.getID(); // default ID;
         mBlocking = block;
         mDuration = frequent;
@@ -95,7 +78,7 @@ public class Animation3D extends Thread implements XMLParseable, XMLWriteable, A
     }
 
     @Override
-    public String getmID() {
+    public String getID() {
         return mID;
     }
 
@@ -112,8 +95,8 @@ public class Animation3D extends Thread implements XMLParseable, XMLWriteable, A
     }
 
     public void setStickmanName(String stickmanName) {
-        mStickmanName = stickmanName;
-        setName(mStickmanName + "'s AnimationSwing " + mName);
+        mAgentName = stickmanName;
+        setName(mAgentName + "'s AnimationSwing " + mName);
     }
 
     public void setAnimationName(String animationName) {
@@ -157,18 +140,7 @@ public class Animation3D extends Thread implements XMLParseable, XMLWriteable, A
     }
 
     public void playAnimationPart(int duration) {
-        mAnimatorFX = new Animator3D(mStickmanFX, this, mAnimationPartFX, duration);
-
-        try {
-            mAnimationPartStart.acquire();
-        } catch (InterruptedException ex) {
-            mStickmanFX.mLogger.severe(ex.getMessage());
-        }
-
-    }
-
-    public void playAnimationPart(int duration, int step) {
-        mAnimatorFX = new Animator3D(mStickmanFX, this, mAnimationPartFX, duration, step);
+        mAnimatorFX = new AnimatorStickman3D(mStickmanFX, this, mAnimationPart, duration);
 
         try {
             mAnimationPartStart.acquire();
@@ -195,19 +167,19 @@ public class Animation3D extends Thread implements XMLParseable, XMLWriteable, A
         } else {
             mStickmanFX.mAnimationSchedulerFX.removeAnimation(this);
         }
-        // send event that Animation3D is ended
+        // send event that AnimationStickman3D is ended
 
         // API or TCP-Interface
         if (!mStickmanFX.getStageRoom().ismNetwork()) {
-            mStickmanFX.notifyListeners(getmID());
+            mStickmanFX.notifyListeners(getID());
         } else {
-            mStickmanFX.getStageRoom().sendAnimationUpdate("end", getmID());
+            mStickmanFX.getStageRoom().sendAnimationUpdate("end", getID());
         }
     }
 
     @Override
     public void writeXML(IOSIndentWriter out) throws XMLWriteError {
-        out.println("<StickmanAnimation stickmanname = \"" + mStickmanName + "\" name=\"" + mName + "\" id=\"" + mID + "\" duration=\"" + mDuration + "\" blocking=\"" + mBlocking + "\">").push();
+        out.println("<StickmanAnimation stickmanname = \"" + mAgentName + "\" name=\"" + mName + "\" id=\"" + mID + "\" duration=\"" + mDuration + "\" blocking=\"" + mBlocking + "\">").push();
         if (mParameter != null) {
             if (mParameter instanceof WordTimeMarkSequence) {
                 ((WordTimeMarkSequence) mParameter).writeXML(out);
@@ -233,7 +205,7 @@ public class Animation3D extends Thread implements XMLParseable, XMLWriteable, A
 
     @Override
     public void parseXML(final Element element) throws XMLParseError {
-        mStickmanName = element.getAttribute("stickmanname");
+        mAgentName = element.getAttribute("stickmanname");
         mName = element.getAttribute("name");
         mID = element.getAttribute("id");
         mDuration = Integer.parseInt(element.getAttribute("duration"));
