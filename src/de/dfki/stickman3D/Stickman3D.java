@@ -2,6 +2,7 @@ package de.dfki.stickman3D;
 
 import de.dfki.action.sequence.WordTimeMarkSequence;
 import de.dfki.common.agent.Agent3D;
+import de.dfki.common.animationlogic.Animation;
 import de.dfki.common.animationlogic.AnimationScheduler;
 import de.dfki.common.enums.Gender;
 import de.dfki.common.enums.Orientation;
@@ -186,6 +187,7 @@ public class Stickman3D extends Agent3D
     }
 
 
+    @Override
     public AnimationStickman3D doEventFeedbackAnimation(String name, int duration, WordTimeMarkSequence wts, boolean block)
     {
         EventAnimation3D a = AnimationLoader3D.getInstance().loadEventAnimation(this, name, duration, block);
@@ -204,6 +206,7 @@ public class Stickman3D extends Agent3D
         return a;
     }
 
+    @Override
     public AnimationStickman3D doAnimation(String name, int frequent, int actionDuration, boolean block)
     {
         AnimationStickman3D a = AnimationLoader3D.getInstance().loadAnimation(this, name, frequent, actionDuration, block);
@@ -218,16 +221,6 @@ public class Stickman3D extends Agent3D
         }
 
         return a;
-    }
-
-    public AnimationStickman3D doAnimation(String name, Object param, boolean block)
-    {
-        return doAnimation(name, -1, param, block);
-    }
-
-    public AnimationStickman3D doAnimation(String name, boolean block)
-    {
-        return doAnimation(name, -1, "", block);
     }
 
     public AnimationStickman3D doAnimation(String name, int duration, Object param, boolean block)
@@ -279,17 +272,10 @@ public class Stickman3D extends Agent3D
         this.getTransforms().add(af);
     }
 
-    public void setScale(float scale)
-    {
-        mScale = scale;
-    }
-
     private void addAllParts()
     {
-
         this.getChildren().addAll(
                 mDownBody, mStars, mSpeechBubble, agentNameText, mUpperBodyAndHead);
-
     }
 
     public void hideAllPartsWithout(Pane p)

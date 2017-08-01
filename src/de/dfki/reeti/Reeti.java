@@ -5,8 +5,6 @@ import de.dfki.common.agent.Agent3D;
 import de.dfki.common.animationlogic.AnimationScheduler;
 import de.dfki.common.enums.Gender;
 import de.dfki.common.enums.Led;
-import de.dfki.common.interfaces.IAnimation;
-import de.dfki.common.interfaces.StageRoom;
 import de.dfki.common.part.Part3D;
 import de.dfki.reeti.animation.environment.Blinking;
 import de.dfki.reeti.animationlogic.AnimationLoaderReeti;
@@ -93,7 +91,9 @@ public class Reeti extends Agent3D
         update();
     }
 
-    //VSM static stuff
+    ///////////////////////////////////////////////////////////////
+    ///////////////////////VSM STATIC STUFF////////////////////////
+    ///////////////////////////////////////////////////////////////
     public static void vsm_ledOn(String color)
     {
         sReeti.setLedColor(color);
@@ -183,6 +183,9 @@ public class Reeti extends Agent3D
     {
         sReeti.defaultPose();
     }
+    ///////////////////////////////////////////////////////////////
+    ///////////////////////END VSM STATIC STUFF////////////////////
+    ///////////////////////////////////////////////////////////////
 
     @Override
     public void init()
@@ -213,6 +216,7 @@ public class Reeti extends Agent3D
         this.addAllParts();
     }
 
+    @Override
     public AnimationReeti doEventFeedbackAnimation(String name, int duration, WordTimeMarkSequence wts, boolean block)
     {
         EventAnimationReeti a = AnimationLoaderReeti.getInstance().loadEventAnimation(this, name, duration, block);
@@ -231,6 +235,7 @@ public class Reeti extends Agent3D
         return a;
     }
 
+    @Override
     public AnimationReeti doAnimation(String name, int frequent, int actionDuration, boolean block)
     {
         AnimationReeti a = AnimationLoaderReeti.getInstance().loadAnimation(this, name, frequent, actionDuration, block);
@@ -245,16 +250,6 @@ public class Reeti extends Agent3D
         }
 
         return a;
-    }
-
-    public AnimationReeti doAnimation(String name, Object param, boolean block)
-    {
-        return doAnimation(name, -1, param, block);
-    }
-
-    public AnimationReeti doAnimation(String name, boolean block)
-    {
-        return doAnimation(name, -1, "", block);
     }
 
     public AnimationReeti doAnimation(String name, int duration, Object param, boolean block)
@@ -300,11 +295,6 @@ public class Reeti extends Agent3D
 //        this.getTransforms().add(af);
     }
 
-    public void setScale(float scale)
-    {
-        mScale = scale;
-    }
-
     private void addAllParts()
     {
         this.getChildren().addAll(mNeck, mHead, mBody, mSpeechBubble);
@@ -325,6 +315,9 @@ public class Reeti extends Agent3D
         }
     }
 
+    ///////////////////////////////////////////////////////////////
+    /////////////////////////REETI METHODS/////////////////////////
+    ///////////////////////////////////////////////////////////////
     /**
      * @param color red, green, lightGreen, blue, darkBlue, turquoise, yellow, violer, white, swop
      * @param led   left, right, both
@@ -893,6 +886,10 @@ public class Reeti extends Agent3D
         }
         return ledColor;
     }
+
+    ///////////////////////////////////////////////////////////////
+    /////////////////////////END REETI METHODS/////////////////////
+    ///////////////////////////////////////////////////////////////
 
     public double getmUpperLipOldPos()
     {

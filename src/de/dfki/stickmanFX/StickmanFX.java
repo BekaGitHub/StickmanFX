@@ -216,6 +216,7 @@ public class StickmanFX extends Agent2D
         }
     }
 
+    @Override
     public AnimationStickman2D doEventFeedbackAnimation(String name, int duration, WordTimeMarkSequence wts, boolean block)
     {
         EventAnimationFX a = AnimationLoaderFX.getInstance().loadEventAnimation(this, name, duration, block);
@@ -244,16 +245,7 @@ public class StickmanFX extends Agent2D
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    public AnimationStickman2D doAnimation(String name, Object param, boolean block)
-    {
-        return doAnimation(name, -1, param, block);
-    }
-
-    public AnimationStickman2D doAnimation(String name, boolean block)
-    {
-        return doAnimation(name, -1, "", block);
-    }
-
+    @Override
     public AnimationStickman2D doAnimation(String name, int duration, Object param, boolean block)
     {
         AnimationStickman2D a = AnimationLoaderFX.getInstance().loadAnimation(this, name, duration, block);
@@ -367,12 +359,10 @@ public class StickmanFX extends Agent2D
             mLeftEyebrowFX.update();
             mLeftEyeFX.update();
             mRightEyebrowFX.update();
-            // added by Robbie
             mFaceWrinkleFX.update();
             mRightEyeFX.update();
             mMouthFX.update();
             mNeckFX.update();
-            // BodyFX is not PartReeti Classe
             mBodyFX.calculate(0);
             mLeftShoulderFX.update();
             mLeftUpperArmFX.update();
@@ -382,24 +372,18 @@ public class StickmanFX extends Agent2D
             mRightUpperArmFX.update();
             mRightForeArmFX.update();
             mRightHandFX.update();
-            // mLeftLegFX.update();
             mLeftUpperLegFX.update();
             mLeftForeLegFX.update();
             mLeftFootFX.update();
-            // mRightLegFX.update();
             mRightUpperLegFX.update();
             mRightForeLegFX.update();
             mRightFootFX.update();
 
-            // mSpeechBubble.update();
             if (starShowC == true) // Added by Robbie, to show stars or words here.
             {
                 mStarsFX.update();
             }
         }
-
-        // draw environment
-        // mSpeechBubble.update(g);
     }
 
     private void implimentPerlinNoise(double mWobble, int x, int y)
@@ -430,7 +414,6 @@ public class StickmanFX extends Agent2D
             mRightEyeFX.rotatePerlinNoise(mWobble, x, y);
             mMouthFX.rotatePerlinNoise(mWobble, x, y);
             mNeckFX.rotatePerlinNoise(mWobble, x, y);
-            // BodyFX is not PartReeti Classe
             mBodyFX.rotatePerlinNoise(mWobble, x, y);
             mLeftShoulderFX.rotatePerlinNoise(mWobble, x, y);
             mLeftUpperArmFX.rotatePerlinNoise(mWobble, x, y);
@@ -440,11 +423,9 @@ public class StickmanFX extends Agent2D
             mRightUpperArmFX.rotatePerlinNoise(mWobble, x, y);
             mRightForeArmFX.rotatePerlinNoise(mWobble, x, y);
             mRightHandFX.rotatePerlinNoise(mWobble, x, y);
-            // mLeftLegFX.update();
             mLeftUpperLegFX.rotatePerlinNoise(mWobble, x, y);
             mLeftForeLegFX.rotatePerlinNoise(mWobble, x, y);
             mLeftFootFX.rotatePerlinNoise(mWobble, x, y);
-            // mRightLegFX.update();
             mRightUpperLegFX.rotatePerlinNoise(mWobble, x, y);
             mRightForeLegFX.rotatePerlinNoise(mWobble, x, y);
             mRightFootFX.rotatePerlinNoise(mWobble, x, y);

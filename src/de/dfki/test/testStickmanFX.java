@@ -3,6 +3,8 @@ package de.dfki.test;
 import de.dfki.common.decorators.StageRoomFullScreenDecorator;
 import de.dfki.common.interfaces.StageRoom;
 import de.dfki.reeti.stage.StageRoomReeti;
+import de.dfki.stickman3D.stage.StageRoom3D;
+import de.dfki.stickmanFX.stage.StageRoomFX;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.util.Duration;
@@ -21,7 +23,7 @@ public class testStickmanFX
 //        //stickmanStage.addStickman("Bob");
 //        stickmanStage.launchStage(true);
 //        stickmanStage.getStickman("Patrick").doAnimation("Smile", 2000, "", true);
-        StageRoom reeti = new StageRoomReeti(0, 0, true);
+        StageRoom reeti = new StageRoomFX(0, 0, true);
         StageRoom stickmanStage3DFull = new StageRoomFullScreenDecorator(reeti);
         reeti.addStickman("Bob");
 //        stickmanStage3DFull.addStickman("Reeti1");

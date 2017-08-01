@@ -7,6 +7,7 @@ import de.dfki.common.enums.Gender;
 import de.dfki.common.interfaces.IAnimation;
 import de.dfki.common.interfaces.StageRoom;
 import de.dfki.common.part.Part;
+import de.dfki.reeti.animationlogic.AnimationReeti;
 import de.dfki.stickmanSwing.animationlogic.listener.AnimationListener;
 import javafx.scene.layout.Pane;
 
@@ -148,5 +149,15 @@ public abstract class Agent extends Pane implements IAgent
     public IAnimation doAnimation(String name, int duration, boolean block)
     {
         return doAnimation(name, duration, "", block);
+    }
+
+    public IAnimation doAnimation(String name, Object param, boolean block)
+    {
+        return doAnimation(name, -1, param, block);
+    }
+
+    public IAnimation doAnimation(String name, boolean block)
+    {
+        return doAnimation(name, -1, "", block);
     }
 }

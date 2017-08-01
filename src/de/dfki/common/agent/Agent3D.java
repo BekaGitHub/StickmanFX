@@ -53,4 +53,8 @@ public abstract class Agent3D extends Agent
         this.mSpeechBubble = (Part3D) speechBubble;
     }
 
+    public void setScale(float scale)
+    {
+        mScale = scale;
+    }
 }
