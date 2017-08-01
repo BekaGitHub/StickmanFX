@@ -200,42 +200,6 @@ public class StickmanFX extends Agent2D
 
     }
 
-    @Override
-    public StageRoom getStageRoom()
-    {
-        return stageRoom;
-    }
-
-    @Override
-    public void setStageRoom(StageRoom s)
-    {
-        stageRoom = s;
-    }
-
-    @Override
-    public boolean isShowName()
-    {
-        return mShowName;
-    }
-
-    @Override
-    public void setShowName(boolean show)
-    {
-        mShowName = show;
-    }
-
-    @Override
-    public void endAnimationScheduler()
-    {
-        animationScheduler.end();
-    }
-
-    @Override
-    public Gender.TYPE getType()
-    {
-        return mType;
-    }
-
     // Sets the orientation of the character, allowed values are: LEFT, RIGHT,
     // FRONT
     public void setOrientation(String orientation)
@@ -272,11 +236,6 @@ public class StickmanFX extends Agent2D
     public AnimationStickman2D doAnimationAsImage(String name, int duration, boolean block, AnimationObserver obs)
     {
         return doAnimation(name, duration, obs, block);
-    }
-
-    public AnimationStickman2D doAnimation(String name, int duration, boolean block)
-    {
-        return doAnimation(name, duration, "", block);
     }
 
     @Override

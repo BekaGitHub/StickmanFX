@@ -5,6 +5,7 @@ import de.dfki.common.agent.Agent3D;
 import de.dfki.common.animationlogic.AnimationScheduler;
 import de.dfki.common.enums.Gender;
 import de.dfki.common.enums.Orientation;
+import de.dfki.common.interfaces.IAnimation;
 import de.dfki.common.interfaces.StageRoom;
 import de.dfki.common.part.Part3D;
 import de.dfki.stickman3D.animation.environment.Blinking;
@@ -201,47 +202,6 @@ public class Stickman3D extends Agent3D
         }
 
         return a;
-    }
-
-    @Override
-    public StageRoom getStageRoom()
-    {
-        return stageRoom;
-    }
-
-    @Override
-    public void setStageRoom(StageRoom s)
-    {
-        stageRoom = s;
-    }
-
-    @Override
-    public boolean isShowName()
-    {
-        return false;
-    }
-
-    @Override
-    public void setShowName(boolean show)
-    {
-
-    }
-
-    @Override
-    public void endAnimationScheduler()
-    {
-
-    }
-
-    @Override
-    public Gender.TYPE getType()
-    {
-        return null;
-    }
-
-    public AnimationStickman3D doAnimation(String name, int duration, boolean block)
-    {
-        return doAnimation(name, duration, "", block);
     }
 
     public AnimationStickman3D doAnimation(String name, int frequent, int actionDuration, boolean block)

@@ -4,6 +4,7 @@ import de.dfki.common.LogFormatter;
 import de.dfki.common.animationlogic.Animation;
 import de.dfki.common.animationlogic.AnimationScheduler;
 import de.dfki.common.enums.Gender;
+import de.dfki.common.interfaces.IAnimation;
 import de.dfki.common.interfaces.StageRoom;
 import de.dfki.common.part.Part;
 import de.dfki.stickmanSwing.animationlogic.listener.AnimationListener;
@@ -32,6 +33,7 @@ public abstract class Agent extends Pane implements IAgent
     public AnimationScheduler animationScheduler;
     public StageRoom stageRoom;
     public long mID = 0;
+    public boolean mShowName = true;
 
     @Override
     public String getName()
@@ -106,4 +108,45 @@ public abstract class Agent extends Pane implements IAgent
     public abstract Part getSpeechBubble();
 
     public abstract void setSpeechBubble(Part speechBubble);
+
+    @Override
+    public StageRoom getStageRoom()
+    {
+        return stageRoom;
+    }
+
+    @Override
+    public void setStageRoom(StageRoom s)
+    {
+        stageRoom = s;
+    }
+
+    @Override
+    public boolean isShowName()
+    {
+        return mShowName;
+    }
+
+    @Override
+    public void setShowName(boolean show)
+    {
+        mShowName = show;
+    }
+
+    @Override
+    public void endAnimationScheduler()
+    {
+        animationScheduler.end();
+    }
+
+    @Override
+    public Gender.TYPE getType()
+    {
+        return mType;
+    }
+
+    public IAnimation doAnimation(String name, int duration, boolean block)
+    {
+        return doAnimation(name, duration, "", block);
+    }
 }

@@ -13,7 +13,6 @@ import java.awt.*;
 public abstract class Agent2D extends Agent
 {
     public Label agentNameLabel;
-    public boolean mShowName = true;
     public boolean faceOnly = false;
 
     public Part2D mHeadFX = null;
