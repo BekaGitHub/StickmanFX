@@ -27,6 +27,7 @@ public class Packageparser
         this.packName = packName;
         ScanPackage();
     }
+
     //de/dfki/stickman3D/animation/face/
     ///////////////////////7
     private void ScanPackage()
@@ -44,7 +45,7 @@ public class Packageparser
                     String filePath = URLDecoder.decode(url.getFile(), "UTF-8");
                     File dir = new File(filePath);
                     File[] ff = dir.listFiles();
-                    for(int i = 0; i<ff.length; i++)
+                    for (int i = 0; i < ff.length; i++)
                     {
                         String s = ff[i].getName();
                     }

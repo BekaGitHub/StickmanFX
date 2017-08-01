@@ -50,6 +50,24 @@ public abstract class Animator2D extends Animator
         renderEventAnimation();
     }
 
+    public static void register(AnimationObserver obj)
+    {
+        observers.add(obj);
+    }
+
+    public static void unregister(AnimationObserver obj)
+    {
+        observers.remove(obj);
+    }
+
+    public static void notifyAllObservers(Object obj)
+    {
+        for (AnimationObserver observer : observers)
+        {
+            observer.update(obj);
+        }
+    }
+
     @Override
     protected void render()
     {
@@ -179,23 +197,5 @@ public abstract class Animator2D extends Animator
     public void notifyOnIdentifier(String image)
     {
         notifyAllObservers(image);
-    }
-
-    public static void register(AnimationObserver obj)
-    {
-        observers.add(obj);
-    }
-
-    public static void unregister(AnimationObserver obj)
-    {
-        observers.remove(obj);
-    }
-
-    public static void notifyAllObservers(Object obj)
-    {
-        for (AnimationObserver observer : observers)
-        {
-            observer.update(obj);
-        }
     }
 }

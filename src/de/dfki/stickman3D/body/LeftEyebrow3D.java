@@ -19,16 +19,10 @@ import java.awt.*;
 public class LeftEyebrow3D extends PartStickman3D
 {
 
-    public enum SHAPE
-    {
-        DEFAULT, FADEIN, FADEOUT, ANGRY, ANGRYEND, HAPPY, HAPPYEND, DISGUSTED, DISGUSTEDEND, SURPRISED, SURPRISEDEND, EXCITED, EXCITEDEND, EMBARRASSED, EMBARRASSEDEND, SAD, SADEND
-    }
-
+    public LeftEyebrow3D.SHAPE mShape = LeftEyebrow3D.SHAPE.DEFAULT;
     Head3D mHead;
 
     Polygon currentPolygon;
-
-    public LeftEyebrow3D.SHAPE mShape = LeftEyebrow3D.SHAPE.DEFAULT;
 
     public LeftEyebrow3D(Part3D head)
     {
@@ -267,5 +261,10 @@ public class LeftEyebrow3D extends PartStickman3D
         {
             mColorRecorder = mColor;
         }
+    }
+
+    public enum SHAPE
+    {
+        DEFAULT, FADEIN, FADEOUT, ANGRY, ANGRYEND, HAPPY, HAPPYEND, DISGUSTED, DISGUSTEDEND, SURPRISED, SURPRISEDEND, EXCITED, EXCITEDEND, EMBARRASSED, EMBARRASSEDEND, SAD, SADEND
     }
 }

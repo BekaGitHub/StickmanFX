@@ -12,26 +12,26 @@ import de.dfki.stickman3D.animationlogic.AnimationStickman3D;
 import java.util.ArrayList;
 
 /**
- *
  * @author Beka Aptsiauri
- *
  */
 public class DisgustedEnd extends AnimationStickman3D
 {
 
-    public DisgustedEnd(Stickman3D sm, int duration, boolean block) {
+    public DisgustedEnd(Stickman3D sm, int duration, boolean block)
+    {
         super(sm, duration, block);
     }
 
     @Override
-    public void playAnimation() {
+    public void playAnimation()
+    {
         // no disgusted
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mMouth, "shape", "DISGUSTEDEND"));
-        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftEye, "shape", "DISGUSTEDEND"));
-        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftEyebrow, "shape", "DISGUSTEDEND"));
-        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mRightEye, "shape", "DISGUSTEDEND"));
-        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mRightEyebrow, "shape", "DISGUSTEDEND"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D) agent).mMouth, "shape", "DISGUSTEDEND"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D) agent).mLeftEye, "shape", "DISGUSTEDEND"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D) agent).mLeftEyebrow, "shape", "DISGUSTEDEND"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D) agent).mRightEye, "shape", "DISGUSTEDEND"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D) agent).mRightEyebrow, "shape", "DISGUSTEDEND"));
         playAnimationPart(20);
 
         pauseAnimation(10);

@@ -5,27 +5,22 @@
  */
 package de.dfki.stickman3D.body;
 
-import java.awt.Dimension;
-import java.net.URL;
-
 import com.interactivemesh.jfx.importer.col.ColModelImporter;
-
 import de.dfki.common.part.Part3D;
 import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.PhongMaterial;
 import javafx.scene.shape.MeshView;
 
+import java.awt.*;
+import java.net.URL;
+
 /**
  * @author Beka Aptsiauri
  */
 public class LeftEar3D extends PartStickman3D
 {
-    public enum SHAPE
-    {
-        DEFAULT, FADEIN, FADEOUT
-    }
-
+    public LeftEar3D.SHAPE mShape = LeftEar3D.SHAPE.DEFAULT;
     private Head3D mHead;
 
     private MeshView mLeftEarMesh;
@@ -34,8 +29,6 @@ public class LeftEar3D extends PartStickman3D
 //    private Image image;
 
     private double initOpacity;
-
-    public LeftEar3D.SHAPE mShape = LeftEar3D.SHAPE.DEFAULT;
 
     public LeftEar3D(Part3D head)
     {
@@ -138,5 +131,10 @@ public class LeftEar3D extends PartStickman3D
     {
         if (mHead.getStickman().setCharacterInvisible == false)
             mColorRecorder = mColor;
+    }
+
+    public enum SHAPE
+    {
+        DEFAULT, FADEIN, FADEOUT
     }
 }

@@ -1,17 +1,18 @@
 package de.dfki.common.interfaces;
 
-import java.awt.*;
-import java.awt.image.BufferedImage;
-import java.io.IOException;
-
 import de.dfki.common.StickmansOnStage;
 import de.dfki.stickmanFX.StickmanFX;
 import javafx.scene.layout.HBox;
 
+import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
+
 /**
  * Created by alvaro on 9/4/16.
  */
-public interface StickmanStage {
+public interface StickmanStage
+{
 
     float getFullScreenScale();
 

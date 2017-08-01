@@ -1,7 +1,6 @@
 package de.dfki.reeti.controllerhelper;
 
 import de.dfki.common.enums.Led;
-import de.dfki.reeti.Reeti;
 import de.dfki.reeti.ReetiStageController;
 import javafx.scene.paint.Color;
 
@@ -25,7 +24,7 @@ public class ColorHelper
             controller.currentReeti.setLedColor(color, Led.RIGHTLED);
         }
     }
-    
+
     public static void bothLedColorChanger(ReetiStageController controller)
     {
         if (controller.currentReeti != null)

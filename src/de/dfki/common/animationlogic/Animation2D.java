@@ -18,6 +18,7 @@ public abstract class Animation2D extends Animation
     {
         super();
     }
+
     public Animation2D(IAgent iAgent, int duration, boolean block)
     {
         super(iAgent, duration, block);

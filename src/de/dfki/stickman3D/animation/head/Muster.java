@@ -12,31 +12,32 @@ import de.dfki.stickman3D.animationlogic.AnimationStickman3D;
 import java.util.ArrayList;
 
 /**
- *
  * @author Beka Aptsiauri
- *
  */
 public class Muster extends AnimationStickman3D
 {
 
-    public Muster() {
+    public Muster()
+    {
         mAnimType = ANIMTYPE.ON;
     }
 
-    public Muster(Stickman3D sm, int duration, boolean block) {
+    public Muster(Stickman3D sm, int duration, boolean block)
+    {
         super(sm, duration, block);
     }
 
     @Override
-    public void playAnimation() {
+    public void playAnimation()
+    {
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mMouth,"shape","O"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D) agent).mMouth, "shape", "O"));
         playAnimationPart(mDuration);
-        
+
         pauseAnimation(1000);
-        
+
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mMouth,"shape","DEFAULT"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D) agent).mMouth, "shape", "DEFAULT"));
         playAnimationPart(mDuration);
     }
 }

@@ -21,7 +21,8 @@ import java.util.ArrayList;
 public class TurnRightStart extends AnimationStickman3D
 {
 
-    public TurnRightStart(Stickman3D sm, int duration, boolean block) {
+    public TurnRightStart(Stickman3D sm, int duration, boolean block)
+    {
         super(sm, duration, block);
     }
 
@@ -29,22 +30,25 @@ public class TurnRightStart extends AnimationStickman3D
      * This method creates the angry facial movement.
      */
     @Override
-    public void playAnimation() {
+    public void playAnimation()
+    {
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mHead, "yrotate", 20));
+        mAnimationPart.add(new AnimationContent(((Stickman3D) agent).mHead, "yrotate", 20));
         playAnimationPart(100);
 
-        if (((Stickman3D)agent).mType == Gender.TYPE.MALE) {
+        if (((Stickman3D) agent).mType == Gender.TYPE.MALE)
+        {
             mAnimationPart = new ArrayList<>();
-            mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mRightWrist, "yrotate", 40));
-            mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mUpperBody, "yrotate", 60));
-            mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mHead, "yrotate", 20));
+            mAnimationPart.add(new AnimationContent(((Stickman3D) agent).mRightWrist, "yrotate", 40));
+            mAnimationPart.add(new AnimationContent(((Stickman3D) agent).mUpperBody, "yrotate", 60));
+            mAnimationPart.add(new AnimationContent(((Stickman3D) agent).mHead, "yrotate", 20));
             playAnimationPart(500);
-        } else {
+        } else
+        {
             mAnimationPart = new ArrayList<>();
-            mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mRightWrist, "yrotate", 70));
-            mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mUpperBody, "yrotate", 60));
-            mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mHead, "yrotate", 20));
+            mAnimationPart.add(new AnimationContent(((Stickman3D) agent).mRightWrist, "yrotate", 70));
+            mAnimationPart.add(new AnimationContent(((Stickman3D) agent).mUpperBody, "yrotate", 60));
+            mAnimationPart.add(new AnimationContent(((Stickman3D) agent).mHead, "yrotate", 20));
             playAnimationPart(500);
         }
 

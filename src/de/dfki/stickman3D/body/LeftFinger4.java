@@ -21,17 +21,9 @@ import java.net.URL;
 public class LeftFinger4 extends PartStickman3D
 {
 
-    public enum SHAPE
-    {
-        DEFAULT, FADEIN, FADEOUT
-    }
-
-    public LeftFinger4.SHAPE mShape = LeftFinger4.SHAPE.DEFAULT;
-
     private static final int ARMLENGTH = 80;
-
+    public LeftFinger4.SHAPE mShape = LeftFinger4.SHAPE.DEFAULT;
     private MeshView mLeftFinger4;
-
     private PhongMaterial material;
 
     public LeftFinger4(Part3D leftWrist)
@@ -51,7 +43,7 @@ public class LeftFinger4 extends PartStickman3D
         material.setDiffuseColor(mColor);
         mLeftFinger4.setMaterial(material);
 
-        ((LeftWrist3D)leftWrist).getLeftWristGroup().getChildren().add(mLeftFinger4);
+        ((LeftWrist3D) leftWrist).getLeftWristGroup().getChildren().add(mLeftFinger4);
 
         init();
     }
@@ -125,6 +117,11 @@ public class LeftFinger4 extends PartStickman3D
     public MeshView getMeshView()
     {
         return mLeftFinger4;
+    }
+
+    public enum SHAPE
+    {
+        DEFAULT, FADEIN, FADEOUT
     }
 
 }

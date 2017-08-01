@@ -22,18 +22,10 @@ import java.net.URL;
 public class LeftWrist3D extends PartStickman3D
 {
 
-    public enum SHAPE
-    {
-        DEFAULT, FADEIN, FADEOUT
-    }
-
-    public LeftWrist3D.SHAPE mShape = LeftWrist3D.SHAPE.DEFAULT;
-
     private static final int ARMLENGTH = 80;
-
+    public LeftWrist3D.SHAPE mShape = LeftWrist3D.SHAPE.DEFAULT;
     private MeshView mLeftWristMesh;
     private PhongMaterial material;
-
     private Group leftWristGroup;
 
     public LeftWrist3D(Part3D leftForeArmFX)
@@ -56,7 +48,7 @@ public class LeftWrist3D extends PartStickman3D
         leftWristGroup = new Group();
         leftWristGroup.getChildren().add(mLeftWristMesh);
 
-        ((LeftForeArm3D)leftForeArmFX).getLeftForeArmGroup().getChildren().add(leftWristGroup);
+        ((LeftForeArm3D) leftForeArmFX).getLeftForeArmGroup().getChildren().add(leftWristGroup);
 
         init();
     }
@@ -134,5 +126,10 @@ public class LeftWrist3D extends PartStickman3D
     public Group getLeftWristGroup()
     {
         return leftWristGroup;
+    }
+
+    public enum SHAPE
+    {
+        DEFAULT, FADEIN, FADEOUT
     }
 }

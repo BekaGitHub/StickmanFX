@@ -13,24 +13,25 @@ import de.dfki.reeti.animationlogic.AnimationReeti;
 import java.util.ArrayList;
 
 /**
- *
  * @author Beka
- *
  */
-public class DownLip extends AnimationReeti {
+public class DownLip extends AnimationReeti
+{
 
 
-    public DownLip(Reeti sm, int duration, int pos, boolean block) {
+    public DownLip(Reeti sm, int duration, int pos, boolean block)
+    {
         super(sm, duration, pos, block);
     }
 
     @Override
-    public void playAnimation() {
-        
-        
+    public void playAnimation()
+    {
+
+
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(((Reeti)agent).mMouthDownLip, "shape", "DOWNLIPACTION"));
+        mAnimationPart.add(new AnimationContent(((Reeti) agent).mMouthDownLip, "shape", "DOWNLIPACTION"));
         playAnimationPart(mDuration);
-        
+
     }
 }

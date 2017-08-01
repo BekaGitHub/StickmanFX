@@ -5,14 +5,13 @@
  */
 package de.dfki.reeti.body;
 
-import java.net.URL;
-
 import com.interactivemesh.jfx.importer.col.ColModelImporter;
-
 import de.dfki.common.part.Part3D;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.MeshView;
 import javafx.scene.transform.Rotate;
+
+import java.net.URL;
 
 /**
  * @author Beka Aptsiauri
@@ -35,11 +34,11 @@ public class RightEar extends PartReeti
         mRightEarMesh = (MeshView) importer.getImport()[0];
         mRightEarMesh.setMaterial(getMaterial());
 
-        mStart = ((Head)head).getLeftEyebrowPostion();
+        mStart = ((Head) head).getLeftEyebrowPostion();
 
         init();
 
-        ((Head)head).getHeadGroup().getChildren().add(mRightEarMesh);
+        ((Head) head).getHeadGroup().getChildren().add(mRightEarMesh);
     }
 
     @Override

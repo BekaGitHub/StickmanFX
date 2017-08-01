@@ -10,10 +10,10 @@ import java.util.concurrent.Semaphore;
  */
 public abstract class EventAnimationScheduler extends Thread
 {
-    protected Agent agent;
-    protected boolean mRunning = true;
     public LinkedBlockingQueue<Animation> mAnimationQueue = new LinkedBlockingQueue<>();
     public Semaphore mTheBlockOfHell = new Semaphore(1);
+    protected Agent agent;
+    protected boolean mRunning = true;
 
     public EventAnimationScheduler(Agent agent)
     {

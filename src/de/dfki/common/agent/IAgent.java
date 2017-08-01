@@ -14,9 +14,9 @@ public interface IAgent
 
     void setStageRoom(StageRoom s);
 
-    void setShowName(boolean show);
-
     boolean isShowName();
+
+    void setShowName(boolean show);
 
     void endAnimationScheduler();
 
@@ -27,7 +27,7 @@ public interface IAgent
     void setName(String name);
 
     IAnimation doAnimation(String name, int duration, boolean block);
-    
+
     IAnimation doAnimation(String name, int frequent, int actionDuration, boolean block);
 
     IAnimation doAnimation(String name, Object param, boolean block);

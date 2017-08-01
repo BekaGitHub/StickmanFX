@@ -20,16 +20,10 @@ import java.net.URL;
 public class Nose3D extends PartStickman3D
 {
 
-    public enum SHAPE
-    {
-        DEFAULT, FADEIN, FADEOUT
-    }
-
+    public Nose3D.SHAPE mShape = Nose3D.SHAPE.DEFAULT;
     private Head3D mHead;
     private MeshView mNose;
     private PhongMaterial material;
-
-    public Nose3D.SHAPE mShape = Nose3D.SHAPE.DEFAULT;
 
     public Nose3D(Part3D head)
     {
@@ -130,5 +124,10 @@ public class Nose3D extends PartStickman3D
     public MeshView getMeshView()
     {
         return mNose;
+    }
+
+    public enum SHAPE
+    {
+        DEFAULT, FADEIN, FADEOUT
     }
 }

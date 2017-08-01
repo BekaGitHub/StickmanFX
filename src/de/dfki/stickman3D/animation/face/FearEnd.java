@@ -12,26 +12,26 @@ import de.dfki.stickman3D.animationlogic.AnimationStickman3D;
 import java.util.ArrayList;
 
 /**
- *
  * @author Beka
- *
  */
 public class FearEnd extends AnimationStickman3D
 {
 
-    public FearEnd(Stickman3D sm, int duration, boolean block) {
+    public FearEnd(Stickman3D sm, int duration, boolean block)
+    {
         super(sm, duration, block);
     }
 
     @Override
-    public void playAnimation() {
+    public void playAnimation()
+    {
         // no fear
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mMouth, "shape", "FEAREND"));
-        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftEye, "shape", "SURPRISEDEND"));
-        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftEyebrow, "shape", "DISGUSTEDEND"));
-        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mRightEye, "shape", "SURPRISEDEND"));
-        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mRightEyebrow, "shape", "DISGUSTEDEND"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D) agent).mMouth, "shape", "FEAREND"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D) agent).mLeftEye, "shape", "SURPRISEDEND"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D) agent).mLeftEyebrow, "shape", "DISGUSTEDEND"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D) agent).mRightEye, "shape", "SURPRISEDEND"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D) agent).mRightEyebrow, "shape", "DISGUSTEDEND"));
         playAnimationPart(mDuration);
 
         pauseAnimation(10);

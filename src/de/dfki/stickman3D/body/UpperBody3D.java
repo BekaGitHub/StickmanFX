@@ -9,11 +9,10 @@ import javafx.scene.paint.PhongMaterial;
 import javafx.scene.shape.MeshView;
 import javafx.scene.transform.Affine;
 import javafx.scene.transform.Rotate;
+import javafx.scene.transform.Translate;
 
 import java.awt.*;
 import java.net.URL;
-
-import javafx.scene.transform.Translate;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -27,11 +26,7 @@ import javafx.scene.transform.Translate;
 public class UpperBody3D extends PartStickman3D
 {
 
-    public enum SHAPE
-    {
-        DEFAULT, FADEIN, FADEOUT
-    }
-
+    private static final int DRAWOFFSET = 20;
     public UpperBody3D.SHAPE mShape = UpperBody3D.SHAPE.DEFAULT;
 
     private Neck3D mNeck;
@@ -40,11 +35,8 @@ public class UpperBody3D extends PartStickman3D
     private Dimension mSize;
 
     private int mHalfSizeX;
-    private static final int DRAWOFFSET = 20;
-
     private MeshView mBodyMeshView;
     private PhongMaterial material;
-
     public UpperBody3D(Part3D neck)
     {
         mNeck = (Neck3D) neck;
@@ -62,7 +54,7 @@ public class UpperBody3D extends PartStickman3D
         this.setTranslateX(mStart.x);
         if (mNeck.getHead().getStickman().mType == Gender.TYPE.MALE)
             this.setTranslateY(mStart.y + 155);
-         else
+        else
             this.setTranslateY(mStart.y + 135);
         this.setTranslateZ(-105);
 
@@ -215,5 +207,10 @@ public class UpperBody3D extends PartStickman3D
     public MeshView getMeshView()
     {
         return mBodyMeshView;
+    }
+
+    public enum SHAPE
+    {
+        DEFAULT, FADEIN, FADEOUT
     }
 }

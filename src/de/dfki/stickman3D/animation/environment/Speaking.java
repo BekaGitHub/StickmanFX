@@ -14,24 +14,26 @@ import de.dfki.stickman3D.environment.SpeechBubbleStickman3D;
 import java.util.ArrayList;
 
 /**
- *
  * @author Patrick Gebhard
- *
  */
 public class Speaking extends AnimationStickman3D
 {
 
-    public Speaking() {
+    public Speaking()
+    {
         mAnimType = ANIMTYPE.ON;
     }
 
-    public Speaking(Stickman3D sm, int duration, boolean block) {
+    public Speaking(Stickman3D sm, int duration, boolean block)
+    {
         super(sm, duration, block);
     }
 
     @Override
-    public void playAnimation() {
-        if (mParameter instanceof String) {
+    public void playAnimation()
+    {
+        if (mParameter instanceof String)
+        {
             agent.getSpeechBubble().mSpeechBubbleText = (String) mParameter;
         }
 
@@ -42,7 +44,8 @@ public class Speaking extends AnimationStickman3D
         mAnimationPart.add(new AnimationContent(agent.getSpeechBubble(), "shape", SpeechBubbleStickman3D.SHAPE.DEFAULT.name()));
         playAnimationPart(20);
 
-        if (StickmanStageController.currentRadioButton != null) {
+        if (StickmanStageController.currentRadioButton != null)
+        {
             StickmanStageController.currentRadioButton.setSelected(false);
         }
 

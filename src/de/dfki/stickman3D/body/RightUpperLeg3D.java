@@ -23,18 +23,11 @@ import java.net.URL;
 public class RightUpperLeg3D extends PartStickman3D
 {
 
-    public enum SHAPE
-    {
-        DEFAULT, FADEIN, FADEOUT
-    }
-
     public RightUpperLeg3D.SHAPE mShape = RightUpperLeg3D.SHAPE.DEFAULT;
-
     private DownBody3D mDownBody;
     private MeshView mRightUpperLegMesh;
     private PhongMaterial material;
     private Group rightUpperLegGroup;
-
     public RightUpperLeg3D(Part3D downBody)
     {
         mDownBody = (DownBody3D) downBody;
@@ -155,5 +148,10 @@ public class RightUpperLeg3D extends PartStickman3D
     public Group getRightUpperLegGroup()
     {
         return rightUpperLegGroup;
+    }
+
+    public enum SHAPE
+    {
+        DEFAULT, FADEIN, FADEOUT
     }
 }

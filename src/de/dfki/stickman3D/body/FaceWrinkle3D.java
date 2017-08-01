@@ -14,19 +14,13 @@ import java.awt.*;
 public class FaceWrinkle3D extends PartStickman3D
 {
 
-    public enum SHAPE
-    {
-        DEFAULT, ANGRY, ANGRYEND, DISGUSTED, DISGUSTEDEND, SURPRISED, SURPRISEDEND, EXCITED, EXCITEDEND, EMBARRASSED, EMBARRASSEDEND
-    }
-
+    public FaceWrinkle3D.SHAPE mShape = FaceWrinkle3D.SHAPE.DEFAULT;
     private Polygon currentLeftPolygon;
     private Polygon currentRightPolygon;
 
-    public FaceWrinkle3D.SHAPE mShape = FaceWrinkle3D.SHAPE.DEFAULT;
-
     public FaceWrinkle3D(Part3D head)
     {
-        mStart = ((Head3D)head).getRightEyebrowPostion();
+        mStart = ((Head3D) head).getRightEyebrowPostion();
         mColor = Color.rgb(80, 80, 80, 0);
         mSize = new Dimension(mLength, 5);
         mDefaultRotationPoint = head.mDefaultRotationPoint;
@@ -109,5 +103,10 @@ public class FaceWrinkle3D extends PartStickman3D
             case EMBARRASSEDEND:
                 break;
         }
+    }
+
+    public enum SHAPE
+    {
+        DEFAULT, ANGRY, ANGRYEND, DISGUSTED, DISGUSTEDEND, SURPRISED, SURPRISEDEND, EXCITED, EXCITEDEND, EMBARRASSED, EMBARRASSEDEND
     }
 }

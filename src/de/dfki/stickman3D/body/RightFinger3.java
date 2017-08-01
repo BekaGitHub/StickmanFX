@@ -21,19 +21,11 @@ import java.net.URL;
 public class RightFinger3 extends PartStickman3D
 {
 
-    public enum SHAPE
-    {
-        DEFAULT, FADEIN, FADEOUT
-    }
-
-    public RightFinger3.SHAPE mShape = RightFinger3.SHAPE.DEFAULT;
-
-    private RightWrist3D mRightWrist;
     private static final int ARMLENGTH = 80;
-
-    private MeshView mRightFinger3;
-
+    public RightFinger3.SHAPE mShape = RightFinger3.SHAPE.DEFAULT;
     PhongMaterial material;
+    private RightWrist3D mRightWrist;
+    private MeshView mRightFinger3;
 
     public RightFinger3(Part3D rightWrist)
     {
@@ -128,6 +120,11 @@ public class RightFinger3 extends PartStickman3D
     public MeshView getMeshView()
     {
         return mRightFinger3;
+    }
+
+    public enum SHAPE
+    {
+        DEFAULT, FADEIN, FADEOUT
     }
 
 }

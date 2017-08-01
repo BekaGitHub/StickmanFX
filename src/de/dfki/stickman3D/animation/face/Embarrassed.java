@@ -13,47 +13,49 @@ import de.dfki.stickman3D.animationlogic.AnimationStickman3D;
 import java.util.ArrayList;
 
 /**
- *
  * @author Beka Aptsiauri
- *
  */
 public class Embarrassed extends AnimationStickman3D
 {
 
-    public Embarrassed() {
+    public Embarrassed()
+    {
         mAnimType = ANIMTYPE.ON;
     }
 
-    public Embarrassed(Stickman3D sm, int duration, boolean block) {
+    public Embarrassed(Stickman3D sm, int duration, boolean block)
+    {
         super(sm, duration, block);
     }
 
     @Override
-    public void playAnimation() {
+    public void playAnimation()
+    {
 
         // embarrassed
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mMouth, "shape", "EMBARRASSED"));
-        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftEye, "shape", "EMBARRASSED"));
-        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftEyebrow, "shape", "EMBARRASSED"));
-        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mFaceWrinkle, "shape", "EMBARRASSED"));   ///Add by Robbie
-        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mRightEye, "shape", "EMBARRASSED"));
-        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mRightEyebrow, "shape", "EMBARRASSED"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D) agent).mMouth, "shape", "EMBARRASSED"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D) agent).mLeftEye, "shape", "EMBARRASSED"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D) agent).mLeftEyebrow, "shape", "EMBARRASSED"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D) agent).mFaceWrinkle, "shape", "EMBARRASSED"));   ///Add by Robbie
+        mAnimationPart.add(new AnimationContent(((Stickman3D) agent).mRightEye, "shape", "EMBARRASSED"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D) agent).mRightEyebrow, "shape", "EMBARRASSED"));
         playAnimationPart(mDuration);
 
         pauseAnimation(1200);
 
         // no embarrassed
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mMouth, "shape", "EMBARRASSEDEND"));
-        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftEye, "shape", "EMBARRASSEDEND"));
-        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftEyebrow, "shape", "EMBARRASSEDEND"));
-        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mFaceWrinkle, "shape", "EMBARRASSEDEND"));   ///Add by Robbie
-        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mRightEye, "shape", "EMBARRASSEDEND"));
-        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mRightEyebrow, "shape", "EMBARRASSEDEND"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D) agent).mMouth, "shape", "EMBARRASSEDEND"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D) agent).mLeftEye, "shape", "EMBARRASSEDEND"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D) agent).mLeftEyebrow, "shape", "EMBARRASSEDEND"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D) agent).mFaceWrinkle, "shape", "EMBARRASSEDEND"));   ///Add by Robbie
+        mAnimationPart.add(new AnimationContent(((Stickman3D) agent).mRightEye, "shape", "EMBARRASSEDEND"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D) agent).mRightEyebrow, "shape", "EMBARRASSEDEND"));
         playAnimationPart(mDuration);
 
-        if (StickmanStageController.currentRadioButton != null) {
+        if (StickmanStageController.currentRadioButton != null)
+        {
             StickmanStageController.currentRadioButton.setSelected(false);
         }
     }

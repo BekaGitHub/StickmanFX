@@ -22,20 +22,13 @@ import java.net.URL;
 public class LeftForeArm3D extends PartStickman3D
 {
 
-    public enum SHAPE
-    {
-        DEFAULT, FADEIN, FADEOUT
-    }
-
+    private static final int ARMLENGTH = 80;
     public LeftForeArm3D.SHAPE mShape = LeftForeArm3D.SHAPE.DEFAULT;
 
     private LeftUpperArm3D mLeftUpperArm;
-    private static final int ARMLENGTH = 80;
-
     private MeshView mLeftForeArmMesh;
     private PhongMaterial material;
     private Group leftForeArmGroup;
-
     public LeftForeArm3D(Part3D arm)
     {
         mLeftUpperArm = (LeftUpperArm3D) arm;
@@ -142,5 +135,10 @@ public class LeftForeArm3D extends PartStickman3D
     public Group getLeftForeArmGroup()
     {
         return leftForeArmGroup;
+    }
+
+    public enum SHAPE
+    {
+        DEFAULT, FADEIN, FADEOUT
     }
 }

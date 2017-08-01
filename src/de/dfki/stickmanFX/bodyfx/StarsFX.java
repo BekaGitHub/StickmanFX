@@ -1,9 +1,5 @@
 package de.dfki.stickmanFX.bodyfx;
 
-import java.awt.BasicStroke;
-import java.awt.Dimension;
-import java.awt.Point;
-
 import de.dfki.common.part.Part2D;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.LineTo;
@@ -11,24 +7,21 @@ import javafx.scene.shape.MoveTo;
 import javafx.scene.shape.Path;
 import javafx.scene.shape.QuadCurveTo;
 
+import java.awt.*;
+
 /**
- *
  * @author Robbie
  * @modified Beka
- *
  */
 public class StarsFX extends PartStickman2D
 {
 
-    public static enum SHAPE {
-
-        DEFAULT, SAYBYE, SAYHI, STARSDISAPPEAR, STARSFADEOUT, STARSFADEIN
-    };
-
-    BodyFX mBodyFX;
     public StarsFX.SHAPE mShape = StarsFX.SHAPE.DEFAULT;
 
-    public StarsFX(Part2D body) {
+    ;
+    BodyFX mBodyFX;
+    public StarsFX(Part2D body)
+    {
 
         mBodyFX = (BodyFX) body;
         mLength = 150;
@@ -40,17 +33,20 @@ public class StarsFX extends PartStickman2D
     }
 
     @Override
-    public void setShape(String s) {
+    public void setShape(String s)
+    {
         StarsFX.SHAPE shape = StarsFX.SHAPE.valueOf(s);
         mShape = (shape != null) ? shape : StarsFX.SHAPE.DEFAULT;
     }
 
     @Override
-    public void resetShape() {
+    public void resetShape()
+    {
         mShape = StarsFX.SHAPE.DEFAULT;
     }
 
-    private void creatStar(int radius, Point center, Path path) {
+    private void creatStar(int radius, Point center, Path path)
+    {
         this.getChildren().clear();
         int r = radius;
         double ch = 72 * Math.PI / 180;
@@ -79,7 +75,8 @@ public class StarsFX extends PartStickman2D
 
     // Start.x left leg side
     @Override
-    public void calculate(int step) {
+    public void calculate(int step)
+    {
 
         mStart = mBodyFX.getLeftLegStartPostion();
         mEnd = new Point(mStart.x, mStart.y + mLength);
@@ -88,7 +85,8 @@ public class StarsFX extends PartStickman2D
         this.getChildren().clear();
         Path path = new Path();
 
-        switch (mShape) {
+        switch (mShape)
+        {
             case DEFAULT:
                 path.getElements().add(new MoveTo(mStart.x, mStart.y));
                 mColor = Color.rgb(0, 0, 0, 0);
@@ -148,9 +146,11 @@ public class StarsFX extends PartStickman2D
             case STARSDISAPPEAR:
                 int movement = mShapeAnimationStep - 1;
                 int starColorChange = (int) (movement * 10);
-                if (movement <= 1) {
+                if (movement <= 1)
+                {
                     mColor = new Color(0, 0, 0, 0);
-                } else {
+                } else
+                {
                     mColor = Color.rgb(240, 212, 0, (starColorChange * 100 / 255) / 100f);
 
                     // STAR 1
@@ -172,9 +172,11 @@ public class StarsFX extends PartStickman2D
             case STARSFADEOUT:
                 movement = mShapeAnimationStep - 1;
                 starColorChange = (int) (movement * 10);
-                if (movement <= 1) {
+                if (movement <= 1)
+                {
                     mColor = new Color(0, 0, 0, 0);
-                } else {
+                } else
+                {
                     mColor = Color.rgb(240, 212, 0, (starColorChange * 100 / 255) / 100f);
 
                     mStart = mBodyFX.getLeftLegStartPostion();
@@ -194,9 +196,11 @@ public class StarsFX extends PartStickman2D
             case STARSFADEIN:
                 movement = 21 - mShapeAnimationStep;
                 starColorChange = (int) (movement * 10);
-                if (movement >= 20) {
+                if (movement >= 20)
+                {
                     mColor = new Color(240, 212, 0, (255 * 100 / 255) / 100f);
-                } else {
+                } else
+                {
                     mColor = Color.rgb(240, 212, 0, (starColorChange * 100 / 255) / 100f);
 
                     mStart = mBodyFX.getLeftLegStartPostion();
@@ -217,6 +221,12 @@ public class StarsFX extends PartStickman2D
 
         addToDrawObjects(path);
         this.update();
+    }
+
+    public static enum SHAPE
+    {
+
+        DEFAULT, SAYBYE, SAYHI, STARSDISAPPEAR, STARSFADEOUT, STARSFADEIN
     }
 
 }

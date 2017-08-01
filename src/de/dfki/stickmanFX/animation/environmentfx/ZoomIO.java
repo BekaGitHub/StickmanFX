@@ -7,53 +7,60 @@ import javafx.geometry.Pos;
 import javafx.scene.layout.HBox;
 
 /**
- *
  * @author Robbie
- *
  */
 public class ZoomIO extends AnimationStickman2D
 {
 
-    public ZoomIO(StickmanFX sm, int duration, boolean block) {
+    public ZoomIO(StickmanFX sm, int duration, boolean block)
+    {
         super(sm, duration, block);
     }
 
     @Override
-    public void playAnimation() {
+    public void playAnimation()
+    {
         // make StickmanSwing to become 4 times big. Focus on StickmanSwing's face.
 //        mStickman.mScale = 4f;
         String sParameter = (String) mParameter;
         sParameter = sParameter.trim();
 
-        try {
+        try
+        {
             agent.mScale = Float.parseFloat(sParameter);
-        } catch (NumberFormatException nfe) {
+        } catch (NumberFormatException nfe)
+        {
             System.out.println("NumberFormatException: " + nfe.getMessage());
         }
         String mStageIdentifier = agent.getStageRoom().getStageIdentifier();
         HBox mStickmanPane;
-        try {
+        try
+        {
             mStickmanPane = agent.getStageRoom().getStickmanStage()
                     .getStickmanBox(mStageIdentifier);
             Platform.runLater(() -> mStickmanPane.getChildren().clear());
-            Platform.runLater(() -> {
-                try {
+            Platform.runLater(() ->
+            {
+                try
+                {
                     agent.getStageRoom().getStickmanStage().addStickmanToStage(mStageIdentifier,
-                            ((StickmanFX)agent));
+                            ((StickmanFX) agent));
                     mStickmanPane.setAlignment(Pos.CENTER);
-                } catch (Exception e) {
+                } catch (Exception e)
+                {
                     // TODO Auto-generated catch block
                     e.printStackTrace();
                 }
 
             });
 
-        } catch (Exception e) {
+        } catch (Exception e)
+        {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
 
-        Platform.runLater(() -> ((StickmanFX)agent).update());
+        Platform.runLater(() -> ((StickmanFX) agent).update());
     }
 
 }

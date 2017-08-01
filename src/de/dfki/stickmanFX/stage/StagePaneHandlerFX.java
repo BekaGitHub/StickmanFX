@@ -11,7 +11,8 @@ import javafx.scene.layout.HBox;
 
 import java.io.IOException;
 
-public class StagePaneHandlerFX {
+public class StagePaneHandlerFX
+{
 
     private HBox root;
     private ScrollPane stickmanScrollPane;
@@ -19,19 +20,25 @@ public class StagePaneHandlerFX {
     private HBox sStickmanPane;
     private StickmanStageController mStickmanStageController;
 
-    public StagePaneHandlerFX() {
-        if (ApplicationLauncherImpl.isRunning()) {
-            try {
+    public StagePaneHandlerFX()
+    {
+        if (ApplicationLauncherImpl.isRunning())
+        {
+            try
+            {
                 invoke();
-            } catch (IOException e) {
+            } catch (IOException e)
+            {
                 e.printStackTrace();
             }
         }
     }
 
-    public HBox getConfigRoot() throws IOException {
+    public HBox getConfigRoot() throws IOException
+    {
         invoke();
-        if (!root.getChildren().contains(mSplitPane)) {
+        if (!root.getChildren().contains(mSplitPane))
+        {
             root.getChildren().remove(stickmanScrollPane);
             root.getChildren().add(mSplitPane);
             root.getChildren().add(stickmanScrollPane);
@@ -40,16 +47,19 @@ public class StagePaneHandlerFX {
         return root;
     }
 
-    public HBox getStageRoot() throws IOException {
+    public HBox getStageRoot() throws IOException
+    {
         invoke();
-        if (root.getChildren().contains(mSplitPane)) {
+        if (root.getChildren().contains(mSplitPane))
+        {
             root.getChildren().remove(mSplitPane);
         }
         sStickmanPane.setAlignment(Pos.CENTER); //CENTER_LEFT
         return root;
     }
 
-    private StagePaneHandlerFX invoke() throws IOException {
+    private StagePaneHandlerFX invoke() throws IOException
+    {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("/de/dfki/stickmanFX/StickmanStageView.fxml"));
         root = loader.load();
@@ -65,11 +75,13 @@ public class StagePaneHandlerFX {
         return this;
     }
 
-    public StickmanStageController getmStickmanStageController() {
+    public StickmanStageController getmStickmanStageController()
+    {
         return mStickmanStageController;
     }
 
-    public void setStickmansOnStage(StickmansOnStage stickmans) {
+    public void setStickmansOnStage(StickmansOnStage stickmans)
+    {
         mStickmanStageController.setStickamnOnStage(stickmans);
     }
 

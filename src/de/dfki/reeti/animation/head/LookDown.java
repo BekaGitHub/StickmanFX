@@ -8,36 +8,39 @@ import de.dfki.reeti.animationlogic.AnimationReeti;
 import java.util.ArrayList;
 
 /**
- *
  * @author Patrick Gebhard
- *
  */
-public class LookDown extends AnimationReeti {
+public class LookDown extends AnimationReeti
+{
 
-    public LookDown() {
+    public LookDown()
+    {
         mAnimType = ANIMTYPE.ON;
     }
 
-    public LookDown(Reeti sm, int duration, boolean block) {
+    public LookDown(Reeti sm, int duration, boolean block)
+    {
         super(sm, duration, block);
     }
 
     @Override
-    public void playAnimation() {
+    public void playAnimation()
+    {
 
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(((Reeti)agent).mLeftEye, "rotate", 20));
-        mAnimationPart.add(new AnimationContent(((Reeti)agent).mRightEye, "rotate", 20));
+        mAnimationPart.add(new AnimationContent(((Reeti) agent).mLeftEye, "rotate", 20));
+        mAnimationPart.add(new AnimationContent(((Reeti) agent).mRightEye, "rotate", 20));
         playAnimationPart(100);
 
         pauseAnimation(100);
 
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(((Reeti)agent).mLeftEye, "rotate", -20));
-        mAnimationPart.add(new AnimationContent(((Reeti)agent).mRightEye, "rotate", -20));
+        mAnimationPart.add(new AnimationContent(((Reeti) agent).mLeftEye, "rotate", -20));
+        mAnimationPart.add(new AnimationContent(((Reeti) agent).mRightEye, "rotate", -20));
         playAnimationPart(100);
 
-        if (ReetiStageController.currentRadioButton != null) {
+        if (ReetiStageController.currentRadioButton != null)
+        {
             ReetiStageController.currentRadioButton.setSelected(false);
         }
     }

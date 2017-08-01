@@ -8,7 +8,8 @@ import java.awt.image.BufferedImage;
 /**
  * Created by alvaro on 9/12/16.
  */
-public interface StageRoom {
+public interface StageRoom
+{
 
     void clearStage();
 

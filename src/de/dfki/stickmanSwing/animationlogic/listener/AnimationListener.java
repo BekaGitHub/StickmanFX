@@ -6,11 +6,10 @@
 package de.dfki.stickmanSwing.animationlogic.listener;
 
 /**
- *
  * @author Patrick Gebhard
- *
  */
-public interface AnimationListener {
+public interface AnimationListener
+{
 
     public void update(String animationId);
 

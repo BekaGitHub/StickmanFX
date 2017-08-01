@@ -58,6 +58,7 @@ public abstract class Agent2D extends Agent
     {
         return mSpeechBubbleFX;
     }
+
     public void setSpeechBubble(Part speechBubble)
     {
         this.mSpeechBubbleFX = (Part2D) speechBubble;

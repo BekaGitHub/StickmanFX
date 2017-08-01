@@ -2,52 +2,18 @@ package de.dfki.stickmanFX;
 
 import de.dfki.action.sequence.WordTimeMarkSequence;
 import de.dfki.common.agent.Agent2D;
-import de.dfki.common.animationlogic.Animation;
 import de.dfki.common.animationlogic.AnimationScheduler;
 import de.dfki.common.enums.Gender;
 import de.dfki.common.enums.Orientation;
 import de.dfki.common.interfaces.IAnimation;
 import de.dfki.common.interfaces.StageRoom;
 import de.dfki.common.part.Part2D;
-import de.dfki.stickmanFX.bodyfx.*;
-import de.dfki.stickmanSwing.animationlogic.listener.AnimationListener;
-
-import java.awt.*;
-import java.awt.font.TextAttribute;
-import java.util.HashMap;
-import java.util.Map;
-
 import de.dfki.stickmanFX.animation.environmentfx.IdleBehavior;
 import de.dfki.stickmanFX.animation.environmentfx.SimplexNoise;
-import de.dfki.stickmanFX.animationlogic.AnimationStickman2D;
 import de.dfki.stickmanFX.animationlogic.AnimationLoaderFX;
+import de.dfki.stickmanFX.animationlogic.AnimationStickman2D;
 import de.dfki.stickmanFX.animationlogic.EventAnimationFX;
-import de.dfki.stickmanFX.bodyfx.BodyFX;
-import de.dfki.stickmanFX.bodyfx.FaceWrinkleFX;
-import de.dfki.stickmanFX.bodyfx.FemaleHairFX;
-import de.dfki.stickmanFX.bodyfx.HeadFX;
-import de.dfki.stickmanFX.bodyfx.LeftEyeFX;
-import de.dfki.stickmanFX.bodyfx.LeftEyebrowFX;
-import de.dfki.stickmanFX.bodyfx.LeftFootFX;
-import de.dfki.stickmanFX.bodyfx.LeftForeArmFX;
-import de.dfki.stickmanFX.bodyfx.LeftForeLegFX;
-import de.dfki.stickmanFX.bodyfx.LeftHandFX;
-import de.dfki.stickmanFX.bodyfx.LeftShoulderFX;
-import de.dfki.stickmanFX.bodyfx.LeftUpperArmFX;
-import de.dfki.stickmanFX.bodyfx.LeftUpperLegFX;
-import de.dfki.stickmanFX.bodyfx.MaleHairFX;
-import de.dfki.stickmanFX.bodyfx.MouthFX;
-import de.dfki.stickmanFX.bodyfx.NeckFX;
-import de.dfki.stickmanFX.bodyfx.RightEyeFX;
-import de.dfki.stickmanFX.bodyfx.RightEyebrowFX;
-import de.dfki.stickmanFX.bodyfx.RightFootFX;
-import de.dfki.stickmanFX.bodyfx.RightForeArmFX;
-import de.dfki.stickmanFX.bodyfx.RightForeLegFX;
-import de.dfki.stickmanFX.bodyfx.RightHandFX;
-import de.dfki.stickmanFX.bodyfx.RightShoulderFX;
-import de.dfki.stickmanFX.bodyfx.RightUpperArmFX;
-import de.dfki.stickmanFX.bodyfx.RightUpperLegFX;
-import de.dfki.stickmanFX.bodyfx.StarsFX;
+import de.dfki.stickmanFX.bodyfx.*;
 import de.dfki.stickmanFX.environmentfx.SpeechBubbleStickman2D;
 import de.dfki.util.observers.AnimationObserver;
 import javafx.collections.FXCollections;
@@ -55,6 +21,11 @@ import javafx.collections.ObservableList;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
 import javafx.scene.transform.Affine;
+
+import java.awt.*;
+import java.awt.font.TextAttribute;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @author Beka Aptsiauri
@@ -68,14 +39,13 @@ public class StickmanFX extends Agent2D
     //Used to change the backgroundRecord(pic) of the stickmanSwing
     public final static ObservableList<String> backgroundList =
             FXCollections.observableArrayList("office", "grassland");
-
+    // Control IdleBehavior start(mStart == true) or not(mStart == false).
+    private static boolean isAnimationTimerStartet = false;
     // record the backgroundRecord(pic or color) of the stickmanSwing
     public String backgroundRecord = null;
     public Orientation mOrientation = Orientation.FRONT;
     // Record mScale in DisappearToSmall and ComeBackFromSmall
     public float mScaleOriginal = mScale;
-
-
     //control the speed of leaving
     public double hoffset = 0;
     public double voffset = 0;
@@ -92,8 +62,7 @@ public class StickmanFX extends Agent2D
     public Boolean mIdleRun = false;
     public IdleBehavior mIdleBehavior = null;
     // Perlin noise
-    public SimplexNoise simplexNoise= null;
-
+    public SimplexNoise simplexNoise = null;
     public Part2D mMaleHairFX = null;
     public Part2D mFemaleHairFX = null;
     public Part2D mLeftEyebrowFX = null;
@@ -244,15 +213,15 @@ public class StickmanFX extends Agent2D
     }
 
     @Override
-    public void setShowName(boolean show)
-    {
-        mShowName = show;
-    }
-
-    @Override
     public boolean isShowName()
     {
         return mShowName;
+    }
+
+    @Override
+    public void setShowName(boolean show)
+    {
+        mShowName = show;
     }
 
     @Override
@@ -266,8 +235,6 @@ public class StickmanFX extends Agent2D
     {
         return mType;
     }
-
-
 
     // Sets the orientation of the character, allowed values are: LEFT, RIGHT,
     // FRONT
@@ -347,9 +314,6 @@ public class StickmanFX extends Agent2D
         return a;
     }
 
-    // Control IdleBehavior start(mStart == true) or not(mStart == false).
-    private static boolean isAnimationTimerStartet = false;
-
     public void update()
     {
         float mGeneralXTranslation;
@@ -371,8 +335,8 @@ public class StickmanFX extends Agent2D
         this.getTransforms().add(af);
 
         // Out put perlin noise
-        Point rightLegStartPostion = ((BodyFX)mBodyFX).getRightLegStartPostion();
-        Point leftLegStartPostion = ((BodyFX)mBodyFX).getLeftLegStartPostion();
+        Point rightLegStartPostion = ((BodyFX) mBodyFX).getRightLegStartPostion();
+        Point leftLegStartPostion = ((BodyFX) mBodyFX).getLeftLegStartPostion();
         implimentPerlinNoise(mWobble, (rightLegStartPostion.x + leftLegStartPostion.x) / 2,
                 rightLegStartPostion.y + mLeftUpperLegFX.mLength + mLeftForeLegFX.mLength);
 

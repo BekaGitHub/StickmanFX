@@ -1,48 +1,28 @@
 package de.dfki.reeti;
 
-import de.dfki.common.agent.Agent3D;
-import de.dfki.common.animationlogic.Animation;
-import de.dfki.common.animationlogic.AnimationScheduler;
-import de.dfki.common.enums.Led;
-import de.dfki.common.part.Part3D;
-import de.dfki.reeti.animationlogic.AnimationLoaderReeti;
-import de.dfki.reeti.body.LeftEye;
-import de.dfki.reeti.body.Head;
-import de.dfki.reeti.body.Mouth;
-import de.dfki.reeti.body.Body;
-import de.dfki.reeti.body.RightEyelid;
-import de.dfki.reeti.body.LeftEyelid;
-import de.dfki.reeti.body.Neck;
-import de.dfki.reeti.body.RightEye;
 import de.dfki.action.sequence.WordTimeMarkSequence;
+import de.dfki.common.agent.Agent3D;
+import de.dfki.common.animationlogic.AnimationScheduler;
 import de.dfki.common.enums.Gender;
+import de.dfki.common.enums.Led;
 import de.dfki.common.interfaces.StageRoom;
+import de.dfki.common.part.Part3D;
 import de.dfki.reeti.animation.environment.Blinking;
-import de.dfki.stickmanSwing.animationlogic.listener.AnimationListener;
+import de.dfki.reeti.animationlogic.AnimationLoaderReeti;
 import de.dfki.reeti.animationlogic.AnimationReeti;
 import de.dfki.reeti.animationlogic.EventAnimationReeti;
-import de.dfki.reeti.body.LeftCheek;
-import de.dfki.reeti.body.LeftEar;
-import de.dfki.reeti.body.MouthDownLip;
-import de.dfki.reeti.body.MouthLeftCorner;
-import de.dfki.reeti.body.MouthRightCorner;
-import de.dfki.reeti.body.MouthUpperLip;
-import de.dfki.reeti.body.RightCheek;
-import de.dfki.reeti.body.RightEar;
+import de.dfki.reeti.body.*;
 import de.dfki.reeti.environment.SpeechBubbleReeti;
-
-import java.awt.Dimension;
-import java.awt.Toolkit;
-
-import javafx.scene.effect.InnerShadow;
-import javafx.scene.transform.Affine;
-
 import javafx.scene.effect.BlurType;
 import javafx.scene.effect.DropShadow;
+import javafx.scene.effect.InnerShadow;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.CycleMethod;
 import javafx.scene.paint.RadialGradient;
 import javafx.scene.paint.Stop;
+import javafx.scene.transform.Affine;
+
+import java.awt.*;
 
 /**
  * @author Beka Aptsiauri
@@ -53,10 +33,10 @@ import javafx.scene.paint.Stop;
  */
 public class Reeti extends Agent3D
 {
-    public Blinking mBlinking;
+    private static Reeti sReeti;
 
     // amimation stuff
-
+    public Blinking mBlinking;
     public Part3D mLeftEyelid;
     public Part3D mRightEyelid;
     public Part3D mLeftEar;
@@ -68,7 +48,6 @@ public class Reeti extends Agent3D
     public Part3D mMouthUpperLip;
     public Part3D mMouthDownLip;
     public Part3D mBody;
-
     //Movement
     private double mUpperLipOldPos = 0;
     private double mDownLipOldPos = 20;
@@ -85,8 +64,6 @@ public class Reeti extends Agent3D
     private double mNeckRotatOldPos = 50;
     private double mNeckPanOldPos = 50;
     private double mNeckTiltOldPos = 50;
-
-    private static Reeti sReeti;
 
     public Reeti(String name, Gender.TYPE gender, float scale, Dimension size)
     {
@@ -113,6 +90,97 @@ public class Reeti extends Agent3D
 
         init();
         update();
+    }
+
+    //VSM static stuff
+    public static void vsm_ledOn(String color)
+    {
+        sReeti.setLedColor(color);
+    }
+
+    public static void vsm_ledOf()
+    {
+        sReeti.ledOFF("B");
+    }
+
+    public static void vsm_rightLC(int pos, int duration)
+    {
+        sReeti.rightLC(pos, duration);
+    }
+
+    public static void vsm_leftLC(int pos, int duration)
+    {
+        sReeti.leftLC(pos, duration);
+    }
+
+    public static void vsm_topLip(int pos, int duration)
+    {
+        sReeti.topLip(pos, duration);
+    }
+
+    public static void vsm_bottomLip(int pos, int duration)
+    {
+        sReeti.bottomLip(pos, duration);
+    }
+
+    public static void vsm_leftEyeTilt(int pos, int duration)
+    {
+        sReeti.leftEyeTilt(pos, duration);
+    }
+
+    public static void vsm_rightEyeTilt(int pos, int duration)
+    {
+        sReeti.rightEyeTilt(pos, duration);
+    }
+
+    public static void vsm_leftEyePan(int pos, int duration)
+    {
+        sReeti.leftEyePan(pos, duration);
+    }
+
+    public static void vsm_rightEyePan(int pos, int duration)
+    {
+        sReeti.rightEyePan(pos, duration);
+    }
+
+    public static void vsm_leftEyeLid(int pos, int duration)
+    {
+        sReeti.leftEyeLid(pos, duration);
+    }
+
+    public static void vsm_rightEyeLid(int pos, int duration)
+    {
+        sReeti.rightEyeLid(pos, duration);
+    }
+
+    public static void vsm_leftEar(int pos, int duration)
+    {
+        sReeti.leftEar(pos, duration);
+    }
+
+    public static void vsm_rightEar(int pos, int duration)
+    {
+        sReeti.rightEar(pos, duration);
+    }
+
+    public static void vsm_neckRotat(int pos, int duration)
+    {
+        sReeti.neckRotat(pos, duration);
+    }
+
+    public static void vsm_neckPan(int pos, int duration)
+    {
+        sReeti.neckPan(pos, duration);
+    }
+
+    public static void vsm_neckTilt(int pos, int duration)
+    {
+        sReeti.neckTilt(pos, duration);
+    }
+
+    public static void vsm_defaultPose()
+    {
+        sReeti.defaultPose();
     }
 
     @Override
@@ -143,7 +211,6 @@ public class Reeti extends Agent3D
 
         this.addAllParts();
     }
-
 
     public AnimationReeti doEventFeedbackAnimation(String name, int duration, WordTimeMarkSequence wts, boolean block)
     {
@@ -176,15 +243,15 @@ public class Reeti extends Agent3D
     }
 
     @Override
-    public void setShowName(boolean show)
-    {
-
-    }
-
-    @Override
     public boolean isShowName()
     {
         return false;
+    }
+
+    @Override
+    public void setShowName(boolean show)
+    {
+
     }
 
     @Override
@@ -360,7 +427,7 @@ public class Reeti extends Agent3D
                       String cheek)
     {
 
-        int size = ((LeftCheek)mLeftCheek).getSize();
+        int size = ((LeftCheek) mLeftCheek).getSize();
 
         InnerShadow ledOnShadow = new InnerShadow(BlurType.TWO_PASS_BOX, color3, 0.05 * size, intensityForColor1, 0, 0);
         ledOnShadow.setInput(new DropShadow(BlurType.TWO_PASS_BOX, color2, 0.05 * size, intensityForColor2, 0, 0));
@@ -374,22 +441,22 @@ public class Reeti extends Agent3D
 
         if (cheek.equalsIgnoreCase("L"))
         {
-            ((LeftCheek)mLeftCheek).getLed().setEffect(ledOnShadow);
-            ((LeftCheek)mLeftCheek).getLed().setFill(highlightGradient);
-            ((LeftCheek)mLeftCheek).getLedGroup().setVisible(true);
+            ((LeftCheek) mLeftCheek).getLed().setEffect(ledOnShadow);
+            ((LeftCheek) mLeftCheek).getLed().setFill(highlightGradient);
+            ((LeftCheek) mLeftCheek).getLedGroup().setVisible(true);
         } else if (cheek.equalsIgnoreCase("R"))
         {
-            ((RightCheek)mRightCheek).getLed().setEffect(ledOnShadow);
-            ((RightCheek)mRightCheek).getLed().setFill(highlightGradient);
-            ((RightCheek)mRightCheek).getLedGroup().setVisible(true);
+            ((RightCheek) mRightCheek).getLed().setEffect(ledOnShadow);
+            ((RightCheek) mRightCheek).getLed().setFill(highlightGradient);
+            ((RightCheek) mRightCheek).getLedGroup().setVisible(true);
         } else if (cheek.equalsIgnoreCase("B"))
         {
-            ((LeftCheek)mLeftCheek).getLed().setEffect(ledOnShadow);
-            ((LeftCheek)mLeftCheek).getLed().setFill(highlightGradient);
-            ((RightCheek)mRightCheek).getLed().setEffect(ledOnShadow);
-            ((RightCheek)mRightCheek).getLed().setFill(highlightGradient);
-            ((LeftCheek)mLeftCheek).getLedGroup().setVisible(true);
-            ((RightCheek)mRightCheek).getLedGroup().setVisible(true);
+            ((LeftCheek) mLeftCheek).getLed().setEffect(ledOnShadow);
+            ((LeftCheek) mLeftCheek).getLed().setFill(highlightGradient);
+            ((RightCheek) mRightCheek).getLed().setEffect(ledOnShadow);
+            ((RightCheek) mRightCheek).getLed().setFill(highlightGradient);
+            ((LeftCheek) mLeftCheek).getLedGroup().setVisible(true);
+            ((RightCheek) mRightCheek).getLedGroup().setVisible(true);
         }
     }
 
@@ -397,14 +464,14 @@ public class Reeti extends Agent3D
     {
         if (cheek.equalsIgnoreCase("R"))
         {
-            ((RightCheek)mRightCheek).getLedGroup().setVisible(false);
+            ((RightCheek) mRightCheek).getLedGroup().setVisible(false);
         } else if (cheek.equalsIgnoreCase("L"))
         {
-            ((LeftCheek)mLeftCheek).getLedGroup().setVisible(false);
+            ((LeftCheek) mLeftCheek).getLedGroup().setVisible(false);
         } else if (cheek.equalsIgnoreCase("B"))
         {
-            ((RightCheek)mRightCheek).getLedGroup().setVisible(false);
-            ((LeftCheek)mLeftCheek).getLedGroup().setVisible(false);
+            ((RightCheek) mRightCheek).getLedGroup().setVisible(false);
+            ((LeftCheek) mLeftCheek).getLedGroup().setVisible(false);
         }
     }
 
@@ -421,7 +488,7 @@ public class Reeti extends Agent3D
         }
         pos = (pos * 16) / 100;
         double distance = mRightCornerOldPos - pos;
-        ((MouthRightCorner)mMouthRightCorner).setRightCornerRegulator(distance);
+        ((MouthRightCorner) mMouthRightCorner).setRightCornerRegulator(distance);
         mRightCornerOldPos = pos;
         AnimationReeti a = AnimationLoaderReeti.getInstance().loadAnimation(this, "RightLC", (int) dur, pos, false);
         try
@@ -448,7 +515,7 @@ public class Reeti extends Agent3D
         }
         pos = (pos * 16) / 100;
         double distance = mLeftCornerOldPos - pos;
-        ((MouthLeftCorner)mMouthLeftCorner).setLeftCornerRegulator(distance);
+        ((MouthLeftCorner) mMouthLeftCorner).setLeftCornerRegulator(distance);
         mLeftCornerOldPos = pos;
         AnimationReeti a = AnimationLoaderReeti.getInstance().loadAnimation(this, "LeftLC", (int) dur, pos, false);
         try
@@ -477,7 +544,7 @@ public class Reeti extends Agent3D
         pos = (pos * 25) / 100;
 
         double distance = mUpperLipOldPos - pos;
-        ((MouthUpperLip)mMouthUpperLip).setUpperLipRegulator(distance);
+        ((MouthUpperLip) mMouthUpperLip).setUpperLipRegulator(distance);
         mUpperLipOldPos = pos;
 
         AnimationReeti a = AnimationLoaderReeti.getInstance().loadAnimation(this, "UpperLip", (int) dur, pos, false);
@@ -507,7 +574,7 @@ public class Reeti extends Agent3D
         pos = (pos * 20) / 100;
 
         double distance = pos - mDownLipOldPos;
-        ((MouthDownLip)mMouthDownLip).setDownLipRegulator(-distance);
+        ((MouthDownLip) mMouthDownLip).setDownLipRegulator(-distance);
         mDownLipOldPos = pos;
 
         AnimationReeti a = AnimationLoaderReeti.getInstance().loadAnimation(this, "DownLip", (int) dur, pos, false);
@@ -940,98 +1007,6 @@ public class Reeti extends Agent3D
     public double getmRightCornerOldPos()
     {
         return mRightCornerOldPos;
-    }
-
-
-    //VSM static stuff
-    public static void vsm_ledOn(String color)
-    {
-        sReeti.setLedColor(color);
-    }
-
-    public static void vsm_ledOf()
-    {
-        sReeti.ledOFF("B");
-    }
-
-    public static void vsm_rightLC(int pos, int duration)
-    {
-        sReeti.rightLC(pos, duration);
-    }
-
-    public static void vsm_leftLC(int pos, int duration)
-    {
-        sReeti.leftLC(pos, duration);
-    }
-
-    public static void vsm_topLip(int pos, int duration)
-    {
-        sReeti.topLip(pos, duration);
-    }
-
-    public static void vsm_bottomLip(int pos, int duration)
-    {
-        sReeti.bottomLip(pos, duration);
-    }
-
-    public static void vsm_leftEyeTilt(int pos, int duration)
-    {
-        sReeti.leftEyeTilt(pos, duration);
-    }
-
-    public static void vsm_rightEyeTilt(int pos, int duration)
-    {
-        sReeti.rightEyeTilt(pos, duration);
-    }
-
-    public static void vsm_leftEyePan(int pos, int duration)
-    {
-        sReeti.leftEyePan(pos, duration);
-    }
-
-    public static void vsm_rightEyePan(int pos, int duration)
-    {
-        sReeti.rightEyePan(pos, duration);
-    }
-
-    public static void vsm_leftEyeLid(int pos, int duration)
-    {
-        sReeti.leftEyeLid(pos, duration);
-    }
-
-    public static void vsm_rightEyeLid(int pos, int duration)
-    {
-        sReeti.rightEyeLid(pos, duration);
-    }
-
-    public static void vsm_leftEar(int pos, int duration)
-    {
-        sReeti.leftEar(pos, duration);
-    }
-
-    public static void vsm_rightEar(int pos, int duration)
-    {
-        sReeti.rightEar(pos, duration);
-    }
-
-    public static void vsm_neckRotat(int pos, int duration)
-    {
-        sReeti.neckRotat(pos, duration);
-    }
-
-    public static void vsm_neckPan(int pos, int duration)
-    {
-        sReeti.neckPan(pos, duration);
-    }
-
-    public static void vsm_neckTilt(int pos, int duration)
-    {
-        sReeti.neckTilt(pos, duration);
-    }
-
-    public static void vsm_defaultPose()
-    {
-        sReeti.defaultPose();
     }
 
 }

@@ -1,17 +1,12 @@
 package de.dfki.stickmanSwing.util;
 
-import java.awt.Component;
-import java.awt.Container;
-import java.awt.Dimension;
-import java.awt.Insets;
-import java.awt.LayoutManager;
+import java.awt.*;
 
 /**
- *
  * @author Patrick Gebahrd
- *
  */
-public class StickmanStageLayout implements LayoutManager {
+public class StickmanStageLayout implements LayoutManager
+{
 
     private double sScale = 1.0d;
 
@@ -19,11 +14,12 @@ public class StickmanStageLayout implements LayoutManager {
     private int preferredWidth = 0, preferredHeight = 0;
     private boolean sizeUnknown = true;
 
-    public StickmanStageLayout() {
+    public StickmanStageLayout()
+    {
         //sScale = scale;
     }
 
-//	public void setScale(double scale) {
+    //	public void setScale(double scale) {
 //		sScale = scale;
 //	}
 //
@@ -31,14 +27,17 @@ public class StickmanStageLayout implements LayoutManager {
 //		return new Double(input * sScale).intValue();
 //	}
     @Override
-    public void addLayoutComponent(String name, Component comp) {
+    public void addLayoutComponent(String name, Component comp)
+    {
     }
 
     @Override
-    public void removeLayoutComponent(Component comp) {
+    public void removeLayoutComponent(Component comp)
+    {
     }
 
-    private void setSizes(Container parent) {
+    private void setSizes(Container parent)
+    {
         Dimension d;
 
         preferredWidth = 0;
@@ -46,8 +45,10 @@ public class StickmanStageLayout implements LayoutManager {
         minWidth = 0;
         minHeight = 0;
 
-        for (Component c : parent.getComponents()) {
-            if (c.isVisible()) {
+        for (Component c : parent.getComponents())
+        {
+            if (c.isVisible())
+            {
                 d = c.getPreferredSize();
                 preferredWidth += d.width;
                 preferredHeight = Math.max(d.height, preferredHeight);
@@ -59,14 +60,17 @@ public class StickmanStageLayout implements LayoutManager {
     }
 
     @Override
-    public Dimension preferredLayoutSize(Container parent) {
+    public Dimension preferredLayoutSize(Container parent)
+    {
         Dimension d = new Dimension(0, 0);
 
         setSizes(parent);
 
         Insets insets = parent.getInsets();
-        d.width = preferredWidth + insets.left + insets.right;;
-        d.height = preferredHeight + insets.top + insets.bottom;;
+        d.width = preferredWidth + insets.left + insets.right;
+        ;
+        d.height = preferredHeight + insets.top + insets.bottom;
+        ;
 
         sizeUnknown = false;
 
@@ -74,31 +78,37 @@ public class StickmanStageLayout implements LayoutManager {
     }
 
     @Override
-    public Dimension minimumLayoutSize(Container parent) {
+    public Dimension minimumLayoutSize(Container parent)
+    {
         return preferredLayoutSize(parent);
     }
 
 
     /*
-	 * provides a flow layout with letting the subcomponents size untouched
+     * provides a flow layout with letting the subcomponents size untouched
      */
     @Override
-    public void layoutContainer(Container parent) {
+    public void layoutContainer(Container parent)
+    {
         Insets insets = parent.getInsets();
         int previousWidth = 0, previousHeight = 0;
         int x = 0, y = insets.top;
 
-        if (sizeUnknown) {
+        if (sizeUnknown)
+        {
             setSizes(parent);
         }
 
-        for (int i = 0; i < parent.getComponentCount(); i++) {
+        for (int i = 0; i < parent.getComponentCount(); i++)
+        {
             Component c = parent.getComponent(i);
 
-            if (c.isVisible()) {
+            if (c.isVisible())
+            {
                 Dimension d = c.getPreferredSize();
 
-                if (i > 0) {
+                if (i > 0)
+                {
                     x += previousWidth;
                 }
 

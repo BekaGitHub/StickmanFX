@@ -1,15 +1,12 @@
 package de.dfki.reeti.body;
 
 import com.interactivemesh.jfx.importer.col.ColModelImporter;
-
-import java.awt.Dimension;
-import java.awt.Point;
-
 import de.dfki.common.part.Part3D;
 import javafx.scene.Group;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.MeshView;
 
+import java.awt.*;
 import java.net.URL;
 
 /*
@@ -25,7 +22,7 @@ public class Body extends PartReeti
 {
     public Body(Part3D neck)
     {
-        mStart = ((Neck)neck).getBodyStartPosition();
+        mStart = ((Neck) neck).getBodyStartPosition();
         mSize = new Dimension(120, 300);
         mColor = Color.WHITE;
 

@@ -1,22 +1,17 @@
 package de.dfki.stickmanFX.bodyfx;
 
 import de.dfki.stickmanFX.StickmanFX;
-
-import java.awt.Dimension;
-import java.awt.Point;
-
 import javafx.scene.paint.Color;
 import javafx.scene.shape.CubicCurveTo;
-import javafx.scene.shape.LineTo;
 import javafx.scene.shape.MoveTo;
 import javafx.scene.shape.Path;
 import javafx.scene.shape.QuadCurveTo;
 import javafx.scene.transform.Affine;
 
+import java.awt.*;
+
 /**
- *
  * @author Beka Aptsiauri
- *
  */
 public class FemaleHairFX extends PartStickman2D
 {
@@ -34,7 +29,8 @@ public class FemaleHairFX extends PartStickman2D
 
     Path mFemaleHair;
 
-    public FemaleHairFX(StickmanFX sm) {
+    public FemaleHairFX(StickmanFX sm)
+    {
         mStickmanFX = sm;
         mDefaultRotationPoint = new Point(mSize.width / 2, mSize.height);
         mColor = Color.rgb(240, 212, 0, 1);
@@ -46,9 +42,11 @@ public class FemaleHairFX extends PartStickman2D
         calculate(0);
     }
 
-    public void calculate(int step) {
+    public void calculate(int step)
+    {
         Affine af = new Affine();
-        this.getChildren().clear();;
+        this.getChildren().clear();
+        ;
         //drawFemaleHair1();
         //female hair
         mFemaleHair = new Path();
@@ -91,25 +89,32 @@ public class FemaleHairFX extends PartStickman2D
 
     }
 
-    public void update() {
-        if (mStickmanFX.setCharacterInvisible == false) {
+    public void update()
+    {
+        if (mStickmanFX.setCharacterInvisible == false)
+        {
             mColorRecorder = mColor;
         }
 
-        if (mStickmanFX.setCharacterInvisible == true) {
+        if (mStickmanFX.setCharacterInvisible == true)
+        {
             if (mStickmanFX.fadeControler == true) //Added by Robbie
             {
                 int fadeFactor = mStickmanFX.mMouthFX.mShapeAnimationStep * 10;
-                if (fadeFactor <= 20) {
+                if (fadeFactor <= 20)
+                {
                     fadeFactor = 0;
                 }
                 mColor = new Color(mColor.getRed(), mColor.getGreen(), mColor.getBlue(), (fadeFactor * 100 / 255) / 100f);
                 //mColor = Color.rgb(240, 212, 0, (fadeFactor * 100 / 255) / 100f);
-            } else {
+            } else
+            {
                 int fadeFactor = (20 - mStickmanFX.mMouthFX.mShapeAnimationStep) * 9;
-                if (fadeFactor >= 160) {
+                if (fadeFactor >= 160)
+                {
                     mColor = mColorRecorder;
-                } else {
+                } else
+                {
                     mColor = new Color(mColor.getRed(), mColor.getGreen(), mColor.getBlue(), (fadeFactor * 100 / 255) / 100f);
                 }
                 //mColor = Color.rgb(240, 212, 0, (fadeFactor * 100 / 255) / 100f);

@@ -9,8 +9,8 @@ import de.dfki.common.part.Part;
 import de.dfki.stickmanSwing.animationlogic.listener.AnimationListener;
 import javafx.scene.layout.Pane;
 
-import java.awt.Dimension;
-import java.util.*;
+import java.awt.*;
+import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.Semaphore;
 import java.util.logging.ConsoleHandler;
@@ -21,19 +21,17 @@ import java.util.logging.Logger;
  */
 public abstract class Agent extends Pane implements IAgent
 {
+    public static Dimension mDefaultSize = new Dimension(300, 800);
+    public static Dimension mSize = new Dimension(mDefaultSize);
+    public final List<AnimationListener> mAnimationListeners = new CopyOnWriteArrayList<AnimationListener>();
+    public final Logger mLogger = Logger.getAnonymousLogger();
     public Gender.TYPE mType = Gender.TYPE.FEMALE;
     public String mName = "Agent";
     public float mScale = 1.0f;
-    public static Dimension mDefaultSize = new Dimension(300, 800);
-    public static Dimension mSize = new Dimension(mDefaultSize);
     public Semaphore mAnimationLaunchControl = new Semaphore(1);
-    public final List<AnimationListener> mAnimationListeners = new CopyOnWriteArrayList<AnimationListener>();
     public AnimationScheduler animationScheduler;
-
     public StageRoom stageRoom;
     public long mID = 0;
-
-    public final Logger mLogger = Logger.getAnonymousLogger();
 
     @Override
     public String getName()
@@ -106,5 +104,6 @@ public abstract class Agent extends Pane implements IAgent
     }
 
     public abstract Part getSpeechBubble();
+
     public abstract void setSpeechBubble(Part speechBubble);
 }

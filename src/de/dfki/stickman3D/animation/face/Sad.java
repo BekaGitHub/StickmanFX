@@ -13,40 +13,42 @@ import de.dfki.stickman3D.animationlogic.AnimationStickman3D;
 import java.util.ArrayList;
 
 /**
- *
  * @author Beka
- *
  */
 public class Sad extends AnimationStickman3D
 {
 
-    public Sad() {
+    public Sad()
+    {
         mAnimType = ANIMTYPE.ON;
     }
 
-    public Sad(Stickman3D sm, int duration, boolean block) {
+    public Sad(Stickman3D sm, int duration, boolean block)
+    {
         super(sm, duration, block);
     }
 
     @Override
-    public void playAnimation() {
+    public void playAnimation()
+    {
         // sad
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mMouth, "shape", "SAD"));
-        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftEyebrow, "shape", "SAD"));  // add by Robbie
-        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mRightEyebrow, "shape", "SAD")); // add by Robbie
+        mAnimationPart.add(new AnimationContent(((Stickman3D) agent).mMouth, "shape", "SAD"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D) agent).mLeftEyebrow, "shape", "SAD"));  // add by Robbie
+        mAnimationPart.add(new AnimationContent(((Stickman3D) agent).mRightEyebrow, "shape", "SAD")); // add by Robbie
         playAnimationPart(mDuration);
 
         pauseAnimation(1200);
 
         // no sad
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mMouth, "shape", "SADEND"));
-        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftEyebrow, "shape", "SADEND"));  // add by Robbie
-        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mRightEyebrow, "shape", "SADEND")); // add by Robbie
+        mAnimationPart.add(new AnimationContent(((Stickman3D) agent).mMouth, "shape", "SADEND"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D) agent).mLeftEyebrow, "shape", "SADEND"));  // add by Robbie
+        mAnimationPart.add(new AnimationContent(((Stickman3D) agent).mRightEyebrow, "shape", "SADEND")); // add by Robbie
         playAnimationPart(mDuration);
 
-        if (StickmanStageController.currentRadioButton != null) {
+        if (StickmanStageController.currentRadioButton != null)
+        {
             StickmanStageController.currentRadioButton.setSelected(false);
         }
     }

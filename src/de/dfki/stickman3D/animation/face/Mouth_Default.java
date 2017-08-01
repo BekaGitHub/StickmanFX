@@ -12,22 +12,22 @@ import de.dfki.stickman3D.animationlogic.AnimationStickman3D;
 import java.util.ArrayList;
 
 /**
- *
  * @author Beka
- *
  */
 public class Mouth_Default extends AnimationStickman3D
 {
 
-    public Mouth_Default(Stickman3D sm, int duration, boolean block) {
+    public Mouth_Default(Stickman3D sm, int duration, boolean block)
+    {
         super(sm, duration, block);
     }
 
     @Override
-    public void playAnimation() {
+    public void playAnimation()
+    {
         // smile
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mMouth, "shape", "DEFAULT"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D) agent).mMouth, "shape", "DEFAULT"));
         playAnimationPart(mDuration);
     }
 }

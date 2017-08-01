@@ -13,40 +13,42 @@ import de.dfki.stickman3D.animationlogic.AnimationStickman3D;
 import java.util.ArrayList;
 
 /**
- *
  * @author Beka Aptsiauri
- *
  */
 public class Contempt extends AnimationStickman3D
 {
 
-    public Contempt() {
+    public Contempt()
+    {
         mAnimType = ANIMTYPE.ON;
     }
 
-    public Contempt(Stickman3D sm, int duration, boolean block) {
+    public Contempt(Stickman3D sm, int duration, boolean block)
+    {
         super(sm, duration, block);
     }
 
     @Override
-    public void playAnimation() {
+    public void playAnimation()
+    {
         // Contempt
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mMouth, "shape", "CONTEMPT"));
-        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftEye, "shape", "CONTEMPT"));
-        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mRightEye, "shape", "CONTEMPT"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D) agent).mMouth, "shape", "CONTEMPT"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D) agent).mLeftEye, "shape", "CONTEMPT"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D) agent).mRightEye, "shape", "CONTEMPT"));
         playAnimationPart(mDuration);
 
         pauseAnimation(1200);
 
         // no Contempt
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mMouth, "shape", "CONTEMPTEND"));
-        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftEye, "shape", "CONTEMPTEND"));
-        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mRightEye, "shape", "CONTEMPTEND"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D) agent).mMouth, "shape", "CONTEMPTEND"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D) agent).mLeftEye, "shape", "CONTEMPTEND"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D) agent).mRightEye, "shape", "CONTEMPTEND"));
         playAnimationPart(mDuration);
 
-        if (StickmanStageController.currentRadioButton != null) {
+        if (StickmanStageController.currentRadioButton != null)
+        {
             StickmanStageController.currentRadioButton.setSelected(false);
         }
     }

@@ -21,39 +21,51 @@ public class AnimationScheduler extends Thread
         mAgent = agent;
     }
 
-    public void introduce(Animation animation) {
-        try {
+    public void introduce(Animation animation)
+    {
+        try
+        {
             mAnimationQueue.put(animation);
-        } catch (InterruptedException ex) {
+        } catch (InterruptedException ex)
+        {
             ex.printStackTrace();
         }
     }
 
-    public void proceed(Animation animation) {
+    public void proceed(Animation animation)
+    {
         removeAnimation(animation);
         mTheBlockOfHell.release();
     }
 
-    public void removeAnimation(Animation animation) {
+    public void removeAnimation(Animation animation)
+    {
         mAnimationQueue.remove(animation);
     }
 
-    public synchronized void end() {
+    public synchronized void end()
+    {
         mRunning = false;
 
         // throw in a last animation that unblocks the scheduler letting him end
-        try {
-            mAnimationQueue.put(new Animation(mAgent, 1, false) {
+        try
+        {
+            mAnimationQueue.put(new Animation(mAgent, 1, false)
+            {
             });
-        } catch (InterruptedException ex) {
+        } catch (InterruptedException ex)
+        {
             ex.printStackTrace();
         }
     }
 
     @Override
-    public void run() {
-        while (mRunning) {
-            try {
+    public void run()
+    {
+        while (mRunning)
+        {
+            try
+            {
                 // serialize all animations here ...
                 mTheBlockOfHell.acquire(1);
 
@@ -64,11 +76,13 @@ public class AnimationScheduler extends Thread
                 animation.mAnimationStart.release();
 
                 // unblock the scheduler if animation is not blocking
-                if (!animation.mBlocking) {
+                if (!animation.mBlocking)
+                {
                     mTheBlockOfHell.release();
                     removeAnimation(animation);
                 }
-            } catch (InterruptedException ex) {
+            } catch (InterruptedException ex)
+            {
                 ex.printStackTrace();
             }
         }

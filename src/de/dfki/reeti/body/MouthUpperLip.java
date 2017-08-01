@@ -2,11 +2,10 @@ package de.dfki.reeti.body;
 
 import de.dfki.common.part.Part3D;
 import de.dfki.reeti.animationlogic.AnimatorReeti;
-
-import java.awt.geom.Point2D;
-
 import javafx.scene.shape.Path;
 import javafx.scene.shape.QuadCurveTo;
+
+import java.awt.geom.Point2D;
 
 /**
  * @author Beka Aptsiauri
@@ -14,23 +13,17 @@ import javafx.scene.shape.QuadCurveTo;
 public class MouthUpperLip extends PartReeti
 {
 
-    public enum SHAPE
-    {
-        DEFAULT, UPPERLIPACTION
-    }
-
+    public MouthUpperLip.SHAPE mShape = MouthUpperLip.SHAPE.DEFAULT;
     private Point2D upperPoint;
     private Path mLips;
 
     private double upperLipRegulator = 0;
     private double recordupperLipRegulator;
 
-    public MouthUpperLip.SHAPE mShape = MouthUpperLip.SHAPE.DEFAULT;
-
     public MouthUpperLip(Part3D mouth)
     {
-        mLips = ((Mouth)mouth).getLips();
-        upperPoint = ((Mouth)mouth).getUpperPoint();
+        mLips = ((Mouth) mouth).getLips();
+        upperPoint = ((Mouth) mouth).getUpperPoint();
     }
 
     @Override
@@ -77,6 +70,11 @@ public class MouthUpperLip extends PartReeti
     public void setUpperLipRegulator(double upperLipRegulator)
     {
         this.upperLipRegulator = upperLipRegulator;
+    }
+
+    public enum SHAPE
+    {
+        DEFAULT, UPPERLIPACTION
     }
 
 }

@@ -1,19 +1,17 @@
 package de.dfki.stickman3D.stage;
 
-import de.dfki.common.commonFX3D.ApplicationLauncherImpl;
 import de.dfki.common.StickmansOnStage;
+import de.dfki.common.commonFX3D.ApplicationLauncherImpl;
 import de.dfki.common.interfaces.StickmanStage;
 import de.dfki.stickman3D.Stickman3D;
 import de.dfki.stickman3D.StickmanStageController;
-
-import static de.dfki.stickman3D.stage.StageRoom3D.OldIdentifier;
-
 import de.dfki.stickmanFX.stage.StageRoomFX;
 import javafx.application.Application;
 import javafx.application.Platform;
-import javafx.geometry.*;
+import javafx.geometry.Pos;
 import javafx.scene.*;
-import javafx.scene.input.*;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.input.ScrollEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
@@ -22,7 +20,9 @@ import javafx.stage.StageStyle;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.UUID;
 import java.util.logging.ConsoleHandler;
 import java.util.logging.Logger;
 
@@ -32,23 +32,19 @@ import java.util.logging.Logger;
 public class StickmanStage3D extends Application implements StickmanStage
 {
 
+    //logging
+    public static final Logger LOGGER = Logger.getAnonymousLogger();
     private static final float STICKMAN_SIZE_FACTOR = 0.8f;
     private static final float HEIGHT_ADJUSTMENT = 3 / 5.0f;
     private static final float STICKMAN_IN_BETWEEN_DISTANCE_FACTOR = 0.9f;
     private static final String STICKMAN_STAGE = "StickmanStage3D";
-
+    static private StickmanStage3D sInstance;
     private final int mHeight = 0;
     private final int mWidth = 0;
-
-    static private StickmanStage3D sInstance;
     private final HashMap<String, StickmansOnStage> stickamnsOnStage = new HashMap<>();
     private final float sScale;
     private final Map<String, Stage> stickmanStages = new HashMap<>();
     private final StagePaneHandler3D generalConfigStageRoot;
-
-    //logging
-    public static final Logger LOGGER = Logger.getAnonymousLogger();
-
     private boolean showControlPanel = false;
 
     // Camera

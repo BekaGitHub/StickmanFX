@@ -12,18 +12,12 @@ import javafx.scene.shape.*;
 public class LeftEye3D extends PartStickman3D
 {
 
-    public enum SHAPE
-    {
-        DEFAULT, FADEIN, FADEOUT, BLINK, BLINKEND, LOOKLEFT, LOOKLEFTEND, LOOKRIGHT, LOOKRIGHTEND, LOOKDOWN, LOOKDOWNEND, LOOKUP, LOOKUPEND, ANGRY, ANGRYEND, SURPRISED, SURPRISEDEND, HAPPY, HAPPYEND, DISGUSTED, DISGUSTEDEND, LOVED, LOVEDEND, LOVED1, CONTEMPT, CONTEMPTEND, EXCITED, EXCITEDEND, EMBARRASSED, EMBARRASSEDEND
-    }
-
-    private Head3D mHead;
-    private Group leftEyeGroup;
-
     public Path border;
     public Path bigPupile;
     public Path smallPupile;
-
+    public LeftEye3D.SHAPE mShape = LeftEye3D.SHAPE.DEFAULT;
+    private Head3D mHead;
+    private Group leftEyeGroup;
     private double borderXSize = 0;
     private double borderYSize = 0;
     private double bigPupileYSize = 0;
@@ -34,15 +28,13 @@ public class LeftEye3D extends PartStickman3D
     private Color smallPupileColor;
     private Color borderColor;
 
-    public LeftEye3D.SHAPE mShape = LeftEye3D.SHAPE.DEFAULT;
-
     public LeftEye3D(Part3D head)
     {
         mHead = (Head3D) head;
 
         if (mHead.getStickman().mType == Gender.TYPE.MALE)
             mColor = Color.rgb(0, 0, 0, 1);
-         else
+        else
             mColor = Color.rgb(0, 0, 255, 1);
 
         smallPupileColor = Color.rgb(255, 255, 255, 1);
@@ -513,6 +505,11 @@ public class LeftEye3D extends PartStickman3D
         startBorder.setFill(borderColor);
 
         return startBorder;
+    }
+
+    public enum SHAPE
+    {
+        DEFAULT, FADEIN, FADEOUT, BLINK, BLINKEND, LOOKLEFT, LOOKLEFTEND, LOOKRIGHT, LOOKRIGHTEND, LOOKDOWN, LOOKDOWNEND, LOOKUP, LOOKUPEND, ANGRY, ANGRYEND, SURPRISED, SURPRISEDEND, HAPPY, HAPPYEND, DISGUSTED, DISGUSTEDEND, LOVED, LOVEDEND, LOVED1, CONTEMPT, CONTEMPTEND, EXCITED, EXCITEDEND, EMBARRASSED, EMBARRASSEDEND
     }
 
 }

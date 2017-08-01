@@ -19,7 +19,7 @@ public class Neck extends PartReeti
 
     public Neck(Part3D head)
     {
-        mStart = ((Head)head).getNeckStartPosition();
+        mStart = ((Head) head).getNeckStartPosition();
         mEnd = new Point(mStart.x, mStart.y + mLength);
     }
 

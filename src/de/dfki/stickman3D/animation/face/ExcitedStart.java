@@ -7,26 +7,26 @@ import de.dfki.stickman3D.animationlogic.AnimationStickman3D;
 import java.util.ArrayList;
 
 /**
- *
  * @author Beka
- *
  */
 public class ExcitedStart extends AnimationStickman3D
 {
 
-    public ExcitedStart(Stickman3D sm, int duration, boolean block) {
+    public ExcitedStart(Stickman3D sm, int duration, boolean block)
+    {
         super(sm, duration, block);
     }
 
     @Override
-    public void playAnimation() {
+    public void playAnimation()
+    {
         // excited
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mMouth, "shape", "EXCITED"));
-        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftEye, "shape", "EXCITED"));
-        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mRightEye, "shape", "EXCITED"));
-        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftEyebrow, "shape", "EXCITED"));
-        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mRightEyebrow, "shape", "EXCITED"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D) agent).mMouth, "shape", "EXCITED"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D) agent).mLeftEye, "shape", "EXCITED"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D) agent).mRightEye, "shape", "EXCITED"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D) agent).mLeftEyebrow, "shape", "EXCITED"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D) agent).mRightEyebrow, "shape", "EXCITED"));
         playAnimationPart(mDuration);
 
         pauseAnimation(10);

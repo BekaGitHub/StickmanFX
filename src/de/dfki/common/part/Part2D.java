@@ -40,14 +40,14 @@ public abstract class Part2D extends Part
     public abstract void update();
 
     @Override
-    public void setTranslation(int length, Axis...axis)
+    public void setTranslation(int length, Axis... axis)
     {
         mToTranslation = mTranslation + length;
         mTranslationStep = (double) length / Animator.sMAX_ANIM_STEPS;
     }
 
     @Override
-    public synchronized void calculateTranslation(int step, Axis...axis)
+    public synchronized void calculateTranslation(int step, Axis... axis)
     {
         mTranslation += mTranslationStep;
         mTranslation = (double) Math.round(mTranslation * 1000d) / 1000d; // the poor man's round method
@@ -70,7 +70,7 @@ public abstract class Part2D extends Part
     }
 
     @Override
-    public void setRotation(int degree, Axis...axis)
+    public void setRotation(int degree, Axis... axis)
     {
         mToDegree = mRotation + degree;
         mRotationStep = (double) degree / Animator.sMAX_ANIM_STEPS;
@@ -84,7 +84,7 @@ public abstract class Part2D extends Part
     }
 
     @Override
-    public synchronized void calculateRotation(int step, Axis...axis)
+    public synchronized void calculateRotation(int step, Axis... axis)
     {
         mRotation += mRotationStep;
         mRotation = (double) Math.round(mRotation * 1000d) / 1000d; // the poor man's round method
@@ -92,7 +92,7 @@ public abstract class Part2D extends Part
     }
 
     @Override
-    public void resetRotation(Axis...axis)
+    public void resetRotation(Axis... axis)
     {
         mTranslationStep = 0.0d;
     }

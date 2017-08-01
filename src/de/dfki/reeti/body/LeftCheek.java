@@ -15,16 +15,15 @@ import javafx.scene.transform.Rotate;
  */
 public class LeftCheek extends PartReeti
 {
+    private static final int SIZE = 70;
     private final Circle mLed;
     private final Group mLedGroup;
-
-    private static final int SIZE = 70;
 
     public LeftCheek(Part3D head)
     {
         mLed = new Circle(SIZE);
         mLedGroup = new Group();
-        mStart = ((Head)head).getLeftEyebrowPostion();
+        mStart = ((Head) head).getLeftEyebrowPostion();
 
         mYRotation = -25;
         mXRotation = -10;
@@ -37,7 +36,7 @@ public class LeftCheek extends PartReeti
         mLedGroup.setVisible(false);
         init();
 
-        ((Head)head).getHeadGroup().getChildren().add(mLedGroup);
+        ((Head) head).getHeadGroup().getChildren().add(mLedGroup);
     }
 
     @Override

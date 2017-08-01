@@ -21,7 +21,8 @@ import java.util.ArrayList;
 public class TurnLeftEnd extends AnimationStickman3D
 {
 
-    public TurnLeftEnd(Stickman3D sm, int duration, boolean block) {
+    public TurnLeftEnd(Stickman3D sm, int duration, boolean block)
+    {
         super(sm, duration, block);
     }
 
@@ -29,18 +30,21 @@ public class TurnLeftEnd extends AnimationStickman3D
      * This method creates the angry facial movement.
      */
     @Override
-    public void playAnimation() {
-        if (((Stickman3D)agent).mType == Gender.TYPE.MALE) {
+    public void playAnimation()
+    {
+        if (((Stickman3D) agent).mType == Gender.TYPE.MALE)
+        {
             mAnimationPart = new ArrayList<>();
-            mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftWrist, "yrotate", 40));
-            mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mUpperBody, "yrotate", 60));
-            mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mHead, "yrotate", 40));
+            mAnimationPart.add(new AnimationContent(((Stickman3D) agent).mLeftWrist, "yrotate", 40));
+            mAnimationPart.add(new AnimationContent(((Stickman3D) agent).mUpperBody, "yrotate", 60));
+            mAnimationPart.add(new AnimationContent(((Stickman3D) agent).mHead, "yrotate", 40));
             playAnimationPart(500);
-        } else {
+        } else
+        {
             mAnimationPart = new ArrayList<>();
-            mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftWrist, "yrotate", 70));
-            mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mUpperBody, "yrotate", 60));
-            mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mHead, "yrotate", 40));
+            mAnimationPart.add(new AnimationContent(((Stickman3D) agent).mLeftWrist, "yrotate", 70));
+            mAnimationPart.add(new AnimationContent(((Stickman3D) agent).mUpperBody, "yrotate", 60));
+            mAnimationPart.add(new AnimationContent(((Stickman3D) agent).mHead, "yrotate", 40));
             playAnimationPart(500);
         }
     }

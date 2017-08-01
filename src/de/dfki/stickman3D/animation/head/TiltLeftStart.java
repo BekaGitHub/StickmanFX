@@ -12,23 +12,23 @@ import de.dfki.stickman3D.animationlogic.AnimationStickman3D;
 import java.util.ArrayList;
 
 /**
- *
  * @author Beka
- *
  */
 public class TiltLeftStart extends AnimationStickman3D
 {
 
-    public TiltLeftStart(Stickman3D sm, int duration, boolean block) {
+    public TiltLeftStart(Stickman3D sm, int duration, boolean block)
+    {
         super(sm, duration, block);
     }
 
     @Override
-    public void playAnimation() {
+    public void playAnimation()
+    {
 
         AnimationStickman3D.isHeadTiltInAction = true;
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mHead, "zrotate", 10));
+        mAnimationPart.add(new AnimationContent(((Stickman3D) agent).mHead, "zrotate", 10));
         playAnimationPart(200);
 
     }

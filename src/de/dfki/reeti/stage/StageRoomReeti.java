@@ -1,7 +1,7 @@
 package de.dfki.reeti.stage;
 
-import de.dfki.common.commonFX3D.StageRoomImpl;
 import de.dfki.common.commonFX3D.ApplicationLauncherImpl;
+import de.dfki.common.commonFX3D.StageRoomImpl;
 import de.dfki.reeti.ApplicationLauncherReeti;
 
 import java.io.IOException;
@@ -9,55 +9,68 @@ import java.io.IOException;
 /**
  * Created by alvaro on 9/12/16.
  */
-public class StageRoomReeti extends StageRoomImpl {
+public class StageRoomReeti extends StageRoomImpl
+{
 
-    public StageRoomReeti() {
+    public StageRoomReeti()
+    {
         getStageInstance();
         createNewStage(0, 0, true);
     }
 
-    public StageRoomReeti(int x, int y) {
+    public StageRoomReeti(int x, int y)
+    {
         getStageInstance();
         createNewStage(x, y, true);
     }
 
-    public StageRoomReeti(int x, int y, boolean decoration) {
+    public StageRoomReeti(int x, int y, boolean decoration)
+    {
         getStageInstance();
         createNewStage(x, y, decoration);
     }
 
     @Override
-    public void sendTimeMarkInformation(String timemark) {
+    public void sendTimeMarkInformation(String timemark)
+    {
 
     }
 
     @Override
-    public void sendAnimationUpdate(String state, String id) {
+    public void sendAnimationUpdate(String state, String id)
+    {
 
     }
 
     @Override
-    protected void getStageInstance() {
+    protected void getStageInstance()
+    {
         applicationFXLauncher = new ApplicationLauncherReeti();
-        if (ApplicationLauncherImpl.isRunning()) {
+        if (ApplicationLauncherImpl.isRunning())
+        {
             stickmanStageFX = ReetiStage.getInstance();
-        } else {
+        } else
+        {
             applicationFXLauncher.launchStickmanAndWait();
         }
     }
 
     @Override
-    protected void createNewStage(int x, int y, boolean decoration) {
+    protected void createNewStage(int x, int y, boolean decoration)
+    {
         stickmanStageFX = ReetiStage.getInstance();
-        try {
+        try
+        {
             stageIdentifier = getStickmanStage().createNewStage(x, y, decoration);
             init(stageIdentifier);
-        } catch (IOException e) {
+        } catch (IOException e)
+        {
             e.printStackTrace();
         }
     }
 
-    public void init(String stageIdentifier) {
+    public void init(String stageIdentifier)
+    {
 
         commonStickmansOnStage = new ReetiOnStage(getStickmanStage(), this, stageIdentifier);
         getStickmanStage().setStickamnsOnStage(getCommonStickmansOnStage(), stageIdentifier);
@@ -65,27 +78,32 @@ public class StageRoomReeti extends StageRoomImpl {
     }
 
     @Override
-    public void launchConfiguration() {
+    public void launchConfiguration()
+    {
         ReetiStage ss3D;
-        try {
+        try
+        {
             ss3D = (ReetiStage) getStickmanStage();
             ss3D.setShowControlPanel(true);
             ss3D.addStickmanToStage(CONFIG_STAGE);
             ss3D.showStage(CONFIG_STAGE);
-        } catch (Exception e) {
+        } catch (Exception e)
+        {
             e.printStackTrace();
         }
     }
 
     @Override
-    public void launchConfiguration(String filepath) {
+    public void launchConfiguration(String filepath)
+    {
         commonStickmansOnStage.setmFilePath(filepath);
         StageRoomReeti.this.launchConfiguration();
 //        loader.initialStickmanWithXml();
     }
 
     @Override
-    public void launchStage(boolean show, String filepath) {
+    public void launchStage(boolean show, String filepath)
+    {
         commonStickmansOnStage.setmFilePath(filepath);
         launchStickmanStage(show);
 //        loader.initialStickmanWithXml();

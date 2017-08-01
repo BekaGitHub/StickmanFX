@@ -13,26 +13,27 @@ import de.dfki.reeti.animationlogic.AnimationReeti;
 import java.util.ArrayList;
 
 /**
- *
  * @author Beka
- *
  */
-public class LeftEye_X extends AnimationReeti {
+public class LeftEye_X extends AnimationReeti
+{
 
-    
+
     int rot;
 
-    public LeftEye_X(Reeti sm, int duration, int pos, boolean block) {
+    public LeftEye_X(Reeti sm, int duration, int pos, boolean block)
+    {
         super(sm, duration, pos, block);
         this.rot = pos;
     }
 
     @Override
-    public void playAnimation() {
-        
+    public void playAnimation()
+    {
+
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(((Reeti)agent).mLeftEye, "rotate", rot));
+        mAnimationPart.add(new AnimationContent(((Reeti) agent).mLeftEye, "rotate", rot));
         playAnimationPart(mDuration);
-        
+
     }
 }

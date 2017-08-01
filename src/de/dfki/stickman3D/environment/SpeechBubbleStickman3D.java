@@ -1,8 +1,8 @@
 package de.dfki.stickman3D.environment;
 
 import de.dfki.common.part.Part3D;
-import de.dfki.stickman3D.body.PartStickman3D;
 import de.dfki.stickman3D.body.Head3D;
+import de.dfki.stickman3D.body.PartStickman3D;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
@@ -13,20 +13,12 @@ import javafx.scene.paint.Color;
 public class SpeechBubbleStickman3D extends PartStickman3D
 {
 
-    public enum SHAPE
-    {
-
-        DEFAULT, SPEAK, THINK
-    }
-
     public SpeechBubbleStickman3D.SHAPE mShape = SpeechBubbleStickman3D.SHAPE.DEFAULT;
-
     private GridPane bubblePane;
     private Label message;
-
     public SpeechBubbleStickman3D(Part3D head)
     {
-        mStart = ((Head3D)head).getSpeechBubbleStartPosition();
+        mStart = ((Head3D) head).getSpeechBubbleStartPosition();
         mColor = Color.rgb(255, 255, 255, (192 * 100 / 255) / 100f);
     }
 
@@ -84,5 +76,11 @@ public class SpeechBubbleStickman3D extends PartStickman3D
                 break;
         }
 
+    }
+
+    public enum SHAPE
+    {
+
+        DEFAULT, SPEAK, THINK
     }
 }

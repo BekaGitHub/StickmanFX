@@ -13,9 +13,9 @@ import java.util.concurrent.Semaphore;
  */
 public abstract class Animator
 {
-    public Agent mAgent;
     public static int sMAX_ANIM_STEPS = 20;
     public static String sCurrentAction;
+    public Agent mAgent;
     public int mCurrentStep = sMAX_ANIM_STEPS;
     public Animation mAnimation;
     public ArrayList<AnimationContent> mAnimationComponents = new ArrayList<AnimationContent>();

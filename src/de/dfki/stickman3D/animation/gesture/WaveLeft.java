@@ -12,47 +12,53 @@ import de.dfki.stickman3D.animationlogic.AnimationStickman3D;
 import java.util.ArrayList;
 
 /**
- *
  * @author Beka
- *
  */
 public class WaveLeft extends AnimationStickman3D
 {
 
-    public WaveLeft() {
+    public WaveLeft()
+    {
         mAnimType = ANIMTYPE.ON;
     }
 
-    public WaveLeft(Stickman3D sm, int duration, boolean block) {
+    public WaveLeft(Stickman3D sm, int duration, boolean block)
+    {
         super(sm, duration, block);
     }
 
     @Override
-    public void playAnimation() {
+    public void playAnimation()
+    {
         // mStickman.stopIdleBehavior();
         // mStickman.startIdleBehavior("TouchHead");
 
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftUpperArm, "rotate", -35));
-        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftForeArm, "rotate", -120));
+        mAnimationPart.add(new AnimationContent(((Stickman3D) agent).mLeftUpperArm, "rotate", -35));
+        mAnimationPart.add(new AnimationContent(((Stickman3D) agent).mLeftForeArm, "rotate", -120));
         playAnimationPart(200);
 
-        for (int i = 0; i < 6; i++) {
-            if (i == 0) {
+        for (int i = 0; i < 6; i++)
+        {
+            if (i == 0)
+            {
                 mAnimationPart = new ArrayList<>();
-                mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftForeArm, "zrotate", -10));
+                mAnimationPart.add(new AnimationContent(((Stickman3D) agent).mLeftForeArm, "zrotate", -10));
                 playAnimationPart(200);
-            } else if (i == 5) {
+            } else if (i == 5)
+            {
                 mAnimationPart = new ArrayList<>();
-                mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftForeArm, "zrotate", 10));
+                mAnimationPart.add(new AnimationContent(((Stickman3D) agent).mLeftForeArm, "zrotate", 10));
                 playAnimationPart(200);
-            } else if (i % 2 == 1) {
+            } else if (i % 2 == 1)
+            {
                 mAnimationPart = new ArrayList<>();
-                mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftForeArm, "zrotate", 20));
+                mAnimationPart.add(new AnimationContent(((Stickman3D) agent).mLeftForeArm, "zrotate", 20));
                 playAnimationPart(200);
-            } else {
+            } else
+            {
                 mAnimationPart = new ArrayList<>();
-                mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftForeArm, "zrotate", -20));
+                mAnimationPart.add(new AnimationContent(((Stickman3D) agent).mLeftForeArm, "zrotate", -20));
                 playAnimationPart(200);
             }
         }
@@ -60,8 +66,8 @@ public class WaveLeft extends AnimationStickman3D
         pauseAnimation(1000);
 
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftUpperArm, "rotate", 35));
-        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftForeArm, "rotate", 120));
+        mAnimationPart.add(new AnimationContent(((Stickman3D) agent).mLeftUpperArm, "rotate", 35));
+        mAnimationPart.add(new AnimationContent(((Stickman3D) agent).mLeftForeArm, "rotate", 120));
         playAnimationPart(200);
 
     }

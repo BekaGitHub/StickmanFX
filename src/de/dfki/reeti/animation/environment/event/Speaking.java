@@ -14,23 +14,26 @@ import de.dfki.reeti.environment.SpeechBubbleReeti;
 import java.util.ArrayList;
 
 /**
- *
  * @author Beka
- *
  */
-public class Speaking extends EventAnimationReeti {
+public class Speaking extends EventAnimationReeti
+{
 
-    public Speaking() {
+    public Speaking()
+    {
         super();
     }
 
-    public Speaking(Reeti sm, int duration, boolean block) {
+    public Speaking(Reeti sm, int duration, boolean block)
+    {
         super(sm, duration, block);
     }
 
     @Override
-    public void playAnimation() {
-        if (mParameter instanceof WordTimeMarkSequence) {
+    public void playAnimation()
+    {
+        if (mParameter instanceof WordTimeMarkSequence)
+        {
             mWTS = (WordTimeMarkSequence) mParameter;
         }
 

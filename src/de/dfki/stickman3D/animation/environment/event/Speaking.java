@@ -14,23 +14,26 @@ import de.dfki.stickman3D.environment.SpeechBubbleStickman3D;
 import java.util.ArrayList;
 
 /**
- *
  * @author Beka
- *
  */
-public class Speaking extends EventAnimation3D {
+public class Speaking extends EventAnimation3D
+{
 
-    public Speaking() {
+    public Speaking()
+    {
         super();
     }
 
-    public Speaking(Stickman3D sm, int duration, boolean block) {
+    public Speaking(Stickman3D sm, int duration, boolean block)
+    {
         super(sm, duration, block);
     }
 
     @Override
-    public void playAnimation() {
-        if (mParameter instanceof WordTimeMarkSequence) {
+    public void playAnimation()
+    {
+        if (mParameter instanceof WordTimeMarkSequence)
+        {
             mWTS = (WordTimeMarkSequence) mParameter;
         }
 

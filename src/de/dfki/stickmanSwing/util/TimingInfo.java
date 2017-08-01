@@ -1,15 +1,15 @@
 package de.dfki.stickmanSwing.util;
 
 /**
- *
  * @author Patrick Gebhard
- *
  */
-public class TimingInfo {
+public class TimingInfo
+{
 
     static final int sCHARDURATION = 50;
 
-    public static int spokenStringDuration(String word) {
+    public static int spokenStringDuration(String word)
+    {
 
         String s = word.trim();
 

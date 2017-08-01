@@ -5,10 +5,9 @@
  */
 package de.dfki.reeti.animationlogic;
 
-import de.dfki.common.agent.Agent;
 import de.dfki.common.agent.IAgent;
 import de.dfki.common.animationlogic.Animation3D;
-import de.dfki.reeti.Reeti;
+
 import java.util.HashMap;
 
 /**

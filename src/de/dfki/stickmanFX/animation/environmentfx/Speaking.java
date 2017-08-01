@@ -5,28 +5,29 @@
  */
 package de.dfki.stickmanFX.animation.environmentfx;
 
-import java.util.ArrayList;
-
-import de.dfki.stickmanFX.StickmanFX;
 import de.dfki.common.animationlogic.AnimationContent;
+import de.dfki.stickmanFX.StickmanFX;
 import de.dfki.stickmanFX.animationlogic.AnimationStickman2D;
 import de.dfki.stickmanFX.environmentfx.SpeechBubbleStickman2D;
 
+import java.util.ArrayList;
+
 /**
- *
  * @author Patrick Gebhard
- *
  */
 public class Speaking extends AnimationStickman2D
 {
 
-    public Speaking(StickmanFX sm, int duration, boolean block) {
+    public Speaking(StickmanFX sm, int duration, boolean block)
+    {
         super(sm, duration, block);
     }
 
     @Override
-    public void playAnimation() {
-        if (mParameter instanceof String) {
+    public void playAnimation()
+    {
+        if (mParameter instanceof String)
+        {
             agent.getSpeechBubble().mSpeechBubbleText = (String) mParameter;
         }
 

@@ -4,9 +4,7 @@ import de.dfki.stickman3D.Stickman3D;
 import de.dfki.stickman3D.animationlogic.AnimationStickman3D;
 
 /**
- *
  * @author Robbie
- *
  */
 
 /*
@@ -19,21 +17,25 @@ public class StartIdle extends AnimationStickman3D
 
     int frequent;
 
-    public StartIdle(Stickman3D sm, int duration, boolean block) {
+    public StartIdle(Stickman3D sm, int duration, boolean block)
+    {
         super(sm, duration, block);
         agent = sm;
 
         frequent = duration / 1000;
-        if (frequent <= 0) {
+        if (frequent <= 0)
+        {
             frequent = 1;
         }
     }
 
     @Override
-    public void playAnimation() {
-        if (((Stickman3D)agent).mIdleBehavior == null) {
-            ((Stickman3D)agent).mIdleRun = true;
-            ((Stickman3D)agent).mIdleBehavior = new IdleBehavior(((Stickman3D)agent));
+    public void playAnimation()
+    {
+        if (((Stickman3D) agent).mIdleBehavior == null)
+        {
+            ((Stickman3D) agent).mIdleRun = true;
+            ((Stickman3D) agent).mIdleBehavior = new IdleBehavior(((Stickman3D) agent));
         }
     }
 }

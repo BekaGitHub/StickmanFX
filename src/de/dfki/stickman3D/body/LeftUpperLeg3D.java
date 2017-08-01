@@ -23,18 +23,11 @@ import java.net.URL;
 public class LeftUpperLeg3D extends PartStickman3D
 {
 
-    public enum SHAPE
-    {
-        DEFAULT, FADEIN, FADEOUT
-    }
-
     public LeftUpperLeg3D.SHAPE mShape = LeftUpperLeg3D.SHAPE.DEFAULT;
-
     private DownBody3D mDownBody;
     private MeshView mLeftUpperLegMesh;
     private PhongMaterial material;
     private Group leftUpperLegGroup;
-
     public LeftUpperLeg3D(Part3D downBody)
     {
         mDownBody = (DownBody3D) downBody;
@@ -73,6 +66,7 @@ public class LeftUpperLeg3D extends PartStickman3D
 
         init();
     }
+
     @Override
     public void setShape(String s)
     {
@@ -161,5 +155,10 @@ public class LeftUpperLeg3D extends PartStickman3D
     public Group getLeftUpperLegGroup()
     {
         return leftUpperLegGroup;
+    }
+
+    public enum SHAPE
+    {
+        DEFAULT, FADEIN, FADEOUT
     }
 }

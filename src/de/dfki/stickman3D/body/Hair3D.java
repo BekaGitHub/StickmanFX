@@ -2,12 +2,13 @@ package de.dfki.stickman3D.body;
 
 import com.interactivemesh.jfx.importer.stl.StlMeshImporter;
 import de.dfki.common.agent.Agent3D;
-import javafx.scene.paint.*;
+import javafx.scene.paint.Color;
+import javafx.scene.paint.PhongMaterial;
 import javafx.scene.shape.MeshView;
 import javafx.scene.shape.TriangleMesh;
 import javafx.scene.transform.Rotate;
 
-import java.awt.Dimension;
+import java.awt.*;
 import java.net.URL;
 
 /**
@@ -15,17 +16,11 @@ import java.net.URL;
  */
 public abstract class Hair3D extends PartStickman3D
 {
-    public enum SHAPE
-    {
-        DEFAULT, FADEIN, FADEOUT
-    }
-
+    public SHAPE mShape = SHAPE.DEFAULT;
     protected int mHalfHeight;
     protected int mHalfWidth;
     protected MeshView hairMeshView;
     protected PhongMaterial material;
-    public SHAPE mShape = SHAPE.DEFAULT;
-
     public Hair3D(Agent3D agent3D)
     {
         mSize = new Dimension(120, 100);
@@ -111,5 +106,10 @@ public abstract class Hair3D extends PartStickman3D
         hairMeshView.setMaterial(material);
         hairMeshView.setRotationAxis(Rotate.X_AXIS);
         hairMeshView.setRotate(-90);
+    }
+
+    public enum SHAPE
+    {
+        DEFAULT, FADEIN, FADEOUT
     }
 }

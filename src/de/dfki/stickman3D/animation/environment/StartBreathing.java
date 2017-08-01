@@ -5,9 +5,7 @@ import de.dfki.stickman3D.StickmanStageController;
 import de.dfki.stickman3D.animationlogic.AnimationStickman3D;
 
 /**
- *
  * @author Beka
- *
  */
 
 /*
@@ -18,21 +16,23 @@ import de.dfki.stickman3D.animationlogic.AnimationStickman3D;
 public class StartBreathing extends AnimationStickman3D
 {
 
-    public StartBreathing() {
+    int frequent;
+    int actionDuration;
+    public StartBreathing()
+    {
         mAnimType = ANIMTYPE.ON;
     }
 
-    int frequent;
-    int actionDuration;
-
-    public StartBreathing(Stickman3D sm, int frequent, int actionDuration, boolean block) {
+    public StartBreathing(Stickman3D sm, int frequent, int actionDuration, boolean block)
+    {
         super(sm, frequent, actionDuration, block);
         agent = sm;
         this.frequent = frequent;
         this.actionDuration = actionDuration;
     }
 
-    public StartBreathing(Stickman3D sm, int frequent, boolean block) {
+    public StartBreathing(Stickman3D sm, int frequent, boolean block)
+    {
         super(sm, frequent, block);
         agent = sm;
         this.frequent = 4000;
@@ -40,10 +40,12 @@ public class StartBreathing extends AnimationStickman3D
     }
 
     @Override
-    public void playAnimation() {
-        ((Stickman3D)agent).mBreathing = new Breathing(((Stickman3D)agent), frequent, actionDuration);
+    public void playAnimation()
+    {
+        ((Stickman3D) agent).mBreathing = new Breathing(((Stickman3D) agent), frequent, actionDuration);
 
-        if (StickmanStageController.currentRadioButton != null) {
+        if (StickmanStageController.currentRadioButton != null)
+        {
             StickmanStageController.currentRadioButton.setSelected(false);
         }
     }

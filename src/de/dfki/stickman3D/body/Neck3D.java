@@ -11,11 +11,10 @@ import javafx.scene.paint.Color;
 import javafx.scene.paint.PhongMaterial;
 import javafx.scene.shape.MeshView;
 import javafx.scene.transform.Rotate;
+import javafx.scene.transform.Translate;
 
 import java.awt.*;
 import java.net.URL;
-
-import javafx.scene.transform.Translate;
 
 /**
  * @author Beka
@@ -23,16 +22,10 @@ import javafx.scene.transform.Translate;
 public class Neck3D extends PartStickman3D
 {
 
-    public enum SHAPE
-    {
-        DEFAULT, FADEIN, FADEOUT
-    }
-
+    public Neck3D.SHAPE mShape = Neck3D.SHAPE.DEFAULT;
     private Head3D mHead;
     private MeshView neckMeshView;
     private PhongMaterial material;
-
-    public Neck3D.SHAPE mShape = Neck3D.SHAPE.DEFAULT;
 
     public Neck3D(Part3D head)
     {
@@ -150,5 +143,10 @@ public class Neck3D extends PartStickman3D
     public MeshView getMeshView()
     {
         return neckMeshView;
+    }
+
+    public enum SHAPE
+    {
+        DEFAULT, FADEIN, FADEOUT
     }
 }

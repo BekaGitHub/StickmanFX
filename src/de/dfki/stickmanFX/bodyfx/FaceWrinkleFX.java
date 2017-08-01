@@ -1,8 +1,5 @@
 package de.dfki.stickmanFX.bodyfx;
 
-import java.awt.Dimension;
-import java.awt.Point;
-
 import de.dfki.common.part.Part2D;
 import de.dfki.stickmanFX.animationlogic.AnimatorStickman2D;
 import javafx.scene.paint.Color;
@@ -10,24 +7,21 @@ import javafx.scene.shape.LineTo;
 import javafx.scene.shape.MoveTo;
 import javafx.scene.shape.Path;
 
+import java.awt.*;
+
 /**
- *
  * @author Beka
- *
  */
 public class FaceWrinkleFX extends PartStickman2D
 {
 
-    public static enum SHAPE {
-
-        DEFAULT, ANGRY, ANGRYEND, DISGUSTED, DISGUSTEDEND, SURPRISED, SURPRISEDEND, EXCITED, EXCITEDEND, EMBARRASSED, EMBARRASSEDEND
-    };
-
-    HeadFX mHeadFX;
-    Path mPath;
     public FaceWrinkleFX.SHAPE mShape = FaceWrinkleFX.SHAPE.DEFAULT;
 
-    public FaceWrinkleFX(Part2D head) {
+    ;
+    HeadFX mHeadFX;
+    Path mPath;
+    public FaceWrinkleFX(Part2D head)
+    {
         mHeadFX = (HeadFX) head;
         mLength = 16;
         mSize = new Dimension(mLength, 5);
@@ -38,18 +32,21 @@ public class FaceWrinkleFX extends PartStickman2D
     }
 
     @Override
-    public void setShape(String s) {
+    public void setShape(String s)
+    {
         FaceWrinkleFX.SHAPE shape = FaceWrinkleFX.SHAPE.valueOf(s);
         mShape = (shape != null) ? shape : FaceWrinkleFX.SHAPE.DEFAULT;
     }
 
     @Override
-    public void resetShape() {
+    public void resetShape()
+    {
         mShape = FaceWrinkleFX.SHAPE.DEFAULT;
     }
 
     @Override
-    public void calculate(int step) {
+    public void calculate(int step)
+    {
         mStart = mHeadFX.getRightEyebrowPostion();
         mEnd = new Point(mStart.x - mLength, mStart.y);
 
@@ -60,7 +57,8 @@ public class FaceWrinkleFX extends PartStickman2D
 
         mPath = new Path();
 
-        switch (mShape) {
+        switch (mShape)
+        {
             case DEFAULT:
                 break;
 
@@ -79,9 +77,11 @@ public class FaceWrinkleFX extends PartStickman2D
             // End wrinkle for angry face:
             case ANGRYEND:
                 movement = mShapeAnimationStep - 1;
-                if (movement <= 1) {
+                if (movement <= 1)
+                {
                     mColor = Color.rgb(0, 0, 0, 0);
-                } else {
+                } else
+                {
                     angryColorChange = (int) (movement / 4 * 16);
                     mColor = Color.rgb(0, 0, 0, (angryColorChange * 100 / 255) / 100f);
                     mPath.getElements().add(new MoveTo(mStart.x + 14, mStart.y + 7));
@@ -118,9 +118,11 @@ public class FaceWrinkleFX extends PartStickman2D
 
             case EMBARRASSEDEND:
                 movement = mShapeAnimationStep - 1;
-                if (movement <= 1) {
+                if (movement <= 1)
+                {
                     mColor = Color.rgb(0, 0, 0, 0);
-                } else {
+                } else
+                {
                     // Add wrinkles for embarrassed face:
                     embarrassedColorChange = (int) (movement / 4 * 16);
                     mColor = new Color(0, 0, 0, (embarrassedColorChange * 100 / 255) / 100f);
@@ -134,6 +136,12 @@ public class FaceWrinkleFX extends PartStickman2D
         this.getChildren().add(mPath);
         addToDrawObjects(mPath);
         this.update();
+    }
+
+    public static enum SHAPE
+    {
+
+        DEFAULT, ANGRY, ANGRYEND, DISGUSTED, DISGUSTEDEND, SURPRISED, SURPRISEDEND, EXCITED, EXCITEDEND, EMBARRASSED, EMBARRASSEDEND
     }
 
 }

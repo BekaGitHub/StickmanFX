@@ -5,10 +5,11 @@
  */
 package de.dfki.stickmanFX.animation.facefx;
 
+import de.dfki.common.animationlogic.AnimationContent;
 import de.dfki.common.enums.Gender;
 import de.dfki.stickmanFX.StickmanFX;
-import de.dfki.common.animationlogic.AnimationContent;
 import de.dfki.stickmanFX.animationlogic.AnimationStickman2D;
+
 import java.util.ArrayList;
 
 /**
@@ -21,19 +22,20 @@ public class Angry2 extends AnimationStickman2D
 {
     int rotationUnit;
 
-    public Angry2() {
+    public Angry2()
+    {
         mAnimType = ANIMTYPE.EmotionExpression;
     }
 
     /**
-     *
-     * @param sm StickmanSwing
+     * @param sm       StickmanSwing
      * @param duration Control the speed of the movement from one emotion state
-     * to another emotion state.
-     * @param block block or not the others movements, when one movement is not
-     * finished.
+     *                 to another emotion state.
+     * @param block    block or not the others movements, when one movement is not
+     *                 finished.
      */
-    public Angry2(StickmanFX sm, int duration, boolean block) {
+    public Angry2(StickmanFX sm, int duration, boolean block)
+    {
         super(sm, duration, block);
     }
 
@@ -41,42 +43,48 @@ public class Angry2 extends AnimationStickman2D
      * This method creates the angry facial movement.
      */
     @Override
-    public void playAnimation() {
-        if (agent.mType == Gender.TYPE.MALE) {
+    public void playAnimation()
+    {
+        if (agent.mType == Gender.TYPE.MALE)
+        {
             rotationUnit = 20;
-        } else {
+        } else
+        {
             rotationUnit = 30;
         }
         // angry
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mMouthFX, "shape", "ANGRY"));
-        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mLeftEyeFX, "shape", "ANGRY"));
-        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mLeftEyebrowFX, "shape", "ANGRY"));
-        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mRightEyebrowFX, "shape", "ANGRY"));
-        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mFaceWrinkleFX, "shape", "ANGRY"));   ///Add by Robbie
-        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mRightEyeFX, "shape", "ANGRY"));
-        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mLeftEyeFX, "shape", "ANGRY"));
+        mAnimationPart.add(new AnimationContent(((StickmanFX) agent).mMouthFX, "shape", "ANGRY"));
+        mAnimationPart.add(new AnimationContent(((StickmanFX) agent).mLeftEyeFX, "shape", "ANGRY"));
+        mAnimationPart.add(new AnimationContent(((StickmanFX) agent).mLeftEyebrowFX, "shape", "ANGRY"));
+        mAnimationPart.add(new AnimationContent(((StickmanFX) agent).mRightEyebrowFX, "shape", "ANGRY"));
+        mAnimationPart.add(new AnimationContent(((StickmanFX) agent).mFaceWrinkleFX, "shape", "ANGRY"));   ///Add by Robbie
+        mAnimationPart.add(new AnimationContent(((StickmanFX) agent).mRightEyeFX, "shape", "ANGRY"));
+        mAnimationPart.add(new AnimationContent(((StickmanFX) agent).mLeftEyeFX, "shape", "ANGRY"));
 
-        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mLeftUpperArmFX, "rotate", -(rotationUnit + 3)));
+        mAnimationPart.add(new AnimationContent(((StickmanFX) agent).mLeftUpperArmFX, "rotate", -(rotationUnit + 3)));
 
-        if (agent.mType == Gender.TYPE.MALE) {
-            mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mLeftForeArmFX, "rotate", rotationUnit));
-        } else {
-            mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mLeftForeArmFX, "rotate", rotationUnit - 20));
+        if (agent.mType == Gender.TYPE.MALE)
+        {
+            mAnimationPart.add(new AnimationContent(((StickmanFX) agent).mLeftForeArmFX, "rotate", rotationUnit));
+        } else
+        {
+            mAnimationPart.add(new AnimationContent(((StickmanFX) agent).mLeftForeArmFX, "rotate", rotationUnit - 20));
         }
 
-        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mLeftHandFX, "rotate", rotationUnit));
+        mAnimationPart.add(new AnimationContent(((StickmanFX) agent).mLeftHandFX, "rotate", rotationUnit));
 
         playAnimationPart(mDuration);
 
         //foot
-        for (int i = 0; i < 8; i++) {
+        for (int i = 0; i < 8; i++)
+        {
             mAnimationPart = new ArrayList<>();
-            mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mRightFootFX, "rotate", 40));
+            mAnimationPart.add(new AnimationContent(((StickmanFX) agent).mRightFootFX, "rotate", 40));
             playAnimationPart(200);
 
             mAnimationPart = new ArrayList<>();
-            mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mRightFootFX, "rotate", -40));
+            mAnimationPart.add(new AnimationContent(((StickmanFX) agent).mRightFootFX, "rotate", -40));
             playAnimationPart(100);
         }
 
@@ -84,23 +92,25 @@ public class Angry2 extends AnimationStickman2D
 
         // no angry
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mMouthFX, "shape", "ANGRYEND"));
-        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mLeftEyeFX, "shape", "ANGRYEND"));
-        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mLeftEyebrowFX, "shape", "ANGRYEND"));
-        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mRightEyebrowFX, "shape", "ANGRYEND"));
-        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mFaceWrinkleFX, "shape", "ANGRYEND"));   ///Add by Robbie
-        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mRightEyeFX, "shape", "ANGRYEND"));
-        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mLeftEyeFX, "shape", "ANGRYEND"));
+        mAnimationPart.add(new AnimationContent(((StickmanFX) agent).mMouthFX, "shape", "ANGRYEND"));
+        mAnimationPart.add(new AnimationContent(((StickmanFX) agent).mLeftEyeFX, "shape", "ANGRYEND"));
+        mAnimationPart.add(new AnimationContent(((StickmanFX) agent).mLeftEyebrowFX, "shape", "ANGRYEND"));
+        mAnimationPart.add(new AnimationContent(((StickmanFX) agent).mRightEyebrowFX, "shape", "ANGRYEND"));
+        mAnimationPart.add(new AnimationContent(((StickmanFX) agent).mFaceWrinkleFX, "shape", "ANGRYEND"));   ///Add by Robbie
+        mAnimationPart.add(new AnimationContent(((StickmanFX) agent).mRightEyeFX, "shape", "ANGRYEND"));
+        mAnimationPart.add(new AnimationContent(((StickmanFX) agent).mLeftEyeFX, "shape", "ANGRYEND"));
 
-        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mLeftUpperArmFX, "rotate", rotationUnit + 3));
+        mAnimationPart.add(new AnimationContent(((StickmanFX) agent).mLeftUpperArmFX, "rotate", rotationUnit + 3));
 
-        if (agent.mType == Gender.TYPE.MALE) {
-            mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mLeftForeArmFX, "rotate", -rotationUnit));
-        } else {
-            mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mLeftForeArmFX, "rotate", -(rotationUnit - 20)));
+        if (agent.mType == Gender.TYPE.MALE)
+        {
+            mAnimationPart.add(new AnimationContent(((StickmanFX) agent).mLeftForeArmFX, "rotate", -rotationUnit));
+        } else
+        {
+            mAnimationPart.add(new AnimationContent(((StickmanFX) agent).mLeftForeArmFX, "rotate", -(rotationUnit - 20)));
         }
 
-        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mLeftHandFX, "rotate", -rotationUnit));
+        mAnimationPart.add(new AnimationContent(((StickmanFX) agent).mLeftHandFX, "rotate", -rotationUnit));
 
         playAnimationPart(20);
     }

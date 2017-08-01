@@ -10,38 +10,41 @@ import de.dfki.reeti.ReetiStageController;
 import de.dfki.reeti.animationlogic.AnimationReeti;
 
 /**
- *
  * @author Beka
- *
  */
-public class Relaxed extends AnimationReeti {
+public class Relaxed extends AnimationReeti
+{
 
-    public Relaxed() {
+    public Relaxed()
+    {
         mAnimType = ANIMTYPE.ON;
     }
 
-    public Relaxed(Reeti sm, int duration, boolean block) {
+    public Relaxed(Reeti sm, int duration, boolean block)
+    {
         super(sm, duration, block);
     }
 
 
     @Override
-    public void playAnimation() {
-        ((Reeti)agent).neckTilt(75);
-        ((Reeti)agent).leftEyeLid(25);
-        ((Reeti)agent).rightEyeLid(25);
-        ((Reeti)agent).leftEyeTilt(15);
-        ((Reeti)agent).rightEyeTilt(20);
-        ((Reeti)agent).setLedColor("green");
-        ((Reeti)agent).leftEar(0);
-        ((Reeti)agent).rightEar(0);
-        ((Reeti)agent).leftLC(75);
-        ((Reeti)agent).rightLC(60);
-        ((Reeti)agent).bottomLip(10);
-        ((Reeti)agent).topLip(3);
+    public void playAnimation()
+    {
+        ((Reeti) agent).neckTilt(75);
+        ((Reeti) agent).leftEyeLid(25);
+        ((Reeti) agent).rightEyeLid(25);
+        ((Reeti) agent).leftEyeTilt(15);
+        ((Reeti) agent).rightEyeTilt(20);
+        ((Reeti) agent).setLedColor("green");
+        ((Reeti) agent).leftEar(0);
+        ((Reeti) agent).rightEar(0);
+        ((Reeti) agent).leftLC(75);
+        ((Reeti) agent).rightLC(60);
+        ((Reeti) agent).bottomLip(10);
+        ((Reeti) agent).topLip(3);
 
 
-        if (ReetiStageController.currentRadioButton != null) {
+        if (ReetiStageController.currentRadioButton != null)
+        {
             ReetiStageController.currentRadioButton.setSelected(false);
         }
     }

@@ -15,24 +15,17 @@ import java.net.URL;
 public class Stars3D extends PartStickman3D
 {
 
-    public enum SHAPE
-    {
-
-        DEFAULT, SAYBYE, SAYHI, STARSDISAPPEAR, STARSFADEOUT, STARSFADEIN
-    }
-
+    public Stars3D.SHAPE mShape = Stars3D.SHAPE.DEFAULT;
     private MeshView mStarBig;
     private MeshView mStarMiddle;
     private MeshView mStarSmall;
     private PhongMaterial material;
 
-    public Stars3D.SHAPE mShape = Stars3D.SHAPE.DEFAULT;
-
     public Stars3D(Part3D body)
     {
         mLength = 150;
         mSize = new Dimension(120, mLength);
-        mStart = ((UpperBody3D)body).getLeftLegStartPostion();
+        mStart = ((UpperBody3D) body).getLeftLegStartPostion();
         mColor = Color.rgb(255, 255, 0, 0.0);
 
         ColModelImporter imorter = new ColModelImporter();
@@ -145,6 +138,12 @@ public class Stars3D extends PartStickman3D
         mStarBig.setMaterial(material);
         mStarMiddle.setMaterial(material);
         mStarSmall.setMaterial(material);
+    }
+
+    public enum SHAPE
+    {
+
+        DEFAULT, SAYBYE, SAYHI, STARSDISAPPEAR, STARSFADEOUT, STARSFADEIN
     }
 
 }

@@ -13,26 +13,27 @@ import de.dfki.reeti.animationlogic.AnimationReeti;
 import java.util.ArrayList;
 
 /**
- *
  * @author Beka
- *
  */
-public class NeckPan extends AnimationReeti {
+public class NeckPan extends AnimationReeti
+{
 
-    
+
     int rot;
 
-    public NeckPan(Reeti sm, int duration, int pos, boolean block) {
+    public NeckPan(Reeti sm, int duration, int pos, boolean block)
+    {
         super(sm, duration, pos, block);
         this.rot = pos;
     }
 
     @Override
-    public void playAnimation() {
-        
+    public void playAnimation()
+    {
+
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(((Reeti)agent).mHead, "rotate", rot));
+        mAnimationPart.add(new AnimationContent(((Reeti) agent).mHead, "rotate", rot));
         playAnimationPart(mDuration);
-        
+
     }
 }

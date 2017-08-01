@@ -16,51 +16,59 @@ import java.util.ArrayList;
 public class TurnRight extends AnimationStickman3D
 {
 
-    public TurnRight() {
+    public TurnRight()
+    {
         mAnimType = ANIMTYPE.ON;
     }
 
-    public TurnRight(Stickman3D sm, int duration, boolean block) {
+    public TurnRight(Stickman3D sm, int duration, boolean block)
+    {
         super(sm, duration, block);
     }
 
     @Override
-    public void playAnimation() {
+    public void playAnimation()
+    {
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mHead, "yrotate", 20));
+        mAnimationPart.add(new AnimationContent(((Stickman3D) agent).mHead, "yrotate", 20));
         playAnimationPart(100);
 
-        if (((Stickman3D)agent).mType == Gender.TYPE.MALE) {
+        if (((Stickman3D) agent).mType == Gender.TYPE.MALE)
+        {
             mAnimationPart = new ArrayList<>();
-            mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mRightWrist, "yrotate", 40));
-            mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mUpperBody, "yrotate", 60));
-            mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mHead, "yrotate", 20));
+            mAnimationPart.add(new AnimationContent(((Stickman3D) agent).mRightWrist, "yrotate", 40));
+            mAnimationPart.add(new AnimationContent(((Stickman3D) agent).mUpperBody, "yrotate", 60));
+            mAnimationPart.add(new AnimationContent(((Stickman3D) agent).mHead, "yrotate", 20));
             playAnimationPart(500);
-        } else {
+        } else
+        {
             mAnimationPart = new ArrayList<>();
-            mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mRightWrist, "yrotate", 70));
-            mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mUpperBody, "yrotate", 60));
-            mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mHead, "yrotate", 20));
+            mAnimationPart.add(new AnimationContent(((Stickman3D) agent).mRightWrist, "yrotate", 70));
+            mAnimationPart.add(new AnimationContent(((Stickman3D) agent).mUpperBody, "yrotate", 60));
+            mAnimationPart.add(new AnimationContent(((Stickman3D) agent).mHead, "yrotate", 20));
             playAnimationPart(500);
         }
 
         pauseAnimation(1000);
 
-        if (((Stickman3D)agent).mType == Gender.TYPE.MALE) {
+        if (((Stickman3D) agent).mType == Gender.TYPE.MALE)
+        {
             mAnimationPart = new ArrayList<>();
-            mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mRightWrist, "yrotate", -40));
-            mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mUpperBody, "yrotate", -60));
-            mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mHead, "yrotate", -40));
+            mAnimationPart.add(new AnimationContent(((Stickman3D) agent).mRightWrist, "yrotate", -40));
+            mAnimationPart.add(new AnimationContent(((Stickman3D) agent).mUpperBody, "yrotate", -60));
+            mAnimationPart.add(new AnimationContent(((Stickman3D) agent).mHead, "yrotate", -40));
             playAnimationPart(500);
-        } else {
+        } else
+        {
             mAnimationPart = new ArrayList<>();
-            mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mRightWrist, "yrotate", -70));
-            mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mUpperBody, "yrotate", -60));
-            mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mHead, "yrotate", -40));
+            mAnimationPart.add(new AnimationContent(((Stickman3D) agent).mRightWrist, "yrotate", -70));
+            mAnimationPart.add(new AnimationContent(((Stickman3D) agent).mUpperBody, "yrotate", -60));
+            mAnimationPart.add(new AnimationContent(((Stickman3D) agent).mHead, "yrotate", -40));
             playAnimationPart(500);
         }
 
-        if (StickmanStageController.currentRadioButton != null) {
+        if (StickmanStageController.currentRadioButton != null)
+        {
             StickmanStageController.currentRadioButton.setSelected(false);
         }
     }

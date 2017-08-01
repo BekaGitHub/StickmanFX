@@ -12,21 +12,22 @@ import de.dfki.reeti.animationlogic.AnimationReeti;
 import java.util.ArrayList;
 
 /**
- *
  * @author Beka
- *
  */
-public class Mouth_O extends AnimationReeti {
+public class Mouth_O extends AnimationReeti
+{
 
-    public Mouth_O(Reeti sm, int duration, boolean block) {
+    public Mouth_O(Reeti sm, int duration, boolean block)
+    {
         super(sm, duration, block);
     }
 
     @Override
-    public void playAnimation() {
+    public void playAnimation()
+    {
         // smile
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(((Reeti)agent).mMouth, "shape", "O"));
+        mAnimationPart.add(new AnimationContent(((Reeti) agent).mMouth, "shape", "O"));
         playAnimationPart(20);
     }
 }

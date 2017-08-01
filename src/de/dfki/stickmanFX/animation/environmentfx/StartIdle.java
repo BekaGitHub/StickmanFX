@@ -4,9 +4,7 @@ import de.dfki.stickmanFX.StickmanFX;
 import de.dfki.stickmanFX.animationlogic.AnimationStickman2D;
 
 /**
- *
  * @author Robbie
- *
  */
 
 /*
@@ -17,16 +15,19 @@ import de.dfki.stickmanFX.animationlogic.AnimationStickman2D;
 public class StartIdle extends AnimationStickman2D
 {
 
-    public StartIdle(StickmanFX sm, int duration, boolean block) {
+    public StartIdle(StickmanFX sm, int duration, boolean block)
+    {
         super(sm, duration, block);
     }
 
     @Override
-    public void playAnimation() {
-        if (!((StickmanFX)agent).mIdleBehavior.isAlive()) {
-            ((StickmanFX)agent).mIdleRun = true;
-            ((StickmanFX)agent).mIdleBehavior = new IdleBehavior(((StickmanFX)agent), ((StickmanFX)agent).simplexNoise);
-            ((StickmanFX)agent).mIdleBehavior.start();
+    public void playAnimation()
+    {
+        if (!((StickmanFX) agent).mIdleBehavior.isAlive())
+        {
+            ((StickmanFX) agent).mIdleRun = true;
+            ((StickmanFX) agent).mIdleBehavior = new IdleBehavior(((StickmanFX) agent), ((StickmanFX) agent).simplexNoise);
+            ((StickmanFX) agent).mIdleBehavior.start();
         }
     }
 }

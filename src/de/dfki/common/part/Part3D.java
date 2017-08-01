@@ -28,7 +28,7 @@ public abstract class Part3D extends Part
     public double mZRotationStep = 0.0f;
 
     @Override
-    public void setTranslation(int length, Axis...axis)
+    public void setTranslation(int length, Axis... axis)
     {
         switch (axis[0])
         {
@@ -45,7 +45,7 @@ public abstract class Part3D extends Part
     }
 
     @Override
-    public synchronized void calculateTranslation(int step, Axis...axis)
+    public synchronized void calculateTranslation(int step, Axis... axis)
     {
         switch (axis[0])
         {
@@ -86,7 +86,7 @@ public abstract class Part3D extends Part
     }
 
     @Override
-    public void setRotation(int degree, Axis...axis)
+    public void setRotation(int degree, Axis... axis)
     {
         switch (axis[0])
         {
@@ -111,7 +111,7 @@ public abstract class Part3D extends Part
     }
 
     @Override
-    public synchronized void calculateRotation(int step, Axis...axis)
+    public synchronized void calculateRotation(int step, Axis... axis)
     {
         switch (axis[0])
         {
@@ -132,7 +132,7 @@ public abstract class Part3D extends Part
     }
 
     @Override
-    public void resetRotation(Axis...axis)
+    public void resetRotation(Axis... axis)
     {
         switch (axis[0])
         {

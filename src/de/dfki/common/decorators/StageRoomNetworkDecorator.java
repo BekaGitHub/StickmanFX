@@ -7,14 +7,16 @@ import de.dfki.stickmanFX.client.CommonClientConnectionHandler;
 /**
  * Created by alvaro on 9/17/16.
  */
-public abstract class StageRoomNetworkDecorator extends StageRoomDecorator {
+public abstract class StageRoomNetworkDecorator extends StageRoomDecorator
+{
 
     protected XMLCommandParser commonXMLCommandParser;
     protected String mHost;
     protected int mPort;
     protected CommonClientConnectionHandler mConnection;
 
-    public StageRoomNetworkDecorator(StageRoom wrappedController, String host, int port) {
+    public StageRoomNetworkDecorator(StageRoom wrappedController, String host, int port)
+    {
         super(wrappedController);
         mHost = host;
         mPort = port;
@@ -25,32 +27,39 @@ public abstract class StageRoomNetworkDecorator extends StageRoomDecorator {
     protected abstract void initConnectionToServer(StageRoom wrappedController);
 
     @Override
-    public boolean ismNetwork() {
+    public boolean ismNetwork()
+    {
         super.ismNetwork();
         return true;
     }
 
     @Override
-    public void clearStage() {
+    public void clearStage()
+    {
         super.clearStage();
-        if (mConnection != null) {
+        if (mConnection != null)
+        {
             mConnection.end();
             mConnection = null;
         }
     }
 
     @Override
-    public void sendTimeMarkInformation(String timemark) {
+    public void sendTimeMarkInformation(String timemark)
+    {
         super.sendTimeMarkInformation(timemark);
-        if (mConnection != null && mConnection.ismConnected()) {
+        if (mConnection != null && mConnection.ismConnected())
+        {
             mConnection.sendToServer(timemark);
         }
     }
 
     @Override
-    public void sendAnimationUpdate(String state, String id) {
+    public void sendAnimationUpdate(String state, String id)
+    {
         super.sendAnimationUpdate(state, id);
-        if (mConnection != null && mConnection.ismConnected()) {
+        if (mConnection != null && mConnection.ismConnected())
+        {
             mConnection.sendToServer("#ANIM#" + state + "#" + id);
         }
     }

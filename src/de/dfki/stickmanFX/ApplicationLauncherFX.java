@@ -7,10 +7,12 @@ import de.dfki.stickmanFX.stage.StickmanStageFX;
 /**
  * Created by alvaro on 11/13/16.
  */
-public class ApplicationLauncherFX extends ApplicationLauncherImpl {
+public class ApplicationLauncherFX extends ApplicationLauncherImpl
+{
 
     @Override
-    public void launchStickmanAndWait() {
+    public void launchStickmanAndWait()
+    {
         StickmanStage fx = new StickmanStageFX();
         getLaunchStickmanThread(fx).start();
         waitForApplicationToStart();

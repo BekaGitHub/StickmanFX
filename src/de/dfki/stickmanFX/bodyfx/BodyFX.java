@@ -9,21 +9,11 @@ package de.dfki.stickmanFX.bodyfx;
 import de.dfki.common.enums.Gender;
 import de.dfki.common.enums.Orientation;
 import de.dfki.common.part.Part2D;
-import de.dfki.stickmanFX.StickmanFX;
-
-import java.awt.Dimension;
-import java.awt.Point;
-
-import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
-import javafx.scene.shape.CubicCurveTo;
-import javafx.scene.shape.LineTo;
-import javafx.scene.shape.MoveTo;
-import javafx.scene.shape.Path;
-import javafx.scene.shape.QuadCurveTo;
-import javafx.scene.shape.StrokeLineCap;
-import javafx.scene.shape.StrokeLineJoin;
+import javafx.scene.shape.*;
 import javafx.scene.transform.Affine;
+
+import java.awt.*;
 
 /**
  * @author Beka Aptsiauri
@@ -31,8 +21,8 @@ import javafx.scene.transform.Affine;
 public class BodyFX extends PartStickman2D
 {
 
+    public Color currentColor = null;
     NeckFX mNeckFX;
-
     Dimension mSize = new Dimension(120, 300);
     int mHalfSizeX = mSize.width / 2;
     int mHalfSizeY = mSize.height / 2;
@@ -40,15 +30,10 @@ public class BodyFX extends PartStickman2D
     Point mStart;
     Point mLefShoulderPosition;     //Added by Beka
     Point mRightShoulderPosition;   //Added by Beka
-
-
-    public Color currentColor = null;
-
-    private Color mFemaleColorRecorder = mFemaleColor;
-    private Color mMaleColorRecorder = mMaleColor;
-
     Path mFemaleBodyFront, mFemaleBodyLeft, mFemaleBodyRight;
     Path mMaleBodyFront, mMaleBodyLeft, mMaleBodyRight;
+    private Color mFemaleColorRecorder = mFemaleColor;
+    private Color mMaleColorRecorder = mMaleColor;
 
     public BodyFX(Part2D neck)
     {

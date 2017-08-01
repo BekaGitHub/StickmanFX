@@ -14,11 +14,10 @@ import javafx.scene.paint.PhongMaterial;
 import javafx.scene.shape.MeshView;
 import javafx.scene.transform.Affine;
 import javafx.scene.transform.Rotate;
+import javafx.scene.transform.Translate;
 
 import java.awt.*;
 import java.net.URL;
-
-import javafx.scene.transform.Translate;
 
 /**
  * @author Beka Aptsiauri
@@ -26,22 +25,15 @@ import javafx.scene.transform.Translate;
 public class DownBody3D extends PartStickman3D
 {
 
-    public enum SHAPE
-    {
-        DEFAULT, FADEIN, FADEOUT
-    }
-
+    private static final int DRAWOFFSET = 20;
     public DownBody3D.SHAPE mShape = DownBody3D.SHAPE.DEFAULT;
 
     private UpperBody3D mUpperBody;
     private Dimension mSize;
 
     private int mHalfSizeX;
-    private static final int DRAWOFFSET = 20;
-
     private MeshView mBodyMeshView;
     private PhongMaterial material;
-
     public DownBody3D(Part3D upperBody)
     {
         mUpperBody = (UpperBody3D) upperBody;
@@ -136,7 +128,6 @@ public class DownBody3D extends PartStickman3D
         }
     }
 
-
     public void update()
     {
         material.setDiffuseColor(mColor);
@@ -162,5 +153,10 @@ public class DownBody3D extends PartStickman3D
     public MeshView getMeshView()
     {
         return mBodyMeshView;
+    }
+
+    public enum SHAPE
+    {
+        DEFAULT, FADEIN, FADEOUT
     }
 }

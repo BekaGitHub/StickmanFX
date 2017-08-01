@@ -1,9 +1,9 @@
 package de.dfki.stickman3D;
 
-import de.dfki.common.XMLCommandParser;
 import de.dfki.common.StickmansOnStage;
-import de.dfki.stickman3D.animationlogic.AnimationStickman3D;
+import de.dfki.common.XMLCommandParser;
 import de.dfki.stickman3D.animationlogic.AnimationLoader3D;
+import de.dfki.stickman3D.animationlogic.AnimationStickman3D;
 import de.dfki.stickman3D.animationlogic.EventAnimation3D;
 import de.dfki.util.xml.XMLUtilities;
 
@@ -13,14 +13,17 @@ import java.nio.charset.Charset;
 /**
  * Created by alvaro on 11/19/16.
  */
-public class XMLCommandParser3D extends XMLCommandParser {
+public class XMLCommandParser3D extends XMLCommandParser
+{
 
-    public XMLCommandParser3D(StickmansOnStage stage) {
+    public XMLCommandParser3D(StickmansOnStage stage)
+    {
         super(stage);
     }
 
     @Override
-    public void parseStickmanXMLCmd(String cmd) {
+    public void parseStickmanXMLCmd(String cmd)
+    {
 // TODO cut the crap with the two animation types ...
         AnimationStickman3D a = (cmd.contains("StickmanEventAnimation")) ? new EventAnimation3D() : new AnimationStickman3D();
 
@@ -32,12 +35,16 @@ public class XMLCommandParser3D extends XMLCommandParser {
         int duration = a.mDuration;
         boolean blocking = a.mBlocking;
         Object parameter = a.mParameter;
-        if (stickmanname != null) {
-            if(a instanceof EventAnimation3D){
-              a = AnimationLoader3D.getInstance().loadEventAnimation(onStage.getStickman(stickmanname), animationname, duration, blocking);
-            }else if(a.hasExtraParams()){
+        if (stickmanname != null)
+        {
+            if (a instanceof EventAnimation3D)
+            {
+                a = AnimationLoader3D.getInstance().loadEventAnimation(onStage.getStickman(stickmanname), animationname, duration, blocking);
+            } else if (a.hasExtraParams())
+            {
                 a = AnimationLoader3D.getInstance().loadAnimation(onStage.getStickman(stickmanname), animationname, duration, blocking, a.getExtraParams());
-            }else{
+            } else
+            {
                 a = AnimationLoader3D.getInstance().loadAnimation(onStage.getStickman(stickmanname), animationname, duration, blocking);
             }
 

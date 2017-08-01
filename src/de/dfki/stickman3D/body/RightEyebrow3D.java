@@ -14,15 +14,9 @@ import java.awt.*;
 public class RightEyebrow3D extends PartStickman3D
 {
 
-    public enum SHAPE
-    {
-        DEFAULT, FADEIN, FADEOUT, ANGRY, HAPPY, HAPPYEND, ANGRYEND, DISGUSTED, DISGUSTEDEND, SURPRISED, SURPRISEDEND, EXCITED, EXCITEDEND, EMBARRASSED, EMBARRASSEDEND, SAD, SADEND
-    }
-
+    public RightEyebrow3D.SHAPE mShape = RightEyebrow3D.SHAPE.DEFAULT;
     private Head3D mHead;
     private Polygon currentPolygon;
-
-    public RightEyebrow3D.SHAPE mShape = RightEyebrow3D.SHAPE.DEFAULT;
 
     public RightEyebrow3D(Part3D head)
     {
@@ -31,7 +25,7 @@ public class RightEyebrow3D extends PartStickman3D
 
         if (mHead.getStickman().mType == Gender.TYPE.MALE)
             mColor = Color.rgb(88, 44, 13, 1);
-         else
+        else
             mColor = Color.rgb(204, 163, 0, 1);
 
         currentPolygon = new Polygon();
@@ -256,5 +250,10 @@ public class RightEyebrow3D extends PartStickman3D
         {
             mColorRecorder = mColor;
         }
+    }
+
+    public enum SHAPE
+    {
+        DEFAULT, FADEIN, FADEOUT, ANGRY, HAPPY, HAPPYEND, ANGRYEND, DISGUSTED, DISGUSTEDEND, SURPRISED, SURPRISEDEND, EXCITED, EXCITEDEND, EMBARRASSED, EMBARRASSEDEND, SAD, SADEND
     }
 }

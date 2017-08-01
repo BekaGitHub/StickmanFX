@@ -3,7 +3,8 @@ package de.dfki.stickmanFX.client;
 /**
  * Created by alvaro on 9/19/16.
  */
-public interface CommonClientConnectionHandler {
+public interface CommonClientConnectionHandler
+{
 
     void end();
 

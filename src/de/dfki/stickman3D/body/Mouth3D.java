@@ -3,13 +3,12 @@ package de.dfki.stickman3D.body;
 import de.dfki.common.part.Part3D;
 import de.dfki.stickman3D.mimic.util.*;
 import javafx.scene.paint.Color;
-import javafx.scene.shape.Polygon;
-
-import java.awt.*;
-
 import javafx.scene.shape.MoveTo;
 import javafx.scene.shape.Path;
+import javafx.scene.shape.Polygon;
 import javafx.scene.shape.QuadCurveTo;
+
+import java.awt.*;
 
 /**
  * @author Beka Aptsiauri
@@ -17,17 +16,10 @@ import javafx.scene.shape.QuadCurveTo;
 public class Mouth3D extends PartStickman3D
 {
 
-    public enum SHAPE
-    {
-        DEFAULT, FADEIN, FADEOUT, SMILE, SMILEEND, SAD, SADEND, ANGRY, ANGRYEND, ANGRYSMALLMOUTH, ANGRYSMALLMOUTHEND, SURPRISED, SURPRISEDEND, HAPPY, HAPPYEND, DISGUSTED, DISGUSTEDEND, CONTEMPT, CONTEMPTEND, EXCITED, EXCITEDEND, EMBARRASSED, EMBARRASSEDEND, FEAR, FEAREND, O, ONE, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN, ELEVEN, TWELVE, THIRTEEN, FOURTEEN, NINETEEN, TWENTY,
-    }
-
-    private Head3D mHead;
-
     public Polygon currentDownLipPolygon;
     public Polygon currentUpperLipPolygon;
-
     public Mouth3D.SHAPE mShape = Mouth3D.SHAPE.DEFAULT;
+    private Head3D mHead;
 
     public Mouth3D(Part3D head)
     {
@@ -497,5 +489,10 @@ public class Mouth3D extends PartStickman3D
         {
             mColorRecorder = mColor;
         }
+    }
+
+    public enum SHAPE
+    {
+        DEFAULT, FADEIN, FADEOUT, SMILE, SMILEEND, SAD, SADEND, ANGRY, ANGRYEND, ANGRYSMALLMOUTH, ANGRYSMALLMOUTHEND, SURPRISED, SURPRISEDEND, HAPPY, HAPPYEND, DISGUSTED, DISGUSTEDEND, CONTEMPT, CONTEMPTEND, EXCITED, EXCITEDEND, EMBARRASSED, EMBARRASSEDEND, FEAR, FEAREND, O, ONE, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN, ELEVEN, TWELVE, THIRTEEN, FOURTEEN, NINETEEN, TWENTY,
     }
 }

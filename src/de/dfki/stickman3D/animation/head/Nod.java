@@ -13,33 +13,35 @@ import de.dfki.stickman3D.animationlogic.AnimationStickman3D;
 import java.util.ArrayList;
 
 /**
- *
  * @author Beka
- *
  */
 public class Nod extends AnimationStickman3D
 {
 
-    public Nod() {
+    public Nod()
+    {
         mAnimType = ANIMTYPE.ON;
     }
 
-    public Nod(Stickman3D sm, int duration, boolean block) {
+    public Nod(Stickman3D sm, int duration, boolean block)
+    {
         super(sm, duration, block);
     }
 
     @Override
-    public void playAnimation() {
+    public void playAnimation()
+    {
 
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mHead, "rotate", 10));
+        mAnimationPart.add(new AnimationContent(((Stickman3D) agent).mHead, "rotate", 10));
         playAnimationPart(200);
 
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mHead, "rotate", -10));
+        mAnimationPart.add(new AnimationContent(((Stickman3D) agent).mHead, "rotate", -10));
         playAnimationPart(200);
 
-        if (StickmanStageController.currentRadioButton != null) {
+        if (StickmanStageController.currentRadioButton != null)
+        {
             StickmanStageController.currentRadioButton.setSelected(false);
         }
     }

@@ -23,21 +23,12 @@ import java.net.URL;
 public class RightForeLeg3D extends PartStickman3D
 {
 
-    public enum SHAPE
-    {
-        DEFAULT, FADEIN, FADEOUT
-    }
-
-    public RightForeLeg3D.SHAPE mShape = RightForeLeg3D.SHAPE.DEFAULT;
-
-    private RightUpperLeg3D mUpperLeg;
-
     private static int LEGLENGTH = 90;
-
+    public RightForeLeg3D.SHAPE mShape = RightForeLeg3D.SHAPE.DEFAULT;
     public MeshView mRightForeLegMesh;
     PhongMaterial material;
     Group rightForeLegGroup;
-
+    private RightUpperLeg3D mUpperLeg;
     public RightForeLeg3D(Part3D rightUpperLegFX)
     {
         mUpperLeg = (RightUpperLeg3D) rightUpperLegFX;
@@ -98,7 +89,7 @@ public class RightForeLeg3D extends PartStickman3D
         rightForeLegGroup.setTranslateX(mStart.x);
         if (mUpperLeg.getDownBody().getUpperBody().getNeck().getHead().getStickman().mType == Gender.TYPE.MALE)
             rightForeLegGroup.setTranslateY(mStart.y + 59);
-         else
+        else
             rightForeLegGroup.setTranslateY(mStart.y + 49);
         rightForeLegGroup.setTranslateZ(0);
 
@@ -152,5 +143,10 @@ public class RightForeLeg3D extends PartStickman3D
     public MeshView getMeshView()
     {
         return mRightForeLegMesh;
+    }
+
+    public enum SHAPE
+    {
+        DEFAULT, FADEIN, FADEOUT
     }
 }

@@ -7,10 +7,12 @@ import de.dfki.reeti.stage.ReetiStage;
 /**
  * Created by alvaro on 11/13/16.
  */
-public class ApplicationLauncherReeti extends ApplicationLauncherImpl {
+public class ApplicationLauncherReeti extends ApplicationLauncherImpl
+{
 
     @Override
-    public void launchStickmanAndWait() {
+    public void launchStickmanAndWait()
+    {
         StickmanStage fx = new ReetiStage();
         getLaunchStickmanThread(fx).start();
         waitForApplicationToStart();

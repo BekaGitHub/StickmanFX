@@ -19,15 +19,9 @@ import java.util.concurrent.Semaphore;
  */
 public abstract class Animation extends Thread implements XMLParseable, XMLWriteable, IAnimation
 {
-    public enum ANIMTYPE
-    {
-        ON, OFF, EmotionExpression, Gesture
-    }
-
     public Agent agent;
     public Animator animator;
     public AnimationPause animationPause;
-
     public String mName = "";
     public String mAgentName;
     public boolean mBlocking = false;
@@ -38,9 +32,8 @@ public abstract class Animation extends Thread implements XMLParseable, XMLWrite
     public ArrayList<AnimationContent> mAnimationPart = new ArrayList<>();
     public Semaphore mAnimationPartStart = new Semaphore(0);
     public Semaphore mAnimationStart = new Semaphore(1);
-    protected HashMap<String, String> extraParams = new HashMap<>();
     public ANIMTYPE mAnimType = null;
-
+    protected HashMap<String, String> extraParams = new HashMap<>();
     public Animation()
     {
         mAnimType = null;
@@ -180,5 +173,10 @@ public abstract class Animation extends Thread implements XMLParseable, XMLWrite
     public void parseXML(Element element) throws XMLParseError
     {
 
+    }
+
+    public enum ANIMTYPE
+    {
+        ON, OFF, EmotionExpression, Gesture
     }
 }

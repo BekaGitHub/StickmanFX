@@ -1,22 +1,19 @@
 package de.dfki.stickman3D;
 
-import de.dfki.common.agent.Agent3D;
-import de.dfki.common.animationlogic.Animation;
-import de.dfki.common.animationlogic.AnimationScheduler;
-import de.dfki.common.enums.Orientation;
-import de.dfki.common.part.Part3D;
-import de.dfki.stickman3D.body.*;
-import de.dfki.stickman3D.body.Head3D;
 import de.dfki.action.sequence.WordTimeMarkSequence;
+import de.dfki.common.agent.Agent3D;
+import de.dfki.common.animationlogic.AnimationScheduler;
 import de.dfki.common.enums.Gender;
+import de.dfki.common.enums.Orientation;
 import de.dfki.common.interfaces.StageRoom;
+import de.dfki.common.part.Part3D;
 import de.dfki.stickman3D.animation.environment.Blinking;
 import de.dfki.stickman3D.animation.environment.Breathing;
 import de.dfki.stickman3D.animation.environment.IdleBehavior;
-import de.dfki.stickman3D.animationlogic.*;
-import de.dfki.stickmanSwing.animationlogic.listener.AnimationListener;
+import de.dfki.stickman3D.animationlogic.AnimationLoader3D;
 import de.dfki.stickman3D.animationlogic.AnimationStickman3D;
 import de.dfki.stickman3D.animationlogic.EventAnimation3D;
+import de.dfki.stickman3D.body.*;
 import de.dfki.stickman3D.environment.SpeechBubbleStickman3D;
 import javafx.scene.effect.InnerShadow;
 import javafx.scene.layout.Pane;
@@ -37,11 +34,9 @@ import java.awt.*;
  */
 public class Stickman3D extends Agent3D
 {
-    public Orientation mOrientation = Orientation.FRONT;
-    private Text agentNameText = new Text();
     public static String sbackground = null;
-
-    //steuert leaveSpeed von GoDown und ComeUp 
+    public Orientation mOrientation = Orientation.FRONT;
+    //steuert leaveSpeed von GoDown und ComeUp
     public double leaveSpeed = 0;
     public boolean starShowControler = false;
     public boolean fadeControler = false;
@@ -55,7 +50,6 @@ public class Stickman3D extends Agent3D
     public IdleBehavior mIdleBehavior;
     public Breathing mBreathing;
     public Blinking mBlinking;
-
     // body parts
     public Part3D mNose = null;
     public Part3D mHair = null;
@@ -88,6 +82,7 @@ public class Stickman3D extends Agent3D
     public Part3D mRightForeLeg = null;
     public Part3D mRightFoot = null;
     public Part3D mUpperBodyAndHead = null;
+    private Text agentNameText = new Text();
 
     public Stickman3D(String name, Gender.TYPE gender, float scale, Dimension size)
     {
@@ -221,15 +216,15 @@ public class Stickman3D extends Agent3D
     }
 
     @Override
-    public void setShowName(boolean show)
-    {
-
-    }
-
-    @Override
     public boolean isShowName()
     {
         return false;
+    }
+
+    @Override
+    public void setShowName(boolean show)
+    {
+
     }
 
     @Override

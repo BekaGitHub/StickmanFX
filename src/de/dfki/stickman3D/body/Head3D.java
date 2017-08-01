@@ -7,11 +7,10 @@ import javafx.scene.paint.PhongMaterial;
 import javafx.scene.shape.MeshView;
 import javafx.scene.shape.TriangleMesh;
 import javafx.scene.transform.Rotate;
+import javafx.scene.transform.Translate;
 
 import java.awt.*;
 import java.net.URL;
-
-import javafx.scene.transform.Translate;
 
 /**
  * @author Beka Aptsiauri
@@ -19,21 +18,13 @@ import javafx.scene.transform.Translate;
 public class Head3D extends PartStickman3D
 {
 
-    public enum SHAPE
-    {
-        DEFAULT, FADEIN, FADEOUT
-    }
-
-    private Stickman3D mStickman;
-
-    private MeshView mHeadMeshView;
-    private PhongMaterial material;
-
     private final static int EARWIDTH = 10;
     public int mHalfHeight;
     public int mHalfWidth;
-
     public Head3D.SHAPE mShape = Head3D.SHAPE.DEFAULT;
+    private Stickman3D mStickman;
+    private MeshView mHeadMeshView;
+    private PhongMaterial material;
 
     public Head3D(Stickman3D sm)
     {
@@ -182,5 +173,10 @@ public class Head3D extends PartStickman3D
     public MeshView getMeshView()
     {
         return mHeadMeshView;
+    }
+
+    public enum SHAPE
+    {
+        DEFAULT, FADEIN, FADEOUT
     }
 }

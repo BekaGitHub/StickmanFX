@@ -5,13 +5,10 @@
  */
 package de.dfki.stickman3D.animationlogic;
 
-import de.dfki.common.agent.Agent;
 import de.dfki.common.agent.IAgent;
 import de.dfki.common.animationlogic.Animation3D;
-import de.dfki.stickman3D.Stickman3D;
 
 import java.util.HashMap;
-import java.util.Map;
 
 /**
  * @author Patrick Gebhard

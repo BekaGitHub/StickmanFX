@@ -21,17 +21,10 @@ import java.net.URL;
 public class RightFoot3D extends PartStickman3D
 {
 
-    public enum SHAPE
-    {
-        DEFAULT, FADEIN, FADEOUT
-    }
-
     public RightFoot3D.SHAPE mShape = RightFoot3D.SHAPE.DEFAULT;
-
     private RightForeLeg3D mRightForeLeg;
     private MeshView mRightFootMeshView;
     private PhongMaterial material;
-
     public RightFoot3D(Part3D rightForeLeg)
     {
         mRightForeLeg = (RightForeLeg3D) rightForeLeg;
@@ -82,7 +75,7 @@ public class RightFoot3D extends PartStickman3D
         mRightFootMeshView.setTranslateX(mStart.x);
         if (mRightForeLeg.getUpperLeg().getDownBody().getUpperBody().getNeck().getHead().getStickman().mType == Gender.TYPE.MALE)
             mRightFootMeshView.setTranslateY(mStart.y + 85);
-         else
+        else
             mRightFootMeshView.setTranslateY(mStart.y + 80);
         mRightFootMeshView.setTranslateZ(0);
 
@@ -131,5 +124,10 @@ public class RightFoot3D extends PartStickman3D
     public MeshView getMeshView()
     {
         return mRightFootMeshView;
+    }
+
+    public enum SHAPE
+    {
+        DEFAULT, FADEIN, FADEOUT
     }
 }

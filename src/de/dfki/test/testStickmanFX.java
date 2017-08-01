@@ -3,8 +3,6 @@ package de.dfki.test;
 import de.dfki.common.decorators.StageRoomFullScreenDecorator;
 import de.dfki.common.interfaces.StageRoom;
 import de.dfki.reeti.stage.StageRoomReeti;
-import de.dfki.stickman3D.stage.StageRoom3D;
-import de.dfki.stickmanFX.stage.StageRoomFX;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.util.Duration;
@@ -12,9 +10,11 @@ import javafx.util.Duration;
 /**
  * Created by alvaro on 9/13/16.
  */
-public class testStickmanFX {
+public class testStickmanFX
+{
 
-    public static void main(String[] args) {
+    public static void main(String[] args)
+    {
 
 //        StageRoom stickmanStage = new StageRoomSwing();
 //        stickmanStage.addStickman("Patrick");
@@ -37,7 +37,8 @@ public class testStickmanFX {
 //        stickmanStage3D1.getStickman("Anna").doAnimation("HeadDown1", 500, true);   
         Timeline timeline = new Timeline(new KeyFrame(
                 Duration.millis(1000),
-                ae -> {
+                ae ->
+                {
 //                    stickmanStage3D1.getStickman("Anna").doAnimation("StopBreathing", 200, true);
 //                    stickmanStage3D1.getStickman("Anna").doAnimation("StartBreathing", 1200, 600, true);
                     //stickmanStage3D1.getStickman("Anna").doAnimation("StopIdle", 500, true);

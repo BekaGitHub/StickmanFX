@@ -1,9 +1,9 @@
 package de.dfki.stickmanFX.client;
 
-import de.dfki.common.XMLCommandParser;
 import de.dfki.common.StickmansOnStage;
-import de.dfki.stickmanFX.animationlogic.AnimationStickman2D;
+import de.dfki.common.XMLCommandParser;
 import de.dfki.stickmanFX.animationlogic.AnimationLoaderFX;
+import de.dfki.stickmanFX.animationlogic.AnimationStickman2D;
 import de.dfki.stickmanFX.animationlogic.EventAnimationFX;
 import de.dfki.util.xml.XMLUtilities;
 
@@ -13,14 +13,17 @@ import java.nio.charset.Charset;
 /**
  * Created by alvaro on 9/19/16.
  */
-public class XMLCommandParserFX extends XMLCommandParser {
+public class XMLCommandParserFX extends XMLCommandParser
+{
 
-    public XMLCommandParserFX(StickmansOnStage stage) {
+    public XMLCommandParserFX(StickmansOnStage stage)
+    {
         super(stage);
     }
 
     @Override
-    public void parseStickmanXMLCmd(String cmd) {
+    public void parseStickmanXMLCmd(String cmd)
+    {
         // TODO cut the crap with the two animation types ...
         AnimationStickman2D a = (cmd.contains("StickmanEventAnimation")) ? new EventAnimationFX() : new AnimationStickman2D();
 
@@ -32,7 +35,8 @@ public class XMLCommandParserFX extends XMLCommandParser {
         int duration = a.mDuration;
         boolean blocking = a.mBlocking;
         Object parameter = a.mParameter;
-        if (stickmanname != null) {
+        if (stickmanname != null)
+        {
             a = (a instanceof EventAnimationFX)
                     ? AnimationLoaderFX.getInstance().loadEventAnimation(onStage.getStickman(stickmanname), animationname, duration, blocking)
                     : AnimationLoaderFX.getInstance().loadAnimation(onStage.getStickman(stickmanname), animationname, duration, blocking);

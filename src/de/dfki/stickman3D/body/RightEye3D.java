@@ -7,28 +7,22 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.*;
 
 /**
- *
  * @author Beka Aptsiauri
- *
  */
 public class RightEye3D extends PartStickman3D
 {
 
-    double xMovement;
-    double yMovement1;
-    double yMovement2;
-
-    public static enum SHAPE {
-        DEFAULT, BLINK, FADEIN, FADEOUT, BLINKEND, LOOKLEFT, LOOKLEFTEND, LOOKRIGHT, LOOKRIGHTEND, LOOKDOWN, LOOKDOWNEND, LOOKUP, LOOKUPEND, ANGRY, ANGRYEND, SURPRISED, SURPRISEDEND, HAPPY, HAPPYEND, DISGUSTED, DISGUSTEDEND, LOVED, LOVEDEND, LOVED1, CONTEMPT, CONTEMPTEND, EXCITED, EXCITEDEND, EMBARRASSED, EMBARRASSEDEND
-    };
-
-    Head3D mHeadFX;
-    Group rightEyeGroup;
-
     public Path border;
     public Path bigPupile;
     public Path smallPupile;
+    public RightEye3D.SHAPE mShape = RightEye3D.SHAPE.DEFAULT;
 
+    ;
+    double xMovement;
+    double yMovement1;
+    double yMovement2;
+    Head3D mHeadFX;
+    Group rightEyeGroup;
     double borderXSize = 0;
     float borderYSize = 0;
     double bigPupileYSize = 0;
@@ -40,14 +34,15 @@ public class RightEye3D extends PartStickman3D
     Color smallPupileColor;
     Color borderColor;
 
-    public RightEye3D.SHAPE mShape = RightEye3D.SHAPE.DEFAULT;
-
-    public RightEye3D(Part3D head) {
+    public RightEye3D(Part3D head)
+    {
         mHeadFX = (Head3D) head;
 
-        if (mHeadFX.getStickman().mType == Gender.TYPE.MALE) {
+        if (mHeadFX.getStickman().mType == Gender.TYPE.MALE)
+        {
             mColor = Color.rgb(0, 0, 0, 1);
-        } else {
+        } else
+        {
             mColor = Color.rgb(0, 0, 255, 1);
         }
 
@@ -70,7 +65,8 @@ public class RightEye3D extends PartStickman3D
     }
 
     @Override
-    public void init() {
+    public void init()
+    {
         super.init();
         bigPupile.setTranslateX(mStart.x - 7);
         bigPupile.setTranslateY(mStart.y);
@@ -83,17 +79,20 @@ public class RightEye3D extends PartStickman3D
     }
 
     @Override
-    public void setShape(String s) {
+    public void setShape(String s)
+    {
         RightEye3D.SHAPE shape = RightEye3D.SHAPE.valueOf(s);
         mShape = (shape != null) ? shape : RightEye3D.SHAPE.DEFAULT;
     }
 
     @Override
-    public void resetShape() {
+    public void resetShape()
+    {
         mShape = RightEye3D.SHAPE.DEFAULT;
     }
 
-    private void createDefaultEye() {
+    private void createDefaultEye()
+    {
         border = createBorder(border);
         bigPupile = createEllipsePath(bigPupile, 0, 0, 3.5, 3.5, 0, mColor, null);
         smallPupile = createEllipsePath(smallPupile, 0, 0, 1.4, 1.4, 0, smallPupileColor, null);
@@ -106,25 +105,30 @@ public class RightEye3D extends PartStickman3D
     }
 
     @Override
-    public void calculate(int step) {
+    public void calculate(int step)
+    {
 
         float xMovement;
         float yMovement;
 
-        switch (mShape) {
+        switch (mShape)
+        {
             case DEFAULT:
-                if (step == 20 || step == 0) {
+                if (step == 20 || step == 0)
+                {
                     createDefaultEye();
                 }
                 break;
 
             case FADEIN:
-                if (step == 2) {
+                if (step == 2)
+                {
                     mColor = new Color(mColor.getRed(), mColor.getGreen(), mColor.getBlue(), 0.0);
                     smallPupileColor = new Color(smallPupileColor.getRed(), smallPupileColor.getGreen(),
                             smallPupileColor.getBlue(), 0.0);
                     borderColor = new Color(borderColor.getRed(), borderColor.getGreen(), borderColor.getBlue(), 0.0);
-                } else if (mColor.getOpacity() != 0.0) {
+                } else if (mColor.getOpacity() != 0.0)
+                {
                     mColor = new Color(mColor.getRed(), mColor.getGreen(), mColor.getBlue(), mColor.getOpacity() - 0.052);
                     smallPupileColor = new Color(smallPupileColor.getRed(), smallPupileColor.getGreen(),
                             smallPupileColor.getBlue(), smallPupileColor.getOpacity() - 0.052);
@@ -139,12 +143,14 @@ public class RightEye3D extends PartStickman3D
                 break;
 
             case FADEOUT:
-                if (step == 2) {
+                if (step == 2)
+                {
                     mColor = new Color(mColor.getRed(), mColor.getGreen(), mColor.getBlue(), 1.0);
                     smallPupileColor = new Color(smallPupileColor.getRed(), smallPupileColor.getGreen(),
                             smallPupileColor.getBlue(), 1.0);
                     borderColor = new Color(borderColor.getRed(), borderColor.getGreen(), borderColor.getBlue(), 1.0);
-                } else if (mColor.getOpacity() != 1.0) {
+                } else if (mColor.getOpacity() != 1.0)
+                {
                     mColor = new Color(mColor.getRed(), mColor.getGreen(), mColor.getBlue(), mColor.getOpacity() + 0.052);
                     smallPupileColor = new Color(smallPupileColor.getRed(), smallPupileColor.getGreen(),
                             smallPupileColor.getBlue(), smallPupileColor.getOpacity() + 0.052);
@@ -164,13 +170,16 @@ public class RightEye3D extends PartStickman3D
                 smallPupileYSize += 0.050;
 
                 // Optimiere values
-                if (borderYSize > 0.8550001) {
+                if (borderYSize > 0.8550001)
+                {
                     borderYSize = 0.8550001f;
                 }
-                if (bigPupileYSize > 0.9500000000000003) {
+                if (bigPupileYSize > 0.9500000000000003)
+                {
                     bigPupileYSize = 0.9500000000000003;
                 }
-                if (smallPupileYSize > 0.9500000000000003) {
+                if (smallPupileYSize > 0.9500000000000003)
+                {
                     smallPupileYSize = 0.9500000000000003;
                 }
 
@@ -184,9 +193,11 @@ public class RightEye3D extends PartStickman3D
                 bigPupileYSize -= 0.050;
                 smallPupileYSize -= 0.050;
 
-                if (step == 2) {
+                if (step == 2)
+                {
                     createDefaultEye();
-                } else {
+                } else
+                {
                     border.setScaleY(1 - borderYSize);
                     bigPupile.setScaleY(1 - bigPupileYSize);
                     smallPupile.setScaleY(1 - smallPupileYSize);
@@ -205,9 +216,11 @@ public class RightEye3D extends PartStickman3D
                 xMovement = -0.131f;
                 yMovement = -0.182f;
 
-                if (step == 2) {
+                if (step == 2)
+                {
                     createDefaultEye();
-                } else {
+                } else
+                {
                     bigPupile.setTranslateX(bigPupile.getTranslateX() + xMovement);
                     smallPupile.setTranslateX(smallPupile.getTranslateX() + yMovement);
                 }
@@ -225,9 +238,11 @@ public class RightEye3D extends PartStickman3D
                 xMovement = -0.131f;
                 yMovement = -0.184f;
 
-                if (step == 2) {
+                if (step == 2)
+                {
                     createDefaultEye();
-                } else {
+                } else
+                {
                     bigPupile.setTranslateX(bigPupile.getTranslateX() - xMovement);
                     smallPupile.setTranslateX(smallPupile.getTranslateX() - yMovement);
                 }
@@ -245,9 +260,11 @@ public class RightEye3D extends PartStickman3D
                 xMovement = -0.100f;
                 yMovement = -0.184f;
 
-                if (step == 2) {
+                if (step == 2)
+                {
                     createDefaultEye();
-                } else {
+                } else
+                {
                     bigPupile.setTranslateY(bigPupile.getTranslateY() + xMovement);
                     smallPupile.setTranslateY(smallPupile.getTranslateY() + yMovement);
                 }
@@ -265,16 +282,19 @@ public class RightEye3D extends PartStickman3D
                 xMovement = 0.100f;
                 yMovement = 0.184f;
 
-                if (step == 2) {
+                if (step == 2)
+                {
                     createDefaultEye();
-                } else {
+                } else
+                {
                     bigPupile.setTranslateY(bigPupile.getTranslateY() + xMovement);
                     smallPupile.setTranslateY(smallPupile.getTranslateY() + yMovement);
                 }
                 break;
 
             case ANGRY:
-                if (step == 20) {
+                if (step == 20)
+                {
                     createDefaultEye();
                 }
                 borderYSize += 0.0210;
@@ -288,16 +308,19 @@ public class RightEye3D extends PartStickman3D
                 borderYSize -= 0.0210f;
                 bigPupileYSize -= 0.010;
 
-                if (step == 2) {
+                if (step == 2)
+                {
                     createDefaultEye();
-                } else {
+                } else
+                {
                     border.setScaleY(1 - borderYSize);
                     bigPupile.setScaleY(1 - bigPupileYSize);
                 }
                 break;
 
             case SURPRISED:
-                if (step == 20) {
+                if (step == 20)
+                {
                     createDefaultEye();
                 }
                 borderYSize -= 0.0158;
@@ -307,15 +330,18 @@ public class RightEye3D extends PartStickman3D
             case SURPRISEDEND:
                 borderYSize += 0.0158;
 
-                if (step == 2) {
+                if (step == 2)
+                {
                     createDefaultEye();
-                } else {
+                } else
+                {
                     border.setScaleY(1 - borderYSize);
                 }
                 break;
 
             case HAPPY:
-                if (step == 20) {
+                if (step == 20)
+                {
                     createDefaultEye();
                 }
                 borderYSize += 0.0105;
@@ -328,16 +354,19 @@ public class RightEye3D extends PartStickman3D
                 borderYSize -= 0.0105;
                 borderXSize -= 0.0052;
 
-                if (step == 2) {
+                if (step == 2)
+                {
                     createDefaultEye();
-                } else {
+                } else
+                {
                     border.setScaleY(1 - borderYSize);
                     border.setScaleX(1 + borderXSize);
                 }
                 break;
 
             case DISGUSTED:
-                if (step == 20) {
+                if (step == 20)
+                {
                     createDefaultEye();
                 }
                 borderYSize += 0.0105;
@@ -352,9 +381,11 @@ public class RightEye3D extends PartStickman3D
             case DISGUSTEDEND:
                 borderYSize -= 0.0105;
 
-                if (step == 2) {
+                if (step == 2)
+                {
                     createDefaultEye();
-                } else {
+                } else
+                {
                     quadCurve_1 = (QuadCurveTo) border.getElements().get(1);
                     quadCurve_1.setY(quadCurve_1.getY() - 0.105);
                     border.getElements().set(1, quadCurve_1);
@@ -372,7 +403,8 @@ public class RightEye3D extends PartStickman3D
                 break;
 
             case EXCITED:
-                if (step == 20) {
+                if (step == 20)
+                {
                     createDefaultEye();
                 }
                 borderYSize -= 0.0105;
@@ -385,16 +417,19 @@ public class RightEye3D extends PartStickman3D
                 borderYSize += 0.0105;
                 borderXSize += 0.0052;
 
-                if (step == 2) {
+                if (step == 2)
+                {
                     createDefaultEye();
-                } else {
+                } else
+                {
                     border.setScaleY(1 - borderYSize);
                     border.setScaleX(1 + borderXSize);
                 }
                 break;
 
             case EMBARRASSED:
-                if (step == 20) {
+                if (step == 20)
+                {
                     createDefaultEye();
                 }
                 xMovement = 0.100f;
@@ -408,9 +443,11 @@ public class RightEye3D extends PartStickman3D
                 xMovement = -0.100f;
                 yMovement = -0.184f;
 
-                if (step == 2) {
+                if (step == 2)
+                {
                     createDefaultEye();
-                } else {
+                } else
+                {
                     bigPupile.setTranslateY(bigPupile.getTranslateY() + xMovement);
                     smallPupile.setTranslateY(smallPupile.getTranslateY() + yMovement);
                 }
@@ -418,17 +455,21 @@ public class RightEye3D extends PartStickman3D
         }
     }
 
-    public void update() {
+    public void update()
+    {
         bigPupile.setFill(mColor);
     }
 
-    protected void recordColor() {
-        if (mHeadFX.getStickman().setCharacterInvisible == false) {
+    protected void recordColor()
+    {
+        if (mHeadFX.getStickman().setCharacterInvisible == false)
+        {
             mColorRecorder = mColor;
         }
     }
 
-    private Path createEllipsePath(Path startPath, double centerX, double centerY, double radiusX, double radiusY, double rotate, Color eyeColor, Color borderColor) {
+    private Path createEllipsePath(Path startPath, double centerX, double centerY, double radiusX, double radiusY, double rotate, Color eyeColor, Color borderColor)
+    {
         ArcTo arcTo = new ArcTo();
         arcTo.setX(centerX - radiusX + 1); // to simulate a full 360 degree celcius circle.
         arcTo.setY(centerY - radiusY);
@@ -442,7 +483,8 @@ public class RightEye3D extends PartStickman3D
         startPath.getElements().add(arcTo);
         startPath.getElements().add(new ClosePath());
 
-        if (borderColor != null) {
+        if (borderColor != null)
+        {
             startPath.setStroke(Color.BLACK);
             startPath.setStrokeWidth(1);
         }
@@ -451,7 +493,8 @@ public class RightEye3D extends PartStickman3D
         return startPath;
     }
 
-    private Path createBorder(Path startBorder) {
+    private Path createBorder(Path startBorder)
+    {
         startBorder.getElements().add(new MoveTo(mStart.x, mStart.y));
         startBorder.getElements().add(new QuadCurveTo(mStart.x - 10, mStart.y - 13, mStart.x - 20, mStart.y));
         startBorder.getElements().add(new QuadCurveTo(mStart.x - 10, mStart.y + 13, mStart.x, mStart.y));
@@ -460,5 +503,10 @@ public class RightEye3D extends PartStickman3D
         startBorder.setFill(Color.WHITE);
 
         return startBorder;
+    }
+
+    public static enum SHAPE
+    {
+        DEFAULT, BLINK, FADEIN, FADEOUT, BLINKEND, LOOKLEFT, LOOKLEFTEND, LOOKRIGHT, LOOKRIGHTEND, LOOKDOWN, LOOKDOWNEND, LOOKUP, LOOKUPEND, ANGRY, ANGRYEND, SURPRISED, SURPRISEDEND, HAPPY, HAPPYEND, DISGUSTED, DISGUSTEDEND, LOVED, LOVEDEND, LOVED1, CONTEMPT, CONTEMPTEND, EXCITED, EXCITEDEND, EMBARRASSED, EMBARRASSEDEND
     }
 }

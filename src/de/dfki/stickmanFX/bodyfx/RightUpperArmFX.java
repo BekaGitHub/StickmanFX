@@ -5,22 +5,15 @@
  */
 package de.dfki.stickmanFX.bodyfx;
 
-import java.awt.Dimension;
-import java.awt.Point;
-
 import de.dfki.common.part.Part2D;
 import javafx.scene.paint.Color;
-import javafx.scene.shape.MoveTo;
-import javafx.scene.shape.Path;
-import javafx.scene.shape.QuadCurveTo;
-import javafx.scene.shape.StrokeLineCap;
-import javafx.scene.shape.StrokeLineJoin;
+import javafx.scene.shape.*;
 import javafx.scene.transform.Affine;
 
+import java.awt.*;
+
 /**
- *
  * @author Beka
- *
  */
 public class RightUpperArmFX extends PartStickman2D
 {
@@ -35,7 +28,8 @@ public class RightUpperArmFX extends PartStickman2D
 
     Path mArm;
 
-    public RightUpperArmFX(Part2D shoulder) {
+    public RightUpperArmFX(Part2D shoulder)
+    {
         mRightShoulderFX = (RightShoulderFX) shoulder;
         mColor = Color.rgb(80, 80, 80);
         mDefaultRotation = 23;
@@ -50,22 +44,29 @@ public class RightUpperArmFX extends PartStickman2D
         calculate(0);
     }
 
-    public Point getRightUpperArmEndPosition() {
+    public Point getRightUpperArmEndPosition()
+    {
         //return (mArm != null) ? new Point((int) mArm.boundsInParentProperty().get().getMinX(), (int) mArm.boundsInParentProperty().get().getMaxY()) : new Point(0, 0);
-        if (mRotation >= 0 && mRotation <= 90) {
+        if (mRotation >= 0 && mRotation <= 90)
+        {
             return (mArm != null) ? new Point((int) (mArm.boundsInParentProperty().get().getMinX() + 2), (int) mArm.boundsInParentProperty().get().getMaxY() - 1) : new Point(0, 0);
-        } else if (mRotation > 90 && mRotation <= 180) {
+        } else if (mRotation > 90 && mRotation <= 180)
+        {
             return (mArm != null) ? new Point((int) (mArm.boundsInParentProperty().get().getMinX()), (int) mArm.boundsInParentProperty().get().getMinY() + 3) : new Point(0, 0);
-        } else if (mRotation < 0 && mRotation >= -90) {
+        } else if (mRotation < 0 && mRotation >= -90)
+        {
             return (mArm != null) ? new Point((int) (mArm.boundsInParentProperty().get().getMaxX()), (int) mArm.boundsInParentProperty().get().getMaxY()) : new Point(0, 0);
-        } else {
+        } else
+        {
             return (mArm != null) ? new Point((int) (mArm.boundsInParentProperty().get().getMaxX()), (int) mArm.boundsInParentProperty().get().getMinY()) : new Point(0, 0);
         }
     }
 
     @Override
-    public void calculate(int step) {
-        this.getChildren().clear();;
+    public void calculate(int step)
+    {
+        this.getChildren().clear();
+        ;
 
         mArm = new Path();
         mStart = mRightShoulderFX.getRightShoulderEndPosition();
@@ -92,27 +93,34 @@ public class RightUpperArmFX extends PartStickman2D
     }
 
     @Override
-    public void update() {
+    public void update()
+    {
 //		Color currentColor = Color.rgb(80, 80, 80);
         // draw outlines
-        if (mRightShoulderFX.mBodyFX.mNeckFX.mHeadFX.mStickmanFX.setCharacterInvisible == false) {
+        if (mRightShoulderFX.mBodyFX.mNeckFX.mHeadFX.mStickmanFX.setCharacterInvisible == false)
+        {
             mColorRecorder = mColor;
         }
-        if (mRightShoulderFX.mBodyFX.mNeckFX.mHeadFX.mStickmanFX.setCharacterInvisible == true) {
+        if (mRightShoulderFX.mBodyFX.mNeckFX.mHeadFX.mStickmanFX.setCharacterInvisible == true)
+        {
             if (mRightShoulderFX.mBodyFX.mNeckFX.mHeadFX.mStickmanFX.fadeControler == true) // Added by Robbie
             {
                 int fadeFactor = mRightShoulderFX.mBodyFX.mNeckFX.mHeadFX.mStickmanFX.mMouthFX.mShapeAnimationStep * 12;
-                if (fadeFactor <= 24) {
+                if (fadeFactor <= 24)
+                {
                     fadeFactor = 0;
                 }
                 mColor = new Color(mColor.getRed(), mColor.getGreen(), mColor.getBlue(), (fadeFactor * 100 / 255) / 100f);
                 //mColor = Color.rgb(80, 80, 80, (fadeFactor * 100 / 255) / 100f);
                 // g2.setColor(new Color(80, 80, 80, fadeFactor));
-            } else {
+            } else
+            {
                 int fadeFactor = (20 - mRightShoulderFX.mBodyFX.mNeckFX.mHeadFX.mStickmanFX.mMouthFX.mShapeAnimationStep) * 12;
-                if (fadeFactor >= 216) {
+                if (fadeFactor >= 216)
+                {
                     mColor = mColorRecorder;
-                } else {
+                } else
+                {
                     mColor = new Color(mColor.getRed(), mColor.getGreen(), mColor.getBlue(), (fadeFactor * 100 / 255) / 100f);
                 }
                 //mColor = Color.rgb(80, 80, 80, (fadeFactor * 100 / 255) / 100f);

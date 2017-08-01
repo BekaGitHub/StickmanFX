@@ -1,15 +1,8 @@
 package de.dfki.stickman3D.body;
 
-import com.interactivemesh.jfx.importer.stl.StlMeshImporter;
 import de.dfki.common.agent.Agent3D;
-import de.dfki.stickman3D.Stickman3D;
 import javafx.scene.paint.Color;
-import javafx.scene.paint.PhongMaterial;
-import javafx.scene.shape.MeshView;
-import javafx.scene.shape.TriangleMesh;
-import javafx.scene.transform.Rotate;
 
-import java.awt.*;
 import java.net.URL;
 
 /**

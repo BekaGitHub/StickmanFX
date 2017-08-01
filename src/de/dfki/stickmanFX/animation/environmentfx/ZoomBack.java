@@ -6,38 +6,43 @@ import javafx.application.Platform;
 import javafx.scene.layout.HBox;
 
 /**
- *
  * @author Robbie
- *
  */
 public class ZoomBack extends AnimationStickman2D
 {
 
-    public ZoomBack(StickmanFX sm, int duration, boolean block) {
+    public ZoomBack(StickmanFX sm, int duration, boolean block)
+    {
         super(sm, duration, block);
     }
 
     @Override
-    public void playAnimation() {
+    public void playAnimation()
+    {
         // make StickmanSwing to become original size
-        agent.mScale = ((StickmanFX)agent).mScaleOriginal;
+        agent.mScale = ((StickmanFX) agent).mScaleOriginal;
 
         String mStageIdentifier = agent.getStageRoom().getStageIdentifier();
         HBox mStickmanPane;
-        try {
-            Platform.runLater(() -> {
-                try {
+        try
+        {
+            Platform.runLater(() ->
+            {
+                try
+                {
                     agent.getStageRoom().getStickmanStage().addStickmanToStage(mStageIdentifier);
-                } catch (Exception e) {
+                } catch (Exception e)
+                {
                     // TODO Auto-generated catch block
                     e.printStackTrace();
                 }
             });
-        } catch (Exception e) {
+        } catch (Exception e)
+        {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
 
-        Platform.runLater(() -> ((StickmanFX)agent).update());
+        Platform.runLater(() -> ((StickmanFX) agent).update());
     }
 }

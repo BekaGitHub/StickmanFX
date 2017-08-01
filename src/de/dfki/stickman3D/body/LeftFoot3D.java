@@ -21,24 +21,17 @@ import java.net.URL;
 public class LeftFoot3D extends PartStickman3D
 {
 
-    public enum SHAPE
-    {
-        DEFAULT, FADEIN, FADEOUT
-    }
-
     public LeftFoot3D.SHAPE mShape = LeftFoot3D.SHAPE.DEFAULT;
-
     private LeftForeLeg3D mLeftForeLeg;
     private MeshView mLeftFootMeshView;
     private PhongMaterial material;
-
     public LeftFoot3D(Part3D leftForeLeg)
     {
         mLeftForeLeg = (LeftForeLeg3D) leftForeLeg;
         mLength = 20;
         if (mLeftForeLeg.getUpperLeg().getDownBody().getUpperBody().getNeck().getHead().getStickman().mType == Gender.TYPE.MALE)
             mColor = Color.rgb(80, 80, 80, 1);
-         else
+        else
             mColor = Color.rgb(154, 83, 198, 1);
         setDefaulRotation(0);
         mYRotation = 50;
@@ -81,7 +74,7 @@ public class LeftFoot3D extends PartStickman3D
         mLeftFootMeshView.setTranslateX(mStart.x + 3);
         if (mLeftForeLeg.getUpperLeg().getDownBody().getUpperBody().getNeck().getHead().getStickman().mType == Gender.TYPE.MALE)
             mLeftFootMeshView.setTranslateY(mStart.y + 85);
-         else
+        else
             mLeftFootMeshView.setTranslateY(mStart.y + 79);
         mLeftFootMeshView.setTranslateZ(0);
 
@@ -130,5 +123,10 @@ public class LeftFoot3D extends PartStickman3D
     public MeshView getMeshView()
     {
         return mLeftFootMeshView;
+    }
+
+    public enum SHAPE
+    {
+        DEFAULT, FADEIN, FADEOUT
     }
 }

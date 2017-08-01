@@ -16,44 +16,52 @@ import org.w3c.dom.Element;
 import java.util.List;
 
 /**
- *
  * @author Beka Aptsiauri
- *
  */
-public class EventAnimationReeti extends AnimationReeti {
+public class EventAnimationReeti extends AnimationReeti
+{
 
     public List<Long> mTimepoints;
     public WordTimeMarkSequence mWTS;
 
-    public EventAnimationReeti() {
+    public EventAnimationReeti()
+    {
         super();
     }
 
-    public EventAnimationReeti(Reeti reet, int duration, boolean block) {
+    public EventAnimationReeti(Reeti reet, int duration, boolean block)
+    {
         super(reet, duration, block);
         mName = getClass().getSimpleName();
         setName(reet.mName + "'s Event AnimationSwing " + mName);
     }
 
-    public void playEventAnimationPart() {
+    public void playEventAnimationPart()
+    {
         animator = new AnimatorReeti(agent, this, mAnimationPart, mWTS);
 
-        try {
+        try
+        {
             mAnimationPartStart.acquire();
-        } catch (InterruptedException ex) {
+        } catch (InterruptedException ex)
+        {
             agent.mLogger.severe(ex.getMessage());
         }
     }
 
     @Override
-    public void writeXML(IOSIndentWriter out) throws XMLWriteError {
+    public void writeXML(IOSIndentWriter out) throws XMLWriteError
+    {
         out.println("<StickmanEventAnimation stickmanname = \"" + mAgentName + "\" name=\"" + mName + "\" id=\"" + mID + "\" duration=\"" + mDuration + "\" blocking=\"" + mBlocking + "\">").push();
-        if (mParameter != null) {
-            if (mParameter instanceof WordTimeMarkSequence) {
+        if (mParameter != null)
+        {
+            if (mParameter instanceof WordTimeMarkSequence)
+            {
                 ((WordTimeMarkSequence) mParameter).writeXML(out);
             }
 
-            if (mParameter instanceof String) {
+            if (mParameter instanceof String)
+            {
                 out.println((String) mParameter);
             }
         }
@@ -61,7 +69,8 @@ public class EventAnimationReeti extends AnimationReeti {
     }
 
     @Override
-    public void parseXML(final Element element) throws XMLParseError {
+    public void parseXML(final Element element) throws XMLParseError
+    {
         mAgentName = element.getAttribute("stickmanname");
         mName = element.getAttribute("name");
         mID = element.getAttribute("id");
@@ -69,17 +78,21 @@ public class EventAnimationReeti extends AnimationReeti {
         mBlocking = Boolean.parseBoolean(element.getAttribute("blocking"));
 
         // Process The Child Nodes
-        XMLParseAction.processChildNodes(element, new XMLParseAction() {
+        XMLParseAction.processChildNodes(element, new XMLParseAction()
+        {
             @Override
-            public void run(final Element element) throws XMLParseError {
+            public void run(final Element element) throws XMLParseError
+            {
                 // Get The Child Tag Name
                 final String name = element.getTagName();
 
-                if (name.equalsIgnoreCase("WordTimeMarkSequence")) {
+                if (name.equalsIgnoreCase("WordTimeMarkSequence"))
+                {
                     mParameter = new WordTimeMarkSequence();
 
                     ((WordTimeMarkSequence) mParameter).parseXML(element);
-                } else {
+                } else
+                {
                     mParameter = (String) element.getTextContent();
                 }
             }

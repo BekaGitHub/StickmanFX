@@ -5,9 +5,10 @@
  */
 package de.dfki.stickmanFX.animation.facefx;
 
-import de.dfki.stickmanFX.StickmanFX;
 import de.dfki.common.animationlogic.AnimationContent;
+import de.dfki.stickmanFX.StickmanFX;
 import de.dfki.stickmanFX.animationlogic.AnimationStickman2D;
+
 import java.util.ArrayList;
 
 /**
@@ -16,16 +17,17 @@ import java.util.ArrayList;
  * receives a new command.
  *
  * @author Beka Aptsiauri
- *
  */
 public class AngryEnd extends AnimationStickman2D
 {
 
-    public AngryEnd() {
+    public AngryEnd()
+    {
         super();
     }
 
-    public AngryEnd(StickmanFX sm, int duration, boolean block) {
+    public AngryEnd(StickmanFX sm, int duration, boolean block)
+    {
         super(sm, duration, block);
     }
 
@@ -33,15 +35,16 @@ public class AngryEnd extends AnimationStickman2D
      * This method creates the angry facial movement.
      */
     @Override
-    public void playAnimation() {
+    public void playAnimation()
+    {
         // angry end
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mMouthFX, "shape", "ANGRYEND"));
-        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mLeftEyeFX, "shape", "ANGRYEND"));
-        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mLeftEyebrowFX, "shape", "ANGRYEND"));
+        mAnimationPart.add(new AnimationContent(((StickmanFX) agent).mMouthFX, "shape", "ANGRYEND"));
+        mAnimationPart.add(new AnimationContent(((StickmanFX) agent).mLeftEyeFX, "shape", "ANGRYEND"));
+        mAnimationPart.add(new AnimationContent(((StickmanFX) agent).mLeftEyebrowFX, "shape", "ANGRYEND"));
         //mAnimationPart.add(new AnimationContent(mStickman.mFaceWrinkle, "shape", "ANGRYEND"));
-        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mRightEyeFX, "shape", "ANGRYEND"));
-        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mRightEyebrowFX, "shape", "ANGRYEND"));
+        mAnimationPart.add(new AnimationContent(((StickmanFX) agent).mRightEyeFX, "shape", "ANGRYEND"));
+        mAnimationPart.add(new AnimationContent(((StickmanFX) agent).mRightEyebrowFX, "shape", "ANGRYEND"));
         playAnimationPart(mDuration);
         pauseAnimation(10);
 

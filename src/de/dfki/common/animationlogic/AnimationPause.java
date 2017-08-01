@@ -13,16 +13,19 @@ public class AnimationPause
     private final Animation animation;
     public Semaphore pauseEnd = new Semaphore(0);
 
-    public AnimationPause(Agent agent, Animation animation, int duration) {
+    public AnimationPause(Agent agent, Animation animation, int duration)
+    {
         this.agent = agent;
         this.animation = animation;
 
         new WaitThread(duration).start();
 
         // block this until WaitThread will unblock
-        try {
+        try
+        {
             pauseEnd.acquire(1);
-        } catch (InterruptedException ex) {
+        } catch (InterruptedException ex)
+        {
             this.agent.mLogger.severe(ex.getMessage());
         }
 
@@ -30,20 +33,25 @@ public class AnimationPause
         this.animation.mAnimationPartStart.release();
     }
 
-    private class WaitThread extends Thread {
+    private class WaitThread extends Thread
+    {
 
         int mSleepTime = 0;
 
-        public WaitThread(int time) {
+        public WaitThread(int time)
+        {
             mSleepTime = time;
         }
 
         @Override
-        public void run() {
+        public void run()
+        {
             // directly go to sleep
-            try {
+            try
+            {
                 sleep(mSleepTime);
-            } catch (InterruptedException ex) {
+            } catch (InterruptedException ex)
+            {
                 agent.mLogger.severe(ex.getMessage());
             }
             pauseEnd.release();

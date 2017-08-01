@@ -22,20 +22,12 @@ import java.net.URL;
  */
 public class LeftUpperArm3D extends PartStickman3D
 {
-    public enum SHAPE
-    {
-        DEFAULT, FADEIN, FADEOUT
-    }
-
+    private static final int ARMLENGTH = 70;
     public LeftUpperArm3D.SHAPE mShape = LeftUpperArm3D.SHAPE.DEFAULT;
 
     private UpperBody3D mUpperBody;
-
-    private static final int ARMLENGTH = 70;
-
     private MeshView mLeftUpperArmMesh;
     private PhongMaterial material;
-
     private Group leftUpperArmGroup;
 
     public LeftUpperArm3D(Part3D bodyFX)
@@ -49,7 +41,7 @@ public class LeftUpperArm3D extends PartStickman3D
 
         if (mUpperBody.getNeck().getHead().getStickman().mType == Gender.TYPE.MALE)
             mDefaultRotation = -10;
-         else
+        else
             mDefaultRotation = -15;
 
         mZRotation = mDefaultRotation;
@@ -158,5 +150,10 @@ public class LeftUpperArm3D extends PartStickman3D
     public Group getLeftUpperArmGroup()
     {
         return leftUpperArmGroup;
+    }
+
+    public enum SHAPE
+    {
+        DEFAULT, FADEIN, FADEOUT
     }
 }

@@ -3,32 +3,27 @@ package de.dfki.stickmanFX.bodyfx;
 import de.dfki.common.enums.Gender;
 import de.dfki.common.part.Part2D;
 import de.dfki.stickmanFX.animationlogic.AnimatorStickman2D;
-import java.awt.Dimension;
-import java.awt.Point;
-
 import javafx.scene.paint.Color;
 import javafx.scene.shape.LineTo;
 import javafx.scene.shape.MoveTo;
 import javafx.scene.shape.Path;
 import javafx.scene.shape.QuadCurveTo;
 
+import java.awt.*;
+
 /**
- *
  * @author Beka Aptsiauri
- *
  */
 public class MouthFX extends PartStickman2D
 {
 
-    public static enum SHAPE {
-        DEFAULT, SMILE, SMILEEND, SAD, SADEND, ANGRY, ANGRYEND, ANGRYSMALLMOUTH, ANGRYSMALLMOUTHEND, SURPRISED, SURPRISEDEND, HAPPY, HAPPYEND, DISGUSTED, DISGUSTEDEND, CONTEMPT, CONTEMPTEND, EXCITED, EXCITEDEND, EMBARRASSED, EMBARRASSEDEND, FEAR, FEAREND, O, ONE, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN, ELEVEN, TWELVE, THIRTEEN, FOURTEEN, NINETEEN, TWENTY,
-    };
-
-    HeadFX mHeadFX;
-    Path mPath;
     public MouthFX.SHAPE mShape = MouthFX.SHAPE.DEFAULT;
 
-    public MouthFX(Part2D head) {
+    ;
+    HeadFX mHeadFX;
+    Path mPath;
+    public MouthFX(Part2D head)
+    {
         mHeadFX = (HeadFX) head;
         mLength = 20;
         mSize = new Dimension(mLength * 2, 5);
@@ -40,18 +35,21 @@ public class MouthFX extends PartStickman2D
     }
 
     @Override
-    public void setShape(String s) {
+    public void setShape(String s)
+    {
         MouthFX.SHAPE shape = MouthFX.SHAPE.valueOf(s);
         mShape = (shape != null) ? shape : MouthFX.SHAPE.DEFAULT;
     }
 
     @Override
-    public void resetShape() {
+    public void resetShape()
+    {
         mShape = MouthFX.SHAPE.DEFAULT;
     }
 
     @Override
-    public void calculate(int step) {
+    public void calculate(int step)
+    {
         mStart = mHeadFX.getMouthPostion();
         mEnd = new Point(mStart.x + mLength / 2, mStart.y);
 
@@ -62,24 +60,30 @@ public class MouthFX extends PartStickman2D
 
         mPath = new Path();
 
-        switch (mShape) {
+        switch (mShape)
+        {
             case DEFAULT:
 //			if (mHead.mStickman.setCharacterInvisible == false)
 //				mColorRecorder = mColor;
-                if (mHeadFX.mStickmanFX.setCharacterInvisible == true) {
+                if (mHeadFX.mStickmanFX.setCharacterInvisible == true)
+                {
                     if (mHeadFX.mStickmanFX.fadeControler == true) // Added by Robbie
                     {
                         int fadeFactor = mHeadFX.mStickmanFX.mMouthFX.mShapeAnimationStep * 6;
-                        if (fadeFactor <= 12) {
+                        if (fadeFactor <= 12)
+                        {
                             fadeFactor = 0;
                         }
                         mColor = Color.rgb(mHeadFX.mStickmanFX.mType == Gender.TYPE.FEMALE ? 64 : 32, 0, 0,
                                 (fadeFactor * 100 / 255) / 100f);
-                    } else {
+                    } else
+                    {
                         int fadeFactor = (20 - mHeadFX.mStickmanFX.mMouthFX.mShapeAnimationStep) * 6;
-                        if (fadeFactor >= 107) {
+                        if (fadeFactor >= 107)
+                        {
                             mColor = mColorRecorder;
-                        } else {
+                        } else
+                        {
                             mColor = Color.rgb(mHeadFX.mStickmanFX.mType == Gender.TYPE.FEMALE ? 64 : 32, 0, 0, (fadeFactor * 100 / 255) / 100f);
                         }
                     }
@@ -98,10 +102,12 @@ public class MouthFX extends PartStickman2D
 
             case SMILEEND:
                 movement = mShapeAnimationStep - 1;
-                if (movement <= 1) {
+                if (movement <= 1)
+                {
                     mPath.getElements().add(new MoveTo(mStart.x - mLength / 2, mStart.y));
                     mPath.getElements().add(new QuadCurveTo(mStart.x, mStart.y + 1, mEnd.x, mEnd.y));
-                } else {
+                } else
+                {
                     mPath.getElements().add(new MoveTo(mStart.x - mLength / 2 - movement / 3 * 2, mStart.y - movement / 2));
                     mPath.getElements().add(new QuadCurveTo(mStart.x, mStart.y + 1 + movement / 3 * 2,
                             mEnd.x + movement / 3 * 2, mStart.y - movement / 2));
@@ -117,10 +123,12 @@ public class MouthFX extends PartStickman2D
 
             case SADEND:
                 movement = mShapeAnimationStep - 1;
-                if (movement <= 1) {
+                if (movement <= 1)
+                {
                     mPath.getElements().add(new MoveTo(mStart.x - mLength / 2, mStart.y));
                     mPath.getElements().add(new QuadCurveTo(mStart.x, mStart.y + 1, mEnd.x, mEnd.y));
-                } else {
+                } else
+                {
                     mPath.getElements().add(new MoveTo(mStart.x - mLength / 2 - movement / 2, mStart.y + movement / 4));
                     mPath.getElements().add(new QuadCurveTo(mStart.x, mStart.y - movement, mEnd.x + movement / 2, mEnd.y + movement / 4));
                 }
@@ -137,10 +145,12 @@ public class MouthFX extends PartStickman2D
             case ANGRYEND:
                 movement = mShapeAnimationStep - 1;
 
-                if (movement <= 1) {
+                if (movement <= 1)
+                {
                     mPath.getElements().add(new MoveTo(mStart.x - mLength / 2, mStart.y));
                     mPath.getElements().add(new QuadCurveTo(mStart.x, mStart.y + 1, mEnd.x, mEnd.y));
-                } else {
+                } else
+                {
                     mPath.getElements().add(new MoveTo(mStart.x - mLength / 2 - movement / 4, mStart.y + movement / 10));
                     mPath.getElements().add(new QuadCurveTo(mStart.x, mStart.y + 1 - movement / 3 * 2, mEnd.x + movement / 4, mStart.y + movement / 10));
                 }
@@ -156,10 +166,12 @@ public class MouthFX extends PartStickman2D
             case ANGRYSMALLMOUTHEND:
                 movement = mShapeAnimationStep - 1;
 
-                if (movement <= 1) {
+                if (movement <= 1)
+                {
                     mPath.getElements().add(new MoveTo(mStart.x - mLength / 2, mStart.y));
                     mPath.getElements().add(new QuadCurveTo(mStart.x, mStart.y + 1, mEnd.x, mEnd.y));
-                } else {
+                } else
+                {
                     mPath.getElements().add(new MoveTo(mStart.x - mLength / 2 + movement / 10, mStart.y + movement / 10));
                     mPath.getElements().add(new QuadCurveTo(mStart.x, mStart.y + 1 - movement / 4, mEnd.x - movement / 10, mStart.y + movement / 10));
                 }
@@ -178,10 +190,12 @@ public class MouthFX extends PartStickman2D
             case SURPRISEDEND:
                 movement = mShapeAnimationStep - 1;
 
-                if (movement <= 1) {
+                if (movement <= 1)
+                {
                     mPath.getElements().add(new MoveTo(mStart.x - mLength / 2, mStart.y));
                     mPath.getElements().add(new QuadCurveTo(mStart.x, mStart.y + 1, mEnd.x, mEnd.y));
-                } else {
+                } else
+                {
                     mPath.getElements().add(new MoveTo(mStart.x - mLength / 2, mStart.y));
                     mPath.getElements().add(new QuadCurveTo(mStart.x - movement / 4 - 4, mStart.y - movement / 2, mStart.x, mStart.y - movement / 2 - 1));
                     mPath.getElements().add(new QuadCurveTo(mStart.x + movement / 4 + 4, mStart.y - movement / 2, mEnd.x, mStart.y));
@@ -200,10 +214,12 @@ public class MouthFX extends PartStickman2D
 
             case HAPPYEND:
                 movement = mShapeAnimationStep - 1;
-                if (movement <= 1) {
+                if (movement <= 1)
+                {
                     mPath.getElements().add(new MoveTo(mStart.x - mLength / 2, mStart.y));
                     mPath.getElements().add(new QuadCurveTo(mStart.x, mStart.y + 1, mEnd.x, mEnd.y));
-                } else {
+                } else
+                {
                     mPath.getElements().add(new MoveTo(mStart.x - mLength / 2 - movement / 2, mStart.y - movement / 4));
                     mPath.getElements().add(new QuadCurveTo(mStart.x, mStart.y + 1 + movement, mEnd.x + movement / 2, mStart.y - movement / 4));
                     mPath.getElements().add(new LineTo(mStart.x - mLength / 2 - movement / 2, mStart.y - movement / 4));
@@ -222,10 +238,12 @@ public class MouthFX extends PartStickman2D
             case DISGUSTEDEND:
                 movement = mLength / 2 + mShapeAnimationStep / 2;
 
-                if (mShapeAnimationStep - 1 <= 1) {
+                if (mShapeAnimationStep - 1 <= 1)
+                {
                     mPath.getElements().add(new MoveTo(mStart.x - mLength / 2, mStart.y));
                     mPath.getElements().add(new QuadCurveTo(mStart.x, mStart.y + 1, mEnd.x, mEnd.y));
-                } else {
+                } else
+                {
                     mPath.getElements().add(new MoveTo(mStart.x - movement, mStart.y));
                     mPath.getElements().add(new QuadCurveTo(mStart.x - movement * 2 / 3, mStart.y - movement / 4, mStart.x - movement / 3, mStart.y));
                     mPath.getElements().add(new QuadCurveTo(mStart.x, mStart.y + movement / 4, mStart.x + movement / 3, mStart.y));
@@ -243,10 +261,12 @@ public class MouthFX extends PartStickman2D
             case CONTEMPTEND:
                 movement = mShapeAnimationStep - 1;
 
-                if (movement <= 1) {
+                if (movement <= 1)
+                {
                     mPath.getElements().add(new MoveTo(mStart.x - mLength / 2, mStart.y));
                     mPath.getElements().add(new QuadCurveTo(mStart.x, mStart.y + 1, mEnd.x, mEnd.y));
-                } else {
+                } else
+                {
                     mPath.getElements().add(new MoveTo(mStart.x - mLength / 2, mStart.y));
                     mPath.getElements().add(new QuadCurveTo(mStart.x, mStart.y - movement / 1.5, mEnd.x + movement / 2, mEnd.y - movement / 2));
                 }
@@ -263,10 +283,12 @@ public class MouthFX extends PartStickman2D
             case FEAREND:
                 movement = mShapeAnimationStep - 1;
 
-                if (movement <= 1) {
+                if (movement <= 1)
+                {
                     mPath.getElements().add(new MoveTo(mStart.x - mLength / 2, mStart.y));
                     mPath.getElements().add(new QuadCurveTo(mStart.x, mStart.y + 1, mEnd.x, mEnd.y));
-                } else {
+                } else
+                {
                     mPath.getElements().add(new MoveTo(mStart.x - mLength / 2 - movement / 4, mStart.y));
                     mPath.getElements().add(new QuadCurveTo(mStart.x, mStart.y - movement / 2, mEnd.x + movement / 4, mEnd.y));
                     mPath.getElements().add(new QuadCurveTo(mStart.x, mStart.y - 1, mStart.x - mLength / 2 - movement / 4, mStart.y));
@@ -284,10 +306,12 @@ public class MouthFX extends PartStickman2D
             case EXCITEDEND:
                 movement = mShapeAnimationStep - 1;
 
-                if (movement <= 1) {
+                if (movement <= 1)
+                {
                     mPath.getElements().add(new MoveTo(mStart.x - mLength / 2, mStart.y));
                     mPath.getElements().add(new QuadCurveTo(mStart.x, mStart.y + 1, mEnd.x, mEnd.y));
-                } else {
+                } else
+                {
                     mPath.getElements().add(new MoveTo(mStart.x - mLength / 2 - movement / 3 * 2, mStart.y - movement / 2));
                     mPath.getElements().add(new QuadCurveTo(mStart.x, mStart.y + movement, mEnd.x + movement / 3 * 2, mStart.y - movement / 2));
                     mPath.getElements().add(new LineTo(mStart.x - mLength / 2 - movement / 3 * 2, mStart.y - movement / 2));
@@ -304,10 +328,12 @@ public class MouthFX extends PartStickman2D
             case EMBARRASSEDEND:
                 movement = mShapeAnimationStep - 1;
 
-                if (movement <= 1) {
+                if (movement <= 1)
+                {
                     mPath.getElements().add(new MoveTo(mStart.x - mLength / 2, mStart.y));
                     mPath.getElements().add(new QuadCurveTo(mStart.x, mStart.y + 1, mEnd.x, mEnd.y));
-                } else {
+                } else
+                {
                     mPath.getElements().add(new MoveTo(mStart.x - mLength / 2 + movement / 10 * 7, mStart.y + movement / 20));
                     mPath.getElements().add(new QuadCurveTo((mStart.x - mLength / 2 + mEnd.x + movement / 10 * 3) / 2, mStart.y + 1, mEnd.x + movement / 10 * 3, mEnd.y + movement / 20));
                 }
@@ -377,9 +403,16 @@ public class MouthFX extends PartStickman2D
         this.update();
     }
 
-    protected void recordColor() {
-        if (mHeadFX.mStickmanFX.setCharacterInvisible == false) {
+    protected void recordColor()
+    {
+        if (mHeadFX.mStickmanFX.setCharacterInvisible == false)
+        {
             mColorRecorder = mColor;
         }
+    }
+
+    public static enum SHAPE
+    {
+        DEFAULT, SMILE, SMILEEND, SAD, SADEND, ANGRY, ANGRYEND, ANGRYSMALLMOUTH, ANGRYSMALLMOUTHEND, SURPRISED, SURPRISEDEND, HAPPY, HAPPYEND, DISGUSTED, DISGUSTEDEND, CONTEMPT, CONTEMPTEND, EXCITED, EXCITEDEND, EMBARRASSED, EMBARRASSEDEND, FEAR, FEAREND, O, ONE, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN, ELEVEN, TWELVE, THIRTEEN, FOURTEEN, NINETEEN, TWENTY,
     }
 }
