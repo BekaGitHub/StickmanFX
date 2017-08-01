@@ -1,5 +1,6 @@
 package de.dfki.common.animationlogic;
 
+import de.dfki.common.agent.IAgent;
 import de.dfki.common.interfaces.IAnimation;
 import de.dfki.util.ios.IOSIndentWriter;
 import de.dfki.util.xml.XMLParseError;
@@ -23,6 +24,7 @@ public abstract class Animation extends Thread implements XMLParseable, XMLWrite
     }
 
     public Animator animator;
+    public AnimationPause animationPause;
 
     public String mName = "";
     public String mAgentName;
@@ -40,6 +42,11 @@ public abstract class Animation extends Thread implements XMLParseable, XMLWrite
     public Animation()
     {
         mAnimType = null;
+    }
+
+    public Animation(IAgent reeti, int duration, boolean block)
+    {
+
     }
 
 

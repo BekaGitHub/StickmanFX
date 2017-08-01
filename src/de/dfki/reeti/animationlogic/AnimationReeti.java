@@ -9,7 +9,6 @@ import de.dfki.action.sequence.WordTimeMarkSequence;
 import de.dfki.common.agent.IAgent;
 import de.dfki.common.animationlogic.Animation;
 import de.dfki.common.animationlogic.AnimationPause;
-import de.dfki.common.animationlogic.Animator;
 import de.dfki.reeti.Reeti;
 import de.dfki.util.ios.IOSIndentWriter;
 import de.dfki.util.xml.*;
@@ -28,7 +27,6 @@ import java.util.Map;
  */
 public class AnimationReeti extends Animation
 {
-    public AnimationPause mAnimationPauseReeti;
     public Reeti mReeti;
 
     public static boolean isSmileInAction = false;
@@ -152,7 +150,7 @@ public class AnimationReeti extends Animation
     }
 
     public void pauseAnimation(int duration) {
-        mAnimationPauseReeti = new AnimationPause(mReeti, this, duration);
+        animationPause = new AnimationPause(mReeti, this, duration);
 
         try {
             mAnimationPartStart.acquire();

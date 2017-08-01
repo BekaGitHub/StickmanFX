@@ -1,6 +1,7 @@
 package de.dfki.stickman3D;
 
 import de.dfki.common.agent.Agent3D;
+import de.dfki.common.animationlogic.AnimationScheduler;
 import de.dfki.common.enums.Orientation;
 import de.dfki.common.part.Part3D;
 import de.dfki.stickman3D.body.*;
@@ -54,7 +55,7 @@ public class Stickman3D extends Agent3D
     public Breathing mBreathing;
     public Blinking mBlinking;
 
-    public AnimationScheduler3D mAnimationSchedulerFX;
+    public AnimationScheduler mAnimationSchedulerFX;
 
     // body parts
     public Part3D mNose = null;
@@ -183,7 +184,7 @@ public class Stickman3D extends Agent3D
         }
         agentNameText.setTranslateZ(-120);
 
-        mAnimationSchedulerFX = new AnimationScheduler3D(this);
+        mAnimationSchedulerFX = new AnimationScheduler(this);
         mAnimationSchedulerFX.start();
 
         this.addAllParts();

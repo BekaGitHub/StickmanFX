@@ -1,10 +1,10 @@
 package de.dfki.reeti;
 
 import de.dfki.common.agent.Agent3D;
+import de.dfki.common.animationlogic.AnimationScheduler;
 import de.dfki.common.enums.Led;
 import de.dfki.common.part.Part3D;
 import de.dfki.reeti.animationlogic.AnimationLoaderReeti;
-import de.dfki.reeti.animationlogic.AnimationSchedulerReeti;
 import de.dfki.reeti.body.LeftEye;
 import de.dfki.reeti.body.Head;
 import de.dfki.reeti.body.Mouth;
@@ -36,11 +36,6 @@ import java.awt.Toolkit;
 import javafx.scene.effect.InnerShadow;
 import javafx.scene.transform.Affine;
 
-import java.util.logging.ConsoleHandler;
-import java.util.logging.Formatter;
-import java.util.logging.LogRecord;
-import java.util.logging.Logger;
-
 import javafx.scene.effect.BlurType;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.paint.Color;
@@ -60,7 +55,7 @@ public class Reeti extends Agent3D
     public Blinking mBlinking;
 
     // amimation stuff
-    public AnimationSchedulerReeti mAnimationSchedulerReeti;
+    public AnimationScheduler mAnimationSchedulerReeti;
 
     public Part3D mLeftEyelid;
     public Part3D mRightEyelid;
@@ -143,7 +138,7 @@ public class Reeti extends Agent3D
         mSpeechBubble = new SpeechBubbleReeti(mHead);
         sReeti = this;
 
-        mAnimationSchedulerReeti = new AnimationSchedulerReeti(this);
+        mAnimationSchedulerReeti = new AnimationScheduler(this);
         mAnimationSchedulerReeti.start();
 
         this.addAllParts();

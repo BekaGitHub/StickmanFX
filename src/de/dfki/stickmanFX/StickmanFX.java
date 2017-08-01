@@ -2,6 +2,7 @@ package de.dfki.stickmanFX;
 
 import de.dfki.action.sequence.WordTimeMarkSequence;
 import de.dfki.common.agent.Agent2D;
+import de.dfki.common.animationlogic.AnimationScheduler;
 import de.dfki.common.enums.Gender;
 import de.dfki.common.enums.Orientation;
 import de.dfki.common.interfaces.IAnimation;
@@ -19,7 +20,6 @@ import de.dfki.stickmanFX.animation.environmentfx.IdleBehavior;
 import de.dfki.stickmanFX.animation.environmentfx.SimplexNoise;
 import de.dfki.stickmanFX.animationlogic.AnimationStickman2D;
 import de.dfki.stickmanFX.animationlogic.AnimationLoaderFX;
-import de.dfki.stickmanFX.animationlogic.AnimationSchedulerFX;
 import de.dfki.stickmanFX.animationlogic.EventAnimationFX;
 import de.dfki.stickmanFX.bodyfx.BodyFX;
 import de.dfki.stickmanFX.bodyfx.FaceWrinkleFX;
@@ -93,7 +93,7 @@ public class StickmanFX extends Agent2D
     // Perlin noise
     public SimplexNoise simplexNoise= null;
 
-    public AnimationSchedulerFX mAnimationSchedulerFX;
+    public AnimationScheduler mAnimationSchedulerFX;
 
     public Part2D mMaleHairFX = null;
     public Part2D mFemaleHairFX = null;
@@ -224,7 +224,7 @@ public class StickmanFX extends Agent2D
         map.put(TextAttribute.WEIGHT, TextAttribute.WEIGHT_DEMIBOLD);
         map.put(TextAttribute.SIZE, 14);
 
-        mAnimationSchedulerFX = new AnimationSchedulerFX(this);
+        mAnimationSchedulerFX = new AnimationScheduler(this);
         mAnimationSchedulerFX.start();
 
         simplexNoise = new SimplexNoise(8, 0.1, (int) (Math.random() * 100));

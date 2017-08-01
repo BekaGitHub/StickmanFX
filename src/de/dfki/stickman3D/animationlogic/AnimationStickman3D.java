@@ -9,7 +9,6 @@ import de.dfki.action.sequence.WordTimeMarkSequence;
 import de.dfki.common.agent.IAgent;
 import de.dfki.common.animationlogic.Animation;
 import de.dfki.common.animationlogic.AnimationPause;
-import de.dfki.common.animationlogic.Animator;
 import de.dfki.stickman3D.Stickman3D;
 import de.dfki.util.ios.IOSIndentWriter;
 import de.dfki.util.xml.*;
@@ -28,7 +27,6 @@ import java.util.Map;
  */
 public class AnimationStickman3D extends Animation
 {
-    public AnimationPause mAnimationPauseFX;
     public Stickman3D mStickmanFX;
 
     public static boolean isSmileInAction = false;
@@ -152,7 +150,7 @@ public class AnimationStickman3D extends Animation
     }
 
     public void pauseAnimation(int duration) {
-        mAnimationPauseFX = new AnimationPause(mStickmanFX, this, duration);
+        animationPause = new AnimationPause(mStickmanFX, this, duration);
 
         try {
             mAnimationPartStart.acquire();
