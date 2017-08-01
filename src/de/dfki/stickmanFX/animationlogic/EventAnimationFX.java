@@ -36,7 +36,7 @@ public class EventAnimationFX extends AnimationStickman2D
     }
 
     public void playEventAnimationPart() {
-        mAnimatorFX = new AnimatorStickman2D(mStickmanFX, this, mAnimationPart, mWTS);
+        animator = new AnimatorStickman2D(mStickmanFX, this, mAnimationPart, mWTS);
 
         try {
             mAnimationPartStart.acquire();

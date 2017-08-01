@@ -8,6 +8,8 @@ package de.dfki.reeti.animationlogic;
 import de.dfki.action.sequence.WordTimeMarkSequence;
 import de.dfki.common.agent.IAgent;
 import de.dfki.common.animationlogic.Animation;
+import de.dfki.common.animationlogic.AnimationPause;
+import de.dfki.common.animationlogic.Animator;
 import de.dfki.reeti.Reeti;
 import de.dfki.util.ios.IOSIndentWriter;
 import de.dfki.util.xml.*;
@@ -26,8 +28,7 @@ import java.util.Map;
  */
 public class AnimationReeti extends Animation
 {
-    public AnimatorReeti mAnimatorReeti;
-    public AnimationPauseReeti mAnimationPauseReeti;
+    public AnimationPause mAnimationPauseReeti;
     public Reeti mReeti;
 
     public static boolean isSmileInAction = false;
@@ -140,7 +141,7 @@ public class AnimationReeti extends Animation
     }
 
     public void playAnimationPart(int duration) {
-        mAnimatorReeti = new AnimatorReeti(mReeti, this, mAnimationPart, duration);
+        animator = new AnimatorReeti(mReeti, this, mAnimationPart, duration);
 
         try {
             mAnimationPartStart.acquire();
@@ -151,7 +152,7 @@ public class AnimationReeti extends Animation
     }
 
     public void pauseAnimation(int duration) {
-        mAnimationPauseReeti = new AnimationPauseReeti(mReeti, this, duration);
+        mAnimationPauseReeti = new AnimationPause(mReeti, this, duration);
 
         try {
             mAnimationPartStart.acquire();

@@ -37,7 +37,7 @@ public class EventAnimation3D extends AnimationStickman3D
     }
 
     public void playEventAnimationPart() {
-        mAnimatorFX = new AnimatorStickman3D(mStickmanFX, this, mAnimationPart, mWTS);
+        animator = new AnimatorStickman3D(mStickmanFX, this, mAnimationPart, mWTS);
 
         try {
             mAnimationPartStart.acquire();

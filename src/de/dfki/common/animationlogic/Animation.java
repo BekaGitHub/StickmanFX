@@ -22,6 +22,8 @@ public abstract class Animation extends Thread implements XMLParseable, XMLWrite
         ON, OFF, EmotionExpression, Gesture
     }
 
+    public Animator animator;
+
     public String mName = "";
     public String mAgentName;
     public boolean mBlocking = false;

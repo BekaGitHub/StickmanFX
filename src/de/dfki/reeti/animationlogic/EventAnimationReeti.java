@@ -36,7 +36,7 @@ public class EventAnimationReeti extends AnimationReeti {
     }
 
     public void playEventAnimationPart() {
-        mAnimatorReeti = new AnimatorReeti(mReeti, this, mAnimationPart, mWTS);
+        animator = new AnimatorReeti(mReeti, this, mAnimationPart, mWTS);
 
         try {
             mAnimationPartStart.acquire();
