@@ -1,6 +1,7 @@
 package de.dfki.common.animationlogic;
 
 import de.dfki.action.sequence.WordTimeMarkSequence;
+import de.dfki.common.agent.IAgent;
 import de.dfki.util.ios.IOSIndentWriter;
 import de.dfki.util.xml.XMLParseAction;
 import de.dfki.util.xml.XMLParseError;
@@ -12,6 +13,16 @@ import org.w3c.dom.Element;
  */
 public abstract class Animation2D extends Animation
 {
+
+    public Animation2D()
+    {
+        super();
+    }
+    public Animation2D(IAgent iAgent, int duration, boolean block)
+    {
+        super(iAgent, duration, block);
+    }
+
     @Override
     public void writeXML(IOSIndentWriter out) throws XMLWriteError
     {

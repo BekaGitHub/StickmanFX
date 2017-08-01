@@ -1,6 +1,9 @@
 package de.dfki.common.animationlogic;
 
 import de.dfki.action.sequence.WordTimeMarkSequence;
+import de.dfki.common.agent.Agent;
+import de.dfki.common.agent.IAgent;
+import de.dfki.stickman3D.Stickman3D;
 import de.dfki.util.ios.IOSIndentWriter;
 import de.dfki.util.xml.XMLParseAction;
 import de.dfki.util.xml.XMLParseError;
@@ -17,6 +20,28 @@ import java.util.Map;
  */
 public abstract class Animation3D extends Animation
 {
+    public Animation3D()
+    {
+        super();
+    }
+
+    public Animation3D(IAgent iAgent, int duration, boolean block)
+    {
+        super(iAgent, duration, block);
+    }
+
+    public Animation3D(IAgent iAgent, int frequent, int actionDuration, boolean block)
+    {
+        this(iAgent, frequent, block);
+        this.actionDuration = actionDuration;
+    }
+
+    public Animation3D(IAgent iAgent, int frequent, int actionDuration, boolean block, HashMap<String, String> extraParams)
+    {
+        this(iAgent, frequent, actionDuration, block);
+        this.extraParams = extraParams;
+    }
+
     @Override
     public void parseXML(final Element element) throws XMLParseError
     {

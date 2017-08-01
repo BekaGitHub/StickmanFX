@@ -46,9 +46,15 @@ public abstract class Animation extends Thread implements XMLParseable, XMLWrite
         mAnimType = null;
     }
 
-    public Animation(IAgent reeti, int duration, boolean block)
+    public Animation(IAgent iAgent, int duration, boolean block)
     {
-
+        mName = getClass().getSimpleName();
+        agent = (Agent) iAgent;
+        mAgentName = agent.mName;
+        setName(mAgentName + "'s AnimationSwing " + mName);
+        mID = agent.getID(); // default ID;
+        mBlocking = block;
+        mDuration = duration;
     }
 
     @Override

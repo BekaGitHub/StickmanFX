@@ -6,9 +6,7 @@
 package de.dfki.stickmanFX.animationlogic;
 
 import de.dfki.common.agent.IAgent;
-import de.dfki.common.animationlogic.Animation;
 import de.dfki.common.animationlogic.Animation2D;
-import de.dfki.stickmanFX.StickmanFX;
 
 /**
  * @author Patrick Gebhard
@@ -16,22 +14,14 @@ import de.dfki.stickmanFX.StickmanFX;
  */
 public class AnimationStickman2D extends Animation2D
 {
-
-
     public AnimationStickman2D()
     {
         super();
     }
 
-    public AnimationStickman2D(IAgent sm, int duration, boolean block)
+    public AnimationStickman2D(IAgent iAgent, int duration, boolean block)
     {
-        mName = getClass().getSimpleName();
-        agent = (StickmanFX) sm;
-        mAgentName = agent.mName;
-        setName(mAgentName + "'s AnimationSwing " + mName);
-        mID = agent.getID(); // default ID;
-        mBlocking = block;
-        mDuration = duration;
+        super(iAgent, duration, block);
     }
 
 

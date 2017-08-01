@@ -5,6 +5,7 @@
  */
 package de.dfki.stickman3D.animationlogic;
 
+import de.dfki.common.agent.Agent;
 import de.dfki.common.agent.IAgent;
 import de.dfki.common.animationlogic.Animation3D;
 import de.dfki.stickman3D.Stickman3D;
@@ -28,40 +29,19 @@ public class AnimationStickman3D extends Animation3D
         super();
     }
 
-    public AnimationStickman3D(IAgent sm, int duration, boolean block)
+    public AnimationStickman3D(IAgent iAgent, int duration, boolean block)
     {
-        mName = getClass().getSimpleName();
-        agent = (Stickman3D) sm;
-        mAgentName = agent.mName;
-        setName(mAgentName + "'s AnimationSwing " + mName);
-        mID = agent.getID(); // default ID;
-        mBlocking = block;
-        mDuration = duration;
+        super(iAgent, duration, block);
     }
 
-    public AnimationStickman3D(IAgent sm, int frequent, int actionDuration, boolean block)
+    public AnimationStickman3D(IAgent iAgent, int frequent, int actionDuration, boolean block)
     {
-        mName = getClass().getSimpleName();
-        agent = (Stickman3D) sm;
-        mAgentName = agent.mName;
-        setName(mAgentName + "'s AnimationSwing " + mName);
-        mID = agent.getID(); // default ID;
-        mBlocking = block;
-        mDuration = frequent;
-        this.actionDuration = actionDuration;
+        super(iAgent, frequent, actionDuration, block);
     }
 
-    public AnimationStickman3D(IAgent sm, int frequent, int actionDuration, boolean block, HashMap<String, String> extraParams)
+    public AnimationStickman3D(IAgent iAgent, int frequent, int actionDuration, boolean block, HashMap<String, String> extraParams)
     {
-        mName = getClass().getSimpleName();
-        agent = (Stickman3D) sm;
-        mAgentName = agent.mName;
-        setName(mAgentName + "'s AnimationSwing " + mName);
-        mID = agent.getID(); // default ID;
-        mBlocking = block;
-        mDuration = frequent;
-        this.actionDuration = actionDuration;
-        this.extraParams = extraParams;
+        super(iAgent, frequent, actionDuration, block, extraParams);
     }
 
 

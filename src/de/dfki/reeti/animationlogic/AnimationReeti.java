@@ -5,6 +5,7 @@
  */
 package de.dfki.reeti.animationlogic;
 
+import de.dfki.common.agent.Agent;
 import de.dfki.common.agent.IAgent;
 import de.dfki.common.animationlogic.Animation3D;
 import de.dfki.reeti.Reeti;
@@ -26,40 +27,20 @@ public class AnimationReeti extends Animation3D
         super();
     }
 
-    public AnimationReeti(IAgent reeti, int duration, boolean block)
+    public AnimationReeti(IAgent iAgent, int duration, boolean block)
     {
-        mName = getClass().getSimpleName();
-        agent = (Reeti) reeti;
-        mAgentName = agent.mName;
-        setName(mAgentName + "'s AnimationSwing " + mName);
-        mID = agent.getID(); // default ID;
-        mBlocking = block;
-        mDuration = duration;
+        super(iAgent, duration, block);
     }
 
-    public AnimationReeti(IAgent reeti, int duration, int pos, boolean block)
+    public AnimationReeti(IAgent iAgent, int duration, int pos, boolean block)
     {
-        mName = getClass().getSimpleName();
-        agent = (Reeti) reeti;
-        mAgentName = agent.mName;
-        setName(mAgentName + "'s AnimationSwing " + mName);
-        mID = agent.getID(); // default ID;
-        mBlocking = block;
-        mDuration = duration;
-        this.actionDuration = actionDuration;
+        super(iAgent, duration, block);
+//        this.actionDuration = actionDuration;
     }
 
-    public AnimationReeti(IAgent reeti, int frequent, int actionDuration, boolean block, HashMap<String, String> extraParams)
+    public AnimationReeti(IAgent iAgent, int frequent, int actionDuration, boolean block, HashMap<String, String> extraParams)
     {
-        mName = getClass().getSimpleName();
-        agent = (Reeti) reeti;
-        mAgentName = agent.mName;
-        setName(mAgentName + "'s AnimationSwing " + mName);
-        mID = agent.getID(); // default ID;
-        mBlocking = block;
-        mDuration = frequent;
-        this.actionDuration = actionDuration;
-        this.extraParams = extraParams;
+        super(iAgent, frequent, actionDuration, block, extraParams);
     }
 
 
