@@ -2,7 +2,7 @@ package de.dfki.common.decorators;
 
 import de.dfki.common.XMLCommandParser;
 import de.dfki.common.interfaces.StageRoom;
-import de.dfki.stickmanFX.client.CommonClientConnectionHandler;
+import de.dfki.common.client.CommonClientConnectionHandler;
 
 /**
  * Created by alvaro on 9/17/16.

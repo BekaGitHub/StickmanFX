@@ -1,8 +1,8 @@
 package de.dfki.stickmanFX.decorators;
 
+import de.dfki.common.client.ClientConnectionHandler;
 import de.dfki.common.decorators.StageRoomNetworkDecorator;
 import de.dfki.common.interfaces.StageRoom;
-import de.dfki.stickmanFX.client.ClientConnectionHandlerFX;
 import de.dfki.stickmanFX.client.XMLCommandParserFX;
 
 /**
@@ -19,7 +19,7 @@ public class StageRoomNetworkFXDecorator extends StageRoomNetworkDecorator
     protected void initConnectionToServer(StageRoom wrappedController)
     {
         commonXMLCommandParser = new XMLCommandParserFX(getCommonStickmansOnStage());
-        mConnection = new ClientConnectionHandlerFX(commonXMLCommandParser);
+        mConnection = new ClientConnectionHandler(commonXMLCommandParser);
         mConnection.tryToConnect(mHost, mPort);
     }
 
