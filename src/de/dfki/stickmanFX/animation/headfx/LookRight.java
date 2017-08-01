@@ -24,8 +24,8 @@ public class LookRight extends AnimationStickman2D
 
         // look left
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftEyeFX, "shape", "LOOKRIGHT"));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mRightEyeFX, "shape", "LOOKRIGHT"));
+        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mLeftEyeFX, "shape", "LOOKRIGHT"));
+        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mRightEyeFX, "shape", "LOOKRIGHT"));
         playAnimationPart(20);
 
 //		// blink up

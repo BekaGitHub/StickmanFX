@@ -1,6 +1,7 @@
 package de.dfki.stickman3D;
 
 import de.dfki.common.agent.Agent3D;
+import de.dfki.common.animationlogic.Animation;
 import de.dfki.common.animationlogic.AnimationScheduler;
 import de.dfki.common.enums.Orientation;
 import de.dfki.common.part.Part3D;
@@ -54,8 +55,6 @@ public class Stickman3D extends Agent3D
     public IdleBehavior mIdleBehavior;
     public Breathing mBreathing;
     public Blinking mBlinking;
-
-    public AnimationScheduler mAnimationSchedulerFX;
 
     // body parts
     public Part3D mNose = null;
@@ -184,38 +183,12 @@ public class Stickman3D extends Agent3D
         }
         agentNameText.setTranslateZ(-120);
 
-        mAnimationSchedulerFX = new AnimationScheduler(this);
-        mAnimationSchedulerFX.start();
+        animationScheduler = new AnimationScheduler(this);
+        animationScheduler.start();
 
         this.addAllParts();
     }
 
-    public void addListener(AnimationListener al)
-    {
-        mAnimationListeners.add(al);
-    }
-
-    public void removeListener(AnimationListener al)
-    {
-        synchronized (mAnimationListeners)
-        {
-            if (mAnimationListeners.contains(al))
-            {
-                mAnimationListeners.remove(al);
-            }
-        }
-    }
-
-    public void notifyListeners(String animationId)
-    {
-        synchronized (mAnimationListeners)
-        {
-            mAnimationListeners.stream().forEach((al) ->
-            {
-                al.update(animationId);
-            });
-        }
-    }
 
     public AnimationStickman3D doEventFeedbackAnimation(String name, int duration, WordTimeMarkSequence wts, boolean block)
     {
@@ -318,18 +291,6 @@ public class Stickman3D extends Agent3D
         }
 
         return a;
-    }
-
-    public void playAnimation(AnimationStickman3D a)
-    {
-        try
-        {
-            mAnimationLaunchControl.acquire();
-            a.start();
-        } catch (InterruptedException ex)
-        {
-            mLogger.severe(ex.getMessage());
-        }
     }
 
     public void update()

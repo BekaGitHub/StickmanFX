@@ -30,9 +30,9 @@ public class LovedStart extends AnimationStickman2D
     public void playAnimation() {
         // loved
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mMouthFX, "shape", "SMILE"));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftEyeFX, "shape", "LOVED"));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mRightEyeFX, "shape", "LOVED"));
+        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mMouthFX, "shape", "SMILE"));
+        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mLeftEyeFX, "shape", "LOVED"));
+        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mRightEyeFX, "shape", "LOVED"));
         playAnimationPart(mDuration);
 
         pauseAnimation(10);

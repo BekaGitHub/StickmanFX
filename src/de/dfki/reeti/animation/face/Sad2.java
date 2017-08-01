@@ -26,16 +26,16 @@ public class Sad2 extends AnimationReeti {
 
     @Override
     public void playAnimation() {
-        mReeti.leftEyeLid(45);
-        mReeti.rightEyeLid(45);
-        mReeti.leftEyeTilt(55);
-        mReeti.leftEyePan(25);
-        mReeti.rightEyeTilt(55);
-        mReeti.rightEyePan(75);
-        mReeti.leftEar(0);
-        mReeti.rightEar(0);
-        mReeti.rightLC(0);
-        mReeti.leftLC(0);
+        ((Reeti)agent).leftEyeLid(45);
+        ((Reeti)agent).rightEyeLid(45);
+        ((Reeti)agent).leftEyeTilt(55);
+        ((Reeti)agent).leftEyePan(25);
+        ((Reeti)agent).rightEyeTilt(55);
+        ((Reeti)agent).rightEyePan(75);
+        ((Reeti)agent).leftEar(0);
+        ((Reeti)agent).rightEar(0);
+        ((Reeti)agent).rightLC(0);
+        ((Reeti)agent).leftLC(0);
 
         if (ReetiStageController.currentRadioButton != null) {
             ReetiStageController.currentRadioButton.setSelected(false);

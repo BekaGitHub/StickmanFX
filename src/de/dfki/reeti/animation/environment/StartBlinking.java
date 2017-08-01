@@ -26,21 +26,21 @@ public class StartBlinking extends AnimationReeti {
 
     public StartBlinking(Reeti sm, int frequent, int actionDuration, boolean block) {
         super(sm, frequent, actionDuration, block);
-        mReeti = sm;
+        agent = sm;
         this.frequent = frequent;
         this.actionDuration = actionDuration;
     }
 
     public StartBlinking(Reeti sm, int frequent, boolean block) {
         super(sm, frequent, block);
-        mReeti = sm;
+        agent = sm;
         this.frequent = 5000;
         this.actionDuration = 50;
     }
 
     @Override
     public void playAnimation() {
-        mReeti.mBlinking = new Blinking(mReeti, frequent, actionDuration);
+        ((Reeti)agent).mBlinking = new Blinking(((Reeti)agent), frequent, actionDuration);
 
         if (ReetiStageController.currentRadioButton != null) {
             ReetiStageController.currentRadioButton.setSelected(false);

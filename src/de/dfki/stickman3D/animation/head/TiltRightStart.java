@@ -28,7 +28,7 @@ public class TiltRightStart extends AnimationStickman3D
 
         AnimationStickman3D.isHeadTiltInAction = true;
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mHead, "zrotate", -10));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mHead, "zrotate", -10));
         playAnimationPart(200);
 
     }

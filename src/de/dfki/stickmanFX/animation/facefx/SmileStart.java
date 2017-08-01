@@ -25,7 +25,7 @@ public class SmileStart extends AnimationStickman2D
     public void playAnimation() {
         // smile start
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mMouthFX, "shape", "SMILE"));
+        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mMouthFX, "shape", "SMILE"));
         playAnimationPart(mDuration);
         pauseAnimation(10);
 

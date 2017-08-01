@@ -30,13 +30,13 @@ public class Muster extends AnimationStickman3D
     @Override
     public void playAnimation() {
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mMouth,"shape","O"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mMouth,"shape","O"));
         playAnimationPart(mDuration);
         
         pauseAnimation(1000);
         
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mMouth,"shape","DEFAULT"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mMouth,"shape","DEFAULT"));
         playAnimationPart(mDuration);
     }
 }

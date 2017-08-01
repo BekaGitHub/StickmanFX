@@ -27,7 +27,7 @@ public class Mouth_TWO extends AnimationStickman3D
     public void playAnimation() {
         // smile
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mMouth, "shape", "TWO"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mMouth, "shape", "TWO"));
         playAnimationPart(20);
     }
 }

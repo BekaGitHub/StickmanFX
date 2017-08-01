@@ -27,12 +27,11 @@ public class AngrySmallMouthStart extends AnimationStickman3D
     public void playAnimation() {
         // angry with small mouth start
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mMouth, "shape", "ANGRYSMALLMOUTH"));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftEye, "shape", "ANGRY"));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftEyebrow, "shape", "ANGRY"));
-//        mAnimationPart.add(new AnimationContent(mStickman.mFaceWrinkle, "shape", "ANGRY"));   ///Add by Robbie
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mRightEye, "shape", "ANGRY"));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mRightEyebrow, "shape", "ANGRY"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mMouth, "shape", "ANGRYSMALLMOUTH"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftEye, "shape", "ANGRY"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftEyebrow, "shape", "ANGRY"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mRightEye, "shape", "ANGRY"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mRightEyebrow, "shape", "ANGRY"));
         playAnimationPart(mDuration);
 
         pauseAnimation(10);

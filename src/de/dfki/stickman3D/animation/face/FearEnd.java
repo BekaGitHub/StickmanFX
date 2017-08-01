@@ -27,11 +27,11 @@ public class FearEnd extends AnimationStickman3D
     public void playAnimation() {
         // no fear
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mMouth, "shape", "FEAREND"));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftEye, "shape", "SURPRISEDEND"));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftEyebrow, "shape", "DISGUSTEDEND"));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mRightEye, "shape", "SURPRISEDEND"));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mRightEyebrow, "shape", "DISGUSTEDEND"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mMouth, "shape", "FEAREND"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftEye, "shape", "SURPRISEDEND"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftEyebrow, "shape", "DISGUSTEDEND"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mRightEye, "shape", "SURPRISEDEND"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mRightEyebrow, "shape", "DISGUSTEDEND"));
         playAnimationPart(mDuration);
 
         pauseAnimation(10);

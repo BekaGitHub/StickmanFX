@@ -31,15 +31,15 @@ public class Speaking extends AnimationReeti {
     @Override
     public void playAnimation() {
         if (mParameter instanceof String) {
-            mReeti.mSpeechBubble.mSpeechBubbleText = (String) mParameter;
-//            mReeti.mSpeechBubble.mSpeechBubbleText = "dadasdsad ";
+            agent.getSpeechBubble().mSpeechBubbleText = (String) mParameter;
+//            agent.mSpeechBubble.mSpeechBubbleText = "dadasdsad ";
         }
 
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(mReeti.mSpeechBubble, "shape", SpeechBubbleReeti.SHAPE.SPEAK.name()));
+        mAnimationPart.add(new AnimationContent(agent.getSpeechBubble(), "shape", SpeechBubbleReeti.SHAPE.SPEAK.name()));
         playAnimationPart(mDuration);
 
-        mAnimationPart.add(new AnimationContent(mReeti.mSpeechBubble, "shape", SpeechBubbleReeti.SHAPE.DEFAULT.name()));
+        mAnimationPart.add(new AnimationContent(agent.getSpeechBubble(), "shape", SpeechBubbleReeti.SHAPE.DEFAULT.name()));
         playAnimationPart(20);
 
         if (ReetiStageController.currentRadioButton != null) {

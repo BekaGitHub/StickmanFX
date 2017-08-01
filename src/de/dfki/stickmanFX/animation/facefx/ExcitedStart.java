@@ -25,11 +25,11 @@ public class ExcitedStart extends AnimationStickman2D
     public void playAnimation() {
         // excited
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mMouthFX, "shape", "EXCITED"));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftEyeFX, "shape", "EXCITED"));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mRightEyeFX, "shape", "EXCITED"));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftEyebrowFX, "shape", "EXCITED"));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mRightEyebrowFX, "shape", "EXCITED"));
+        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mMouthFX, "shape", "EXCITED"));
+        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mLeftEyeFX, "shape", "EXCITED"));
+        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mRightEyeFX, "shape", "EXCITED"));
+        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mLeftEyebrowFX, "shape", "EXCITED"));
+        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mRightEyebrowFX, "shape", "EXCITED"));
         playAnimationPart(mDuration);
 
         pauseAnimation(10);

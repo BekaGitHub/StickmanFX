@@ -31,9 +31,9 @@ public class LovedEnd extends AnimationStickman2D
     public void playAnimation() {
         // no loved
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mMouthFX, "shape", "SMILEEND"));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftEyeFX, "shape", "LOVEDEND"));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mRightEyeFX, "shape", "LOVEDEND"));
+        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mMouthFX, "shape", "SMILEEND"));
+        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mLeftEyeFX, "shape", "LOVEDEND"));
+        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mRightEyeFX, "shape", "LOVEDEND"));
         playAnimationPart(mDuration);
 
         pauseAnimation(10);

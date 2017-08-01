@@ -36,12 +36,12 @@ public class EventAnimationReeti extends AnimationReeti {
     }
 
     public void playEventAnimationPart() {
-        animator = new AnimatorReeti(mReeti, this, mAnimationPart, mWTS);
+        animator = new AnimatorReeti(agent, this, mAnimationPart, mWTS);
 
         try {
             mAnimationPartStart.acquire();
         } catch (InterruptedException ex) {
-            mReeti.mLogger.severe(ex.getMessage());
+            agent.mLogger.severe(ex.getMessage());
         }
     }
 

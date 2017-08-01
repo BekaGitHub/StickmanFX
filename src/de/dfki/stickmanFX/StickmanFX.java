@@ -2,6 +2,7 @@ package de.dfki.stickmanFX;
 
 import de.dfki.action.sequence.WordTimeMarkSequence;
 import de.dfki.common.agent.Agent2D;
+import de.dfki.common.animationlogic.Animation;
 import de.dfki.common.animationlogic.AnimationScheduler;
 import de.dfki.common.enums.Gender;
 import de.dfki.common.enums.Orientation;
@@ -92,8 +93,6 @@ public class StickmanFX extends Agent2D
     public IdleBehavior mIdleBehavior = null;
     // Perlin noise
     public SimplexNoise simplexNoise= null;
-
-    public AnimationScheduler mAnimationSchedulerFX;
 
     public Part2D mMaleHairFX = null;
     public Part2D mFemaleHairFX = null;
@@ -224,8 +223,8 @@ public class StickmanFX extends Agent2D
         map.put(TextAttribute.WEIGHT, TextAttribute.WEIGHT_DEMIBOLD);
         map.put(TextAttribute.SIZE, 14);
 
-        mAnimationSchedulerFX = new AnimationScheduler(this);
-        mAnimationSchedulerFX.start();
+        animationScheduler = new AnimationScheduler(this);
+        animationScheduler.start();
 
         simplexNoise = new SimplexNoise(8, 0.1, (int) (Math.random() * 100));
         mIdleBehavior = new IdleBehavior(this, simplexNoise);
@@ -259,7 +258,7 @@ public class StickmanFX extends Agent2D
     @Override
     public void endAnimationScheduler()
     {
-        mAnimationSchedulerFX.end();
+        animationScheduler.end();
     }
 
     @Override
@@ -268,32 +267,7 @@ public class StickmanFX extends Agent2D
         return mType;
     }
 
-    public void addListener(AnimationListener al)
-    {
-        mAnimationListeners.add(al);
-    }
 
-    public void removeListener(AnimationListener al)
-    {
-        synchronized (mAnimationListeners)
-        {
-            if (mAnimationListeners.contains(al))
-            {
-                mAnimationListeners.remove(al);
-            }
-        }
-    }
-
-    public void notifyListeners(String animationId)
-    {
-        synchronized (mAnimationListeners)
-        {
-            mAnimationListeners.stream().forEach((al) ->
-            {
-                al.update(animationId);
-            });
-        }
-    }
 
     // Sets the orientation of the character, allowed values are: LEFT, RIGHT,
     // FRONT
@@ -371,18 +345,6 @@ public class StickmanFX extends Agent2D
         }
 
         return a;
-    }
-
-    public void playAnimation(AnimationStickman2D a)
-    {
-        try
-        {
-            mAnimationLaunchControl.acquire();
-            a.start();
-        } catch (InterruptedException ex)
-        {
-            mLogger.severe(ex.getMessage());
-        }
     }
 
     // Control IdleBehavior start(mStart == true) or not(mStart == false).

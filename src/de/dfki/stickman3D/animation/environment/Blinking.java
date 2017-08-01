@@ -18,7 +18,6 @@ public final class Blinking {
 
     public Blinking(Stickman3D s, int frequent, int actionDuration) {
         this.mStickmanFX = s;
-        System.out.println(frequent + " " + actionDuration);
         startBlinkAktion(frequent, actionDuration);
     }
 

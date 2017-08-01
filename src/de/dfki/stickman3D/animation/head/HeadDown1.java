@@ -31,18 +31,18 @@ public class HeadDown1 extends AnimationStickman3D
 	@Override
 	public void playAnimation() {
 		mAnimationPart = new ArrayList<>();
-		mAnimationPart.add(new AnimationContent(mStickmanFX.mHead, "rotate", 15));
-		mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftEye, "shape", "LOOKDOWN"));
-		mAnimationPart.add(new AnimationContent(mStickmanFX.mRightEye, "shape", "LOOKDOWN"));
+		mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mHead, "rotate", 15));
+		mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftEye, "shape", "LOOKDOWN"));
+		mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mRightEye, "shape", "LOOKDOWN"));
 		playAnimationPart(mDuration);
 
 		pauseAnimation(1000);
 
 		// blink up
 		mAnimationPart = new ArrayList<>();
-		mAnimationPart.add(new AnimationContent(mStickmanFX.mHead, "rotate", -15));
-		mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftEye, "shape", "LOOKDOWNEND"));
-		mAnimationPart.add(new AnimationContent(mStickmanFX.mRightEye, "shape", "LOOKDOWNEND"));
+		mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mHead, "rotate", -15));
+		mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftEye, "shape", "LOOKDOWNEND"));
+		mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mRightEye, "shape", "LOOKDOWNEND"));
 		playAnimationPart(mDuration);
 
 		if (StickmanStageController.currentRadioButton != null)

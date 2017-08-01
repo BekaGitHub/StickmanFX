@@ -30,9 +30,9 @@ public class SadEnd extends AnimationStickman2D
     public void playAnimation() {
         // no sad
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mMouthFX, "shape", "SADEND"));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftEyebrowFX, "shape", "DISGUSTEDEND"));  // add by Robbie
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mRightEyebrowFX, "shape", "DISGUSTEDEND")); // add by Robbie
+        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mMouthFX, "shape", "SADEND"));
+        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mLeftEyebrowFX, "shape", "DISGUSTEDEND"));  // add by Robbie
+        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mRightEyebrowFX, "shape", "DISGUSTEDEND")); // add by Robbie
         playAnimationPart(mDuration);
 
         pauseAnimation(10);

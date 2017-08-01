@@ -40,12 +40,12 @@ public class AngryEnd extends AnimationStickman3D
     public void playAnimation() {
         // angry end
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mFaceWrinkle, "shape", "ANGRYEND"));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftEyebrow, "shape", "ANGRYEND"));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftEye, "shape", "ANGRYEND"));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mRightEyebrow, "shape", "ANGRYEND"));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mRightEye, "shape", "ANGRYEND"));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mMouth, "shape", "ANGRYEND"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mFaceWrinkle, "shape", "ANGRYEND"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftEyebrow, "shape", "ANGRYEND"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftEye, "shape", "ANGRYEND"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mRightEyebrow, "shape", "ANGRYEND"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mRightEye, "shape", "ANGRYEND"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mMouth, "shape", "ANGRYEND"));
         playAnimationPart(mDuration);
         AnimationStickman3D.isAngryInAction = false;
         pauseAnimation(10);

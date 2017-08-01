@@ -31,7 +31,7 @@ public class LeftEye_X extends AnimationReeti {
     public void playAnimation() {
         
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(mReeti.mLeftEye, "rotate", rot));
+        mAnimationPart.add(new AnimationContent(((Reeti)agent).mLeftEye, "rotate", rot));
         playAnimationPart(mDuration);
         
     }

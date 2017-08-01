@@ -27,7 +27,7 @@ public class Test extends AnimationReeti {
     @Override
     public void playAnimation() {
 
-        mReeti.neckPan(80);
+        ((Reeti)agent).neckPan(80);
 
         if (ReetiStageController.currentRadioButton != null) {
             ReetiStageController.currentRadioButton.setSelected(false);

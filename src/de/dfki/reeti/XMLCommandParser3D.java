@@ -44,7 +44,7 @@ public class XMLCommandParser3D extends XMLCommandParser {
             a.setID(id); // give the animation the same id (TODO - This is bad design and caused that the animation has to be "reloaded"
             a.mParameter = parameter;
 
-            a.mReeti.playAnimation(a);
+            a.agent.playAnimation(a);
         }
     }
 }

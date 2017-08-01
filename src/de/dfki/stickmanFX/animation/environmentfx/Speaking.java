@@ -27,14 +27,14 @@ public class Speaking extends AnimationStickman2D
     @Override
     public void playAnimation() {
         if (mParameter instanceof String) {
-            mStickmanFX.mSpeechBubbleFX.mSpeechBubbleText = (String) mParameter;
+            agent.getSpeechBubble().mSpeechBubbleText = (String) mParameter;
         }
 
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mSpeechBubbleFX, "shape", SpeechBubbleStickman2D.SHAPE.SPEAK.name()));
+        mAnimationPart.add(new AnimationContent(agent.getSpeechBubble(), "shape", SpeechBubbleStickman2D.SHAPE.SPEAK.name()));
         playAnimationPart(mDuration);
 
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mSpeechBubbleFX, "shape", SpeechBubbleStickman2D.SHAPE.DEFAULT.name()));
+        mAnimationPart.add(new AnimationContent(agent.getSpeechBubble(), "shape", SpeechBubbleStickman2D.SHAPE.DEFAULT.name()));
         playAnimationPart(20);
 
     }

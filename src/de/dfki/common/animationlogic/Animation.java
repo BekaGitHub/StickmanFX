@@ -1,5 +1,6 @@
 package de.dfki.common.animationlogic;
 
+import de.dfki.common.agent.Agent;
 import de.dfki.common.agent.IAgent;
 import de.dfki.common.interfaces.IAnimation;
 import de.dfki.util.ios.IOSIndentWriter;
@@ -23,6 +24,7 @@ public abstract class Animation extends Thread implements XMLParseable, XMLWrite
         ON, OFF, EmotionExpression, Gesture
     }
 
+    public Agent agent;
     public Animator animator;
     public AnimationPause animationPause;
 
@@ -49,27 +51,127 @@ public abstract class Animation extends Thread implements XMLParseable, XMLWrite
 
     }
 
-
     @Override
     public void setParameter(Object p)
     {
-
+        mParameter = p;
     }
 
     @Override
     public String getID()
     {
-        return null;
+        return mID;
+    }
+
+    public void setID(String id)
+    {
+        mID = id;
+    }
+
+    public void setAgentName(String stickmanName)
+    {
+        mAgentName = stickmanName;
+        setName(mAgentName + "'s AnimationSwing " + mName);
+    }
+
+    public void setAnimationName(String animationName)
+    {
+        mName = animationName;
+    }
+
+    public void setDuration(int duration)
+    {
+        mDuration = duration;
+    }
+
+    public void setBlocking(boolean blocking)
+    {
+        mBlocking = blocking;
+    }
+
+    public void waitForClearance()
+    {
+        agent.animationScheduler.introduce(this);
+        // block this animation for animation - AnimationSheduler will unblock
+        try
+        {
+            mAnimationStart.acquire(1);
+        } catch (InterruptedException ex)
+        {
+            agent.mLogger.severe(ex.getMessage());
+        }
+
+        // tell StickmanSwing this animation has been scheduled and a next one can come
+        agent.mAnimationLaunchControl.release();
+    }
+
+    public void play()
+    {
+        // wait until AnimationScheduler says go!
+        try
+        {
+            mAnimationStart.acquire(1);
+        } catch (InterruptedException ex)
+        {
+            agent.mLogger.severe(ex.getMessage());
+        }
+
+        playAnimation();
+    }
+
+    public void playAnimation()
+    {
+        // place animation code here
+    }
+
+    public void playAnimationPart(int duration)
+    {
+
+    }
+
+    public void pauseAnimation(int duration)
+    {
+        animationPause = new AnimationPause(agent, this, duration);
+
+        try
+        {
+            mAnimationPartStart.acquire();
+        } catch (InterruptedException ex)
+        {
+            agent.mLogger.severe(ex.getMessage());
+        }
+    }
+
+    public void finalizeAnimation()
+    {
+        // unblock AnimationScheduler if animation is a blocking animation
+        if (mBlocking)
+        {
+            agent.animationScheduler.proceed(this);
+        } else
+        {
+            agent.animationScheduler.removeAnimation(this);
+        }
+        // send event that AnimationReeti is ended
+
+        // API or TCP-Interface
+        if (!agent.getStageRoom().ismNetwork())
+        {
+            agent.notifyListeners(getID());
+        } else
+        {
+            agent.getStageRoom().sendAnimationUpdate("end", getID());
+        }
     }
 
     @Override
-    public void parseXML(Element element) throws XMLParseError
+    public void writeXML(IOSIndentWriter writer) throws XMLWriteError
     {
 
     }
 
     @Override
-    public void writeXML(IOSIndentWriter writer) throws XMLWriteError
+    public void parseXML(Element element) throws XMLParseError
     {
 
     }

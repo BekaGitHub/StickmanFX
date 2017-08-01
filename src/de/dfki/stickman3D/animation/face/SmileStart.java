@@ -27,7 +27,7 @@ public class SmileStart extends AnimationStickman3D
         // smile start
         AnimationStickman3D.isSmileInAction = true;
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mMouth, "shape", "SMILE"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mMouth, "shape", "SMILE"));
         playAnimationPart(mDuration);
         pauseAnimation(10);
 

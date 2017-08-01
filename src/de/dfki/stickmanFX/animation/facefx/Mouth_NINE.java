@@ -30,7 +30,7 @@ public class Mouth_NINE extends AnimationStickman2D
     public void playAnimation() {
         // smile
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mMouthFX, "shape", "NINE"));
+        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mMouthFX, "shape", "NINE"));
         playAnimationPart(20);
     }
 }

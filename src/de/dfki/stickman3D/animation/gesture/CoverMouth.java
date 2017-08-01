@@ -28,17 +28,17 @@ public class CoverMouth extends AnimationStickman3D
 
 		// bring upper arm and fore arm in position
 		mAnimationPart = new ArrayList<>();
-		mAnimationPart.add(new AnimationContent(mStickmanFX.mRightUpperArm, "rotate", -18));
-		mAnimationPart.add(new AnimationContent(mStickmanFX.mRightForeArm, "rotate", -150));
-		mAnimationPart.add(new AnimationContent(mStickmanFX.mRightWrist, "yrotate", 140));
+		mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mRightUpperArm, "rotate", -18));
+		mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mRightForeArm, "rotate", -150));
+		mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mRightWrist, "yrotate", 140));
 		playAnimationPart(500);
 
 		pauseAnimation(1200);
 
 		mAnimationPart = new ArrayList<>();
-		mAnimationPart.add(new AnimationContent(mStickmanFX.mRightUpperArm, "rotate", 18));
-		mAnimationPart.add(new AnimationContent(mStickmanFX.mRightForeArm, "rotate", 150));
-		mAnimationPart.add(new AnimationContent(mStickmanFX.mRightWrist, "yrotate", -140));
+		mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mRightUpperArm, "rotate", 18));
+		mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mRightForeArm, "rotate", 150));
+		mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mRightWrist, "yrotate", -140));
 		playAnimationPart(500);
 
 		if (StickmanStageController.currentRadioButton != null)

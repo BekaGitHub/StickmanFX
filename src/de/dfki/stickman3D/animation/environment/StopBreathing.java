@@ -22,8 +22,8 @@ public class StopBreathing extends AnimationStickman3D
 
     @Override
     public void playAnimation() {
-        if (mStickmanFX.mBreathing != null) {
-            mStickmanFX.mBreathing.stopBreathAktion();
+        if (((Stickman3D)agent).mBreathing != null) {
+            ((Stickman3D)agent).mBreathing.stopBreathAktion();
         }
 
         if (StickmanStageController.currentRadioButton != null) {

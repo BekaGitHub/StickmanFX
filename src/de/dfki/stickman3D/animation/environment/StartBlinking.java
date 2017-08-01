@@ -27,21 +27,21 @@ public class StartBlinking extends AnimationStickman3D
 
     public StartBlinking(Stickman3D sm, int frequent, int actionDuration, boolean block) {
         super(sm, frequent, actionDuration, block);
-        mStickmanFX = sm;
+        agent = sm;
         this.frequent = frequent;
         this.actionDuration = actionDuration;
     }
 
     public StartBlinking(Stickman3D sm, int frequent, boolean block) {
         super(sm, frequent, block);
-        mStickmanFX = sm;
+        agent = sm;
         this.frequent = 5000;
         this.actionDuration = 50;
     }
 
     @Override
     public void playAnimation() {
-        mStickmanFX.mBlinking = new Blinking(mStickmanFX, frequent, actionDuration);
+        ((Stickman3D)agent).mBlinking = new Blinking(((Stickman3D)agent), frequent, actionDuration);
 
         if (StickmanStageController.currentRadioButton != null) {
             StickmanStageController.currentRadioButton.setSelected(false);

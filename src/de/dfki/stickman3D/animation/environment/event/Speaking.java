@@ -35,11 +35,11 @@ public class Speaking extends EventAnimation3D {
         }
 
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mSpeechBubble, "shape", SpeechBubbleStickman3D.SHAPE.SPEAK.name(), mWTS));
+        mAnimationPart.add(new AnimationContent(agent.getSpeechBubble(), "shape", SpeechBubbleStickman3D.SHAPE.SPEAK.name(), mWTS));
 
         playEventAnimationPart();
 
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mSpeechBubble, "shape", SpeechBubbleStickman3D.SHAPE.DEFAULT.name()));
+        mAnimationPart.add(new AnimationContent(agent.getSpeechBubble(), "shape", SpeechBubbleStickman3D.SHAPE.DEFAULT.name()));
         playAnimationPart(20);
 
     }

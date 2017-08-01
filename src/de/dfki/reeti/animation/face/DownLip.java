@@ -29,7 +29,7 @@ public class DownLip extends AnimationReeti {
         
         
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(mReeti.mMouthDownLip, "shape", "DOWNLIPACTION"));
+        mAnimationPart.add(new AnimationContent(((Reeti)agent).mMouthDownLip, "shape", "DOWNLIPACTION"));
         playAnimationPart(mDuration);
         
     }

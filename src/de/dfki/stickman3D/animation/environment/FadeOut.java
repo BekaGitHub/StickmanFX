@@ -27,7 +27,7 @@ public class FadeOut extends AnimationStickman3D
 
     public FadeOut(Stickman3D sm, int duration, boolean block) {
         super(sm, duration, block);
-        mStickmanFX = sm;
+        agent = sm;
     }
 
     // WaveLeft
@@ -35,51 +35,51 @@ public class FadeOut extends AnimationStickman3D
     public void playAnimation() {
 
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mStars, "shape", "STARSFADEIN"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mStars, "shape", "STARSFADEIN"));
         playAnimationPart(500);
 
         pauseAnimation(500);
 
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftEyebrow, "shape", "FADEOUT"));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftEye, "shape", "FADEOUT"));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mMouth, "shape", "FADEOUT"));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mNose, "shape", "FADEOUT"));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftEar, "shape", "FADEOUT"));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mRightEar, "shape", "FADEOUT"));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mRightEyebrow, "shape", "FADEOUT"));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mRightEye, "shape", "FADEOUT"));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mHead, "shape", "FADEOUT"));
-        if(mStickmanFX.mType == Gender.TYPE.MALE)
-            mAnimationPart.add(new AnimationContent(mStickmanFX.mHair, "shape", "FADEOUT"));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mNeck, "shape", "FADEOUT"));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mUpperBody, "shape", "FADEOUT"));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mDownBody, "shape", "FADEOUT"));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftUpperArm, "shape", "FADEOUT"));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftForeArm, "shape", "FADEOUT"));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftWrist, "shape", "FADEOUT"));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftFinger1, "shape", "FADEOUT"));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftFinger2, "shape", "FADEOUT"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftEyebrow, "shape", "FADEOUT"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftEye, "shape", "FADEOUT"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mMouth, "shape", "FADEOUT"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mNose, "shape", "FADEOUT"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftEar, "shape", "FADEOUT"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mRightEar, "shape", "FADEOUT"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mRightEyebrow, "shape", "FADEOUT"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mRightEye, "shape", "FADEOUT"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mHead, "shape", "FADEOUT"));
+        if(((Stickman3D)agent).mType == Gender.TYPE.MALE)
+            mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mHair, "shape", "FADEOUT"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mNeck, "shape", "FADEOUT"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mUpperBody, "shape", "FADEOUT"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mDownBody, "shape", "FADEOUT"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftUpperArm, "shape", "FADEOUT"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftForeArm, "shape", "FADEOUT"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftWrist, "shape", "FADEOUT"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftFinger1, "shape", "FADEOUT"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftFinger2, "shape", "FADEOUT"));
 
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mStars, "shape", "STARSFADEOUT"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mStars, "shape", "STARSFADEOUT"));
 
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftFinger3, "shape", "FADEOUT"));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftFinger4, "shape", "FADEOUT"));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mRightUpperArm, "shape", "FADEOUT"));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mRightForeArm, "shape", "FADEOUT"));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mRightWrist, "shape", "FADEOUT"));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mRightFinger1, "shape", "FADEOUT"));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mRightFinger2, "shape", "FADEOUT"));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mRightFinger3, "shape", "FADEOUT"));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mRightFinger4, "shape", "FADEOUT"));
-        if(mStickmanFX.mType == Gender.TYPE.FEMALE)
-            mAnimationPart.add(new AnimationContent(mStickmanFX.mHair, "shape", "FADEOUT"));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftUpperLeg, "shape", "FADEOUT"));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftForeLeg, "shape", "FADEOUT"));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftFoot, "shape", "FADEOUT"));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mRightUpperLeg, "shape", "FADEOUT"));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mRightForeLeg, "shape", "FADEOUT"));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mRightFoot, "shape", "FADEOUT"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftFinger3, "shape", "FADEOUT"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftFinger4, "shape", "FADEOUT"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mRightUpperArm, "shape", "FADEOUT"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mRightForeArm, "shape", "FADEOUT"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mRightWrist, "shape", "FADEOUT"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mRightFinger1, "shape", "FADEOUT"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mRightFinger2, "shape", "FADEOUT"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mRightFinger3, "shape", "FADEOUT"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mRightFinger4, "shape", "FADEOUT"));
+        if(((Stickman3D)agent).mType == Gender.TYPE.FEMALE)
+            mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mHair, "shape", "FADEOUT"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftUpperLeg, "shape", "FADEOUT"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftForeLeg, "shape", "FADEOUT"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftFoot, "shape", "FADEOUT"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mRightUpperLeg, "shape", "FADEOUT"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mRightForeLeg, "shape", "FADEOUT"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mRightFoot, "shape", "FADEOUT"));
         playAnimationPart(500);
 
         if (StickmanStageController.currentRadioButton != null) {

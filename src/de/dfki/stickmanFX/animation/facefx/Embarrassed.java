@@ -31,24 +31,24 @@ public class Embarrassed extends AnimationStickman2D
 
         // embarrassed
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mMouthFX, "shape", "EMBARRASSED"));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftEyeFX, "shape", "EMBARRASSED"));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftEyebrowFX, "shape", "EMBARRASSED"));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mFaceWrinkleFX, "shape", "EMBARRASSED"));   ///Add by Robbie
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mRightEyeFX, "shape", "EMBARRASSED"));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mRightEyebrowFX, "shape", "EMBARRASSED"));
+        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mMouthFX, "shape", "EMBARRASSED"));
+        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mLeftEyeFX, "shape", "EMBARRASSED"));
+        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mLeftEyebrowFX, "shape", "EMBARRASSED"));
+        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mFaceWrinkleFX, "shape", "EMBARRASSED"));   ///Add by Robbie
+        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mRightEyeFX, "shape", "EMBARRASSED"));
+        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mRightEyebrowFX, "shape", "EMBARRASSED"));
         playAnimationPart(mDuration);
 
         pauseAnimation(1200);
 
         // no embarrassed
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mMouthFX, "shape", "EMBARRASSEDEND"));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftEyeFX, "shape", "EMBARRASSEDEND"));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftEyebrowFX, "shape", "EMBARRASSEDEND"));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mFaceWrinkleFX, "shape", "EMBARRASSEDEND"));   ///Add by Robbie
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mRightEyeFX, "shape", "EMBARRASSEDEND"));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mRightEyebrowFX, "shape", "EMBARRASSEDEND"));
+        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mMouthFX, "shape", "EMBARRASSEDEND"));
+        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mLeftEyeFX, "shape", "EMBARRASSEDEND"));
+        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mLeftEyebrowFX, "shape", "EMBARRASSEDEND"));
+        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mFaceWrinkleFX, "shape", "EMBARRASSEDEND"));   ///Add by Robbie
+        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mRightEyeFX, "shape", "EMBARRASSEDEND"));
+        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mRightEyebrowFX, "shape", "EMBARRASSEDEND"));
         playAnimationPart(20);
     }
 }

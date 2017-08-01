@@ -33,21 +33,21 @@ public class Surprised extends AnimationStickman3D
 
         // surprised
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mMouth, "shape", "SURPRISED"));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftEye, "shape", "SURPRISED"));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftEyebrow, "shape", "SURPRISED"));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mRightEye, "shape", "SURPRISED"));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mRightEyebrow, "shape", "SURPRISED"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mMouth, "shape", "SURPRISED"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftEye, "shape", "SURPRISED"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftEyebrow, "shape", "SURPRISED"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mRightEye, "shape", "SURPRISED"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mRightEyebrow, "shape", "SURPRISED"));
         playAnimationPart(mDuration);
         pauseAnimation(1200);
 
         // no surprised
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mMouth, "shape", "SURPRISEDEND"));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftEye, "shape", "SURPRISEDEND"));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftEyebrow, "shape", "SURPRISEDEND"));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mRightEye, "shape", "SURPRISEDEND"));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mRightEyebrow, "shape", "SURPRISEDEND"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mMouth, "shape", "SURPRISEDEND"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftEye, "shape", "SURPRISEDEND"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftEyebrow, "shape", "SURPRISEDEND"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mRightEye, "shape", "SURPRISEDEND"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mRightEyebrow, "shape", "SURPRISEDEND"));
         playAnimationPart(mDuration);
 
         if (StickmanStageController.currentRadioButton != null) {

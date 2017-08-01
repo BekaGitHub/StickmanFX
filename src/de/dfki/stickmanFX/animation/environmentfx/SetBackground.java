@@ -39,10 +39,10 @@ public class SetBackground extends AnimationStickman2D
         sParameter = sParameter.trim();
 //        sParameter = sParameter.replace("\\", "\\\\");
         sParameter = sParameter.replace("\\", "/");
-        String mStageIdentifier = mStickmanFX.getStageRoom().getStageIdentifier();
+        String mStageIdentifier = agent.getStageRoom().getStageIdentifier();
         HBox mStickmanPane;
         try {
-            mStickmanPane = mStickmanFX.getStageRoom().getStickmanStage()
+            mStickmanPane = agent.getStageRoom().getStickmanStage()
                     .getStickmanBox(mStageIdentifier);
 
             //Upload the picture

@@ -32,18 +32,18 @@ public class Sad extends AnimationStickman3D
     public void playAnimation() {
         // sad
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mMouth, "shape", "SAD"));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftEyebrow, "shape", "SAD"));  // add by Robbie
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mRightEyebrow, "shape", "SAD")); // add by Robbie
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mMouth, "shape", "SAD"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftEyebrow, "shape", "SAD"));  // add by Robbie
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mRightEyebrow, "shape", "SAD")); // add by Robbie
         playAnimationPart(mDuration);
 
         pauseAnimation(1200);
 
         // no sad
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mMouth, "shape", "SADEND"));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftEyebrow, "shape", "SADEND"));  // add by Robbie
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mRightEyebrow, "shape", "SADEND")); // add by Robbie
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mMouth, "shape", "SADEND"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftEyebrow, "shape", "SADEND"));  // add by Robbie
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mRightEyebrow, "shape", "SADEND")); // add by Robbie
         playAnimationPart(mDuration);
 
         if (StickmanStageController.currentRadioButton != null) {

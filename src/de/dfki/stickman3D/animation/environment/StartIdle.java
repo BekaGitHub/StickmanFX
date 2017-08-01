@@ -21,7 +21,7 @@ public class StartIdle extends AnimationStickman3D
 
     public StartIdle(Stickman3D sm, int duration, boolean block) {
         super(sm, duration, block);
-        mStickmanFX = sm;
+        agent = sm;
 
         frequent = duration / 1000;
         if (frequent <= 0) {
@@ -31,9 +31,9 @@ public class StartIdle extends AnimationStickman3D
 
     @Override
     public void playAnimation() {
-        if (mStickmanFX.mIdleBehavior == null) {
-            mStickmanFX.mIdleRun = true;
-            mStickmanFX.mIdleBehavior = new IdleBehavior(mStickmanFX);
+        if (((Stickman3D)agent).mIdleBehavior == null) {
+            ((Stickman3D)agent).mIdleRun = true;
+            ((Stickman3D)agent).mIdleBehavior = new IdleBehavior(((Stickman3D)agent));
         }
     }
 }

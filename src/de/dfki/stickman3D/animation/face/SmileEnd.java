@@ -26,7 +26,7 @@ public class SmileEnd extends AnimationStickman3D
     public void playAnimation() {
         // smile end
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mMouth, "shape", "SMILEEND"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mMouth, "shape", "SMILEEND"));
         playAnimationPart(mDuration);
         AnimationStickman3D.isSmileInAction = false;
         pauseAnimation(10);

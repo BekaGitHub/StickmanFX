@@ -1,6 +1,7 @@
 package de.dfki.reeti;
 
 import de.dfki.common.agent.Agent3D;
+import de.dfki.common.animationlogic.Animation;
 import de.dfki.common.animationlogic.AnimationScheduler;
 import de.dfki.common.enums.Led;
 import de.dfki.common.part.Part3D;
@@ -55,7 +56,6 @@ public class Reeti extends Agent3D
     public Blinking mBlinking;
 
     // amimation stuff
-    public AnimationScheduler mAnimationSchedulerReeti;
 
     public Part3D mLeftEyelid;
     public Part3D mRightEyelid;
@@ -138,38 +138,12 @@ public class Reeti extends Agent3D
         mSpeechBubble = new SpeechBubbleReeti(mHead);
         sReeti = this;
 
-        mAnimationSchedulerReeti = new AnimationScheduler(this);
-        mAnimationSchedulerReeti.start();
+        animationScheduler = new AnimationScheduler(this);
+        animationScheduler.start();
 
         this.addAllParts();
     }
 
-    public void addListener(AnimationListener al)
-    {
-        mAnimationListeners.add(al);
-    }
-
-    public void removeListener(AnimationListener al)
-    {
-        synchronized (mAnimationListeners)
-        {
-            if (mAnimationListeners.contains(al))
-            {
-                mAnimationListeners.remove(al);
-            }
-        }
-    }
-
-    public void notifyListeners(String animationId)
-    {
-        synchronized (mAnimationListeners)
-        {
-            mAnimationListeners.stream().forEach((al) ->
-            {
-                al.update(animationId);
-            });
-        }
-    }
 
     public AnimationReeti doEventFeedbackAnimation(String name, int duration, WordTimeMarkSequence wts, boolean block)
     {
@@ -272,18 +246,6 @@ public class Reeti extends Agent3D
         }
 
         return a;
-    }
-
-    public void playAnimation(AnimationReeti a)
-    {
-        try
-        {
-            mAnimationLaunchControl.acquire();
-            a.start();
-        } catch (InterruptedException ex)
-        {
-            mLogger.severe(ex.getMessage());
-        }
     }
 
     public void update()

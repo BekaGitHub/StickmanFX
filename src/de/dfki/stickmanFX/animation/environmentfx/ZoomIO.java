@@ -26,20 +26,20 @@ public class ZoomIO extends AnimationStickman2D
         sParameter = sParameter.trim();
 
         try {
-            mStickmanFX.mScale = Float.parseFloat(sParameter);
+            agent.mScale = Float.parseFloat(sParameter);
         } catch (NumberFormatException nfe) {
             System.out.println("NumberFormatException: " + nfe.getMessage());
         }
-        String mStageIdentifier = mStickmanFX.getStageRoom().getStageIdentifier();
+        String mStageIdentifier = agent.getStageRoom().getStageIdentifier();
         HBox mStickmanPane;
         try {
-            mStickmanPane = mStickmanFX.getStageRoom().getStickmanStage()
+            mStickmanPane = agent.getStageRoom().getStickmanStage()
                     .getStickmanBox(mStageIdentifier);
             Platform.runLater(() -> mStickmanPane.getChildren().clear());
             Platform.runLater(() -> {
                 try {
-                    mStickmanFX.getStageRoom().getStickmanStage().addStickmanToStage(mStageIdentifier,
-                            mStickmanFX);
+                    agent.getStageRoom().getStickmanStage().addStickmanToStage(mStageIdentifier,
+                            ((StickmanFX)agent));
                     mStickmanPane.setAlignment(Pos.CENTER);
                 } catch (Exception e) {
                     // TODO Auto-generated catch block
@@ -53,7 +53,7 @@ public class ZoomIO extends AnimationStickman2D
             e.printStackTrace();
         }
 
-        Platform.runLater(() -> mStickmanFX.update());
+        Platform.runLater(() -> ((StickmanFX)agent).update());
     }
 
 }

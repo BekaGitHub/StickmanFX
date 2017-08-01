@@ -22,9 +22,9 @@ public class HappyEnd extends AnimationStickman3D
     public void playAnimation() {
         // no happy
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mMouth, "shape", "HAPPYEND"));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftEye, "shape", "HAPPYEND"));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mRightEye, "shape", "HAPPYEND"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mMouth, "shape", "HAPPYEND"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftEye, "shape", "HAPPYEND"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mRightEye, "shape", "HAPPYEND"));
         playAnimationPart(mDuration);
 
         pauseAnimation(10);

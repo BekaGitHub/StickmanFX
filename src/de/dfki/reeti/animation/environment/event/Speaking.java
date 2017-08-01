@@ -35,11 +35,11 @@ public class Speaking extends EventAnimationReeti {
         }
 
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(mReeti.mSpeechBubble, "shape", SpeechBubbleReeti.SHAPE.SPEAK.name(), mWTS));
+        mAnimationPart.add(new AnimationContent(agent.getSpeechBubble(), "shape", SpeechBubbleReeti.SHAPE.SPEAK.name(), mWTS));
 
         playEventAnimationPart();
 
-        mAnimationPart.add(new AnimationContent(mReeti.mSpeechBubble, "shape", SpeechBubbleReeti.SHAPE.DEFAULT.name()));
+        mAnimationPart.add(new AnimationContent(agent.getSpeechBubble(), "shape", SpeechBubbleReeti.SHAPE.DEFAULT.name()));
         playAnimationPart(20);
 
     }

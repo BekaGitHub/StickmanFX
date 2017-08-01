@@ -37,12 +37,12 @@ public class EventAnimation3D extends AnimationStickman3D
     }
 
     public void playEventAnimationPart() {
-        animator = new AnimatorStickman3D(mStickmanFX, this, mAnimationPart, mWTS);
+        animator = new AnimatorStickman3D(agent, this, mAnimationPart, mWTS);
 
         try {
             mAnimationPartStart.acquire();
         } catch (InterruptedException ex) {
-            mStickmanFX.mLogger.severe(ex.getMessage());
+            agent.mLogger.severe(ex.getMessage());
         }
     }
 

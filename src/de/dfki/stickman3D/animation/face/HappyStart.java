@@ -22,9 +22,9 @@ public class HappyStart extends AnimationStickman3D
     public void playAnimation() {
         // happy start
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mMouth, "shape", "HAPPY"));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftEye, "shape", "HAPPY"));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mRightEye, "shape", "HAPPY"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mMouth, "shape", "HAPPY"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftEye, "shape", "HAPPY"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mRightEye, "shape", "HAPPY"));
         playAnimationPart(mDuration);
 
         pauseAnimation(10);

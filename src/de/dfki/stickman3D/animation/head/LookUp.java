@@ -27,15 +27,15 @@ public class LookUp extends AnimationStickman3D
     public void playAnimation() {
 
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftEye, "shape", "LOOKUP"));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mRightEye, "shape", "LOOKUP"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftEye, "shape", "LOOKUP"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mRightEye, "shape", "LOOKUP"));
         playAnimationPart(100);
 
         pauseAnimation(100);
 
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftEye, "shape", "LOOKUPEND"));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mRightEye, "shape", "LOOKUPEND"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftEye, "shape", "LOOKUPEND"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mRightEye, "shape", "LOOKUPEND"));
         playAnimationPart(100);
 
         if (StickmanStageController.currentRadioButton != null) {

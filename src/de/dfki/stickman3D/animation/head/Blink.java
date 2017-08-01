@@ -31,16 +31,16 @@ public class Blink extends AnimationStickman3D
     @Override
     public void playAnimation() {
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftEye, "shape", "BLINK"));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mRightEye, "shape", "BLINK"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftEye, "shape", "BLINK"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mRightEye, "shape", "BLINK"));
         playAnimationPart(50);
 
         pauseAnimation(300);
 
         //blink up
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftEye, "shape", "BLINKEND"));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mRightEye, "shape", "BLINKEND"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftEye, "shape", "BLINKEND"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mRightEye, "shape", "BLINKEND"));
         playAnimationPart(50);
 
         if (StickmanStageController.currentRadioButton != null) {

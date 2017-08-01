@@ -31,11 +31,11 @@ public class Nod extends AnimationReeti {
     public void playAnimation() {
 
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(mReeti.mHead, "rotate", 10));
+        mAnimationPart.add(new AnimationContent(((Reeti)agent).mHead, "rotate", 10));
         playAnimationPart(200);
 
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(mReeti.mHead, "rotate", -10));
+        mAnimationPart.add(new AnimationContent(((Reeti)agent).mHead, "rotate", -10));
         playAnimationPart(200);
 
         if (ReetiStageController.currentRadioButton != null) {

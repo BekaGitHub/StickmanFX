@@ -27,9 +27,9 @@ public class ContemptStart extends AnimationStickman3D
     public void playAnimation() {
         // Contempt start
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mMouth, "shape", "CONTEMPT"));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftEye, "shape", "CONTEMPT"));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mRightEye, "shape", "CONTEMPT"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mMouth, "shape", "CONTEMPT"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftEye, "shape", "CONTEMPT"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mRightEye, "shape", "CONTEMPT"));
         playAnimationPart(mDuration);
 
         pauseAnimation(10);

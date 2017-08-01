@@ -31,7 +31,7 @@ public class TiltLeftBack extends AnimationStickman3D
     @Override
     public void playAnimation() {
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mHead, "zrotate", -10));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mHead, "zrotate", -10));
         playAnimationPart(200);
 
         if (StickmanStageController.currentRadioButton != null) {

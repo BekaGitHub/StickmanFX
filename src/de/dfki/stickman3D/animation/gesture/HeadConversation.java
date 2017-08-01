@@ -48,7 +48,7 @@ public class HeadConversation extends AnimationStickman3D
         current_movment+= movement;
         mAnimationPart = new ArrayList<>();
         String rotationAxis = getRotationAxisName();
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mHead, rotationAxis, current_movment));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mHead, rotationAxis, current_movment));
         playAnimationPart(200);
         pauseAnimation(500);
         current_movment = movement * -1;

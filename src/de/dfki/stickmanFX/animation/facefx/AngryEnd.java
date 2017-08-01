@@ -21,13 +21,6 @@ import java.util.ArrayList;
 public class AngryEnd extends AnimationStickman2D
 {
 
-    /**
-     * @param sm StickmanSwing
-     * @param duration Control the speed of the movement from one emotion state
-     * to another emotion state.
-     * @param block block or not the others movements, when one movement is not
-     * finished.
-     */
     public AngryEnd() {
         super();
     }
@@ -43,12 +36,12 @@ public class AngryEnd extends AnimationStickman2D
     public void playAnimation() {
         // angry end
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mMouthFX, "shape", "ANGRYEND"));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftEyeFX, "shape", "ANGRYEND"));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftEyebrowFX, "shape", "ANGRYEND"));
+        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mMouthFX, "shape", "ANGRYEND"));
+        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mLeftEyeFX, "shape", "ANGRYEND"));
+        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mLeftEyebrowFX, "shape", "ANGRYEND"));
         //mAnimationPart.add(new AnimationContent(mStickman.mFaceWrinkle, "shape", "ANGRYEND"));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mRightEyeFX, "shape", "ANGRYEND"));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mRightEyebrowFX, "shape", "ANGRYEND"));
+        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mRightEyeFX, "shape", "ANGRYEND"));
+        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mRightEyebrowFX, "shape", "ANGRYEND"));
         playAnimationPart(mDuration);
         pauseAnimation(10);
 

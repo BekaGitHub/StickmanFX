@@ -34,19 +34,19 @@ public class Nod2 extends AnimationStickman3D
         for (int i = 0; i < 6; i++) {
             if (i == 0) {
                 mAnimationPart = new ArrayList<>();
-                mAnimationPart.add(new AnimationContent(mStickmanFX.mHead, "rotate", 10));
+                mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mHead, "rotate", 10));
                 playAnimationPart(200);
             } else if (i == 5) {
                 mAnimationPart = new ArrayList<>();
-                mAnimationPart.add(new AnimationContent(mStickmanFX.mHead, "rotate", -10));
+                mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mHead, "rotate", -10));
                 playAnimationPart(200);
             } else if (i % 2 == 1) {
                 mAnimationPart = new ArrayList<>();
-                mAnimationPart.add(new AnimationContent(mStickmanFX.mHead, "rotate", -20));
+                mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mHead, "rotate", -20));
                 playAnimationPart(200);
             } else {
                 mAnimationPart = new ArrayList<>();
-                mAnimationPart.add(new AnimationContent(mStickmanFX.mHead, "rotate", 20));
+                mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mHead, "rotate", 20));
                 playAnimationPart(200);
             }
         }

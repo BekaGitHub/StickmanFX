@@ -27,21 +27,21 @@ public class StartBreathing extends AnimationStickman3D
 
     public StartBreathing(Stickman3D sm, int frequent, int actionDuration, boolean block) {
         super(sm, frequent, actionDuration, block);
-        mStickmanFX = sm;
+        agent = sm;
         this.frequent = frequent;
         this.actionDuration = actionDuration;
     }
 
     public StartBreathing(Stickman3D sm, int frequent, boolean block) {
         super(sm, frequent, block);
-        mStickmanFX = sm;
+        agent = sm;
         this.frequent = 4000;
         this.actionDuration = 2000;
     }
 
     @Override
     public void playAnimation() {
-        mStickmanFX.mBreathing = new Breathing(mStickmanFX, frequent, actionDuration);
+        ((Stickman3D)agent).mBreathing = new Breathing(((Stickman3D)agent), frequent, actionDuration);
 
         if (StickmanStageController.currentRadioButton != null) {
             StickmanStageController.currentRadioButton.setSelected(false);

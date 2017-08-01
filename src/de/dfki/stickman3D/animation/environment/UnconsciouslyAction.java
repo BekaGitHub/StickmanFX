@@ -41,7 +41,7 @@ public class UnconsciouslyAction extends Thread {
             if (this.currentBehaviorList.isEmpty()) {
                 this.currentBehaviorList.addAll(Arrays.asList(behaviorArray));
             }
-            if (mStickmanFX.mAnimationSchedulerFX.mAnimationQueue.isEmpty()) {
+            if (mStickmanFX.animationScheduler.mAnimationQueue.isEmpty()) {
                 int index = random.nextInt(currentBehaviorList.size());
                 String action = currentBehaviorList.get(index);
                 currentBehaviorList.remove(index);

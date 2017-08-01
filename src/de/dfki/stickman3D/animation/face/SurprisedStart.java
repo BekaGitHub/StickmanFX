@@ -29,11 +29,11 @@ public class SurprisedStart extends AnimationStickman3D
         // surprised
         AnimationStickman3D.isSurprisedInAction = true;
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mMouth, "shape", "SURPRISED"));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftEye, "shape", "SURPRISED"));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftEyebrow, "shape", "SURPRISED"));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mRightEye, "shape", "SURPRISED"));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mRightEyebrow, "shape", "SURPRISED"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mMouth, "shape", "SURPRISED"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftEye, "shape", "SURPRISED"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftEyebrow, "shape", "SURPRISED"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mRightEye, "shape", "SURPRISED"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mRightEyebrow, "shape", "SURPRISED"));
         playAnimationPart(mDuration);
 
         pauseAnimation(10);

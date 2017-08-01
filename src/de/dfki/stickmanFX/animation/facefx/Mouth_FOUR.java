@@ -30,7 +30,7 @@ public class Mouth_FOUR extends AnimationStickman2D
     public void playAnimation() {
         // smile
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mMouthFX, "shape", "FOUR"));
+        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mMouthFX, "shape", "FOUR"));
         playAnimationPart(20);
     }
 }

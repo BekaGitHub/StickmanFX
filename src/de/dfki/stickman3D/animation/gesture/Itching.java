@@ -27,47 +27,47 @@ public class Itching extends AnimationStickman3D
 	public void playAnimation() {
 		// bring upper arm and fore arm in position
 		mAnimationPart = new ArrayList<>();
-		mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftUpperArm, "zrotate", -25));
-		mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftForeArm, "rotate", -35));
-		mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftForeArm, "zrotate", 65));
+		mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftUpperArm, "zrotate", -25));
+		mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftForeArm, "rotate", -35));
+		mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftForeArm, "zrotate", 65));
 
-		mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftWrist, "yrotate", 10));
+		mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftWrist, "yrotate", 10));
 		playAnimationPart(mDuration);
 
 		mAnimationPart = new ArrayList<>();
-		mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftFinger2, "zrotate", 8));
-		mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftFinger4, "zrotate", -8));
+		mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftFinger2, "zrotate", 8));
+		mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftFinger4, "zrotate", -8));
 		playAnimationPart(50);
 
 		for (int i = 0; i < 4; i++) {
 			mAnimationPart = new ArrayList<>();
-			mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftWrist, "rotate", 10));
-			mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftFinger2, "rotate", 60));
-			mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftFinger3, "rotate", 70));
-			mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftFinger4, "rotate", 80));
+			mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftWrist, "rotate", 10));
+			mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftFinger2, "rotate", 60));
+			mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftFinger3, "rotate", 70));
+			mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftFinger4, "rotate", 80));
 			playAnimationPart(200);
 
 			pauseAnimation(200);
 
 			mAnimationPart = new ArrayList<>();
-			mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftWrist, "rotate", -10));
-			mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftFinger2, "rotate", -60));
-			mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftFinger3, "rotate", -70));
-			mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftFinger4, "rotate", -80));
+			mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftWrist, "rotate", -10));
+			mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftFinger2, "rotate", -60));
+			mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftFinger3, "rotate", -70));
+			mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftFinger4, "rotate", -80));
 			playAnimationPart(200);
 		}
 
 		mAnimationPart = new ArrayList<>();
-		mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftFinger2, "zrotate", -8));
-		mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftFinger4, "zrotate", 8));
+		mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftFinger2, "zrotate", -8));
+		mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftFinger4, "zrotate", 8));
 		playAnimationPart(50);
 
 		mAnimationPart = new ArrayList<>();
-		mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftUpperArm, "zrotate", 25));
-		mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftForeArm, "rotate", 35));
-		mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftForeArm, "zrotate", -65));
+		mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftUpperArm, "zrotate", 25));
+		mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftForeArm, "rotate", 35));
+		mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftForeArm, "zrotate", -65));
 
-		mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftWrist, "yrotate", -10));
+		mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftWrist, "yrotate", -10));
 
 		playAnimationPart(mDuration);
 

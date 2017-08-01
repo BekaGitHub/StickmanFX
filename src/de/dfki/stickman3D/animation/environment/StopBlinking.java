@@ -22,8 +22,8 @@ public class StopBlinking extends AnimationStickman3D
 
     @Override
     public void playAnimation() {
-        if (mStickmanFX.mBlinking != null) {
-            mStickmanFX.mBlinking.stopBlinkAktion();
+        if (((Stickman3D)agent).mBlinking != null) {
+            ((Stickman3D)agent).mBlinking.stopBlinkAktion();
         }
 
         if (StickmanStageController.currentRadioButton != null) {

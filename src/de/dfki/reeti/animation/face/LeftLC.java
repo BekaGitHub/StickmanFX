@@ -27,7 +27,7 @@ public class LeftLC extends AnimationReeti {
     public void playAnimation() {
         
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(mReeti.mMouthLeftCorner, "shape", "LEFTCORNERACTION"));
+        mAnimationPart.add(new AnimationContent(((Reeti)agent).mMouthLeftCorner, "shape", "LEFTCORNERACTION"));
         playAnimationPart(mDuration);
         
 

@@ -21,13 +21,13 @@ public class Smile extends AnimationReeti {
     @Override
     public void playAnimation() {
 
-        mReeti.bottomLip(50);
-        mReeti.leftLC(70);
-        mReeti.rightLC(70);
-        mReeti.setLedColor("green", Led.LEFTLED);
-        mReeti.setLedColor("red", Led.RIGHTLED);
-        mReeti.leftEar(100);
-        mReeti.rightEar(100);
+        ((Reeti)agent).bottomLip(50);
+        ((Reeti)agent).leftLC(70);
+        ((Reeti)agent).rightLC(70);
+        ((Reeti)agent).setLedColor("green", Led.LEFTLED);
+        ((Reeti)agent).setLedColor("red", Led.RIGHTLED);
+        ((Reeti)agent).leftEar(100);
+        ((Reeti)agent).rightEar(100);
 
 
         if (ReetiStageController.currentRadioButton != null) {

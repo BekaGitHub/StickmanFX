@@ -28,8 +28,8 @@ public class ComeUp extends AnimationStickman3D
 
     public ComeUp(Stickman3D sm, int duration, boolean block) {
         super(sm, duration, block);
-        mStickmanFX = sm;
-        recordOriginLeaveSpeed = mStickmanFX.leaveSpeed;
+        agent = sm;
+        recordOriginLeaveSpeed = ((Stickman3D)agent).leaveSpeed;
     }
 
     // WaveLeft
@@ -38,26 +38,26 @@ public class ComeUp extends AnimationStickman3D
         int rotationUnit = 5;
         int speed = 4;
 
-        mStickmanFX.leaveSpeed = 480;
+        ((Stickman3D)agent).leaveSpeed = 480;
 
         // bring upper arm and fore arm in position
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftUpperArm, "rotate", -rotationUnit ));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftForeArm, "rotate", -rotationUnit * 30));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftUpperArm, "rotate", -rotationUnit ));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftForeArm, "rotate", -rotationUnit * 30));
         playAnimationPart(100);
 
         for (int i = 0; i < 8; i++) {
             // wave right
             for (int j = 0; j < 10; j++) {
                 mAnimationPart = new ArrayList<>();
-                mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftForeArm, "zrotate", -rotationUnit));
+                mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftForeArm, "zrotate", -rotationUnit));
                 playComeSpeed(speed);
                 playAnimationPart(20);
             }
             // wave left
             for (int j = 0; j < 10; j++) {
                 mAnimationPart = new ArrayList<>();
-                mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftForeArm, "zrotate", rotationUnit));
+                mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftForeArm, "zrotate", rotationUnit));
                 playComeSpeed(speed);
                 playAnimationPart(20);
             }
@@ -65,8 +65,8 @@ public class ComeUp extends AnimationStickman3D
 
         // go back in the default position
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftUpperArm, "rotate", rotationUnit ));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftForeArm, "rotate", rotationUnit * 30));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftUpperArm, "rotate", rotationUnit ));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftForeArm, "rotate", rotationUnit * 30));
         playAnimationPart(200);
 
         if (StickmanStageController.currentRadioButton != null) {
@@ -76,11 +76,11 @@ public class ComeUp extends AnimationStickman3D
     }
 
     private void playComeSpeed(int Speed) {
-        if (mStickmanFX.leaveSpeed > recordOriginLeaveSpeed) {
-            mStickmanFX.leaveSpeed = mStickmanFX.leaveSpeed - Speed;
+        if (((Stickman3D)agent).leaveSpeed > recordOriginLeaveSpeed) {
+            ((Stickman3D)agent).leaveSpeed = ((Stickman3D)agent).leaveSpeed - Speed;
         } else {
-            mStickmanFX.leaveSpeed = recordOriginLeaveSpeed;
+            ((Stickman3D)agent).leaveSpeed = recordOriginLeaveSpeed;
         }
-        Platform.runLater(() -> mStickmanFX.update());
+        Platform.runLater(() -> ((Stickman3D)agent).update());
     }
 }

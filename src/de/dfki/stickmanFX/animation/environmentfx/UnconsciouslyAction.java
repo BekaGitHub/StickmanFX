@@ -33,7 +33,7 @@ public class UnconsciouslyAction extends Thread {
                 countCoverMouth = 0;
                 countTouchHead = 0;
                 countTileHead = 0;
-                if (mStickmanFX.mAnimationSchedulerFX.mAnimationQueue.isEmpty()) // to ignore to many actions put in mAnimationQueue
+                if (mStickmanFX.animationScheduler.mAnimationQueue.isEmpty()) // to ignore to many actions put in mAnimationQueue
                 {
                     mStickmanFX.doAnimation("CoverMouth", 500, true);
                 }
@@ -54,7 +54,7 @@ public class UnconsciouslyAction extends Thread {
                 countCoverMouth = 0;
                 countTouchHead = 0;
                 countTileHead = 0;
-                if (mStickmanFX.mAnimationSchedulerFX.mAnimationQueue.isEmpty()) {
+                if (mStickmanFX.animationScheduler.mAnimationQueue.isEmpty()) {
                     mStickmanFX.doAnimation("TouchHead", 500, true);
                 }
             } else {
@@ -72,7 +72,7 @@ public class UnconsciouslyAction extends Thread {
             countBlink++;
             if (countBlink == 8) {
                 countBlink = 0;
-                if (mStickmanFX.mAnimationSchedulerFX.mAnimationQueue.isEmpty()) {
+                if (mStickmanFX.animationScheduler.mAnimationQueue.isEmpty()) {
                     mStickmanFX.doAnimation("Blink", 500, true);
                 }
             } else {
@@ -92,7 +92,7 @@ public class UnconsciouslyAction extends Thread {
                 countCoverMouth = 0;
                 countTouchHead = 0;
                 countTileHead = 0;
-                if (mStickmanFX.mAnimationSchedulerFX.mAnimationQueue.isEmpty()) {
+                if (mStickmanFX.animationScheduler.mAnimationQueue.isEmpty()) {
                     mStickmanFX.doAnimation("HeadTilt", 500, true);
                 }
             } else {

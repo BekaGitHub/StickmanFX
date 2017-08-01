@@ -28,20 +28,20 @@ public class CoverMouth extends AnimationStickman2D
 
         // bring upper arm and fore arm in position
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftShoulderFX, "rotate", -rotationUnit * 3));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftUpperArmFX, "rotate", rotationUnit));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftForeArmFX, "rotate", rotationUnit * 9));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftHandFX, "rotate", rotationUnit * 9));
+        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mLeftShoulderFX, "rotate", -rotationUnit * 3));
+        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mLeftUpperArmFX, "rotate", rotationUnit));
+        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mLeftForeArmFX, "rotate", rotationUnit * 9));
+        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mLeftHandFX, "rotate", rotationUnit * 9));
         playAnimationPart(200);
 
         pauseAnimation(1200);
 
         // go back in the default position
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftShoulderFX, "rotate", +rotationUnit * 3));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftUpperArmFX, "rotate", -rotationUnit));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftForeArmFX, "rotate", -rotationUnit * 9));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftHandFX, "rotate", -rotationUnit * 9));
+        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mLeftShoulderFX, "rotate", +rotationUnit * 3));
+        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mLeftUpperArmFX, "rotate", -rotationUnit));
+        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mLeftForeArmFX, "rotate", -rotationUnit * 9));
+        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mLeftHandFX, "rotate", -rotationUnit * 9));
         playAnimationPart(300);
     }
 }

@@ -46,7 +46,7 @@ public abstract class AbstractConversationHands extends AnimationStickman3D
     protected void moveConversationHands(){
         leftForeArmZ = getLeftArmMovement();
         rightForeArmZ = getRightArmMovement();
-        moveArms(new AnimationContent(mStickmanFX.mRightForeArm, "zrotate", rightForeArmZ), new AnimationContent(mStickmanFX.mLeftForeArm, "zrotate", leftForeArmZ));
+        moveArms(new AnimationContent(((Stickman3D)agent).mRightForeArm, "zrotate", rightForeArmZ), new AnimationContent(((Stickman3D)agent).mLeftForeArm, "zrotate", leftForeArmZ));
     }
 
     protected int getMaximumPermitedMovement(){

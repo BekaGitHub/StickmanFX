@@ -30,9 +30,9 @@ public class ContemptEnd extends AnimationStickman2D
     public void playAnimation() {
         // Contempt end
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mMouthFX, "shape", "CONTEMPTEND"));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftEyeFX, "shape", "CONTEMPTEND"));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mRightEyeFX, "shape", "CONTEMPTEND"));
+        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mMouthFX, "shape", "CONTEMPTEND"));
+        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mLeftEyeFX, "shape", "CONTEMPTEND"));
+        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mRightEyeFX, "shape", "CONTEMPTEND"));
         playAnimationPart(mDuration);
 
         pauseAnimation(10);

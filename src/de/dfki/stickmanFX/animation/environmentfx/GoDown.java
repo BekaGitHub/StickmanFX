@@ -19,12 +19,8 @@ import javafx.application.Platform;
  */
 public class GoDown extends AnimationStickman2D
 {
-
-    private StickmanFX mStickmanFX;
-
     public GoDown(StickmanFX sm, int duration, boolean block) {
         super(sm, duration, block);
-        mStickmanFX = sm;
     }
 
     // WaveLeft
@@ -35,40 +31,40 @@ public class GoDown extends AnimationStickman2D
 
         // bring upper arm and fore arm in position
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftUpperArmFX, "rotate", rotationUnit * 2));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftForeArmFX, "rotate", rotationUnit * 32));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftHandFX, "rotate", rotationUnit * 32));
+        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mLeftUpperArmFX, "rotate", rotationUnit * 2));
+        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mLeftForeArmFX, "rotate", rotationUnit * 32));
+        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mLeftHandFX, "rotate", rotationUnit * 32));
         playAnimationPart(200);
 
         for (int i = 0; i < 8; i++) {
             // wave right		
             for (int j = 0; j < 8; j++) {
                 mAnimationPart = new ArrayList<>();
-                mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftForeArmFX, "rotate", -rotationUnit));
-                mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftHandFX, "rotate", -rotationUnit));
+                mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mLeftForeArmFX, "rotate", -rotationUnit));
+                mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mLeftHandFX, "rotate", -rotationUnit));
 
-                mStickmanFX.voffset = mStickmanFX.voffset + speed;
-                Platform.runLater(() -> mStickmanFX.update());
+                ((StickmanFX)agent).voffset = ((StickmanFX)agent).voffset + speed;
+                Platform.runLater(() -> ((StickmanFX)agent).update());
                 playAnimationPart(20);
             }
 
             // wave left
             for (int j = 0; j < 8; j++) {
                 mAnimationPart = new ArrayList<>();
-                mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftForeArmFX, "rotate", rotationUnit));
-                mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftHandFX, "rotate", rotationUnit));
+                mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mLeftForeArmFX, "rotate", rotationUnit));
+                mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mLeftHandFX, "rotate", rotationUnit));
 
-                mStickmanFX.voffset = mStickmanFX.voffset + speed;
-                Platform.runLater(() -> mStickmanFX.update());
+                ((StickmanFX)agent).voffset = ((StickmanFX)agent).voffset + speed;
+                Platform.runLater(() -> ((StickmanFX)agent).update());
                 playAnimationPart(20);
             }
         }
 
         // go back in the default position
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftUpperArmFX, "rotate", -rotationUnit * 2));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftForeArmFX, "rotate", -rotationUnit * 32));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftHandFX, "rotate", -rotationUnit * 32));
+        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mLeftUpperArmFX, "rotate", -rotationUnit * 2));
+        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mLeftForeArmFX, "rotate", -rotationUnit * 32));
+        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mLeftHandFX, "rotate", -rotationUnit * 32));
         playAnimationPart(20);
     }
 

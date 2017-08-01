@@ -22,6 +22,6 @@ public class TiltLeftStart extends AnimationReeti
     @Override
     public void playAnimation()
     {
-        mReeti.neckPan(20);
+        ((Reeti)agent).neckPan(20);
     }
 }

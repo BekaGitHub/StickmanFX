@@ -23,10 +23,10 @@ public class StartIdle extends AnimationStickman2D
 
     @Override
     public void playAnimation() {
-        if (!mStickmanFX.mIdleBehavior.isAlive()) {
-            mStickmanFX.mIdleRun = true;
-            mStickmanFX.mIdleBehavior = new IdleBehavior(mStickmanFX, mStickmanFX.simplexNoise);
-            mStickmanFX.mIdleBehavior.start();
+        if (!((StickmanFX)agent).mIdleBehavior.isAlive()) {
+            ((StickmanFX)agent).mIdleRun = true;
+            ((StickmanFX)agent).mIdleBehavior = new IdleBehavior(((StickmanFX)agent), ((StickmanFX)agent).simplexNoise);
+            ((StickmanFX)agent).mIdleBehavior.start();
         }
     }
 }

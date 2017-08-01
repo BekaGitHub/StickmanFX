@@ -32,14 +32,14 @@ public class Speaking extends AnimationStickman3D
     @Override
     public void playAnimation() {
         if (mParameter instanceof String) {
-            mStickmanFX.mSpeechBubble.mSpeechBubbleText = (String) mParameter;
+            agent.getSpeechBubble().mSpeechBubbleText = (String) mParameter;
         }
 
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mSpeechBubble, "shape", SpeechBubbleStickman3D.SHAPE.SPEAK.name()));
+        mAnimationPart.add(new AnimationContent(agent.getSpeechBubble(), "shape", SpeechBubbleStickman3D.SHAPE.SPEAK.name()));
         playAnimationPart(mDuration);
 
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mSpeechBubble, "shape", SpeechBubbleStickman3D.SHAPE.DEFAULT.name()));
+        mAnimationPart.add(new AnimationContent(agent.getSpeechBubble(), "shape", SpeechBubbleStickman3D.SHAPE.DEFAULT.name()));
         playAnimationPart(20);
 
         if (StickmanStageController.currentRadioButton != null) {

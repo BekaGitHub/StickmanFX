@@ -31,7 +31,7 @@ public class NeckRotation extends AnimationReeti {
     public void playAnimation() {
         
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(mReeti.mHead, "yrotate", rot));
+        mAnimationPart.add(new AnimationContent(((Reeti)agent).mHead, "yrotate", rot));
         playAnimationPart(mDuration);
         
     }

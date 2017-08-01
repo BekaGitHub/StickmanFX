@@ -27,9 +27,9 @@ public class SadStart extends AnimationStickman3D
     public void playAnimation() {
         // sad
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mMouth, "shape", "SAD"));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftEyebrow, "shape", "DISGUSTED"));  // add by Robbie
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mRightEyebrow, "shape", "DISGUSTED")); // add by Robbie
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mMouth, "shape", "SAD"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftEyebrow, "shape", "DISGUSTED"));  // add by Robbie
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mRightEyebrow, "shape", "DISGUSTED")); // add by Robbie
         playAnimationPart(mDuration);
 
         pauseAnimation(10);

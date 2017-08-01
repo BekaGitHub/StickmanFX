@@ -27,11 +27,11 @@ public class DisgustedStart extends AnimationStickman3D
     public void playAnimation() {
         // disgusted
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mMouth, "shape", "DISGUSTED"));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftEye, "shape", "DISGUSTED"));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftEyebrow, "shape", "DISGUSTED"));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mRightEye, "shape", "DISGUSTED"));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mRightEyebrow, "shape", "DISGUSTED"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mMouth, "shape", "DISGUSTED"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftEye, "shape", "DISGUSTED"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftEyebrow, "shape", "DISGUSTED"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mRightEye, "shape", "DISGUSTED"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mRightEyebrow, "shape", "DISGUSTED"));
         playAnimationPart(mDuration);
 
         pauseAnimation(10);

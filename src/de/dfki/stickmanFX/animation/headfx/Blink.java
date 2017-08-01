@@ -25,8 +25,8 @@ public class Blink extends AnimationStickman2D
     @Override
     public void playAnimation() {
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftEyeFX, "shape", "BLINK"));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mRightEyeFX, "shape", "BLINK"));
+        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mLeftEyeFX, "shape", "BLINK"));
+        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mRightEyeFX, "shape", "BLINK"));
         //Platform.runLater(() -> playAnimationPart(20));
         playAnimationPart(20);
 
@@ -34,8 +34,8 @@ public class Blink extends AnimationStickman2D
 
         //blink up
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftEyeFX, "shape", "DEFAULT"));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mRightEyeFX, "shape", "DEFAULT"));
+        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mLeftEyeFX, "shape", "DEFAULT"));
+        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mRightEyeFX, "shape", "DEFAULT"));
         //Platform.runLater(() -> playAnimationPart(20));
         playAnimationPart(20);
     }

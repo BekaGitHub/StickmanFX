@@ -27,11 +27,11 @@ public class Muster extends AnimationStickman2D
         int rotationUnit = 10;
         for (int i = 0; i < 8; i++) {
             mAnimationPart = new ArrayList<>();
-            mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftUpperLegFX, "rotate", 40));
+            mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mLeftUpperLegFX, "rotate", 40));
             playAnimationPart(200);
 
             mAnimationPart = new ArrayList<>();
-            mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftUpperLegFX, "rotate", -40));
+            mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mLeftUpperLegFX, "rotate", -40));
             playAnimationPart(100);
         }
 

@@ -27,7 +27,7 @@ public class ComeBackFromSmall extends AnimationStickman3D
 
     public ComeBackFromSmall(Stickman3D sm, int duration, boolean block) {
         super(sm, duration, block);
-        mStickmanFX = sm;
+        agent = sm;
     }
 
     @Override
@@ -35,16 +35,16 @@ public class ComeBackFromSmall extends AnimationStickman3D
 
         int rotationUnit = 5;
 
-        float recordOriginScale = mStickmanFX.mScale;
+        float recordOriginScale = ((Stickman3D)agent).mScale;
 
         for (int j = 0; j < 19; j++) {
-            mStickmanFX.mScale = mStickmanFX.mScale * 0.95f;
+            ((Stickman3D)agent).mScale = ((Stickman3D)agent).mScale * 0.95f;
         }
 
         // bring upper arm and fore arm in position
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftUpperArm, "rotate", -rotationUnit ));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftForeArm, "rotate", -rotationUnit * 30));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftUpperArm, "rotate", -rotationUnit ));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftForeArm, "rotate", -rotationUnit * 30));
         playAnimationPart(20);
 
         pauseAnimation(20);
@@ -53,36 +53,36 @@ public class ComeBackFromSmall extends AnimationStickman3D
             // wave right
             for (int j = 0; j < 9; j++) {
                 mAnimationPart = new ArrayList<>();
-                mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftForeArm, "zrotate", -rotationUnit));
+                mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftForeArm, "zrotate", -rotationUnit));
 
-                mStickmanFX.mScale = mStickmanFX.mScale * 1.05f;
-                if (mStickmanFX.mScale >= recordOriginScale) {
-                    mStickmanFX.mScale = recordOriginScale;
+                ((Stickman3D)agent).mScale = ((Stickman3D)agent).mScale * 1.05f;
+                if (((Stickman3D)agent).mScale >= recordOriginScale) {
+                    ((Stickman3D)agent).mScale = recordOriginScale;
                 }
                 playAnimationPart(20);
-                Platform.runLater(() -> mStickmanFX.update());
-                mStickmanFX.showAllParts();
+                Platform.runLater(() -> ((Stickman3D)agent).update());
+                ((Stickman3D)agent).showAllParts();
             }
 
             // wave left
             for (int j = 0; j < 9; j++) {
                 mAnimationPart = new ArrayList<>();
-                mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftForeArm, "zrotate", rotationUnit));
+                mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftForeArm, "zrotate", rotationUnit));
 
-                mStickmanFX.mScale = mStickmanFX.mScale * 1.05f;
-                if (mStickmanFX.mScale >= recordOriginScale) {
-                    mStickmanFX.mScale = recordOriginScale;
+                ((Stickman3D)agent).mScale = ((Stickman3D)agent).mScale * 1.05f;
+                if (((Stickman3D)agent).mScale >= recordOriginScale) {
+                    ((Stickman3D)agent).mScale = recordOriginScale;
                 }
                 playAnimationPart(20);
-                Platform.runLater(() -> mStickmanFX.update());
-                mStickmanFX.showAllParts();
+                Platform.runLater(() -> ((Stickman3D)agent).update());
+                ((Stickman3D)agent).showAllParts();
             }
         }
 
         // go back in the default position
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftUpperArm, "rotate", rotationUnit));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftForeArm, "rotate", rotationUnit * 30));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftUpperArm, "rotate", rotationUnit));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftForeArm, "rotate", rotationUnit * 30));
         playAnimationPart(20);
 
         if (StickmanStageController.currentRadioButton != null) {

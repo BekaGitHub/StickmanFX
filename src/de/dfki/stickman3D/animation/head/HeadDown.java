@@ -31,29 +31,29 @@ public class HeadDown extends AnimationStickman3D
 	@Override
 	public void playAnimation() {
 		mAnimationPart = new ArrayList<>();
-		mAnimationPart.add(new AnimationContent(mStickmanFX.mHead, "rotate", 15));
-		mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftUpperLeg, "rotate", 30));
-		mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftFoot, "yrotate", 20));
-		mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftEye, "shape", "LOOKDOWN"));
-		mAnimationPart.add(new AnimationContent(mStickmanFX.mRightEye, "shape", "LOOKDOWN"));
-		mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftForeLeg, "rotate", 20));
+		mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mHead, "rotate", 15));
+		mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftUpperLeg, "rotate", 30));
+		mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftFoot, "yrotate", 20));
+		mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftEye, "shape", "LOOKDOWN"));
+		mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mRightEye, "shape", "LOOKDOWN"));
+		mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftForeLeg, "rotate", 20));
 		playAnimationPart(mDuration);
 
 		mAnimationPart = new ArrayList<>();
-		mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftUpperLeg, "rotate", -35));
-		mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftForeLeg, "rotate", -25));
+		mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftUpperLeg, "rotate", -35));
+		mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftForeLeg, "rotate", -25));
 		playAnimationPart(mDuration);
 
 		pauseAnimation(500);
 
 		// blink up
 		mAnimationPart = new ArrayList<>();
-		mAnimationPart.add(new AnimationContent(mStickmanFX.mHead, "rotate", -15));
-		mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftUpperLeg, "rotate", 5));
-		mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftFoot, "yrotate", -20));
-		mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftEye, "shape", "LOOKDOWNEND"));
-		mAnimationPart.add(new AnimationContent(mStickmanFX.mRightEye, "shape", "LOOKDOWNEND"));
-		mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftForeLeg, "rotate", 5));
+		mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mHead, "rotate", -15));
+		mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftUpperLeg, "rotate", 5));
+		mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftFoot, "yrotate", -20));
+		mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftEye, "shape", "LOOKDOWNEND"));
+		mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mRightEye, "shape", "LOOKDOWNEND"));
+		mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftForeLeg, "rotate", 5));
 		playAnimationPart(mDuration);
 
 		if (StickmanStageController.currentRadioButton != null)

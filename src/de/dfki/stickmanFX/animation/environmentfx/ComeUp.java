@@ -20,11 +20,9 @@ import javafx.application.Platform;
 public class ComeUp extends AnimationStickman2D
 {
 
-    private StickmanFX mStickmanFX;
 
     public ComeUp(StickmanFX sm, int duration, boolean block) {
         super(sm, duration, block);
-        mStickmanFX = sm;
     }
 
     // WaveLeft
@@ -33,21 +31,21 @@ public class ComeUp extends AnimationStickman2D
         int rotationUnit = 5;
         int speed = 7;
 
-        mStickmanFX.voffset = 480;
+        ((StickmanFX)agent).voffset = 480;
 
         // bring upper arm and fore arm in position
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftUpperArmFX, "rotate", rotationUnit * 2));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftForeArmFX, "rotate", rotationUnit * 32));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftHandFX, "rotate", rotationUnit * 32));
+        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mLeftUpperArmFX, "rotate", rotationUnit * 2));
+        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mLeftForeArmFX, "rotate", rotationUnit * 32));
+        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mLeftHandFX, "rotate", rotationUnit * 32));
         playAnimationPart(100);
 
         for (int i = 0; i < 6; i++) {
             // wave right
             for (int j = 0; j < 8; j++) {
                 mAnimationPart = new ArrayList<>();
-                mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftForeArmFX, "rotate", -rotationUnit));
-                mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftHandFX, "rotate", -rotationUnit));
+                mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mLeftForeArmFX, "rotate", -rotationUnit));
+                mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mLeftHandFX, "rotate", -rotationUnit));
 
                 playComeSpeed(speed);
                 playAnimationPart(20);
@@ -56,8 +54,8 @@ public class ComeUp extends AnimationStickman2D
             // wave left
             for (int j = 0; j < 8; j++) {
                 mAnimationPart = new ArrayList<>();
-                mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftForeArmFX, "rotate", rotationUnit));
-                mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftHandFX, "rotate", rotationUnit));
+                mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mLeftForeArmFX, "rotate", rotationUnit));
+                mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mLeftHandFX, "rotate", rotationUnit));
 
                 playComeSpeed(speed);
                 playAnimationPart(20);
@@ -66,18 +64,18 @@ public class ComeUp extends AnimationStickman2D
 
         // go back in the default position
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftUpperArmFX, "rotate", -rotationUnit * 2));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftForeArmFX, "rotate", -rotationUnit * 32));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftHandFX, "rotate", -rotationUnit * 32));
+        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mLeftUpperArmFX, "rotate", -rotationUnit * 2));
+        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mLeftForeArmFX, "rotate", -rotationUnit * 32));
+        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mLeftHandFX, "rotate", -rotationUnit * 32));
         playAnimationPart(200);
     }
 
     private void playComeSpeed(int Speed) {
-        if (mStickmanFX.voffset > 0) {
-            mStickmanFX.voffset = mStickmanFX.voffset - Speed;
+        if (((StickmanFX)agent).voffset > 0) {
+            ((StickmanFX)agent).voffset = ((StickmanFX)agent).voffset - Speed;
         } else {
-            mStickmanFX.voffset = 0;
+            ((StickmanFX)agent).voffset = 0;
         }
-        Platform.runLater(() -> mStickmanFX.update());
+        Platform.runLater(() -> ((StickmanFX)agent).update());
     }
 }

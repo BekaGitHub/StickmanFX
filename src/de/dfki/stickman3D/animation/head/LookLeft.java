@@ -27,15 +27,15 @@ public class LookLeft extends AnimationStickman3D
     public void playAnimation() {
 
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftEye, "shape", "LOOKLEFT"));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mRightEye, "shape", "LOOKLEFT"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftEye, "shape", "LOOKLEFT"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mRightEye, "shape", "LOOKLEFT"));
         playAnimationPart(100);
 
         pauseAnimation(100);
 
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftEye, "shape", "LOOKLEFTEND"));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mRightEye, "shape", "LOOKLEFTEND"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftEye, "shape", "LOOKLEFTEND"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mRightEye, "shape", "LOOKLEFTEND"));
         playAnimationPart(100);
 
         if (StickmanStageController.currentRadioButton != null)

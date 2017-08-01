@@ -26,17 +26,15 @@ public class LookDown extends AnimationReeti {
     public void playAnimation() {
 
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(mReeti.mLeftEye, "rotate", 20));
-        mAnimationPart.add(new AnimationContent(mReeti.mRightEye, "rotate", 20));
-//        mAnimationPart.add(new AnimationContent(mReeti.mRightEyeFX, "shape", "LOOKDOWN"));
+        mAnimationPart.add(new AnimationContent(((Reeti)agent).mLeftEye, "rotate", 20));
+        mAnimationPart.add(new AnimationContent(((Reeti)agent).mRightEye, "rotate", 20));
         playAnimationPart(100);
 
         pauseAnimation(100);
 
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(mReeti.mLeftEye, "rotate", -20));
-        mAnimationPart.add(new AnimationContent(mReeti.mRightEye, "rotate", -20));
-//        mAnimationPart.add(new AnimationContent(mReeti.mRightEyeFX, "shape", "LOOKDOWNEND"));
+        mAnimationPart.add(new AnimationContent(((Reeti)agent).mLeftEye, "rotate", -20));
+        mAnimationPart.add(new AnimationContent(((Reeti)agent).mRightEye, "rotate", -20));
         playAnimationPart(100);
 
         if (ReetiStageController.currentRadioButton != null) {

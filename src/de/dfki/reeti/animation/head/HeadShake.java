@@ -25,7 +25,7 @@ public class HeadShake extends AnimationReeti {
 
     public HeadShake(Reeti sm, int duration, boolean block) {
         super(sm, duration, block);
-        this.mReeti = sm;
+        this.agent = sm;
     }
 
     @Override
@@ -35,19 +35,19 @@ public class HeadShake extends AnimationReeti {
         for (int i = 0; i < 6; i++) {
             if (i == 0) {
                 mAnimationPart = new ArrayList<>();
-                mAnimationPart.add(new AnimationContent(mReeti.mHead, "zrotate", -10));
+                mAnimationPart.add(new AnimationContent(((Reeti)agent).mHead, "zrotate", -10));
                 playAnimationPart(200);
             } else if (i == 5) {
                 mAnimationPart = new ArrayList<>();
-                mAnimationPart.add(new AnimationContent(mReeti.mHead, "zrotate", 10));
+                mAnimationPart.add(new AnimationContent(((Reeti)agent).mHead, "zrotate", 10));
                 playAnimationPart(200);
             } else if (i % 2 == 1) {
                 mAnimationPart = new ArrayList<>();
-                mAnimationPart.add(new AnimationContent(mReeti.mHead, "zrotate", 20));
+                mAnimationPart.add(new AnimationContent(((Reeti)agent).mHead, "zrotate", 20));
                 playAnimationPart(400);
             } else {
                 mAnimationPart = new ArrayList<>();
-                mAnimationPart.add(new AnimationContent(mReeti.mHead, "zrotate", -20));
+                mAnimationPart.add(new AnimationContent(((Reeti)agent).mHead, "zrotate", -20));
                 playAnimationPart(400);
             }
         }

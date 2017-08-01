@@ -30,19 +30,19 @@ public class HeadTilt extends AnimationStickman2D
         // head down
         mAnimationPart = new ArrayList<>();
         // which bodyparts are involved - check dependencies
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mRightEyeFX, "tilt", translationUnit));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mRightEyebrowFX, "tilt", translationUnit));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftEyeFX, "tilt", translationUnit));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftEyebrowFX, "tilt", translationUnit));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mHeadFX, "tilt", translationUnit));
+        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mRightEyeFX, "tilt", translationUnit));
+        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mRightEyebrowFX, "tilt", translationUnit));
+        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mLeftEyeFX, "tilt", translationUnit));
+        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mLeftEyebrowFX, "tilt", translationUnit));
+        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mHeadFX, "tilt", translationUnit));
 
-        if (mStickmanFX.mType == Gender.TYPE.MALE) {
-            mAnimationPart.add(new AnimationContent(mStickmanFX.mMaleHairFX, "tilt", translationUnit));
+        if (agent.mType == Gender.TYPE.MALE) {
+            mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mMaleHairFX, "tilt", translationUnit));
         } else {
-            mAnimationPart.add(new AnimationContent(mStickmanFX.mFemaleHairFX, "tilt", translationUnit));
+            mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mFemaleHairFX, "tilt", translationUnit));
         }
 
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mMouthFX, "tilt", translationUnit));
+        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mMouthFX, "tilt", translationUnit));
 
         playAnimationPart(150);
 
@@ -50,19 +50,19 @@ public class HeadTilt extends AnimationStickman2D
 
         mAnimationPart = new ArrayList<>();
         // which bodyparts are involved - check dependencies
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mRightEyeFX, "tilt", -translationUnit));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mRightEyebrowFX, "tilt", -translationUnit));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftEyeFX, "tilt", -translationUnit));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftEyebrowFX, "tilt", -translationUnit));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mHeadFX, "tilt", -translationUnit));
+        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mRightEyeFX, "tilt", -translationUnit));
+        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mRightEyebrowFX, "tilt", -translationUnit));
+        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mLeftEyeFX, "tilt", -translationUnit));
+        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mLeftEyebrowFX, "tilt", -translationUnit));
+        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mHeadFX, "tilt", -translationUnit));
 
-        if (mStickmanFX.mType == Gender.TYPE.MALE) {
-            mAnimationPart.add(new AnimationContent(mStickmanFX.mMaleHairFX, "tilt", -translationUnit));
+        if (agent.mType == Gender.TYPE.MALE) {
+            mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mMaleHairFX, "tilt", -translationUnit));
         } else {
-            mAnimationPart.add(new AnimationContent(mStickmanFX.mFemaleHairFX, "tilt", -translationUnit));
+            mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mFemaleHairFX, "tilt", -translationUnit));
         }
 
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mMouthFX, "tilt", -translationUnit));
+        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mMouthFX, "tilt", -translationUnit));
         playAnimationPart(150);
     }
 }

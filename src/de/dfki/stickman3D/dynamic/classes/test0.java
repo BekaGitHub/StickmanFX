@@ -16,24 +16,24 @@ super(sm, duration, block);
 @Override 
 public void playAnimation() { 
 mAnimationPart = new ArrayList<>();
-mAnimationPart.add(new AnimationContent(mStickmanFX.mHead,"rotate",0));
-mAnimationPart.add(new AnimationContent(mStickmanFX.mHead,"yrotate",57));
-mAnimationPart.add(new AnimationContent(mStickmanFX.mHead,"zrotate",0));
+mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mHead,"rotate",0));
+mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mHead,"yrotate",57));
+mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mHead,"zrotate",0));
 playAnimationPart(mDuration);
 mAnimationPart = new ArrayList<>();
-mAnimationPart.add(new AnimationContent(mStickmanFX.mHead,"rotate",0));
-mAnimationPart.add(new AnimationContent(mStickmanFX.mHead,"yrotate",-104));
-mAnimationPart.add(new AnimationContent(mStickmanFX.mHead,"zrotate",0));
+mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mHead,"rotate",0));
+mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mHead,"yrotate",-104));
+mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mHead,"zrotate",0));
 playAnimationPart(mDuration);
 mAnimationPart = new ArrayList<>();
-mAnimationPart.add(new AnimationContent(mStickmanFX.mHead,"rotate",0));
-mAnimationPart.add(new AnimationContent(mStickmanFX.mHead,"yrotate",112));
-mAnimationPart.add(new AnimationContent(mStickmanFX.mHead,"zrotate",0));
+mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mHead,"rotate",0));
+mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mHead,"yrotate",112));
+mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mHead,"zrotate",0));
 playAnimationPart(mDuration);
 mAnimationPart = new ArrayList<>();
-mAnimationPart.add(new AnimationContent(mStickmanFX.mHead,"rotate",0));
-mAnimationPart.add(new AnimationContent(mStickmanFX.mHead,"yrotate",-119));
-mAnimationPart.add(new AnimationContent(mStickmanFX.mHead,"zrotate",0));
+mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mHead,"rotate",0));
+mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mHead,"yrotate",-119));
+mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mHead,"zrotate",0));
 playAnimationPart(mDuration);
 } 
 } 

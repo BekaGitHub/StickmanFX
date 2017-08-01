@@ -30,7 +30,7 @@ public class Mouth_Default extends AnimationStickman2D
     public void playAnimation() {
         // smile
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mMouthFX, "shape", "DEFAULT"));
+        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mMouthFX, "shape", "DEFAULT"));
         playAnimationPart(20);
     }
 }

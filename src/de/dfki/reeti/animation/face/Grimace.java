@@ -27,17 +27,17 @@ public class Grimace extends AnimationReeti {
 
     @Override
     public void playAnimation() {
-        mReeti.neckPan(25);
-        mReeti.neckTilt(20);
-        mReeti.leftEyePan(60);
-        mReeti.leftEyeTilt(60);
-        mReeti.rightEyePan(15);
-        mReeti.rightEyeTilt(40);
-        mReeti.rightEar(0);
-        mReeti.leftLC(75);
-        mReeti.rightLC(60);
-        mReeti.bottomLip(10);
-        mReeti.topLip(3);
+        ((Reeti)agent).neckPan(25);
+        ((Reeti)agent).neckTilt(20);
+        ((Reeti)agent).leftEyePan(60);
+        ((Reeti)agent).leftEyeTilt(60);
+        ((Reeti)agent).rightEyePan(15);
+        ((Reeti)agent).rightEyeTilt(40);
+        ((Reeti)agent).rightEar(0);
+        ((Reeti)agent).leftLC(75);
+        ((Reeti)agent).rightLC(60);
+        ((Reeti)agent).bottomLip(10);
+        ((Reeti)agent).topLip(3);
 
 
         if (ReetiStageController.currentRadioButton != null) {

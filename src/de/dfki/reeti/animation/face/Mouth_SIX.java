@@ -26,7 +26,7 @@ public class Mouth_SIX extends AnimationReeti {
     public void playAnimation() {
         // smile
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(mReeti.mMouth, "shape", "SIX"));
+        mAnimationPart.add(new AnimationContent(((Reeti)agent).mMouth, "shape", "SIX"));
         playAnimationPart(20);
     }
 }

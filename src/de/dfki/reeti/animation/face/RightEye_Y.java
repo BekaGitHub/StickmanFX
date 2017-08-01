@@ -31,7 +31,7 @@ public class RightEye_Y extends AnimationReeti {
     public void playAnimation() {
         
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(mReeti.mRightEye, "yrotate", rot));
+        mAnimationPart.add(new AnimationContent(((Reeti)agent).mRightEye, "yrotate", rot));
         playAnimationPart(mDuration);
         
     }

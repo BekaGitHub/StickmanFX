@@ -31,17 +31,17 @@ public class TurnRightEnd extends AnimationStickman3D
     @Override
     public void playAnimation() {
 
-        if (mStickmanFX.mType == Gender.TYPE.MALE) {
+        if (((Stickman3D)agent).mType == Gender.TYPE.MALE) {
             mAnimationPart = new ArrayList<>();
-            mAnimationPart.add(new AnimationContent(mStickmanFX.mRightWrist, "yrotate", -40));
-            mAnimationPart.add(new AnimationContent(mStickmanFX.mUpperBody, "yrotate", -60));
-            mAnimationPart.add(new AnimationContent(mStickmanFX.mHead, "yrotate", -40));
+            mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mRightWrist, "yrotate", -40));
+            mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mUpperBody, "yrotate", -60));
+            mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mHead, "yrotate", -40));
             playAnimationPart(500);
         } else {
             mAnimationPart = new ArrayList<>();
-            mAnimationPart.add(new AnimationContent(mStickmanFX.mRightWrist, "yrotate", -70));
-            mAnimationPart.add(new AnimationContent(mStickmanFX.mUpperBody, "yrotate", -60));
-            mAnimationPart.add(new AnimationContent(mStickmanFX.mHead, "yrotate", -40));
+            mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mRightWrist, "yrotate", -70));
+            mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mUpperBody, "yrotate", -60));
+            mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mHead, "yrotate", -40));
             playAnimationPart(500);
         }
 

@@ -27,15 +27,15 @@ public class LookDown extends AnimationStickman3D
     public void playAnimation() {
 
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftEye, "shape", "LOOKDOWN"));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mRightEye, "shape", "LOOKDOWN"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftEye, "shape", "LOOKDOWN"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mRightEye, "shape", "LOOKDOWN"));
         playAnimationPart(100);
 
         pauseAnimation(100);
 
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftEye, "shape", "LOOKDOWNEND"));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mRightEye, "shape", "LOOKDOWNEND"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mLeftEye, "shape", "LOOKDOWNEND"));
+        mAnimationPart.add(new AnimationContent(((Stickman3D)agent).mRightEye, "shape", "LOOKDOWNEND"));
         playAnimationPart(100);
 
         if (StickmanStageController.currentRadioButton != null)

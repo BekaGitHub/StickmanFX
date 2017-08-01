@@ -20,45 +20,42 @@ import javafx.application.Platform;
 public class ComeBackFromSmall extends AnimationStickman2D
 {
 
-    private StickmanFX mStickmanFX;
-
     public ComeBackFromSmall(StickmanFX sm, int duration, boolean block) {
         super(sm, duration, block);
-        mStickmanFX = sm;
     }
 
     @Override
     public void playAnimation() {
-        mStickmanFX.mScaleOriginal = mStickmanFX.mScale;
-        float mScaleRecord = mStickmanFX.mScale;
+        ((StickmanFX)agent).mScaleOriginal = agent.mScale;
+        float mScaleRecord = agent.mScale;
         for (int j = 0; j < 19; j++) {
             mScaleRecord = mScaleRecord * 0.95f;
         }
 
 //		mScaleRecord = mStickman.mScale;
-        mStickmanFX.starShowControler = true;
+        ((StickmanFX)agent).starShowControler = true;
 
         // show stars
 //		mStickman.mScale = mStickman.mScaleOriginal;
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mStarsFX, "shape", "STARSDISAPPEAR"));
+        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mStarsFX, "shape", "STARSDISAPPEAR"));
         playAnimationPart(1000);
 
         // disappeared words or stars
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mStarsFX, "shape", "DEFAULT"));
+        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mStarsFX, "shape", "DEFAULT"));
         playAnimationPart(2);
 
-        mStickmanFX.starShowControler = false;
-        mStickmanFX.mScale = mScaleRecord;
+        ((StickmanFX)agent).starShowControler = false;
+        agent.mScale = mScaleRecord;
 
         int rotationUnit = 5;
 
         // bring upper arm and fore arm in position
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftUpperArmFX, "rotate", rotationUnit * 2));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftForeArmFX, "rotate", rotationUnit * 32));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftHandFX, "rotate", rotationUnit * 32));
+        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mLeftUpperArmFX, "rotate", rotationUnit * 2));
+        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mLeftForeArmFX, "rotate", rotationUnit * 32));
+        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mLeftHandFX, "rotate", rotationUnit * 32));
         playAnimationPart(20);
         pauseAnimation(20);
 
@@ -66,44 +63,44 @@ public class ComeBackFromSmall extends AnimationStickman2D
             // wave right
             for (int j = 0; j < 9; j++) {
                 mAnimationPart = new ArrayList<>();
-                mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftForeArmFX, "rotate", -rotationUnit));
-                mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftHandFX, "rotate", -rotationUnit));
+                mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mLeftForeArmFX, "rotate", -rotationUnit));
+                mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mLeftHandFX, "rotate", -rotationUnit));
 
                 mScaleRecord = mScaleRecord * 1.05f;
-                if (mScaleRecord < mStickmanFX.mScaleOriginal) {
-                    mStickmanFX.mScale = mScaleRecord;
+                if (mScaleRecord < ((StickmanFX)agent).mScaleOriginal) {
+                    agent.mScale = mScaleRecord;
                 } else {
-                    mStickmanFX.mScale = mStickmanFX.mScaleOriginal;
+                    agent.mScale = ((StickmanFX)agent).mScaleOriginal;
                 }
                 playAnimationPart(20);
-                Platform.runLater(() -> mStickmanFX.update());
-                mStickmanFX.showAllParts();
+                Platform.runLater(() -> ((StickmanFX)agent).update());
+                ((StickmanFX)agent).showAllParts();
             }
 
             // wave left
             for (int j = 0; j < 9; j++) {
                 mAnimationPart = new ArrayList<>();
-                mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftForeArmFX, "rotate", rotationUnit));
-                mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftHandFX, "rotate", rotationUnit));
+                mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mLeftForeArmFX, "rotate", rotationUnit));
+                mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mLeftHandFX, "rotate", rotationUnit));
 
                 mScaleRecord = mScaleRecord * 1.05f;
-                if (mScaleRecord < mStickmanFX.mScaleOriginal) {
-                    mStickmanFX.mScale = mScaleRecord;
+                if (mScaleRecord < ((StickmanFX)agent).mScaleOriginal) {
+                    agent.mScale = mScaleRecord;
                 } else {
-                    mStickmanFX.mScale = mStickmanFX.mScaleOriginal;
+                    agent.mScale = ((StickmanFX)agent).mScaleOriginal;
                 }
 
                 playAnimationPart(20);
-                Platform.runLater(() -> mStickmanFX.update());
-                mStickmanFX.showAllParts();
+                Platform.runLater(() -> ((StickmanFX)agent).update());
+                ((StickmanFX)agent).showAllParts();
             }
         }
 
         // go back in the default position
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftUpperArmFX, "rotate", -rotationUnit * 2));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftForeArmFX, "rotate", -rotationUnit * 32));
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mLeftHandFX, "rotate", -rotationUnit * 32));
+        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mLeftUpperArmFX, "rotate", -rotationUnit * 2));
+        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mLeftForeArmFX, "rotate", -rotationUnit * 32));
+        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mLeftHandFX, "rotate", -rotationUnit * 32));
         playAnimationPart(20);
     }
 }

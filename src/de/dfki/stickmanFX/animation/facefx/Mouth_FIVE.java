@@ -29,7 +29,7 @@ public class Mouth_FIVE extends AnimationStickman2D
     public void playAnimation() {
         // smile
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(mStickmanFX.mMouthFX, "shape", "FIVE"));
+        mAnimationPart.add(new AnimationContent(((StickmanFX)agent).mMouthFX, "shape", "FIVE"));
         playAnimationPart(20);
     }
 }
