@@ -14,23 +14,23 @@ public class StageRoomFullScreenDecorator extends StageRoomDecorator
     }
 
     @Override
-    public void addStickman(String name)
+    public void addAgent(String name)
     {
         setFullScreen(true);
-        super.addStickman(name);
+        super.addAgent(name);
     }
 
     @Override
-    public void launchStickmanStage(boolean show)
+    public void launchAgentStage(boolean show)
     {
-        controllerFX.getStickmanStage().setStageFullScreen(controllerFX.getStageIdentifier());
-        super.launchStickmanStage(show);
+        stageRoom.getAgentStage().setStageFullScreen(stageRoom.getStageIdentifier());
+        super.launchAgentStage(show);
     }
 
     @Override
     public void launchStage(boolean show, String filepath)
     {
-        controllerFX.getStickmanStage().setStageFullScreen(controllerFX.getStageIdentifier());
+        stageRoom.getAgentStage().setStageFullScreen(stageRoom.getStageIdentifier());
         super.launchStage(show, filepath);
     }
 

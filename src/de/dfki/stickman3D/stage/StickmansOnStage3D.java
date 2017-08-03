@@ -1,10 +1,10 @@
 package de.dfki.stickman3D.stage;
 
-import de.dfki.common.StickmansOnStage;
+import de.dfki.common.AgentsOnStage;
 import de.dfki.common.agent.IAgent;
 import de.dfki.common.enums.Gender;
 import de.dfki.common.interfaces.StageRoom;
-import de.dfki.common.interfaces.StickmanStage;
+import de.dfki.common.interfaces.AgentStage;
 import de.dfki.stickman3D.Stickman3D;
 import de.dfki.stickman3D.xmlsettings.XmlTransform3D;
 import javafx.scene.layout.HBox;
@@ -15,35 +15,35 @@ import java.util.logging.Logger;
 /**
  * Created by alvaro on 9/19/16.
  */
-public class StickmansOnStage3D extends StickmansOnStage
+public class StickmansOnStage3D extends AgentsOnStage
 {
 
     private String identifier;
     private XmlTransform3D mXmlTransform = new XmlTransform3D();
 
-    public StickmansOnStage3D(StickmanStage stickmanStage)
+    public StickmansOnStage3D(AgentStage stickmanStage)
     {
         super(stickmanStage);
     }
 
-    public StickmansOnStage3D(StickmanStage stickmanStageFX, StageRoom controllerFX)
+    public StickmansOnStage3D(AgentStage stickmanStageFX, StageRoom controllerFX)
     {
         super(stickmanStageFX, controllerFX);
     }
 
-    public StickmansOnStage3D(StickmanStage stickmanStageFX, StageRoom controllerFX, String identifier)
+    public StickmansOnStage3D(AgentStage stickmanStageFX, StageRoom controllerFX, String identifier)
     {
         super(stickmanStageFX, controllerFX);
         this.identifier = identifier;
     }
 
     @Override
-    protected void addStickmanToStage(String name, boolean fullScreen, Gender.TYPE gender)
+    protected void addAgentToStage(String name, boolean fullScreen, Gender.TYPE gender)
     {
         if (fullScreen)
         {
-            IAgent stickman = new Stickman3D(name, gender, stickmanStage.getFullScreenScale(), stickmanStage.getFullScreenDimension());
-            putFullStickmanOnStage(name, stickman);
+            IAgent stickman = new Stickman3D(name, gender, agentStage.getFullScreenScale(), agentStage.getFullScreenDimension());
+            putFullAgentOnStage(name, stickman);
         } else
         {
 
@@ -52,12 +52,12 @@ public class StickmansOnStage3D extends StickmansOnStage
     }
 
     @Override
-    protected void addStickmanToStage(String name, boolean fullScreen, Gender.TYPE gender, boolean onlyFace)
+    protected void addAgentToStage(String name, boolean fullScreen, Gender.TYPE gender, boolean onlyFace)
     {
         if (fullScreen)
         {
-            IAgent stickman = new Stickman3D(name, gender, stickmanStage.getFullScreenScale(), stickmanStage.getFullScreenDimension());
-            putFullStickmanOnStage(name, stickman);
+            IAgent stickman = new Stickman3D(name, gender, agentStage.getFullScreenScale(), agentStage.getFullScreenDimension());
+            putFullAgentOnStage(name, stickman);
         } else
         {
             float scale = DEFAULT_SCALE;
@@ -76,10 +76,10 @@ public class StickmansOnStage3D extends StickmansOnStage
         {
             try
             {
-                HBox h = stickmanStage.getStickmanBox(identifier);
+                HBox h = agentStage.getAgentBox(identifier);
 
                 IAgent stickman = new Stickman3D(name, gender, scale, h.getPrefHeight());
-                putFullStickmanOnStage(name, stickman);
+                putFullAgentOnStage(name, stickman);
             } catch (Exception ex)
             {
                 Logger.getLogger(StickmansOnStage3D.class.getName()).log(Level.SEVERE, null, ex);
@@ -87,7 +87,7 @@ public class StickmansOnStage3D extends StickmansOnStage
         }
     }
 
-    public XmlTransform3D getmXmlTransform()
+    public XmlTransform3D getXmlTransform()
     {
         return this.mXmlTransform;
     }

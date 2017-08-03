@@ -30,7 +30,7 @@ public class ZoomBack extends AnimationStickman2D
             {
                 try
                 {
-                    agent.getStageRoom().getStickmanStage().addStickmanToStage(mStageIdentifier);
+                    agent.getStageRoom().getAgentStage().addAgentToStage(mStageIdentifier);
                 } catch (Exception e)
                 {
                     // TODO Auto-generated catch block

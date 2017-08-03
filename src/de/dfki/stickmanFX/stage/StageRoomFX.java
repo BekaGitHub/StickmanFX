@@ -34,25 +34,25 @@ public class StageRoomFX extends StageRoomImpl
     @Override
     protected void getStageInstance()
     {
-        applicationFXLauncher = new ApplicationLauncherFX();
+        applicationLauncher = new ApplicationLauncherFX();
         if (ApplicationLauncherImpl.isRunning())
         {
-            stickmanStageFX = StickmanStageFX.getInstance();
+            agentStage = StickmanStageFX.getInstance();
 
         } else
         {
-            applicationFXLauncher.launchStickmanAndWait();
+            applicationLauncher.launchAgentAndWait();
         }
     }
 
     @Override
     protected void createNewStage(int x, int y, boolean decoration)
     {
-        stickmanStageFX = StickmanStageFX.getInstance();
+        agentStage = StickmanStageFX.getInstance();
 
         try
         {
-            stageIdentifier = getStickmanStage().createNewStage(x, y, decoration);
+            stageIdentifier = getAgentStage().createNewStage(x, y, decoration);
             init(stageIdentifier);
         } catch (IOException e)
         {
@@ -63,9 +63,9 @@ public class StageRoomFX extends StageRoomImpl
     @Override
     public void init(String stageIdentifier)
     {
-        commonStickmansOnStage = new StickmansOnStageFX(getStickmanStage(), this);
-        getStickmanStage().setStickamnsOnStage(getCommonStickmansOnStage(), stageIdentifier);
-        getStickmanStage().setStickamnsOnStage(getCommonStickmansOnStage(), CONFIG_STAGE);
+        agentsOnStage = new StickmansOnStageFX(getAgentStage(), this);
+        getAgentStage().setAgentsOnStage(getAgentsOnStage(), stageIdentifier);
+        getAgentStage().setAgentsOnStage(getAgentsOnStage(), CONFIG_STAGE);
     }
 
     @Override
@@ -85,8 +85,8 @@ public class StageRoomFX extends StageRoomImpl
     {
         try
         {
-            getStickmanStage().addStickmanToStage(CONFIG_STAGE);
-            getStickmanStage().showStage(CONFIG_STAGE);
+            getAgentStage().addAgentToStage(CONFIG_STAGE);
+            getAgentStage().showStage(CONFIG_STAGE);
         } catch (Exception e)
         {
             e.printStackTrace();
@@ -96,8 +96,8 @@ public class StageRoomFX extends StageRoomImpl
     @Override
     public void launchConfiguration(String filepath)
     {
-        commonStickmansOnStage.setmFilePath(filepath);
-        XmlStickmanLoader loader = new XmlStickmanLoader(commonStickmansOnStage);
+        agentsOnStage.setFilePath(filepath);
+        XmlStickmanLoader loader = new XmlStickmanLoader(agentsOnStage);
         loader.initialStickmanWithXml();
         launchConfiguration();
 //        loader.initialStickmanWithXml();
@@ -106,10 +106,10 @@ public class StageRoomFX extends StageRoomImpl
     @Override
     public void launchStage(boolean show, String filepath)
     {
-        commonStickmansOnStage.setmFilePath(filepath);
-        XmlStickmanLoader loader = new XmlStickmanLoader(commonStickmansOnStage);
+        agentsOnStage.setFilePath(filepath);
+        XmlStickmanLoader loader = new XmlStickmanLoader(agentsOnStage);
         loader.initialStickmanWithXml();
-        launchStickmanStage(show);
+        launchAgentStage(show);
 //        loader.initialStickmanWithXml();
     }
 }

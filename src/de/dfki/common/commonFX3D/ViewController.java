@@ -1,6 +1,6 @@
 package de.dfki.common.commonFX3D;
 
-import de.dfki.common.StickmansOnStage;
+import de.dfki.common.AgentsOnStage;
 
 /**
  * Created by alvaro on 11/11/16.
@@ -8,7 +8,7 @@ import de.dfki.common.StickmansOnStage;
 public interface ViewController
 {
 
-    void setStickamnOnStage(StickmansOnStage commonStickmansOnStage);
+    void setAgentOnStage(AgentsOnStage agentsOnStage);
 
-    void fillComboForStickman();
+    void fillComboForAgent();
 }

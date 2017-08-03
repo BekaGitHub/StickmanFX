@@ -1,7 +1,7 @@
 package de.dfki.stickmanFX;
 
 import de.dfki.common.commonFX3D.ApplicationLauncherImpl;
-import de.dfki.common.interfaces.StickmanStage;
+import de.dfki.common.interfaces.AgentStage;
 import de.dfki.stickmanFX.stage.StickmanStageFX;
 
 /**
@@ -11,10 +11,10 @@ public class ApplicationLauncherFX extends ApplicationLauncherImpl
 {
 
     @Override
-    public void launchStickmanAndWait()
+    public void launchAgentAndWait()
     {
-        StickmanStage fx = new StickmanStageFX();
-        getLaunchStickmanThread(fx).start();
+        AgentStage fx = new StickmanStageFX();
+        getLaunchAgentThread(fx).start();
         waitForApplicationToStart();
     }
 }

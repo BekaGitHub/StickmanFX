@@ -2,12 +2,9 @@ package de.dfki.stickman3D;
 
 import de.dfki.action.sequence.WordTimeMarkSequence;
 import de.dfki.common.agent.Agent3D;
-import de.dfki.common.animationlogic.Animation;
 import de.dfki.common.animationlogic.AnimationScheduler;
 import de.dfki.common.enums.Gender;
 import de.dfki.common.enums.Orientation;
-import de.dfki.common.interfaces.IAnimation;
-import de.dfki.common.interfaces.StageRoom;
 import de.dfki.common.part.Part3D;
 import de.dfki.stickman3D.animation.environment.Blinking;
 import de.dfki.stickman3D.animation.environment.Breathing;

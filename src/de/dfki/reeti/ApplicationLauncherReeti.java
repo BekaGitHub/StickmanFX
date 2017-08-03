@@ -1,7 +1,7 @@
 package de.dfki.reeti;
 
 import de.dfki.common.commonFX3D.ApplicationLauncherImpl;
-import de.dfki.common.interfaces.StickmanStage;
+import de.dfki.common.interfaces.AgentStage;
 import de.dfki.reeti.stage.ReetiStage;
 
 /**
@@ -11,10 +11,10 @@ public class ApplicationLauncherReeti extends ApplicationLauncherImpl
 {
 
     @Override
-    public void launchStickmanAndWait()
+    public void launchAgentAndWait()
     {
-        StickmanStage fx = new ReetiStage();
-        getLaunchStickmanThread(fx).start();
+        AgentStage fx = new ReetiStage();
+        getLaunchAgentThread(fx).start();
         waitForApplicationToStart();
     }
 }

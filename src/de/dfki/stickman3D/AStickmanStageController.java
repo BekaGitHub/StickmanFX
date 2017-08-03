@@ -5,7 +5,7 @@
  */
 package de.dfki.stickman3D;
 
-import de.dfki.common.StickmansOnStage;
+import de.dfki.common.AgentsOnStage;
 import de.dfki.stickman3D.stage.StickmanStage3D;
 import de.dfki.stickman3D.xmlsettings.StickmanData3D;
 import javafx.fxml.FXML;
@@ -483,7 +483,7 @@ public abstract class AStickmanStageController
     public boolean isCameraStarted = false;
     public String mStickmancombobox = null;
     public ToggleGroup perlinNoiseGroup;
-    public StickmansOnStage mStickmanOnstage;
+    public AgentsOnStage mStickmanOnstage;
     public Stickman3D currentStickman;
     public StickmanStage3D stage3D;
     public String backgroundRecord = null;

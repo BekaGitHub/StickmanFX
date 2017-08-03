@@ -1,6 +1,6 @@
 package de.dfki.stickmanFX.stage;
 
-import de.dfki.common.StickmansOnStage;
+import de.dfki.common.AgentsOnStage;
 import de.dfki.common.commonFX3D.ApplicationLauncherImpl;
 import de.dfki.stickmanFX.StickmanStageController;
 import javafx.fxml.FXMLLoader;
@@ -80,9 +80,9 @@ public class StagePaneHandlerFX
         return mStickmanStageController;
     }
 
-    public void setStickmansOnStage(StickmansOnStage stickmans)
+    public void setStickmansOnStage(AgentsOnStage stickmans)
     {
-        mStickmanStageController.setStickamnOnStage(stickmans);
+        mStickmanStageController.setAgentOnStage(stickmans);
     }
 
 }

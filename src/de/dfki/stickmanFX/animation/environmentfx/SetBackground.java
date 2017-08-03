@@ -44,8 +44,8 @@ public class SetBackground extends AnimationStickman2D
         HBox mStickmanPane;
         try
         {
-            mStickmanPane = agent.getStageRoom().getStickmanStage()
-                    .getStickmanBox(mStageIdentifier);
+            mStickmanPane = agent.getStageRoom().getAgentStage()
+                    .getAgentBox(mStageIdentifier);
 
             //Upload the picture
 //            if (list.contains(sParameter)) {

@@ -1,8 +1,8 @@
 package de.dfki.stickman3D.stage;
 
-import de.dfki.common.StickmansOnStage;
+import de.dfki.common.AgentsOnStage;
 import de.dfki.common.commonFX3D.ApplicationLauncherImpl;
-import de.dfki.common.interfaces.StickmanStage;
+import de.dfki.common.interfaces.AgentStage;
 import de.dfki.stickman3D.Stickman3D;
 import de.dfki.stickman3D.StickmanStageController;
 import de.dfki.stickmanFX.stage.StageRoomFX;
@@ -29,7 +29,7 @@ import java.util.logging.Logger;
 /**
  * @author Robbie and Beka
  */
-public class StickmanStage3D extends Application implements StickmanStage
+public class StickmanStage3D extends Application implements AgentStage
 {
 
     //logging
@@ -41,7 +41,7 @@ public class StickmanStage3D extends Application implements StickmanStage
     static private StickmanStage3D sInstance;
     private final int mHeight = 0;
     private final int mWidth = 0;
-    private final HashMap<String, StickmansOnStage> stickamnsOnStage = new HashMap<>();
+    private final HashMap<String, AgentsOnStage> stickamnsOnStage = new HashMap<>();
     private final float sScale;
     private final Map<String, Stage> stickmanStages = new HashMap<>();
     private final StagePaneHandler3D generalConfigStageRoot;
@@ -163,7 +163,7 @@ public class StickmanStage3D extends Application implements StickmanStage
     }
 
     @Override
-    public void lauchStickman()
+    public void lauchAgent()
     {
         launch();
     }
@@ -204,17 +204,17 @@ public class StickmanStage3D extends Application implements StickmanStage
      * @throws Exception
      */
     @Override
-    public void addStickmanToStage(String stageIdentifier) throws Exception
+    public void addAgentToStage(String stageIdentifier) throws Exception
     {
         Platform.runLater(() ->
         {
             final HBox box;
             try
             {
-                box = getStickmanBox(stageIdentifier);
-                for (String key : stickamnsOnStage.get(stageIdentifier).getStickmanNames())
+                box = getAgentBox(stageIdentifier);
+                for (String key : stickamnsOnStage.get(stageIdentifier).getAgentNames())
                 {
-                    Stickman3D sman3D = (Stickman3D) stickamnsOnStage.get(stageIdentifier).getStickmanByKey(key);
+                    Stickman3D sman3D = (Stickman3D) stickamnsOnStage.get(stageIdentifier).getAgentByKey(key);
 
                     if (isShowControlPanel())
                     {
@@ -263,14 +263,14 @@ public class StickmanStage3D extends Application implements StickmanStage
     }
 
     /**
-     * @param stickamnsOnStage
+     * @param agentsOnStage
      * @param identifier
      */
     @Override
-    public void setStickamnsOnStage(StickmansOnStage stickamnsOnStage, String identifier)
+    public void setAgentsOnStage(AgentsOnStage agentsOnStage, String identifier)
     {
-        this.stickamnsOnStage.put(identifier, stickamnsOnStage);
-        generalConfigStageRoot.setStickmansOnStage(stickamnsOnStage);
+        this.stickamnsOnStage.put(identifier, agentsOnStage);
+        generalConfigStageRoot.setStickmansOnStage(agentsOnStage);
     }
 
     /**
@@ -279,7 +279,7 @@ public class StickmanStage3D extends Application implements StickmanStage
      * @throws Exception
      */
     @Override
-    public HBox getStickmanBox(String stageIdentifier) throws Exception
+    public HBox getAgentBox(String stageIdentifier) throws Exception
     {
         HBox box;
         Stage stage = stickmanStages.get(stageIdentifier);
@@ -365,17 +365,17 @@ public class StickmanStage3D extends Application implements StickmanStage
      * @throws Exception
      */
     @Override
-    public void addStickmanToStage(String stageIdentifier, de.dfki.stickmanFX.StickmanFX sman) throws Exception
+    public void addAgentToStage(String stageIdentifier, de.dfki.stickmanFX.StickmanFX sman) throws Exception
     {
         HBox stickmanBox;
-        stickmanBox = getStickmanBox(stageIdentifier);
+        stickmanBox = getAgentBox(stageIdentifier);
         stickmanBox.getChildren().clear();
         stickmanBox.getChildren().add(sman);
     }
 
     private void addStickmanName(String key)
     {
-        generalConfigStageRoot.getmStickmanStageController().fillComboForStickman();
+        generalConfigStageRoot.getmStickmanStageController().fillComboForAgent();
     }
 
     /**

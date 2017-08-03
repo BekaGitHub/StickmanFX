@@ -6,9 +6,9 @@ package de.dfki.common.interfaces;
 public interface ApplicationLauncher
 {
 
-    void launchStickmanAndWait();
+    void launchAgentAndWait();
 
     void waitForApplicationToStart();
 
-    Thread getLaunchStickmanThread(final StickmanStage fx);
+    Thread getLaunchAgentThread(final AgentStage fx);
 }

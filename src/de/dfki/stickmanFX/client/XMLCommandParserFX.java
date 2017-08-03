@@ -1,6 +1,6 @@
 package de.dfki.stickmanFX.client;
 
-import de.dfki.common.StickmansOnStage;
+import de.dfki.common.AgentsOnStage;
 import de.dfki.common.XMLCommandParser;
 import de.dfki.stickmanFX.animationlogic.AnimationLoaderFX;
 import de.dfki.stickmanFX.animationlogic.AnimationStickman2D;
@@ -16,13 +16,13 @@ import java.nio.charset.Charset;
 public class XMLCommandParserFX extends XMLCommandParser
 {
 
-    public XMLCommandParserFX(StickmansOnStage stage)
+    public XMLCommandParserFX(AgentsOnStage stage)
     {
         super(stage);
     }
 
     @Override
-    public void parseStickmanXMLCmd(String cmd)
+    public void parseAgentXMLCmd(String cmd)
     {
         // TODO cut the crap with the two animation types ...
         AnimationStickman2D a = (cmd.contains("StickmanEventAnimation")) ? new EventAnimationFX() : new AnimationStickman2D();
@@ -38,8 +38,8 @@ public class XMLCommandParserFX extends XMLCommandParser
         if (stickmanname != null)
         {
             a = (a instanceof EventAnimationFX)
-                    ? AnimationLoaderFX.getInstance().loadEventAnimation(onStage.getStickman(stickmanname), animationname, duration, blocking)
-                    : AnimationLoaderFX.getInstance().loadAnimation(onStage.getStickman(stickmanname), animationname, duration, blocking);
+                    ? AnimationLoaderFX.getInstance().loadEventAnimation(onStage.getAgent(stickmanname), animationname, duration, blocking)
+                    : AnimationLoaderFX.getInstance().loadAnimation(onStage.getAgent(stickmanname), animationname, duration, blocking);
 
             a.setID(id); // give the animation the same id (TODO - This is bad design and caused that the animation has to be "reloaded"
             a.mParameter = parameter;

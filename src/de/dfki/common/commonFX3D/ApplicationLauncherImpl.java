@@ -1,7 +1,7 @@
 package de.dfki.common.commonFX3D;
 
 import de.dfki.common.interfaces.ApplicationLauncher;
-import de.dfki.common.interfaces.StickmanStage;
+import de.dfki.common.interfaces.AgentStage;
 
 public abstract class ApplicationLauncherImpl implements ApplicationLauncher
 {
@@ -34,13 +34,13 @@ public abstract class ApplicationLauncherImpl implements ApplicationLauncher
     }
 
     @Override
-    public Thread getLaunchStickmanThread(final StickmanStage fx)
+    public Thread getLaunchAgentThread(final AgentStage agentStage)
     {
         return new Thread()
         {
             public void run()
             {
-                fx.lauchStickman();
+                agentStage.lauchAgent();
             }
 
         };

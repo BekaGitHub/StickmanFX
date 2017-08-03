@@ -36,14 +36,14 @@ public class ZoomIO extends AnimationStickman2D
         HBox mStickmanPane;
         try
         {
-            mStickmanPane = agent.getStageRoom().getStickmanStage()
-                    .getStickmanBox(mStageIdentifier);
+            mStickmanPane = agent.getStageRoom().getAgentStage()
+                    .getAgentBox(mStageIdentifier);
             Platform.runLater(() -> mStickmanPane.getChildren().clear());
             Platform.runLater(() ->
             {
                 try
                 {
-                    agent.getStageRoom().getStickmanStage().addStickmanToStage(mStageIdentifier,
+                    agent.getStageRoom().getAgentStage().addAgentToStage(mStageIdentifier,
                             ((StickmanFX) agent));
                     mStickmanPane.setAlignment(Pos.CENTER);
                 } catch (Exception e)

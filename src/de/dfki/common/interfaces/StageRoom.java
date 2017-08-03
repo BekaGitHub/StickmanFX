@@ -1,6 +1,6 @@
 package de.dfki.common.interfaces;
 
-import de.dfki.common.StickmansOnStage;
+import de.dfki.common.AgentsOnStage;
 import de.dfki.common.agent.IAgent;
 
 import java.awt.image.BufferedImage;
@@ -13,7 +13,7 @@ public interface StageRoom
 
     void clearStage();
 
-    void animate(String stickmanname, String name, int duration, String text, boolean block);
+    void animate(String agentName, String name, int duration, String text, boolean block);
 
     boolean ismNetwork();
 
@@ -21,21 +21,21 @@ public interface StageRoom
 
     void sendAnimationUpdate(String state, String id);
 
-    void addStickman(String name);
+    void addAgent(String name);
 
-    IAgent getStickman(String name);
+    IAgent getAgent(String name);
 
-    void launchStickmanStage(boolean show);
+    void launchAgentStage(boolean show);
 
-    StickmanStage getStickmanStage();
+    AgentStage getAgentStage();
 
-    StickmansOnStage getCommonStickmansOnStage();
+    AgentsOnStage getAgentsOnStage();
 
     String getStageIdentifier();
 
     void setFullScreen(boolean fullScreen);
 
-    void addStickman(String name, boolean onlyFace);
+    void addAgent(String name, boolean onlyFace);
 
     BufferedImage getStageAsImage() throws Exception;
 

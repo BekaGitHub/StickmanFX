@@ -18,7 +18,7 @@ public class StageRoomNetworkFXDecorator extends StageRoomNetworkDecorator
 
     protected void initConnectionToServer(StageRoom wrappedController)
     {
-        commonXMLCommandParser = new XMLCommandParserFX(getCommonStickmansOnStage());
+        commonXMLCommandParser = new XMLCommandParserFX(getAgentsOnStage());
         mConnection = new ClientConnectionHandler(commonXMLCommandParser);
         mConnection.tryToConnect(mHost, mPort);
     }

@@ -47,22 +47,22 @@ public class StageRoom3D extends StageRoomImpl
 
     protected void getStageInstance()
     {
-        applicationFXLauncher = new ApplicationLauncher3D();
+        applicationLauncher = new ApplicationLauncher3D();
         if (ApplicationLauncherImpl.isRunning())
         {
-            stickmanStageFX = StickmanStage3D.getInstance();
+            agentStage = StickmanStage3D.getInstance();
         } else
         {
-            applicationFXLauncher.launchStickmanAndWait();
+            applicationLauncher.launchAgentAndWait();
         }
     }
 
     protected void createNewStage(int x, int y, boolean decoration)
     {
-        stickmanStageFX = StickmanStage3D.getInstance();
+        agentStage = StickmanStage3D.getInstance();
         try
         {
-            stageIdentifier = getStickmanStage().createNewStage(x, y, decoration);
+            stageIdentifier = getAgentStage().createNewStage(x, y, decoration);
             OldIdentifier = stageIdentifier;
             init(stageIdentifier);
         } catch (IOException e)
@@ -74,9 +74,9 @@ public class StageRoom3D extends StageRoomImpl
     public void init(String stageIdentifier)
     {
 
-        commonStickmansOnStage = new StickmansOnStage3D(getStickmanStage(), this, stageIdentifier);
-        getStickmanStage().setStickamnsOnStage(getCommonStickmansOnStage(), stageIdentifier);
-        getStickmanStage().setStickamnsOnStage(getCommonStickmansOnStage(), CONFIG_STAGE);
+        agentsOnStage = new StickmansOnStage3D(getAgentStage(), this, stageIdentifier);
+        getAgentStage().setAgentsOnStage(getAgentsOnStage(), stageIdentifier);
+        getAgentStage().setAgentsOnStage(getAgentsOnStage(), CONFIG_STAGE);
     }
 
     public void launchConfiguration()
@@ -84,9 +84,9 @@ public class StageRoom3D extends StageRoomImpl
         StickmanStage3D ss3D;
         try
         {
-            ss3D = (StickmanStage3D) getStickmanStage();
+            ss3D = (StickmanStage3D) getAgentStage();
             ss3D.setShowControlPanel(true);
-            ss3D.addStickmanToStage(CONFIG_STAGE);
+            ss3D.addAgentToStage(CONFIG_STAGE);
             ss3D.showStage(CONFIG_STAGE);
         } catch (Exception e)
         {
@@ -97,8 +97,8 @@ public class StageRoom3D extends StageRoomImpl
     @Override
     public void launchConfiguration(String filepath)
     {
-        commonStickmansOnStage.setmFilePath(filepath);
-        XmlStickmanLoader loader = new XmlStickmanLoader(commonStickmansOnStage);
+        agentsOnStage.setFilePath(filepath);
+        XmlStickmanLoader loader = new XmlStickmanLoader(agentsOnStage);
         loader.initialStickmanWithXml();
         launchConfiguration();
 //        loader.initialStickmanWithXml();
@@ -107,10 +107,10 @@ public class StageRoom3D extends StageRoomImpl
     @Override
     public void launchStage(boolean show, String filepath)
     {
-        commonStickmansOnStage.setmFilePath(filepath);
-        XmlStickmanLoader loader = new XmlStickmanLoader(commonStickmansOnStage);
+        agentsOnStage.setFilePath(filepath);
+        XmlStickmanLoader loader = new XmlStickmanLoader(agentsOnStage);
         loader.initialStickmanWithXml();
-        launchStickmanStage(show);
+        launchAgentStage(show);
 //        loader.initialStickmanWithXml();
     }
 }

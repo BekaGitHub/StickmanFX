@@ -5,7 +5,7 @@
  */
 package de.dfki.reeti;
 
-import de.dfki.common.StickmansOnStage;
+import de.dfki.common.AgentsOnStage;
 import de.dfki.reeti.stage.ReetiStage;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -160,7 +160,7 @@ public abstract class AReetiStageController
     public boolean isCameraStarted = false;
     public String mReetiComboBox = null;
     public ToggleGroup perlinNoiseGroup;
-    public StickmansOnStage mStickmanOnstage;
+    public AgentsOnStage mStickmanOnstage;
     public Reeti currentReeti;
     public ReetiStage stage3D;
 

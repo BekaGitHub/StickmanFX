@@ -45,23 +45,23 @@ public class StageRoomReeti extends StageRoomImpl
     @Override
     protected void getStageInstance()
     {
-        applicationFXLauncher = new ApplicationLauncherReeti();
+        applicationLauncher = new ApplicationLauncherReeti();
         if (ApplicationLauncherImpl.isRunning())
         {
-            stickmanStageFX = ReetiStage.getInstance();
+            agentStage = ReetiStage.getInstance();
         } else
         {
-            applicationFXLauncher.launchStickmanAndWait();
+            applicationLauncher.launchAgentAndWait();
         }
     }
 
     @Override
     protected void createNewStage(int x, int y, boolean decoration)
     {
-        stickmanStageFX = ReetiStage.getInstance();
+        agentStage = ReetiStage.getInstance();
         try
         {
-            stageIdentifier = getStickmanStage().createNewStage(x, y, decoration);
+            stageIdentifier = getAgentStage().createNewStage(x, y, decoration);
             init(stageIdentifier);
         } catch (IOException e)
         {
@@ -72,9 +72,9 @@ public class StageRoomReeti extends StageRoomImpl
     public void init(String stageIdentifier)
     {
 
-        commonStickmansOnStage = new ReetiOnStage(getStickmanStage(), this, stageIdentifier);
-        getStickmanStage().setStickamnsOnStage(getCommonStickmansOnStage(), stageIdentifier);
-        getStickmanStage().setStickamnsOnStage(getCommonStickmansOnStage(), CONFIG_STAGE);
+        agentsOnStage = new ReetiOnStage(getAgentStage(), this, stageIdentifier);
+        getAgentStage().setAgentsOnStage(getAgentsOnStage(), stageIdentifier);
+        getAgentStage().setAgentsOnStage(getAgentsOnStage(), CONFIG_STAGE);
     }
 
     @Override
@@ -83,9 +83,9 @@ public class StageRoomReeti extends StageRoomImpl
         ReetiStage ss3D;
         try
         {
-            ss3D = (ReetiStage) getStickmanStage();
+            ss3D = (ReetiStage) getAgentStage();
             ss3D.setShowControlPanel(true);
-            ss3D.addStickmanToStage(CONFIG_STAGE);
+            ss3D.addAgentToStage(CONFIG_STAGE);
             ss3D.showStage(CONFIG_STAGE);
         } catch (Exception e)
         {
@@ -96,7 +96,7 @@ public class StageRoomReeti extends StageRoomImpl
     @Override
     public void launchConfiguration(String filepath)
     {
-        commonStickmansOnStage.setmFilePath(filepath);
+        agentsOnStage.setFilePath(filepath);
         StageRoomReeti.this.launchConfiguration();
 //        loader.initialStickmanWithXml();
     }
@@ -104,8 +104,8 @@ public class StageRoomReeti extends StageRoomImpl
     @Override
     public void launchStage(boolean show, String filepath)
     {
-        commonStickmansOnStage.setmFilePath(filepath);
-        launchStickmanStage(show);
+        agentsOnStage.setFilePath(filepath);
+        launchAgentStage(show);
 //        loader.initialStickmanWithXml();
     }
 }

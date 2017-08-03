@@ -1,7 +1,6 @@
 package de.dfki.common.client;
 
 import de.dfki.common.XMLCommandParser;
-import de.dfki.common.client.CommonClientConnectionHandler;
 import de.dfki.stickmanFX.stage.StickmanStageFX;
 
 import java.io.BufferedReader;
@@ -129,7 +128,7 @@ public class ClientConnectionHandler extends Thread implements CommonClientConne
 
                 if (inputLine != null)
                 {
-                    stickmanParser.parseStickmanXMLCmd(inputLine);
+                    stickmanParser.parseAgentXMLCmd(inputLine);
                 }
             } catch (IOException ex)
             {

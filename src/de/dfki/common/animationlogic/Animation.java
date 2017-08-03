@@ -2,7 +2,6 @@ package de.dfki.common.animationlogic;
 
 import de.dfki.common.agent.Agent;
 import de.dfki.common.agent.IAgent;
-import de.dfki.common.interfaces.IAnimation;
 import de.dfki.util.ios.IOSIndentWriter;
 import de.dfki.util.xml.XMLParseError;
 import de.dfki.util.xml.XMLParseable;

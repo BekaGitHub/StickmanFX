@@ -19,7 +19,7 @@ public class StageRoomNetwork3DDecorator extends StageRoomNetworkDecorator
     @Override
     protected void initConnectionToServer(StageRoom wrappedController)
     {
-        commonXMLCommandParser = new XMLCommandParser3D(getCommonStickmansOnStage());
+        commonXMLCommandParser = new XMLCommandParser3D(getAgentsOnStage());
         mConnection = new ClientConnectionHandler(commonXMLCommandParser);
         mConnection.tryToConnect(mHost, mPort);
     }

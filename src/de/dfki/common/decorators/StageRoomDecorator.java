@@ -1,9 +1,9 @@
 package de.dfki.common.decorators;
 
-import de.dfki.common.StickmansOnStage;
+import de.dfki.common.AgentsOnStage;
 import de.dfki.common.agent.IAgent;
 import de.dfki.common.interfaces.StageRoom;
-import de.dfki.common.interfaces.StickmanStage;
+import de.dfki.common.interfaces.AgentStage;
 
 import java.awt.image.BufferedImage;
 
@@ -13,89 +13,89 @@ import java.awt.image.BufferedImage;
 public abstract class StageRoomDecorator implements StageRoom
 {
 
-    protected StageRoom controllerFX;
+    protected StageRoom stageRoom;
 
     public StageRoomDecorator(StageRoom wrappedController)
     {
-        controllerFX = wrappedController;
+        stageRoom = wrappedController;
     }
 
     @Override
     public boolean ismNetwork()
     {
-        return controllerFX.ismNetwork();
+        return stageRoom.ismNetwork();
     }
 
     @Override
     public void clearStage()
     {
-        controllerFX.clearStage();
+        stageRoom.clearStage();
     }
 
     @Override
     public void sendTimeMarkInformation(String timemark)
     {
-        controllerFX.sendTimeMarkInformation(timemark);
+        stageRoom.sendTimeMarkInformation(timemark);
     }
 
     @Override
     public void sendAnimationUpdate(String state, String id)
     {
-        controllerFX.sendAnimationUpdate(state, id);
+        stageRoom.sendAnimationUpdate(state, id);
     }
 
     @Override
-    public void launchStickmanStage(boolean show)
+    public void launchAgentStage(boolean show)
     {
-        controllerFX.launchStickmanStage(show);
+        stageRoom.launchAgentStage(show);
     }
 
-    public void addStickman(String name)
+    public void addAgent(String name)
     {
-        controllerFX.addStickman(name);
+        stageRoom.addAgent(name);
     }
 
-    public void addStickman(String name, boolean onlyFace)
+    public void addAgent(String name, boolean onlyFace)
     {
-        controllerFX.addStickman(name, onlyFace);
-    }
-
-    @Override
-    public void animate(String stickmanname, String name, int duration, String text, boolean block)
-    {
-        controllerFX.animate(stickmanname, name, duration, text, block);
+        stageRoom.addAgent(name, onlyFace);
     }
 
     @Override
-    public IAgent getStickman(String name)
+    public void animate(String agentName, String name, int duration, String text, boolean block)
     {
-        return controllerFX.getStickman(name);
+        stageRoom.animate(agentName, name, duration, text, block);
     }
 
-    public StickmansOnStage getCommonStickmansOnStage()
+    @Override
+    public IAgent getAgent(String name)
     {
-        return controllerFX.getCommonStickmansOnStage();
+        return stageRoom.getAgent(name);
     }
 
-    public StickmanStage getStickmanStage()
+    public AgentsOnStage getAgentsOnStage()
     {
-        return controllerFX.getStickmanStage();
+        return stageRoom.getAgentsOnStage();
+    }
+
+    public AgentStage getAgentStage()
+    {
+        return stageRoom.getAgentStage();
     }
 
     public String getStageIdentifier()
     {
-        return controllerFX.getStageIdentifier();
+        return stageRoom.getStageIdentifier();
     }
 
     public void setFullScreen(boolean fullScreen)
     {
-        controllerFX.setFullScreen(fullScreen);
+        stageRoom.setFullScreen(fullScreen);
     }
 
     @Override
     public BufferedImage getStageAsImage() throws Exception
     {
-        return controllerFX.getStageAsImage();
+        return stageRoom.getStageAsImage();
     }
 
     @Override
@@ -112,7 +112,7 @@ public abstract class StageRoomDecorator implements StageRoom
     @Override
     public void launchStage(boolean show, String filepath)
     {
-        controllerFX.launchStage(show, filepath);
+        stageRoom.launchStage(show, filepath);
     }
 
 }

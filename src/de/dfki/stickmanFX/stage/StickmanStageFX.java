@@ -1,8 +1,8 @@
 package de.dfki.stickmanFX.stage;
 
-import de.dfki.common.StickmansOnStage;
+import de.dfki.common.AgentsOnStage;
 import de.dfki.common.commonFX3D.ApplicationLauncherImpl;
-import de.dfki.common.interfaces.StickmanStage;
+import de.dfki.common.interfaces.AgentStage;
 import de.dfki.stickmanFX.StickmanFX;
 import javafx.application.Application;
 import javafx.application.Platform;
@@ -30,7 +30,7 @@ import java.util.logging.ConsoleHandler;
 /**
  * @author Robbie. Refactored by: acepero13
  */
-public class StickmanStageFX extends Application implements StickmanStage
+public class StickmanStageFX extends Application implements AgentStage
 {
 
     public static final float STICKMAN_SIZE_FACTOR = 0.8f;
@@ -38,7 +38,7 @@ public class StickmanStageFX extends Application implements StickmanStage
     public static final float STICKMAN_IN_BETWEEN_DISTANCE_FACTOR = 0.9f;
     static private StickmanStageFX sInstance;
     Stage configStage;
-    private HashMap<String, StickmansOnStage> stickamnsOnStage = new HashMap<>();
+    private HashMap<String, AgentsOnStage> stickamnsOnStage = new HashMap<>();
     private float sScale = 1.0f;
     private Map<String, Stage> stickmanFXStages = new HashMap<>();
     private LinkedList<String> stickmanNames = new LinkedList<>();
@@ -150,40 +150,40 @@ public class StickmanStageFX extends Application implements StickmanStage
         Platform.runLater(function);
     }
 
-    public void lauchStickman()
+    public void lauchAgent()
     {
         launch();
     }
 
-    public void setStickamnsOnStage(StickmansOnStage stickamnsOnStage, String identifier)
+    public void setAgentsOnStage(AgentsOnStage agentsOnStage, String identifier)
     {
-        this.stickamnsOnStage.put(identifier, stickamnsOnStage);
-        generalConfigStageRoot.setStickmansOnStage(stickamnsOnStage);
+        this.stickamnsOnStage.put(identifier, agentsOnStage);
+        generalConfigStageRoot.setStickmansOnStage(agentsOnStage);
     }
 
-    public void addStickmanToStage(String stageIdentifier) throws Exception
+    public void addAgentToStage(String stageIdentifier) throws Exception
     {
         addStickmanName();
         HBox sStickmanPane;
-        sStickmanPane = getStickmanBox(stageIdentifier);
+        sStickmanPane = getAgentBox(stageIdentifier);
         sStickmanPane.getChildren().clear();
-        for (String key : stickamnsOnStage.get(stageIdentifier).getStickmanNames())
+        for (String key : stickamnsOnStage.get(stageIdentifier).getAgentNames())
         {
-            sStickmanPane.getChildren().add((Node) stickamnsOnStage.get(stageIdentifier).getStickmanByKey(key));
+            sStickmanPane.getChildren().add((Node) stickamnsOnStage.get(stageIdentifier).getAgentByKey(key));
 //            addStickmanName();
         }
 //        addStickmanName();
     }
 
-    public void addStickmanToStage(String stageIdentifier, StickmanFX sman) throws Exception
+    public void addAgentToStage(String stageIdentifier, StickmanFX sman) throws Exception
     {
         HBox sStickmanPane;
-        sStickmanPane = getStickmanBox(stageIdentifier);
+        sStickmanPane = getAgentBox(stageIdentifier);
         sStickmanPane.getChildren().clear();
         sStickmanPane.getChildren().add(sman);
     }
 
-    public HBox getStickmanBox(String stageIdentifier) throws Exception
+    public HBox getAgentBox(String stageIdentifier) throws Exception
     {
         HBox sStickmanPane;
         if (stickmanFXStages.containsKey(stageIdentifier))
@@ -199,7 +199,7 @@ public class StickmanStageFX extends Application implements StickmanStage
 
     private void addStickmanName()
     {
-        generalConfigStageRoot.getmStickmanStageController().fillComboForStickman();
+        generalConfigStageRoot.getmStickmanStageController().fillComboForAgent();
     }
 
     public void showStage(String stageIdentifier)
@@ -261,7 +261,7 @@ public class StickmanStageFX extends Application implements StickmanStage
     {
         try
         {
-            HBox pane = getStickmanBox(stageIdentifier);
+            HBox pane = getAgentBox(stageIdentifier);
             Platform.runLater(() ->
             {
                 pane.getChildren().clear();

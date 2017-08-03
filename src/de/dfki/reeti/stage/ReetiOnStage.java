@@ -1,11 +1,11 @@
 package de.dfki.reeti.stage;
 
-import de.dfki.common.StickmansOnStage;
+import de.dfki.common.AgentsOnStage;
 import de.dfki.common.XmlTransform;
 import de.dfki.common.agent.IAgent;
 import de.dfki.common.enums.Gender;
 import de.dfki.common.interfaces.StageRoom;
-import de.dfki.common.interfaces.StickmanStage;
+import de.dfki.common.interfaces.AgentStage;
 import de.dfki.reeti.Reeti;
 import javafx.scene.layout.HBox;
 
@@ -15,48 +15,47 @@ import java.util.logging.Logger;
 /**
  * Created by alvaro on 9/19/16.
  */
-public class ReetiOnStage extends StickmansOnStage
+public class ReetiOnStage extends AgentsOnStage
 {
 
     private String identifier;
 
-    public ReetiOnStage(StickmanStage stickmanStage)
+    public ReetiOnStage(AgentStage agentStage)
     {
-        super(stickmanStage);
+        super(agentStage);
     }
 
-    public ReetiOnStage(StickmanStage stickmanStageFX, StageRoom controllerFX)
+    public ReetiOnStage(AgentStage agentStage, StageRoom stageRoom)
     {
-        super(stickmanStageFX, controllerFX);
+        super(agentStage, stageRoom);
     }
 
-    public ReetiOnStage(StickmanStage stickmanStageFX, StageRoom controllerFX, String identifier)
+    public ReetiOnStage(AgentStage agentStage, StageRoom stageRoom, String identifier)
     {
-        super(stickmanStageFX, controllerFX);
+        super(agentStage, stageRoom);
         this.identifier = identifier;
     }
 
     @Override
-    protected void addStickmanToStage(String name, boolean fullScreen, Gender.TYPE gender)
+    protected void addAgentToStage(String name, boolean fullScreen, Gender.TYPE gender)
     {
         if (fullScreen)
         {
-            IAgent stickman = new Reeti(name, gender, stickmanStage.getFullScreenScale(), stickmanStage.getFullScreenDimension());
-            putFullStickmanOnStage(name, stickman);
+            IAgent agent = new Reeti(name, gender, agentStage.getFullScreenScale(), agentStage.getFullScreenDimension());
+            putFullAgentOnStage(name, agent);
         } else
         {
-
-            createNonFullStickman(name, gender, DEFAULT_SCALE);
+            createNonFullAgent(name, gender, DEFAULT_SCALE);
         }
     }
 
     @Override
-    protected void addStickmanToStage(String name, boolean fullScreen, Gender.TYPE gender, boolean onlyFace)
+    protected void addAgentToStage(String name, boolean fullScreen, Gender.TYPE gender, boolean onlyFace)
     {
         if (fullScreen)
         {
-            IAgent stickman = new Reeti(name, gender, stickmanStage.getFullScreenScale(), stickmanStage.getFullScreenDimension());
-            putFullStickmanOnStage(name, stickman);
+            IAgent agent = new Reeti(name, gender, agentStage.getFullScreenScale(), agentStage.getFullScreenDimension());
+            putFullAgentOnStage(name, agent);
         } else
         {
             float scale = DEFAULT_SCALE;
@@ -64,21 +63,21 @@ public class ReetiOnStage extends StickmansOnStage
             {
                 scale = 1.0f;
             }
-            createNonFullStickman(name, gender, scale);
+            createNonFullAgent(name, gender, scale);
 
         }
     }
 
-    private void createNonFullStickman(String name, Gender.TYPE gender, float scale)
+    private void createNonFullAgent(String name, Gender.TYPE gender, float scale)
     {
         if (!identifier.equals(""))
         {
             try
             {
-                HBox h = stickmanStage.getStickmanBox(identifier);
+                HBox h = agentStage.getAgentBox(identifier);
 
-                IAgent stickman = new Reeti(name, gender, scale, h.getPrefHeight());
-                putFullStickmanOnStage(name, stickman);
+                IAgent agent = new Reeti(name, gender, scale, h.getPrefHeight());
+                putFullAgentOnStage(name, agent);
             } catch (Exception ex)
             {
                 Logger.getLogger(ReetiOnStage.class.getName()).log(Level.SEVERE, null, ex);
@@ -87,7 +86,7 @@ public class ReetiOnStage extends StickmansOnStage
     }
 
     @Override
-    public XmlTransform getmXmlTransform()
+    public XmlTransform getXmlTransform()
     {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }

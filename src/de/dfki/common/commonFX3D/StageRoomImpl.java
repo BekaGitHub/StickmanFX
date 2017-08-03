@@ -1,10 +1,10 @@
 package de.dfki.common.commonFX3D;
 
-import de.dfki.common.StickmansOnStage;
+import de.dfki.common.AgentsOnStage;
 import de.dfki.common.agent.IAgent;
 import de.dfki.common.interfaces.ApplicationLauncher;
 import de.dfki.common.interfaces.StageRoom;
-import de.dfki.common.interfaces.StickmanStage;
+import de.dfki.common.interfaces.AgentStage;
 
 import java.awt.image.BufferedImage;
 
@@ -17,9 +17,9 @@ public abstract class StageRoomImpl implements StageRoom
 {
 
     public static final String CONFIG_STAGE = "configStage";
-    protected ApplicationLauncher applicationFXLauncher;
-    protected StickmanStage stickmanStageFX;
-    protected StickmansOnStage commonStickmansOnStage;
+    protected ApplicationLauncher applicationLauncher;
+    protected AgentStage agentStage;
+    protected AgentsOnStage agentsOnStage;
     protected String stageIdentifier;
     private boolean fullScreen = false;
     private int x;
@@ -34,15 +34,15 @@ public abstract class StageRoomImpl implements StageRoom
     @Override
     public void clearStage()
     {
-        getCommonStickmansOnStage().clearStage();
-        stickmanStageFX.clearStage(stageIdentifier);
+        getAgentsOnStage().clearStage();
+        agentStage.clearStage(stageIdentifier);
     }
 
     @Override
-    public void animate(String stickmanname, String name, int duration, String text, boolean block)
+    public void animate(String agentName, String name, int duration, String text, boolean block)
     {
-        IAgent sm = getCommonStickmansOnStage().getStickman(stickmanname);
-        sm.doAnimation(name, duration, text, block);
+        IAgent agent = getAgentsOnStage().getAgent(agentName);
+        agent.doAnimation(name, duration, text, block);
     }
 
     @Override
@@ -57,14 +57,14 @@ public abstract class StageRoomImpl implements StageRoom
     }
 
     @Override
-    public void launchStickmanStage(boolean show)
+    public void launchAgentStage(boolean show)
     {
         try
         {
-            getStickmanStage().addStickmanToStage(getStageIdentifier());
+            getAgentStage().addAgentToStage(getStageIdentifier());
             if (show)
             {
-                getStickmanStage().showStage(getStageIdentifier());
+                getAgentStage().showStage(getStageIdentifier());
             }
         } catch (Exception e)
         {
@@ -75,8 +75,8 @@ public abstract class StageRoomImpl implements StageRoom
     @Override
     public void launchConfiguration(String filepath)
     {
-//        commonStickmansOnStage.setmFilePath(filepath);
-//        XmlStickmanLoader loader = new XmlStickmanLoader(commonStickmansOnStage);
+//        agentsOnStage.setFilePath(filepath);
+//        XmlStickmanLoader loader = new XmlStickmanLoader(agentsOnStage);
 //        loader.initialStickmanWithXml();
 //        launchConfiguration();
 //        loader.initialStickmanWithXml();
@@ -84,47 +84,47 @@ public abstract class StageRoomImpl implements StageRoom
 
     public void launchStage(boolean show, String filepath)
     {
-//        commonStickmansOnStage.setmFilePath(filepath);
-//        XmlStickmanLoader loader = new XmlStickmanLoader(commonStickmansOnStage);
+//        agentsOnStage.setFilePath(filepath);
+//        XmlStickmanLoader loader = new XmlStickmanLoader(agentsOnStage);
 //        loader.initialStickmanWithXml();
 //        launchStage(show);
 //        loader.initialStickmanWithXml();
     }
 
     @Override
-    public void addStickman(String name)
+    public void addAgent(String name)
     {
-        getCommonStickmansOnStage().addStickman(name, fullScreen);
+        getAgentsOnStage().addAgent(name, fullScreen);
     }
 
     @Override
-    public void addStickman(String name, boolean onlyFace)
+    public void addAgent(String name, boolean onlyFace)
     {
-        getCommonStickmansOnStage().addStickman(name, fullScreen, onlyFace);
+        getAgentsOnStage().addAgent(name, fullScreen, onlyFace);
     }
 
     @Override
     public BufferedImage getStageAsImage() throws Exception
     {
-        return getStickmanStage().getStageAsImage(stageIdentifier);
+        return getAgentStage().getStageAsImage(stageIdentifier);
     }
 
     @Override
-    public IAgent getStickman(String name)
+    public IAgent getAgent(String name)
     {
-        return getCommonStickmansOnStage().getStickman(name);
+        return getAgentsOnStage().getAgent(name);
     }
 
     @Override
-    public StickmansOnStage getCommonStickmansOnStage()
+    public AgentsOnStage getAgentsOnStage()
     {
-        return commonStickmansOnStage;
+        return agentsOnStage;
     }
 
     @Override
-    public StickmanStage getStickmanStage()
+    public AgentStage getAgentStage()
     {
-        return stickmanStageFX;
+        return agentStage;
     }
 
     @Override

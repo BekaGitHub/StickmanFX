@@ -1,6 +1,6 @@
 package de.dfki.stickman3D;
 
-import de.dfki.common.StickmansOnStage;
+import de.dfki.common.AgentsOnStage;
 import de.dfki.common.commonFX3D.ViewController;
 import de.dfki.common.enums.Gender;
 import de.dfki.stickman3D.controllerhelper.ColorHelper;
@@ -51,8 +51,8 @@ public class StickmanStageController extends AStickmanStageController implements
             mStickmancombobox = StickmanComboBox.getSelectionModel().getSelectedItem();
             if (mStickmancombobox != null)
             {
-                currentStickman = (Stickman3D) mStickmanOnstage.getStickman(mStickmancombobox);
-                setComboboxValue((Stickman3D) mStickmanOnstage.getStickman(mStickmancombobox));
+                currentStickman = (Stickman3D) mStickmanOnstage.getAgent(mStickmancombobox);
+                setComboboxValue((Stickman3D) mStickmanOnstage.getAgent(mStickmancombobox));
             }
         });
 
@@ -164,7 +164,7 @@ public class StickmanStageController extends AStickmanStageController implements
 
         ExitButton.setOnAction((ActionEvent event) ->
         {
-            ((StickmanStage3D) mStickmanOnstage.getStageStickman()).clearStage(((StageRoom3D) mStickmanOnstage.getStageRoom()).CONFIG_STAGE);
+            ((StickmanStage3D) mStickmanOnstage.getAgentStage()).clearStage(((StageRoom3D) mStickmanOnstage.getStageRoom()).CONFIG_STAGE);
             Stage stage = (Stage) ExitButton.getScene().getWindow();
             stage.close();
             System.gc();
@@ -215,8 +215,8 @@ public class StickmanStageController extends AStickmanStageController implements
                         mStickmanData3D.add(new StickmanData3D(name, hairColor, headColor, bodyColor, limbsColor,
                                 shoesColor, lipsColor, eyesColor, browsColor, nosesColor, backgroundRecord));
                     }
-                    ((StickmansOnStage3D) mStickmanOnstage).getmXmlTransform().loadStickmanData3DList(mStickmanData3D);
-                    // StickmanOnstage.getmXmlTransform().loadStickmanDataFXList(mStickmanDataFX);
+                    ((StickmansOnStage3D) mStickmanOnstage).getXmlTransform().loadStickmanData3DList(mStickmanData3D);
+                    // StickmanOnstage.getXmlTransform().loadStickmanDataFXList(mStickmanDataFX);
                     handleSave();
                 });
             }
@@ -299,17 +299,17 @@ public class StickmanStageController extends AStickmanStageController implements
 
     public Stickman3D getStickmanAs3D(String mStickmancombobox)
     {
-        return (Stickman3D) mStickmanOnstage.getStickman(mStickmancombobox);
+        return (Stickman3D) mStickmanOnstage.getAgent(mStickmancombobox);
     }
 
     /**
-     * @param commonStickmansOnStage
+     * @param agentsOnStage
      */
     @Override
-    public void setStickamnOnStage(StickmansOnStage commonStickmansOnStage)
+    public void setAgentOnStage(AgentsOnStage agentsOnStage)
     {
-        this.mStickmanOnstage = commonStickmansOnStage;
-        fillComboForStickman();
+        this.mStickmanOnstage = agentsOnStage;
+        fillComboForAgent();
 
     }
 
@@ -737,17 +737,17 @@ public class StickmanStageController extends AStickmanStageController implements
         }
     }
 
-    public void fillComboForStickman()
+    public void fillComboForAgent()
     {
         ObservableList<String> stickmanNames = FXCollections.observableArrayList();
-        stickmanNames.addAll(mStickmanOnstage.getStickmanNames().stream().collect(Collectors.toList()));
+        stickmanNames.addAll(mStickmanOnstage.getAgentNames().stream().collect(Collectors.toList()));
         StickmanComboBox.getItems().clear();
         StickmanComboBox.getItems().addAll(stickmanNames);
         if (!stickmanNames.isEmpty())
         {
             StickmanComboBox.setValue(stickmanNames.get(0));
-            currentStickman = (Stickman3D) mStickmanOnstage.getStickman(stickmanNames.get(0));
-            setComboboxValue((Stickman3D) mStickmanOnstage.getStickman(stickmanNames.get(0)));
+            currentStickman = (Stickman3D) mStickmanOnstage.getAgent(stickmanNames.get(0));
+            setComboboxValue((Stickman3D) mStickmanOnstage.getAgent(stickmanNames.get(0)));
         }
         mStickmanComboList.clear();
         mStickmanComboList.addAll(stickmanNames);
@@ -820,9 +820,9 @@ public class StickmanStageController extends AStickmanStageController implements
     private void handleSave()
     {
         File filexml = null;
-        if (mStickmanOnstage.getmFilePath() != null)
+        if (mStickmanOnstage.getFilePath() != null)
         {
-            filexml = new File(mStickmanOnstage.getmFilePath() + File.separator + "stickman3d" + File.separator
+            filexml = new File(mStickmanOnstage.getFilePath() + File.separator + "stickman3d" + File.separator
                     + "stickman3d.xml");
         } else
         {
@@ -846,7 +846,7 @@ public class StickmanStageController extends AStickmanStageController implements
         {
             filexml = new File(filexml.getPath() + ".xml");
         }
-        ((StickmansOnStage3D) mStickmanOnstage).getmXmlTransform().saveStickmanDataToFile(filexml);
+        ((StickmansOnStage3D) mStickmanOnstage).getXmlTransform().saveStickmanDataToFile(filexml);
     }
 
     // convert color to hex

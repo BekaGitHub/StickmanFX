@@ -1,6 +1,6 @@
 package de.dfki.stickmanFX.utils;
 
-import de.dfki.common.StickmansOnStage;
+import de.dfki.common.AgentsOnStage;
 import de.dfki.common.enums.Gender;
 import de.dfki.stickmanFX.StickmanFX;
 import de.dfki.stickmanFX.stage.StickmanStageFX;
@@ -18,12 +18,12 @@ public class XmlStickmanLoader
 {
 
     private String mFilePath;
-    private StickmansOnStage sStickmansOnStage;
+    private AgentsOnStage sStickmansOnStage;
 
-    public XmlStickmanLoader(StickmansOnStage stickmansOnStage)
+    public XmlStickmanLoader(AgentsOnStage stickmansOnStage)
     {
         this.sStickmansOnStage = stickmansOnStage;
-        mFilePath = stickmansOnStage.getmFilePath();
+        mFilePath = stickmansOnStage.getFilePath();
     }
 
     private void readXML()
@@ -36,21 +36,21 @@ public class XmlStickmanLoader
 
         if (file != null)
         {
-            sStickmansOnStage.getmXmlTransform().loadStickmanDataFromFile(file);
+            sStickmansOnStage.getXmlTransform().loadStickmanDataFromFile(file);
         }
     }
 
     public void initialStickmanWithXml()
     {
         readXML();
-        List<StickmanDataFX> mStickmanDataFX = ((StickmansOnStageFX) sStickmansOnStage).getmXmlTransform()
+        List<StickmanDataFX> mStickmanDataFX = ((StickmansOnStageFX) sStickmansOnStage).getXmlTransform()
                 .getStickmanDataFXList();
         if (!(mStickmanDataFX.isEmpty()))
         {
             for (StickmanDataFX mStick : mStickmanDataFX)
             {
                 String name = mStick.getName();
-                if (sStickmansOnStage.getStickmanNames().contains(name.toLowerCase()))
+                if (sStickmansOnStage.getAgentNames().contains(name.toLowerCase()))
                 {
                     String bodycolor = mStick.getbodyColor();
                     float bodyColorOpacity = mStick.getbodyColorOpacity();
@@ -58,30 +58,30 @@ public class XmlStickmanLoader
                     {
                         Runnable bodyRunnable = () ->
                         {
-                            if (((StickmanFX) sStickmansOnStage.getStickman(name)).mType == Gender.TYPE.MALE)
+                            if (((StickmanFX) sStickmansOnStage.getAgent(name)).mType == Gender.TYPE.MALE)
                             {
-                                ((StickmanFX) sStickmansOnStage.getStickman(name)).mBodyFX.mMaleColor = Color
+                                ((StickmanFX) sStickmansOnStage.getAgent(name)).mBodyFX.mMaleColor = Color
                                         .web(bodycolor, bodyColorOpacity);
                                 ((StickmanFX) sStickmansOnStage
-                                        .getStickman(name)).mBodyFX.mColoropacity = bodyColorOpacity;
-                                ((StickmanFX) sStickmansOnStage.getStickman(name)).update();
+                                        .getAgent(name)).mBodyFX.mColoropacity = bodyColorOpacity;
+                                ((StickmanFX) sStickmansOnStage.getAgent(name)).update();
 
-                                ((StickmanFX) sStickmansOnStage.getStickman(name)).mBodyFX.mMaleColorRest = Color
+                                ((StickmanFX) sStickmansOnStage.getAgent(name)).mBodyFX.mMaleColorRest = Color
                                         .web(bodycolor, bodyColorOpacity);
                                 ((StickmanFX) sStickmansOnStage
-                                        .getStickman(name)).mBodyFX.mColoropacityRest = bodyColorOpacity;
+                                        .getAgent(name)).mBodyFX.mColoropacityRest = bodyColorOpacity;
                             } else
                             {
-                                ((StickmanFX) sStickmansOnStage.getStickman(name)).mBodyFX.mFemaleColor = Color
+                                ((StickmanFX) sStickmansOnStage.getAgent(name)).mBodyFX.mFemaleColor = Color
                                         .web(bodycolor, bodyColorOpacity);
                                 ((StickmanFX) sStickmansOnStage
-                                        .getStickman(name)).mBodyFX.mColoropacity = bodyColorOpacity;
-                                ((StickmanFX) sStickmansOnStage.getStickman(name)).update();
+                                        .getAgent(name)).mBodyFX.mColoropacity = bodyColorOpacity;
+                                ((StickmanFX) sStickmansOnStage.getAgent(name)).update();
 
-                                ((StickmanFX) sStickmansOnStage.getStickman(name)).mBodyFX.mFemaleColorRest = Color
+                                ((StickmanFX) sStickmansOnStage.getAgent(name)).mBodyFX.mFemaleColorRest = Color
                                         .web(bodycolor, bodyColorOpacity);
                                 ((StickmanFX) sStickmansOnStage
-                                        .getStickman(name)).mBodyFX.mColoropacityRest = bodyColorOpacity;
+                                        .getAgent(name)).mBodyFX.mColoropacityRest = bodyColorOpacity;
                             }
                         };
                         StickmanStageFX.getInstance().runLater(bodyRunnable);
@@ -93,30 +93,30 @@ public class XmlStickmanLoader
                     {
                         Runnable hairColor = () ->
                         {
-                            if (((StickmanFX) sStickmansOnStage.getStickman(name)).mType == Gender.TYPE.MALE)
+                            if (((StickmanFX) sStickmansOnStage.getAgent(name)).mType == Gender.TYPE.MALE)
                             {
-                                ((StickmanFX) sStickmansOnStage.getStickman(name)).mMaleHairFX.mColor = Color
+                                ((StickmanFX) sStickmansOnStage.getAgent(name)).mMaleHairFX.mColor = Color
                                         .web(haircolor, hairColorOpacity);
                                 ((StickmanFX) sStickmansOnStage
-                                        .getStickman(name)).mMaleHairFX.mColoropacity = hairColorOpacity;
-                                ((StickmanFX) sStickmansOnStage.getStickman(name)).update();
+                                        .getAgent(name)).mMaleHairFX.mColoropacity = hairColorOpacity;
+                                ((StickmanFX) sStickmansOnStage.getAgent(name)).update();
 
-                                ((StickmanFX) sStickmansOnStage.getStickman(name)).mMaleHairFX.mColorRest = Color
+                                ((StickmanFX) sStickmansOnStage.getAgent(name)).mMaleHairFX.mColorRest = Color
                                         .web(haircolor, hairColorOpacity);
                                 ((StickmanFX) sStickmansOnStage
-                                        .getStickman(name)).mMaleHairFX.mColoropacityRest = hairColorOpacity;
+                                        .getAgent(name)).mMaleHairFX.mColoropacityRest = hairColorOpacity;
                             } else
                             {
-                                ((StickmanFX) sStickmansOnStage.getStickman(name)).mFemaleHairFX.mColor = Color
+                                ((StickmanFX) sStickmansOnStage.getAgent(name)).mFemaleHairFX.mColor = Color
                                         .web(haircolor, hairColorOpacity);
                                 ((StickmanFX) sStickmansOnStage
-                                        .getStickman(name)).mFemaleHairFX.mColoropacity = hairColorOpacity;
-                                ((StickmanFX) sStickmansOnStage.getStickman(name)).update();
+                                        .getAgent(name)).mFemaleHairFX.mColoropacity = hairColorOpacity;
+                                ((StickmanFX) sStickmansOnStage.getAgent(name)).update();
 
-                                ((StickmanFX) sStickmansOnStage.getStickman(name)).mFemaleHairFX.mColorRest = Color
+                                ((StickmanFX) sStickmansOnStage.getAgent(name)).mFemaleHairFX.mColorRest = Color
                                         .web(haircolor, hairColorOpacity);
                                 ((StickmanFX) sStickmansOnStage
-                                        .getStickman(name)).mFemaleHairFX.mColoropacityRest = hairColorOpacity;
+                                        .getAgent(name)).mFemaleHairFX.mColoropacityRest = hairColorOpacity;
                             }
                         };
                         StickmanStageFX.getInstance().runLater(hairColor);
@@ -128,16 +128,16 @@ public class XmlStickmanLoader
                     {
                         Runnable headColor = () ->
                         {
-                            ((StickmanFX) sStickmansOnStage.getStickman(name)).mHeadFX.mColor = Color.web(headcolor,
+                            ((StickmanFX) sStickmansOnStage.getAgent(name)).mHeadFX.mColor = Color.web(headcolor,
                                     headColorOpacity);
-                            ((StickmanFX) sStickmansOnStage.getStickman(name)).mHeadFX.mColoropacity = headColorOpacity;
-                            if (((StickmanFX) sStickmansOnStage.getStickman(name)).mHeadFX.mColor != null)
+                            ((StickmanFX) sStickmansOnStage.getAgent(name)).mHeadFX.mColoropacity = headColorOpacity;
+                            if (((StickmanFX) sStickmansOnStage.getAgent(name)).mHeadFX.mColor != null)
                             {
-                                ((StickmanFX) sStickmansOnStage.getStickman(name)).update();
+                                ((StickmanFX) sStickmansOnStage.getAgent(name)).update();
                             }
-                            ((StickmanFX) sStickmansOnStage.getStickman(name)).mHeadFX.mColorRest = Color.web(headcolor,
+                            ((StickmanFX) sStickmansOnStage.getAgent(name)).mHeadFX.mColorRest = Color.web(headcolor,
                                     headColorOpacity);
-                            ((StickmanFX) sStickmansOnStage.getStickman(name)).mHeadFX.mColoropacityRest = headColorOpacity;
+                            ((StickmanFX) sStickmansOnStage.getAgent(name)).mHeadFX.mColoropacityRest = headColorOpacity;
                         };
                         StickmanStageFX.getInstance().runLater(headColor);
                     }
@@ -148,44 +148,44 @@ public class XmlStickmanLoader
                     {
                         Runnable limbsColor = () ->
                         {
-                            ((StickmanFX) sStickmansOnStage.getStickman(name)).mLeftUpperLegFX.mColor = Color
+                            ((StickmanFX) sStickmansOnStage.getAgent(name)).mLeftUpperLegFX.mColor = Color
                                     .web(limbscolor, limbsColorOpacity);
-                            ((StickmanFX) sStickmansOnStage.getStickman(name)).mLeftForeLegFX.mColor = Color
+                            ((StickmanFX) sStickmansOnStage.getAgent(name)).mLeftForeLegFX.mColor = Color
                                     .web(limbscolor, limbsColorOpacity);
-                            ((StickmanFX) sStickmansOnStage.getStickman(name)).mLeftFootFX.mColor = Color
+                            ((StickmanFX) sStickmansOnStage.getAgent(name)).mLeftFootFX.mColor = Color
                                     .web(limbscolor, limbsColorOpacity);
-                            ((StickmanFX) sStickmansOnStage.getStickman(name)).mRightUpperLegFX.mColor = Color
+                            ((StickmanFX) sStickmansOnStage.getAgent(name)).mRightUpperLegFX.mColor = Color
                                     .web(limbscolor, limbsColorOpacity);
-                            ((StickmanFX) sStickmansOnStage.getStickman(name)).mRightForeLegFX.mColor = Color
+                            ((StickmanFX) sStickmansOnStage.getAgent(name)).mRightForeLegFX.mColor = Color
                                     .web(limbscolor, limbsColorOpacity);
-                            ((StickmanFX) sStickmansOnStage.getStickman(name)).mRightFootFX.mColor = Color
+                            ((StickmanFX) sStickmansOnStage.getAgent(name)).mRightFootFX.mColor = Color
                                     .web(limbscolor, limbsColorOpacity);
-                            ((StickmanFX) sStickmansOnStage.getStickman(name)).mLeftHandFX.mColor = Color
+                            ((StickmanFX) sStickmansOnStage.getAgent(name)).mLeftHandFX.mColor = Color
                                     .web(limbscolor, limbsColorOpacity);
-                            ((StickmanFX) sStickmansOnStage.getStickman(name)).mRightHandFX.mColor = Color
+                            ((StickmanFX) sStickmansOnStage.getAgent(name)).mRightHandFX.mColor = Color
                                     .web(limbscolor, limbsColorOpacity);
-                            ((StickmanFX) sStickmansOnStage.getStickman(name)).mLeftShoulderFX.mColor = Color
+                            ((StickmanFX) sStickmansOnStage.getAgent(name)).mLeftShoulderFX.mColor = Color
                                     .web(limbscolor, limbsColorOpacity);
-                            ((StickmanFX) sStickmansOnStage.getStickman(name)).mRightShoulderFX.mColor = Color
+                            ((StickmanFX) sStickmansOnStage.getAgent(name)).mRightShoulderFX.mColor = Color
                                     .web(limbscolor, limbsColorOpacity);
-                            ((StickmanFX) sStickmansOnStage.getStickman(name)).mLeftUpperArmFX.mColor = Color
+                            ((StickmanFX) sStickmansOnStage.getAgent(name)).mLeftUpperArmFX.mColor = Color
                                     .web(limbscolor, limbsColorOpacity);
-                            ((StickmanFX) sStickmansOnStage.getStickman(name)).mLeftForeArmFX.mColor = Color
+                            ((StickmanFX) sStickmansOnStage.getAgent(name)).mLeftForeArmFX.mColor = Color
                                     .web(limbscolor, limbsColorOpacity);
-                            ((StickmanFX) sStickmansOnStage.getStickman(name)).mRightUpperArmFX.mColor = Color
+                            ((StickmanFX) sStickmansOnStage.getAgent(name)).mRightUpperArmFX.mColor = Color
                                     .web(limbscolor, limbsColorOpacity);
-                            ((StickmanFX) sStickmansOnStage.getStickman(name)).mRightForeArmFX.mColor = Color
+                            ((StickmanFX) sStickmansOnStage.getAgent(name)).mRightForeArmFX.mColor = Color
                                     .web(limbscolor, limbsColorOpacity);
-                            ((StickmanFX) sStickmansOnStage.getStickman(name)).mNeckFX.mColor = Color.web(limbscolor,
+                            ((StickmanFX) sStickmansOnStage.getAgent(name)).mNeckFX.mColor = Color.web(limbscolor,
                                     limbsColorOpacity);
                             ((StickmanFX) sStickmansOnStage
-                                    .getStickman(name)).mLeftUpperLegFX.mColoropacity = limbsColorOpacity;
-                            ((StickmanFX) sStickmansOnStage.getStickman(name)).update();
+                                    .getAgent(name)).mLeftUpperLegFX.mColoropacity = limbsColorOpacity;
+                            ((StickmanFX) sStickmansOnStage.getAgent(name)).update();
 
-                            ((StickmanFX) sStickmansOnStage.getStickman(name)).mLeftUpperLegFX.mColorRest = Color
+                            ((StickmanFX) sStickmansOnStage.getAgent(name)).mLeftUpperLegFX.mColorRest = Color
                                     .web(limbscolor, limbsColorOpacity);
                             ((StickmanFX) sStickmansOnStage
-                                    .getStickman(name)).mLeftUpperLegFX.mColoropacityRest = limbsColorOpacity;
+                                    .getAgent(name)).mLeftUpperLegFX.mColoropacityRest = limbsColorOpacity;
                         };
                         StickmanStageFX.getInstance().runLater(limbsColor);
                     }

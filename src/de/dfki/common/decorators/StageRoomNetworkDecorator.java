@@ -21,7 +21,7 @@ public abstract class StageRoomNetworkDecorator extends StageRoomDecorator
         mHost = host;
         mPort = port;
         initConnectionToServer(wrappedController);
-        getCommonStickmansOnStage().setStageRoom(this); //We need to set this as the new controller, in order to receive the EventInfo
+        getAgentsOnStage().setStageRoom(this); //We need to set this as the new controller, in order to receive the EventInfo
     }
 
     protected abstract void initConnectionToServer(StageRoom wrappedController);

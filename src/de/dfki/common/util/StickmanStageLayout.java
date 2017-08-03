@@ -5,6 +5,8 @@ import java.awt.*;
 /**
  * @author Patrick Gebahrd
  */
+
+//Die Klasse muss getestet werden. Es wird niergendwo benutzt!!!!!
 public class StickmanStageLayout implements LayoutManager
 {
 

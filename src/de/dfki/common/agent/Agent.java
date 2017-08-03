@@ -4,7 +4,7 @@ import de.dfki.common.LogFormatter;
 import de.dfki.common.animationlogic.Animation;
 import de.dfki.common.animationlogic.AnimationScheduler;
 import de.dfki.common.enums.Gender;
-import de.dfki.common.interfaces.IAnimation;
+import de.dfki.common.animationlogic.IAnimation;
 import de.dfki.common.interfaces.StageRoom;
 import de.dfki.common.part.Part;
 import de.dfki.common.animationlogic.AnimationListener;

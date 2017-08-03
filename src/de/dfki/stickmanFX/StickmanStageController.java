@@ -1,6 +1,6 @@
 package de.dfki.stickmanFX;
 
-import de.dfki.common.StickmansOnStage;
+import de.dfki.common.AgentsOnStage;
 import de.dfki.common.commonFX3D.ViewController;
 import de.dfki.common.enums.Gender;
 import de.dfki.stickmanFX.stage.StageRoomFX;
@@ -38,7 +38,7 @@ public class StickmanStageController implements ViewController
     final private ToggleGroup groupPerlin = new ToggleGroup();
     final private ToggleGroup groupEnvironmentRadioButton = new ToggleGroup();
     private ArrayList<String> mStickmanComboList = new ArrayList<>();
-    private StickmansOnStage mStickmanOnstage;
+    private AgentsOnStage mStickmanOnstage;
     private String mStickmancombobox = null;
     private String backgroundRecord = null;
     private List<StickmanDataFX> mStickmanDataFX = new ArrayList<StickmanDataFX>();
@@ -350,8 +350,8 @@ public class StickmanStageController implements ViewController
                     {
                         try
                         {
-                            HBox mStickmanPane = ((StickmanStageFX) mStickmanOnstage.getStageStickman())
-                                    .getStickmanBox((((StageRoomFX) mStickmanOnstage.getStageRoom()).CONFIG_STAGE));
+                            HBox mStickmanPane = ((StickmanStageFX) mStickmanOnstage.getAgentStage())
+                                    .getAgentBox((((StageRoomFX) mStickmanOnstage.getStageRoom()).CONFIG_STAGE));
                             mStickmanPane.setStyle("-fx-background-image: url('/de/dfki/stickmanFX/image/" + pic
                                     + ".jpg');"
                                     + "-fx-background-repeat: repeat;-fx-background-position: center center; -fx-background-size: contain;");
@@ -374,8 +374,8 @@ public class StickmanStageController implements ViewController
             {
                 try
                 {
-                    HBox mStickmanPane = ((StickmanStageFX) mStickmanOnstage.getStageStickman())
-                            .getStickmanBox((((StageRoomFX) mStickmanOnstage.getStageRoom()).CONFIG_STAGE));
+                    HBox mStickmanPane = ((StickmanStageFX) mStickmanOnstage.getAgentStage())
+                            .getAgentBox((((StageRoomFX) mStickmanOnstage.getStageRoom()).CONFIG_STAGE));
                     String hex = toHexCode(backgroundColor);
                     mStickmanPane.setStyle("-fx-background-color: " + hex + ";");
                     backgroundRecord = hex;
@@ -565,7 +565,7 @@ public class StickmanStageController implements ViewController
                 saveToXml();
                 handlePerlinNoise();
 //		mStickmanOnstage.clearStage();
-                ((StickmanStageFX) mStickmanOnstage.getStageStickman())
+                ((StickmanStageFX) mStickmanOnstage.getAgentStage())
                         .clearStage(((StageRoomFX) mStickmanOnstage.getStageRoom()).CONFIG_STAGE);
             }
         });
@@ -615,13 +615,13 @@ public class StickmanStageController implements ViewController
 
     public StickmanFX getStickmanAsFx(String mStickmancombobox)
     {
-        return (StickmanFX) mStickmanOnstage.getStickman(mStickmancombobox);
+        return (StickmanFX) mStickmanOnstage.getAgent(mStickmancombobox);
     }
 
-    public void setStickamnOnStage(StickmansOnStage commonStickmansOnStage)
+    public void setAgentOnStage(AgentsOnStage agentsOnStage)
     {
-        this.mStickmanOnstage = commonStickmansOnStage;
-        // fillComboForStickman();
+        this.mStickmanOnstage = agentsOnStage;
+        // fillComboForAgent();
     }
 
     private void fillComboForEmotionExpression()
@@ -634,10 +634,10 @@ public class StickmanStageController implements ViewController
         EmotionExpressionComboBox.getItems().addAll(classNames);
     }
 
-    public void fillComboForStickman()
+    public void fillComboForAgent()
     {
         ObservableList<String> stickmanNames = FXCollections.observableArrayList();
-        stickmanNames.addAll(mStickmanOnstage.getStickmanNames().stream().collect(Collectors.toList()));
+        stickmanNames.addAll(mStickmanOnstage.getAgentNames().stream().collect(Collectors.toList()));
         StickmanComboBox.getItems().clear();
         StickmanComboBox.getItems().addAll(stickmanNames);
         mStickmanComboList.clear();
@@ -663,8 +663,8 @@ public class StickmanStageController implements ViewController
             HBox mStickmanPane;
             try
             {
-                mStickmanPane = ((StickmanStageFX) mStickmanOnstage.getStageStickman())
-                        .getStickmanBox((((StageRoomFX) mStickmanOnstage.getStageRoom()).CONFIG_STAGE));
+                mStickmanPane = ((StickmanStageFX) mStickmanOnstage.getAgentStage())
+                        .getAgentBox((((StageRoomFX) mStickmanOnstage.getStageRoom()).CONFIG_STAGE));
                 // Upload the picture
                 if (StickmanFX.backgroundList.contains(this.backgroundRecord))
                 {
@@ -979,9 +979,9 @@ public class StickmanStageController implements ViewController
                                     hairColorOpacity, headColorOpacity, bodyColorOpacity, limbsColorOpacity,
                                     backgroundRecord));
                         }
-                        ((StickmansOnStageFX) mStickmanOnstage).getmXmlTransform()
+                        ((StickmansOnStageFX) mStickmanOnstage).getXmlTransform()
                                 .loadStickmanDataFXList(mStickmanDataFX);
-                        // StickmanOnstage.getmXmlTransform().loadStickmanDataFXList(mStickmanDataFX);
+                        // StickmanOnstage.getXmlTransform().loadStickmanDataFXList(mStickmanDataFX);
                         handleSave();
                     });
                 }
@@ -993,9 +993,9 @@ public class StickmanStageController implements ViewController
     {
 
         File filexml = null;
-        if (mStickmanOnstage.getmFilePath() != null)
+        if (mStickmanOnstage.getFilePath() != null)
         {
-            filexml = new File(mStickmanOnstage.getmFilePath() + File.separator + "stickmanfx" + File.separator
+            filexml = new File(mStickmanOnstage.getFilePath() + File.separator + "stickmanfx" + File.separator
                     + "stickmanfx.xml");
         } else
         {
@@ -1019,7 +1019,7 @@ public class StickmanStageController implements ViewController
         {
             filexml = new File(filexml.getPath() + ".xml");
         }
-        ((StickmansOnStageFX) mStickmanOnstage).getmXmlTransform().saveStickmanDataToFile(filexml);
+        ((StickmansOnStageFX) mStickmanOnstage).getXmlTransform().saveStickmanDataToFile(filexml);
     }
 
     // convert color to hex
