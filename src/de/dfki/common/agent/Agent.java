@@ -7,8 +7,7 @@ import de.dfki.common.enums.Gender;
 import de.dfki.common.interfaces.IAnimation;
 import de.dfki.common.interfaces.StageRoom;
 import de.dfki.common.part.Part;
-import de.dfki.reeti.animationlogic.AnimationReeti;
-import de.dfki.stickmanSwing.animationlogic.listener.AnimationListener;
+import de.dfki.common.animationlogic.AnimationListener;
 import javafx.scene.layout.Pane;
 
 import java.awt.*;

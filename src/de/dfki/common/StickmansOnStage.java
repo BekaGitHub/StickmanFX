@@ -4,7 +4,7 @@ import de.dfki.common.agent.IAgent;
 import de.dfki.common.enums.Gender;
 import de.dfki.common.interfaces.StageRoom;
 import de.dfki.common.interfaces.StickmanStage;
-import de.dfki.stickmanSwing.util.Names;
+import de.dfki.common.util.Names;
 
 import java.util.HashMap;
 import java.util.HashSet;

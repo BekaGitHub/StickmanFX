@@ -3,7 +3,7 @@ package de.dfki.common.animationlogic;
 import de.dfki.action.sequence.Entry;
 import de.dfki.action.sequence.WordTimeMarkSequence;
 import de.dfki.common.agent.Agent;
-import de.dfki.stickmanSwing.util.TimingInfo;
+import de.dfki.common.util.TimingInfo;
 
 import java.util.ArrayList;
 import java.util.concurrent.Semaphore;
