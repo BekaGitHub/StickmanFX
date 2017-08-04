@@ -13,7 +13,6 @@ import de.dfki.stickmanFX.xmlsettings.XmlTransformFX;
  */
 public class StickmansOnStageFX extends AgentsOnStage
 {
-
     private XmlTransformFX mXmlTransform = new XmlTransformFX();
 
     public StickmansOnStageFX(AgentStage stickmanStage)

@@ -17,9 +17,6 @@ import java.util.logging.Logger;
  */
 public class ReetiOnStage extends AgentsOnStage
 {
-
-    private String identifier;
-
     public ReetiOnStage(AgentStage agentStage)
     {
         super(agentStage);

@@ -17,8 +17,6 @@ import java.util.logging.Logger;
  */
 public class StickmansOnStage3D extends AgentsOnStage
 {
-
-    private String identifier;
     private XmlTransform3D mXmlTransform = new XmlTransform3D();
 
     public StickmansOnStage3D(AgentStage stickmanStage)

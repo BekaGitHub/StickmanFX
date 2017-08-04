@@ -19,6 +19,7 @@ public abstract class AgentsOnStage
 
     public static final float DEFAULT_SCALE = 0.8f;
     protected AgentStage agentStage;
+    protected String identifier;
     private Map<String, IAgent> agentsOnStage = new HashMap<>();
     private StageRoom stageRoom;
     private String mFilePath;

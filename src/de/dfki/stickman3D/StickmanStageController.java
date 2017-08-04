@@ -317,7 +317,7 @@ public class StickmanStageController extends AStickmanStageController implements
     public void handleBG1()
     {
         String background1 = getClass().getClassLoader().getResource("Images/bg1.jpg").toExternalForm();
-        stage3D.getmStickmanHBox().setStyle("-fx-background-image: url('" + background1 + "'); "
+        stage3D.getAgentBox().setStyle("-fx-background-image: url('" + background1 + "'); "
                 + "-fx-background-position: center center; " + "-fx-background-repeat: stretch;");
         backgroundRecord = "Images/bg1.jpg";
     }
@@ -326,7 +326,7 @@ public class StickmanStageController extends AStickmanStageController implements
     public void handleBG2()
     {
         String background2 = getClass().getClassLoader().getResource("Images/bg2.jpg").toExternalForm();
-        stage3D.getmStickmanHBox().setStyle("-fx-background-image: url('" + background2 + "'); "
+        stage3D.getAgentBox().setStyle("-fx-background-image: url('" + background2 + "'); "
                 + "-fx-background-position: center center; " + "-fx-background-repeat: stretch;");
         backgroundRecord = "Images/bg2.jpg";
     }
@@ -335,7 +335,7 @@ public class StickmanStageController extends AStickmanStageController implements
     public void handleBG3()
     {
         String background3 = getClass().getClassLoader().getResource("Images/bg3.jpg").toExternalForm();
-        stage3D.getmStickmanHBox().setStyle("-fx-background-image: url('" + background3 + "'); "
+        stage3D.getAgentBox().setStyle("-fx-background-image: url('" + background3 + "'); "
                 + "-fx-background-position: center center; " + "-fx-background-repeat: stretch;");
         backgroundRecord = "Images/bg3.jpg";
     }
@@ -344,7 +344,7 @@ public class StickmanStageController extends AStickmanStageController implements
     public void handleBG4()
     {
         String background4 = getClass().getClassLoader().getResource("Images/bg4.jpg").toExternalForm();
-        stage3D.getmStickmanHBox().setStyle("-fx-background-image: url('" + background4 + "'); "
+        stage3D.getAgentBox().setStyle("-fx-background-image: url('" + background4 + "'); "
                 + "-fx-background-position: center center; " + "-fx-background-repeat: stretch;");
         backgroundRecord = "Images/bg4.jpg";
     }
@@ -353,7 +353,7 @@ public class StickmanStageController extends AStickmanStageController implements
     public void handleBG5()
     {
         String background5 = getClass().getClassLoader().getResource("Images/bg5.jpg").toExternalForm();
-        stage3D.getmStickmanHBox().setStyle("-fx-background-image: url('" + background5 + "'); "
+        stage3D.getAgentBox().setStyle("-fx-background-image: url('" + background5 + "'); "
                 + "-fx-background-position: center center; " + "-fx-background-repeat: stretch;");
         backgroundRecord = "Images/bg5.jpg";
     }
@@ -362,7 +362,7 @@ public class StickmanStageController extends AStickmanStageController implements
     public void handleBG6()
     {
         String bgDefault = getClass().getClassLoader().getResource("Images/bgDefault.png").toExternalForm();
-        stage3D.getmStickmanHBox().setStyle("-fx-background-image: url('" + bgDefault + "'); "
+        stage3D.getAgentBox().setStyle("-fx-background-image: url('" + bgDefault + "'); "
                 + "-fx-background-position: center center; " + "-fx-background-repeat: stretch;");
         backgroundRecord = "Images/bgDefault.png";
     }
