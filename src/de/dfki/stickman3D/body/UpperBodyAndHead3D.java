@@ -1,7 +1,9 @@
 package de.dfki.stickman3D.body;
 
+import de.dfki.common.enums.Gender;
 import de.dfki.common.part.Part3D;
-import javafx.scene.Group;
+import de.dfki.common.util.Preferences;
+import javafx.scene.layout.StackPane;
 import javafx.scene.transform.Rotate;
 import javafx.scene.transform.Translate;
 
@@ -12,29 +14,41 @@ import java.awt.*;
  */
 public class UpperBodyAndHead3D extends PartStickman3D
 {
-
-    private Group mUpperBodyAndHead;
-
-
+    private Head3D mHead;
     public UpperBodyAndHead3D(Part3D head, Part3D upperBody, Part3D neck)
     {
-        mSize = new Dimension(120, 300);
-        mUpperBodyAndHead = new Group();
-        mUpperBodyAndHead.getChildren().addAll(head, upperBody, neck);
-
-        this.getChildren().addAll(mUpperBodyAndHead);
+        mHead = (Head3D) head;
+        mSize = new Dimension(120, Preferences.HEAD_HEIGHT + Preferences.NECK_HEIGHT + Preferences.MALE_UPPER_BODY_HEIGHT);
+        this.getChildren().addAll(head, upperBody, neck);
     }
 
     @Override
     public void calculate(int step)
     {
-        Rotate rx = new Rotate(mXRotation, 65, mYTranslation + 280, -105, Rotate.X_AXIS);
-        Rotate ry = new Rotate(mYRotation, 65, mYTranslation + 280, -105, Rotate.Y_AXIS);
-        Rotate rz = new Rotate(mZRotation, 65, mYTranslation + 280, -105, Rotate.Z_AXIS);
+        float pivotX;
+        float pivotY;
+        float pivotZ = -105;
+        if(mHead.getStickman().mType == Gender.TYPE.MALE)
+        {
+            pivotX = Preferences.HEAD_WIDTH/2;
+            pivotY = Preferences.HEAD_HEIGHT
+                    + Preferences.NECK_HEIGHT
+                    + Preferences.MALE_UPPER_BODY_HEIGHT;
+        }
+        else
+        {
+            pivotX = Preferences.HEAD_WIDTH/2;
+            pivotY = Preferences.HEAD_HEIGHT
+                    + Preferences.NECK_HEIGHT
+                    + Preferences.FEMALE_UPPER_BODY_HEIGHT;
+        }
+        Rotate rx = new Rotate(mXRotation, pivotX, pivotY + mYTranslation, pivotZ, Rotate.X_AXIS);
+        Rotate ry = new Rotate(mYRotation, pivotX, pivotY + mYTranslation, pivotZ, Rotate.Y_AXIS);
+        Rotate rz = new Rotate(mZRotation, pivotX, pivotY + mYTranslation, pivotZ, Rotate.Z_AXIS);
 
         Translate translation = new Translate(mXTranslation, mYTranslation, mZTranslation);
-        mUpperBodyAndHead.getTransforms().clear();
-        mUpperBodyAndHead.getTransforms().addAll(rx, ry, rz, translation);
+        this.getTransforms().clear();
+        this.getTransforms().addAll(rx, ry, rz, translation);
     }
 
     @Override

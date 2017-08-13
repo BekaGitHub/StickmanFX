@@ -33,6 +33,7 @@ public abstract class Animation extends Thread implements XMLParseable, XMLWrite
     public Semaphore mAnimationStart = new Semaphore(1);
     public ANIMTYPE mAnimType = null;
     protected HashMap<String, String> extraParams = new HashMap<>();
+
     public Animation()
     {
         mAnimType = null;

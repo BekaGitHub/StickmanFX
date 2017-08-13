@@ -37,6 +37,7 @@ public class SimplexNoise_octave
     // To remove the need for index wrapping, double the permutation table length
     private short perm[] = new short[512];
     private short permMod12[] = new short[512];
+
     public SimplexNoise_octave(int seed)
     {
         p = p_supply.clone();

@@ -7,6 +7,7 @@ package de.dfki.stickman3D.animation.head;
 
 import de.dfki.common.animationlogic.AnimationContent;
 import de.dfki.stickman3D.Stickman3D;
+import de.dfki.stickman3D.StickmanStageController;
 import de.dfki.stickman3D.animationlogic.AnimationStickman3D;
 
 import java.util.ArrayList;
@@ -31,13 +32,19 @@ public class Muster extends AnimationStickman3D
     public void playAnimation()
     {
         mAnimationPart = new ArrayList<>();
-        mAnimationPart.add(new AnimationContent(((Stickman3D) agent).mMouth, "shape", "O"));
-        playAnimationPart(mDuration);
+        mAnimationPart.add(new AnimationContent(((Stickman3D) agent).mMouth, "shape", "SEVEN"));
+        playAnimationPart(20);
 
-        pauseAnimation(1000);
+        pauseAnimation(500);
 
         mAnimationPart = new ArrayList<>();
         mAnimationPart.add(new AnimationContent(((Stickman3D) agent).mMouth, "shape", "DEFAULT"));
         playAnimationPart(mDuration);
+
+        if (StickmanStageController.currentRadioButton != null)
+        {
+            StickmanStageController.currentRadioButton.setSelected(false);
+        }
     }
+
 }

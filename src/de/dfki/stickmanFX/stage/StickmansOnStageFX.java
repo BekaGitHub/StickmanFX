@@ -3,8 +3,8 @@ package de.dfki.stickmanFX.stage;
 import de.dfki.common.AgentsOnStage;
 import de.dfki.common.agent.IAgent;
 import de.dfki.common.enums.Gender;
-import de.dfki.common.interfaces.StageRoom;
 import de.dfki.common.interfaces.AgentStage;
+import de.dfki.common.interfaces.StageRoom;
 import de.dfki.stickmanFX.StickmanFX;
 import de.dfki.stickmanFX.xmlsettings.XmlTransformFX;
 

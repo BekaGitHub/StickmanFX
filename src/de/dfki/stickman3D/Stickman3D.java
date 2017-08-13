@@ -6,6 +6,7 @@ import de.dfki.common.animationlogic.AnimationScheduler;
 import de.dfki.common.enums.Gender;
 import de.dfki.common.enums.Orientation;
 import de.dfki.common.part.Part3D;
+import de.dfki.common.util.Preferences;
 import de.dfki.stickman3D.animation.environment.Blinking;
 import de.dfki.stickman3D.animation.environment.Breathing;
 import de.dfki.stickman3D.animation.environment.IdleBehavior;
@@ -240,39 +241,23 @@ public class Stickman3D extends Agent3D
 
     public void update()
     {
-        float mGeneralXTranslation;
-        float mGeneralYTranslation;
-        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
-        double StickmanHeight = this.mHead.getMeshView().getBoundsInParent().getHeight()
-                + this.mNeck.getMeshView().getBoundsInParent().getHeight()
-                + this.mUpperBody.getMeshView().getBoundsInParent().getHeight()
-                + this.mDownBody.getMeshView().getBoundsInParent().getHeight()
-                + this.mLeftUpperLeg.getMeshView().getBoundsInParent().getHeight()
-                + this.mLeftForeLeg.getMeshView().getBoundsInParent().getHeight()
-                + this.mLeftFoot.getMeshView().getBoundsInParent().getHeight();
-
         Affine af = new Affine();
-        int shiftFactor = (int) (StickmanHeight - (StickmanHeight * mScale));
         if (isFullScreen)
         {
-            mGeneralYTranslation = (int) ((dim.getHeight() - StickmanHeight) + shiftFactor + 40);
-            mGeneralXTranslation = 150;
-        } else
-        {
-            mGeneralYTranslation = (int) ((this.stageHeight - StickmanHeight) + shiftFactor - 350);
-            mGeneralXTranslation = 100;
+            this.setTranslateY(Preferences.HEAD_Y_POS);
+            mScale = 1.35f;
         }
-        af.appendTranslation(mGeneralXTranslation, mGeneralYTranslation);
         af.appendScale(mScale, mScale);
-        af.appendTranslation(0, leaveSpeed); // Added by Robbie, GoDown
+        //GoDown
+        af.appendTranslation(0, leaveSpeed);
         this.getTransforms().clear();
         this.getTransforms().add(af);
     }
 
     private void addAllParts()
-    {
+    {mSpeechBubble.setTranslateX(100);
         this.getChildren().addAll(
-                mDownBody, mStars, mSpeechBubble, agentNameText, mUpperBodyAndHead);
+                mUpperBodyAndHead, mDownBody, mStars, agentNameText);
     }
 
     public void hideAllPartsWithout(Pane p)

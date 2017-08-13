@@ -25,6 +25,7 @@ public class LeftEyebrowFX extends PartStickman2D
     ;
     HeadFX mHeadFX;
     Path mPath;
+
     public LeftEyebrowFX(Part2D head)
     {
         mHeadFX = (HeadFX) head;

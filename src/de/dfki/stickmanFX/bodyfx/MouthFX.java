@@ -22,6 +22,7 @@ public class MouthFX extends PartStickman2D
     ;
     HeadFX mHeadFX;
     Path mPath;
+
     public MouthFX(Part2D head)
     {
         mHeadFX = (HeadFX) head;

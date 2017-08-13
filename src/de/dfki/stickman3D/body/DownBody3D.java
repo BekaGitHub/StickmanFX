@@ -9,6 +9,7 @@ package de.dfki.stickman3D.body;
 import com.interactivemesh.jfx.importer.col.ColModelImporter;
 import de.dfki.common.enums.Gender;
 import de.dfki.common.part.Part3D;
+import de.dfki.common.util.Preferences;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.PhongMaterial;
 import javafx.scene.shape.MeshView;
@@ -25,20 +26,15 @@ import java.net.URL;
 public class DownBody3D extends PartStickman3D
 {
 
-    private static final int DRAWOFFSET = 20;
-    public DownBody3D.SHAPE mShape = DownBody3D.SHAPE.DEFAULT;
+    public SHAPE mShape = SHAPE.DEFAULT;
 
     private UpperBody3D mUpperBody;
-    private Dimension mSize;
-
-    private int mHalfSizeX;
     private MeshView mBodyMeshView;
     private PhongMaterial material;
+
     public DownBody3D(Part3D upperBody)
     {
         mUpperBody = (UpperBody3D) upperBody;
-        mSize = new Dimension(120, 300);
-        mHalfSizeX = mSize.width / 2;
         mStart = mUpperBody.getDownBodyPosition();
 
         init();
@@ -49,7 +45,7 @@ public class DownBody3D extends PartStickman3D
     {
         super.init();
         this.setTranslateX(mStart.x);
-        this.setTranslateY(mStart.y + 135);
+        this.setTranslateY(mStart.y);
         this.setTranslateZ(-105);
 
         URL url;
@@ -75,8 +71,7 @@ public class DownBody3D extends PartStickman3D
     @Override
     public void setShape(String s)
     {
-        SHAPE shape = SHAPE.valueOf(s);
-        mShape = (shape != null) ? shape : SHAPE.DEFAULT;
+        mShape = SHAPE.valueOf(s);
     }
 
     @Override
@@ -87,44 +82,55 @@ public class DownBody3D extends PartStickman3D
 
     public void calculate(int step)
     {
-
-        Rotate rx = new Rotate(mXRotation, Rotate.X_AXIS);
-        Rotate ry = new Rotate(mYRotation, Rotate.Y_AXIS);
-        Rotate rz = new Rotate(mZRotation, Rotate.Z_AXIS);
+        double pivotX;
+        double pivotY = 0;
+        double pivotZ = 0;
+        if(mUpperBody.getNeck().getHead().getStickman().mType == Gender.TYPE.MALE)
+        {
+            pivotX = Preferences.MALE_DOWN_BODY_WIDTH/2;
+        }
+        else
+        {
+            pivotX = Preferences.FEMALE_DOWN_BODY_WIDTH/2;
+        }
 
         Translate translation = new Translate(mXTranslation, mYTranslation, mZTranslation);
+        Rotate rx = new Rotate(mXRotation, pivotX, pivotY, pivotZ, Rotate.X_AXIS);
+        Rotate ry = new Rotate(mYRotation, pivotX, pivotY, pivotZ, Rotate.Y_AXIS);
+        Rotate rz = new Rotate(mZRotation, pivotX, pivotY, pivotZ, Rotate.Z_AXIS);
 
         this.getTransforms().clear();
         this.getTransforms().addAll(rx, ry, rz, translation);
 
-        switch (mShape)
+        executeFadeInFadeOut(mBodyMeshView, mShape, step);
+    }
+
+    public Point getRightUpperLegStartPosition()
+    {
+        if(mUpperBody.getNeck().getHead().getStickman().mType == Gender.TYPE.MALE)
         {
-            case FADEIN:
-                if (step == 2)
-                {
-                    mColor = new Color(mColor.getRed(), mColor.getGreen(), mColor.getBlue(), 0.0);
-                    update();
-                    mBodyMeshView.setVisible(false);
-                } else if (mColor.getOpacity() != 0.0)
-                {
-                    mColor = new Color(mColor.getRed(), mColor.getGreen(), mColor.getBlue(), mColor.getOpacity() - 0.052);
-                    update();
-                }
-                break;
+            return new Point(Preferences.MALE_DOWN_BODY_WIDTH / 12,
+                    Preferences.MALE_DOWN_BODY_HEIGHT - 4);
+        }
+        else
+        {
+            return new Point(Preferences.FEMALE_DOWN_BODY_WIDTH / 3,
+                    Preferences.FEMALE_DOWN_BODY_HEIGHT - 10);
+        }
 
-            case FADEOUT:
-                mBodyMeshView.setVisible(true);
+    }
 
-                if (step == 2)
-                {
-                    mColor = new Color(mColor.getRed(), mColor.getGreen(), mColor.getBlue(), 1.0);
-                    update();
-                } else if (mColor.getOpacity() != 1.0)
-                {
-                    mColor = new Color(mColor.getRed(), mColor.getGreen(), mColor.getBlue(), mColor.getOpacity() + 0.052);
-                    update();
-                }
-                break;
+    public Point getLeftUpperLegStartPosition()
+    {
+        if(mUpperBody.getNeck().getHead().getStickman().mType == Gender.TYPE.MALE)
+        {
+            return new Point(Preferences.MALE_DOWN_BODY_WIDTH - Preferences.MALE_DOWN_BODY_WIDTH / 4,
+                    Preferences.MALE_DOWN_BODY_HEIGHT - 4);
+        }
+        else
+        {
+            return new Point(Preferences.FEMALE_DOWN_BODY_WIDTH - Preferences.FEMALE_DOWN_BODY_WIDTH / 3 - 10,
+                    Preferences.FEMALE_DOWN_BODY_HEIGHT - 10);
         }
     }
 
@@ -153,10 +159,5 @@ public class DownBody3D extends PartStickman3D
     public MeshView getMeshView()
     {
         return mBodyMeshView;
-    }
-
-    public enum SHAPE
-    {
-        DEFAULT, FADEIN, FADEOUT
     }
 }

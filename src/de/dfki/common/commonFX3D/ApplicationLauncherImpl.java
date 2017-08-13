@@ -1,7 +1,7 @@
 package de.dfki.common.commonFX3D;
 
-import de.dfki.common.interfaces.ApplicationLauncher;
 import de.dfki.common.interfaces.AgentStage;
+import de.dfki.common.interfaces.ApplicationLauncher;
 
 public abstract class ApplicationLauncherImpl implements ApplicationLauncher
 {

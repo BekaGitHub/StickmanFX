@@ -2,8 +2,8 @@ package de.dfki.common.decorators;
 
 import de.dfki.common.AgentsOnStage;
 import de.dfki.common.agent.IAgent;
-import de.dfki.common.interfaces.StageRoom;
 import de.dfki.common.interfaces.AgentStage;
+import de.dfki.common.interfaces.StageRoom;
 
 import java.awt.image.BufferedImage;
 

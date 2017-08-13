@@ -2,6 +2,7 @@ package de.dfki.stickman3D.body;
 
 import de.dfki.common.enums.Gender;
 import de.dfki.common.part.Part3D;
+import de.dfki.common.util.Preferences;
 import de.dfki.stickman3D.mimic.util.*;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Polygon;
@@ -11,46 +12,23 @@ import java.awt.*;
 /**
  * @author Beka Aptsiauri
  */
-public class RightEyebrow3D extends PartStickman3D
+public class RightEyebrow3D extends Brow
 {
-
-    public RightEyebrow3D.SHAPE mShape = RightEyebrow3D.SHAPE.DEFAULT;
-    private Head3D mHead;
-    private Polygon currentPolygon;
-
     public RightEyebrow3D(Part3D head)
     {
-        mHead = (Head3D) head;
-        mSize = new Dimension(mLength, 5);
+        super(head);
+        mStart = mHead.getRightEyebrowPosition();
+        currentPolygon.setTranslateX(Preferences.LEFT_BROW_X_POS + 9);
 
-        if (mHead.getStickman().mType == Gender.TYPE.MALE)
-            mColor = Color.rgb(88, 44, 13, 1);
-        else
-            mColor = Color.rgb(204, 163, 0, 1);
-
-        currentPolygon = new Polygon();
-
-        mStart = mHead.getRightEyebrowPostion();
-
+        this.getChildren().add(currentPolygon);
+        mHead.getChildren().add(this);
         init();
-
-        mHead.getChildren().add(currentPolygon);
-    }
-
-    @Override
-    public void init()
-    {
-        super.init();
-        currentPolygon.setTranslateX(mStart.x - 9);
-        currentPolygon.setTranslateY(mStart.y + 38);
-        currentPolygon.setTranslateZ(-17);
     }
 
     @Override
     public void setShape(String s)
     {
-        RightEyebrow3D.SHAPE shape = RightEyebrow3D.SHAPE.valueOf(s);
-        mShape = (shape != null) ? shape : RightEyebrow3D.SHAPE.DEFAULT;
+        mShape = SHAPE.valueOf(s);
     }
 
     @Override
@@ -246,14 +224,9 @@ public class RightEyebrow3D extends PartStickman3D
 
     protected void recordColor()
     {
-        if (mHead.getStickman().setCharacterInvisible == false)
+        if (!mHead.getStickman().setCharacterInvisible)
         {
             mColorRecorder = mColor;
         }
-    }
-
-    public enum SHAPE
-    {
-        DEFAULT, FADEIN, FADEOUT, ANGRY, HAPPY, HAPPYEND, ANGRYEND, DISGUSTED, DISGUSTEDEND, SURPRISED, SURPRISEDEND, EXCITED, EXCITEDEND, EMBARRASSED, EMBARRASSEDEND, SAD, SADEND
     }
 }

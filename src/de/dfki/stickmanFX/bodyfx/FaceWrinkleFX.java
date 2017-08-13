@@ -20,6 +20,7 @@ public class FaceWrinkleFX extends PartStickman2D
     ;
     HeadFX mHeadFX;
     Path mPath;
+
     public FaceWrinkleFX(Part2D head)
     {
         mHeadFX = (HeadFX) head;

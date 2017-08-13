@@ -18,6 +18,7 @@ public class StartBreathing extends AnimationStickman3D
 
     int frequent;
     int actionDuration;
+
     public StartBreathing()
     {
         mAnimType = ANIMTYPE.ON;

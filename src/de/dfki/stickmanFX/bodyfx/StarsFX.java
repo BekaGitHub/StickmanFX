@@ -20,6 +20,7 @@ public class StarsFX extends PartStickman2D
 
     ;
     BodyFX mBodyFX;
+
     public StarsFX(Part2D body)
     {
 

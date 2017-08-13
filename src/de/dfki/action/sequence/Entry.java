@@ -18,6 +18,7 @@ public class Entry
 
     ;
     public TYPE mType;
+
     public Entry()
     {
         mType = TYPE.GENERIC;

@@ -2,6 +2,7 @@ package de.dfki.stickman3D.stage;
 
 import de.dfki.common.commonFX3D.ApplicationLauncherImpl;
 import de.dfki.common.commonFX3D.FXApplication;
+import de.dfki.common.util.Preferences;
 import de.dfki.stickman3D.Stickman3D;
 import de.dfki.stickman3D.StickmanStageController;
 import de.dfki.stickmanFX.stage.StageRoomFX;
@@ -76,6 +77,7 @@ public class StickmanStage3D extends FXApplication
         mAgentBox = new HBox();
         mAgentBox.setId("StickmanStage3D");
         mAgentBox.setAlignment(Pos.CENTER);
+        mAgentBox.setSpacing(Preferences.DISTANCE_BETWEEN_AGENTS);
         int mHeight = 0;
         int mWidth = 0;
         mainStage = stage;
@@ -119,6 +121,7 @@ public class StickmanStage3D extends FXApplication
             try
             {
                 box = getAgentBox(stageIdentifier);
+                box.setSpacing(Preferences.DISTANCE_BETWEEN_AGENTS);
                 for (String key : agentsOnStage.get(stageIdentifier).getAgentNames())
                 {
                     Stickman3D sman3D = (Stickman3D) agentsOnStage.get(stageIdentifier).getAgentByKey(key);
@@ -208,7 +211,7 @@ public class StickmanStage3D extends FXApplication
         Platform.runLater(() ->
         {
             root.setAlignment(Pos.BASELINE_CENTER);
-            Scene stageScene = new Scene(root, 600, 600, true, SceneAntialiasing.BALANCED);
+            Scene stageScene = new Scene(root, 650, 600, true, SceneAntialiasing.BALANCED);
             Stage stage = new Stage();
             stage.setScene(stageScene);
             stage.setX(x);

@@ -14,8 +14,8 @@ public class LogFormatter extends Formatter
         return ((new StringBuffer())
                 .append(record
                         .getLevel())
-                        .append(": ")
-                        .append(record.getMessage())
+                .append(": ")
+                .append(record.getMessage())
                 .append("\n")).toString();
     }
 }

@@ -14,8 +14,6 @@ public class StagePaneHandlerReeti extends StagePaneHandler
 {
 
 
-
-
     public StagePaneHandlerReeti()
     {
         super();

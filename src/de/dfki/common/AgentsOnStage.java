@@ -2,8 +2,8 @@ package de.dfki.common;
 
 import de.dfki.common.agent.IAgent;
 import de.dfki.common.enums.Gender;
-import de.dfki.common.interfaces.StageRoom;
 import de.dfki.common.interfaces.AgentStage;
+import de.dfki.common.interfaces.StageRoom;
 import de.dfki.common.util.Names;
 
 import java.util.HashMap;
@@ -17,7 +17,7 @@ import java.util.Set;
 public abstract class AgentsOnStage
 {
 
-    public static final float DEFAULT_SCALE = 0.8f;
+    public static final float DEFAULT_SCALE = 1.0f;
     protected AgentStage agentStage;
     protected String identifier;
     private Map<String, IAgent> agentsOnStage = new HashMap<>();

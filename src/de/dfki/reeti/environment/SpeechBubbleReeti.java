@@ -23,7 +23,6 @@ public class SpeechBubbleReeti extends PartReeti
 {
 
     public SpeechBubbleReeti.SHAPE mShape = SpeechBubbleReeti.SHAPE.DEFAULT;
-    GeneralPath mBubble;
     private Head mHeadFX;
     private Label message;
     private HBox bubbleBox;

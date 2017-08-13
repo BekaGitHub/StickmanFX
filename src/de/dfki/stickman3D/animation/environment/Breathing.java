@@ -1,10 +1,12 @@
 package de.dfki.stickman3D.animation.environment;
 
 import de.dfki.stickman3D.Stickman3D;
+import javafx.animation.Interpolator;
 import javafx.animation.KeyFrame;
 import javafx.animation.ScaleTransition;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
+import javafx.scene.transform.Scale;
 import javafx.util.Duration;
 
 /**
@@ -33,7 +35,7 @@ public final class Breathing
         breathTimeline = new Timeline(new KeyFrame(Duration.millis(breathFrequent), (ActionEvent event) ->
         {
             ScaleTransition scaleTransition = new ScaleTransition(Duration.millis(actionDuration),
-                    mStickmanFX.mUpperBody);
+                    mStickmanFX.mUpperBody.getMeshView());
             scaleTransition.setToX(1.05f);
             scaleTransition.setToZ(1.05f);
             scaleTransition.setToY(1.01f);

@@ -7,138 +7,53 @@ package de.dfki.stickman3D.body;
 
 import com.interactivemesh.jfx.importer.col.ColModelImporter;
 import de.dfki.common.part.Part3D;
-import javafx.scene.Group;
-import javafx.scene.paint.Color;
+import javafx.scene.layout.VBox;
 import javafx.scene.paint.PhongMaterial;
 import javafx.scene.shape.MeshView;
-import javafx.scene.transform.Rotate;
 
-import java.awt.*;
 import java.net.URL;
 
 /**
  * @author Beka
  */
-public class LeftForeArm3D extends PartStickman3D
+public class LeftForeArm3D extends ForeArm
 {
-
-    private static final int ARMLENGTH = 80;
-    public LeftForeArm3D.SHAPE mShape = LeftForeArm3D.SHAPE.DEFAULT;
-
-    private LeftUpperArm3D mLeftUpperArm;
-    private MeshView mLeftForeArmMesh;
-    private PhongMaterial material;
-    private Group leftForeArmGroup;
     public LeftForeArm3D(Part3D arm)
     {
-        mLeftUpperArm = (LeftUpperArm3D) arm;
-        mSize = new Dimension(ARMLENGTH, ARMLENGTH);
-        mColor = Color.rgb(242, 227, 217, 1);
+        super(arm);
+        mZRotation = 10;
 
         ColModelImporter importer = new ColModelImporter();
         URL url = getClass().getClassLoader().getResource("BodyParts/Stickman3D/ForeArm.dae");
-
-        mXRotation = -15;
-        mZRotation = 10;
-        mToDegreeX = mDefaultRotation;
-
         importer.read(url);
-        mLeftForeArmMesh = (MeshView) importer.getImport()[0];
+        foreArmMeshView = (MeshView) importer.getImport()[0];
 
         material = new PhongMaterial();
         material.setDiffuseColor(mColor);
-        mLeftForeArmMesh.setMaterial(material);
+        foreArmMeshView.setMaterial(material);
 
-        leftForeArmGroup = new Group();
-        leftForeArmGroup.getChildren().add(mLeftForeArmMesh);
-
-        mLeftUpperArm.getLeftUpperArmGroup().getChildren().add(leftForeArmGroup);
+        foreArmBox = new VBox();
+        foreArmBox.getChildren().add(foreArmMeshView);
+        this.getChildren().add(foreArmBox);
+        ((LeftUpperArm3D)arm).getUpperArmBox().getChildren().add(this);
 
         init();
-    }
-
-    @Override
-    public void setShape(String s)
-    {
-        SHAPE shape = SHAPE.valueOf(s);
-        mShape = (shape != null) ? shape : SHAPE.DEFAULT;
-    }
-
-    @Override
-    public void resetShape()
-    {
-        mShape = LeftForeArm3D.SHAPE.DEFAULT;
-    }
-
-    @Override
-    public void calculate(int step)
-    {
-        Rotate rx = new Rotate(mXRotation, Rotate.X_AXIS);
-        Rotate ry = new Rotate(mYRotation, Rotate.Y_AXIS);
-        Rotate rz = new Rotate(mZRotation, Rotate.Z_AXIS);
-
-        leftForeArmGroup.setTranslateX(mStart.x);
-        leftForeArmGroup.setTranslateY(mStart.y + 60);
-        leftForeArmGroup.setTranslateZ(0);
-
-        leftForeArmGroup.getTransforms().clear();
-        leftForeArmGroup.getTransforms().addAll(rx, ry, rz);
-
-        switch (mShape)
-        {
-            case FADEIN:
-                if (step == 2)
-                {
-                    mColor = new Color(mColor.getRed(), mColor.getGreen(), mColor.getBlue(), 0.0);
-                    update();
-                    mLeftForeArmMesh.setVisible(false);
-                } else if (mColor.getOpacity() != 0.0)
-                {
-                    mColor = new Color(mColor.getRed(), mColor.getGreen(), mColor.getBlue(), mColor.getOpacity() - 0.052);
-                    update();
-                }
-                break;
-
-            case FADEOUT:
-                mLeftForeArmMesh.setVisible(true);
-
-                if (step == 2)
-                {
-                    mColor = new Color(mColor.getRed(), mColor.getGreen(), mColor.getBlue(), 1.0);
-                    update();
-                } else if (mColor.getOpacity() != 1.0)
-                {
-                    mColor = new Color(mColor.getRed(), mColor.getGreen(), mColor.getBlue(), mColor.getOpacity() + 0.052);
-                    update();
-                }
-                break;
-        }
     }
 
     @Override
     public void update()
     {
         material.setDiffuseColor(mColor);
-        mLeftForeArmMesh.setMaterial(material);
-    }
-
-    public LeftUpperArm3D getLeftUpperArm()
-    {
-        return mLeftUpperArm;
+        foreArmMeshView.setMaterial(material);
     }
 
     public MeshView getMeshView()
     {
-        return mLeftForeArmMesh;
+        return foreArmMeshView;
     }
 
-    public Group getLeftForeArmGroup()
+    public VBox getForeArmBox()
     {
-        return leftForeArmGroup;
-    }
-
-    public enum SHAPE
-    {
-        DEFAULT, FADEIN, FADEOUT
+        return foreArmBox;
     }
 }

@@ -41,6 +41,8 @@ public abstract class StagePaneHandler
     }
 
     protected abstract StagePaneHandler invoke() throws IOException;
+
     public abstract HBox getConfigRoot() throws IOException;
+
     public abstract HBox getStageRoot() throws IOException;
 }

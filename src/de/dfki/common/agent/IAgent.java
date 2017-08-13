@@ -1,8 +1,8 @@
 package de.dfki.common.agent;
 
 import de.dfki.action.sequence.WordTimeMarkSequence;
-import de.dfki.common.enums.Gender;
 import de.dfki.common.animationlogic.IAnimation;
+import de.dfki.common.enums.Gender;
 import de.dfki.common.interfaces.StageRoom;
 
 /**

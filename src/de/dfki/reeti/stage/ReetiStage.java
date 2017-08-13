@@ -8,8 +8,6 @@ import de.dfki.stickmanFX.stage.StageRoomFX;
 import javafx.application.Platform;
 import javafx.geometry.Pos;
 import javafx.scene.*;
-import javafx.scene.input.KeyEvent;
-import javafx.scene.input.ScrollEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;

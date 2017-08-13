@@ -25,7 +25,7 @@ public class Stars3D extends PartStickman3D
     {
         mLength = 150;
         mSize = new Dimension(120, mLength);
-        mStart = ((UpperBody3D) body).getLeftLegStartPostion();
+        mStart = ((UpperBody3D) body).getDownBodyPosition();
         mColor = Color.rgb(255, 255, 0, 0.0);
 
         ColModelImporter imorter = new ColModelImporter();
@@ -77,7 +77,7 @@ public class Stars3D extends PartStickman3D
 
         mStarMiddle.setTranslateX(50);
         mStarMiddle.setTranslateY(-100);
-        mStarMiddle.setTranslateZ(-15);
+        mStarMiddle.setTranslateZ(-50);
 
         mStarSmall.setTranslateX(5);
         mStarSmall.setTranslateY(-145);

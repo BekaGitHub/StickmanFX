@@ -6,7 +6,9 @@
 package de.dfki.stickman3D.body;
 
 import com.interactivemesh.jfx.importer.col.ColModelImporter;
+import de.dfki.common.enums.Gender;
 import de.dfki.common.part.Part3D;
+import de.dfki.common.util.Preferences;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.PhongMaterial;
 import javafx.scene.shape.MeshView;
@@ -22,7 +24,7 @@ import java.net.URL;
 public class Neck3D extends PartStickman3D
 {
 
-    public Neck3D.SHAPE mShape = Neck3D.SHAPE.DEFAULT;
+    public SHAPE mShape = SHAPE.DEFAULT;
     private Head3D mHead;
     private MeshView neckMeshView;
     private PhongMaterial material;
@@ -30,9 +32,18 @@ public class Neck3D extends PartStickman3D
     public Neck3D(Part3D head)
     {
         mHead = (Head3D) head;
-        mLength = 8;
-        mSize = new Dimension(4, mLength);
         mColor = Color.rgb(242, 227, 217, 1);
+        mStart = mHead.getNeckStartPosition();
+        if(((Head3D) head).getStickman().mType == Gender.TYPE.MALE)
+        {
+            mEnd = new Point(mStart.x - Preferences.MALE_UPPER_BODY_WIDTH / 2 + 3,
+                    mStart.y + Preferences.NECK_HEIGHT - 3);
+        }
+        else
+        {
+            mEnd = new Point(mStart.x - Preferences.FEMALE_UPPER_BODY_WIDTH / 2 + 3,
+                    mStart.y + Preferences.NECK_HEIGHT - 3);
+        }
 
         material = new PhongMaterial();
         material.setDiffuseColor(mColor);
@@ -42,15 +53,24 @@ public class Neck3D extends PartStickman3D
         imorter.read(url);
         neckMeshView = (MeshView) imorter.getImport()[0];
         neckMeshView.setMaterial(material);
+        this.getChildren().add(neckMeshView);
 
         init();
     }
 
     @Override
+    public void init()
+    {
+        super.init();
+        this.setTranslateX(mStart.x);
+        this.setTranslateY(mStart.y);
+        neckMeshView.setTranslateZ(-105);
+    }
+
+    @Override
     public void setShape(String s)
     {
-        SHAPE shape = SHAPE.valueOf(s);
-        mShape = (shape != null) ? shape : SHAPE.DEFAULT;
+        mShape = SHAPE.valueOf(s);
     }
 
     @Override
@@ -59,23 +79,14 @@ public class Neck3D extends PartStickman3D
         mShape = Neck3D.SHAPE.DEFAULT;
     }
 
-    public Point getBodyStartPosition()
+    public Point getUpperBodyStartPosition()
     {
-        return new Point(mEnd.x, mEnd.y + 10);
+        return new Point(mEnd.x, mEnd.y);
     }
 
     @Override
     public void calculate(int step)
     {
-        mStart = mHead.getNeckStartPosition();
-        mEnd = new Point(mStart.x, mStart.y + mLength);
-
-        this.getChildren().clear();
-
-        neckMeshView.setTranslateX(mStart.x);
-        neckMeshView.setTranslateY(mStart.y + 5);
-        neckMeshView.setTranslateZ(-105);
-
         Rotate rx = new Rotate(mXRotation, Rotate.X_AXIS);
         Rotate ry = new Rotate(mYRotation, Rotate.Y_AXIS);
         Rotate rz = new Rotate(mZRotation, Rotate.Z_AXIS);
@@ -85,37 +96,7 @@ public class Neck3D extends PartStickman3D
         neckMeshView.getTransforms().clear();
         neckMeshView.getTransforms().addAll(rx, ry, rz, translation);
 
-        switch (mShape)
-        {
-            case FADEIN:
-                if (step == 2)
-                {
-                    mColor = new Color(mColor.getRed(), mColor.getGreen(), mColor.getBlue(), 0.0);
-                    update();
-                    neckMeshView.setVisible(false);
-                } else if (mColor.getOpacity() != 0.0)
-                {
-                    mColor = new Color(mColor.getRed(), mColor.getGreen(), mColor.getBlue(), mColor.getOpacity() - 0.052);
-                    update();
-                }
-                break;
-
-            case FADEOUT:
-                neckMeshView.setVisible(true);
-
-                if (step == 2)
-                {
-                    mColor = new Color(mColor.getRed(), mColor.getGreen(), mColor.getBlue(), 1.0);
-                    update();
-                } else if (mColor.getOpacity() != 1.0)
-                {
-                    mColor = new Color(mColor.getRed(), mColor.getGreen(), mColor.getBlue(), mColor.getOpacity() + 0.052);
-                    update();
-                }
-                break;
-        }
-
-        this.getChildren().add(neckMeshView);
+        executeFadeInFadeOut(neckMeshView, mShape, step);
     }
 
     @Override
@@ -128,7 +109,7 @@ public class Neck3D extends PartStickman3D
     @Override
     protected void recordColor()
     {
-        if (mHead.getStickman().setCharacterInvisible == false)
+        if (!mHead.getStickman().setCharacterInvisible)
         {
             mColorRecorder = mColor;
         }
@@ -143,10 +124,5 @@ public class Neck3D extends PartStickman3D
     public MeshView getMeshView()
     {
         return neckMeshView;
-    }
-
-    public enum SHAPE
-    {
-        DEFAULT, FADEIN, FADEOUT
     }
 }

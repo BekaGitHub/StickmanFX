@@ -7,6 +7,7 @@ package de.dfki.stickman3D.body;
 
 import com.interactivemesh.jfx.importer.col.ColModelImporter;
 import de.dfki.common.part.Part3D;
+import de.dfki.common.util.Preferences;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.PhongMaterial;
 import javafx.scene.shape.MeshView;
@@ -20,7 +21,7 @@ import java.net.URL;
 public class Nose3D extends PartStickman3D
 {
 
-    public Nose3D.SHAPE mShape = Nose3D.SHAPE.DEFAULT;
+    public SHAPE mShape = SHAPE.DEFAULT;
     private Head3D mHead;
     private MeshView mNose;
     private PhongMaterial material;
@@ -28,7 +29,7 @@ public class Nose3D extends PartStickman3D
     public Nose3D(Part3D head)
     {
         mHead = (Head3D) head;
-        mSize = new Dimension(mLength, mLength);
+        mStart = mHead.getNoseStartPosition();
         mColor = Color.rgb(242, 227, 217, 1);
 
         ColModelImporter importer = new ColModelImporter();
@@ -40,27 +41,24 @@ public class Nose3D extends PartStickman3D
         material.setDiffuseColor(mColor);
         mNose.setMaterial(material);
 
-        mStart = mHead.getLeftEyebrowPostion();
-
+        this.getChildren().add(mNose);
+        mHead.getChildren().add(this);
         init();
-
-        mHead.getChildren().add(mNose);
     }
 
     @Override
     public void init()
     {
         super.init();
-        mNose.setTranslateX(mStart.x);
-        mNose.setTranslateY(mStart.y + 110);
-        mNose.setTranslateZ(-15);
+        this.setTranslateX(mStart.x);
+        this.setTranslateY(mStart.y);
+        this.setTranslateZ(Preferences.FACE_PARTS_Z_POS);
     }
 
     @Override
     public void setShape(String s)
     {
-        SHAPE shape = Nose3D.SHAPE.valueOf(s);
-        mShape = (shape != null) ? shape : Nose3D.SHAPE.DEFAULT;
+        mShape = SHAPE.valueOf(s);
     }
 
     @Override
@@ -72,36 +70,7 @@ public class Nose3D extends PartStickman3D
     @Override
     public void calculate(int step)
     {
-
-        switch (mShape)
-        {
-            case FADEIN:
-                if (step == 2)
-                {
-                    mColor = new Color(mColor.getRed(), mColor.getGreen(), mColor.getBlue(), 0.0);
-                    update();
-                    mNose.setVisible(false);
-                } else if (mColor.getOpacity() != 0.0)
-                {
-                    mColor = new Color(mColor.getRed(), mColor.getGreen(), mColor.getBlue(), mColor.getOpacity() - 0.052);
-                    update();
-                }
-                break;
-
-            case FADEOUT:
-                mNose.setVisible(true);
-
-                if (step == 2)
-                {
-                    mColor = new Color(mColor.getRed(), mColor.getGreen(), mColor.getBlue(), 1.0);
-                    update();
-                } else if (mColor.getOpacity() != 1.0)
-                {
-                    mColor = new Color(mColor.getRed(), mColor.getGreen(), mColor.getBlue(), mColor.getOpacity() + 0.052);
-                    update();
-                }
-                break;
-        }
+        executeFadeInFadeOut(mNose, mShape, step);
     }
 
     @Override
@@ -114,7 +83,7 @@ public class Nose3D extends PartStickman3D
     @Override
     protected void recordColor()
     {
-        if (mHead.getStickman().setCharacterInvisible == false)
+        if (!mHead.getStickman().setCharacterInvisible)
         {
             mColorRecorder = mColor;
         }
@@ -124,10 +93,5 @@ public class Nose3D extends PartStickman3D
     public MeshView getMeshView()
     {
         return mNose;
-    }
-
-    public enum SHAPE
-    {
-        DEFAULT, FADEIN, FADEOUT
     }
 }

@@ -18,6 +18,7 @@ public class StartBlinking extends AnimationReeti
 
     int frequent;
     int actionDuration;
+
     public StartBlinking()
     {
         mAnimType = ANIMTYPE.ON;

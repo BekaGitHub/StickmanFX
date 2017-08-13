@@ -1,6 +1,7 @@
 package de.dfki.stickman3D.body;
 
 import de.dfki.common.agent.Agent3D;
+import de.dfki.common.util.Preferences;
 import javafx.scene.paint.Color;
 
 import java.net.URL;
@@ -13,25 +14,21 @@ public class MaleHair3D extends Hair3D
 
     public MaleHair3D(Agent3D agent3D)
     {
-        super(agent3D);
         mColor = Color.rgb(97, 58, 0, 1);
-        URL url = getClass().getClassLoader().getResource("BodyParts/Stickman3D/maleHair.stl");
+        URL url = getClass().getClassLoader().getResource("BodyParts/Stickman3D/maleHair.dae");
 
         initializeHair(url);
-        agent3D.mHead.getChildren().add(hairMeshView);
-
+        this.getChildren().add(hairMeshView);
+        agent3D.mHead.getChildren().add(this);
         init();
-
-        calculate(0);
     }
 
     @Override
     public void init()
     {
         super.init();
-        int mZTranslate = 3;
-        hairMeshView.setTranslateX(mHalfWidth - 60);
-        hairMeshView.setTranslateY(mHalfHeight - 52);
-        hairMeshView.setTranslateZ(mZTranslate);
+        this.setTranslateX(Preferences.MALE_HAIR_X_POS);
+        this.setTranslateY(Preferences.MALE_HAIR_Y_POS);
+        this.setTranslateZ(Preferences.MALE_HAIR_Z_POS);
     }
 }

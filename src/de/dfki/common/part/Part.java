@@ -25,8 +25,8 @@ public abstract class Part extends Pane
 
     public void init()
     {
-        this.setPrefHeight(mSize.height);
-        this.setPrefWidth(mSize.width);
+        this.setMaxSize(mSize.getWidth(), mSize.getHeight());
+        this.setMinSize(mSize.getWidth(), mSize.getHeight());
         calculate(0);
     }
 

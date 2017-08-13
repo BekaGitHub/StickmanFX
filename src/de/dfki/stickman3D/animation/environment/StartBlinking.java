@@ -18,6 +18,7 @@ public class StartBlinking extends AnimationStickman3D
 
     int frequent;
     int actionDuration;
+
     public StartBlinking()
     {
         mAnimType = ANIMTYPE.ON;

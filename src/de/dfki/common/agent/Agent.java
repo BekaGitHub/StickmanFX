@@ -2,12 +2,16 @@ package de.dfki.common.agent;
 
 import de.dfki.common.LogFormatter;
 import de.dfki.common.animationlogic.Animation;
+import de.dfki.common.animationlogic.AnimationListener;
 import de.dfki.common.animationlogic.AnimationScheduler;
-import de.dfki.common.enums.Gender;
 import de.dfki.common.animationlogic.IAnimation;
+import de.dfki.common.enums.Gender;
 import de.dfki.common.interfaces.StageRoom;
 import de.dfki.common.part.Part;
-import de.dfki.common.animationlogic.AnimationListener;
+import de.dfki.common.util.Preferences;
+import javafx.geometry.*;
+import javafx.geometry.Insets;
+import javafx.scene.control.Control;
 import javafx.scene.layout.Pane;
 
 import java.awt.*;
@@ -49,10 +53,9 @@ public abstract class Agent extends Pane implements IAgent
 
     public void init()
     {
-        this.setPrefHeight(mSize.height);
-        this.setPrefWidth(mSize.width);
-        this.setMinHeight(mSize.height);
-        this.setMinWidth(mSize.width);
+        this.setMaxHeight(Preferences.MALE_HEIGHT * mScale);
+        this.setMinHeight(Preferences.MALE_HEIGHT * mScale);
+        this.setPrefWidth(Control.USE_COMPUTED_SIZE);
 
         ConsoleHandler ch = new ConsoleHandler();
         ch.setFormatter(new LogFormatter());

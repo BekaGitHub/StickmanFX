@@ -1,107 +1,37 @@
 package de.dfki.stickman3D.body;
 
-import de.dfki.common.enums.Gender;
 import de.dfki.common.part.Part3D;
-import javafx.scene.Group;
-import javafx.scene.paint.Color;
+import de.dfki.common.util.Preferences;
 import javafx.scene.shape.*;
 
 /**
  * @author Beka Aptsiauri
  */
-public class RightEye3D extends PartStickman3D
+public class RightEye3D extends Eye
 {
-
-    public Path border;
-    public Path bigPupile;
-    public Path smallPupile;
-    public RightEye3D.SHAPE mShape = RightEye3D.SHAPE.DEFAULT;
-
-    ;
-    double xMovement;
-    double yMovement1;
-    double yMovement2;
-    Head3D mHeadFX;
-    Group rightEyeGroup;
-    double borderXSize = 0;
-    float borderYSize = 0;
-    double bigPupileYSize = 0;
-    double smallPupileYSize = 0;
-
-    QuadCurveTo quadCurve_1;
-    QuadCurveTo quadCurve_2;
-
-    Color smallPupileColor;
-    Color borderColor;
-
     public RightEye3D(Part3D head)
     {
-        mHeadFX = (Head3D) head;
+        super(head);
+        mStart = mHead.getRightEyePosition();
 
-        if (mHeadFX.getStickman().mType == Gender.TYPE.MALE)
-        {
-            mColor = Color.rgb(0, 0, 0, 1);
-        } else
-        {
-            mColor = Color.rgb(0, 0, 255, 1);
-        }
-
-        smallPupileColor = Color.rgb(255, 255, 255, 1);
-        borderColor = Color.rgb(255, 255, 255, 1);
-
-        mStart = mHeadFX.getRightEyePostion();
-
-        border = new Path();
-        bigPupile = new Path();
-        smallPupile = new Path();
-
-        rightEyeGroup = new Group();
-        rightEyeGroup.getChildren().add(border);
-        rightEyeGroup.getChildren().add(bigPupile);
-        rightEyeGroup.getChildren().add(smallPupile);
-        mHeadFX.getChildren().add(rightEyeGroup);
+        this.setTranslateX(mStart.x);
+        this.setTranslateY(mStart.y);
+        this.setTranslateZ(Preferences.FACE_PARTS_Z_POS);
+        mHead.getChildren().add(this);
 
         init();
     }
 
     @Override
-    public void init()
-    {
-        super.init();
-        bigPupile.setTranslateX(mStart.x - 7);
-        bigPupile.setTranslateY(mStart.y);
-        smallPupile.setTranslateX(mStart.x - 9);
-        smallPupile.setTranslateY(mStart.y);
-        border.setTranslateZ(-17);
-        bigPupile.setTranslateZ(-18);
-        smallPupile.setTranslateZ(-19);
-
-    }
-
-    @Override
     public void setShape(String s)
     {
-        RightEye3D.SHAPE shape = RightEye3D.SHAPE.valueOf(s);
-        mShape = (shape != null) ? shape : RightEye3D.SHAPE.DEFAULT;
+        mShape = SHAPE.valueOf(s);
     }
 
     @Override
     public void resetShape()
     {
         mShape = RightEye3D.SHAPE.DEFAULT;
-    }
-
-    private void createDefaultEye()
-    {
-        border = createBorder(border);
-        bigPupile = createEllipsePath(bigPupile, 0, 0, 3.5, 3.5, 0, mColor, null);
-        smallPupile = createEllipsePath(smallPupile, 0, 0, 1.4, 1.4, 0, smallPupileColor, null);
-        smallPupile.setStroke(null);
-
-        borderYSize = 0;
-        borderXSize = 0;
-        bigPupileYSize = 0;
-        smallPupileYSize = 0;
     }
 
     @Override
@@ -121,47 +51,11 @@ public class RightEye3D extends PartStickman3D
                 break;
 
             case FADEIN:
-                if (step == 2)
-                {
-                    mColor = new Color(mColor.getRed(), mColor.getGreen(), mColor.getBlue(), 0.0);
-                    smallPupileColor = new Color(smallPupileColor.getRed(), smallPupileColor.getGreen(),
-                            smallPupileColor.getBlue(), 0.0);
-                    borderColor = new Color(borderColor.getRed(), borderColor.getGreen(), borderColor.getBlue(), 0.0);
-                } else if (mColor.getOpacity() != 0.0)
-                {
-                    mColor = new Color(mColor.getRed(), mColor.getGreen(), mColor.getBlue(), mColor.getOpacity() - 0.052);
-                    smallPupileColor = new Color(smallPupileColor.getRed(), smallPupileColor.getGreen(),
-                            smallPupileColor.getBlue(), smallPupileColor.getOpacity() - 0.052);
-                    borderColor = new Color(borderColor.getRed(), borderColor.getGreen(), borderColor.getBlue(),
-                            borderColor.getOpacity() - 0.052);
-                }
-                border.setFill(borderColor);
-                bigPupile.setFill(mColor);
-                smallPupile.setFill(smallPupileColor);
-                border.setStroke(borderColor);
-                bigPupile.setStroke(mColor);
+                executeFadeInFadeOut(null, SHAPE.FADEIN, step);
                 break;
 
             case FADEOUT:
-                if (step == 2)
-                {
-                    mColor = new Color(mColor.getRed(), mColor.getGreen(), mColor.getBlue(), 1.0);
-                    smallPupileColor = new Color(smallPupileColor.getRed(), smallPupileColor.getGreen(),
-                            smallPupileColor.getBlue(), 1.0);
-                    borderColor = new Color(borderColor.getRed(), borderColor.getGreen(), borderColor.getBlue(), 1.0);
-                } else if (mColor.getOpacity() != 1.0)
-                {
-                    mColor = new Color(mColor.getRed(), mColor.getGreen(), mColor.getBlue(), mColor.getOpacity() + 0.052);
-                    smallPupileColor = new Color(smallPupileColor.getRed(), smallPupileColor.getGreen(),
-                            smallPupileColor.getBlue(), smallPupileColor.getOpacity() + 0.052);
-                    borderColor = new Color(borderColor.getRed(), borderColor.getGreen(), borderColor.getBlue(),
-                            borderColor.getOpacity() + 0.052);
-                }
-                border.setFill(borderColor);
-                bigPupile.setFill(mColor);
-                smallPupile.setFill(smallPupileColor);
-                border.setStroke(Color.BLACK);
-                bigPupile.setStroke(mColor);
+                executeFadeInFadeOut(null, SHAPE.FADEOUT, step);
                 break;
 
             case BLINK:
@@ -371,7 +265,7 @@ public class RightEye3D extends PartStickman3D
                 }
                 borderYSize += 0.0105;
 
-                quadCurve_1 = (QuadCurveTo) border.getElements().get(1);
+                QuadCurveTo quadCurve_1 = (QuadCurveTo) border.getElements().get(1);
                 quadCurve_1.setY(quadCurve_1.getY() + 0.105);
                 border.getElements().set(1, quadCurve_1);
 
@@ -462,51 +356,9 @@ public class RightEye3D extends PartStickman3D
 
     protected void recordColor()
     {
-        if (mHeadFX.getStickman().setCharacterInvisible == false)
+        if (!mHead.getStickman().setCharacterInvisible)
         {
             mColorRecorder = mColor;
         }
-    }
-
-    private Path createEllipsePath(Path startPath, double centerX, double centerY, double radiusX, double radiusY, double rotate, Color eyeColor, Color borderColor)
-    {
-        ArcTo arcTo = new ArcTo();
-        arcTo.setX(centerX - radiusX + 1); // to simulate a full 360 degree celcius circle.
-        arcTo.setY(centerY - radiusY);
-        arcTo.setSweepFlag(false);
-        arcTo.setLargeArcFlag(true);
-        arcTo.setRadiusX(radiusX);
-        arcTo.setRadiusY(radiusY);
-        arcTo.setXAxisRotation(rotate);
-
-        startPath.getElements().add(new MoveTo(centerX - radiusX, centerY - radiusY));
-        startPath.getElements().add(arcTo);
-        startPath.getElements().add(new ClosePath());
-
-        if (borderColor != null)
-        {
-            startPath.setStroke(Color.BLACK);
-            startPath.setStrokeWidth(1);
-        }
-
-        startPath.setFill(eyeColor);
-        return startPath;
-    }
-
-    private Path createBorder(Path startBorder)
-    {
-        startBorder.getElements().add(new MoveTo(mStart.x, mStart.y));
-        startBorder.getElements().add(new QuadCurveTo(mStart.x - 10, mStart.y - 13, mStart.x - 20, mStart.y));
-        startBorder.getElements().add(new QuadCurveTo(mStart.x - 10, mStart.y + 13, mStart.x, mStart.y));
-        startBorder.setStrokeWidth(1);
-        startBorder.setStroke(Color.BLACK);
-        startBorder.setFill(Color.WHITE);
-
-        return startBorder;
-    }
-
-    public static enum SHAPE
-    {
-        DEFAULT, BLINK, FADEIN, FADEOUT, BLINKEND, LOOKLEFT, LOOKLEFTEND, LOOKRIGHT, LOOKRIGHTEND, LOOKDOWN, LOOKDOWNEND, LOOKUP, LOOKUPEND, ANGRY, ANGRYEND, SURPRISED, SURPRISEDEND, HAPPY, HAPPYEND, DISGUSTED, DISGUSTEDEND, LOVED, LOVEDEND, LOVED1, CONTEMPT, CONTEMPTEND, EXCITED, EXCITEDEND, EMBARRASSED, EMBARRASSEDEND
     }
 }

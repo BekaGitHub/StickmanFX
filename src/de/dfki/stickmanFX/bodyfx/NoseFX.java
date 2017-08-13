@@ -24,6 +24,7 @@ public class NoseFX extends PartStickman2D
     ;
     HeadFX mHeadFX;
     Path mPath;
+
     public NoseFX(Part2D head)
     {
         mHeadFX = (HeadFX) head;
