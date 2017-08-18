@@ -23,12 +23,13 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="StickmanStage3D.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="StickmanStage3D.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/de/dfki/stickman3D/stage/StickmanStage3D.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-247">
-              <caret line="110" column="0" lean-forward="false" selection-start-line="110" selection-start-column="0" selection-end-line="110" selection-end-column="0" />
+            <state relative-caret-position="383">
+              <caret line="131" column="29" lean-forward="false" selection-start-line="131" selection-start-column="29" selection-end-line="131" selection-end-column="29" />
               <folding>
+                <element signature="e#3303#3304#0" expanded="true" />
                 <element signature="e#3392#3393#0" expanded="true" />
               </folding>
             </state>
@@ -48,20 +49,20 @@
       <file leaf-file-name="Stickman3D.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/de/dfki/stickman3D/Stickman3D.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="311">
-              <caret line="254" column="0" lean-forward="false" selection-start-line="254" selection-start-column="0" selection-end-line="254" selection-end-column="0" />
+            <state relative-caret-position="30">
+              <caret line="244" column="5" lean-forward="false" selection-start-line="244" selection-start-column="5" selection-end-line="244" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="testStickmanFX.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="testStickmanFX.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/de/dfki/test/testStickmanFX.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="269">
-              <caret line="26" column="42" lean-forward="false" selection-start-line="26" selection-start-column="42" selection-end-line="26" selection-end-column="42" />
+            <state relative-caret-position="389">
+              <caret line="30" column="30" lean-forward="false" selection-start-line="30" selection-start-column="30" selection-end-line="30" selection-end-column="30" />
               <folding>
-                <marker date="1503091836459" expanded="true" signature="917:1111" ph="//..." />
+                <marker date="1503092206023" expanded="true" signature="917:1111" ph="//..." />
               </folding>
             </state>
           </provider>
@@ -182,9 +183,9 @@
         <option value="$PROJECT_DIR$/src/de/dfki/common/util/Preferences.java" />
         <option value="$PROJECT_DIR$/src/de/dfki/common/agent/Agent.java" />
         <option value="$PROJECT_DIR$/src/de/dfki/common/decorators/StageRoomDecorator.java" />
+        <option value="$PROJECT_DIR$/src/de/dfki/stickman3D/Stickman3D.java" />
         <option value="$PROJECT_DIR$/src/de/dfki/stickman3D/stage/StickmanStage3D.java" />
         <option value="$PROJECT_DIR$/src/de/dfki/test/testStickmanFX.java" />
-        <option value="$PROJECT_DIR$/src/de/dfki/stickman3D/Stickman3D.java" />
       </list>
     </option>
   </component>
@@ -830,12 +831,12 @@
       <workItem from="1503052924621" duration="2706000" />
       <workItem from="1503075968023" duration="133000" />
       <workItem from="1503078949890" duration="87000" />
-      <workItem from="1503082250118" duration="9587000" />
+      <workItem from="1503082250118" duration="9908000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="180205000" />
+    <option name="totallyTimeSpent" value="180526000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1060" extended-state="7" />
@@ -884,13 +885,13 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/de/dfki/stickman3D/stage/StickmanStage3D.java</url>
-          <line>130</line>
+          <line>131</line>
           <properties />
           <option name="timeStamp" value="38" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/de/dfki/stickman3D/Stickman3D.java</url>
-          <line>255</line>
+          <line>251</line>
           <properties />
           <option name="timeStamp" value="40" />
         </line-breakpoint>
@@ -1270,30 +1271,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/de/dfki/test/testStickmanFX.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="26" column="42" lean-forward="false" selection-start-line="26" selection-start-column="42" selection-end-line="26" selection-end-column="42" />
-          <folding>
-            <marker date="1503091836459" expanded="true" signature="917:1111" ph="//..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/de/dfki/stickman3D/Stickman3D.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="254" column="0" lean-forward="false" selection-start-line="254" selection-start-column="0" selection-end-line="254" selection-end-column="0" />
+        <state relative-caret-position="30">
+          <caret line="244" column="5" lean-forward="false" selection-start-line="244" selection-start-column="5" selection-end-line="244" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/de/dfki/stickman3D/stage/StickmanStage3D.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-247">
-          <caret line="110" column="0" lean-forward="false" selection-start-line="110" selection-start-column="0" selection-end-line="110" selection-end-column="0" />
+        <state relative-caret-position="383">
+          <caret line="131" column="29" lean-forward="false" selection-start-line="131" selection-start-column="29" selection-end-line="131" selection-end-column="29" />
           <folding>
+            <element signature="e#3303#3304#0" expanded="true" />
             <element signature="e#3392#3393#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/dfki/test/testStickmanFX.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="389">
+          <caret line="30" column="30" lean-forward="false" selection-start-line="30" selection-start-column="30" selection-end-line="30" selection-end-column="30" />
+          <folding>
+            <marker date="1503092206023" expanded="true" signature="917:1111" ph="//..." />
           </folding>
         </state>
       </provider>

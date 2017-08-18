@@ -128,7 +128,8 @@ public class StickmanStage3D extends FXApplication
 
                     if (isShowControlPanel())
                     {
-                        sman3D.setScale(1.35f);
+//                        sman3D.setScale(1.35f);
+                        sman3D.setScale(getFullScreenScale());
                         sman3D.isFullScreen = true;
                         sman3D.update();
                     }

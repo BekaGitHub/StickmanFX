@@ -243,10 +243,6 @@ public class Stickman3D extends Agent3D
 
     public void update()
     {
-        if (isFullScreen)
-        {
-            mScale = 3f;
-        }
         int scale_X_Pivot;
         if(mType == Gender.TYPE.MALE)
             scale_X_Pivot = Preferences.MALE_DOWN_BODY_WIDTH/2;
