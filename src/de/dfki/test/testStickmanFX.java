@@ -24,7 +24,7 @@ public class testStickmanFX
         StageRoom reeti = new StageRoom3D(0, 0, true);
         StageRoom stickmanStage3DFull = new StageRoomFullScreenDecorator(reeti);
 //        reeti.addAgent("Anna");
-        stickmanStage3DFull.addAgent("Bob");
+        stickmanStage3DFull.addAgent("Anna");
 //        stickmanStage3DFull.addAgent("Anna");
 //        reeti.addAgent("Bob1");
 //        reeti.addAgent("Reeti1");

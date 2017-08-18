@@ -245,9 +245,15 @@ public class Stickman3D extends Agent3D
     {
         if (isFullScreen)
         {
-//            mScale = 1.35f;
+            mScale = 3f;
         }
-        Scale scale = new Scale(mScale, mScale, 0, Preferences.MALE_HEIGHT);
+        int scale_X_Pivot;
+        if(mType == Gender.TYPE.MALE)
+            scale_X_Pivot = Preferences.MALE_DOWN_BODY_WIDTH/2;
+        else
+            scale_X_Pivot = Preferences.FEMALE_DOWN_BODY_WIDTH/2;
+
+        Scale scale = new Scale(mScale, mScale, scale_X_Pivot, Preferences.MALE_HEIGHT);
         //GoDown
         Translate translate = new Translate(0, leaveSpeed);
         this.getTransforms().clear();

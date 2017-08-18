@@ -108,7 +108,7 @@ public class StickmanStage3D extends FXApplication
     @Override
     public float getFullScreenScale()
     {
-        return getHeight() / (float) de.dfki.stickmanFX.StickmanFX.mDefaultSize.height * mScale * AGENT_SIZE_FACTOR;
+        return getHeight() / Preferences.MALE_HEIGHT * mScale * AGENT_SIZE_FACTOR;
     }
 
 
