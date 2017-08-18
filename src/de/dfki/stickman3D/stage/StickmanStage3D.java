@@ -76,7 +76,7 @@ public class StickmanStage3D extends FXApplication
     {
         mAgentBox = new HBox();
         mAgentBox.setId("StickmanStage3D");
-        mAgentBox.setAlignment(Pos.CENTER);
+        mAgentBox.setAlignment(Pos.BOTTOM_CENTER);
         mAgentBox.setSpacing(Preferences.DISTANCE_BETWEEN_AGENTS);
         int mHeight = 0;
         int mWidth = 0;
@@ -163,7 +163,7 @@ public class StickmanStage3D extends FXApplication
         if (agentStages.containsKey(stageIdentifier))
         {
             box = (HBox) agentStages.get(stageIdentifier).getScene().getRoot();
-            box.setAlignment(Pos.CENTER);
+            box.setAlignment(Pos.BOTTOM_CENTER);
             box.setStyle("-fx-background-color: white");
 
             return (box.getId() != null && box.getId().equals(STICKMAN_STAGE)) ? box : findStageBox(box);
@@ -210,7 +210,7 @@ public class StickmanStage3D extends FXApplication
         final HBox root = getStageRoot();
         Platform.runLater(() ->
         {
-            root.setAlignment(Pos.BASELINE_CENTER);
+            root.setAlignment(Pos.BOTTOM_CENTER);
             Scene stageScene = new Scene(root, 650, 600, true, SceneAntialiasing.BALANCED);
             Stage stage = new Stage();
             stage.setScene(stageScene);

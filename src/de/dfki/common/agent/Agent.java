@@ -53,8 +53,8 @@ public abstract class Agent extends Pane implements IAgent
 
     public void init()
     {
-        this.setMaxHeight(Preferences.MALE_HEIGHT * mScale);
-        this.setMinHeight(Preferences.MALE_HEIGHT * mScale);
+        this.setMaxHeight(Preferences.MALE_HEIGHT);
+        this.setMinHeight(Preferences.MALE_HEIGHT);
         this.setPrefWidth(Control.USE_COMPUTED_SIZE);
 
         ConsoleHandler ch = new ConsoleHandler();
