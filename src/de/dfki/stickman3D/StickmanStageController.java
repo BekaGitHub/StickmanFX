@@ -44,6 +44,8 @@ public class StickmanStageController extends AStickmanStageController implements
     @FXML
     public void initialize()
     {
+        SaveButton.toFront();
+        ExitButton.toFront();
         //Select a stickmanSwing
         StickmanComboBox.setOnAction((event)
                 ->
